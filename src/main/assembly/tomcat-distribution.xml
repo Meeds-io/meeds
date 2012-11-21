@@ -13,6 +13,8 @@
       </includes>
       <outputDirectory></outputDirectory>
       <unpack>true</unpack>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
       <outputDirectory>wars</outputDirectory>
@@ -20,13 +22,17 @@
         <include>*:*:war</include>
       </includes>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
       <outputDirectory>lib</outputDirectory>
       <includes>
         <include>*:*:jar</include>
       </includes>
-      <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.version}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
   </dependencySets>
   <!-- eXo platform -->
