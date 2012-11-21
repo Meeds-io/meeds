@@ -33,6 +33,7 @@
     <org.exoplatform.calendar.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.calendar.version>
     <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
     <org.exoplatform.forum.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.forum.version>
+    <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -65,6 +66,14 @@
         <groupId>org.exoplatform.forum</groupId>
         <artifactId>forum</artifactId>
         <version>${org.exoplatform.forum.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from wiki project -->
+      <dependency>
+        <groupId>org.exoplatform.wiki</groupId>
+        <artifactId>wiki</artifactId>
+        <version>${org.exoplatform.wiki.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -612,25 +621,21 @@
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
   </dependencies>
