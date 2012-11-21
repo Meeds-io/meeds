@@ -1,0 +1,77 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+  <id>tomcat-distribution</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <!-- Apache Tomcat Bundle -->
+    <dependencySet>
+      <includes>
+        <include>org.apache.tomcat:apache-tomcat:tar.gz</include>
+      </includes>
+      <outputDirectory></outputDirectory>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <excludes>
+          <!-- Do not include default webapps -->
+          <exclude>apache-tomcat-${apache-tomcat.version}/webapps/**</exclude>
+          <!-- With associated contexts -->
+          <exclude>apache-tomcat-${apache-tomcat.version}/conf/Catalina/**</exclude>
+        </excludes>
+      </unpackOptions>
+    </dependencySet>
+    <dependencySet>
+      <includes>
+        <include>*:*:war</include>
+      </includes>
+      <outputDirectory>platform-${project.version}/webapps</outputDirectory>
+      <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+    </dependencySet>
+  </dependencySets>
+  <!-- eXo platform -->
+  <fileSets>
+    <fileSet>
+      <outputDirectory></outputDirectory>
+      <directory>${project.basedir}/src/main/resources/root/</directory>
+      <filtered>true</filtered>
+      <excludes>
+        <exclude>**/*.sh</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory></outputDirectory>
+      <directory>${project.basedir}/src/main/resources/root/</directory>
+      <filtered>true</filtered>
+      <fileMode>0755</fileMode>
+      <includes>
+        <include>**/*.sh</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory>apache-tomcat-${apache-tomcat.version}</outputDirectory>
+      <directory>${project.basedir}/src/main/resources/catalina_home/</directory>
+      <filtered>true</filtered>
+      <fileMode>0755</fileMode>
+      <includes>
+        <include>**/*.sh</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory>platform-${project.version}</outputDirectory>
+      <directory>${project.basedir}/src/main/resources/catalina_base/</directory>
+      <excludes>
+        <exclude>**/*.sh</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory>platform-${project.version}</outputDirectory>
+      <directory>${project.basedir}/src/main/resources/catalina_base/</directory>
+      <fileMode>0755</fileMode>
+      <includes>
+        <include>**/*.sh</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

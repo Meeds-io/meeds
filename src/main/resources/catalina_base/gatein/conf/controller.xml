@@ -1,0 +1,188 @@
+<!--
+
+    Copyright (C) 2003-2011 eXo Platform SAS.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Affero General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, see<http://www.gnu.org/licenses />.
+
+-->
+
+<controller
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_controller_1_1 http://www.gatein.org/xml/ns/gatein_controller_1_1"
+    xmlns="http://www.gatein.org/xml/ns/gatein_controller_1_1"
+    separator-escape=":">
+
+  <route path="/standalone/{gtn:path}">    
+    
+    <route-param qname="gtn:handler">
+      <value>standalone</value>
+    </route-param>
+    <path-param qname="gtn:path" encoding="preserve-path">
+      <pattern>.*</pattern>
+    </path-param>
+  </route>
+
+  <route path="/upload">
+    <route-param qname="gtn:handler">
+      <value>upload</value>
+    </route-param>
+  </route>
+
+  <route path="/download">
+    <route-param qname="gtn:handler">
+      <value>download</value>
+    </route-param>
+  </route>
+
+  <route path="/{gtn:sitename}/sitemaps.xml">
+    <route-param qname="gtn:handler">
+      <value>sitemap</value>
+    </route-param>
+  </route>
+	
+  <route path="/{gtn:sitename}/robots.txt">
+    <route-param qname="gtn:handler">
+      <value>robots</value>
+    </route-param>
+  </route>	
+
+  <!-- The legacy route -->
+  <route path="/public">
+    <route path="/">
+      <route-param qname="gtn:handler">
+        <value>default</value>
+      </route-param>
+    </route>
+    <route path="/{gtn:sitename}/{gtn:path}">
+      <route-param qname="gtn:handler">
+        <value>legacy</value>
+      </route-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
+  </route>
+  <route path="/private">
+    <route path="/">
+      <route-param qname="gtn:handler">
+        <value>default</value>
+      </route-param>
+    </route>
+    <route path="/{gtn:sitename}/{gtn:path}">
+	  <route-param qname="gtn:handler">
+	    <value>legacy</value>
+	  </route-param>
+	  <path-param qname="gtn:path" encoding="preserve-path">
+	    <pattern>.*</pattern>
+	  </path-param>
+  	</route>
+  </route>
+
+  <!-- Static resource handler needs to be before the portal handler -->
+  <route path="/{gtn:path}">
+    <route-param qname="gtn:handler">
+      <value>staticResource</value>
+    </route-param>
+    <path-param qname="gtn:path" encoding="preserve-path">
+      <pattern>.*\.(jpg|png|gif|ico|css)</pattern>
+    </path-param>
+  </route>
+
+  <route path="/">
+
+    <!-- The portal handler -->
+    <route-param qname="gtn:handler">
+      <value>portal</value>
+    </route-param>
+
+    <!-- The group access -->
+    <route path="/g/{gtn:sitename}/{gtn:path}">
+      <request-param qname="gtn:lang" name="lang" value-mapping="never-empty">
+        <pattern>([A-Za-z]{2}(-[A-Za-z]{2})?)?</pattern>
+      </request-param>
+      <route-param qname="gtn:sitetype">
+        <value>group</value>
+      </route-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
+
+    <!-- The user access -->
+    <route path="/u/{gtn:sitename}/{gtn:path}">
+      <request-param qname="gtn:lang" name="lang" value-mapping="never-empty">
+        <pattern>([A-Za-z]{2}(-[A-Za-z]{2})?)?</pattern>
+      </request-param>
+      <route-param qname="gtn:sitetype">
+        <value>user</value>
+      </route-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
+
+    <!-- The portal access -->
+    <route path="/{gtn:lang}/{gtn:sitename}/{gtn:path}">
+      <route-param qname="gtn:sitetype">
+        <value>portal</value>
+      </route-param>
+      <path-param qname="gtn:lang" encoding="preserve-path">
+        <pattern>([A-Za-z]{2}(-[A-Za-z]{2})?)?</pattern>
+      </path-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
+
+  </route>
+
+  <!-- Script handler -->
+  <route path="/scripts/{gtn:version}/{gtn:scope}/">
+    <route-param qname="gtn:handler">
+      <value>script</value>
+    </route-param>
+    <path-param qname="gtn:version" encoding="preserve-path">
+      <pattern>[^/]*</pattern>
+    </path-param>
+    <route path="/{gtn:resource}{gtn:lang}{gtn:compress}.js">
+      <path-param qname="gtn:resource">
+        <pattern>.+?</pattern>
+      </path-param>
+      <path-param qname="gtn:lang" capture-group="true">
+        <pattern>-([A-Za-z]{2}(-[A-Za-z]{2})?)|</pattern>
+      </path-param>
+      <path-param qname="gtn:compress" capture-group="true">
+        <pattern>-(min)|</pattern>
+      </path-param>
+    </route>
+    <route path="/{gtn:resource}/{gtn:module}{gtn:lang}{gtn:compress}.js">
+      <path-param qname="gtn:module">
+        <pattern>.+?</pattern>
+      </path-param>
+      <path-param qname="gtn:lang" capture-group="true">
+        <pattern>-([A-Za-z]{2}(-[A-Za-z]{2})?)|</pattern>
+      </path-param>
+      <path-param qname="gtn:compress" capture-group="true">
+        <pattern>-(min)|</pattern>
+      </path-param>
+    </route>
+  </route>
+
+  <!-- Default handler -->
+  <route path="/">
+    <route-param qname="gtn:handler">
+      <value>default</value>
+    </route-param>
+  </route> 
+</controller>

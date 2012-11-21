@@ -1,0 +1,44 @@
+<!--
+  ~ Copyright (C) 2009 eXo Platform SAS.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+<jbosscache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:jboss:jbosscache-core:config:3.1">
+
+  <jmxStatistics enabled="${gatein.jgroups.jmxstatistics.enable:true}"/>
+
+  <locking useLockStriping="false" concurrencyLevel="64" lockParentForChildInsertRemove="false" lockAcquisitionTimeout="20000" />
+
+  <loaders passivation="false" shared="true">
+    <preload>
+      <node fqn="/" />
+    </preload>
+    <loader class="org.exoplatform.services.jcr.impl.core.lock.jbosscache.JDBCCacheLoader" async="false" fetchPersistentState="false" ignoreModifications="false" purgeOnStartup="false">
+      <properties>
+        cache.jdbc.table.name=${jbosscache-cl-cache.jdbc.table.name}
+        cache.jdbc.table.create=${jbosscache-cl-cache.jdbc.table.create}
+        cache.jdbc.table.drop=${jbosscache-cl-cache.jdbc.table.drop}
+        cache.jdbc.table.primarykey=${jbosscache-cl-cache.jdbc.table.primarykey}
+        cache.jdbc.fqn.column=${jbosscache-cl-cache.jdbc.fqn.column}
+        cache.jdbc.fqn.type=${jbosscache-cl-cache.jdbc.fqn.type}
+        cache.jdbc.node.column=${jbosscache-cl-cache.jdbc.node.column}
+        cache.jdbc.node.type=${jbosscache-cl-cache.jdbc.node.type}
+        cache.jdbc.parent.column=${jbosscache-cl-cache.jdbc.parent.column}
+        cache.jdbc.datasource=${jbosscache-cl-cache.jdbc.datasource}
+      </properties>
+    </loader>
+  </loaders>
+</jbosscache>
