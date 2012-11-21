@@ -30,6 +30,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <apache-tomcat.version>6.0.36</apache-tomcat.version>
+    <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -38,6 +39,14 @@
         <groupId>org.exoplatform</groupId>
         <artifactId>maven-depmgt-pom</artifactId>
         <version>1-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from commons project -->
+      <dependency>
+        <groupId>org.exoplatform.commons</groupId>
+        <artifactId>commons</artifactId>
+        <version>${org.exoplatform.commons.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -89,49 +98,41 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-fck</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-fck</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
