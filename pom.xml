@@ -45,8 +45,8 @@
   </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>apache-tomcat</artifactId>
+      <groupId>org.exoplatform.thirdparty.tomcat</groupId>
+      <artifactId>apache-tomcat-skeleton</artifactId>
       <version>${apache-tomcat.version}</version>
       <type>tar.gz</type>
     </dependency>

@@ -9,24 +9,16 @@
     <!-- Apache Tomcat Bundle -->
     <dependencySet>
       <includes>
-        <include>org.apache.tomcat:apache-tomcat:tar.gz</include>
+        <include>org.exoplatform.thirdparty.tomcat:apache-tomcat-skeleton:tar.gz</include>
       </includes>
       <outputDirectory></outputDirectory>
       <unpack>true</unpack>
-      <unpackOptions>
-        <excludes>
-          <!-- Do not include default webapps -->
-          <exclude>apache-tomcat-${apache-tomcat.version}/webapps/**</exclude>
-          <!-- With associated contexts -->
-          <exclude>apache-tomcat-${apache-tomcat.version}/conf/Catalina/**</exclude>
-        </excludes>
-      </unpackOptions>
     </dependencySet>
     <dependencySet>
+      <outputDirectory>wars</outputDirectory>
       <includes>
         <include>*:*:war</include>
       </includes>
-      <outputDirectory>platform-${project.version}/wars</outputDirectory>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
     </dependencySet>
   </dependencySets>
@@ -34,7 +26,7 @@
   <fileSets>
     <fileSet>
       <outputDirectory></outputDirectory>
-      <directory>${project.basedir}/src/main/resources/root/</directory>
+      <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>true</filtered>
       <excludes>
         <exclude>**/*.sh</exclude>
@@ -42,32 +34,8 @@
     </fileSet>
     <fileSet>
       <outputDirectory></outputDirectory>
-      <directory>${project.basedir}/src/main/resources/root/</directory>
+      <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>true</filtered>
-      <fileMode>0755</fileMode>
-      <includes>
-        <include>**/*.sh</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <outputDirectory>apache-tomcat-${apache-tomcat.version}</outputDirectory>
-      <directory>${project.basedir}/src/main/resources/catalina_home/</directory>
-      <filtered>true</filtered>
-      <fileMode>0755</fileMode>
-      <includes>
-        <include>**/*.sh</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <outputDirectory>platform-${project.version}</outputDirectory>
-      <directory>${project.basedir}/src/main/resources/catalina_base/</directory>
-      <excludes>
-        <exclude>**/*.sh</exclude>
-      </excludes>
-    </fileSet>
-    <fileSet>
-      <outputDirectory>platform-${project.version}</outputDirectory>
-      <directory>${project.basedir}/src/main/resources/catalina_base/</directory>
       <fileMode>0755</fileMode>
       <includes>
         <include>**/*.sh</include>

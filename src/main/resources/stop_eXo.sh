@@ -19,4 +19,4 @@
 # 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 #
 
-${0%/*}/apache-tomcat-${apache-tomcat.version}/bin/shutdown.sh
+${0%/*}/bin/shutdown.sh

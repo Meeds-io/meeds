@@ -19,13 +19,15 @@
 # 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 #
 
+# Only set CATALINA_HOME if not already set
+[ -z "$CATALINA_HOME" ] && CATALINA_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
 
 # Sets some variables
 LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
-SECURITY_OPTS="-Djava.security.auth.login.config=${CATALINA_BASE}/conf/jaas.conf"
-EXO_OPTS="-Dexo.conf.dir.name=gatein/conf"
+SECURITY_OPTS="-Djava.security.auth.login.config=${CATALINA_HOME}/conf/jaas.conf"
+EXO_OPTS="-Dexo.conf.dir.name=gatein/conf -Dexo.conf.dir=${CATALINA_HOME}/gatein/conf"
 IDE_OPTS="-Djavasrc=$JAVA_HOME/src.zip -Djre.lib=$JAVA_HOME/jre/lib"
-if [ "$EXO_PROFILES" = "" -o "$EXO_PROFILES" = "-Dexo.profiles=default" ] ; then 
+if [ "$EXO_PROFILES" = "" -o "$EXO_PROFILES" = "-Dexo.profiles=default" ] ; then
 	EXO_PROFILES="-Dexo.profiles=default"
 fi
 
@@ -37,4 +39,3 @@ EXO_XML="-Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutp
 #########################
 CATALINA_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=256m $CATALINA_OPTS $LOG_OPTS $SECURITY_OPTS $EXO_OPTS $IDE_OPTS $EXO_PROFILES $EXO_XML"
 export CATALINA_OPTS
-
