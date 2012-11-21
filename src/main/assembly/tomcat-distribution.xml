@@ -26,7 +26,7 @@
       <includes>
         <include>*:*:war</include>
       </includes>
-      <outputDirectory>platform-${project.version}/webapps</outputDirectory>
+      <outputDirectory>platform-${project.version}/wars</outputDirectory>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
     </dependencySet>
   </dependencySets>

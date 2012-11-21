@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/authoring-apps" docBase="authoring-apps" reloadable="true" crossContext="false"/>
+<Context docBase="${catalina.base}/wars/ecms-ext-authoring-apps.war" />

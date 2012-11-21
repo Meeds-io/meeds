@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/webosResources" docBase="webosResources" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/webos-resources.war" />

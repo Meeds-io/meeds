@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/social-extension" docBase="social-extension" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/social-extension-war.war" />

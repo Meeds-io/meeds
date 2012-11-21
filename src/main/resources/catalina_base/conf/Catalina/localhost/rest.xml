@@ -19,7 +19,7 @@
 
 -->
 
-<Context path="/rest" docBase="rest" reloadable="true" crossContext="false">
+<Context docBase="${catalina.base}/wars/exo.portal.web.rest.war" >
 
   <Logger className='org.apache.catalina.logger.SystemOutLogger'
             prefix='localhost_portal_log.' suffix='.txt' timestamp='true'/>

@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/wiki-extension" docBase="wiki-extension" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/wiki-extension-webapp.war" />

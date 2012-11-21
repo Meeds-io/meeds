@@ -19,13 +19,4 @@
 
 -->
 
-<Context path='/wiki' docBase='wiki' debug='0' reloadable='true' crossContext='true' privileged='true'> 
-  <Logger className='org.apache.catalina.logger.SystemOutLogger' 
-          prefix='localhost_portal_log.' suffix='.txt' timestamp='true'/> 
-  <Manager className='org.apache.catalina.session.PersistentManager' saveOnRestart='false'/> 
-  <Realm className='org.apache.catalina.realm.JAASRealm' 
-         appName='gatein-domain' 
-         userClassNames='org.exoplatform.services.security.jaas.UserPrincipal' 
-         roleClassNames='org.exoplatform.services.security.jaas.RolePrincipal' 
-         debug='0' cache='false'/> 
-	 <Valve className='org.apache.catalina.authenticator.FormAuthenticator' characterEncoding='UTF-8'/></Context> 
+<Context docBase="${catalina.base}/wars/wiki-webapp.war" />

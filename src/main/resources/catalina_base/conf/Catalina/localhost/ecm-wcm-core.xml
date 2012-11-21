@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/ecm-wcm-core" docBase="ecm-wcm-core" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/ecms-core-webapp.war" />

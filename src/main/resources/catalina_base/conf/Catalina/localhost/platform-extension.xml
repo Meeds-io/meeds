@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/platform-extension" docBase="platform-extension" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/platform-extension-webapp.war" />

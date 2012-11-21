@@ -19,4 +19,4 @@
 
 -->
 
-<Context path="/gadget-pack" docBase="gadget-pack" debug="0" reloadable="true" crossContext="true"/>
+<Context docBase="${catalina.base}/wars/platform-sample-gadgets-sample-gadgets.war" />
