@@ -22,7 +22,7 @@
 
 # Sets some variables
 LOG_OPTS="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
-SECURITY_OPTS="-Djava.security.auth.login.config=../conf/jaas.conf"
+SECURITY_OPTS="-Djava.security.auth.login.config=${CATALINA_BASE}/conf/jaas.conf"
 EXO_OPTS="-Dexo.conf.dir.name=gatein/conf"
 IDE_OPTS="-Djavasrc=$JAVA_HOME/src.zip -Djre.lib=$JAVA_HOME/jre/lib"
 if [ "$EXO_PROFILES" = "" -o "$EXO_PROFILES" = "-Dexo.profiles=default" ] ; then 
