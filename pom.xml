@@ -21,11 +21,11 @@
     <!-- **************************************** -->
     <!-- Jira Settings                            -->
     <!-- **************************************** -->
-    <jira.project.key>platform-tomcat-standalone</jira.project.key>
+    <jira.project.key>PLF</jira.project.key>
     <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
-    <jenkins.job.name>platform-tomcat-standalone-master-ci</jenkins.job.name>
+    <jenkins.job.name>platform-tomcat-standalone-master-pkg</jenkins.job.name>
     <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
