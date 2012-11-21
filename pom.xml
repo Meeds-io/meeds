@@ -32,6 +32,7 @@
     <apache-tomcat.version>6.0.36</apache-tomcat.version>
     <org.exoplatform.calendar.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.calendar.version>
     <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
+    <org.exoplatform.forum.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.forum.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -56,6 +57,14 @@
         <groupId>org.exoplatform.commons</groupId>
         <artifactId>commons</artifactId>
         <version>${org.exoplatform.commons.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from forum project -->
+      <dependency>
+        <groupId>org.exoplatform.forum</groupId>
+        <artifactId>forum</artifactId>
+        <version>${org.exoplatform.forum.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -273,73 +282,61 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-answer-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-answer-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forum-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forum-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forumResources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forumResources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-gadgets</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-gadgets</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-poll-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-poll-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
