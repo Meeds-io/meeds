@@ -51,6 +51,12 @@
       <type>tar.gz</type>
     </dependency>
     <dependency>
+      <groupId>org.crsh</groupId>
+      <artifactId>crsh.jcr.exo</artifactId>
+      <version>1.1.0</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-extension-webapp</artifactId>
       <version>4.0.0.Alpha1-SNAPSHOT</version>
