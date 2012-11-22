@@ -654,20 +654,21 @@
             </goals>
             <configuration>
               <attach>false</attach>
-              <appendAssemblyId>false</appendAssemblyId>
-              <updateOnly>true</updateOnly>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/assembly/tomcat-distribution.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
       </plugin>
     </plugins>
   </build>
   <profiles>
     <profile>
-      <id>create-achive</id>
+      <id>create-archive</id>
       <activation>
         <property>
           <name>!skip-archive</name>
@@ -687,8 +688,6 @@
                   <goal>single</goal>
                 </goals>
                 <configuration>
-                  <appendAssemblyId>false</appendAssemblyId>
-                  <updateOnly>false</updateOnly>
                   <descriptors>
                     <descriptor>${project.basedir}/src/main/assembly/tomcat-archive.xml</descriptor>
                   </descriptors>
