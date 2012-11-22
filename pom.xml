@@ -653,6 +653,7 @@
               <goal>single</goal>
             </goals>
             <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/assembly/tomcat-distribution.xml</descriptor>
