@@ -660,9 +660,6 @@
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <appendAssemblyId>false</appendAssemblyId>
-        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -688,6 +685,7 @@
                   <goal>single</goal>
                 </goals>
                 <configuration>
+                  <appendAssemblyId>false</appendAssemblyId>
                   <descriptors>
                     <descriptor>${project.basedir}/src/main/assembly/tomcat-archive.xml</descriptor>
                   </descriptors>
