@@ -76,7 +76,6 @@ You can permanently deactivate the archive creation by adding in your maven sett
   </activeProfiles>
   ...
 </settings>
-
 ```
 
 By default Maven updates its snapshots dependencies once a day. You may enforce it to update by adding the -U flag.
@@ -88,17 +87,23 @@ The application server is created under target/platform-packaging-tomcat-VERSION
 
 You can start the application with
 
+```
 target/platform-packaging-tomcat-VERSION/start_eXo.sh
+```
 
 This is a non-blocking run. Logs will be under target/platform-packaging-tomcat-VERSION/logs/ and target/platform-packaging-tomcat-VERSION/gatein/logs
 
 You can stop the application with
 
+```
 target/platform-packaging-tomcat-VERSION/stop_eXo.sh
+```
 
 While developing it may be better to use the blocking command line that will display logs in your current console
 
+```
 target/platform-packaging-tomcat-VERSION/run_eXo.sh
+```
 
 You'll stop the server with Ctrl+C
 
