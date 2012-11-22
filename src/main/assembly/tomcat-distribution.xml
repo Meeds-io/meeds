@@ -15,6 +15,13 @@
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
       <useProjectAttachments>false</useProjectAttachments>
+      <unpackOptions>
+        <excludes>
+          <!-- We need to exclude everything we override -->
+          <exclude>**/conf/server.xml</exclude>
+          <exclude>**/conf/context.xml</exclude>
+        </excludes>
+      </unpackOptions>
     </dependencySet>
     <dependencySet>
       <outputDirectory>wars</outputDirectory>
