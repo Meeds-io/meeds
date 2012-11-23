@@ -622,6 +622,23 @@
       <artifactId>wiki-webapp</artifactId>
       <classifier>classes</classifier>
     </dependency>
+    <!-- Used by the integration webapp -->
+    <dependency>
+      <groupId>org.gatein.wci</groupId>
+      <artifactId>wci-tomcat6</artifactId>
+      <version>2.2.0-Beta02</version>
+    </dependency>
+    <!-- Why are they needed ?? -->
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.framework.web</artifactId>
+      <version>1.14.9-GA-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.shindig</groupId>
+      <artifactId>shindig-social-api</artifactId>
+      <version>2.0.2-CP01</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
