@@ -34,6 +34,10 @@
     <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
     <org.exoplatform.forum.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.forum.version>
     <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
+    <org.exoplatform.social.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.ecms.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.ecms.version>
+    <org.exoplatform.integration.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.integration.version>
+    <org.exoplatform.platform.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.platform.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -74,6 +78,38 @@
         <groupId>org.exoplatform.wiki</groupId>
         <artifactId>wiki</artifactId>
         <version>${org.exoplatform.wiki.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from social project -->
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>social</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from ecms project -->
+      <dependency>
+        <groupId>org.exoplatform.ecms</groupId>
+        <artifactId>ecms</artifactId>
+        <version>${org.exoplatform.ecms.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from integration project -->
+      <dependency>
+        <groupId>org.exoplatform.integration</groupId>
+        <artifactId>integ</artifactId>
+        <version>${org.exoplatform.integration.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from platform project -->
+      <dependency>
+        <groupId>org.exoplatform.platform</groupId>
+        <artifactId>platform</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -159,133 +195,111 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-gadget-publication</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-gadget-publication</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-administration</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-administration</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-search</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-search</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-seo</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-seo</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-resources-wcm</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-resources-wcm</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-wai-template</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-wai-template</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-core-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-core-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-ext-authoring-apps</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-ext-authoring-apps</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
@@ -363,133 +377,111 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-default-website-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-default-website-webapp</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
@@ -549,49 +541,41 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-opensocial</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-opensocial</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-portlet</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-portlet</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-resources</artifactId>
-      <version>4.0.0.Alpha1-SNAPSHOT</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
