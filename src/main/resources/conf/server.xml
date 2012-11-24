@@ -19,137 +19,48 @@
 
 -->
 
-<!-- Note:  A "Server" is not itself a "Container", so you may not
-     define subcomponents such as "Valves" at this level.
-     Documentation at /docs/config/server.html
- -->
-<Server port="8005" shutdown="SHUTDOWN">
+<Server port="${EXO_TOMCAT_SHUTDOWN_PORT}" shutdown="${EXO_TOMCAT_SHUTDOWN_KEY}">
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
+  <Listener className="org.apache.catalina.core.JasperListener"/>
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener"/>
+  <!--<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>-->
+  <!--<Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${EXO_TOMCAT_RMI_REGISTRY_PORT}" rmiServerPortPlatform="${EXO_TOMCAT_RMI_SERVER_PORT}" useLocalPorts="${EXO_TOMCAT_RMI_LOCAL_PORT}" />-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
 
-  <!--APR library loader. Documentation at /docs/apr.html -->
-  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
-  <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
-  <Listener className="org.apache.catalina.core.JasperListener" />
-  <!-- JMX Support for the Tomcat server. Documentation at /docs/non-existent.html -->
-  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
-  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
-
-  <!-- Global JNDI resources
-       Documentation at /docs/jndi-resources-howto.html
-  -->
   <GlobalNamingResources>
-    <!-- Editable user database that can also be used by
-         UserDatabaseRealm to authenticate users
-    -->
-    <Resource name="UserDatabase" auth="Container"
-              type="org.apache.catalina.UserDatabase"
-              description="User database that can be updated and saved"
-              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-              pathname="conf/tomcat-users.xml" />
-              
-   <!-- eXo JCR Datasource for portal -->
-   <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
-               maxActive="20" maxIdle="10" maxWait="10000"
-               username="sa" password="" driverClassName="org.hsqldb.jdbcDriver"
-               url="jdbc:hsqldb:file:../gatein/data/hsql/exo-jcr_portal"/>
 
-    <!-- eXo IDM Datasource for portal -->                
+    <!-- eXo IDM Datasource for portal -->
     <Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
-               maxActive="20" maxIdle="10" maxWait="10000"
-               username="sa" password="" driverClassName="org.hsqldb.jdbcDriver"
-               url="jdbc:hsqldb:file:../gatein/data/hsql/exo-idm_portal"/>     
-              
+              maxActive="${EXO_DS_IDM_MAX_ACTIVE}" maxIdle="${EXO_DS_IDM_MAX_IDLE}" maxWait="${EXO_DS_IDM_MAX_WAIT}"
+              username="${EXO_DS_IDM_USERNAME}" password="${EXO_DS_IDM_PASSWORD}" driverClassName="${EXO_DS_IDM_DRIVER}" url="${EXO_DS_IDM_URL}"/>
+
+    <!-- eXo JCR Datasource for portal -->
+    <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
+              maxActive="${EXO_DS_PORTAL_MAX_ACTIVE}" maxIdle="${EXO_DS_PORTAL_MAX_IDLE}" maxWait="${EXO_DS_PORTAL_MAX_WAIT}"
+              username="${EXO_DS_PORTAL_USERNAME}" password="${EXO_DS_PORTAL_PASSWORD}" driverClassName="${EXO_DS_PORTAL_DRIVER}" url="${EXO_DS_PORTAL_URL}"/>
+
   </GlobalNamingResources>
 
-  <!-- A "Service" is a collection of one or more "Connectors" that share
-       a single "Container" Note:  A "Service" is not itself a "Container", 
-       so you may not define subcomponents such as "Valves" at this level.
-       Documentation at /docs/config/service.html
-   -->
   <Service name="Catalina">
 
-    <!-- A "Connector" represents an endpoint by which requests are received
-         and responses are returned. Documentation at :
-         Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
-         Java AJP  Connector: /docs/config/ajp.html
-         APR (HTTP/AJP) Connector: /docs/apr.html
-         Define a non-SSL HTTP/1.1 Connector on port 8080
-    -->
-    <Connector port="8080" protocol="HTTP/1.1" maxHttpHeaderSize="8192"
-               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
-               enableLookups="false" redirectPort="8443" acceptCount="100"
-               connectionTimeout="20000" disableUploadTimeout="true"
-               compression="on" URIEncoding="UTF-8" emptySessionPath="true"
-               compressionMinSize="2048"
-               noCompressionUserAgents=".*MSIE 6.*"
-               compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
+    <Connector address="${EXO_HTTP_ADDRESS}" port="${EXO_HTTP_PORT}" protocol="${EXO_HTTP_PROTOCOL}"
+               enableLookups="false" redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
+               connectionTimeout="${EXO_HTTP_CX_TIMEOUT}" disableUploadTimeout="true"
+               URIEncoding="${EXO_TOMCAT_URI_ENCODING}" emptySessionPath="true"
+               compression="${EXO_HTTP_COMPRESSION}" compressionMinSize="${EXO_HTTP_COMPRESSION_MIN_SIZE}"
+               noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
 
-    <!-- Define a SSL HTTP/1.1 Connector on port 8443
-         This connector uses the JSSE configuration, when using APR, the 
-         connector should be using the OpenSSL style configuration
-         described in the APR documentation -->
-    <!--
-    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-               maxThreads="150" scheme="https" secure="true"
-               clientAuth="false" sslProtocol="TLS" />
-    -->
-
-    <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" emptySessionPath="true"/>
-
-
-    <!-- An Engine represents the entry point (within Catalina) that processes
-         every request.  The Engine implementation for Tomcat stand alone
-         analyzes the HTTP headers included with the request, and passes them
-         on to the appropriate Host (virtual host).
-         Documentation at /docs/config/engine.html -->
+    <Connector address="${EXO_AJP_ADDRESS}" port="${EXO_AJP_PORT}" protocol="${EXO_AJP_PROTOCOL}"
+               redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
+               URIEncoding="${EXO_TOMCAT_URI_ENCODING}" emptySessionPath="true"/>
 
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">         
-    --> 
-    <Engine name="Catalina" defaultHost="localhost">
-
-      <!--For clustering, please take a look at documentation at:
-          /docs/cluster-howto.html  (simple how to)
-          /docs/config/cluster.html (reference documentation) -->
-      <!--
-      <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
-      -->        
-
-      <!-- The request dumper valve dumps useful debugging information about
-           the request and response data received and sent by Tomcat.
-           Documentation at: /docs/config/valve.html -->
-      <!--
-      <Valve className="org.apache.catalina.valves.RequestDumperValve"/>
-      -->
-
-      <!-- This Realm uses the UserDatabase configured in the global JNDI
-           resources under the key "UserDatabase".  Any edits
-           that are performed against this UserDatabase are immediately
-           available for use by the Realm.  -->
-      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
-             resourceName="UserDatabase"/>
-
-      <!-- Define the default virtual host
-           Note: XML Schema validation will not work with Xerces 2.2.
-       -->
-      <Host name="localhost"  appBase="webapps"
-            unpackWARs="true" autoDeploy="true"
-            xmlValidation="false" xmlNamespaceAware="false">
-
-        <!-- SingleSignOn valve, share authentication between web applications
-             Documentation at: /docs/config/valve.html -->
-        
-        <!-- Enabled for IDE and Chat -->
-        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
-
-
-        <!-- Access log processes all example.
-             Documentation at: /docs/config/valve.html -->
-        <!--
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"  
-               prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
-        -->
-
+    -->
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="${EXO_TOMCAT_JVMROUTE_NAME}">
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">
+        <!-- SingleSignOn valve : Enabled for IDE -->
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
       </Host>
     </Engine>
   </Service>

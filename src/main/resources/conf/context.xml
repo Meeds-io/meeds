@@ -12,10 +12,6 @@
   <!--
   <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
   -->
-  <ResourceLink name="exo-jcr_portal"
-                global="exo-jcr_portal"
-                type="javax.sql.DataSource"/>
-  <ResourceLink name="exo-idm_portal"
-                global="exo-idm_portal"
-                type="javax.sql.DataSource"/>
+  <ResourceLink name="exo-jcr_portal" global="exo-jcr_portal" type="javax.sql.DataSource"/>
+  <ResourceLink name="exo-idm_portal" global="exo-idm_portal" type="javax.sql.DataSource"/>
 </Context>
