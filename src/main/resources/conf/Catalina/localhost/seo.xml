@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/ecms-apps-portlet-seo.war" />
+<Context docBase="${catalina.home}/wars/ecms-apps-portlet-seo.war" />

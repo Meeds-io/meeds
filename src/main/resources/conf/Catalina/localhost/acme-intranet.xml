@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/platform-sample-acme-intranet-webapp.war" />
+<Context docBase="${catalina.home}/wars/platform-sample-acme-intranet-webapp.war" />

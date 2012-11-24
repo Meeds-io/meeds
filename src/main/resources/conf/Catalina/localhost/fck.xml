@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/commons-fck.war" />
+<Context docBase="${catalina.home}/wars/commons-fck.war" />

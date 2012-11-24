@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/commons-extension-webapp.war" />
+<Context docBase="${catalina.home}/wars/commons-extension-webapp.war" />

@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/exo.portal.portlet.web.war" />
+<Context docBase="${catalina.home}/wars/exo.portal.portlet.web.war" />

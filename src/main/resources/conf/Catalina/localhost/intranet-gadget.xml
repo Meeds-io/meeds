@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/platform-sample-gadgets-sample-gadgets.war" />
+<Context docBase="${catalina.home}/wars/platform-sample-gadgets-sample-gadgets.war" />

@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/social-webapp-opensocial.war" />
+<Context docBase="${catalina.home}/wars/social-webapp-opensocial.war" />

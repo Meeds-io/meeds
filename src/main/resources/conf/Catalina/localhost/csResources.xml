@@ -19,4 +19,4 @@
 
 -->
 
-<Context docBase="${catalina.base}/wars/calendar-resources.war" />
+<Context docBase="${catalina.home}/wars/calendar-resources.war" />
