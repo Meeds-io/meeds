@@ -632,7 +632,7 @@
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
-      <version>1.14.9-GA-SNAPSHOT</version>
+      <version>1.14.10-GA-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.gatein.shindig</groupId>
