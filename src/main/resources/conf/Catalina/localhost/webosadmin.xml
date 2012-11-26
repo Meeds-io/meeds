@@ -18,5 +18,4 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
-<Context docBase="${catalina.home}/wars/webos-portlet-webosadmin.war" />
+<Context docBase="${catalina.home}/wars/webos-portlet-webosadmin-${org.exoplatform.webos.version}.war"/>

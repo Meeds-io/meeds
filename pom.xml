@@ -30,6 +30,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <org.apache.tomcat.version>6.0.36</org.apache.tomcat.version>
+    <org.crsh.version>1.1.0</org.crsh.version>
     <org.exoplatform.calendar.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.calendar.version>
     <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
     <org.exoplatform.ecms.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.ecms.version>
@@ -126,7 +127,7 @@
     <dependency>
       <groupId>org.crsh</groupId>
       <artifactId>crsh.jcr.exo</artifactId>
-      <version>1.1.0</version>
+      <version>${org.crsh.version}</version>
       <type>war</type>
     </dependency>
     <dependency>

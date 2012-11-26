@@ -18,12 +18,12 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
-<Context docBase="${catalina.home}/wars/exo.portal.web.portal.war" privileged='true'>
+<Context docBase="${catalina.home}/wars/exo.portal.web.portal-${org.gatein.portal.version}.war" privileged='true'>
   <Manager className='org.apache.catalina.session.PersistentManager' saveOnRestart='false'/>
-  <Realm className='org.apache.catalina.realm.JAASRealm' 
-         appName='gatein-domain' 
-         userClassNames='org.exoplatform.services.security.jaas.UserPrincipal' 
-         roleClassNames='org.exoplatform.services.security.jaas.RolePrincipal' 
-         debug='0' cache='false'/> 
-	 <Valve className='org.apache.catalina.authenticator.FormAuthenticator' characterEncoding='UTF-8'/></Context> 
+  <Realm className='org.apache.catalina.realm.JAASRealm'
+         appName='gatein-domain'
+         userClassNames='org.exoplatform.services.security.jaas.UserPrincipal'
+         roleClassNames='org.exoplatform.services.security.jaas.RolePrincipal'
+         debug='0' cache='false'/>
+  <Valve className='org.apache.catalina.authenticator.FormAuthenticator' characterEncoding='UTF-8'/>
+</Context>

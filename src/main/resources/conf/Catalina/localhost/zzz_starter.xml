@@ -19,4 +19,4 @@
 
 -->
 <!-- This context is hacky, named zzz_starter.xml to be started at the end -->
-<Context path="/starter" docBase="${catalina.home}/wars/exo.portal.starter.war.war" />
+<Context path="/starter" docBase="${catalina.home}/wars/exo.portal.starter.war-${org.gatein.portal.version}.war"/>

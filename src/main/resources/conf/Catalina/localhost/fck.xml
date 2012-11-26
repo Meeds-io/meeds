@@ -18,5 +18,4 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
-<Context docBase="${catalina.home}/wars/commons-fck.war" />
+<Context docBase="${catalina.home}/wars/commons-fck-${org.exoplatform.commons.version}.war"/>
