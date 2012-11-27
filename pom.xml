@@ -44,7 +44,6 @@
     <org.exoplatform.webos.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.webos.version>
     <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
     <org.gatein.portal.version>3.4.0.Final</org.gatein.portal.version>
-    <org.gatein.shindig.version>2.0.2-CP01</org.gatein.shindig.version>
     <org.gatein.wci.version>2.2.0-Beta02</org.gatein.wci.version>
   </properties>
   <dependencyManagement>
@@ -382,12 +381,6 @@
       <version>${org.exoplatform.ide.version}</version>
       <type>war</type>
     </dependency>
-    <!-- Why do we need it here ?? -->
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.web</artifactId>
-      <version>${org.exoplatform.jcr.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
@@ -636,13 +629,8 @@
       <artifactId>wiki-webapp</artifactId>
       <classifier>classes</classifier>
     </dependency>
-    <!-- Why do we need it here ?? -->
-    <dependency>
-      <groupId>org.gatein.shindig</groupId>
-      <artifactId>shindig-social-api</artifactId>
-      <version>${org.gatein.shindig.version}</version>
-    </dependency>
     <!-- Used by the integration webapp -->
+    <!-- ROOT and integration have to be moved as webapp modules into PLF -->
     <dependency>
       <groupId>org.gatein.wci</groupId>
       <artifactId>wci-tomcat6</artifactId>
