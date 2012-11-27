@@ -9,7 +9,7 @@
     <!-- Apache Tomcat Bundle -->
     <dependencySet>
       <includes>
-        <include>org.exoplatform.thirdparty.tomcat:apache-tomcat-skeleton:tar.gz</include>
+        <include>org.exoplatform.thirdparty.apache-tomcat:apache-tomcat-skeleton:zip</include>
       </includes>
       <outputDirectory></outputDirectory>
       <unpack>true</unpack>
@@ -19,7 +19,7 @@
         <excludes>
           <!-- We need to exclude everything we override -->
           <exclude>**/conf/server.xml</exclude>
-          <exclude>**/conf/context.xml</exclude>
+          <exclude>**/webapps/**</exclude>
         </excludes>
       </unpackOptions>
     </dependencySet>

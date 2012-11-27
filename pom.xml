@@ -587,10 +587,10 @@
       <classifier>classes</classifier>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.thirdparty.tomcat</groupId>
+      <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
       <artifactId>apache-tomcat-skeleton</artifactId>
       <version>${org.apache.tomcat.version}</version>
-      <type>tar.gz</type>
+      <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.webos</groupId>
