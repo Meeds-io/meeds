@@ -648,6 +648,11 @@
       <artifactId>wci-tomcat6</artifactId>
       <version>${org.gatein.wci.version}</version>
     </dependency>
+    <!-- Embedded database - for dev and demos only -->
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
