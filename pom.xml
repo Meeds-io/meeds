@@ -648,6 +648,12 @@
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
     </dependency>
+    <!-- used by org.exoplatform.portal:exo.portal.web.portal and org.exoplatform.portal:exo.portal.web.rest but not declared -->
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.framework.web</artifactId>
+      <version>${org.exoplatform.jcr.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
