@@ -651,6 +651,31 @@
   </dependencies>
   <build>
     <plugins>
+      <!-- We must take care to never grab these artifacts in our distribution -->
+      <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-banned-dependencies</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <bannedDependencies>
+                  <message>There are some banned dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
+                  <excludes>
+                    <exclude>org.apache.tomcat:*</exclude>
+                  </excludes>
+                </bannedDependencies>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
