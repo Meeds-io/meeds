@@ -635,6 +635,13 @@
       <groupId>org.gatein.wci</groupId>
       <artifactId>wci-tomcat6</artifactId>
       <version>${org.gatein.wci.version}</version>
+      <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>catalina</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- Embedded database - for dev and demos only -->
     <dependency>
