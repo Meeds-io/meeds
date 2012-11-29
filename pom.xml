@@ -7,11 +7,11 @@
     <version>9-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
-  <groupId>org.exoplatform.platform</groupId>
-  <artifactId>platform-packaging-tomcat</artifactId>
+  <groupId>org.exoplatform.platform.pkg</groupId>
+  <artifactId>platform-tomcat-standalone</artifactId>
   <version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo Platform Tomcat Standalone Packages</name>
+  <name>eXo Platform Tomcat Standalone Package</name>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-tomcat-standalone.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-tomcat-standalone.git</developerConnection>
