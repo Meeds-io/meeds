@@ -19,7 +19,7 @@
         <excludes>
           <!-- We need to exclude everything we override -->
           <exclude>**/conf/server.xml</exclude>
-          <exclude>**/conf/context.xml</exclude>
+          <exclude>**/conf/Catalina/localhost/*</exclude>
           <exclude>**/webapps/**</exclude>
         </excludes>
       </unpackOptions>
