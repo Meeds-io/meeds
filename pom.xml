@@ -643,6 +643,12 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <!-- Coming from gateIn ??? - org.gatein.web.redirect.implementation.RedirectHandlerImpl -->
+    <dependency>
+      <groupId>org.gatein.web</groupId>
+      <artifactId>redirect</artifactId>
+      <version>3.4.0.Final</version>
+    </dependency>
     <!-- Embedded database - for dev and demos only -->
     <dependency>
       <groupId>org.hsqldb</groupId>
