@@ -48,6 +48,14 @@
   </properties>
   <dependencyManagement>
     <dependencies>
+      <!-- Import versions from crsh project -->
+      <dependency>
+        <groupId>org.crsh</groupId>
+        <artifactId>crsh.parent</artifactId>
+        <version>${org.crsh.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!-- Import versions of external dependencies to use -->
       <dependency>
         <groupId>org.exoplatform</groupId>
@@ -130,23 +138,22 @@
       <version>${org.apache.tomcat.version}</version>
       <exclusions>
         <exclusion>
-          <groupId>org.apache.tomcat</groupId>
           <artifactId>tomcat-coyote</artifactId>
+          <groupId>org.apache.tomcat</groupId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.tomcat</groupId>
           <artifactId>tomcat-catalina</artifactId>
+          <groupId>org.apache.tomcat</groupId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.tomcat</groupId>
           <artifactId>tomcat-juli</artifactId>
+          <groupId>org.apache.tomcat</groupId>
         </exclusion>
       </exclusions>
     </dependency>
     <dependency>
       <groupId>org.crsh</groupId>
       <artifactId>crsh.jcr.exo</artifactId>
-      <version>${org.crsh.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
@@ -432,12 +439,6 @@
       <artifactId>platform-extension-resources</artifactId>
       <type>war</type>
     </dependency>
-    <!-- Tomcat listener to create portlet containers -->
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-pc-creator</artifactId>
-      <version>${project.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
@@ -522,6 +523,12 @@
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
       <classifier>classes</classifier>
+    </dependency>
+    <!-- Tomcat listener to create portlet containers -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-pc-creator</artifactId>
+      <version>${project.version}</version>
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
