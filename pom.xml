@@ -123,6 +123,26 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-catalina-jmx-remote</artifactId>
+      <version>${org.apache.tomcat.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-coyote</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-catalina</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-juli</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <dependency>
       <groupId>org.crsh</groupId>
       <artifactId>crsh.jcr.exo</artifactId>
@@ -687,6 +707,10 @@
                   <excludes>
                     <exclude>org.apache.tomcat:*</exclude>
                   </excludes>
+                  <includes>
+                    <!-- This artifact isn't by default in tomcat -->
+                    <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
+                  </includes>
                 </bannedDependencies>
               </rules>
               <fail>true</fail>

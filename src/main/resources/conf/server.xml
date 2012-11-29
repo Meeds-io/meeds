@@ -23,8 +23,8 @@
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
   <Listener className="org.apache.catalina.core.JasperListener"/>
   <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener"/>
-  <!--<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>-->
-  <!--<Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${EXO_TOMCAT_RMI_REGISTRY_PORT}" rmiServerPortPlatform="${EXO_TOMCAT_RMI_SERVER_PORT}" useLocalPorts="${EXO_TOMCAT_RMI_LOCAL_PORT}" />-->
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${EXO_TOMCAT_RMI_REGISTRY_PORT}" rmiServerPortPlatform="${EXO_TOMCAT_RMI_SERVER_PORT}" useLocalPorts="${EXO_TOMCAT_RMI_LOCAL_PORT}" />
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
 
   <GlobalNamingResources>
