@@ -381,6 +381,12 @@
       <version>${org.exoplatform.ide.version}</version>
       <type>war</type>
     </dependency>
+    <!-- used by org.exoplatform.portal:exo.portal.web.portal and org.exoplatform.portal:exo.portal.web.rest but not declared -->
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.framework.web</artifactId>
+      <version>${org.exoplatform.jcr.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
@@ -490,6 +496,12 @@
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
       <classifier>classes</classifier>
+    </dependency>
+    <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
+    <dependency>
+      <groupId>org.exoplatform.portal</groupId>
+      <artifactId>exo.portal.component.management</artifactId>
+      <version>${org.gatein.portal.version}</version>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.portal</groupId>
@@ -638,8 +650,8 @@
       <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
       <exclusions>
         <exclusion>
-          <groupId>org.apache.tomcat</groupId>
           <artifactId>catalina</artifactId>
+          <groupId>org.apache.tomcat</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -653,12 +665,6 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
-    </dependency>
-    <!-- used by org.exoplatform.portal:exo.portal.web.portal and org.exoplatform.portal:exo.portal.web.rest but not declared -->
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.web</artifactId>
-      <version>${org.exoplatform.jcr.version}</version>
     </dependency>
   </dependencies>
   <build>
