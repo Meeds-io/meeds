@@ -61,6 +61,8 @@
       <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">
         <!-- SingleSignOn valve : Enabled for IDE -->
         <Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
+        <!-- This Listener is responsible to create all portlet containers -->
+        <Listener className="org.exoplatform.platform.server.tomcat.PortalContainersCreator"/>
       </Host>
     </Engine>
   </Service>

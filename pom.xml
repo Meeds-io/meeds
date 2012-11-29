@@ -432,6 +432,12 @@
       <artifactId>platform-extension-resources</artifactId>
       <type>war</type>
     </dependency>
+    <!-- Tomcat listener to create portlet containers -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-pc-creator</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
@@ -550,12 +556,6 @@
     <dependency>
       <groupId>org.exoplatform.portal</groupId>
       <artifactId>exo.portal.portlet.web</artifactId>
-      <version>${org.gatein.portal.version}</version>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.portal</groupId>
-      <artifactId>exo.portal.starter.war</artifactId>
       <version>${org.gatein.portal.version}</version>
       <type>war</type>
     </dependency>
