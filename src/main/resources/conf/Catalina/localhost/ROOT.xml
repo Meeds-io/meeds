@@ -1,7 +1,6 @@
-<?xml version="1.0"?>
 <!--
 
-    Copyright (C) 2009 eXo Platform SAS.
+    Copyright (C) 2012 eXo Platform SAS.
     
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
@@ -19,14 +18,4 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-
-<!DOCTYPE web-app PUBLIC
-   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-   "http://java.sun.com/dtd/web-app_2_3.dtd">
-<web-app>
-  <servlet>
-     <servlet-name>ContainerServlet</servlet-name>
-     <servlet-class>org.gatein.wci.tomcat.TC6ContainerServlet</servlet-class>
-     <load-on-startup>1</load-on-startup>
-  </servlet>
-</web-app>
+<Context docBase="${catalina.home}/wars/platform-server-tomcat-root-webapp-${org.exoplatform.platform.version}.war"/>

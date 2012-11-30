@@ -44,7 +44,6 @@
     <org.exoplatform.webos.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.webos.version>
     <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
     <org.gatein.portal.version>3.4.0.Final</org.gatein.portal.version>
-    <org.gatein.wci.version>2.2.0-Beta02</org.gatein.wci.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -524,11 +523,31 @@
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
       <classifier>classes</classifier>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
+      <classifier>classes</classifier>
+    </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-server-tomcat-pc-creator</artifactId>
       <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-root-webapp</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-server-tomcat-root-webapp</artifactId>
+      <classifier>classes</classifier>
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
@@ -667,20 +686,6 @@
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
       <classifier>classes</classifier>
-    </dependency>
-    <!-- Used by the integration webapp -->
-    <!-- ROOT and integration have to be moved as webapp modules into PLF -->
-    <dependency>
-      <groupId>org.gatein.wci</groupId>
-      <artifactId>wci-tomcat6</artifactId>
-      <version>${org.gatein.wci.version}</version>
-      <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
-      <exclusions>
-        <exclusion>
-          <artifactId>catalina</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- Coming from gateIn ??? - org.gatein.web.redirect.implementation.RedirectHandlerImpl -->
     <dependency>
