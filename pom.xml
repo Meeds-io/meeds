@@ -29,7 +29,7 @@
     <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
-    <org.apache.tomcat.version>6.0.36</org.apache.tomcat.version>
+    <org.apache.tomcat.version>6.0.32</org.apache.tomcat.version>
     <org.crsh.version>1.1.0</org.crsh.version>
     <org.exoplatform.calendar.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.calendar.version>
     <org.exoplatform.commons.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.commons.version>
