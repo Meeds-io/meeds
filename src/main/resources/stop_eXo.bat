@@ -19,11 +19,39 @@
 @rem 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 @rem
  
-setlocal ENABLEDELAYEDEXPANSION
-rem Computes the absolute path of eXo
-for %%i in ( !%~f0! ) do set SERVER_DIR=%%~dpi
+﻿rem Guess CATALINA_HOME if not defined
+set "CURRENT_DIR=%cd%"
+if not "%CATALINA_HOME%" == "" goto gotHome
+set "CATALINA_HOME=%CURRENT_DIR%"
+if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
+cd ..
+set "CATALINA_HOME=%cd%"
+cd "%CURRENT_DIR%"
+:gotHome
+if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
+echo The CATALINA_HOME environment variable is not defined correctly
+echo This environment variable is needed to run this program
+goto end
+:okHome
 
-cd %SERVER_DIR%bin
+set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
 
-rem Launches the server
-call catalina.bat stop
+rem Check that target executable exists
+if exist "%EXECUTABLE%" goto okExec
+echo Cannot find "%EXECUTABLE%"
+echo This file is needed to run this program
+goto end
+:okExec
+
+rem Get remaining unshifted command line arguments and save them in the
+set CMD_LINE_ARGS=
+:setArgs
+if ""%1""=="""" goto doneSetArgs
+set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
+shift
+goto setArgs
+:doneSetArgs
+
+call "%EXECUTABLE%" stop %CMD_LINE_ARGS%
+
+:end
