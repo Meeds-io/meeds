@@ -9,6 +9,12 @@
     <fileSet>
       <directory>${project.basedir}/target/${project.artifactId}-${project.version}</directory>
       <outputDirectory></outputDirectory>
+      <excludes>
+        <exclude>**/webapps/*</exclude>
+        <exclude>**/temp/*</exclude>
+        <exclude>**/logs/*</exclude>
+        <exclude>**/work/*</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
 </assembly>

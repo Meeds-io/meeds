@@ -44,6 +44,10 @@
     <org.exoplatform.webos.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.webos.version>
     <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
     <org.gatein.portal.version>3.4.0.Final</org.gatein.portal.version>
+    <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
+    <org.slf4j.version>1.7.2</org.slf4j.version>
+    <!-- LOGBACK implementation to use to manage logs -->
+    <ch.qas.logback.version>1.0.7</ch.qas.logback.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -130,6 +134,13 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- Logging implementation : http://logback.qos.ch/ -->
+    <!-- Is configured from conf/logback.groovy -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${ch.qas.logback.version}</version>
+    </dependency>
     <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
     <dependency>
       <groupId>org.apache.tomcat</groupId>
@@ -164,6 +175,13 @@
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-extension-webapp</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
@@ -184,6 +202,18 @@
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-webapp</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+          <artifactId>log4j</artifactId>
+          <groupId>log4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -314,6 +344,13 @@
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-core-webapp</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -334,6 +371,18 @@
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-packaging-wcm-webapp</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+          <artifactId>log4j</artifactId>
+          <groupId>log4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -412,6 +461,13 @@
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
       <version>${org.exoplatform.jcr.version}</version>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -432,6 +488,13 @@
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-platformNavigation</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
+          <artifactId>slf4j-jdk14</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -452,6 +515,13 @@
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-webapp</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+          <artifactId>log4j</artifactId>
+          <groupId>log4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -622,6 +692,13 @@
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-opensocial</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -687,6 +764,13 @@
       <artifactId>wiki-webapp</artifactId>
       <classifier>classes</classifier>
     </dependency>
+    <!-- TODO : To remove after GateIn 3.5.0 upgrade -->
+    <!-- Forced upgrade to fix a bug in GateIn commons-logging to discover SLF4J -->
+    <dependency>
+      <groupId>org.gatein.common</groupId>
+      <artifactId>common-logging</artifactId>
+      <version>2.1.0.Final</version>
+    </dependency>
     <!-- Coming from gateIn ??? - org.gatein.web.redirect.implementation.RedirectHandlerImpl -->
     <dependency>
       <groupId>org.gatein.web</groupId>
@@ -697,6 +781,32 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
+    </dependency>
+    <!-- Use SLF4J and not commons-logging -->
+    <!-- commons-logging must be removed from dependencies -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${org.slf4j.version}</version>
+    </dependency>
+    <!-- Redirect everything from JUL to SLF4J -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>${org.slf4j.version}</version>
+    </dependency>
+    <!-- Use SLF4J and not log4j -->
+    <!-- log4j must be removed from dependencies -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${org.slf4j.version}</version>
+    </dependency>
+    <!-- SLF4J API -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${org.slf4j.version}</version>
     </dependency>
   </dependencies>
   <build>
@@ -718,6 +828,17 @@
                   <message>There are some banned dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
                   <excludes>
                     <exclude>org.apache.tomcat:*</exclude>
+                    <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+                    <exclude>commons-logging:*</exclude>
+                    <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+                    <exclude>log4j:*</exclude>
+                    <exclude>org.apache.logging.log4j:*</exclude>
+                    <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                    <exclude>org.slf4j:slf4j-jcl:*</exclude>
+                    <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                    <exclude>org.slf4j:slf4j-logj12:*</exclude>
+                    <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
+                    <exclude>org.slf4j:slf4j-jdk14:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->

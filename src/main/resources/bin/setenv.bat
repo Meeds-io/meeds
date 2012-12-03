@@ -21,8 +21,8 @@ rem ########################################
 rem Default EXO PLATFORM configuration
 rem ########################################
 set EXO_PROFILES=default
-set EXO_CONF_DIR_NAME=gatein/conf
-set EXO_CONF_DIR=%CATALINA_HOME%/%EXO_CONF_DIR_NAME%
+set EXO_CONF_DIR_NAME=gatein\conf
+set EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
 
 rem ########################################
 rem Default JVM configuration
@@ -44,7 +44,7 @@ set EXO_TOMCAT_URI_ENCODING=UTF-8
 set EXO_TOMCAT_RMI_REGISTRY_PORT=10001
 set EXO_TOMCAT_RMI_SERVER_PORT=10002
 set EXO_TOMCAT_RMI_LOCAL_PORT=false
-set EXO_TOMCAT_JVMROUTE_NAME=
+set EXO_TOMCAT_JVMROUTE_NAME=""
 
 rem HTTP configuration
 set EXO_HTTP_PORT=8080
@@ -70,7 +70,7 @@ set EXO_DS_IDM_PASSWORD=""
 set EXO_DS_IDM_MAX_ACTIVE=20
 set EXO_DS_IDM_MAX_IDLE=10
 set EXO_DS_IDM_MAX_WAIT=10000
-set EXO_DS_IDM_URL="jdbc:hsqldb:file:%CATALINA_HOME%/gatein/data/hsql/exo-idm_portal"
+set EXO_DS_IDM_URL="jdbc:hsqldb:file:%CATALINA_HOME%\gatein\data\hsql\exo-idm_portal"
 
 rem Datasource PORTAL
 set EXO_DS_PORTAL_DRIVER=org.hsqldb.jdbcDriver
@@ -79,7 +79,7 @@ set EXO_DS_PORTAL_PASSWORD=""
 set EXO_DS_PORTAL_MAX_ACTIVE=20
 set EXO_DS_PORTAL_MAX_IDLE=10
 set EXO_DS_PORTAL_MAX_WAIT=10000
-set EXO_DS_PORTAL_URL="jdbc:hsqldb:file:%CATALINA_HOME%/gatein/data/hsql/exo-jcr_portal"
+set EXO_DS_PORTAL_URL="jdbc:hsqldb:file:%CATALINA_HOME%\gatein\data\hsql\exo-jcr_portal"
 
 rem ########################################
 rem Export the needed system properties for server.xml
@@ -124,17 +124,26 @@ set EXO_SERVER_XML_OPTS=%EXO_SERVER_XML_OPTS% -DEXO_DS_PORTAL_URL=%EXO_DS_PORTAL
 rem set EXO_SERVER_XML_OPTS=%EXO_SERVER_XML_OPTS% -D=%%
 
 rem ########################################
+rem Logs customization (Managed by slf4J\logback instead of tomcat-juli & co)
+rem ########################################
+rem Deactivate j.u.l
+set LOGGING_MANAGER=-Dnop
+rem Add SLF4J+Logback libraries in the bootstrap to have access to them as soon as the server starts
+set CLASSPATH=%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar;%CATALINA_HOME%\lib\jul-to-slf4j-${org.slf4j.version}.jar;%CATALINA_HOME%\lib\logback-core-${ch.qas.logback.version}.jar;%CATALINA_HOME%\lib\logback-classic-${ch.qas.logback.version}.jar;
+
+rem ########################################
 rem Compute the CATALINA_OPTS
 rem ########################################
-set CATALINA_OPTS=-Dexo.profiles="%EXO_PROFILES%"
 set CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
-set CATALINA_OPTS=%CATALINA_OPTS% -Dorg.apache.commons.logging.Log="%EXO_COMMONS_LOGGING_IMPL%"
-set CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%/conf/jaas.conf"
+set CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
+set CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
 set CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
-set CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%/src.zip" -Djre.lib="%JAVA_HOME%/jre/lib"
+set CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
+rem Logback configuration file
+set CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%CATALINA_HOME%\conf\logback-win.xml"
 rem Define the XML Parser depending on the JVM vendor
 if %EXO_JVM_VENDOR%==IBM (
-	set CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory
+  set CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory
 ) else (
   set CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
 )

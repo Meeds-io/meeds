@@ -144,13 +144,23 @@ EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_URL=${EXO_DS_PORTAL_
 #EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -D=${}"
 
 ########################################
+# Logs customization (Managed by slf4J/logback instead of tomcat-juli & co)
+########################################
+# Deactivate j.u.l
+LOGGING_MANAGER=-Dnop
+# Add SLF4J+Logback libraries in the bootstrap to have access to them as soon as the server starts
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/slf4j-api-${org.slf4j.version}.jar:"$CATALINA_HOME"/lib/jul-to-slf4j-${org.slf4j.version}.jar:"$CATALINA_HOME"/lib/logback-core-${ch.qas.logback.version}.jar:"$CATALINA_HOME"/lib/logback-classic-${ch.qas.logback.version}.jar
+
+########################################
 # Compute the CATALINA_OPTS
 ########################################
-CATALINA_OPTS="-Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
+CATALINA_OPTS="${CATALINA_OPTS} -Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.security.auth.login.config=${CATALINA_HOME}/conf/jaas.conf"
 CATALINA_OPTS="${CATALINA_OPTS} -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
+# Logback configuration file
+CATALINA_OPTS="${CATALINA_OPTS} -Dlogback.configurationFile=${CATALINA_HOME}/conf/logback-unix.xml"
 # Define the XML Parser depending on the JVM vendor
 if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
   CATALINA_OPTS="${CATALINA_OPTS} -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory"
@@ -161,4 +171,3 @@ CATALINA_OPTS="${CATALINA_OPTS} -Djava.net.preferIPv4Stack=true"
 # Disable EHCache update checker
 CATALINA_OPTS="${CATALINA_OPTS} -Dnet.sf.ehcache.skipUpdateCheck=true"
 CATALINA_OPTS="${CATALINA_OPTS} ${EXO_SERVER_XML_OPTS}"
-export CATALINA_OPTS

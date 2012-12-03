@@ -19,7 +19,9 @@
 @rem 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 @rem
  
-﻿rem Guess CATALINA_HOME if not defined
+if "%OS%" == "Windows_NT" setlocal
+
+rem Guess CATALINA_HOME if not defined
 set "CURRENT_DIR=%cd%"
 if not "%CATALINA_HOME%" == "" goto gotHome
 set "CATALINA_HOME=%CURRENT_DIR%"
