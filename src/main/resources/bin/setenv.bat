@@ -34,11 +34,6 @@ set EXO_JVM_PERMSIZE_MAX=256m
 set EXO_JVM_PERMSIZE_MIN=128m
 
 rem ########################################
-rem Default Various configuration
-rem ########################################
-set EXO_COMMONS_LOGGING_IMPL=org.apache.commons.logging.impl.SimpleLog
-
-rem ########################################
 rem Default Tomcat configuration
 rem ########################################
 rem Global Tomcat settings

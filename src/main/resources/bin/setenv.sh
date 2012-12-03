@@ -54,11 +54,6 @@ EXO_JVM_PERMSIZE_MAX=${EXO_JVM_PERMSIZE_MAX:-256m}
 EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 
 ########################################
-# Default Various configuration
-########################################
-EXO_COMMONS_LOGGING_IMPL=${EXO_COMMONS_LOGGING_IMPL:-"org.apache.commons.logging.impl.SimpleLog"}
-
-########################################
 # Default Tomcat configuration
 ########################################
 # Global Tomcat settings
@@ -153,7 +148,6 @@ EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_URL=${EXO_DS_PORTAL_
 ########################################
 CATALINA_OPTS="-Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
-CATALINA_OPTS="${CATALINA_OPTS} -Dorg.apache.commons.logging.Log=${EXO_COMMONS_LOGGING_IMPL}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.security.auth.login.config=${CATALINA_HOME}/conf/jaas.conf"
 CATALINA_OPTS="${CATALINA_OPTS} -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
