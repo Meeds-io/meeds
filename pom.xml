@@ -47,7 +47,7 @@
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.2</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
-    <ch.qas.logback.version>1.0.7</ch.qas.logback.version>
+    <ch.qas.logback.version>1.0.8</ch.qas.logback.version>
   </properties>
   <dependencyManagement>
     <dependencies>
