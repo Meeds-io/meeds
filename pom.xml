@@ -181,6 +181,11 @@
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
         </exclusion>
+        <exclusion>
+          <!-- Coming from picocontainer:picocontainer:jar:1.1 (TODO : To fix) -->
+          <artifactId>xstream</artifactId>
+          <groupId>xstream</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -212,6 +217,11 @@
           <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
           <artifactId>log4j</artifactId>
           <groupId>log4j</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- Waiting for fix : https://jira.exoplatform.org/browse/COR-275 -->
+          <artifactId>xstream</artifactId>
+          <groupId>xstream</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -520,6 +530,11 @@
           <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
           <artifactId>log4j</artifactId>
           <groupId>log4j</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- Waiting for fix : https://jira.exoplatform.org/browse/COR-275 -->
+          <artifactId>xstream</artifactId>
+          <groupId>xstream</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -839,6 +854,8 @@
                     <exclude>org.slf4j:slf4j-logj12:*</exclude>
                     <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
                     <exclude>org.slf4j:slf4j-jdk14:*</exclude>
+                    <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
+                    <exclude>xstream:xstream:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->
