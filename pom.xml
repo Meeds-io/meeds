@@ -856,6 +856,9 @@
                     <exclude>org.slf4j:slf4j-jdk14:*</exclude>
                     <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
                     <exclude>xstream:xstream:*</exclude>
+                    <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
+                    <exclude>javax.servlet:servlet-api:*</exclude>
+                    <exclude>com.google.gwt:gwt-servlet:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->
