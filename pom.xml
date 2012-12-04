@@ -208,6 +208,11 @@
           <artifactId>servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
         </exclusion>
+        <exclusion>
+          <!-- To remove from org.gatein.pc:pc-portlet:jar (Issue to open) -->
+          <artifactId>jsp-api</artifactId>
+          <groupId>javax.servlet.jsp</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -239,6 +244,11 @@
           <!-- To remove from org.exoplatform.core:exo.core.component.security.core (Issue to open) -->
           <artifactId>servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- To remove from org.gatein.pc:pc-portlet:jar (Issue to open) -->
+          <artifactId>jsp-api</artifactId>
+          <groupId>javax.servlet.jsp</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -673,6 +683,13 @@
       <groupId>org.exoplatform.portal</groupId>
       <artifactId>exo.portal.component.management</artifactId>
       <version>${org.gatein.portal.version}</version>
+      <exclusions>
+        <exclusion>
+          <!-- To remove from org.exoplatform.ws:exo.ws.rest.core:jar (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.portal</groupId>
@@ -893,6 +910,7 @@
                     <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
                     <exclude>javax.servlet:servlet-api:*</exclude>
                     <exclude>com.google.gwt:gwt-servlet:*</exclude>
+                    <exclude>javax.servlet.jsp:jsp-api:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->
