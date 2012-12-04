@@ -186,6 +186,11 @@
           <artifactId>xstream</artifactId>
           <groupId>xstream</groupId>
         </exclusion>
+        <exclusion>
+          <!-- To remove from org.exoplatform.ws:exo.ws.rest.ext (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -197,6 +202,13 @@
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-resources</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- To remove from org.gatein.captcha:simplecaptcha:jar (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
@@ -223,6 +235,11 @@
           <artifactId>xstream</artifactId>
           <groupId>xstream</groupId>
         </exclusion>
+        <exclusion>
+          <!-- To remove from org.exoplatform.core:exo.core.component.security.core (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -304,6 +321,13 @@
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-presentation</artifactId>
       <classifier>classes</classifier>
+      <exclusions>
+        <exclusion>
+          <!-- To remove from org.exoplatform.jcr:exo.jcr.component.webdav:jar (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -359,6 +383,11 @@
           <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- To remove from org.xcmis:xcmis-restatom:jar (Issue to open) which is using org.apache.abdera:abdera-server:jar -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -535,6 +564,11 @@
           <!-- Waiting for fix : https://jira.exoplatform.org/browse/COR-275 -->
           <artifactId>xstream</artifactId>
           <groupId>xstream</groupId>
+        </exclusion>
+        <exclusion>
+          <!-- To remove from org.exoplatform.ide:exo-ide-extension-groovy-server (Issue to open) -->
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
         </exclusion>
       </exclusions>
     </dependency>
