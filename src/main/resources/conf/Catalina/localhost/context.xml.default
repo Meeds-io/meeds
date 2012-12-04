@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!-- The contents of this file will be loaded for each web application -->
-<Context debug="0" reloadable="true" crossContext="true">
+<Context reloadable="true" crossContext="true" sessionCookiePath="/" xmlValidation="false" xmlNamespaceAware="false">
   <!-- Default set of monitored resources -->
   <WatchedResource>WEB-INF/web.xml</WatchedResource>
   <!-- Disable session persistence across Tomcat restarts -->

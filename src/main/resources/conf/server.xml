@@ -30,11 +30,12 @@
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
   <!--
   The JMX Remote Lifecycle Listener fixes the ports used by the JMX/RMI Server making things much simpler if you need to connect jconsole
   or a similar tool to a remote Tomcat instance that is running behind a firewall. Only these ports are configured via the listener.
   The remainder of the configuration is via the standard system properties for configuring JMX.
-  http://tomcat.apache.org/tomcat-6.0-doc/config/listeners.html#JMX_Remote_Lifecycle_Listener_-_org.apache.catalina.mbeans.JmxRemoteLifecycleListener
+  http://tomcat.apache.org/tomcat-7.0-doc/config/listeners.html#JMX_Remote_Lifecycle_Listener_-_org.apache.catalina.mbeans.JmxRemoteLifecycleListener
   NOTE : eXo platform Standalone Tomcat distribution bundles the required catalina-jmx-remote.jar.
   -->
   <!--
@@ -60,19 +61,19 @@
     <Connector address="${EXO_HTTP_ADDRESS}" port="${EXO_HTTP_PORT}" protocol="${EXO_HTTP_PROTOCOL}"
                enableLookups="false" redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
                connectionTimeout="${EXO_HTTP_CX_TIMEOUT}" disableUploadTimeout="true"
-               URIEncoding="${EXO_TOMCAT_URI_ENCODING}" emptySessionPath="true"
+               URIEncoding="${EXO_TOMCAT_URI_ENCODING}"
                compression="${EXO_HTTP_COMPRESSION}" compressionMinSize="${EXO_HTTP_COMPRESSION_MIN_SIZE}"
                noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
 
     <Connector address="${EXO_AJP_ADDRESS}" port="${EXO_AJP_PORT}" protocol="${EXO_AJP_PROTOCOL}"
                redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
-               URIEncoding="${EXO_TOMCAT_URI_ENCODING}" emptySessionPath="true"/>
+               URIEncoding="${EXO_TOMCAT_URI_ENCODING}"/>
 
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
-    <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">         
+    <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">
     -->
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="${EXO_TOMCAT_JVMROUTE_NAME}">
-      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
         <!-- SingleSignOn valve : Enabled for IDE -->
         <Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
         <!-- This Listener is responsible to create all portlet containers -->
@@ -80,4 +81,5 @@
       </Host>
     </Engine>
   </Service>
+
 </Server>
