@@ -47,7 +47,7 @@
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.2</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
-    <ch.qas.logback.version>1.0.8</ch.qas.logback.version>
+    <ch.qas.logback.version>1.0.9</ch.qas.logback.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -135,22 +135,11 @@
   </dependencyManagement>
   <dependencies>
     <!-- Logging implementation : http://logback.qos.ch/ -->
-    <!-- Is configured from conf/logback.groovy -->
+    <!-- Is configured from conf/logback.xml -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${ch.qas.logback.version}</version>
-      <!-- Don't import tomcat deps -->
-      <exclusions>
-        <exclusion>
-          <artifactId>tomcat-juli</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>tomcat-util</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
     <dependency>
