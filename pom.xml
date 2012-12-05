@@ -48,6 +48,9 @@
     <org.slf4j.version>1.7.2</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
     <ch.qas.logback.version>1.0.9</ch.qas.logback.version>
+    <!-- Additional LOGBACK dependencies -->
+    <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
+    <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -160,6 +163,12 @@
           <groupId>org.apache.tomcat</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <!-- Required by conditional processing in logback -->
+    <dependency>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
+      <version>${org.codehaus.janino.version}</version>
     </dependency>
     <dependency>
       <groupId>org.crsh</groupId>
@@ -829,6 +838,12 @@
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
       <classifier>classes</classifier>
+    </dependency>
+    <!-- Required by logback for colorized console on windows -->
+    <dependency>
+      <groupId>org.fusesource.jansi</groupId>
+      <artifactId>jansi</artifactId>
+      <version>${org.fusesource.jansi.version}</version>
     </dependency>
     <!-- TODO : To remove after GateIn 3.5.0 upgrade -->
     <!-- Forced upgrade to fix a bug in GateIn commons-logging to discover SLF4J -->

@@ -1,21 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Logback ${ch.qas.logback.version} configuration file.
+For more details see : http://logback.qos.ch/manual/configuration.html
+-->
 <configuration>
+  <!-- Load configuration properties to customize this setup -->
+  <property file="${exo.conf.dir}/configuration.properties"/>
+  <!-- This is activated by default on unix like systems and windows 32b -->
+  <if condition='property("os.name").contains("Windows") &amp;&amp; property("os.arch").contains("64")'>
+    <then>
+      <!-- Colorization of logs isn't activated by default on Windows 64b -->
+      <!-- There are various issues with it like http://jira.qos.ch/browse/LOGBACK-762 -->
+      <property name="exo.logs.console.colorized" value="${exo.logs.console.colorized:-false}"/>
+    </then>
+    <else>
+      <property name="exo.logs.console.colorized" value="${exo.logs.console.colorized:-true}"/>
+    </else>
+  </if>
+  <if condition='"true".equals(property("exo.logs.console.colorized"))'>
+    <then>
+      <!-- Colorized logs -->
+      <property name="exo.logs.console.appender.pattern.default" value="%d{HH:mm:ss.SSS} %highlight(%-5level) %msg %cyan([%logger{30}&lt;%thread&gt;]) %n"/>
+      <if condition='property("os.name").contains("Windows")'>
+        <then>
+          <!-- On Windows machines setting withJansi to true enables ANSI color code interpretation by the Jansi library. -->
+          <property name="exo.logs.console.jansi.activate" value="true"/>
+        </then>
+        <else>
+          <property name="exo.logs.console.jansi.activate" value="false"/>
+        </else>
+      </if>
+    </then>
+    <else>
+      <property name="exo.logs.console.appender.pattern.default" value="%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n}"/>
+      <property name="exo.logs.console.jansi.activate" value="false"/>
+    </else>
+  </if>
+  <property name="exo.logs.file.appender.pattern.default" value="%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n"/>
   <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
     <resetJUL>true</resetJUL>
   </contextListener>
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>${exo.logs.console.jansi.activate:-false}</withJansi>
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n</pattern>
+      <pattern>${exo.logs.console.appender.pattern:-${exo.logs.console.appender.pattern.default}}</pattern>
     </encoder>
   </appender>
   <appender name="FILE-CATALINA" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${catalina.base}\logs\catalina.log</file>
+    <file>${catalina.base}/logs/catalina.log</file>
     <append>true</append>
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n</pattern>
+      <pattern>${exo.logs.file.appender.pattern:-${exo.logs.file.appender.pattern.default}}</pattern>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${catalina.base}\logs\catalina-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+      <fileNamePattern>${catalina.base}/logs/catalina-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
       <maxHistory>60<!-- days --></maxHistory>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>
@@ -23,13 +61,13 @@
     </rollingPolicy>
   </appender>
   <appender name="FILE-LOCALHOST" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${catalina.base}\logs\localhost.log</file>
+    <file>${catalina.base}/logs/localhost.log</file>
     <append>true</append>
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n</pattern>
+      <pattern>${exo.logs.file.appender.pattern:-${exo.logs.file.appender.pattern.default}}</pattern>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${catalina.base}\logs\localhost-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+      <fileNamePattern>${catalina.base}/logs/localhost-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
       <maxHistory>60<!-- days --></maxHistory>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>
@@ -37,13 +75,13 @@
     </rollingPolicy>
   </appender>
   <appender name="FILE-GATEIN" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${catalina.base}\logs\gatein.log</file>
+    <file>${catalina.base}/logs/gatein.log</file>
     <append>true</append>
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n</pattern>
+      <pattern>${exo.logs.file.appender.pattern:-${exo.logs.file.appender.pattern.default}}</pattern>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${catalina.base}\logs\gatein-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+      <fileNamePattern>${catalina.base}/logs/gatein-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
       <maxHistory>60<!-- days --></maxHistory>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>2MB</maxFileSize>

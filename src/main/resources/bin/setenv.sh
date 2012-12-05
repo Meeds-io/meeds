@@ -44,6 +44,13 @@ EXO_PROFILES=${EXO_PROFILES:-"default"}
 EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
 EXO_CONF_DIR=${EXO_CONF_DIR:-"${CATALINA_HOME}/${EXO_CONF_DIR_NAME}"}
 
+
+########################################
+# Default Logs configuration
+########################################
+# Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
+EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-${CATALINA_HOME}/conf/logback.xml}
+
 ########################################
 # Default JVM configuration
 ########################################
@@ -104,7 +111,7 @@ EXO_DS_PORTAL_URL=${EXO_DS_PORTAL_URL:-"jdbc:hsqldb:file:${CATALINA_HOME}/gatein
 ########################################
 # Export the needed system properties for server.xml
 ########################################
-EXO_SERVER_XML_OPTS="-DEXO_TOMCAT_SHUTDOWN_PORT=${EXO_TOMCAT_SHUTDOWN_PORT}"
+EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_TOMCAT_SHUTDOWN_PORT=${EXO_TOMCAT_SHUTDOWN_PORT}"
 EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_TOMCAT_SHUTDOWN_KEY=${EXO_TOMCAT_SHUTDOWN_KEY}"
 EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_TOMCAT_REDIRECT_PORT=${EXO_TOMCAT_REDIRECT_PORT}"
 EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_TOMCAT_URI_ENCODING=${EXO_TOMCAT_URI_ENCODING}"
@@ -148,8 +155,16 @@ EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_URL=${EXO_DS_PORTAL_
 ########################################
 # Deactivate j.u.l
 LOGGING_MANAGER=-Dnop
-# Add SLF4J+Logback libraries in the bootstrap to have access to them as soon as the server starts
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/slf4j-api-${org.slf4j.version}.jar:"$CATALINA_HOME"/lib/jul-to-slf4j-${org.slf4j.version}.jar:"$CATALINA_HOME"/lib/logback-core-${ch.qas.logback.version}.jar:"$CATALINA_HOME"/lib/logback-classic-${ch.qas.logback.version}.jar
+# Add additional bootstrap entries for logging purpose using SLF4J+Logback
+# SLF4J deps
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/slf4j-api-${org.slf4j.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/jul-to-slf4j-${org.slf4j.version}.jar
+# LogBack deps
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/logback-core-${ch.qas.logback.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/logback-classic-${ch.qas.logback.version}.jar
+# Janino deps (used by logback for conditional processing in the config file)
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/janino-${org.codehaus.janino.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/commons-compiler-${org.codehaus.janino.version}.jar
 
 ########################################
 # Compute the CATALINA_OPTS
@@ -160,7 +175,7 @@ CATALINA_OPTS="${CATALINA_OPTS} -Djava.security.auth.login.config=${CATALINA_HOM
 CATALINA_OPTS="${CATALINA_OPTS} -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Logback configuration file
-CATALINA_OPTS="${CATALINA_OPTS} -Dlogback.configurationFile=${CATALINA_HOME}/conf/logback-unix.xml"
+CATALINA_OPTS="${CATALINA_OPTS} -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
 # Define the XML Parser depending on the JVM vendor
 if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
   CATALINA_OPTS="${CATALINA_OPTS} -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory"
