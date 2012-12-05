@@ -920,7 +920,6 @@
                     <exclude>xstream:xstream:*</exclude>
                     <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
                     <exclude>javax.servlet:servlet-api:*</exclude>
-                    <exclude>com.google.gwt:gwt-servlet:*</exclude>
                     <exclude>com.google.gwt:gwt-user:*</exclude>
                     <exclude>javax.servlet.jsp:jsp-api:*</exclude>
                   </excludes>
