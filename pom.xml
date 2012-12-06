@@ -259,6 +259,21 @@
           <artifactId>jsp-api</artifactId>
           <groupId>javax.servlet.jsp</groupId>
         </exclusion>
+        <!-- To remove from org.exoplatform.kernel:exo.kernel.component.common:jar (TODO : Issue to open) -->
+        <exclusion>
+          <artifactId>exo.tool.framework.junit</artifactId>
+          <groupId>org.exoplatform.tool</groupId>
+        </exclusion>
+        <!-- To remove from com.google.javascript:closure-compiler:jar used by org.exoplatform.portal:exo.portal.component.web.resources:jar (TODO : Should be done in gatein master - dep to upgrade ?) -->
+        <exclusion>
+          <artifactId>junit</artifactId>
+          <groupId>junit</groupId>
+        </exclusion>
+        <!-- To remove from picocontainer:picocontainer:jar used by org.exoplatform.calendar:calendar-service:jar (TODO : Exclude ? Upgrade ?) -->
+        <exclusion>
+          <artifactId>jmock</artifactId>
+          <groupId>jmock</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -588,6 +603,11 @@
           <!-- To remove from org.exoplatform.ide:exo-ide-extension-groovy-server (Issue to open) -->
           <artifactId>servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
+        </exclusion>
+        <!-- To remove from org.chromattic:chromattic.groovy:jar (TODO : Issue to open) -->
+        <exclusion>
+          <artifactId>junit</artifactId>
+          <groupId>junit</groupId>
         </exclusion>
       </exclusions>
     </dependency>
