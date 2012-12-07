@@ -41,7 +41,6 @@
     <org.exoplatform.jcr.version>1.14.10-GA-SNAPSHOT</org.exoplatform.jcr.version>
     <org.exoplatform.platform.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.platform.version>
     <org.exoplatform.social.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.social.version>
-    <org.exoplatform.webos.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.webos.version>
     <org.exoplatform.wiki.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.wiki.version>
     <org.gatein.portal.version>3.4.0.Final</org.gatein.portal.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
@@ -800,24 +799,6 @@
       <artifactId>apache-tomcat-skeleton</artifactId>
       <version>${org.apache.tomcat.version}</version>
       <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.webos</groupId>
-      <artifactId>webos-extension-war</artifactId>
-      <version>${org.exoplatform.webos.version}</version>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.webos</groupId>
-      <artifactId>webos-portlet-webosadmin</artifactId>
-      <version>${org.exoplatform.webos.version}</version>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.webos</groupId>
-      <artifactId>webos-resources</artifactId>
-      <version>${org.exoplatform.webos.version}</version>
-      <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
