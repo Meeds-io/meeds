@@ -934,9 +934,16 @@
                     <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
                     <exclude>xstream:xstream:*</exclude>
                     <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
-                    <exclude>javax.servlet:servlet-api:*</exclude>
+                    <exclude>javax.servlet:*</exclude>
                     <exclude>com.google.gwt:gwt-user:*</exclude>
-                    <exclude>javax.servlet.jsp:jsp-api:*</exclude>
+                    <exclude>javax.servlet.jsp:*</exclude>
+                    <!-- Testing stuffs should never come here -->
+                    <exclude>junit:*</exclude>
+                    <exclude>org.testng:*</exclude>
+                    <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
+                    <exclude>org.jmock:*</exclude>
+                    <exclude>jmock:*</exclude>
+                    <exclude>org:mockito:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->
