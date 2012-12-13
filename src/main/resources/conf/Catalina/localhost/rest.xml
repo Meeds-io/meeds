@@ -18,7 +18,7 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<Context docBase="${catalina.home}/wars/exo.portal.web.rest-${org.gatein.portal.version}.war">
+<Context docBase="${catalina.home}/wars/exo.portal.web.rest.war">
   <Manager className='org.apache.catalina.session.PersistentManager' saveOnRestart='false'/>
   <Realm className='org.apache.catalina.realm.JAASRealm'
          appName='gatein-domain'

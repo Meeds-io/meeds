@@ -18,4 +18,4 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<Context docBase="${catalina.home}/wars/platform-server-tomcat-root-webapp-${org.exoplatform.platform.version}.war"/>
+<Context docBase="${catalina.home}/wars/platform-server-tomcat-root-webapp.war"/>

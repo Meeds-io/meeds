@@ -1,5 +1,5 @@
 
-Thank you for downloading eXo Platform ${project.version}.
+Thank you for downloading eXo Platform ${org.exoplatform.platform.version}.
 
 Follow the installation procedure and start eXo Platform 3.5 now!
 

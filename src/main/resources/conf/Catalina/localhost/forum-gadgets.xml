@@ -18,4 +18,4 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<Context docBase="${catalina.home}/wars/forum-gadgets-${org.exoplatform.forum.version}.war"/>
+<Context docBase="${catalina.home}/wars/forum-gadgets.war"/>
