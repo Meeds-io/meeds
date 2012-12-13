@@ -9,7 +9,7 @@
   </parent>
   <groupId>org.exoplatform.platform.pkg</groupId>
   <artifactId>platform-tomcat-standalone</artifactId>
-  <version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</version>
+  <version>4.0.0.Alpha1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Tomcat Standalone Package</name>
   <scm>
@@ -35,7 +35,7 @@
     <!-- CRaSH -->
     <org.crsh.version>1.1.0</org.crsh.version>
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>${project.version}</org.exoplatform.platform.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.2</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
