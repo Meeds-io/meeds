@@ -18,6 +18,7 @@
       <unpackOptions>
         <excludes>
           <!-- We need to exclude everything we override -->
+          <exclude>**/conf/context.xml</exclude>
           <exclude>**/conf/server.xml</exclude>
           <exclude>**/conf/logging.properties</exclude>
           <exclude>**/conf/Catalina/localhost/*</exclude>

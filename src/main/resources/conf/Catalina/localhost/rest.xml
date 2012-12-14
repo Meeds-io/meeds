@@ -19,7 +19,6 @@
 
 -->
 <Context docBase="${catalina.home}/wars/exo.portal.web.rest.war">
-  <Manager className='org.apache.catalina.session.PersistentManager' saveOnRestart='false'/>
   <Realm className='org.apache.catalina.realm.JAASRealm'
          appName='gatein-domain'
          userClassNames="org.exoplatform.services.security.jaas.UserPrincipal"
