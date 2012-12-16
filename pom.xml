@@ -9,7 +9,7 @@
   </parent>
   <groupId>org.exoplatform.platform.pkg</groupId>
   <artifactId>platform-tomcat-standalone</artifactId>
-  <version>4.0.0.Alpha1-SNAPSHOT</version>
+  <version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Tomcat Standalone Package</name>
   <scm>
@@ -30,7 +30,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
     <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
     <org.apache.tomcat.version>7.0.33</org.apache.tomcat.version>
