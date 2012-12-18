@@ -497,13 +497,6 @@
     <dependency>
       <groupId>org.exoplatform.portal</groupId>
       <artifactId>exo.portal.component.management</artifactId>
-      <exclusions>
-        <exclusion>
-          <!-- To remove from org.exoplatform.ws:exo.ws.rest.core:jar (Issue to open) -->
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.portal</groupId>
@@ -663,14 +656,15 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
-            <id>enforce-banned-dependencies</id>
+            <!-- We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
+            <id>unwanted-dependencies</id>
             <goals>
               <goal>enforce</goal>
             </goals>
             <configuration>
               <rules>
                 <bannedDependencies>
-                  <message>There are some banned dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
+                  <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
                   <excludes>
                     <exclude>org.apache.tomcat:*</exclude>
                     <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
@@ -704,7 +698,7 @@
                   </includes>
                 </bannedDependencies>
               </rules>
-              <fail>true</fail>
+              <fail>false</fail>
             </configuration>
           </execution>
         </executions>
