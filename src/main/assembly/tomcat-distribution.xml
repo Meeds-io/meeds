@@ -22,6 +22,10 @@
           <exclude>**/conf/logging.properties</exclude>
           <exclude>**/conf/Catalina/localhost/*</exclude>
           <exclude>**/webapps/**</exclude>
+          <exclude>**/LICENSE*</exclude>
+          <exclude>**/NOTICE*</exclude>
+          <exclude>**/RELEASE-NOTES*</exclude>
+          <exclude>**/RUNNING*</exclude>
         </excludes>
       </unpackOptions>
     </dependencySet>
@@ -84,14 +88,15 @@
   </dependencySets>
   <!-- eXo platform -->
   <fileSets>
+    <!-- License file and related -->
     <fileSet>
       <outputDirectory></outputDirectory>
-      <directory>${project.basedir}/src/main/resources/</directory>
-      <filtered>true</filtered>
-      <excludes>
-        <exclude>**/*.sh</exclude>
-      </excludes>
+      <directory>${project.build.directory}/maven-shared-archive-resources/META-INF/</directory>
+      <includes>
+        <include>*.txt</include>
+      </includes>
     </fileSet>
+    <!-- Unix shell scripts with exec rights -->
     <fileSet>
       <outputDirectory></outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
@@ -100,6 +105,15 @@
       <includes>
         <include>**/*.sh</include>
       </includes>
+    </fileSet>
+    <!-- Others files -->
+    <fileSet>
+      <outputDirectory></outputDirectory>
+      <directory>${project.basedir}/src/main/resources/</directory>
+      <filtered>true</filtered>
+      <excludes>
+        <exclude>**/*.sh</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
 </assembly>
