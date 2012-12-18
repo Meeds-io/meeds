@@ -111,7 +111,7 @@
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-extension-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
@@ -121,7 +121,7 @@
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
@@ -131,7 +131,7 @@
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -141,7 +141,7 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -151,7 +151,7 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -161,7 +161,7 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-fck</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -171,7 +171,7 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -181,7 +181,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-gadget-publication</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -191,7 +191,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-administration</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -201,7 +201,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -211,7 +211,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -221,7 +221,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-search</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -231,7 +231,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-seo</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -241,7 +241,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-resources-wcm</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -251,7 +251,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-wai-template</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -261,7 +261,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-core-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -271,7 +271,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-ext-authoring-apps</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
@@ -281,7 +281,7 @@
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -291,7 +291,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-answer-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -301,7 +301,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-extension-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -311,7 +311,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forum-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -321,7 +321,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-forumResources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -331,7 +331,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-gadgets</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -341,7 +341,7 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-poll-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.gwt</groupId>
@@ -366,7 +366,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -376,7 +376,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -386,7 +386,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -396,7 +396,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -406,7 +406,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -416,7 +416,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -426,7 +426,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -436,7 +436,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-website-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -446,7 +446,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-default-website-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -456,7 +456,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -466,7 +466,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -476,7 +476,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-server-tomcat-integration-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
@@ -491,7 +491,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-server-tomcat-root-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
@@ -553,7 +553,7 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -563,7 +563,7 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-opensocial</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -573,7 +573,7 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-portlet</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -583,7 +583,7 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-webapp-resources</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
@@ -599,7 +599,7 @@
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-extension-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
@@ -609,7 +609,7 @@
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
-      <classifier>classes</classifier>
+      <type>pom</type>
     </dependency>
     <!-- Required by logback for colorized console on windows -->
     <dependency>
