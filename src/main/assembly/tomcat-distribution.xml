@@ -61,6 +61,8 @@
         <exclude>org.slf4j:slf4j-jdk14:*</exclude>
         <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
         <exclude>xstream:xstream:*</exclude>
+        <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
+        <exclude>jdom:*:*</exclude>
         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
         <exclude>javax.servlet:*</exclude>
         <exclude>com.google.gwt:gwt-user:*</exclude>
