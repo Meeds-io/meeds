@@ -24,7 +24,6 @@
     separator-escape=":">
 
   <route path="/standalone/{gtn:path}">    
-    
     <route-param qname="gtn:handler">
       <value>standalone</value>
     </route-param>
@@ -44,18 +43,6 @@
       <value>download</value>
     </route-param>
   </route>
-
-  <route path="/{gtn:sitename}/sitemaps.xml">
-    <route-param qname="gtn:handler">
-      <value>sitemap</value>
-    </route-param>
-  </route>
-	
-  <route path="/{gtn:sitename}/robots.txt">
-    <route-param qname="gtn:handler">
-      <value>robots</value>
-    </route-param>
-  </route>	
 
   <!-- The legacy route -->
   <route path="/public">
@@ -89,6 +76,25 @@
   	</route>
   </route>
 
+  <!-- Skin handler -->
+  <route path="/skins/{gtn:version}/{gtn:resource}{gtn:compress}{gtn:orientation}.css">
+    <route-param qname="gtn:handler">
+      <value>skin</value>
+    </route-param>
+    <path-param qname="gtn:version" encoding="preserve-path">
+      <pattern>[^/]*</pattern>
+    </path-param>
+    <path-param qname="gtn:compress" capture-group="true">
+      <pattern>-(min)|</pattern>
+    </path-param>
+    <path-param qname="gtn:orientation" capture-group="true">
+      <pattern>-(lt)|-(rt)|</pattern>
+    </path-param>
+    <path-param qname="gtn:resource" encoding="preserve-path">
+      <pattern>.+?</pattern>
+    </path-param>
+  </route>
+
   <!-- Static resource handler needs to be before the portal handler -->
   <route path="/{gtn:path}">
     <route-param qname="gtn:handler">
@@ -98,6 +104,29 @@
       <pattern>.*\.(jpg|png|gif|ico|css)</pattern>
     </path-param>
   </route>
+
+  <route path="/">
+
+    <!-- The portal redirect handler -->
+    <route-param qname="gtn:handler">
+      <value>siteRedirect</value>
+    </route-param>
+
+    <!-- The portal access -->
+    <route path="/{gtn:lang}/{gtn:sitename}/{gtn:path}">
+      <route-param qname="gtn:sitetype">
+        <value>portal</value>
+      </route-param>
+      <path-param qname="gtn:lang" encoding="preserve-path">
+        <pattern>([A-Za-z]{2}(-[A-Za-z]{2})?)?</pattern>
+      </path-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
+
+  </route>
+
 
   <route path="/">
 
@@ -157,17 +186,6 @@
     </path-param>
     <route path="/{gtn:resource}{gtn:lang}{gtn:compress}.js">
       <path-param qname="gtn:resource">
-        <pattern>.+?</pattern>
-      </path-param>
-      <path-param qname="gtn:lang" capture-group="true">
-        <pattern>-([A-Za-z]{2}(-[A-Za-z]{2})?)|</pattern>
-      </path-param>
-      <path-param qname="gtn:compress" capture-group="true">
-        <pattern>-(min)|</pattern>
-      </path-param>
-    </route>
-    <route path="/{gtn:resource}/{gtn:module}{gtn:lang}{gtn:compress}.js">
-      <path-param qname="gtn:module">
         <pattern>.+?</pattern>
       </path-param>
       <path-param qname="gtn:lang" capture-group="true">
