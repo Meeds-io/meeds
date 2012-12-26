@@ -656,15 +656,16 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
-            <!-- We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
-            <id>unwanted-dependencies</id>
+            <id>analyze-dependencies</id>
             <goals>
               <goal>enforce</goal>
             </goals>
             <configuration>
               <rules>
+                <!-- WARNING : We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
                 <bannedDependencies>
                   <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
+                  <searchTransitive>true</searchTransitive>
                   <excludes>
                     <exclude>org.apache.tomcat:*</exclude>
                     <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
@@ -690,18 +691,32 @@
                     <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
                     <exclude>org.jmock:*</exclude>
                     <exclude>jmock:*</exclude>
-                    <exclude>org:mockito:*</exclude>
+                    <exclude>org.mockito:*</exclude>
                   </excludes>
                   <includes>
                     <!-- This artifact isn't by default in tomcat -->
                     <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
                   </includes>
                 </bannedDependencies>
+                <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
+                <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
+                <requireUpperBoundDeps/>
+                <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
+                <banDuplicateClasses>
+                  <findAllDuplicates>true</findAllDuplicates>
+                </banDuplicateClasses>
               </rules>
               <fail>false</fail>
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>extra-enforcer-rules</artifactId>
+            <version>1.0-alpha-3</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
