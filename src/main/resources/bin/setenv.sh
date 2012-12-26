@@ -26,6 +26,7 @@
 # 1- uncomment and change value to override settings in the above section
 # 2- use environment properties of the system to override the value
 ########################################
+#EXO_DEBUG=true
 #EXO_JVM_VENDOR="IBM"
 #EXO_JVM_SIZE_MAX=2g
 #EXO_JVM_SIZE_MIN=1g
@@ -52,7 +53,8 @@ esac
 EXO_PROFILES=${EXO_PROFILES:-"default"}
 EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
 EXO_CONF_DIR=${EXO_CONF_DIR:-"${CATALINA_HOME}/${EXO_CONF_DIR_NAME}"}
-
+EXO_DEBUG=${EXO_DEBUG:-false}
+EXO_DEBUG_PORT=${EXO_DEBUG_PORT:-8000}
 
 ########################################
 # Default Logs configuration
@@ -176,6 +178,12 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/commons-compiler-${org.codehaus.jani
 ########################################
 # Compute the CATALINA_OPTS
 ########################################
+if $EXO_DEBUG ; then
+  CATALINA_OPTS="${CATALINA_OPTS} -Dorg.exoplatform.container.configuration.debug"
+  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
+  CATALINA_OPTS="${CATALINA_OPTS} -Xdebug"
+  CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
+fi
 CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
 CATALINA_OPTS="${CATALINA_OPTS} -Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.security.auth.login.config=${CATALINA_HOME}/conf/jaas.conf"

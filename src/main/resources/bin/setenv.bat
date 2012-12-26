@@ -24,6 +24,7 @@ REM You have 2 ways to customize your installation settings :
 REM 1- uncomment/add and change value to override settings in the above section
 REM 2- use environment properties of the system to override the value
 REM ########################################
+REM SET EXO_DEBUG=true
 REM SET EXO_JVM_VENDOR=IBM
 REM SET EXO_JVM_SIZE_MAX=2g
 REM SET EXO_JVM_SIZE_MIN=1g
@@ -34,12 +35,23 @@ REM ============================================================================
 REM            /!\     DON'T MODIFY BESIDE THIS LINE      /!\                    #
 REM =============================================================================#
 
+REM We validate that Command extensions are available
+VERIFY other 2>nul
+SETLOCAL enableextensions
+IF ERRORLEVEL 1 (
+  ECHO Unable to enable extensions
+  exit 1
+)
+ENDLOCAL
+
 REM ########################################
 REM Default EXO PLATFORM configuration
 REM ########################################
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
 IF NOT DEFINED EXO_CONF_DIR_NAME SET EXO_CONF_DIR_NAME=gatein\conf
 IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
+IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
+IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 
 REM ########################################
 REM Default Logs configuration
@@ -165,6 +177,12 @@ SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jansi-${org.fusesource.jansi.versi
 REM ########################################
 REM Compute the CATALINA_OPTS
 REM ########################################
+IF /I %EXO_DEBUG% EQU true (
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Xdebug
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
+)
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
@@ -173,9 +191,9 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JA
 REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser depending on the JVM vendor
-if %EXO_JVM_VENDOR%==IBM (
+IF /I %EXO_JVM_VENDOR% EQU IBM (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory
-) else (
+) ELSE (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
 )
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
