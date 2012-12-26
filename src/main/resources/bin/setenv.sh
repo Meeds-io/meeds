@@ -29,8 +29,8 @@
 #EXO_JVM_VENDOR="IBM"
 #EXO_JVM_SIZE_MAX=2g
 #EXO_JVM_SIZE_MIN=1g
-#EXO_PROFILES="default"
-#EXO_HTTP_COMPRESSION="off"
+#EXO_PROFILES="all"
+#EXO_HTTP_COMPRESSION="on"
 
 
 #=============================================================================#
