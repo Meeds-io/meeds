@@ -157,8 +157,6 @@ EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_MAX_IDLE=${EXO_DS_PO
 EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_MAX_WAIT=${EXO_DS_PORTAL_MAX_WAIT}"
 EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -DEXO_DS_PORTAL_URL=${EXO_DS_PORTAL_URL}"
 
-#EXO_SERVER_XML_OPTS="${EXO_SERVER_XML_OPTS} -D=${}"
-
 ########################################
 # Logs customization (Managed by slf4J/logback instead of tomcat-juli & co)
 ########################################
