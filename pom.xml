@@ -506,12 +506,12 @@
     </dependency>
     <dependency>
        <groupId>org.exoplatform.platform</groupId>
-       <artifactId>platform-sample-ide-extension-webapp</artifactId>
+       <artifactId>platform-component-ide-extension-webapp</artifactId>
         <type>war</type>
     </dependency>
     <dependency>
         <groupId>org.exoplatform.platform</groupId>
-        <artifactId>platform-sample-ide-extension-webapp</artifactId>
+        <artifactId>platform-component-ide-extension-webapp</artifactId>
         <type>pom</type>
      </dependency>
     <dependency>
