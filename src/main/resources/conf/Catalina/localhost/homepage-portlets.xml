@@ -19,4 +19,3 @@
 
 -->
 <Context docBase="${catalina.home}/wars/platform-extension-portlets-homepage.war"/>
-- 
