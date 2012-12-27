@@ -44,6 +44,8 @@
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
+    <!-- temporary solution until juzu with the right version in the Dependency POM -->
+    <org.juzu.version>0.6.0-beta5</org.juzu.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -66,6 +68,27 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+      <!-- override juzu artifacts version temporary -->
+      <dependency>
+        <groupId>org.juzu</groupId>
+        <artifactId>juzu-core</artifactId>
+        <version>${org.juzu.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.juzu</groupId>
+        <artifactId>juzu-bom-core</artifactId>
+        <version>${org.juzu.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.juzu</groupId>
+        <artifactId>juzu-plugins-portlet</artifactId>
+        <version>${org.juzu.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.juzu</groupId>
+        <artifactId>juzu-plugins-less</artifactId>
+        <version>${org.juzu.version}</version>
+      </dependency>
     <!-- Logging implementation : http://logback.qos.ch/ -->
     <!-- Is configured from conf/logback.xml -->
     <dependency>
@@ -175,6 +198,24 @@
       <type>pom</type>
     </dependency>
     <dependency>
+        <groupId>org.exoplatform.commons</groupId>
+        <artifactId>commons-api</artifactId>
+      </dependency>    
+      <dependency>
+        <groupId>org.exoplatform.commons</groupId>
+        <artifactId>commons-component-search-service</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.commons</groupId>
+        <artifactId>commons-component-search-portlet</artifactId>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.commons</groupId>
+        <artifactId>commons-component-search-portlet</artifactId>
+        <type>pom</type>
+      </dependency>
+      <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-gadget-publication</artifactId>
       <type>war</type>
