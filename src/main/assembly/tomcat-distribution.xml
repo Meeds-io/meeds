@@ -68,7 +68,7 @@
         <exclude>org.exoplatform.tool:exo.tool.framework.junit:*</exclude>
         <exclude>org.jmock:*:*</exclude>
         <exclude>jmock:*:*</exclude>
-        <exclude>org:mockito:*:*</exclude>
+        <exclude>org.mockito:*:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
