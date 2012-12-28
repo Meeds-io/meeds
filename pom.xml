@@ -33,7 +33,7 @@
     <org.exoplatform.platform.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
     <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
-    <org.apache.tomcat.version>6.0.32</org.apache.tomcat.version>
+    <org.apache.tomcat.version>6.0.36</org.apache.tomcat.version>
     <!-- CRaSH -->
     <org.crsh.version>1.1.0</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
@@ -579,6 +579,10 @@
       <type>pom</type>
     </dependency>
     <dependency>
+      <!--
+      This is a home made package done from the official tar.gz package (To have unix permissions)
+      with the removal of default webapps and the zip created without a root directory.
+      -->
       <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
       <artifactId>apache-tomcat-skeleton</artifactId>
       <version>${org.apache.tomcat.version}</version>
