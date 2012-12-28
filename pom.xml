@@ -33,7 +33,7 @@
     <org.exoplatform.platform.version>4.0.0.Alpha1-kill-exobuild-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
     <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
-    <org.apache.tomcat.version>7.0.33</org.apache.tomcat.version>
+    <org.apache.tomcat.version>7.0.34</org.apache.tomcat.version>
     <!-- CRaSH -->
     <org.crsh.version>1.1.0</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
