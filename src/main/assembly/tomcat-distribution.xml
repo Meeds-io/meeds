@@ -85,6 +85,10 @@
         <exclude>xpp3:xpp3_min</exclude>
         <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
         <exclude>commons-beanutils:commons-beanutils-core</exclude>
+        <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
+        <exclude>org.jboss.logging:jboss-logging-spi</exclude>
+        <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
+        <exclude>org.codehaus.woodstox:wstx-asl</exclude>
         <!-- These are provided APIs by Java itself or the app server -->
         <exclude>xml-apis:*</exclude>
         <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
@@ -93,6 +97,8 @@
         <exclude>javax.activation:*</exclude>
         <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
         <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
+        <exclude>org.jboss.spec.javax.transaction:*</exclude>
+        <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
         <exclude>org.gatein.shindig:shindig-gadgets</exclude>
         <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
