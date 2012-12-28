@@ -23,6 +23,6 @@
          appName='gatein-domain'
          userClassNames='org.exoplatform.services.security.jaas.UserPrincipal'
          roleClassNames='org.exoplatform.services.security.jaas.RolePrincipal'
-         debug='0' cache='false'/>
+      />
   <Valve className='org.apache.catalina.authenticator.FormAuthenticator' characterEncoding='UTF-8'/>
 </Context>
