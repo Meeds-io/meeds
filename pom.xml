@@ -43,6 +43,7 @@
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
+      <org.juzu.version>0.6.0-beta5</org.juzu.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -65,6 +66,23 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+      <!-- override juzu artifacts version temporary -->
+      <dependency>
+          <groupId>org.juzu</groupId>
+          <artifactId>juzu-core</artifactId>
+          <version>${org.juzu.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.juzu</groupId>
+          <artifactId>juzu-bom-core</artifactId>
+          <version>${org.juzu.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.juzu</groupId>
+          <artifactId>juzu-plugins-portlet</artifactId>
+          <version>${org.juzu.version}</version>
+      </dependency>
+
     <!-- Logging implementation : http://logback.qos.ch/ -->
     <!-- Is configured from conf/logback.xml -->
     <dependency>
@@ -383,6 +401,11 @@
       <artifactId>platform-extension-portlets-homepage</artifactId>
       <type>war</type>
     </dependency>
+      <dependency>
+          <groupId>org.exoplatform.platform</groupId>
+          <artifactId>platform-extension-portlets-homepage</artifactId>
+          <type>pom</type>
+      </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-homepage</artifactId>
