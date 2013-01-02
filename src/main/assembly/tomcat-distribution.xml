@@ -36,9 +36,6 @@
       <includes>
         <include>*:*:war</include>
       </includes>
-        <excludes>
-            <exclude>org.exoplatform.platform:platform-sample-acme-website-*:*</exclude>
-        </excludes>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
       <useProjectAttachments>false</useProjectAttachments>
@@ -101,8 +98,6 @@
         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
         <exclude>org.gatein.shindig:shindig-gadgets</exclude>
-        <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
-        <exclude>org.exoplatform.platform:platform-sample-acme-website*:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
@@ -147,8 +142,6 @@
       <filtered>true</filtered>
       <excludes>
         <exclude>**/*.sh</exclude>
-        <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
-        <exclude>**/*acme-website*.xml</exclude>
       </excludes>
     </fileSet>
   </fileSets>
