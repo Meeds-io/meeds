@@ -183,8 +183,7 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME"/lib/commons-compiler-${org.codehaus.jani
 ########################################
 if $EXO_DEBUG ; then
   CATALINA_OPTS="${CATALINA_OPTS} -Dorg.exoplatform.container.configuration.debug"
-#  DEACTIVATED (https://jira.exoplatform.org/browse/PLF-4186)
-#  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
+  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
   CATALINA_OPTS="${CATALINA_OPTS} -Xdebug"
   CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi

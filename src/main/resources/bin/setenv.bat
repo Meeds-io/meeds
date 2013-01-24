@@ -182,8 +182,7 @@ REM Compute the CATALINA_OPTS
 REM ########################################
 IF /I %EXO_DEBUG% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
-REM  DEACTIVATED (https://jira.exoplatform.org/browse/PLF-4186)
-REM  SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
   SET CATALINA_OPTS=%CATALINA_OPTS% -Xdebug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
 )
