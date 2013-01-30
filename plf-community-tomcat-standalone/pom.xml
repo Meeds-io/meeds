@@ -661,12 +661,19 @@
             <configuration>
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
-              <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/tomcat-distribution.xml</descriptor>
-              </descriptors>
+              <descriptorRefs>
+                <descriptorRef>tomcat-distribution</descriptorRef>
+              </descriptorRefs>
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>plf-shared-assemblies</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -693,12 +700,19 @@
                 </goals>
                 <configuration>
                   <appendAssemblyId>false</appendAssemblyId>
-                  <descriptors>
-                    <descriptor>${project.basedir}/src/main/assembly/tomcat-archive.xml</descriptor>
-                  </descriptors>
+                  <descriptorRefs>
+                    <descriptorRef>tomcat-archive</descriptorRef>
+                  </descriptorRefs>
                 </configuration>
               </execution>
             </executions>
+            <dependencies>
+              <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>plf-shared-assemblies</artifactId>
+                <version>${project.version}</version>
+              </dependency>
+            </dependencies>
           </plugin>
         </plugins>
       </build>
