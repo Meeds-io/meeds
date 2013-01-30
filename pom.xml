@@ -7,16 +7,18 @@
     <version>9-beta-1</version>
     <relativePath />
   </parent>
-  <groupId>org.exoplatform.platform.pkg</groupId>
-  <artifactId>platform-tomcat-standalone</artifactId>
+  <groupId>org.exoplatform.platform.distributions</groupId>
+  <artifactId>plf</artifactId>
   <version>4.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo Platform Tomcat Standalone Package</name>
+  <name>eXo Platform Distributions</name>
+  <modules>
+    <module>plf-community-standalone</module>
+  </modules>
   <scm>
-    <connection>scm:git:git://github.com/exoplatform/platform-tomcat-standalone.git</connection>
-    <developerConnection>scm:git:git@github.com:exoplatform/platform-tomcat-standalone.git</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/platform-tomcat-standalone</url>
-    <tag>HEAD</tag>
+    <connection>scm:git:git://github.com/exoplatform/platform-distributions.git</connection>
+    <developerConnection>scm:git:git@github.com:exoplatform/platform-distributions.git</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/platform-distributions</url>
   </scm>
   <properties>
     <!-- **************************************** -->
@@ -26,873 +28,114 @@
     <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
-    <jenkins.job.name>platform-tomcat-standalone-master-pkg</jenkins.job.name>
-    <!-- **************************************** -->
-    <!-- Dependencies Versions                    -->
-    <!-- **************************************** -->
-    <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.0.0-SNAPSHOT</org.exoplatform.platform.version>
-    <!-- The apache tomcat version to bundle -->
-    <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
-    <org.apache.tomcat.version>7.0.34</org.apache.tomcat.version>
-    <!-- CRaSH -->
-    <org.crsh.version>1.1.0</org.crsh.version>
-    <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
-    <org.slf4j.version>1.7.2</org.slf4j.version>
-    <!-- LOGBACK implementation to use to manage logs -->
-    <ch.qas.logback.version>1.0.9</ch.qas.logback.version>
-    <!-- Additional LOGBACK dependencies -->
-    <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
-    <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
-    <!-- temporary solution until juzu with the right version in the Dependency POM -->
-    <org.juzu.version>0.6.0-beta5</org.juzu.version>
+    <jenkins.job.name>platform-distributions-master-pkg</jenkins.job.name>
   </properties>
-  <dependencyManagement>
-    <dependencies>
-      <!-- Import versions from crsh project -->
-      <dependency>
-        <groupId>org.crsh</groupId>
-        <artifactId>crsh.parent</artifactId>
-        <version>${org.crsh.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <!-- Import versions from platform project -->
-      <dependency>
-        <groupId>org.exoplatform.platform</groupId>
-        <artifactId>platform</artifactId>
-        <version>${org.exoplatform.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-      <!-- override juzu artifacts version temporary -->
-      <dependency>
-        <groupId>org.juzu</groupId>
-        <artifactId>juzu-core</artifactId>
-        <version>${org.juzu.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.juzu</groupId>
-        <artifactId>juzu-bom-core</artifactId>
-        <version>${org.juzu.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.juzu</groupId>
-        <artifactId>juzu-plugins-portlet</artifactId>
-        <version>${org.juzu.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.juzu</groupId>
-        <artifactId>juzu-plugins-less</artifactId>
-        <version>${org.juzu.version}</version>
-      </dependency>
-    <!-- Logging implementation : http://logback.qos.ch/ -->
-    <!-- Is configured from conf/logback.xml -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>${ch.qas.logback.version}</version>
-    </dependency>
-    <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
-    <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat-catalina-jmx-remote</artifactId>
-      <version>${org.apache.tomcat.version}</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>tomcat-coyote</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>tomcat-catalina</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>tomcat-juli</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- Required by conditional processing in logback -->
-    <dependency>
-      <groupId>org.codehaus.janino</groupId>
-      <artifactId>janino</artifactId>
-      <version>${org.codehaus.janino.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.crsh</groupId>
-      <artifactId>crsh.jcr.exo</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-comet-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-comet-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-fck</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-fck</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-webui-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-webui-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-        <groupId>org.exoplatform.commons</groupId>
-        <artifactId>commons-api</artifactId>
-      </dependency>    
-      <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-gadget-publication</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-gadget-publication</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-administration</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-administration</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-search</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-search</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-seo</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-seo</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-resources-wcm</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-resources-wcm</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-wai-template</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-wai-template</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-core-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-core-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-authoring-apps</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-authoring-apps</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-fastcontentcreator-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-fastcontentcreator-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-answer-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-answer-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forum-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forum-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forumResources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forumResources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-gadgets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-gadgets</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-poll-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-poll-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gwt</groupId>
-      <artifactId>exo-gwtframework-smartgwt</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ide</groupId>
-      <artifactId>exo-ide-client-gadget</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-search-service</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-search-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-search-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- used by org.gatein.portal:exo.portal.web.portal and org.gatein.portal:exo.portal.web.rest but not declared -->
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlet-branding</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlet-branding</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-homepage</artifactId>
-      <type>war</type>
-    </dependency>
-      <dependency>
-          <groupId>org.exoplatform.platform</groupId>
-          <artifactId>platform-extension-portlets-homepage</artifactId>
-          <type>pom</type>
-      </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-homepage</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-website-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-website-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-website-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-website-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-default-website-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-default-website-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-       <groupId>org.exoplatform.platform</groupId>
-       <artifactId>platform-component-ide-extension-webapp</artifactId>
-        <type>war</type>
-    </dependency>
-    <dependency>
-        <groupId>org.exoplatform.platform</groupId>
-        <artifactId>platform-component-ide-extension-webapp</artifactId>
-        <type>pom</type>
-     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- Tomcat listener to create portlet containers -->
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-pc-creator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-root-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-root-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.component.management</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.eXoGadgets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.gadgets-server</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.dashboard</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.exoadmin</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.web</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.web.eXoResources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.web.portal</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.web.rest</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-extension-war</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-extension-war</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-opensocial</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-opensocial</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <!--
-      This is a home made package done from the official tar.gz package (To have unix permissions)
-      with the removal of default webapps and the zip created without a root directory.
-      -->
-      <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
-      <artifactId>apache-tomcat-skeleton</artifactId>
-      <version>${org.apache.tomcat.version}</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- Required by logback for colorized console on windows -->
-    <dependency>
-      <groupId>org.fusesource.jansi</groupId>
-      <artifactId>jansi</artifactId>
-      <version>${org.fusesource.jansi.version}</version>
-    </dependency>
-    <!-- Coming from gateIn ??? - org.gatein.web.redirect.implementation.RedirectHandlerImpl -->
-    <dependency>
-      <groupId>org.gatein.web</groupId>
-      <artifactId>redirect</artifactId>
-    </dependency>
-    <!-- Embedded database - for dev and demos only -->
-    <dependency>
-      <groupId>org.hsqldb</groupId>
-      <artifactId>hsqldb</artifactId>
-    </dependency>
-    <!-- Use SLF4J and not commons-logging -->
-    <!-- commons-logging must be removed from dependencies -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <version>${org.slf4j.version}</version>
-    </dependency>
-    <!-- Redirect everything from JUL to SLF4J -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jul-to-slf4j</artifactId>
-      <version>${org.slf4j.version}</version>
-    </dependency>
-    <!-- Use SLF4J and not log4j -->
-    <!-- log4j must be removed from dependencies -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>log4j-over-slf4j</artifactId>
-      <version>${org.slf4j.version}</version>
-    </dependency>
-    <!-- SLF4J API -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${org.slf4j.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <!-- We must take care to never grab these artifacts in our distribution -->
-      <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>analyze-dependencies</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <!-- WARNING : We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
-                <bannedDependencies>
-                  <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
-                  <searchTransitive>true</searchTransitive>
-                  <excludes>
-                    <!-- No Apache Tomcat artifacts have to be added in the packaging -->
-                    <exclude>org.apache.tomcat:*</exclude>
-                    <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
-                    <exclude>commons-logging:*</exclude>
-                    <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
-                    <exclude>log4j:*</exclude>
-                    <exclude>org.apache.logging.log4j:*</exclude>
-                    <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
-                    <exclude>org.slf4j:slf4j-jcl:*</exclude>
-                    <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
-                    <exclude>org.slf4j:slf4j-logj12:*</exclude>
-                    <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
-                    <exclude>org.slf4j:slf4j-jdk14:*</exclude>
-                    <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
-                    <exclude>xstream:xstream:*</exclude>
-                    <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
-                    <exclude>jdom:*:*</exclude>
-                    <!-- These old versions of eXo portal are in conflict with new ones under org.gatein.portal -->
-                    <exclude>org.exoplatform.portal:*:*</exclude>
-                    <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
-                    <exclude>javax.servlet:*</exclude>
-                    <exclude>com.google.gwt:gwt-user:*</exclude>
-                    <exclude>javax.servlet.jsp:*</exclude>
-                    <!-- Testing stuffs should never come here -->
-                    <exclude>junit:*</exclude>
-                    <exclude>org.testng:*</exclude>
-                    <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
-                    <exclude>org.jmock:*</exclude>
-                    <exclude>jmock:*</exclude>
-                    <exclude>org.mockito:*</exclude>
-                    <!-- These old versions of jdom are in conflict with new ones under org.jdom:* -->
-                    <exclude>jdom:*</exclude>
-                    <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
-                    <exclude>xpp3:xpp3_min</exclude>
-                    <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
-                    <exclude>commons-beanutils:commons-beanutils-core</exclude>
-                    <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
-                    <exclude>org.jboss.logging:jboss-logging-spi</exclude>
-                    <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
-                    <exclude>org.codehaus.woodstox:wstx-asl</exclude>
-                    <!-- No Springframework in the package -->
-                    <exclude>org.springframework*:*</exclude>
-                    <!-- These are provided APIs by Java itself or the app server -->
-                    <exclude>xml-apis:*</exclude>
-                    <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
-                    <exclude>stax:*</exclude>
-                    <exclude>javax.xml.stream:*</exclude>
-                    <exclude>javax.activation:*</exclude>
-                    <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
-                    <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
-                    <exclude>org.jboss.spec.javax.transaction:*</exclude>
-                    <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
-                    <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
-                    <exclude>org.gatein.shindig:shindig-gadgets</exclude>
-                    <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
-                    <exclude>org.exoplatform.platform:platform-sample-acme-website*:*</exclude>
-                  </excludes>
-                  <includes>
-                    <!-- This artifact isn't by default in tomcat -->
-                    <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
-                  </includes>
-                </bannedDependencies>
-                <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
-                <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
-                <requireUpperBoundDeps />
-                <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
-                <banDuplicateClasses>
-                  <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
-                  <findAllDuplicates>true</findAllDuplicates>
-                </banDuplicateClasses>
-              </rules>
-              <fail>false</fail>
-            </configuration>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>extra-enforcer-rules</artifactId>
-            <version>1.0-alpha-3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <!-- Create the distribution directory with all content -->
-          <execution>
-            <id>tomcat-distribution</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <attach>false</attach>
-              <descriptors>
-                <descriptor>${project.basedir}/src/main/assembly/tomcat-distribution.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
   <profiles>
     <profile>
-      <id>create-archive</id>
-      <activation>
-        <property>
-          <name>!skip-archive</name>
-        </property>
-      </activation>
+      <!-- Additional tasks done while performing a release -->
+      <id>exo-release</id>
       <build>
         <plugins>
+          <!-- We must take care to never grab these artifacts in our distribution -->
+          <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
+            <artifactId>maven-enforcer-plugin</artifactId>
             <executions>
-              <!-- Create the distribution zip and attach it to maven -->
               <execution>
-                <id>tomcat-archive</id>
-                <phase>prepare-package</phase>
+                <id>analyze-dependencies</id>
                 <goals>
-                  <goal>single</goal>
+                  <goal>enforce</goal>
                 </goals>
                 <configuration>
-                  <appendAssemblyId>false</appendAssemblyId>
-                  <descriptors>
-                    <descriptor>${project.basedir}/src/main/assembly/tomcat-archive.xml</descriptor>
-                  </descriptors>
+                  <rules>
+                    <!-- WARNING : We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
+                    <bannedDependencies>
+                      <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
+                      <searchTransitive>true</searchTransitive>
+                      <excludes>
+                        <!-- No Apache Tomcat artifacts have to be added in the packaging -->
+                        <exclude>org.apache.tomcat:*</exclude>
+                        <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+                        <exclude>commons-logging:*</exclude>
+                        <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+                        <exclude>log4j:*</exclude>
+                        <exclude>org.apache.logging.log4j:*</exclude>
+                        <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                        <exclude>org.slf4j:slf4j-jcl:*</exclude>
+                        <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                        <exclude>org.slf4j:slf4j-logj12:*</exclude>
+                        <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
+                        <exclude>org.slf4j:slf4j-jdk14:*</exclude>
+                        <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
+                        <exclude>xstream:xstream:*</exclude>
+                        <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
+                        <exclude>jdom:*:*</exclude>
+                        <!-- These old versions of eXo portal are in conflict with new ones under org.gatein.portal -->
+                        <exclude>org.exoplatform.portal:*:*</exclude>
+                        <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
+                        <exclude>javax.servlet:*</exclude>
+                        <exclude>com.google.gwt:gwt-user:*</exclude>
+                        <exclude>javax.servlet.jsp:*</exclude>
+                        <!-- Testing stuffs should never come here -->
+                        <exclude>junit:*</exclude>
+                        <exclude>org.testng:*</exclude>
+                        <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
+                        <exclude>org.jmock:*</exclude>
+                        <exclude>jmock:*</exclude>
+                        <exclude>org.mockito:*</exclude>
+                        <!-- These old versions of jdom are in conflict with new ones under org.jdom:* -->
+                        <exclude>jdom:*</exclude>
+                        <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
+                        <exclude>xpp3:xpp3_min</exclude>
+                        <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
+                        <exclude>commons-beanutils:commons-beanutils-core</exclude>
+                        <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
+                        <exclude>org.jboss.logging:jboss-logging-spi</exclude>
+                        <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
+                        <exclude>org.codehaus.woodstox:wstx-asl</exclude>
+                        <!-- No Springframework in the package -->
+                        <exclude>org.springframework*:*</exclude>
+                        <!-- These are provided APIs by Java itself or the app server -->
+                        <exclude>xml-apis:*</exclude>
+                        <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
+                        <exclude>stax:*</exclude>
+                        <exclude>javax.xml.stream:*</exclude>
+                        <exclude>javax.activation:*</exclude>
+                        <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
+                        <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
+                        <exclude>org.jboss.spec.javax.transaction:*</exclude>
+                        <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
+                        <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
+                        <exclude>org.gatein.shindig:shindig-gadgets</exclude>
+                        <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
+                        <exclude>org.exoplatform.platform:platform-sample-acme-website*:*</exclude>
+                      </excludes>
+                      <includes>
+                        <!-- This artifact isn't by default in tomcat -->
+                        <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
+                      </includes>
+                    </bannedDependencies>
+                    <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
+                    <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
+                    <requireUpperBoundDeps></requireUpperBoundDeps>
+                    <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
+                    <banDuplicateClasses>
+                      <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
+                      <findAllDuplicates>true</findAllDuplicates>
+                    </banDuplicateClasses>
+                  </rules>
+                  <fail>false</fail>
                 </configuration>
               </execution>
             </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>extra-enforcer-rules</artifactId>
+                <version>1.0-alpha-3</version>
+              </dependency>
+            </dependencies>
           </plugin>
         </plugins>
       </build>
