@@ -13,7 +13,14 @@
   <packaging>pom</packaging>
   <name>eXo Platform Distributions</name>
   <modules>
-    <module>plf-community-standalone</module>
+    <module>plf-shared-assemblies</module>
+    <module>plf-shared-dependencies</module>
+    <module>plf-shared-tomcat-resources</module>
+    <module>plf-community-tomcat-standalone</module>
+    <module>plf-express-tomcat-standalone</module>
+    <module>plf-enterprise-tomcat-standalone</module>
+    <module>plf-enterprise-jbosseap-ear</module>
+    <module>plf-enterprise-jbosseap-standalone</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-distributions.git</connection>

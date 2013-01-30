@@ -6,9 +6,9 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-community-standalone</artifactId>
+  <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Distributions - Community Standalone</name>
+  <name>eXo Platform Distributions - Community Tomcat Standalone</name>
   <properties>
     <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
