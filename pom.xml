@@ -43,7 +43,6 @@
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
-      <org.juzu.version>0.6.0-beta5</org.juzu.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -66,23 +65,6 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
-      <!-- override juzu artifacts version temporary -->
-      <dependency>
-          <groupId>org.juzu</groupId>
-          <artifactId>juzu-core</artifactId>
-          <version>${org.juzu.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.juzu</groupId>
-          <artifactId>juzu-bom-core</artifactId>
-          <version>${org.juzu.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.juzu</groupId>
-          <artifactId>juzu-plugins-portlet</artifactId>
-          <version>${org.juzu.version}</version>
-      </dependency>
-
     <!-- Logging implementation : http://logback.qos.ch/ -->
     <!-- Is configured from conf/logback.xml -->
     <dependency>
@@ -744,6 +726,8 @@
                     <exclude>org.jboss.logging:jboss-logging-spi</exclude>
                     <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
                     <exclude>org.codehaus.woodstox:wstx-asl</exclude>
+                    <!-- No Springframework in the package -->
+                    <exclude>org.springframework*:*</exclude>
                     <!-- These are provided APIs by Java itself or the app server -->
                     <exclude>xml-apis:*</exclude>
                     <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
