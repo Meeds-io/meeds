@@ -405,6 +405,15 @@
     <dependencySet>
       <outputDirectory>webapps</outputDirectory>
       <includes>
+        <include>org.exoplatform.platform:platform-extension-portlet-branding:war</include>
+      </includes>
+      <outputFileNameMapping>platform-branding.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>webapps</outputDirectory>
+      <includes>
         <include>org.exoplatform.platform:platform-extension-portlets-platformNavigation:war</include>
       </includes>
       <outputFileNameMapping>platformNavigation.war</outputFileNameMapping>
