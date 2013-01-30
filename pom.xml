@@ -36,7 +36,44 @@
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
     <jenkins.job.name>platform-distributions-master-pkg</jenkins.job.name>
+    <!-- **************************************** -->
+    <!-- Dependencies Versions                    -->
+    <!-- **************************************** -->
+    <!-- The version of Platform To bundle -->
+    <org.exoplatform.platform.version>4.0.0-SNAPSHOT</org.exoplatform.platform.version>
+    <!-- The apache tomcat version to bundle -->
+    <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
+    <org.apache.tomcat.version>7.0.34</org.apache.tomcat.version>
+    <!-- CRaSH -->
+    <org.crsh.version>1.1.0</org.crsh.version>
+    <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
+    <org.slf4j.version>1.7.2</org.slf4j.version>
+    <!-- LOGBACK implementation to use to manage logs -->
+    <ch.qas.logback.version>1.0.9</ch.qas.logback.version>
+    <!-- Additional LOGBACK dependencies -->
+    <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
+    <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <!-- Import versions from crsh project -->
+      <dependency>
+        <groupId>org.crsh</groupId>
+        <artifactId>crsh.parent</artifactId>
+        <version>${org.crsh.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Import versions from platform project -->
+      <dependency>
+        <groupId>org.exoplatform.platform</groupId>
+        <artifactId>platform</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <profiles>
     <profile>
       <!-- Additional tasks done while performing a release -->
