@@ -461,23 +461,6 @@
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- IDE wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gwt:exo-gwtframework-smartgwt:war</include>
-      </includes>
-      <outputFileNameMapping>SmartGWT.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.ide:exo-ide-client-gadget:war</include>
-      </includes>
-      <outputFileNameMapping>IDE.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform DEFAULT website wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>

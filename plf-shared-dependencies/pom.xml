@@ -256,16 +256,6 @@
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.gwt</groupId>
-      <artifactId>exo-gwtframework-smartgwt</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ide</groupId>
-      <artifactId>exo-ide-client-gadget</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.integration</groupId>
       <artifactId>integ-search-portlet</artifactId>
       <type>war</type>
