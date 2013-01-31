@@ -19,9 +19,9 @@
     <module>plf-community-tomcat-standalone</module>
   </modules>
   <scm>
-    <connection>scm:git:git://github.com/exoplatform/platform-distributions.git</connection>
-    <developerConnection>scm:git:git@github.com:exoplatform/platform-distributions.git</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/platform-distributions</url>
+    <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
+    <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
+    <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
   </scm>
   <properties>
     <!-- **************************************** -->
@@ -31,7 +31,7 @@
     <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
-    <jenkins.job.name>platform-distributions-master-pkg</jenkins.job.name>
+    <jenkins.job.name>platform-public-distributions-master-pkg</jenkins.job.name>
     <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
