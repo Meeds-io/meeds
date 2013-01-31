@@ -202,20 +202,6 @@
         <artifactId>commons-api</artifactId>
       </dependency>    
       <dependency>
-        <groupId>org.exoplatform.commons</groupId>
-        <artifactId>commons-component-search-service</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.commons</groupId>
-        <artifactId>commons-component-search-portlet</artifactId>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.commons</groupId>
-        <artifactId>commons-component-search-portlet</artifactId>
-        <type>pom</type>
-      </dependency>
-      <dependency>
       <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-gadget-publication</artifactId>
       <type>war</type>
@@ -404,6 +390,20 @@
       <groupId>org.exoplatform.ide</groupId>
       <artifactId>exo-ide-client-gadget</artifactId>
       <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.integration</groupId>
+      <artifactId>integ-search-service</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.integration</groupId>
+      <artifactId>integ-search-portlet</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.integration</groupId>
+      <artifactId>integ-search-portlet</artifactId>
+      <type>pom</type>
     </dependency>
     <!-- used by org.gatein.portal:exo.portal.web.portal and org.gatein.portal:exo.portal.web.rest but not declared -->
     <dependency>

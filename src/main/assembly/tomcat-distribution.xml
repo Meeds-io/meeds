@@ -400,6 +400,15 @@
       <useProjectArtifact>false</useProjectArtifact>
       <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
+    <dependencySet>
+      <outputDirectory>webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.integration:integ-search-portlet:war</include>
+      </includes>
+      <outputFileNameMapping>unified-search.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
+    </dependencySet>
 
     <!-- Platform wars -->
     <dependencySet>
