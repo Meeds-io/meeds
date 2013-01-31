@@ -479,23 +479,6 @@
       <outputFileNameMapping>ecm-template-waiportal.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- Platform ACME website wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-acme-website-webapp:war</include>
-      </includes>
-      <outputFileNameMapping>acme-website.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-acme-website-resources:war</include>
-      </includes>
-      <outputFileNameMapping>acme-websiteResources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform INTRANET website wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>

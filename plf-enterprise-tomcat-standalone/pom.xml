@@ -28,7 +28,7 @@
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <optional>true</optional>
     </dependency>
-    <!-- IDE Artifacts -->
+    <!-- IDE wars -->
     <dependency>
       <groupId>org.exoplatform.gwt</groupId>
       <artifactId>exo-gwtframework-smartgwt</artifactId>
@@ -38,6 +38,27 @@
       <groupId>org.exoplatform.ide</groupId>
       <artifactId>exo-ide-client-gadget</artifactId>
       <type>war</type>
+    </dependency>
+    <!-- Platform ACME website wars -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-sample-acme-website-resources</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-sample-acme-website-resources</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-sample-acme-website-webapp</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-sample-acme-website-webapp</artifactId>
+      <type>pom</type>
     </dependency>
   </dependencies>
   <build>
