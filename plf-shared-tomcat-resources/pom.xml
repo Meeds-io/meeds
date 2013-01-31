@@ -9,4 +9,106 @@
   <artifactId>plf-shared-tomcat-resources</artifactId>
   <packaging>pom</packaging>
   <name>eXo Platform Distributions - Shared Tomcat Resources</name>
+  <dependencies>
+    <!-- Logging implementation : http://logback.qos.ch/ -->
+    <!-- Is configured from conf/logback.xml -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-catalina-jmx-remote</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>tomcat-coyote</artifactId>
+          <groupId>org.apache.tomcat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>tomcat-catalina</artifactId>
+          <groupId>org.apache.tomcat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>tomcat-juli</artifactId>
+          <groupId>org.apache.tomcat</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- Required by conditional processing in logback -->
+    <dependency>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
+    </dependency>
+    <dependency>
+      <!--
+      This is a home made package done from the official tar.gz package (To have unix permissions)
+      with the removal of default webapps and the zip created without a root directory.
+      -->
+      <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
+      <artifactId>apache-tomcat-skeleton</artifactId>
+      <type>zip</type>
+    </dependency>
+    <!-- Required by logback for colorized console on windows -->
+    <dependency>
+      <groupId>org.fusesource.jansi</groupId>
+      <artifactId>jansi</artifactId>
+    </dependency>
+    <!-- Embedded database - for dev and demos only -->
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+    </dependency>
+    <!-- Use SLF4J and not commons-logging -->
+    <!-- commons-logging must be removed from dependencies -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
+    <!-- Redirect everything from JUL to SLF4J -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+    </dependency>
+    <!-- Use SLF4J and not log4j -->
+    <!-- log4j must be removed from dependencies -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+    </dependency>
+    <!-- SLF4J API -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>project-resources-zip</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>project-resources-zip</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.exoplatform.platform.distributions</groupId>
+            <artifactId>plf-shared-assemblies</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 </project>

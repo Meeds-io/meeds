@@ -56,6 +56,24 @@
   </properties>
   <dependencyManagement>
     <dependencies>
+      <!-- Logging implementation : http://logback.qos.ch/ -->
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${ch.qas.logback.version}</version>
+      </dependency>
+      <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-catalina-jmx-remote</artifactId>
+        <version>${org.apache.tomcat.version}</version>
+      </dependency>
+      <!-- Required by conditional processing in logback -->
+      <dependency>
+        <groupId>org.codehaus.janino</groupId>
+        <artifactId>janino</artifactId>
+        <version>${org.codehaus.janino.version}</version>
+      </dependency>
       <!-- Import versions from crsh project -->
       <dependency>
         <groupId>org.crsh</groupId>
@@ -72,8 +90,63 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!--
+      This is a home made package done from the official tar.gz package (To have unix permissions)
+      with the removal of default webapps and the zip created without a root directory.
+      -->
+      <dependency>
+        <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
+        <artifactId>apache-tomcat-skeleton</artifactId>
+        <version>${org.apache.tomcat.version}</version>
+        <type>zip</type>
+      </dependency>
+      <!-- Required by logback for colorized console on windows -->
+      <dependency>
+        <groupId>org.fusesource.jansi</groupId>
+        <artifactId>jansi</artifactId>
+        <version>${org.fusesource.jansi.version}</version>
+      </dependency>
+      <!-- Use SLF4J and not commons-logging -->
+      <!-- commons-logging must be removed from dependencies -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${org.slf4j.version}</version>
+      </dependency>
+      <!-- Redirect everything from JUL to SLF4J -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jul-to-slf4j</artifactId>
+        <version>${org.slf4j.version}</version>
+      </dependency>
+      <!-- Use SLF4J and not log4j -->
+      <!-- log4j must be removed from dependencies -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>log4j-over-slf4j</artifactId>
+        <version>${org.slf4j.version}</version>
+      </dependency>
+      <!-- SLF4J API -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${org.slf4j.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <configuration>
+            <appendAssemblyId>false</appendAssemblyId>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
   <profiles>
     <profile>
       <!-- Additional tasks done while performing a release -->

@@ -1,6 +1,6 @@
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
-  <id>tomcat-distribution</id>
+  <id>plf-standalone-default-tomcat-distribution-content</id>
   <formats>
     <format>dir</format>
   </formats>
@@ -8,13 +8,11 @@
   <dependencySets>
     <!-- Apache Tomcat Bundle -->
     <dependencySet>
+      <outputDirectory>/</outputDirectory>
       <includes>
         <include>org.exoplatform.thirdparty.apache-tomcat:apache-tomcat-skeleton:zip</include>
       </includes>
-      <outputDirectory></outputDirectory>
       <unpack>true</unpack>
-      <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
       <unpackOptions>
         <excludes>
           <!-- We need to exclude everything we override -->
@@ -30,172 +28,167 @@
           <exclude>**/RUNNING*</exclude>
         </excludes>
       </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- Common Tomcat resources for PLF -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-resources:zip</include>
+      </includes>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <excludes>
+          <exclude>**/META-INF*</exclude>
+        </excludes>
+      </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- ================================ -->
     <!-- we reference each war to package -->
     <!-- ================================ -->
     <!-- Portal wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.web.eXoResources:war</include>
       </includes>
       <outputFileNameMapping>eXoResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.web.rest:war</include>
       </includes>
       <outputFileNameMapping>rest.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.web:war</include>
       </includes>
       <outputFileNameMapping>web.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.web.portal:war</include>
       </includes>
       <outputFileNameMapping>portal.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.gadgets-server:war</include>
       </includes>
       <outputFileNameMapping>eXoGadgetServer.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.eXoGadgets:war</include>
       </includes>
       <outputFileNameMapping>eXoGadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.exoadmin:war</include>
       </includes>
       <outputFileNameMapping>exoadmin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.dashboard:war</include>
       </includes>
       <outputFileNameMapping>dashboard.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Commons wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.commons:commons-webui-resources:war</include>
       </includes>
       <outputFileNameMapping>CommonsResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.commons:commons-fck:war</include>
       </includes>
       <outputFileNameMapping>fck.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.commons:commons-comet-webapp:war</include>
       </includes>
       <outputFileNameMapping>cometd.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.commons:commons-extension-webapp:war</include>
       </includes>
       <outputFileNameMapping>commons-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Social wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.social:social-webapp-resources:war</include>
       </includes>
       <outputFileNameMapping>social-resources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.social:social-webapp-portlet:war</include>
       </includes>
       <outputFileNameMapping>social-portlet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.social:social-webapp-opensocial:war</include>
       </includes>
       <outputFileNameMapping>social.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.social:social-extension-war:war</include>
       </includes>
       <outputFileNameMapping>social-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- ECMS wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-ext-authoring-apps:war</include>
       </includes>
       <outputFileNameMapping>authoring-apps.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-ext-fastcontentcreator-portlet:war</include>
       </includes>
@@ -210,195 +203,170 @@
       </includes>
       <outputFileNameMapping>ecm-wcm-core.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-explorer:war</include>
       </includes>
       <outputFileNameMapping>ecmexplorer.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-gadget-publication:war</include>
       </includes>
       <outputFileNameMapping>eXoDMSGadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-presentation:war</include>
       </includes>
       <outputFileNameMapping>presentation.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-search:war</include>
       </includes>
       <outputFileNameMapping>searches.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-seo:war</include>
       </includes>
       <outputFileNameMapping>seo.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-resources-wcm:war</include>
       </includes>
       <outputFileNameMapping>eXoWCMResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-administration:war</include>
       </includes>
       <outputFileNameMapping>ecmadmin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-packaging-wcm-webapp:war</include>
       </includes>
       <outputFileNameMapping>ecm-wcm-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Forum wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-forum-webapp:war</include>
       </includes>
       <outputFileNameMapping>forum.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-forumResources:war</include>
       </includes>
       <outputFileNameMapping>forumResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-poll-webapp:war</include>
       </includes>
       <outputFileNameMapping>poll.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-answer-webapp:war</include>
       </includes>
       <outputFileNameMapping>answer.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-gadgets:war</include>
       </includes>
       <outputFileNameMapping>forum-gadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.forum:forum-extension-webapp:war</include>
       </includes>
       <outputFileNameMapping>forum-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Calendar wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.calendar:calendar-webapp:war</include>
       </includes>
       <outputFileNameMapping>calendar.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.calendar:calendar-resources:war</include>
       </includes>
       <outputFileNameMapping>csResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.calendar:calendar-extension-webapp:war</include>
       </includes>
       <outputFileNameMapping>calendar-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Wiki wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.wiki:wiki-webapp:war</include>
       </includes>
       <outputFileNameMapping>wiki.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.wiki:wiki-extension-webapp:war</include>
       </includes>
       <outputFileNameMapping>wiki-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Integration wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-server-tomcat-integration-webapp:war</include>
       </includes>
       <outputFileNameMapping>integration.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
       <outputDirectory>webapps</outputDirectory>
@@ -409,19 +377,17 @@
       <useProjectArtifact>false</useProjectArtifact>
       <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-server-tomcat-root-webapp:war</include>
       </includes>
       <outputFileNameMapping>ROOT.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-extension-portlet-branding:war</include>
       </includes>
@@ -436,153 +402,137 @@
       </includes>
       <outputFileNameMapping>platformNavigation.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:platform-extension-portlets-homepage:war</include>
+      </includes>
+      <outputFileNameMapping>homepage-portlets.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-extension-resources:war</include>
       </includes>
       <outputFileNameMapping>eXoPlatformResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-extension-webapp:war</include>
       </includes>
       <outputFileNameMapping>platform-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform Gadgets wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-exo-gadget-pack-gadget-pack:war</include>
       </includes>
       <outputFileNameMapping>gadget-pack.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-gadgets-sample-exo-gadget-resources:war</include>
       </includes>
       <outputFileNameMapping>exo-gadget-resources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-gadgets-sample-gadgets:war</include>
       </includes>
       <outputFileNameMapping>intranet-gadget.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Various external wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.crsh:crsh.jcr.exo:war</include>
       </includes>
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- IDE wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.gwt:exo-gwtframework-smartgwt:war</include>
       </includes>
       <outputFileNameMapping>SmartGWT.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ide:exo-ide-client-gadget:war</include>
       </includes>
       <outputFileNameMapping>IDE.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform DEFAULT website wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-default-website-webapp:war</include>
       </includes>
       <outputFileNameMapping>default-website.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform WAI Portal Template wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-wai-template:war</include>
       </includes>
       <outputFileNameMapping>ecm-template-waiportal.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform ACME website wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-website-webapp:war</include>
       </includes>
       <outputFileNameMapping>acme-website.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-website-resources:war</include>
       </includes>
       <outputFileNameMapping>acme-websiteResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
     <!-- Platform INTRANET website wars -->
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-intranet-webapp:war</include>
       </includes>
       <outputFileNameMapping>acme-intranet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
-      <outputDirectory>webapps</outputDirectory>
+      <outputDirectory>/webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-intranet-portlet:war</include>
       </includes>
       <outputFileNameMapping>acme-intranet-portlet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
-
-
     <!-- Libraries to put in Tomcat lib directory -->
     <dependencySet>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory>/lib</outputDirectory>
       <includes>
         <include>*:*:jar</include>
       </includes>
@@ -644,48 +594,30 @@
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
     <dependencySet>
-      <outputDirectory>lib</outputDirectory>
+      <outputDirectory>/lib</outputDirectory>
       <includes>
         <!-- This artifact isn't by default in tomcat -->
         <include>org.apache.tomcat:tomcat-catalina-jmx-remote:*</include>
       </includes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
   </dependencySets>
   <!-- eXo platform -->
   <fileSets>
     <!-- License file and related -->
     <fileSet>
-      <outputDirectory></outputDirectory>
+      <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/maven-shared-archive-resources/META-INF/</directory>
       <includes>
         <include>*.txt</include>
       </includes>
     </fileSet>
-    <!-- Unix shell scripts with exec rights -->
-    <fileSet>
-      <outputDirectory></outputDirectory>
-      <directory>${project.basedir}/src/main/resources/</directory>
-      <filtered>true</filtered>
-      <fileMode>0755</fileMode>
-      <includes>
-        <include>**/*.sh</include>
-      </includes>
-    </fileSet>
-    <!-- Others files -->
-    <fileSet>
-      <outputDirectory></outputDirectory>
-      <directory>${project.basedir}/src/main/resources/</directory>
-      <filtered>true</filtered>
-      <excludes>
-        <exclude>**/*.sh</exclude>
-      </excludes>
-    </fileSet>
   </fileSets>
+  <componentDescriptors>
+    <componentDescriptor>assemblies/project-resources-component.xml</componentDescriptor>
+  </componentDescriptors>
 </assembly>
