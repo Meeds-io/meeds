@@ -8,7 +8,7 @@
   </parent>
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Distributions - Community Tomcat Standalone</name>
+  <name>eXo Platform Public Distributions - Community Tomcat Standalone</name>
   <dependencies>
     <!-- Get all shared dependencies used by PLF -->
     <dependency>

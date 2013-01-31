@@ -8,7 +8,7 @@
   </parent>
   <artifactId>plf-shared-dependencies</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Distributions - Shared Dependencies</name>
+  <name>eXo Platform Public Distributions - Shared Dependencies</name>
   <dependencies>
     <dependency>
       <groupId>org.crsh</groupId>
