@@ -9,4 +9,95 @@
   <artifactId>plf-express-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
   <name>eXo Platform Distributions - Express Tomcat Standalone</name>
+  <dependencies>
+    <!-- Get all shared dependencies used by PLF -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-dependencies</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <optional>true</optional>
+    </dependency>
+    <!-- Get required additional files for Tomcat package -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-tomcat-resources</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <!-- Create the distribution directory with all content -->
+          <execution>
+            <id>plf-standalone-tomcat-distribution-content</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-default-tomcat-distribution-content</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.exoplatform.platform.distributions</groupId>
+            <artifactId>plf-shared-assemblies</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>create-archive</id>
+      <activation>
+        <property>
+          <name>!skip-archive</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <!-- Create the distribution zip and attach it to maven -->
+              <execution>
+                <id>plf-standalone-tomcat-zip</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptorRefs>
+                    <descriptorRef>plf-standalone-tomcat-zip</descriptorRef>
+                  </descriptorRefs>
+                </configuration>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.exoplatform.platform.distributions</groupId>
+                <artifactId>plf-shared-assemblies</artifactId>
+                <version>${project.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
