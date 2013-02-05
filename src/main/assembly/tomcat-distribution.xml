@@ -197,6 +197,15 @@
     <dependencySet>
       <outputDirectory>webapps</outputDirectory>
       <includes>
+        <include>org.exoplatform.ecms:ecms-ext-fastcontentcreator-portlet:war</include>
+      </includes>
+      <outputFileNameMapping>fastcontentcreator.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>webapps</outputDirectory>
+      <includes>
         <include>org.exoplatform.ecms:ecms-core-webapp:war</include>
       </includes>
       <outputFileNameMapping>ecm-wcm-core.war</outputFileNameMapping>
