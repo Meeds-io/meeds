@@ -5,17 +5,18 @@
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
     <version>9-beta-1</version>
-    <relativePath></relativePath>
+    <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.pkg</groupId>
   <artifactId>platform-tomcat-standalone</artifactId>
-  <version>4.0.0.Alpha1-SNAPSHOT</version>
+  <version>4.0.0-Alpha1</version>
   <packaging>pom</packaging>
   <name>eXo Platform Tomcat Standalone Package</name>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-tomcat-standalone.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-tomcat-standalone.git</developerConnection>
     <url>http://fisheye.exoplatform.org/browse/projects/platform-tomcat-standalone</url>
+    <tag>4.0.0-Alpha1</tag>
   </scm>
   <properties>
     <!-- **************************************** -->
@@ -770,7 +771,7 @@
                 </bannedDependencies>
                 <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
                 <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
-                <requireUpperBoundDeps/>
+                <requireUpperBoundDeps />
                 <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
                 <banDuplicateClasses>
                   <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
