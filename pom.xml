@@ -30,7 +30,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.0.0.Alpha1-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.0.0-Alpha1</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
     <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
     <org.apache.tomcat.version>7.0.34</org.apache.tomcat.version>
