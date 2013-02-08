@@ -9,14 +9,14 @@
   </parent>
   <groupId>org.exoplatform.platform.pkg</groupId>
   <artifactId>platform-tomcat-standalone</artifactId>
-  <version>4.0.0-Alpha1</version>
+  <version>4.0.0-Beta1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Tomcat Standalone Package</name>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-tomcat-standalone.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-tomcat-standalone.git</developerConnection>
     <url>http://fisheye.exoplatform.org/browse/projects/platform-tomcat-standalone</url>
-    <tag>4.0.0-Alpha1</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <!-- **************************************** -->
