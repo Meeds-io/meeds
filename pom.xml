@@ -49,6 +49,11 @@
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
+    <!-- ************** -->
+    <!-- Build settings -->
+    <!-- ************** -->
+    <!-- maven-release-plugin -->
+    <preparationGoals>clean install</preparationGoals>
   </properties>
   <dependencyManagement>
     <dependencies>
