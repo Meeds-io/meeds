@@ -11,7 +11,7 @@
     <dependencySet>
       <outputDirectory>apache-tomcat</outputDirectory>
       <includes>
-        <include>org.exoplatform.thirdparty.apache-tomcat:apache-tomcat-skeleton:zip</include>
+        <include>org.apache.tomcat:tomcat:zip</include>
       </includes>
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>

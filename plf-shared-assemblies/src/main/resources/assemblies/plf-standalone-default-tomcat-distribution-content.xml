@@ -10,7 +10,7 @@
     <!-- Unix shell scripts with exec rights -->
     <fileSet>
       <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
       <fileMode>0755</fileMode>
       <includes>
         <include>**/*.sh</include>
@@ -19,7 +19,7 @@
     <!-- Others files -->
     <fileSet>
       <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
       <excludes>
         <exclude>**/*.sh</exclude>
         <!-- We need to exclude everything we override -->

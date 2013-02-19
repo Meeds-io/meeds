@@ -16,6 +16,11 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat</artifactId>
+      <type>zip</type>
+    </dependency>
     <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
     <dependency>
       <groupId>org.apache.tomcat</groupId>
@@ -40,15 +45,7 @@
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
     </dependency>
-    <dependency>
-      <!--
-      This is a home made package done from the official tar.gz package (To have unix permissions)
-      with the removal of default webapps and the zip created without a root directory.
-      -->
-      <groupId>org.exoplatform.thirdparty.apache-tomcat</groupId>
-      <artifactId>apache-tomcat-skeleton</artifactId>
-      <type>zip</type>
-    </dependency>
+
     <!-- Required by logback for colorized console on windows -->
     <dependency>
       <groupId>org.fusesource.jansi</groupId>
