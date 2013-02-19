@@ -45,6 +45,7 @@
             <configuration>
               <attach>false</attach>
               <descriptorRefs>
+                <descriptorRef>plf-standalone-default-tomcat-extract-dependencies</descriptorRef>
                 <descriptorRef>plf-standalone-default-tomcat-distribution-content</descriptorRef>
               </descriptorRefs>
             </configuration>

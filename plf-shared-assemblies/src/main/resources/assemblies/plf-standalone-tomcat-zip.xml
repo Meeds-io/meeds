@@ -4,10 +4,11 @@
   <formats>
     <format>zip</format>
   </formats>
-  <includeBaseDirectory>false</includeBaseDirectory>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <baseDirectory>${project.build.finalName}</baseDirectory>
   <fileSets>
     <fileSet>
-      <directory>${project.basedir}/target/${project.artifactId}-${project.version}</directory>
+      <directory>${project.basedir}/target/${project.build.finalName}/${project.build.finalName}</directory>
       <outputDirectory></outputDirectory>
       <excludes>
         <exclude>**/temp/*</exclude>

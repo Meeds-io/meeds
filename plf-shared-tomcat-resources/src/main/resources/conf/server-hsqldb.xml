@@ -19,7 +19,7 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<Server port="${EXO_TOMCAT_SHUTDOWN_PORT}" shutdown="${EXO_TOMCAT_SHUTDOWN_KEY}">
+<Server port="8005" shutdown="SHUTDOWN">
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
@@ -39,40 +39,41 @@
   NOTE : eXo platform Standalone Tomcat distribution bundles the required catalina-jmx-remote.jar.
   -->
   <!--
-  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${EXO_TOMCAT_RMI_REGISTRY_PORT}" rmiServerPortPlatform="${EXO_TOMCAT_RMI_SERVER_PORT}" useLocalPorts="${EXO_TOMCAT_RMI_LOCAL_PORT}" />
+  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="10001" rmiServerPortPlatform="10002" useLocalPorts="false" />
   -->
 
   <GlobalNamingResources>
 
     <!-- eXo IDM Datasource for portal -->
     <Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
-              maxActive="${EXO_DS_IDM_MAX_ACTIVE}" maxIdle="${EXO_DS_IDM_MAX_IDLE}" maxWait="${EXO_DS_IDM_MAX_WAIT}"
-              username="${EXO_DS_IDM_USERNAME}" password="${EXO_DS_IDM_PASSWORD}" driverClassName="${EXO_DS_IDM_DRIVER}" url="${EXO_DS_IDM_URL}"/>
+              maxActive="20" maxIdle="10" maxWait="10000"
+              username="sa" password="" driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:file:${catalina.home}/gatein/data/hsql/exo-idm_portal"/>
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
-              maxActive="${EXO_DS_PORTAL_MAX_ACTIVE}" maxIdle="${EXO_DS_PORTAL_MAX_IDLE}" maxWait="${EXO_DS_PORTAL_MAX_WAIT}"
-              username="${EXO_DS_PORTAL_USERNAME}" password="${EXO_DS_PORTAL_PASSWORD}" driverClassName="${EXO_DS_PORTAL_DRIVER}" url="${EXO_DS_PORTAL_URL}"/>
+              maxActive="20" maxIdle="10" maxWait="10000"
+              username="sa" password="" driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:file:${catalina.home}/gatein/data/hsql/exo-jcr_portal"/>
 
   </GlobalNamingResources>
 
   <Service name="Catalina">
 
-    <Connector address="${EXO_HTTP_ADDRESS}" port="${EXO_HTTP_PORT}" protocol="${EXO_HTTP_PROTOCOL}"
-               enableLookups="false" redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
-               connectionTimeout="${EXO_HTTP_CX_TIMEOUT}" disableUploadTimeout="true"
-               URIEncoding="${EXO_TOMCAT_URI_ENCODING}"
-               compression="${EXO_HTTP_COMPRESSION}" compressionMinSize="${EXO_HTTP_COMPRESSION_MIN_SIZE}"
+    <Connector address="0.0.0.0" port="8080" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               enableLookups="false" redirectPort="8443"
+               connectionTimeout="20000" disableUploadTimeout="true"
+               URIEncoding="UTF-8"
+               compression="off" compressionMinSize="2048"
                noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
 
-    <Connector address="${EXO_AJP_ADDRESS}" port="${EXO_AJP_PORT}" protocol="${EXO_AJP_PROTOCOL}"
-               redirectPort="${EXO_TOMCAT_REDIRECT_PORT}"
-               URIEncoding="${EXO_TOMCAT_URI_ENCODING}"/>
+    <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               URIEncoding="UTF-8"/>
 
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
     <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">
     -->
-    <Engine name="Catalina" defaultHost="localhost" jvmRoute="${EXO_TOMCAT_JVMROUTE_NAME}">
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="">
       <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
         <!-- SingleSignOn valve : Enabled for IDE -->
         <Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
