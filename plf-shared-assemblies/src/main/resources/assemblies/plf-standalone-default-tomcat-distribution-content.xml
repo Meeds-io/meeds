@@ -303,7 +303,6 @@
       </includes>
       <outputFileNameMapping>fastcontentcreator.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
       <outputDirectory>webapps</outputDirectory>
@@ -484,7 +483,6 @@
       </includes>
       <outputFileNameMapping>unified-search.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <!-- Platform wars -->
     <dependencySet>
@@ -502,7 +500,6 @@
       </includes>
       <outputFileNameMapping>platform-branding.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <useProjectAttachments>false</useProjectAttachments>
     </dependencySet>
     <dependencySet>
       <outputDirectory>webapps</outputDirectory>
