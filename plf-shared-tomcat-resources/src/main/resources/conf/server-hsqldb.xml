@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!--
 
-    Copyright (C) 2012 eXo Platform SAS.
+    Copyright (C) 2013 eXo Platform SAS.
 
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
@@ -19,18 +19,29 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
+<!-- Note:  A "Server" is not itself a "Container", so you may not
+     define subcomponents such as "Valves" at this level.
+     Documentation at /docs/config/server.html
+ -->
 <Server port="8005" shutdown="SHUTDOWN">
+
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
+
   <!--APR library loader. Documentation at /docs/apr.html -->
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+
   <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
   <Listener className="org.apache.catalina.core.JasperListener" />
+
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
   <!--
   The JMX Remote Lifecycle Listener fixes the ports used by the JMX/RMI Server making things much simpler if you need to connect jconsole
   or a similar tool to a remote Tomcat instance that is running behind a firewall. Only these ports are configured via the listener.
@@ -42,6 +53,9 @@
   <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="10001" rmiServerPortPlatform="10002" useLocalPorts="false" />
   -->
 
+  <!-- Global JNDI resources
+       Documentation at /docs/jndi-resources-howto.html
+  -->
   <GlobalNamingResources>
 
     <!-- eXo IDM Datasource for portal -->
@@ -56,8 +70,26 @@
 
   </GlobalNamingResources>
 
+  <!-- A "Service" is a collection of one or more "Connectors" that share
+       a single "Container" Note:  A "Service" is not itself a "Container",
+       so you may not define subcomponents such as "Valves" at this level.
+       Documentation at /docs/config/service.html
+   -->
   <Service name="Catalina">
 
+    <!--The connectors can use a shared executor, you can define one or more named thread pools-->
+    <!--
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+        maxThreads="150" minSpareThreads="4"/>
+    -->
+
+    <!-- A "Connector" represents an endpoint by which requests are received
+         and responses are returned. Documentation at :
+         Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
+         Java AJP  Connector: /docs/config/ajp.html
+         APR (HTTP/AJP) Connector: /docs/apr.html
+         Define a non-SSL HTTP/1.1 Connector on port 8080
+    -->
     <Connector address="0.0.0.0" port="8080" protocol="org.apache.coyote.http11.Http11NioProtocol"
                enableLookups="false" redirectPort="8443"
                connectionTimeout="20000" disableUploadTimeout="true"
@@ -65,22 +97,68 @@
                compression="off" compressionMinSize="2048"
                noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
 
+    <!-- A "Connector" using the shared thread pool-->
+    <!--
+    <Connector executor="tomcatThreadPool"
+               port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    -->
+
+    <!-- Define a SSL HTTP/1.1 Connector on port 8443
+         This connector uses the JSSE configuration, when using APR, the
+         connector should be using the OpenSSL style configuration
+         described in the APR documentation -->
+    <!--
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS" />
+    -->
+
+    <!-- Define an AJP 1.3 Connector on port 8009 -->
     <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3"
                connectionTimeout="20000"
                redirectPort="8443"
                URIEncoding="UTF-8"/>
 
+    <!-- An Engine represents the entry point (within Catalina) that processes
+         every request.  The Engine implementation for Tomcat stand alone
+         analyzes the HTTP headers included with the request, and passes them
+         on to the appropriate Host (virtual host).
+         Documentation at /docs/config/engine.html -->
+
     <!-- You should set jvmRoute to support load-balancing via AJP ie :
-    <Engine name="Standalone" defaultHost="localhost" jvmRoute="jvm1">
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
-    <Engine name="Catalina" defaultHost="localhost" jvmRoute="">
-      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
-        <!-- SingleSignOn valve : Enabled for IDE -->
-        <Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <!--For clustering, please take a look at documentation at:
+          /docs/cluster-howto.html  (simple how to)
+          /docs/config/cluster.html (reference documentation) -->
+      <!--
+      <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
+      -->
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+
+        <!-- SingleSignOn valve, share authentication between web applications
+             Documentation at: /docs/config/valve.html -->
+        <!-- SingleSignOn valve : Enabled for eXo IDE -->
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+
         <!-- This Listener is responsible to create all portlet containers -->
         <Listener className="org.exoplatform.platform.server.tomcat.PortalContainersCreator"/>
+
+        <!-- Access log processes all example.
+             Documentation at: /docs/config/valve.html
+             Note: The pattern used is equivalent to using pattern="common" -->
+        <!--
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        -->
       </Host>
     </Engine>
   </Service>
-
 </Server>
