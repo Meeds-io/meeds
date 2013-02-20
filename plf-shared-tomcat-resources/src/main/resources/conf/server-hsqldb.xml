@@ -60,12 +60,20 @@
 
     <!-- eXo IDM Datasource for portal -->
     <Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
-              maxActive="20" maxIdle="10" maxWait="10000"
+              initialSize="10" maxActive="20" maxIdle="10" maxWait="10000"
+              validationQuery="SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS" validationQueryTimeout="5" testOnBorrow="true" testOnReturn="false"
+              timeBetweenEvictionRunsMillis="30000" testWhileIdle="true"
+              removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
+              poolPreparedStatements="true"
               username="sa" password="" driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:file:${catalina.home}/gatein/data/hsql/exo-idm_portal"/>
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
-              maxActive="20" maxIdle="10" maxWait="10000"
+              initialSize="10" maxActive="20" maxIdle="10" maxWait="10000"
+              validationQuery="SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS" validationQueryTimeout="5" testOnBorrow="true" testOnReturn="false"
+              timeBetweenEvictionRunsMillis="30000" testWhileIdle="true"
+              removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
+              poolPreparedStatements="true"
               username="sa" password="" driverClassName="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:file:${catalina.home}/gatein/data/hsql/exo-jcr_portal"/>
 
   </GlobalNamingResources>
