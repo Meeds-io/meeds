@@ -105,7 +105,6 @@ CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/commons-compiler-${org.codehaus.
 if $EXO_DEBUG ; then
   CATALINA_OPTS="${CATALINA_OPTS} -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
-  CATALINA_OPTS="${CATALINA_OPTS} -Xdebug"
   CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
 CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
