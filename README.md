@@ -1,6 +1,32 @@
-platform-tomcat-standalone
-==========================
+eXo Platform Public Distributions
+=================================
 
-eXo Platform Standalone Tomcat Distribution
+How to build ?
+--------------
 
-You'll find various documentation in the project [WIKI](https://github.com/exoplatform/platform-tomcat-standalone/wiki)
+**Pre-requisite** : Apache Maven >= 3.0.4
+
+To build the Platform Community Tomcat Standalone package, from the root directory just launch :
+
+    mvn install -s settings.xml
+
+Take a coffee, a tea, whatever you like the time that Maven downloads the earth and then you'll have the result in `plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>`
+
+The `settings.xml` file at the root of the project gives you :
+
+*   the good setup for remote repositories (You need to declare <https://repository.exoplatform.org/public/> as remote repository if you want to use your own settings)
+*   a custom local repository (`${user.home}/.m2/exo-repository/`) to no pollute your own one.
+
+Build options
+-------------
+
+Add `-Pskip-archive` in your build command line to not generate the final zip archive (and thus gain few seconds of build).
+
+*TIP* : Your build will be faster (~40%) using a JDK7
+
+How to launch ?
+---------------
+
+From the top level directory of the project oou can launch the server you just generated with :
+
+    plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/run_eXo.(sh|bat)
