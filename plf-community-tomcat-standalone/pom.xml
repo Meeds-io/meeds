@@ -48,6 +48,44 @@
                 <descriptorRef>plf-standalone-default-tomcat-extract-dependencies</descriptorRef>
                 <descriptorRef>plf-standalone-default-tomcat-distribution-content</descriptorRef>
               </descriptorRefs>
+              <filters>
+                <!-- Default server.xml is using HSQLDB -->
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/hsqldb.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for HSQLDB -->
+          <execution>
+            <id>plf-server-xml-hsqldb</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-hsqldb</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/hsqldb.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for MySQL -->
+          <execution>
+            <id>plf-server-xml-mysql</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-mysql</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/mysql.filters.properties</filter>
+              </filters>
             </configuration>
           </execution>
         </executions>

@@ -49,8 +49,10 @@
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/</directory>
       <excludes>
+        <exclude>**/*.template</exclude>
         <exclude>**/*.sh</exclude>
         <exclude>**/META-INF*</exclude>
+        <exclude>**/*.filters.properties</exclude>
       </excludes>
     </fileSet>
     <!-- eXo platform - License file and related -->
@@ -67,7 +69,8 @@
     <file>
       <outputDirectory>/conf/</outputDirectory>
       <destName>server.xml</destName>
-      <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/server-hsqldb.xml</source>
+      <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/server.xml.template</source>
+      <filtered>true</filtered>
     </file>
   </files>
   <!-- Local resources from the project - to allow to override -->
