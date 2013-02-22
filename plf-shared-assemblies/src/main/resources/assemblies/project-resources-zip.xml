@@ -5,7 +5,10 @@
     <format>zip</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
-  <componentDescriptors>
-    <componentDescriptor>assemblies/project-resources-component.xml</componentDescriptor>
-  </componentDescriptors>
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <directory>${project.basedir}/src/main/resources/</directory>
+    </fileSet>
+  </fileSets>
 </assembly>

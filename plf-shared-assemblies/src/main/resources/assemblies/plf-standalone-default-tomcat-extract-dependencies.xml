@@ -26,7 +26,4 @@
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
   </dependencySets>
-  <componentDescriptors>
-    <componentDescriptor>assemblies/project-resources-component.xml</componentDescriptor>
-  </componentDescriptors>
 </assembly>
