@@ -5,7 +5,7 @@
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
     <version>9-beta-1</version>
-    <relativePath />
+    <relativePath></relativePath>
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
@@ -21,8 +21,8 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
-    <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
     <tag>HEAD</tag>
+    <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
   </scm>
   <properties>
     <!-- **************************************** -->
@@ -64,6 +64,13 @@
         <artifactId>logback-classic</artifactId>
         <version>${ch.qas.logback.version}</version>
       </dependency>
+      <!-- Official Apache Distribution -->
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat</artifactId>
+        <version>${org.apache.tomcat.version}</version>
+        <type>zip</type>
+      </dependency>
       <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
       <dependency>
         <groupId>org.apache.tomcat</groupId>
@@ -91,12 +98,6 @@
         <version>${org.exoplatform.platform.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat</artifactId>
-        <version>${org.apache.tomcat.version}</version>
-        <type>zip</type>
       </dependency>
       <!-- Required by logback for colorized console on windows -->
       <dependency>
@@ -233,7 +234,7 @@
                     </bannedDependencies>
                     <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
                     <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
-                    <requireUpperBoundDeps />
+                    <requireUpperBoundDeps></requireUpperBoundDeps>
                     <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
                     <banDuplicateClasses>
                       <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
