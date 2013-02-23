@@ -126,3 +126,6 @@ IF /I %EXO_JVM_VENDOR% EQU IBM (
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Disable EHCache update checker
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dnet.sf.ehcache.skipUpdateCheck=true
+
+REM Set the window name
+SET TITLE=eXo Platform ${project.version}

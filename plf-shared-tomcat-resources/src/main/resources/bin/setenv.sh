@@ -53,7 +53,7 @@ esac
 ########################################
 EXO_PROFILES=${EXO_PROFILES:-"default"}
 EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
-EXO_CONF_DIR=${EXO_CONF_DIR:-"${CATALINA_HOME}/${EXO_CONF_DIR_NAME}"}
+EXO_CONF_DIR=${EXO_CONF_DIR:-"$CATALINA_HOME/${EXO_CONF_DIR_NAME}"}
 EXO_DEBUG=${EXO_DEBUG:-false}
 EXO_DEBUG_PORT=${EXO_DEBUG_PORT:-8000}
 EXO_DEV=${EXO_DEV:-false}
@@ -62,7 +62,7 @@ EXO_DEV=${EXO_DEV:-false}
 # Default Logs configuration
 ########################################
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-${CATALINA_HOME}/conf/logback.xml}
+EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-$CATALINA_HOME/conf/logback.xml}
 
 ########################################
 # Default JVM configuration
@@ -77,13 +77,13 @@ EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 # Default Tomcat configuration
 ########################################
 # Global Tomcat settings
-CATALINA_PID=${CATALINA_PID:-${CATALINA_HOME}/temp/catalina.pid}
+CATALINA_PID=${CATALINA_PID:-$CATALINA_HOME/temp/catalina.pid}
 EXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS:-"$EXO_DEV"}
 
 ########################################
 # Export the needed system properties for server.xml
 ########################################
-JAVA_OPTS="${JAVA_OPTS} -DEXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS}"
+JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS}"
 
 ########################################
 # Logs customization (Managed by slf4J/logback instead of tomcat-juli & co)
@@ -92,38 +92,38 @@ JAVA_OPTS="${JAVA_OPTS} -DEXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS}"
 LOGGING_MANAGER=-Dnop
 # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 # SLF4J deps
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/slf4j-api-${org.slf4j.version}.jar
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/jul-to-slf4j-${org.slf4j.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/jul-to-slf4j-${org.slf4j.version}.jar"
 # LogBack deps
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/logback-core-${ch.qas.logback.version}.jar
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/logback-classic-${ch.qas.logback.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-core-${ch.qas.logback.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-classic-${ch.qas.logback.version}.jar"
 # Janino deps (used by logback for conditional processing in the config file)
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/janino-${org.codehaus.janino.version}.jar
-CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/commons-compiler-${org.codehaus.janino.version}.jar
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/janino-${org.codehaus.janino.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler-${org.codehaus.janino.version}.jar"
 
 ########################################
 # Compute the CATALINA_OPTS
 ########################################
 if $EXO_DEBUG ; then
-  CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
+  CATALINA_OPTS="$CATALINA_OPTS -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
 if $EXO_DEV ; then
-  CATALINA_OPTS="${CATALINA_OPTS} -Dorg.exoplatform.container.configuration.debug"
-  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
+  CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
+  CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
 fi
-CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
-CATALINA_OPTS="${CATALINA_OPTS} -Dexo.profiles=${EXO_PROFILES}"
-CATALINA_OPTS="${CATALINA_OPTS} -Djava.security.auth.login.config=${CATALINA_HOME}/conf/jaas.conf"
-CATALINA_OPTS="${CATALINA_OPTS} -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
-CATALINA_OPTS="${CATALINA_OPTS} -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
+CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
+CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Logback configuration file
-CATALINA_OPTS="${CATALINA_OPTS} -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
+CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
 # Define the XML Parser depending on the JVM vendor
 if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
-  CATALINA_OPTS="${CATALINA_OPTS} -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory"
+  CATALINA_OPTS="$CATALINA_OPTS -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.stream.ZephyrWriterFactory -Djavax.xml.stream.XMLInputFactory=com.sun.xml.stream.ZephyrParserFactory -Djavax.xml.stream.XMLEventFactory=com.sun.xml.stream.events.ZephyrEventFactory"
 else
-  CATALINA_OPTS="${CATALINA_OPTS} -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl"
+  CATALINA_OPTS="$CATALINA_OPTS -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl"
 fi
-CATALINA_OPTS="${CATALINA_OPTS} -Djava.net.preferIPv4Stack=true"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Disable EHCache update checker
-CATALINA_OPTS="${CATALINA_OPTS} -Dnet.sf.ehcache.skipUpdateCheck=true"
+CATALINA_OPTS="$CATALINA_OPTS -Dnet.sf.ehcache.skipUpdateCheck=true"

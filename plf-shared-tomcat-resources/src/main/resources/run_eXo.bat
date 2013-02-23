@@ -45,15 +45,47 @@ echo This file is needed to run this program
 goto end
 :okExec
 
-rem Get remaining unshifted command line arguments and save them in the
-set CMD_LINE_ARGS=
+rem Process command line parameters
 :setArgs
-if ""%1""=="""" goto doneSetArgs
-set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
+if ""%1""=="""" (
+  goto doneSetArgs
+) else (
+if /I "%1" EQU "--dev" (
+  SET EXO_DEV=true
+) else (
+if /I "%1" EQU "--debug" (
+  SET EXO_DEBUG=true
+) else (
+if /I "%1" EQU "--help" (
+  goto usage
+) else (
+if /I "%1" EQU "-h" (
+  goto usage
+) else (
+  echo "Invalid option !"
+  echo ""
+  goto usage
+)))))
 shift
 goto setArgs
 :doneSetArgs
+goto run
 
-call "%EXECUTABLE%" run %CMD_LINE_ARGS%
+:usage
+  echo "Usage: %~f0 [options]"
+  echo ""
+  echo "    Start Platform as foreground job"
+  echo ""
+  echo "options:"
+  echo ""
+  echo "  --debug      Start as foreground job with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)"
+  echo "  --dev        Start as foreground job with Platform developer mode"
+  echo "  -h, --help   This help message"
+  goto end
+:doneUsage
+
+:run
+call "%EXECUTABLE%" run
+:doneRun
 
 :end

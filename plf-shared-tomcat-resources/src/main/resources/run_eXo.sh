@@ -57,6 +57,42 @@ else
     echo "This file is needed to run this program"
     exit 1
   fi
-fi 
+fi
 
-exec "$PRGDIR"/"$EXECUTABLE" run "$@"
+usage(){
+  echo "Usage: "`basename "$PRG"`" [options]"
+  echo ""
+  echo "    Start Platform as foreground job"
+  echo ""
+  echo "options:"
+  echo ""
+  echo "  --debug      Start as foreground job with JVM Debugger (Use \${EXO_DEBUG_PORT} to change the port. 8000 by default)"
+  echo "  --dev        Start as foreground job with Platform developer mode"
+  echo "  -h, --help   This help message"
+  exit 1
+}
+
+# Process command line parameters
+while [ "$1" != "" ]; do
+  case $1 in
+    --dev )
+      export EXO_DEV=true
+    ;;
+    --debug )
+      export EXO_DEBUG=true
+    ;;
+    -h | --help )
+      usage
+      exit
+      ;;
+    * )
+      echo "Invalid option !"
+      echo ""
+      usage
+      exit
+      ;;
+    esac
+    shift
+done
+
+exec "$PRGDIR"/"$EXECUTABLE" run

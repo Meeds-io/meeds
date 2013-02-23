@@ -46,14 +46,33 @@ goto end
 :okExec
 
 rem Get remaining unshifted command line arguments and save them in the
-set CMD_LINE_ARGS=
 :setArgs
 if ""%1""=="""" goto doneSetArgs
-set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
+if /I "%1" EQU "--help" (
+  goto usage
+) else (
+if /I "%1" EQU "-h" (
+  goto usage
+))
 shift
 goto setArgs
 :doneSetArgs
 
-call "%EXECUTABLE%" stop %CMD_LINE_ARGS%
+goto stop
+
+:usage
+  echo "Usage: %~f0 [options]"
+  echo ""
+  echo "    Stop Platform, waiting up to 5 seconds for the process to end only if it was started as a background job"
+  echo ""
+  echo "options:"
+  echo ""
+  echo "  -h, --help   This help message"
+  goto end
+:doneUsage
+
+:stop
+call "%EXECUTABLE%" stop
+:doneStop
 
 :end

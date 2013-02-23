@@ -30,3 +30,16 @@ How to launch ?
 From the top level directory of the project oou can launch the server you just generated with :
 
     plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/run_eXo.(sh|bat)
+
+Windows 64b users
+-----------------
+
+You can activate the colorized console by editing the configuration file
+
+   plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/gatein/configuration.properties
+
+You need to had this line which is commented by default
+
+   exo.logs.console.colorized=true
+
+Depending of your system you may need to install the package [Microsoft Visual C++ 2008 Redistributable Package (x64)](http://www.microsoft.com/en-us/download/confirmation.aspx?id=15336)

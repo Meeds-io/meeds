@@ -43,4 +43,28 @@ if [ ! -x "$PRGDIR"/"$EXECUTABLE" ]; then
   exit 1
 fi
 
+usage(){
+  echo "Usage: "`basename "$PRG"`" [options]"
+  echo ""
+  echo "    Stop Platform, waiting up to 5 seconds for the process to end only if it was started as a background job"
+  echo ""
+  echo "options:"
+  echo ""
+  echo "  n            Stop Platform, waiting up to n seconds for the process to end"
+  echo "  -force       Stop Platform, wait up to 5 seconds and then use kill -KILL if still running"
+  echo "  n -force     Stop Platform, wait up to n seconds and then use kill -KILL if still running"
+  echo "  -h, --help   This help message"
+  exit 1
+}
+
+while [ "$1" != "" ]; do
+  case $1 in
+    -h | --help )
+      usage
+      exit
+      ;;
+    esac
+    shift
+done
+
 exec "$PRGDIR"/"$EXECUTABLE" stop "$@"

@@ -59,4 +59,39 @@ else
   fi
 fi 
 
-exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+usage(){
+  echo "Usage: "`basename "$PRG"`" [options]"
+  echo ""
+  echo "    Start Platform as background job"
+  echo ""
+  echo "options:"
+  echo ""
+  echo "  --debug      Start as background job with JVM Debugger (Use \${EXO_DEBUG_PORT} to change the port. 8000 by default)"
+  echo "  --dev        Start as background job with Platform developer mode"
+  echo "  -h, --help   This help message"
+  exit 1
+}
+
+while [ "$1" != "" ]; do
+  case $1 in
+    --dev )
+      export EXO_DEV=true
+    ;;
+    --debug )
+      export EXO_DEBUG=true
+    ;;
+    -h | --help )
+      usage
+      exit
+      ;;
+    * )
+      echo "Invalid option !"
+      echo ""
+      usage
+      exit
+      ;;
+    esac
+    shift
+done
+
+exec "$PRGDIR"/"$EXECUTABLE" start
