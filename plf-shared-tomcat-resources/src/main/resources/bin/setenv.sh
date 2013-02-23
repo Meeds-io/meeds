@@ -27,6 +27,7 @@
 # 2- use environment properties of the system to override the value
 ########################################
 #EXO_DEBUG=true
+#EXO_DEV=true
 #EXO_JVM_VENDOR="IBM"
 #EXO_JVM_SIZE_MAX=2g
 #EXO_JVM_SIZE_MIN=1g
@@ -55,6 +56,7 @@ EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
 EXO_CONF_DIR=${EXO_CONF_DIR:-"${CATALINA_HOME}/${EXO_CONF_DIR_NAME}"}
 EXO_DEBUG=${EXO_DEBUG:-false}
 EXO_DEBUG_PORT=${EXO_DEBUG_PORT:-8000}
+EXO_DEV=${EXO_DEV:-false}
 
 ########################################
 # Default Logs configuration
@@ -76,7 +78,7 @@ EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 ########################################
 # Global Tomcat settings
 CATALINA_PID=${CATALINA_PID:-${CATALINA_HOME}/temp/catalina.pid}
-EXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS:-"$EXO_DEBUG"}
+EXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS:-"$EXO_DEV"}
 
 ########################################
 # Export the needed system properties for server.xml
@@ -103,9 +105,11 @@ CLASSPATH="${CLASSPATH}":"${CATALINA_HOME}"/lib/commons-compiler-${org.codehaus.
 # Compute the CATALINA_OPTS
 ########################################
 if $EXO_DEBUG ; then
+  CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
+fi
+if $EXO_DEV ; then
   CATALINA_OPTS="${CATALINA_OPTS} -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="${CATALINA_OPTS} -Dexo.product.developing=true"
-  CATALINA_OPTS="${CATALINA_OPTS} -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
 CATALINA_OPTS="${CATALINA_OPTS} -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
 CATALINA_OPTS="${CATALINA_OPTS} -Dexo.profiles=${EXO_PROFILES}"

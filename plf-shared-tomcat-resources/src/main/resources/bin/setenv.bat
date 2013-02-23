@@ -25,6 +25,7 @@ REM 1- uncomment/add and change value to override settings in the above section
 REM 2- use environment properties of the system to override the value
 REM ########################################
 REM SET EXO_DEBUG=true
+REM SET EXO_DEV=true
 REM SET EXO_JVM_VENDOR=IBM
 REM SET EXO_JVM_SIZE_MAX=2g
 REM SET EXO_JVM_SIZE_MIN=1g
@@ -52,6 +53,7 @@ IF NOT DEFINED EXO_CONF_DIR_NAME SET EXO_CONF_DIR_NAME=gatein\conf
 IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
 IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
+IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 
 REM ########################################
 REM Default Logs configuration
@@ -73,7 +75,7 @@ REM Default Tomcat configuration
 REM ########################################
 REM Global Tomcat settings
 IF NOT DEFINED CATALINA_PID SET CATALINA_PID=%CATALINA_HOME\temp\catalina.pid
-IF NOT DEFINED EXO_TOMCAT_UNZIP_WARS SET EXO_TOMCAT_UNZIP_WARS=%EXO_DEBUG%
+IF NOT DEFINED EXO_TOMCAT_UNZIP_WARS SET EXO_TOMCAT_UNZIP_WARS=%EXO_DEV%
 
 REM ########################################
 REM Export the needed system properties for server.xml
@@ -102,9 +104,11 @@ REM ########################################
 REM Compute the CATALINA_OPTS
 REM ########################################
 IF /I %EXO_DEBUG% EQU true (
+  SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
+)
+IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
-  SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
 )
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
