@@ -391,28 +391,15 @@
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-root-webapp</artifactId>
+      <version>${project.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-integration-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- Tomcat listener to create portlet containers -->
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-pc-creator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-root-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-server-tomcat-root-webapp</artifactId>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-root-webapp</artifactId>
+      <version>${project.version}</version>
       <type>pom</type>
     </dependency>
     <dependency>

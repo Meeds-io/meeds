@@ -534,7 +534,7 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform:platform-server-tomcat-integration-webapp:war</include>
+        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-integration-webapp:war</include>
       </includes>
       <outputFileNameMapping>integration.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
@@ -551,7 +551,7 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform:platform-server-tomcat-root-webapp:war</include>
+        <include>org.exoplatform.platform.distributions:plf-shared-root-webapp:war</include>
       </includes>
       <outputFileNameMapping>ROOT.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>

@@ -13,10 +13,13 @@
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions</name>
   <modules>
+    <module>plf-community-tomcat-standalone</module>
     <module>plf-shared-assemblies</module>
     <module>plf-shared-dependencies</module>
+    <module>plf-shared-root-webapp</module>
+    <module>plf-shared-tomcat-integration-webapp</module>
+    <module>plf-shared-tomcat-pc-creator-listener</module>
     <module>plf-shared-tomcat-resources</module>
-    <module>plf-community-tomcat-standalone</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
@@ -70,6 +73,12 @@
         <artifactId>tomcat</artifactId>
         <version>${org.apache.tomcat.version}</version>
         <type>zip</type>
+      </dependency>
+      <!-- Used to write a listener -->
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-catalina</artifactId>
+        <version>${org.apache.tomcat.version}</version>
       </dependency>
       <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
       <dependency>

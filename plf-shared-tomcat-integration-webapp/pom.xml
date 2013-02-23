@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>plf-public-distributions</artifactId>
+    <groupId>org.exoplatform.platform.distributions</groupId>
+    <version>4.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+  <packaging>war</packaging>
+  <name>eXo Platform Public Distributions - Shared Tomcat Integration WebApp</name>
+  <dependencies>
+    <dependency>
+      <groupId>org.gatein.wci</groupId>
+      <artifactId>wci-tomcat7</artifactId>
+      <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
+      <exclusions>
+        <exclusion>
+          <artifactId>catalina</artifactId>
+          <groupId>org.apache.tomcat</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

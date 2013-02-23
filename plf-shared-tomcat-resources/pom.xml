@@ -45,7 +45,25 @@
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
     </dependency>
-
+    <!-- GateIn Container Integration Servlet -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+    </dependency>
+    <!-- Tomcat listener to create portlet containers -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <!-- Required by logback for colorized console on windows -->
     <dependency>
       <groupId>org.fusesource.jansi</groupId>
