@@ -31,6 +31,16 @@ From the top level directory of the project oou can launch the server you just g
 
     plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/run_eXo.(sh|bat)
 
+
+
+Known issues
+============
+
+Windows users
+-------------
+
+Scripts have to be launched from the directory where they are otherwise you have to explicitly set the environment variable `CATALINA_HOME` to the server home directory path.
+
 Windows 64b users
 -----------------
 
