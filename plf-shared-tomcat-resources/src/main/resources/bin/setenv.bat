@@ -73,12 +73,11 @@ REM ---------------------------------------------------------------------------
 REM Global Tomcat settings
 IF NOT DEFINED CATALINA_PID SET CATALINA_PID=%CATALINA_HOME\temp\catalina.pid
 IF NOT DEFINED EXO_TOMCAT_UNPACK_WARS SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
-IF NOT DEFINED EXO_TOMCAT_RELOADABLE_WEBAPPS SET EXO_TOMCAT_RELOADABLE_WEBAPPS=%EXO_DEV%
 
 REM ---------------------------------------------------------------------------
 REM Export the needed system properties for server.xml
 REM ---------------------------------------------------------------------------
-SET JAVA_OPTS=%JAVA_OPTS% -DEXO_TOMCAT_UNPACK_WARS=%EXO_TOMCAT_UNPACK_WARS% -DEXO_TOMCAT_RELOADABLE_WEBAPPS=%EXO_TOMCAT_RELOADABLE_WEBAPPS%
+SET JAVA_OPTS=%JAVA_OPTS% -DEXO_TOMCAT_UNPACK_WARS=%EXO_TOMCAT_UNPACK_WARS% -DEXO_DEV=%EXO_DEV%
 
 REM ---------------------------------------------------------------------------
 REM Logs customization (Managed by slf4J\logback instead of tomcat-juli & co)

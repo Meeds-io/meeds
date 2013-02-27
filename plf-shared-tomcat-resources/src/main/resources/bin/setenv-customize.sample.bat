@@ -55,4 +55,3 @@ REM ---------------------------------------------------------------------------
 REM Global Tomcat settings
 REM SET CATALINA_PID=%CATALINA_HOME\temp\catalina.pid
 REM SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
-REM SET EXO_TOMCAT_RELOADABLE_WEBAPPS=%EXO_DEV%
