@@ -74,12 +74,13 @@ EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 # -----------------------------------------------------------------------------
 # Global Tomcat settings
 CATALINA_PID=${CATALINA_PID:-$CATALINA_HOME/temp/catalina.pid}
-EXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS:-"$EXO_DEV"}
+EXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS:-"$EXO_DEV"}
+EXO_TOMCAT_RELOADABLE_WEBAPPS=${EXO_TOMCAT_RELOADABLE_WEBAPPS:-"$EXO_DEV"}
 
 # -----------------------------------------------------------------------------
 # Export the needed system properties for server.xml
 # -----------------------------------------------------------------------------
-JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS}"
+JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS} -DEXO_TOMCAT_RELOADABLE_WEBAPPS=${EXO_TOMCAT_RELOADABLE_WEBAPPS}"
 
 # -----------------------------------------------------------------------------
 # Logs customization (Managed by slf4J/logback instead of tomcat-juli & co)

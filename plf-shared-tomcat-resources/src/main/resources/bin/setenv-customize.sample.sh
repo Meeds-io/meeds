@@ -57,4 +57,5 @@
 # -----------------------------------------------------------------------------
 # Global Tomcat settings
 #CATALINA_PID=$CATALINA_HOME/temp/catalina.pid
-#EXO_TOMCAT_UNZIP_WARS="$EXO_DEV"
+#EXO_TOMCAT_UNPACK_WARS="$EXO_DEV"
+#EXO_TOMCAT_RELOADABLE_WEBAPPS="$EXO_DEV"
