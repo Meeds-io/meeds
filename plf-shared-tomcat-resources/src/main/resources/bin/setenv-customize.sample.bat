@@ -44,7 +44,6 @@ REM SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
 REM ---------------------------------------------------------------------------
 REM Default JVM configuration
 REM ---------------------------------------------------------------------------
-REM SET EXO_JVM_VENDOR=ORACLE
 REM SET EXO_JVM_SIZE_MAX=1g
 REM SET EXO_JVM_SIZE_MIN=512m
 REM SET EXO_JVM_PERMSIZE_MAX=256m
