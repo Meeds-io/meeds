@@ -1,6 +1,6 @@
 @echo off
 
-REM Copyright (C) 2012 eXo Platform SAS.
+REM Copyright (C) 2013 eXo Platform SAS.
 REM 
 REM This is free software; you can redistribute it and/or modify it
 REM under the terms of the GNU Lesser General Public License as
@@ -17,25 +17,23 @@ REM License along with this software; if not, write to the Free
 REM Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
 REM 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
-REM ########################################
+REM ---------------------------------------------------------------------------
+REM            /!\     DON'T MODIFY THIS FILE      /!\
+REM ---------------------------------------------------------------------------
+
+REM ---------------------------------------------------------------------------
 REM Settings customisation
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :
-REM 1- uncomment/add and change value to override settings in the above section
-REM 2- use environment properties of the system to override the value
-REM ########################################
-REM SET EXO_DEBUG=true
-REM SET EXO_DEV=true
-REM SET EXO_JVM_VENDOR=IBM
-REM SET EXO_JVM_SIZE_MAX=2g
-REM SET EXO_JVM_SIZE_MIN=1g
-REM SET EXO_PROFILES=all
-REM SET EXO_HTTP_COMPRESSION=on
+REM 1- Rename the file setenv-customize.sample.bat to setenv-customize.bat and uncomment/change values
+REM 2- Use system environment variables of your system or local shell
+REM ---------------------------------------------------------------------------
 
-REM =============================================================================#
-REM            /!\     DON'T MODIFY BESIDE THIS LINE      /!\                    #
-REM =============================================================================#
+rem Get standard environment variables
+if not exist "%CATALINA_BASE%\bin\setenv-customize.bat" goto setEnvCustomize
+call "%CATALINA_BASE%\bin\setenv-customize.bat"
 
+:setEnvCustomize
 REM We validate that Command extensions are available
 VERIFY other 2>nul
 SETLOCAL enableextensions
@@ -45,9 +43,9 @@ IF ERRORLEVEL 1 (
 )
 ENDLOCAL
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
-REM ########################################
+REM ---------------------------------------------------------------------------
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
 IF NOT DEFINED EXO_CONF_DIR_NAME SET EXO_CONF_DIR_NAME=gatein\conf
 IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
@@ -55,36 +53,36 @@ IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Default Logs configuration
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Default JVM configuration
-REM ########################################
+REM ---------------------------------------------------------------------------
 IF NOT DEFINED EXO_JVM_VENDOR SET EXO_JVM_VENDOR=ORACLE
 IF NOT DEFINED EXO_JVM_SIZE_MAX SET EXO_JVM_SIZE_MAX=1g
 IF NOT DEFINED EXO_JVM_SIZE_MIN SET EXO_JVM_SIZE_MIN=512m
 IF NOT DEFINED EXO_JVM_PERMSIZE_MAX SET EXO_JVM_PERMSIZE_MAX=256m
 IF NOT DEFINED EXO_JVM_PERMSIZE_MIN SET EXO_JVM_PERMSIZE_MIN=128m
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Default Tomcat configuration
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Global Tomcat settings
 IF NOT DEFINED CATALINA_PID SET CATALINA_PID=%CATALINA_HOME\temp\catalina.pid
 IF NOT DEFINED EXO_TOMCAT_UNZIP_WARS SET EXO_TOMCAT_UNZIP_WARS=%EXO_DEV%
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Export the needed system properties for server.xml
-REM ########################################
+REM ---------------------------------------------------------------------------
 SET JAVA_OPTS=%JAVA_OPTS% -DEXO_TOMCAT_UNZIP_WARS=%EXO_TOMCAT_UNZIP_WARS%
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Logs customization (Managed by slf4J\logback instead of tomcat-juli & co)
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Deactivate j.u.l
 SET LOGGING_MANAGER=-Dnop
 REM Add additional bootstrap entries for logging purpose using SLF4J+Logback
@@ -100,9 +98,9 @@ SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\commons-compiler-${org.codehaus.ja
 REM Jansi deps for colorized output on windows
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jansi-${org.fusesource.jansi.version}.jar
 
-REM ########################################
+REM ---------------------------------------------------------------------------
 REM Compute the CATALINA_OPTS
-REM ########################################
+REM ---------------------------------------------------------------------------
 IF /I %EXO_DEBUG% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
 )

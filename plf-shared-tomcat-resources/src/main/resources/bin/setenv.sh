@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Copyright (C) 2012 eXo Platform SAS.
+# Copyright (C) 2013 eXo Platform SAS.
 # 
 # This is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as
@@ -19,25 +19,21 @@
 # 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 #
 
-########################################
+# -----------------------------------------------------------------------------
+#                  /!\     DON'T MODIFY THIS FILE     /!\
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
 # Settings customisation
-########################################
+# -----------------------------------------------------------------------------
 # You have 2 ways to customize your installation settings :
-# 1- uncomment and change value to override settings in the above section
-# 2- use environment properties of the system to override the value
-########################################
-#EXO_DEBUG=true
-#EXO_DEV=true
-#EXO_JVM_VENDOR="IBM"
-#EXO_JVM_SIZE_MAX=2g
-#EXO_JVM_SIZE_MIN=1g
-#EXO_PROFILES="all"
-#EXO_HTTP_COMPRESSION="on"
+# 1- Rename the file setenv-customize.sample.sh to setenv-customize.sh and uncomment/change values
+# 2- Use system environment variables of your system or local shell
+# -----------------------------------------------------------------------------
 
-
-#=============================================================================#
-#           /!\     DON'T MODIFY BESIDE THIS LINE      /!\                    #
-#=============================================================================#
+if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
+  . "$CATALINA_BASE/bin/setenv-customize.sh"
+fi
 
 case "`uname`" in
   CYGWIN*)
@@ -48,9 +44,9 @@ case "`uname`" in
   ;;
 esac
 
-########################################
+# -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
-########################################
+# -----------------------------------------------------------------------------
 EXO_PROFILES=${EXO_PROFILES:-"default"}
 EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
 EXO_CONF_DIR=${EXO_CONF_DIR:-"$CATALINA_HOME/${EXO_CONF_DIR_NAME}"}
@@ -58,36 +54,36 @@ EXO_DEBUG=${EXO_DEBUG:-false}
 EXO_DEBUG_PORT=${EXO_DEBUG_PORT:-8000}
 EXO_DEV=${EXO_DEV:-false}
 
-########################################
+# -----------------------------------------------------------------------------
 # Default Logs configuration
-########################################
+# -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-$CATALINA_HOME/conf/logback.xml}
 
-########################################
+# -----------------------------------------------------------------------------
 # Default JVM configuration
-########################################
+# -----------------------------------------------------------------------------
 EXO_JVM_VENDOR=${EXO_JVM_VENDOR:-"ORACLE"}
 EXO_JVM_SIZE_MAX=${EXO_JVM_SIZE_MAX:-1g}
 EXO_JVM_SIZE_MIN=${EXO_JVM_SIZE_MIN:-512m}
 EXO_JVM_PERMSIZE_MAX=${EXO_JVM_PERMSIZE_MAX:-256m}
 EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 
-########################################
+# -----------------------------------------------------------------------------
 # Default Tomcat configuration
-########################################
+# -----------------------------------------------------------------------------
 # Global Tomcat settings
 CATALINA_PID=${CATALINA_PID:-$CATALINA_HOME/temp/catalina.pid}
 EXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS:-"$EXO_DEV"}
 
-########################################
+# -----------------------------------------------------------------------------
 # Export the needed system properties for server.xml
-########################################
+# -----------------------------------------------------------------------------
 JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNZIP_WARS=${EXO_TOMCAT_UNZIP_WARS}"
 
-########################################
+# -----------------------------------------------------------------------------
 # Logs customization (Managed by slf4J/logback instead of tomcat-juli & co)
-########################################
+# -----------------------------------------------------------------------------
 # Deactivate j.u.l
 LOGGING_MANAGER=-Dnop
 # Add additional bootstrap entries for logging purpose using SLF4J+Logback
@@ -101,9 +97,9 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-classic-${ch.qas.logback.vers
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/janino-${org.codehaus.janino.version}.jar"
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler-${org.codehaus.janino.version}.jar"
 
-########################################
+# -----------------------------------------------------------------------------
 # Compute the CATALINA_OPTS
-########################################
+# -----------------------------------------------------------------------------
 if $EXO_DEBUG ; then
   CATALINA_OPTS="$CATALINA_OPTS -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
@@ -127,3 +123,4 @@ fi
 CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Disable EHCache update checker
 CATALINA_OPTS="$CATALINA_OPTS -Dnet.sf.ehcache.skipUpdateCheck=true"
+
