@@ -4,6 +4,8 @@ Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
 <configuration>
+  <!-- Enable JMX to configure logs -->
+  <jmxConfigurator />
   <!-- Load configuration properties to customize this setup -->
   <property file="${exo.conf.dir}/configuration.properties"/>
   <!-- This is activated by default on unix like systems and windows 32b -->
