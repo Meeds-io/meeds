@@ -48,11 +48,14 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       <pattern>${exo.logs.console.appender.pattern:-${exo.logs.console.appender.pattern.default}}</pattern>
     </encoder>
   </appender>
-  <appender name="FILE-PLF" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${catalina.base}/logs/platform.log</file>
     <append>true</append>
     <encoder>
       <pattern>${exo.logs.file.appender.pattern:-${exo.logs.file.appender.pattern.default}}</pattern>
+      <outputPatternAsHeader>true</outputPatternAsHeader>
+      <!-- this quadruples logging throughput -->
+      <immediateFlush>false</immediateFlush>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <fileNamePattern>${catalina.base}/logs/platform-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
@@ -61,6 +64,9 @@ For more details see : http://logback.qos.ch/manual/configuration.html
         <maxFileSize>2MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
     </rollingPolicy>
+  </appender>
+  <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE" />
   </appender>
   <logger name="org.exoplatform" level="INFO"/>
   <logger name="org.gatein" level="INFO"/>
@@ -77,6 +83,6 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="com.google.javascript.jscomp" level="WARN"/>
   <root level="INFO">
     <appender-ref ref="CONSOLE"/>
-    <appender-ref ref="FILE-PLF"/>
+    <appender-ref ref="ASYNC"/>
   </root>
 </configuration>
