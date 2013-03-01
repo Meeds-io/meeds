@@ -45,6 +45,8 @@ echo This file is needed to run this program
 goto end
 :okExec
 
+set COMMAND=run
+
 rem Process command line parameters
 :setArgs
 if ""%1""=="""" (
@@ -56,6 +58,11 @@ if /I "%1" EQU "--dev" (
 if /I "%1" EQU "--debug" (
   SET EXO_DEBUG=true
 ) else (
+if /I "%1" EQU "--background" (
+  SET COMMAND=start
+) else (
+if /I "%1" EQU "-b" (
+  SET COMMAND=start
 if /I "%1" EQU "--help" (
   goto usage
 ) else (
@@ -65,7 +72,7 @@ if /I "%1" EQU "-h" (
   echo "Invalid option !"
   echo ""
   goto usage
-)))))
+)))))))
 shift
 goto setArgs
 :doneSetArgs
@@ -74,18 +81,19 @@ goto start
 :usage
   echo "Usage: %~f0 [options]"
   echo ""
-  echo "    Start Platform as background job"
+  echo "    Starts eXo Platform"
   echo ""
   echo "options:"
   echo ""
-  echo "  --debug      Start as background job with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)"
-  echo "  --dev        Start as background job with Platform developer mode"
-  echo "  -h, --help   This help message"
+  echo "  --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)"
+  echo "  --dev              Starts with Platform developer mode"
+  echo "  -b, --background   Starts as a background process. Use stop_eXo.bat to stop it."
+  echo "  -h, --help         This help message"
   goto end
 :doneUsage
 
 :start
-call "%EXECUTABLE%" start
+call "%EXECUTABLE%" "%COMMAND%"
 :doneStart
 
 :end

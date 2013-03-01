@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Copyright (C) 2012 eXo Platform SAS.
+# Copyright (C) 2013 eXo Platform SAS.
 # 
 # This is free software; you can redistribute it and/or modify it
 # under the terms of the GNU Lesser General Public License as
@@ -57,21 +57,25 @@ else
     echo "This file is needed to run this program"
     exit 1
   fi
-fi 
+fi
 
 usage(){
   echo "Usage: "`basename "$PRG"`" [options]"
   echo ""
-  echo "    Start Platform as background job"
+  echo "    Starts eXo Platform"
   echo ""
   echo "options:"
   echo ""
-  echo "  --debug      Start as background job with JVM Debugger (Use \${EXO_DEBUG_PORT} to change the port. 8000 by default)"
-  echo "  --dev        Start as background job with Platform developer mode"
-  echo "  -h, --help   This help message"
+  echo "  --debug            Starts with JVM Debugger (Use \${EXO_DEBUG_PORT} to change the port. 8000 by default)"
+  echo "  --dev              Starts with Platform developer mode"
+  echo "  -b, --background   Starts as a background process. Use stop_eXo.sh to stop it."
+  echo "  -h, --help         This help message"
   exit 1
 }
 
+COMMAND="run"
+
+# Process command line parameters
 while [ "$1" != "" ]; do
   case $1 in
     --dev )
@@ -79,6 +83,9 @@ while [ "$1" != "" ]; do
     ;;
     --debug )
       export EXO_DEBUG=true
+    ;;
+    -b | --background )
+      COMMAND="start"
     ;;
     -h | --help )
       usage
@@ -94,4 +101,4 @@ while [ "$1" != "" ]; do
     shift
 done
 
-exec "$PRGDIR"/"$EXECUTABLE" start
+exec "$PRGDIR"/"$EXECUTABLE" "$COMMAND"
