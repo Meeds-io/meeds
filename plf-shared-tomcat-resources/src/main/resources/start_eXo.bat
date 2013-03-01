@@ -60,9 +60,30 @@ if /I "%1" EQU "--debug" (
 ) else (
 if /I "%1" EQU "--background" (
   SET COMMAND=start
+  rem Don't activate console logs if launched as background task
+  IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
 ) else (
 if /I "%1" EQU "-b" (
   SET COMMAND=start
+  rem Don't activate console logs if launched as background task
+  IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
+) else (
+if /I "%1" EQU "--color" (
+  rem Enforce colors in console
+  SET EXO_LOGS_CONSOLE_COLORIZED=true
+) else (
+if /I "%1" EQU "-c" (
+  rem Enforce colors in console
+  SET EXO_LOGS_CONSOLE_COLORIZED=true
+) else (
+if /I "%1" EQU "--nocolor" (
+  rem Enforce no colors in console
+  SET EXO_LOGS_CONSOLE_COLORIZED=false
+) else (
+if /I "%1" EQU "-nc" (
+  rem Enforce no colors in console
+  SET EXO_LOGS_CONSOLE_COLORIZED=false
+) else (
 if /I "%1" EQU "--help" (
   goto usage
 ) else (
@@ -72,10 +93,12 @@ if /I "%1" EQU "-h" (
   echo "Invalid option !"
   echo ""
   goto usage
-)))))))
+)))))))))))
 shift
 goto setArgs
 :doneSetArgs
+rem Activate console logs if we aren't in background
+IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=true
 goto start
 
 :usage
@@ -87,7 +110,9 @@ goto start
   echo ""
   echo "  --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)"
   echo "  --dev              Starts with Platform developer mode"
-  echo "  -b, --background   Starts as a background process. Use stop_eXo.bat to stop it."
+  echo "  -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
+  echo "  -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
+  echo "  -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated."
   echo "  -h, --help         This help message"
   goto end
 :doneUsage

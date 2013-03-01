@@ -59,6 +59,8 @@ EXO_DEV=${EXO_DEV:-false}
 # -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-$CATALINA_HOME/conf/logback.xml}
+EXO_LOGS_DISPLAY_CONSOLE=${EXO_LOGS_DISPLAY_CONSOLE:-false}
+EXO_LOGS_CONSOLE_COLORIZED=${EXO_LOGS_CONSOLE_COLORIZED}
 
 # -----------------------------------------------------------------------------
 # Default JVM configuration

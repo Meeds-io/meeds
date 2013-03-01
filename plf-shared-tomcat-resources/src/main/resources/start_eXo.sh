@@ -68,7 +68,9 @@ usage(){
   echo ""
   echo "  --debug            Starts with JVM Debugger (Use \${EXO_DEBUG_PORT} to change the port. 8000 by default)"
   echo "  --dev              Starts with Platform developer mode"
-  echo "  -b, --background   Starts as a background process. Use stop_eXo.sh to stop it."
+  echo "  -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
+  echo "  -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
+  echo "  -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated."
   echo "  -h, --help         This help message"
   exit 1
 }
@@ -86,6 +88,16 @@ while [ "$1" != "" ]; do
     ;;
     -b | --background )
       COMMAND="start"
+      # Don't activate console logs if launched as background task
+      export EXO_LOGS_DISPLAY_CONSOLE=${EXO_LOGS_DISPLAY_CONSOLE:-false}
+    ;;
+    -c | --color )
+      # Enforce colors in console
+      export EXO_LOGS_CONSOLE_COLORIZED=true
+    ;;
+    -nc | --nocolor )
+      # Enforce no colors in console
+      export EXO_LOGS_CONSOLE_COLORIZED=false
     ;;
     -h | --help )
       usage
@@ -100,5 +112,8 @@ while [ "$1" != "" ]; do
     esac
     shift
 done
+
+# Activate console logs if we aren't in background
+export EXO_LOGS_DISPLAY_CONSOLE=${EXO_LOGS_DISPLAY_CONSOLE:-true}
 
 exec "$PRGDIR"/"$EXECUTABLE" "$COMMAND"

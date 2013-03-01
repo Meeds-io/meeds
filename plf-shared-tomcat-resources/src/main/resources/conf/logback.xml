@@ -5,48 +5,12 @@ For more details see : http://logback.qos.ch/manual/configuration.html
 -->
 <configuration scan="${env.EXO_DEV}" scanPeriod="30 seconds">
   <!-- Enable JMX to configure logs -->
-  <jmxConfigurator />
+  <jmxConfigurator/>
   <!-- Load configuration properties to customize this setup -->
   <property file="${exo.conf.dir}/configuration.properties"/>
-  <!-- This is activated by default on unix like systems and windows 32b -->
-  <if condition='property("os.name").contains("Windows") &amp;&amp; property("os.arch").contains("64")'>
-    <then>
-      <!-- Colorization of logs isn't activated by default on Windows 64b -->
-      <!-- There are various issues with it like http://jira.qos.ch/browse/LOGBACK-762 -->
-      <property name="exo.logs.console.colorized" value="${exo.logs.console.colorized:-false}"/>
-    </then>
-    <else>
-      <property name="exo.logs.console.colorized" value="${exo.logs.console.colorized:-true}"/>
-    </else>
-  </if>
-  <if condition='"true".equals(property("exo.logs.console.colorized"))'>
-    <then>
-      <!-- Colorized logs -->
-      <property name="exo.logs.console.appender.pattern" value="${exo.logs.colorized.pattern}"/>
-      <if condition='property("os.name").contains("Windows")'>
-        <then>
-          <!-- On Windows machines setting withJansi to true enables ANSI color code interpretation by the Jansi library. -->
-          <property name="exo.logs.console.jansi.activate" value="true"/>
-        </then>
-        <else>
-          <property name="exo.logs.console.jansi.activate" value="false"/>
-        </else>
-      </if>
-    </then>
-    <else>
-      <property name="exo.logs.console.appender.pattern" value="${exo.logs.default.pattern}"/>
-      <property name="exo.logs.console.jansi.activate" value="false"/>
-    </else>
-  </if>
   <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
     <resetJUL>true</resetJUL>
   </contextListener>
-  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-    <withJansi>${exo.logs.console.jansi.activate:-false}</withJansi>
-    <encoder>
-      <pattern>${exo.logs.console.appender.pattern:-${exo.logs.default.pattern}}</pattern>
-    </encoder>
-  </appender>
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${catalina.base}/logs/platform.log</file>
     <append>true</append>
@@ -68,7 +32,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
     </rollingPolicy>
   </appender>
   <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
-    <appender-ref ref="FILE" />
+    <appender-ref ref="FILE"/>
   </appender>
   <logger name="org.exoplatform" level="INFO"/>
   <logger name="org.gatein" level="INFO"/>
@@ -83,8 +47,43 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="org.jboss" level="INFO"/>
   <logger name="org.apache.shindig" level="WARN"/>
   <logger name="com.google.javascript.jscomp" level="WARN"/>
+  <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
+    <then>
+      <!-- This is activated by default on unix like systems -->
+      <if condition='property("os.name").contains("Windows")'>
+        <then>
+          <!-- Colorization of logs isn't activated by default on Windows -->
+          <!-- There are various issues with it like http://jira.qos.ch/browse/LOGBACK-762 -->
+          <property name="EXO_LOGS_CONSOLE_COLORIZED" value="${EXO_LOGS_CONSOLE_COLORIZED:-false}"/>
+          <!-- On Windows machines setting withJansi to true enables ANSI color code interpretation by the Jansi library. -->
+          <property name="EXO_LOGS_CONSOLE_JANSI" value="true"/>
+        </then>
+        <else>
+          <property name="EXO_LOGS_CONSOLE_COLORIZED" value="${EXO_LOGS_CONSOLE_COLORIZED:-true}"/>
+          <property name="EXO_LOGS_CONSOLE_JANSI" value="false"/>
+        </else>
+      </if>
+      <if condition='"true".equals(property("EXO_LOGS_CONSOLE_COLORIZED"))'>
+        <then>
+          <!-- Colorized logs -->
+          <property name="exo.logs.console.appender.pattern" value="${exo.logs.colorized.pattern}"/>
+        </then>
+        <else>
+          <property name="exo.logs.console.appender.pattern" value="${exo.logs.default.pattern}"/>
+        </else>
+      </if>
+      <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>${EXO_LOGS_CONSOLE_JANSI:-false}</withJansi>
+        <encoder>
+          <pattern>${exo.logs.console.appender.pattern:-${exo.logs.default.pattern}}</pattern>
+        </encoder>
+      </appender>
+      <root>
+        <appender-ref ref="CONSOLE"/>
+      </root>
+    </then>
+  </if>
   <root level="INFO">
-    <appender-ref ref="CONSOLE"/>
     <appender-ref ref="ASYNC"/>
   </root>
 </configuration>
