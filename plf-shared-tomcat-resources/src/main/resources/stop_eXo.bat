@@ -36,7 +36,7 @@ echo This environment variable is needed to run this program
 goto end
 :okHome
 
-set "PRG=%~f0"
+set "PRG=%~nx0"
 
 set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
 

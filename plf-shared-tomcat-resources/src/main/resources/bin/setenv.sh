@@ -75,7 +75,6 @@ EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
 # Default Tomcat configuration
 # -----------------------------------------------------------------------------
 # Global Tomcat settings
-CATALINA_PID=${CATALINA_PID:-$CATALINA_HOME/temp/catalina.pid}
 EXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS:-"$EXO_DEV"}
 
 # -----------------------------------------------------------------------------

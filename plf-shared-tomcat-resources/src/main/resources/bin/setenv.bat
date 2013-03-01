@@ -73,7 +73,6 @@ REM ---------------------------------------------------------------------------
 REM Default Tomcat configuration
 REM ---------------------------------------------------------------------------
 REM Global Tomcat settings
-IF NOT DEFINED CATALINA_PID SET CATALINA_PID=%CATALINA_HOME\temp\catalina.pid
 IF NOT DEFINED EXO_TOMCAT_UNPACK_WARS SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
 
 REM ---------------------------------------------------------------------------

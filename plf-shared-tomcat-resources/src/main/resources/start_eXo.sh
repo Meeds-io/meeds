@@ -90,6 +90,8 @@ while [ "$1" != "" ]; do
       COMMAND="start"
       # Don't activate console logs if launched as background task
       export EXO_LOGS_DISPLAY_CONSOLE=${EXO_LOGS_DISPLAY_CONSOLE:-false}
+      # Define a PID file is launched in background
+      export CATALINA_PID=${CATALINA_PID:-$CATALINA_HOME/temp/catalina.pid}
     ;;
     -c | --color )
       # Enforce colors in console
