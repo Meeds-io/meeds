@@ -36,6 +36,8 @@ echo This environment variable is needed to run this program
 goto end
 :okHome
 
+set "PRG=%~f0"
+
 set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
 
 rem Check that target executable exists
@@ -90,8 +92,8 @@ if /I "%1" EQU "--help" (
 if /I "%1" EQU "-h" (
   goto usage
 ) else (
-  echo "Invalid option !"
-  echo ""
+  echo Invalid option !
+  echo(
   goto usage
 )))))))))))
 shift
@@ -102,23 +104,23 @@ IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=true
 goto start
 
 :usage
-  echo "Usage: %~f0 [options]"
-  echo ""
-  echo "    Starts eXo Platform"
-  echo ""
-  echo "options:"
-  echo ""
-  echo "  --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)"
-  echo "  --dev              Starts with Platform developer mode"
-  echo "  -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
-  echo "  -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)"
-  echo "  -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated."
-  echo "  -h, --help         This help message"
+  echo Usage: %PRG% [options]
+  echo(
+  echo     Starts eXo Platform
+  echo(
+  echo options:
+  echo(
+  echo   --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)
+  echo   --dev              Starts with Platform developer mode
+  echo   -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
+  echo   -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
+  echo   -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated.
+  echo   -h, --help         This help message
   goto end
 :doneUsage
 
 :start
-call "%EXECUTABLE%" "%COMMAND%"
+call "%EXECUTABLE%" %COMMAND%
 :doneStart
 
 :end

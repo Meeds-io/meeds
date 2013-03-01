@@ -36,6 +36,8 @@ echo This environment variable is needed to run this program
 goto end
 :okHome
 
+set "PRG=%~f0"
+
 set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
 
 rem Check that target executable exists
@@ -61,13 +63,13 @@ goto setArgs
 goto stop
 
 :usage
-  echo "Usage: %~f0 [options]"
-  echo ""
-  echo "    Stop Platform, waiting up to 5 seconds for the process to end only if it was started as a background job"
-  echo ""
-  echo "options:"
-  echo ""
-  echo "  -h, --help   This help message"
+  echo Usage: %PRG% [options]
+  echo(
+  echo     Stop Platform, waiting up to 5 seconds for the process to end only if it was started as a background job
+  echo(
+  echo options:
+  echo(
+  echo   -h, --help   This help message
   goto end
 :doneUsage
 
