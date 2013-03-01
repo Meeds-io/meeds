@@ -57,10 +57,13 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       <immediateFlush>false</immediateFlush>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
       <fileNamePattern>${catalina.base}/logs/platform-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
-      <maxHistory>60<!-- days --></maxHistory>
+      <!-- Max number of archives to keep -->
+      <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-        <maxFileSize>2MB</maxFileSize>
+        <!-- or whenever the file size reaches maxFileSize -->
+        <maxFileSize>${exo.logs.rolling.maxFileSize}</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
     </rollingPolicy>
   </appender>
