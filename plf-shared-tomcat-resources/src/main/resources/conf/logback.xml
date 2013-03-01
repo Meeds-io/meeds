@@ -3,7 +3,7 @@
 Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
-<configuration>
+<configuration scan="${env.EXO_DEV}" scanPeriod="30 seconds">
   <!-- Enable JMX to configure logs -->
   <jmxConfigurator />
   <!-- Load configuration properties to customize this setup -->
