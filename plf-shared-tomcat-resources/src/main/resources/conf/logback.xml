@@ -22,7 +22,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <if condition='"true".equals(property("exo.logs.console.colorized"))'>
     <then>
       <!-- Colorized logs -->
-      <property name="exo.logs.console.appender.pattern.default" value="%d{HH:mm:ss.SSS} %highlight(%-5level) %msg %cyan([%logger{30}&lt;%thread&gt;]) %n"/>
+      <property name="exo.logs.console.appender.pattern" value="${exo.logs.colorized.pattern}"/>
       <if condition='property("os.name").contains("Windows")'>
         <then>
           <!-- On Windows machines setting withJansi to true enables ANSI color code interpretation by the Jansi library. -->
@@ -34,25 +34,24 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       </if>
     </then>
     <else>
-      <property name="exo.logs.console.appender.pattern.default" value="%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n}"/>
+      <property name="exo.logs.console.appender.pattern" value="${exo.logs.default.pattern}"/>
       <property name="exo.logs.console.jansi.activate" value="false"/>
     </else>
   </if>
-  <property name="exo.logs.file.appender.pattern.default" value="%d{HH:mm:ss.SSS} %-5level %msg [%logger{30}&lt;%thread&gt;] %n"/>
   <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
     <resetJUL>true</resetJUL>
   </contextListener>
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <withJansi>${exo.logs.console.jansi.activate:-false}</withJansi>
     <encoder>
-      <pattern>${exo.logs.console.appender.pattern:-${exo.logs.console.appender.pattern.default}}</pattern>
+      <pattern>${exo.logs.console.appender.pattern:-${exo.logs.default.pattern}}</pattern>
     </encoder>
   </appender>
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${catalina.base}/logs/platform.log</file>
     <append>true</append>
     <encoder>
-      <pattern>${exo.logs.file.appender.pattern:-${exo.logs.file.appender.pattern.default}}</pattern>
+      <pattern>${exo.logs.default.pattern}</pattern>
       <outputPatternAsHeader>true</outputPatternAsHeader>
       <!-- this quadruples logging throughput -->
       <immediateFlush>false</immediateFlush>
