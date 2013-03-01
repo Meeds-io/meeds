@@ -5,11 +5,11 @@
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
     <version>9-beta-1</version>
-    <relativePath></relativePath>
+    <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>4.0.0-SNAPSHOT</version>
+  <version>4.0.0-Beta1</version>
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions</name>
   <modules>
@@ -24,7 +24,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>4.0.0-Beta1</tag>
     <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
   </scm>
   <properties>
@@ -243,7 +243,7 @@
                     </bannedDependencies>
                     <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
                     <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
-                    <requireUpperBoundDeps></requireUpperBoundDeps>
+                    <requireUpperBoundDeps />
                     <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
                     <banDuplicateClasses>
                       <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
