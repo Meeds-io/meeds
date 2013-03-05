@@ -202,6 +202,8 @@
         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
         <exclude>org.gatein.shindig:shindig-gadgets</exclude>
+        <!-- This artifact is replaced to override GateIn UI -->
+        <exclude>org.gatein.portal:exo.portal.webui.core:jar</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
@@ -223,7 +225,7 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.gatein.portal:exo.portal.web.eXoResources:war</include>
+        <include>org.exoplatform.platform-ui:platform-ui-web-eXoResources:war</include>
       </includes>
       <outputFileNameMapping>eXoResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>

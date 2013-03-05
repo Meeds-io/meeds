@@ -4,7 +4,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.0.0-SNAPSHOT</version>
+    <version>4.0.0-plf-relooking-SNAPSHOT</version>
   </parent>
   <artifactId>plf-shared-dependencies</artifactId>
   <packaging>pom</packaging>
@@ -391,6 +391,15 @@
       <type>pom</type>
     </dependency>
     <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-web-eXoResources</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-webui-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-root-webapp</artifactId>
       <version>${project.version}</version>
@@ -490,11 +499,6 @@
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.portlet.web</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.web.eXoResources</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
