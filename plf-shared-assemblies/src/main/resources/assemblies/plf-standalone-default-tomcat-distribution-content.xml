@@ -630,15 +630,6 @@
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- Platform DEFAULT website wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-default-website-webapp:war</include>
-      </includes>
-      <outputFileNameMapping>default-website.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform WAI Portal Template wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
