@@ -233,8 +233,8 @@
                         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
                         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
                         <exclude>org.gatein.shindig:shindig-gadgets</exclude>
-                        <!-- Temporary deactivation because ACME cannot work in short term on TC7 -->
-                        <exclude>org.exoplatform.platform:platform-sample-acme-website*:*</exclude>
+                        <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
+                        <exclude>rome:modules:*</exclude>
                       </excludes>
                       <includes>
                         <!-- This artifact isn't by default in tomcat -->
