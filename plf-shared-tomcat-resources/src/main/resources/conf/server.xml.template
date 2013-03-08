@@ -150,7 +150,7 @@
       -->
 
       <Host name="localhost"  appBase="webapps"
-            unpackWARs="${EXO_TOMCAT_UNZIP_WARS}" autoDeploy="true">
+            unpackWARs="${EXO_TOMCAT_UNPACK_WARS}" autoDeploy="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
