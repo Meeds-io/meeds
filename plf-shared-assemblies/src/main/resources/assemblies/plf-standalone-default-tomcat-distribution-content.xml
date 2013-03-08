@@ -634,15 +634,6 @@
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- Platform WAI Portal Template wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.ecms:ecms-apps-wai-template:war</include>
-      </includes>
-      <outputFileNameMapping>ecm-template-waiportal.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform INTRANET website wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
