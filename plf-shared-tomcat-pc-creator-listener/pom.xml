@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.0.0-SNAPSHOT</version>
+    <version>4.0.0-plf-relooking-SNAPSHOT</version>
   </parent>
   <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
   <packaging>jar</packaging>
