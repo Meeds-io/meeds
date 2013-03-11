@@ -149,7 +149,7 @@
       <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
       -->
 
-      <Host name="localhost"  appBase="webapps"
+      <Host name="localhost" appBase="webapps" startStopThreads="-1"
             unpackWARs="${EXO_TOMCAT_UNPACK_WARS}" autoDeploy="true">
 
         <!-- SingleSignOn valve, share authentication between web applications
