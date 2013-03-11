@@ -141,6 +141,8 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xm
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Disable EHCache update checker
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dnet.sf.ehcache.skipUpdateCheck=true
+REM Disable Quartz update checker
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.terracotta.quartz.skipUpdateCheck=true
 
 REM Set the window name
 SET TITLE=eXo Platform ${project.version}

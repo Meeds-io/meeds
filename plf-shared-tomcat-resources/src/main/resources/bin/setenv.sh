@@ -125,4 +125,6 @@ fi
 CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Disable EHCache update checker
 CATALINA_OPTS="$CATALINA_OPTS -Dnet.sf.ehcache.skipUpdateCheck=true"
+# Disable Quartz update checker
+CATALINA_OPTS="$CATALINA_OPTS -Dorg.terracotta.quartz.skipUpdateCheck=true"
 
