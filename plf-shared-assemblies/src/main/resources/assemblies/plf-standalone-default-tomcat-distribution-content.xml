@@ -226,8 +226,24 @@
         <exclude>org.gatein.portal:exo.portal.webui.core:jar</exclude>
         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
         <exclude>rome:modules:*</exclude>
+        <!-- this is a build resource -->
+        <exclude>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- Extract license file -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</include>
+      </includes>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <includes>
+          <include>**/LICENSE.txt</include>
+        </includes>
+      </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->

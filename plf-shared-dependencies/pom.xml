@@ -526,5 +526,12 @@
       <groupId>org.gatein.web</groupId>
       <artifactId>redirect</artifactId>
     </dependency>
+    <!-- Build resource used to import license related files -->
+    <dependency>
+      <groupId>org.exoplatform.resources</groupId>
+      <artifactId>exo-lgpl-license-resource-bundle</artifactId>
+      <!-- It's version is set in parent pom -->
+      <version>${version.exo-lgpl-license-resource-bundle}</version>
+    </dependency>
   </dependencies>
 </project>
