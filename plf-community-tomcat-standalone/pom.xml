@@ -141,11 +141,6 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-remote-resources-plugin</artifactId>
-            <configuration>
-              <resourceBundles>
-                <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
-              </resourceBundles>
-            </configuration>
             <executions>
               <execution>
                 <goals>
@@ -153,6 +148,11 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <resourceBundles>
+                <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
+              </resourceBundles>
+            </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>

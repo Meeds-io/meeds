@@ -421,6 +421,13 @@
       <version>${project.version}</version>
       <type>pom</type>
     </dependency>
+    <!-- Build resource used to import license related files -->
+    <dependency>
+      <groupId>org.exoplatform.resources</groupId>
+      <artifactId>exo-lgpl-license-resource-bundle</artifactId>
+      <!-- It's version is set in parent pom -->
+      <version>${version.exo-lgpl-license-resource-bundle}</version>
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
@@ -525,13 +532,6 @@
     <dependency>
       <groupId>org.gatein.web</groupId>
       <artifactId>redirect</artifactId>
-    </dependency>
-    <!-- Build resource used to import license related files -->
-    <dependency>
-      <groupId>org.exoplatform.resources</groupId>
-      <artifactId>exo-lgpl-license-resource-bundle</artifactId>
-      <!-- It's version is set in parent pom -->
-      <version>${version.exo-lgpl-license-resource-bundle}</version>
     </dependency>
   </dependencies>
 </project>
