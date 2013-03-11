@@ -62,7 +62,6 @@
     <!-- The version of Platform To bundle -->
     <org.exoplatform.platform.version>4.0.0-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
-    <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
     <org.apache.tomcat.version>7.0.37</org.apache.tomcat.version>
     <!-- CRaSH -->
     <org.crsh.version>1.1.0</org.crsh.version>
