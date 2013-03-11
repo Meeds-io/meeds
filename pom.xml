@@ -128,6 +128,18 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- Define version for platform-ui artifacts -->
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-web-eXoResources</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-webui-core</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
+      </dependency>
       <!-- Required by logback for colorized console on windows -->
       <dependency>
         <groupId>org.fusesource.jansi</groupId>
