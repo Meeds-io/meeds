@@ -61,8 +61,6 @@
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
     <org.exoplatform.platform.version>4.0.0-relooking-SNAPSHOT</org.exoplatform.platform.version>
-    <!-- The version of Platform UI To bundle -->
-    <org.exoplatform.platform-ui.version>1.0.0-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The apache tomcat version to bundle -->
     <!-- WARNING : It requires a dedicated archive uploaded in eXo repos -->
     <org.apache.tomcat.version>7.0.37</org.apache.tomcat.version>
@@ -134,13 +132,13 @@
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui-web-eXoResources</artifactId>
-        <version>${org.exoplatform.platform-ui.version}</version>
+        <version>${org.exoplatform.platform.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui-webui-core</artifactId>
-        <version>${org.exoplatform.platform-ui.version}</version>
+        <version>${org.exoplatform.platform.version}</version>
       </dependency>
       <!-- Required by logback for colorized console on windows -->
       <dependency>
