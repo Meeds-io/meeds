@@ -80,6 +80,7 @@
       </includes>
       <excludes>
         <exclude>**/META-INF*</exclude>
+        <exclude>**/*.template.xml</exclude>
         <exclude>**/*.filters.properties</exclude>
       </excludes>
     </fileSet>
@@ -96,7 +97,7 @@
         <exclude>**/*.bat</exclude>
         <exclude>**/*.cmd</exclude>
         <exclude>**/META-INF*</exclude>
-        <exclude>**/*.template</exclude>
+        <exclude>**/*.template.xml</exclude>
         <exclude>**/*.filters.properties</exclude>
       </excludes>
     </fileSet>
