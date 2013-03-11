@@ -46,35 +46,36 @@ esac
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
-EXO_PROFILES=${EXO_PROFILES:-"default"}
-EXO_CONF_DIR_NAME=${EXO_CONF_DIR_NAME:-"gatein/conf"}
-EXO_CONF_DIR=${EXO_CONF_DIR:-"$CATALINA_HOME/${EXO_CONF_DIR_NAME}"}
-EXO_DEBUG=${EXO_DEBUG:-false}
-EXO_DEBUG_PORT=${EXO_DEBUG_PORT:-8000}
-EXO_DEV=${EXO_DEV:-false}
+[ -z $EXO_PROFILES ] && EXO_PROFILES="default"
+[ -z $EXO_CONF_DIR_NAME ] && EXO_CONF_DIR_NAME="gatein/conf"
+[ -z $EXO_CONF_DIR ] && EXO_CONF_DIR="$CATALINA_HOME/${EXO_CONF_DIR_NAME}"
+[ -z $EXO_DEBUG ] && EXO_DEBUG=false
+[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
+[ -z $EXO_DEV ] && EXO_DEV=false
+[ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-EXO_LOGS_LOGBACK_CONFIG_FILE=${EXO_LOGS_LOGBACK_CONFIG_FILE:-$CATALINA_HOME/conf/logback.xml}
-EXO_LOGS_DISPLAY_CONSOLE=${EXO_LOGS_DISPLAY_CONSOLE:-false}
-EXO_LOGS_CONSOLE_COLORIZED=${EXO_LOGS_CONSOLE_COLORIZED}
+[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
+[ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
+[ -z $EXO_LOGS_CONSOLE_COLORIZED ] && EXO_LOGS_CONSOLE_COLORIZED=
 
 # -----------------------------------------------------------------------------
 # Default JVM configuration
 # -----------------------------------------------------------------------------
-EXO_JVM_VENDOR=${EXO_JVM_VENDOR:-"ORACLE"}
-EXO_JVM_SIZE_MAX=${EXO_JVM_SIZE_MAX:-1g}
-EXO_JVM_SIZE_MIN=${EXO_JVM_SIZE_MIN:-512m}
-EXO_JVM_PERMSIZE_MAX=${EXO_JVM_PERMSIZE_MAX:-256m}
-EXO_JVM_PERMSIZE_MIN=${EXO_JVM_PERMSIZE_MIN:-128m}
+[ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
+[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=1g
+[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
+[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
+[ -z $EXO_JVM_PERMSIZE_MIN ] && EXO_JVM_PERMSIZE_MIN=128m
 
 # -----------------------------------------------------------------------------
 # Default Tomcat configuration
 # -----------------------------------------------------------------------------
 # Global Tomcat settings
-EXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS:-"$EXO_DEV"}
+[ -z $EXO_TOMCAT_UNPACK_WARS ] && EXO_TOMCAT_UNPACK_WARS="$EXO_DEV"
 
 # -----------------------------------------------------------------------------
 # Export the needed system properties for server.xml
@@ -112,6 +113,7 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
 # Define the XML Parser depending on the JVM vendor
