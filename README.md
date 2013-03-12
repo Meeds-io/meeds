@@ -46,10 +46,10 @@ Windows 64b users
 
 You can activate the colorized console by editing the configuration file
 
-   plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/gatein/configuration.properties
+    plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/gatein/configuration.properties
 
 You need to had this line which is commented by default
 
-   exo.logs.console.colorized=true
+    exo.logs.console.colorized=true
 
 Depending of your system you may need to install the package [Microsoft Visual C++ 2008 Redistributable Package (x64)](http://www.microsoft.com/en-us/download/confirmation.aspx?id=15336)
