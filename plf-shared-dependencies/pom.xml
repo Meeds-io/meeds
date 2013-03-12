@@ -391,16 +391,6 @@
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-wai-template</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-wai-template</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-web-eXoResources</artifactId>
       <type>war</type>
