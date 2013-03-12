@@ -29,9 +29,9 @@ How to launch ?
 
 From the top level directory of the project oou can launch the server you just generated with :
 
-    plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/run_eXo.(sh|bat)
+    plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/start_eXo.(sh|bat)
 
-
+Use `-h` or `--help` to list all options.
 
 Known issues
 ============
