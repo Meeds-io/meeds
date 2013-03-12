@@ -407,6 +407,11 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-web-eXoResources</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-webui-core</artifactId>
     </dependency>
     <dependency>
