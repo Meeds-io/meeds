@@ -43,7 +43,6 @@
       <excludes>
         <exclude>**/*.sh</exclude>
         <!-- We need to exclude everything we override -->
-        <!-- In theory there are removed in our skelethon archive -->
         <exclude>**/conf/server.xml</exclude>
         <exclude>**/conf/logging.properties</exclude>
         <exclude>**/conf/Catalina/localhost/*</exclude>
