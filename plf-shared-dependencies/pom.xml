@@ -483,6 +483,11 @@
       <artifactId>wiki-extension-webapp</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- WIKI Upgrade Plugins -->
+    <dependency>
+      <groupId>org.exoplatform.wiki</groupId>
+      <artifactId>wiki-upgrade-plugins</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-webapp</artifactId>
