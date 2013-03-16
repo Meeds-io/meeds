@@ -435,7 +435,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-answer-webapp:war</include>
       </includes>
-      <outputFileNameMapping>answer.war</outputFileNameMapping>
+      <outputFileNameMapping>faq.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>
