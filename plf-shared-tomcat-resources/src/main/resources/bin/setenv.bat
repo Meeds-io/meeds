@@ -130,19 +130,24 @@ IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
 )
+REM JVM Memory settings
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
 REM Default user locale defined at JVM level
 SET CATALINA_OPTS=%CATALINA_OPTS% -Duser.language=%EXO_JVM_USER_LANGUAGE% -Duser.region=%EXO_JVM_USER_REGION%
+REM Network settings
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
+REM Platform profiles
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
+REM Platform paths
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
+REM Assets version
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
 REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Disable EHCache update checker
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dnet.sf.ehcache.skipUpdateCheck=true
 REM Disable Quartz update checker
