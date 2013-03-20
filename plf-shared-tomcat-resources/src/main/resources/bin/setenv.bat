@@ -84,6 +84,8 @@ IF NOT DEFINED EXO_LOGS_CONSOLE_COLORIZED SET EXO_LOGS_CONSOLE_COLORIZED=
 REM ---------------------------------------------------------------------------
 REM Default JVM configuration
 REM ---------------------------------------------------------------------------
+IF NOT DEFINED EXO_JVM_USER_LANGUAGE SET EXO_JVM_USER_LANGUAGE=en
+IF NOT DEFINED EXO_JVM_USER_REGION SET EXO_JVM_USER_REGION=US
 IF NOT DEFINED EXO_JVM_SIZE_MAX SET EXO_JVM_SIZE_MAX=1g
 IF NOT DEFINED EXO_JVM_SIZE_MIN SET EXO_JVM_SIZE_MIN=512m
 IF NOT DEFINED EXO_JVM_PERMSIZE_MAX SET EXO_JVM_PERMSIZE_MAX=256m
@@ -134,6 +136,8 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_H
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
+REM Default user locale defined at JVM level
+SET CATALINA_OPTS=%CATALINA_OPTS% -Duser.language=%EXO_JVM_USER_LANGUAGE% -Duser.region=%EXO_JVM_USER_REGION%
 REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser

@@ -65,6 +65,8 @@ esac
 # -----------------------------------------------------------------------------
 # Default JVM configuration
 # -----------------------------------------------------------------------------
+[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
+[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
 [ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
 [ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=1g
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
@@ -114,6 +116,8 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/c
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
+# Default user locale defined at JVM level
+CATALINA_OPTS="$CATALINA_OPTS -Duser.language=${EXO_JVM_USER_LANGUAGE} -Duser.region=${EXO_JVM_USER_REGION}"
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
 # Define the XML Parser depending on the JVM vendor
