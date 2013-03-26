@@ -62,7 +62,7 @@ REM ---------------------------------------------------------------------------
 REM Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
 IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
-IF NOT DEFINED EXO_LOGS_CONSOLE_COLORIZED SET EXO_LOGS_CONSOLE_COLORIZED=
+IF NOT DEFINED EXO_LOGS_COLORIZED_CONSOLE SET EXO_LOGS_COLORIZED_CONSOLE=
 
 REM ---------------------------------------------------------------------------
 REM Default JVM configuration

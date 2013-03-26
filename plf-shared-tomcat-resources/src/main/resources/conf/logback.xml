@@ -23,7 +23,7 @@
 Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
-<configuration scan="${env.EXO_DEV}" scanPeriod="30 seconds">
+<configuration scan="${EXO_DEV}" scanPeriod="30 seconds">
   <!-- Enable JMX to configure logs -->
   <jmxConfigurator/>
   <!-- Load configuration properties to customize this setup -->
@@ -75,16 +75,16 @@ For more details see : http://logback.qos.ch/manual/configuration.html
         <then>
           <!-- Colorization of logs isn't activated by default on Windows -->
           <!-- There are various issues with it like http://jira.qos.ch/browse/LOGBACK-762 -->
-          <property name="EXO_LOGS_CONSOLE_COLORIZED" value="${EXO_LOGS_CONSOLE_COLORIZED:-false}"/>
+          <property name="exo.logs.colorized.console" value="${EXO_LOGS_COLORIZED_CONSOLE:-false}"/>
           <!-- On Windows machines setting withJansi to true enables ANSI color code interpretation by the Jansi library. -->
-          <property name="EXO_LOGS_CONSOLE_JANSI" value="true"/>
+          <property name="exo.logs.jansi.console" value="true"/>
         </then>
         <else>
-          <property name="EXO_LOGS_CONSOLE_COLORIZED" value="${EXO_LOGS_CONSOLE_COLORIZED:-true}"/>
-          <property name="EXO_LOGS_CONSOLE_JANSI" value="false"/>
+          <property name="exo.logs.colorized.console" value="${EXO_LOGS_COLORIZED_CONSOLE:-true}"/>
+          <property name="exo.logs.jansi.console" value="false"/>
         </else>
       </if>
-      <if condition='"true".equals(property("EXO_LOGS_CONSOLE_COLORIZED"))'>
+      <if condition='"true".equals(property("exo.logs.colorized.console"))'>
         <then>
           <!-- Colorized logs -->
           <property name="exo.logs.console.appender.pattern" value="${exo.logs.colorized.pattern}"/>
@@ -94,7 +94,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
         </else>
       </if>
       <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <withJansi>${EXO_LOGS_CONSOLE_JANSI:-false}</withJansi>
+        <withJansi>${exo.logs.jansi.console:-false}</withJansi>
         <encoder>
           <pattern>${exo.logs.console.appender.pattern:-${exo.logs.default.pattern}}</pattern>
         </encoder>

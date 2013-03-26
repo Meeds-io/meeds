@@ -60,7 +60,7 @@ esac
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 [ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
-[ -z $EXO_LOGS_CONSOLE_COLORIZED ] && EXO_LOGS_CONSOLE_COLORIZED=
+[ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
 
 # -----------------------------------------------------------------------------
 # Default JVM configuration
