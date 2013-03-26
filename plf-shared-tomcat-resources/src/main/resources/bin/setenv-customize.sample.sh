@@ -42,7 +42,7 @@
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 #EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
 #EXO_LOGS_DISPLAY_CONSOLE=true
-#EXO_LOGS_CONSOLE_COLORIZED=true
+#EXO_LOGS_COLORIZED_CONSOLE=true
 
 # -----------------------------------------------------------------------------
 # Default JVM configuration

@@ -19,23 +19,6 @@
 
 @echo off
 
-REM Copyright (C) 2013 eXo Platform SAS.
-REM 
-REM This is free software; you can redistribute it and/or modify it
-REM under the terms of the GNU Lesser General Public License as
-REM published by the Free Software Foundation; either version 2.1 of
-REM the License, or (at your option) any later version.
-REM 
-REM This software is distributed in the hope that it will be useful,
-REM but WITHOUT ANY WARRANTY; without even the implied warranty of
-REM MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-REM Lesser General Public License for more details.
-REM 
-REM You should have received a copy of the GNU Lesser General Public
-REM License along with this software; if not, write to the Free
-REM Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
-REM 02110-1301 USA, or see the FSF site: http://www.fsf.org.
-
 REM ---------------------------------------------------------------------------
 REM            /!\     DON'T MODIFY THIS FILE      /!\
 REM ---------------------------------------------------------------------------
@@ -79,11 +62,13 @@ REM ---------------------------------------------------------------------------
 REM Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
 IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
-IF NOT DEFINED EXO_LOGS_CONSOLE_COLORIZED SET EXO_LOGS_CONSOLE_COLORIZED=
+IF NOT DEFINED EXO_LOGS_COLORIZED_CONSOLE SET EXO_LOGS_COLORIZED_CONSOLE=
 
 REM ---------------------------------------------------------------------------
 REM Default JVM configuration
 REM ---------------------------------------------------------------------------
+IF NOT DEFINED EXO_JVM_USER_LANGUAGE SET EXO_JVM_USER_LANGUAGE=en
+IF NOT DEFINED EXO_JVM_USER_REGION SET EXO_JVM_USER_REGION=US
 IF NOT DEFINED EXO_JVM_SIZE_MAX SET EXO_JVM_SIZE_MAX=1g
 IF NOT DEFINED EXO_JVM_SIZE_MIN SET EXO_JVM_SIZE_MIN=512m
 IF NOT DEFINED EXO_JVM_PERMSIZE_MAX SET EXO_JVM_PERMSIZE_MAX=256m
@@ -122,23 +107,30 @@ REM ---------------------------------------------------------------------------
 REM Compute the CATALINA_OPTS
 REM ---------------------------------------------------------------------------
 IF /I %EXO_DEBUG% EQU true (
-  SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
+  SET CATALINA_OPTS=%CATALINA_OPTS% -agentlib:jdwp=transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
 )
 IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
 )
+REM JVM Memory settings
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
+REM Default user locale defined at JVM level
+SET CATALINA_OPTS=%CATALINA_OPTS% -Duser.language=%EXO_JVM_USER_LANGUAGE% -Duser.region=%EXO_JVM_USER_REGION%
+REM Network settings
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
+REM Platform profiles
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
+REM Platform paths
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
+REM Assets version
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
 REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Disable EHCache update checker
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dnet.sf.ehcache.skipUpdateCheck=true
 REM Disable Quartz update checker

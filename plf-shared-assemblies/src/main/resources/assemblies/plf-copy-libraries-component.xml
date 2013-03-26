@@ -1,0 +1,81 @@
+<component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
+  <dependencySets>
+    <!-- ================================ -->
+    <!-- Libraries                        -->
+    <!-- ================================ -->
+    <!-- Libraries to put in Tomcat lib directory -->
+    <dependencySet>
+      <outputDirectory>/lib</outputDirectory>
+      <includes>
+        <include>*:*:jar</include>
+      </includes>
+      <excludes>
+        <!-- No Apache Tomcat artifacts have to be added in the packaging -->
+        <exclude>org.apache.tomcat:*</exclude>
+        <!-- Ant isn't really useful for us at runtime -->
+        <exclude>org.apache.ant:*</exclude>
+        <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
+        <exclude>commons-logging:*</exclude>
+        <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+        <exclude>log4j:*</exclude>
+        <exclude>org.apache.logging.log4j:*</exclude>
+        <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+        <exclude>org.slf4j:slf4j-jcl:*</exclude>
+        <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+        <exclude>org.slf4j:slf4j-logj12:*</exclude>
+        <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
+        <exclude>org.slf4j:slf4j-jdk14:*</exclude>
+        <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
+        <exclude>xstream:xstream:*</exclude>
+        <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
+        <exclude>jdom:*:*</exclude>
+        <!-- These old versions of eXo portal are in conflict with new ones under org.gatein.portal -->
+        <exclude>org.exoplatform.portal:*:*</exclude>
+        <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
+        <exclude>javax.servlet:*</exclude>
+        <exclude>com.google.gwt:gwt-user:*</exclude>
+        <exclude>javax.servlet.jsp:*</exclude>
+        <!-- Testing stuffs should never come here -->
+        <exclude>junit:*</exclude>
+        <exclude>org.testng:*</exclude>
+        <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
+        <exclude>org.jmock:*</exclude>
+        <exclude>jmock:*</exclude>
+        <exclude>org.mockito:*</exclude>
+        <!-- These old versions of jdom are in conflict with new ones under org.jdom:* -->
+        <exclude>jdom:*</exclude>
+        <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
+        <exclude>xpp3:xpp3_min</exclude>
+        <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
+        <exclude>commons-beanutils:commons-beanutils-core</exclude>
+        <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
+        <exclude>org.jboss.logging:jboss-logging-spi</exclude>
+        <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
+        <exclude>org.codehaus.woodstox:wstx-asl</exclude>
+        <!-- No Springframework in the package -->
+        <exclude>org.springframework*:*</exclude>
+        <!-- These are provided APIs by Java itself or the app server -->
+        <exclude>xml-apis:*</exclude>
+        <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
+        <exclude>stax:*</exclude>
+        <exclude>javax.xml.stream:*</exclude>
+        <exclude>javax.activation:*</exclude>
+        <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
+        <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
+        <exclude>org.jboss.spec.javax.transaction:*</exclude>
+        <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
+        <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
+        <exclude>org.gatein.shindig:shindig-gadgets</exclude>
+        <!-- This artifact is replaced to override GateIn UI -->
+        <exclude>org.gatein.portal:exo.portal.webui.core:jar</exclude>
+        <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
+        <exclude>rome:modules:*</exclude>
+        <!-- this is a build resource -->
+        <exclude>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</exclude>
+      </excludes>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+  </dependencySets>
+</component>

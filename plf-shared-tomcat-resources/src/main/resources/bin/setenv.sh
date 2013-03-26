@@ -60,11 +60,13 @@ esac
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
 [ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
-[ -z $EXO_LOGS_CONSOLE_COLORIZED ] && EXO_LOGS_CONSOLE_COLORIZED=
+[ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
 
 # -----------------------------------------------------------------------------
 # Default JVM configuration
 # -----------------------------------------------------------------------------
+[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
+[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
 [ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
 [ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=1g
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
@@ -102,17 +104,25 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler-${org.codehaus.janin
 # Compute the CATALINA_OPTS
 # -----------------------------------------------------------------------------
 if $EXO_DEBUG ; then
-  CATALINA_OPTS="$CATALINA_OPTS -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
+  CATALINA_OPTS="$CATALINA_OPTS -agentlib:jdwp=transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
 fi
+# JVM Memory settings
 CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
+# Default user locale defined at JVM level
+CATALINA_OPTS="$CATALINA_OPTS -Duser.language=${EXO_JVM_USER_LANGUAGE} -Duser.region=${EXO_JVM_USER_REGION}"
+# Network settings
+CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
+# Platform profiles
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
-CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
+# Platform paths
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
+# Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
@@ -122,7 +132,6 @@ if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
 else
   CATALINA_OPTS="$CATALINA_OPTS -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl"
 fi
-CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Disable EHCache update checker
 CATALINA_OPTS="$CATALINA_OPTS -Dnet.sf.ehcache.skipUpdateCheck=true"
 # Disable Quartz update checker

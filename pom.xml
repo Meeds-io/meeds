@@ -24,7 +24,7 @@
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
-    <version>9-RC1</version>
+    <version>9</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
@@ -64,7 +64,7 @@
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>7.0.37</org.apache.tomcat.version>
     <!-- CRaSH -->
-    <org.crsh.version>1.1.0</org.crsh.version>
+    <org.crsh.version>1.2.0-cr10</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.2</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
@@ -111,13 +111,12 @@
         <artifactId>janino</artifactId>
         <version>${org.codehaus.janino.version}</version>
       </dependency>
-      <!-- Import versions from crsh project -->
+      <!-- CRaSH webapp for GateIn -->
       <dependency>
         <groupId>org.crsh</groupId>
-        <artifactId>crsh.parent</artifactId>
+        <artifactId>crsh.jcr.exo</artifactId>
         <version>${org.crsh.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <type>war</type>
       </dependency>
       <!-- Import versions from platform project -->
       <dependency>
@@ -171,6 +170,83 @@
         <artifactId>slf4j-api</artifactId>
         <version>${org.slf4j.version}</version>
       </dependency>
+      <!-- Project modules -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-community-tomcat-standalone</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-community-tomcat-standalone</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-assemblies</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-assemblies</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-dependencies</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-root-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-root-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-resources</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-resources</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
@@ -212,6 +288,8 @@
                       <excludes>
                         <!-- No Apache Tomcat artifacts have to be added in the packaging -->
                         <exclude>org.apache.tomcat:*</exclude>
+                        <!-- Ant isn't really useful for us at runtime -->
+                        <exclude>org.apache.ant:*</exclude>
                         <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
                         <exclude>commons-logging:*</exclude>
                         <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->

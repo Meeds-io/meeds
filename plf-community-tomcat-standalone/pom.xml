@@ -34,7 +34,6 @@
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-dependencies</artifactId>
-      <version>${project.version}</version>
       <type>pom</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <optional>true</optional>
@@ -43,7 +42,6 @@
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-tomcat-resources</artifactId>
-      <version>${project.version}</version>
       <type>zip</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <optional>true</optional>

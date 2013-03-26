@@ -72,19 +72,19 @@ if /I "%1" EQU "-b" (
 ) else (
 if /I "%1" EQU "--color" (
   rem Enforce colors in console
-  SET EXO_LOGS_CONSOLE_COLORIZED=true
+  SET EXO_LOGS_COLORIZED_CONSOLE=true
 ) else (
 if /I "%1" EQU "-c" (
   rem Enforce colors in console
-  SET EXO_LOGS_CONSOLE_COLORIZED=true
+  SET EXO_LOGS_COLORIZED_CONSOLE=true
 ) else (
 if /I "%1" EQU "--nocolor" (
   rem Enforce no colors in console
-  SET EXO_LOGS_CONSOLE_COLORIZED=false
+  SET EXO_LOGS_COLORIZED_CONSOLE=false
 ) else (
 if /I "%1" EQU "-nc" (
   rem Enforce no colors in console
-  SET EXO_LOGS_CONSOLE_COLORIZED=false
+  SET EXO_LOGS_COLORIZED_CONSOLE=false
 ) else (
 if /I "%1" EQU "--help" (
   goto usage

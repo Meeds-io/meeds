@@ -215,6 +215,11 @@
       <artifactId>ecms-packaging-wcm-webapp</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- ECMS Upgrade Plugins -->
+    <dependency>
+      <groupId>org.exoplatform.ecms</groupId>
+      <artifactId>ecms-upgrade-plugins</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-answer-webapp</artifactId>
@@ -289,6 +294,11 @@
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
+    </dependency>
+    <!-- Platform Upgrade Plugins -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-component-upgrade-plugins</artifactId>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -397,18 +407,21 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-web-eXoResources</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-webui-core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-root-webapp</artifactId>
-      <version>${project.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-root-webapp</artifactId>
-      <version>${project.version}</version>
       <type>pom</type>
     </dependency>
     <!-- Build resource used to import license related files -->
@@ -467,6 +480,11 @@
       <groupId>org.exoplatform.wiki</groupId>
       <artifactId>wiki-extension-webapp</artifactId>
       <type>pom</type>
+    </dependency>
+    <!-- WIKI Upgrade Plugins -->
+    <dependency>
+      <groupId>org.exoplatform.wiki</groupId>
+      <artifactId>wiki-upgrade-plugins</artifactId>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>

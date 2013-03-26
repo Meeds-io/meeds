@@ -94,11 +94,11 @@ while [ "$1" != "" ]; do
     ;;
     -c | --color )
       # Enforce colors in console
-      export EXO_LOGS_CONSOLE_COLORIZED=true
+      export EXO_LOGS_COLORIZED_CONSOLE=true
     ;;
     -nc | --nocolor )
       # Enforce no colors in console
-      export EXO_LOGS_CONSOLE_COLORIZED=false
+      export EXO_LOGS_COLORIZED_CONSOLE=false
     ;;
     -h | --help )
       usage
