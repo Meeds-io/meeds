@@ -104,7 +104,7 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler-${org.codehaus.janin
 # Compute the CATALINA_OPTS
 # -----------------------------------------------------------------------------
 if $EXO_DEBUG ; then
-  CATALINA_OPTS="$CATALINA_OPTS -Xrunjdwp:transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
+  CATALINA_OPTS="$CATALINA_OPTS -agentlib:jdwp=transport=dt_socket,address=${EXO_DEBUG_PORT},server=y,suspend=n"
 fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"

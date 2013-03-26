@@ -107,7 +107,7 @@ REM ---------------------------------------------------------------------------
 REM Compute the CATALINA_OPTS
 REM ---------------------------------------------------------------------------
 IF /I %EXO_DEBUG% EQU true (
-  SET CATALINA_OPTS=%CATALINA_OPTS% -Xrunjdwp:transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
+  SET CATALINA_OPTS=%CATALINA_OPTS% -agentlib:jdwp=transport=dt_socket,address=%EXO_DEBUG_PORT%,server=y,suspend=n
 )
 IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
