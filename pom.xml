@@ -68,7 +68,7 @@
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.5</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
-    <ch.qas.logback.version>1.0.9</ch.qas.logback.version>
+    <ch.qas.logback.version>1.0.11</ch.qas.logback.version>
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
