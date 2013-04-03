@@ -30,7 +30,7 @@
    <!-- Eviction configuration -->
     <eviction wakeUpInterval="5000">
         <default algorithmClass="org.jboss.cache.eviction.FIFOAlgorithm" actionPolicyClass="org.exoplatform.services.jcr.impl.dataflow.persistent.jbosscache.ParentNodeEvictionActionPolicy" eventQueueSize="1000000">
-            <property name="maxNodes" value="150000" />
+            <property name="maxNodes" value="${gatein.jcr.cache.size:500000}" />
             <property name="minTimeToLive" value="0" />
         </default>
     </eviction>
