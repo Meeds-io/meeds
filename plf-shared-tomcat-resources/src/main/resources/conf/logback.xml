@@ -50,6 +50,8 @@ For more details see : http://logback.qos.ch/manual/configuration.html
     </rollingPolicy>
   </appender>
   <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+    <queueSize>512</queueSize><!-- Increase blocking queue capacity - 256 by default -->
+    <discardingThreshold>0</discardingThreshold><!-- Do not loose any event -->
     <appender-ref ref="FILE"/>
   </appender>
   <logger name="org.exoplatform" level="INFO"/>
