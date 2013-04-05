@@ -76,6 +76,7 @@
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
+      <scope>provided</scope>
     </dependencySet>
   </dependencySets>
 </component>
