@@ -37,8 +37,6 @@ For more details see : http://logback.qos.ch/manual/configuration.html
     <encoder>
       <pattern>${exo.logs.default.pattern}</pattern>
       <outputPatternAsHeader>true</outputPatternAsHeader>
-      <!-- this quadruples logging throughput -->
-      <immediateFlush>false</immediateFlush>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
