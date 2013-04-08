@@ -66,4 +66,6 @@ while [ "$1" != "" ]; do
     shift
 done
 
+export CATALINA_PID=${CATALINA_PID:-"$PRGDIR/temp/catalina.pid"}
+
 exec "$PRGDIR"/"$EXECUTABLE" stop "$@"
