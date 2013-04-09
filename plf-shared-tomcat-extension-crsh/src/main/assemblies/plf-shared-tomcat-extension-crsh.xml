@@ -35,5 +35,17 @@
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- Libraries -->
+    <dependencySet>
+      <outputDirectory>/crash/lib</outputDirectory>
+      <includes>
+        <include>*:*:jar</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+      <!-- Take care of what you do if need to use transitive deps -->
+      <useTransitiveDependencies>false</useTransitiveDependencies>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
   </dependencySets>
 </assembly>
