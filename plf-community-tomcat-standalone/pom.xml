@@ -151,6 +151,8 @@
               <resourceBundles>
                 <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
               </resourceBundles>
+              <includeScope>provided</includeScope>
+              <excludeGroupIds>org.exoplatform,com.exoplatform</excludeGroupIds>
             </configuration>
           </plugin>
           <plugin>

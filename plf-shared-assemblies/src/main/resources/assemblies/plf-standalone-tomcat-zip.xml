@@ -36,13 +36,5 @@
         <exclude>**/work/*</exclude>
       </excludes>
     </fileSet>
-    <fileSet>
-      <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
-      <outputDirectory></outputDirectory>
-      <includes>
-        <include>DEPENDENCIES.txt</include>
-        <include>NOTICE.txt</include>
-      </includes>
-    </fileSet>
   </fileSets>
 </assembly>
