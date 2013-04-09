@@ -30,6 +30,13 @@
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions - Community Tomcat Standalone</name>
   <dependencies>
+    <!-- This artifact is needed to configure Platform in community mode -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-component-edition-community</artifactId>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
     <!-- Get all shared dependencies used by PLF -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
@@ -43,13 +50,6 @@
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-shared-tomcat-resources</artifactId>
       <type>zip</type>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
-    </dependency>
-    <!-- This artifact is needed to configure Platform in community mode -->
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-component-edition-community</artifactId>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>

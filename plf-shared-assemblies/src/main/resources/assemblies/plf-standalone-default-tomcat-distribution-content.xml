@@ -102,10 +102,12 @@
     </fileSet>
     <!-- eXo platform - License file and related -->
     <fileSet>
-      <outputDirectory>/conf</outputDirectory>
-      <directory>${project.build.directory}/maven-shared-archive-resources/META-INF/</directory>
+      <outputDirectory>/</outputDirectory>
+      <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
       <includes>
-        <include>*.txt</include>
+        <include>**/DEPENDENCIES.txt</include>
+        <include>**/LICENSE.txt</include>
+        <include>**/NOTICE.txt</include>
       </includes>
     </fileSet>
     <!-- Local resources from the project - to allow to override -->
@@ -638,16 +640,6 @@
       <outputFileNameMapping>intranet-gadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- Various external wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.crsh:crsh.jcr.exo:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>crash.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform INTRANET website wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
@@ -665,6 +657,20 @@
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>acme-intranet-portlet.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- All extensions -->
+    <dependencySet>
+      <outputDirectory>/extensions</outputDirectory>
+      <includes>
+        <include>*:*:zip</include>
+      </includes>
+      <excludes>
+        <exclude>org.apache.tomcat:tomcat:zip</exclude>
+        <exclude>org.exoplatform.platform.distributions:plf-shared-tomcat-resources:zip</exclude>
+      </excludes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
   </dependencySets>

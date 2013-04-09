@@ -35,6 +35,7 @@
   <modules>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-shared-assemblies</module>
+    <module>plf-shared-tomcat-extension-crsh</module>
     <module>plf-shared-dependencies</module>
     <module>plf-shared-root-webapp</module>
     <module>plf-shared-tomcat-integration-webapp</module>
@@ -111,13 +112,6 @@
         <artifactId>janino</artifactId>
         <version>${org.codehaus.janino.version}</version>
       </dependency>
-      <!-- CRaSH webapp for GateIn -->
-      <dependency>
-        <groupId>org.crsh</groupId>
-        <artifactId>crsh.jcr.exo</artifactId>
-        <version>${org.crsh.version}</version>
-        <type>war</type>
-      </dependency>
       <!-- Import versions from platform project -->
       <dependency>
         <groupId>org.exoplatform.platform</groupId>
@@ -137,6 +131,71 @@
         <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui-webui-core</artifactId>
         <version>${org.exoplatform.platform.version}</version>
+      </dependency>
+      <!-- Project modules -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-community-tomcat-standalone</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-assemblies</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-dependencies</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-root-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-root-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-extension-crsh</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-resources</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
       </dependency>
       <!-- Required by logback for colorized console on windows -->
       <dependency>
@@ -169,83 +228,6 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>${org.slf4j.version}</version>
-      </dependency>
-      <!-- Project modules -->
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-community-tomcat-standalone</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-community-tomcat-standalone</artifactId>
-        <version>${project.version}</version>
-        <type>zip</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-assemblies</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-assemblies</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-dependencies</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-root-webapp</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-root-webapp</artifactId>
-        <version>${project.version}</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
-        <version>${project.version}</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-resources</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-resources</artifactId>
-        <version>${project.version}</version>
-        <type>zip</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
