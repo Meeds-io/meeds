@@ -241,6 +241,14 @@
   <build>
     <pluginManagement>
       <plugins>
+        <!-- Required to not break gmaven usage for -Pfix-headers by example-->
+        <plugin>
+          <groupId>org.codehaus.gmaven</groupId>
+          <artifactId>gmaven-plugin</artifactId>
+          <configuration>
+            <providerSelection>2.0</providerSelection>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
