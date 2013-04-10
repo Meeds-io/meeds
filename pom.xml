@@ -24,7 +24,7 @@
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
-    <version>9</version>
+    <version>10-SNAPSHOT</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
@@ -35,9 +35,10 @@
   <modules>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-shared-assemblies</module>
-    <module>plf-shared-tomcat-extension-crsh</module>
     <module>plf-shared-dependencies</module>
     <module>plf-shared-root-webapp</module>
+    <module>plf-shared-tomcat-extension-crsh</module>
+    <module>plf-shared-tomcat-extensions-manager</module>
     <module>plf-shared-tomcat-integration-webapp</module>
     <module>plf-shared-tomcat-pc-creator-listener</module>
     <module>plf-shared-tomcat-resources</module>
@@ -167,6 +168,12 @@
         <artifactId>plf-shared-tomcat-extension-crsh</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
+      </dependency>
+      <!-- Extensions Manager for Tomcat distribution -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-shared-tomcat-extensions-manager</artifactId>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>

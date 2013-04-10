@@ -93,6 +93,8 @@
         <exclude>rome:modules:*</exclude>
         <!-- this is a build resource -->
         <exclude>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</exclude>
+        <!-- The extensions manager is a special jar deployed in the bin directory -->
+        <exclude>org.exoplatform.platform.distributions:plf-shared-tomcat-extensions-manager:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>

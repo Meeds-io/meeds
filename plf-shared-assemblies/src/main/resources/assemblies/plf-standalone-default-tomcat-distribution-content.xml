@@ -175,6 +175,17 @@
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- eXo Platform Extensions Manager -->
+    <dependencySet>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <!-- This artifact isn't by default in tomcat -->
+        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-extensions-manager:jar</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>plf-tomcat-extensions-manager.jar</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
     <dependencySet>
       <outputDirectory>/lib</outputDirectory>

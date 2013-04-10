@@ -39,3 +39,4 @@ pom.xml.versionsBackup
 
 # Exclude JEnv Config File
 .java-version
+dependency-reduced-pom.xml
