@@ -19,6 +19,11 @@
 
 @echo off
 
+echo # ============================
+echo # eXo Platform v. ${project.version}
+echo # Extensions Manager
+echo # ============================
+
 if "%OS%" == "Windows_NT" setlocal
 
 rem Guess CATALINA_HOME if not defined
@@ -26,101 +31,38 @@ set "CURRENT_DIR=%cd%"
 if not "%CATALINA_HOME%" == "" goto gotHome
 set "CATALINA_HOME=%CURRENT_DIR%"
 if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
-cd ..
 set "CATALINA_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
+
 if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
 echo The CATALINA_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end
 :okHome
 
-set "PRG=%~nx0"
-
-set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
-
-rem Check that target executable exists
-if exist "%EXECUTABLE%" goto okExec
-echo Cannot find "%EXECUTABLE%"
+rem Get standard Java environment variables
+if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
+echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
 echo This file is needed to run this program
 goto end
-:okExec
+:okSetclasspath
+call "%CATALINA_HOME%\bin\setclasspath.bat" %1
+if errorlevel 1 goto end
 
-set COMMAND=run
+set _EXECJAVA=%_RUNJAVA%
 
-rem Process command line parameters
+rem Get remaining unshifted command line arguments and save them in the
+set CMD_LINE_ARGS=
 :setArgs
-if ""%1""=="""" (
-  goto doneSetArgs
-) else (
-if /I "%1" EQU "--dev" (
-  SET EXO_DEV=true
-) else (
-if /I "%1" EQU "--debug" (
-  SET EXO_DEBUG=true
-) else (
-if /I "%1" EQU "--background" (
-  SET COMMAND=start
-  rem Don't activate console logs if launched as background task
-  IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
-) else (
-if /I "%1" EQU "-b" (
-  SET COMMAND=start
-  rem Don't activate console logs if launched as background task
-  IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
-) else (
-if /I "%1" EQU "--color" (
-  rem Enforce colors in console
-  SET EXO_LOGS_COLORIZED_CONSOLE=true
-) else (
-if /I "%1" EQU "-c" (
-  rem Enforce colors in console
-  SET EXO_LOGS_COLORIZED_CONSOLE=true
-) else (
-if /I "%1" EQU "--nocolor" (
-  rem Enforce no colors in console
-  SET EXO_LOGS_COLORIZED_CONSOLE=false
-) else (
-if /I "%1" EQU "-nc" (
-  rem Enforce no colors in console
-  SET EXO_LOGS_COLORIZED_CONSOLE=false
-) else (
-if /I "%1" EQU "--help" (
-  goto usage
-) else (
-if /I "%1" EQU "-h" (
-  goto usage
-) else (
-  echo Invalid option !
-  echo(
-  goto usage
-)))))))))))
+if ""%1""=="""" goto doneSetArgs
+set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
 shift
 goto setArgs
 :doneSetArgs
-rem Activate console logs if we aren't in background
-IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=true
-goto start
 
-:usage
-  echo Usage: %PRG% [options]
-  echo(
-  echo     Starts eXo Platform
-  echo(
-  echo options:
-  echo(
-  echo   --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)
-  echo   --dev              Starts with Platform developer mode
-  echo   -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
-  echo   -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
-  echo   -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated.
-  echo   -h, --help         This help message
-  goto end
-:doneUsage
-
-:start
-call "%EXECUTABLE%" %COMMAND%
-:doneStart
+:execCmd
+%_EXECJAVA% -Dcatalina.home="%CATALINA_HOME%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
+goto end
 
 :end
