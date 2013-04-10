@@ -19,6 +19,11 @@
 
 @echo off
 
+echo # ============================
+echo # eXo Platform v. ${project.version}
+echo # Extensions Manager
+echo # ============================
+
 if "%OS%" == "Windows_NT" setlocal
 
 rem Guess CATALINA_HOME if not defined
@@ -29,51 +34,35 @@ if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
 set "CATALINA_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
+
 if exist "%CATALINA_HOME%\bin\catalina.bat" goto okHome
 echo The CATALINA_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end
 :okHome
 
-set "PRG=%~nx0"
-
-set "EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat"
-
-rem Check that target executable exists
-if exist "%EXECUTABLE%" goto okExec
-echo Cannot find "%EXECUTABLE%"
+rem Get standard Java environment variables
+if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
+echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
 echo This file is needed to run this program
 goto end
-:okExec
+:okSetclasspath
+call "%CATALINA_HOME%\bin\setclasspath.bat" %1
+if errorlevel 1 goto end
+
+set _EXECJAVA=%_RUNJAVA%
 
 rem Get remaining unshifted command line arguments and save them in the
+set CMD_LINE_ARGS=
 :setArgs
 if ""%1""=="""" goto doneSetArgs
-if /I "%1" EQU "--help" (
-  goto usage
-) else (
-if /I "%1" EQU "-h" (
-  goto usage
-))
+set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1
 shift
 goto setArgs
 :doneSetArgs
 
-goto stop
-
-:usage
-  echo Usage: %PRG% [options]
-  echo(
-  echo     Stop Platform, waiting up to 5 seconds for the process to end only if it was started as a background job
-  echo(
-  echo options:
-  echo(
-  echo   -h, --help   This help message
-  goto end
-:doneUsage
-
-:stop
-call "%EXECUTABLE%" stop
-:doneStop
+:execCmd
+%_EXECJAVA% -Dcatalina.home="%CATALINA_HOME%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
+goto end
 
 :end

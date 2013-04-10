@@ -33,6 +33,7 @@
       <includes>
         <include>org.apache.tomcat:tomcat:zip</include>
       </includes>
+      <scope>provided</scope>
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -42,6 +43,7 @@
       <includes>
         <include>org.exoplatform.platform.distributions:plf-shared-tomcat-resources:zip</include>
       </includes>
+      <scope>provided</scope>
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>

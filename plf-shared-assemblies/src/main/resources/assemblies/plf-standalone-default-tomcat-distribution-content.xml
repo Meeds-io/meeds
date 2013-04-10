@@ -102,10 +102,12 @@
     </fileSet>
     <!-- eXo platform - License file and related -->
     <fileSet>
-      <outputDirectory>/conf</outputDirectory>
-      <directory>${project.build.directory}/maven-shared-archive-resources/META-INF/</directory>
+      <outputDirectory>/</outputDirectory>
+      <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
       <includes>
-        <include>*.txt</include>
+        <include>**/DEPENDENCIES.txt</include>
+        <include>**/LICENSE.txt</include>
+        <include>**/NOTICE.txt</include>
       </includes>
     </fileSet>
     <!-- Local resources from the project - to allow to override -->
@@ -164,12 +166,24 @@
       <includes>
         <include>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</include>
       </includes>
+      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
           <include>**/LICENSE.txt</include>
         </includes>
       </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- eXo Platform Extensions Manager -->
+    <dependencySet>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <!-- This artifact isn't by default in tomcat -->
+        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-extensions-manager:jar</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>plf-tomcat-extensions-manager.jar</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
@@ -179,6 +193,7 @@
         <!-- This artifact isn't by default in tomcat -->
         <include>org.apache.tomcat:tomcat-catalina-jmx-remote:*</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -191,6 +206,7 @@
       <includes>
         <include>org.exoplatform.platform-ui:platform-ui-web-eXoResources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -199,6 +215,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.web.rest:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>rest.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -207,6 +224,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.web:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>web.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -215,6 +233,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.web.portal:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>portal.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -223,6 +242,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.gadgets-server:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoGadgetServer.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -231,6 +251,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.eXoGadgets:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoGadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -239,6 +260,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.exoadmin:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>exoadmin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -247,6 +269,7 @@
       <includes>
         <include>org.gatein.portal:exo.portal.portlet.dashboard:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>dashboard.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -256,6 +279,7 @@
       <includes>
         <include>org.exoplatform.commons:commons-webui-resources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>CommonsResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -264,6 +288,7 @@
       <includes>
         <include>org.exoplatform.commons:commons-fck:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>fck.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -272,6 +297,7 @@
       <includes>
         <include>org.exoplatform.commons:commons-comet-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>cometd.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -280,6 +306,7 @@
       <includes>
         <include>org.exoplatform.commons:commons-extension-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>commons-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -289,6 +316,7 @@
       <includes>
         <include>org.exoplatform.social:social-webapp-resources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>social-resources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -297,6 +325,7 @@
       <includes>
         <include>org.exoplatform.social:social-webapp-portlet:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>social-portlet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -305,6 +334,7 @@
       <includes>
         <include>org.exoplatform.social:social-webapp-opensocial:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>social.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -313,6 +343,7 @@
       <includes>
         <include>org.exoplatform.social:social-extension-war:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>social-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -322,6 +353,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-ext-authoring-apps:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>authoring-apps.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -330,6 +362,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-ext-fastcontentcreator-portlet:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>fastcontentcreator.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -338,6 +371,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-core-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>ecm-wcm-core.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -346,6 +380,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-explorer:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>ecmexplorer.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -354,6 +389,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-gadget-publication:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoDMSGadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -362,6 +398,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-presentation:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>presentation.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -370,6 +407,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-search:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>searches.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -378,6 +416,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-seo:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>seo.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -386,6 +425,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-resources-wcm:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoWCMResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -394,6 +434,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-administration:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>ecmadmin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -402,6 +443,7 @@
       <includes>
         <include>org.exoplatform.ecms:ecms-packaging-wcm-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>ecm-wcm-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -411,6 +453,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-forum-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>forum.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -419,6 +462,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-forumResources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>forumResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -427,6 +471,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-poll-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>poll.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -435,6 +480,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-answer-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>faq.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -443,6 +489,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-gadgets:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>forum-gadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -451,6 +498,7 @@
       <includes>
         <include>org.exoplatform.forum:forum-extension-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>forum-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -460,6 +508,7 @@
       <includes>
         <include>org.exoplatform.calendar:calendar-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>calendar.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -468,6 +517,7 @@
       <includes>
         <include>org.exoplatform.calendar:calendar-resources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>csResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -476,6 +526,7 @@
       <includes>
         <include>org.exoplatform.calendar:calendar-extension-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>calendar-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -485,6 +536,7 @@
       <includes>
         <include>org.exoplatform.wiki:wiki-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>wiki.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -493,6 +545,7 @@
       <includes>
         <include>org.exoplatform.wiki:wiki-extension-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>wiki-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -502,6 +555,7 @@
       <includes>
         <include>org.exoplatform.platform.distributions:plf-shared-tomcat-integration-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>integration.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -510,6 +564,7 @@
       <includes>
         <include>org.exoplatform.integration:integ-search-portlet:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>unified-search.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -519,6 +574,7 @@
       <includes>
         <include>org.exoplatform.platform.distributions:plf-shared-root-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>ROOT.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -527,6 +583,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-extension-portlet-branding:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>platform-branding.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -535,6 +592,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-extension-portlets-platformNavigation:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>platformNavigation.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -543,6 +601,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-extension-portlets-homepage:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>homepage-portlets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -551,6 +610,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-extension-resources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>eXoPlatformResources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -559,6 +619,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-extension-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>platform-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -568,6 +629,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-exo-gadget-pack-gadget-pack:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>gadget-pack.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -576,6 +638,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-sample-gadgets-sample-exo-gadget-resources:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>exo-gadget-resources.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -584,16 +647,8 @@
       <includes>
         <include>org.exoplatform.platform:platform-sample-gadgets-sample-gadgets:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>intranet-gadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- Various external wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.crsh:crsh.jcr.exo:war</include>
-      </includes>
-      <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- Platform INTRANET website wars -->
@@ -602,6 +657,7 @@
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-intranet-webapp:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>acme-intranet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -610,7 +666,22 @@
       <includes>
         <include>org.exoplatform.platform:platform-sample-acme-intranet-portlet:war</include>
       </includes>
+      <scope>provided</scope>
       <outputFileNameMapping>acme-intranet-portlet.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- All extensions -->
+    <dependencySet>
+      <outputDirectory>/extensions</outputDirectory>
+      <includes>
+        <include>*:*:zip</include>
+      </includes>
+      <excludes>
+        <exclude>org.apache.tomcat:tomcat:zip</exclude>
+        <exclude>org.exoplatform.platform.distributions:plf-shared-tomcat-resources:zip</exclude>
+      </excludes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
   </dependencySets>

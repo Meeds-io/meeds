@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2003-2013 eXo Platform SAS.
 #
@@ -65,5 +65,7 @@ while [ "$1" != "" ]; do
     esac
     shift
 done
+
+export CATALINA_PID=${CATALINA_PID:-"$PRGDIR/temp/catalina.pid"}
 
 exec "$PRGDIR"/"$EXECUTABLE" stop "$@"

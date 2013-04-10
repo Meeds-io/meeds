@@ -31,11 +31,6 @@
   <name>eXo Platform Public Distributions - Shared Dependencies</name>
   <dependencies>
     <dependency>
-      <groupId>org.crsh</groupId>
-      <artifactId>crsh.jcr.exo</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-extension-webapp</artifactId>
       <type>war</type>
