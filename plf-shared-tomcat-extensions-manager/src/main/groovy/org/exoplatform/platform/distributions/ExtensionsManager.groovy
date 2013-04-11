@@ -27,18 +27,33 @@ import groovy.io.FileType
 
 ant = new AntBuilder()
 
+scriptBaseName = "extension"
 // Computes the script extension from the OS
-scriptExtension = "sh"
+scriptName = "${scriptBaseName}.sh"
 if (System.properties['os.name'].toLowerCase().contains('windows')) {
-  scriptExtension = "bat"
+  scriptName = "${scriptBaseName}.bat"
 }
 
 def cli = new CliBuilder(
     posix: false,
     stopAtNonOption: true,
-    usage: "extension.${scriptExtension} [options]\n",
-    header: "eXo Platform Extensions Manager\n\nOptions :\n",
-    footer: '\nUse the extension "all" to install or uninstall all available extensions')
+    usage: """
+${scriptName} --list
+${scriptName} --install <extension>
+${scriptName} --uninstall <extension>
+""",
+    header: """
+eXo Platform Extensions Manager
+
+
+Options :
+""",
+    footer: """
+
+Use the extension "all" to install or uninstall all available extensions
+
+""")
+
 // Create the list of options.
 cli.with {
   h longOpt: 'help', 'Show usage information'
@@ -55,21 +70,15 @@ if (!options) {
 }
 
 // Show usage text when -h or --help option is used.
-if (options.h) {
+if (args.length == 0 || options.h) {
   cli.usage()
   System.exit 0
 }
 
-// Validate parameters constraints (only one)
-if ([options.l, options.i, options.u].findAll { it }.size() != 1) {
-  println 'error: Invalid command line parameters. You must use one and only one of these options --list, --install <extension> or --uninstall <extension>'
-  cli.usage()
-  System.exit 1
-}
-
 // Unknown parameter(s)
-if (options.arguments()) {
-  println "error: Invalid command line parameters. Unknown parameter(s) : ${options.arguments()}"
+// And validate parameters constraints (only one)
+if (options.arguments() || [options.l, options.i, options.u].findAll { it }.size() != 1) {
+  println "error: Invalid command line parameter(s)."
   cli.usage()
   System.exit 1
 }
@@ -94,15 +103,15 @@ if (!extensionsDirectory.isDirectory()) {
 }
 
 def listExtensions() {
-  println ""
   println "Available extensions:"
   extensionsDirectory.eachFile() { file -> println "  ${file.name}" }
-  println ""
-  println "To install an extension use: "
-  println "  extension.${scriptExtension} --install <extension>"
-  println ""
-  println "To install all avalaible extensions use: "
-  println "  extension.${scriptExtension} --install all"
+  println """
+To install an extension use:
+  ${scriptName} --install <extension>
+
+To install all avalaible extensions use:
+  ${scriptName} --install all
+"""
 }
 
 def installExtension(String extensionName) {
