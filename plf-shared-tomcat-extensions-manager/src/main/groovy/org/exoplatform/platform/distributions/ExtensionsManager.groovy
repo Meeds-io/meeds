@@ -33,25 +33,6 @@ if (System.properties['os.name'].toLowerCase().contains('windows')) {
   scriptExtension = "bat"
 }
 
-if (!System.getProperty("catalina.home")) {
-  println 'error: Erroneous setup, system property catalina.home not defined.'
-  System.exit 1
-}
-
-catalinaHome = new File(System.getProperty("catalina.home"))
-
-if (!catalinaHome.isDirectory()) {
-  println "error: Erroneous setup, platform home directory (${catalinaHome}) is invalid."
-  System.exit 1
-}
-
-extensionsDirectory = new File(catalinaHome, "extensions")
-
-if (!extensionsDirectory.isDirectory()) {
-  println "error: Erroneous setup, extensions directory (${extensionsDirectory}) is invalid."
-  System.exit 1
-}
-
 def cli = new CliBuilder(
     posix: false,
     stopAtNonOption: true,
@@ -90,6 +71,25 @@ if ([options.l, options.i, options.u].findAll { it }.size() != 1) {
 if (options.arguments()) {
   println "error: Invalid command line parameters. Unknown parameter(s) : ${options.arguments()}"
   cli.usage()
+  System.exit 1
+}
+
+if (!System.getProperty("catalina.home")) {
+  println 'error: Erroneous setup, system property catalina.home not defined.'
+  System.exit 1
+}
+
+catalinaHome = new File(System.getProperty("catalina.home"))
+
+if (!catalinaHome.isDirectory()) {
+  println "error: Erroneous setup, platform home directory (${catalinaHome}) is invalid."
+  System.exit 1
+}
+
+extensionsDirectory = new File(catalinaHome, "extensions")
+
+if (!extensionsDirectory.isDirectory()) {
+  println "error: Erroneous setup, extensions directory (${extensionsDirectory}) is invalid."
   System.exit 1
 }
 
