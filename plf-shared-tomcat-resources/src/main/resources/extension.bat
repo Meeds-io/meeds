@@ -19,11 +19,6 @@
 
 @echo off
 
-echo # ============================
-echo # eXo Platform v. ${project.version}
-echo # Extensions Manager
-echo # ============================
-
 if "%OS%" == "Windows_NT" setlocal
 
 rem Guess CATALINA_HOME if not defined

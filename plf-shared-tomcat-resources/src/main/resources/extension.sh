@@ -18,11 +18,6 @@
 # 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 #
 
-echo " # ============================ "
-echo " # eXo Platform v. ${project.version} "
-echo " # Extensions Manager "
-echo " # ============================ "
-
 # OS specific support.  $var _must_ be set to either true or false.
 cygwin=false
 darwin=false

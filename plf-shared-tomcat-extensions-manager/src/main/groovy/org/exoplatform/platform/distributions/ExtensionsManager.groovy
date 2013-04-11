@@ -25,6 +25,12 @@ import groovy.io.FileType
  * Command line utility to manage Platform extensions in a standalone Apache Tomcat based distribution.
  */
 
+println """
+ # ===============================
+ # eXo Platform Extensions Manager
+ # ===============================
+"""
+
 ant = new AntBuilder()
 
 scriptBaseName = "extension"
@@ -42,12 +48,7 @@ ${scriptName} --list
 ${scriptName} --install <extension>
 ${scriptName} --uninstall <extension>
 """,
-    header: """
-eXo Platform Extensions Manager
-
-
-Options :
-""",
+    header: "Options :",
     footer: """
 
 Use the extension "all" to install or uninstall all available extensions
@@ -143,8 +144,7 @@ def uninstallExtension(String extensionName) {
   println "Uninstalling ${extensionName} extension ..."
   extensionDirectory.eachFileRecurse(FileType.FILES) { file ->
     ant.delete(
-        file: new File(catalinaHome, extensionDirectory.toURI().relativize(file.toURI()).getPath()),
-        verbose: true)
+        file: new File(catalinaHome, extensionDirectory.toURI().relativize(file.toURI()).getPath()))
   }
   println "Done."
 }
@@ -157,18 +157,40 @@ if (options.l) {
 
 // InstallExtensions
 if (options.i) {
-  if ("all".equalsIgnoreCase(options.i))
+  if ("all".equalsIgnoreCase(options.i)) {
     extensionsDirectory.eachFile() { file -> installExtension file.name }
-  else
+    println """
+ # ===============================
+ # All extensions installed.
+ # ===============================
+"""
+  } else {
     installExtension(options.i)
+    println """
+ # ===============================
+ # Extension ${options.i} installed.
+ # ===============================
+"""
+  }
   System.exit 0
 }
 
 // UninstallExtension
 if (options.u) {
-  if ("all".equalsIgnoreCase(options.u))
+  if ("all".equalsIgnoreCase(options.u)) {
     extensionsDirectory.eachFile() { file -> uninstallExtension file.name }
-  else
+    println """
+ # ==============================
+ # All extensions uninstalled.
+ # ===============================
+"""
+  } else {
     uninstallExtension(options.u)
+    println """
+ # ===============================
+ # Extension ${options.u} uninstalled.
+ # ===============================
+"""
+  }
   System.exit 0
 }
