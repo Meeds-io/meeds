@@ -144,8 +144,7 @@ def uninstallExtension(String extensionName) {
   println "Uninstalling ${extensionName} extension ..."
   extensionDirectory.eachFileRecurse(FileType.FILES) { file ->
     ant.delete(
-        file: new File(catalinaHome, extensionDirectory.toURI().relativize(file.toURI()).getPath()),
-        verbose: true)
+        file: new File(catalinaHome, extensionDirectory.toURI().relativize(file.toURI()).getPath()))
   }
   println "Done."
 }
