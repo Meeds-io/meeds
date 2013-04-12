@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.0.0-RC2</version>
+    <version>4.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>plf-shared-tomcat-extensions-manager</artifactId>
   <packaging>jar</packaging>
