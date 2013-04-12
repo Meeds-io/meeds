@@ -31,7 +31,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
     <resetJUL>true</resetJUL>
   </contextListener>
-  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <appender name="FILE_PLATFORM_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${catalina.base}/logs/platform.log</file>
     <append>true</append>
     <encoder>
@@ -49,10 +49,10 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       </timeBasedFileNamingAndTriggeringPolicy>
     </rollingPolicy>
   </appender>
-  <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+  <appender name="ASYNC_PLATFORM_LOG" class="ch.qos.logback.classic.AsyncAppender">
     <queueSize>512</queueSize><!-- Increase blocking queue capacity - 256 by default -->
     <discardingThreshold>0</discardingThreshold><!-- Do not loose any event -->
-    <appender-ref ref="FILE"/>
+    <appender-ref ref="FILE_PLATFORM_LOG"/>
   </appender>
   <logger name="org.exoplatform" level="INFO"/>
   <logger name="org.gatein" level="INFO"/>
@@ -104,7 +104,44 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       </root>
     </then>
   </if>
+  <if condition='"true".equals(property("exo.jcr.session.tracking.active"))'>
+    <then>
+      <appender name="FILE_LEAK_DETECTOR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.base}/logs/leak-detector.log</file>
+        <append>true</append>
+        <encoder>
+          <pattern>${exo.logs.default.pattern}</pattern>
+          <outputPatternAsHeader>true</outputPatternAsHeader>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+          <!-- daily rollover -->
+          <fileNamePattern>${catalina.base}/logs/leak-detector-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+          <!-- Max number of archives to keep -->
+          <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
+          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+            <!-- or whenever the file size reaches maxFileSize -->
+            <maxFileSize>${exo.logs.rolling.maxFileSize}</maxFileSize>
+          </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+      </appender>
+      <appender name="ASYNC_LEAK_DETECTOR_LOG" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>512</queueSize><!-- Increase blocking queue capacity - 256 by default -->
+        <discardingThreshold>0</discardingThreshold><!-- Do not loose any event -->
+        <appender-ref ref="FILE_LEAK_DETECTOR_LOG"/>
+      </appender>
+      <logger name="exo.jcr.component.core.SessionReference" level="ERROR" additivity="false">
+        <appender-ref ref="ASYNC_LEAK_DETECTOR_LOG"/>
+      </logger>
+      <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
+        <then>
+          <logger name="exo.jcr.component.core.SessionReference">
+            <appender-ref ref="CONSOLE"/>
+          </logger>
+        </then>
+      </if>
+    </then>
+  </if>
   <root level="INFO">
-    <appender-ref ref="ASYNC"/>
+    <appender-ref ref="ASYNC_PLATFORM_LOG"/>
   </root>
 </configuration>

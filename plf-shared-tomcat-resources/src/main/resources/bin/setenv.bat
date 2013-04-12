@@ -55,6 +55,7 @@ IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 IF NOT DEFINED EXO_ASSETS_VERSION SET EXO_ASSETS_VERSION=${project.version}
+IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=false
 
 REM ---------------------------------------------------------------------------
 REM Default Logs configuration
@@ -112,7 +113,10 @@ IF /I %EXO_DEBUG% EQU true (
 IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
+  SET EXO_JCR_SESSION_TRACKING=true
 )
+REM JCR session leak detector
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.session.tracking.active=%EXO_JCR_SESSION_TRACKING%
 REM JVM Memory settings
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
 REM Default user locale defined at JVM level

@@ -53,6 +53,7 @@ esac
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
 [ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
+[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=false
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
@@ -109,7 +110,10 @@ fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
+  EXO_JCR_SESSION_TRACKING=true
 fi
+# JCR session leak detector
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.session.tracking.active=${EXO_JCR_SESSION_TRACKING}"
 # JVM Memory settings
 CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
 # Default user locale defined at JVM level
