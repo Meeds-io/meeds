@@ -47,7 +47,7 @@ REM ---------------------------------------------------------------------------
 REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
 REM ---------------------------------------------------------------------------
-REM SET EXO_PROFILES=all
+REM SET EXO_PROFILES=default,cluster,cluster-index-local
 REM SET EXO_DEBUG=false
 REM SET EXO_DEBUG_PORT=8000
 REM SET EXO_DEV=false

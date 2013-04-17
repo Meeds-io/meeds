@@ -29,7 +29,7 @@
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
-#EXO_PROFILES="all"
+#EXO_PROFILES="default,cluster,cluster-index-local"
 #EXO_DEBUG=true
 #EXO_DEBUG_PORT=8000
 #EXO_DEV=true
