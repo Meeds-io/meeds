@@ -47,8 +47,6 @@ esac
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
-[ -z $EXO_CONF_DIR_NAME ] && EXO_CONF_DIR_NAME="gatein/conf"
-[ -z $EXO_CONF_DIR ] && EXO_CONF_DIR="$CATALINA_HOME/${EXO_CONF_DIR_NAME}"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
 [ -z $EXO_DEV ] && EXO_DEV=false
@@ -123,8 +121,8 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Platform profiles
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 # Platform paths
-CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf -Dexo.conf.dir=$CATALINA_BASE/gatein/conf -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"

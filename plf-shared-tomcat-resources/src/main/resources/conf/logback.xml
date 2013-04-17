@@ -26,11 +26,26 @@ For more details see : http://logback.qos.ch/manual/configuration.html
 <configuration scan="${EXO_DEV}" scanPeriod="30 seconds">
   <!-- Enable JMX to configure logs -->
   <jmxConfigurator/>
+  <!-- Default pattern used for printing logs in files and on the console for systems that doesn't support a colorized output -->
+  <property name="exo.logs.default.pattern" value="%date{ISO8601} | %-5level | %msg [%logger{40}&lt;%thread&gt;] %n%xEx"/>
+  <!-- Pattern used for console supporting ANSI colors -->
+  <property name="exo.logs.colorized.pattern" value="%date{ISO8601} | %highlight(%-5level) | %msg %green([%logger{40}){}%cyan(&lt;%thread&gt;){}%green(]){} %n%xEx"/>
+  <!-- Logs are daily archived or whenever the file size reaches maxFileSize -->
+  <property name="exo.logs.rolling.maxFileSize" value="100Mb"/>
+  <!-- Number of archives to keep -->
+  <property name="exo.logs.rolling.maxHistory" value="60"/>
   <!-- Load configuration properties to customize this setup -->
-  <property file="${exo.conf.dir}/configuration.properties"/>
+  <property file="${catalina.base}/gatein/conf/configuration.properties"/>
+  <!--
+  LevelChangePropagator propagates changes made to the level of any logback-classic logger onto the java.util.logging framework.
+  Such propagation eliminates the performance impact of disabled log statements.
+  -->
   <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
     <resetJUL>true</resetJUL>
   </contextListener>
+  <!--
+  Main logs file for platform
+  -->
   <appender name="FILE_PLATFORM_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${catalina.base}/logs/platform.log</file>
     <append>true</append>
@@ -50,8 +65,10 @@ For more details see : http://logback.qos.ch/manual/configuration.html
     </rollingPolicy>
   </appender>
   <appender name="ASYNC_PLATFORM_LOG" class="ch.qos.logback.classic.AsyncAppender">
-    <queueSize>512</queueSize><!-- Increase blocking queue capacity - 256 by default -->
-    <discardingThreshold>0</discardingThreshold><!-- Do not loose any event -->
+    <!-- Increase blocking queue capacity - 256 by default -->
+    <queueSize>512</queueSize>
+    <!-- Do not loose any event -->
+    <discardingThreshold>0</discardingThreshold>
     <appender-ref ref="FILE_PLATFORM_LOG"/>
   </appender>
   <logger name="org.exoplatform" level="INFO"/>
@@ -125,8 +142,10 @@ For more details see : http://logback.qos.ch/manual/configuration.html
         </rollingPolicy>
       </appender>
       <appender name="ASYNC_LEAK_DETECTOR_LOG" class="ch.qos.logback.classic.AsyncAppender">
-        <queueSize>512</queueSize><!-- Increase blocking queue capacity - 256 by default -->
-        <discardingThreshold>0</discardingThreshold><!-- Do not loose any event -->
+        <!-- Increase blocking queue capacity - 256 by default -->
+        <queueSize>512</queueSize>
+        <!-- Do not loose any event -->
+        <discardingThreshold>0</discardingThreshold>
         <appender-ref ref="FILE_LEAK_DETECTOR_LOG"/>
       </appender>
       <logger name="exo.jcr.component.core.SessionReference" level="ERROR" additivity="false">

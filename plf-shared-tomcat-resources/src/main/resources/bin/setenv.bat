@@ -49,8 +49,6 @@ REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
 REM ---------------------------------------------------------------------------
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
-IF NOT DEFINED EXO_CONF_DIR_NAME SET EXO_CONF_DIR_NAME=gatein\conf
-IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
 IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
@@ -126,8 +124,8 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Platform profiles
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
 REM Platform paths
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="gatein\conf" -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf" -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
 REM Assets version
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%

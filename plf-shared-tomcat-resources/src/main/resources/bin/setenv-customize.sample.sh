@@ -30,8 +30,6 @@
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 #EXO_PROFILES="all"
-#EXO_CONF_DIR_NAME="gatein/conf"
-#EXO_CONF_DIR="$CATALINA_HOME/${EXO_CONF_DIR_NAME}"
 #EXO_DEBUG=true
 #EXO_DEBUG_PORT=8000
 #EXO_DEV=true
