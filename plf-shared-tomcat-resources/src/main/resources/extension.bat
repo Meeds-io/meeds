@@ -57,7 +57,7 @@ goto setArgs
 :doneSetArgs
 
 :execCmd
-%_EXECJAVA% -Dcatalina.home="%CATALINA_HOME%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
+%_EXECJAVA% -Dcatalina.base="%CATALINA_BASE%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
 goto end
 
 :end

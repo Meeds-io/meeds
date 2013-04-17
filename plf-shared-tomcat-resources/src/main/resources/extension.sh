@@ -64,4 +64,4 @@ else
   fi
 fi
 
-eval exec \"$_RUNJAVA\" -Dcatalina.home=\"$CATALINA_HOME\" -jar \"$CATALINA_HOME/bin/plf-tomcat-extensions-manager.jar\" "$@"
+eval exec \"$_RUNJAVA\" -Dcatalina.base=\"$CATALINA_BASE\" -jar \"$CATALINA_HOME/bin/plf-tomcat-extensions-manager.jar\" "$@"

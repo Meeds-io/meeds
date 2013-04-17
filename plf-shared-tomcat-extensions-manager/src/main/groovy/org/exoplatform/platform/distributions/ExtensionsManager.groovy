@@ -84,19 +84,19 @@ if (options.arguments() || [options.l, options.i, options.u].findAll { it }.size
   System.exit 1
 }
 
-if (!System.getProperty("catalina.home")) {
-  println 'error: Erroneous setup, system property catalina.home not defined.'
+if (!System.getProperty("catalina.base")) {
+  println 'error: Erroneous setup, system property catalina.base not defined.'
   System.exit 1
 }
 
-catalinaHome = new File(System.getProperty("catalina.home"))
+catalinaBase = new File(System.getProperty("catalina.base"))
 
-if (!catalinaHome.isDirectory()) {
-  println "error: Erroneous setup, platform home directory (${catalinaHome}) is invalid."
+if (!catalinaBase.isDirectory()) {
+  println "error: Erroneous setup, platform home directory (${catalinaBase}) is invalid."
   System.exit 1
 }
 
-extensionsDirectory = new File(catalinaHome, "extensions")
+extensionsDirectory = new File(catalinaBase, "extensions")
 
 if (!extensionsDirectory.isDirectory()) {
   println "error: Erroneous setup, extensions directory (${extensionsDirectory}) is invalid."
@@ -123,7 +123,7 @@ def installExtension(String extensionName) {
     System.exit 1
   }
   println "Installing ${extensionName} extension ..."
-  ant.copy(todir: "${catalinaHome}",
+  ant.copy(todir: "${catalinaBase}",
            preservelastmodified: true,
            verbose: true) {
     fileset(dir: "${extensionDirectory}") {
@@ -144,7 +144,7 @@ def uninstallExtension(String extensionName) {
   println "Uninstalling ${extensionName} extension ..."
   extensionDirectory.eachFileRecurse(FileType.FILES) { file ->
     ant.delete(
-        file: new File(catalinaHome, extensionDirectory.toURI().relativize(file.toURI()).getPath()))
+        file: new File(catalinaBase, extensionDirectory.toURI().relativize(file.toURI()).getPath()))
   }
   println "Done."
 }

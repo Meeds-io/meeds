@@ -38,7 +38,7 @@
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-#EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
+#EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
 #EXO_LOGS_DISPLAY_CONSOLE=true
 #EXO_LOGS_COLORIZED_CONSOLE=true
 
@@ -55,5 +55,5 @@
 # Default Tomcat configuration
 # -----------------------------------------------------------------------------
 # Global Tomcat settings
-#CATALINA_PID=$CATALINA_HOME/temp/catalina.pid
+#CATALINA_PID=$CATALINA_BASE/temp/catalina.pid
 #EXO_TOMCAT_UNPACK_WARS="$EXO_DEV"

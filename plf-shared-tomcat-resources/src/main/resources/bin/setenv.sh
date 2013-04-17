@@ -57,7 +57,7 @@ esac
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
+[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
 [ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
 
@@ -121,8 +121,8 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Platform profiles
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 # Platform paths
-CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf -Dexo.conf.dir=$CATALINA_BASE/gatein/conf -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_BASE/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
