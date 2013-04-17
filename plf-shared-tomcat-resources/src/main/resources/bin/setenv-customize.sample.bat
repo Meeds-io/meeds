@@ -51,6 +51,7 @@ REM SET EXO_PROFILES=default,cluster,cluster-index-local
 REM SET EXO_DEBUG=false
 REM SET EXO_DEBUG_PORT=8000
 REM SET EXO_DEV=false
+REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
 
 REM ---------------------------------------------------------------------------
 REM Default Logs configuration

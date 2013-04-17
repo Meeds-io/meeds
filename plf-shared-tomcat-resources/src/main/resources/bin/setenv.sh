@@ -52,6 +52,7 @@ esac
 [ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=false
+[ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
@@ -121,7 +122,10 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Platform profiles
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 # Platform paths
-CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf -Dexo.conf.dir=$CATALINA_BASE/gatein/conf -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=${EXO_DATA_DIR}"
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_BASE/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Assets version

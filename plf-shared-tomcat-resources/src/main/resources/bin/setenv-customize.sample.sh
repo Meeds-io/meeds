@@ -33,6 +33,7 @@
 #EXO_DEBUG=true
 #EXO_DEBUG_PORT=8000
 #EXO_DEV=true
+#EXO_DATA_DIR=${HOME}/.eXo-platform/data
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
