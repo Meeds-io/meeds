@@ -36,6 +36,11 @@ echo This environment variable is needed to run this program
 goto end
 :okHome
 
+rem Copy CATALINA_BASE from CATALINA_HOME if not defined
+if not "%CATALINA_BASE%" == "" goto gotBase
+set "CATALINA_BASE=%CATALINA_HOME%"
+:gotBase
+
 rem Get standard Java environment variables
 if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
 echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"

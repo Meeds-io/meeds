@@ -47,6 +47,9 @@ PRGDIR=`dirname "$PRG"`
 # Only set CATALINA_HOME if not already set
 [ -z "$CATALINA_HOME" ] && CATALINA_HOME=`cd "$PRGDIR" >/dev/null; pwd`
 
+# Copy CATALINA_BASE from CATALINA_HOME if not already set
+[ -z "$CATALINA_BASE" ] && CATALINA_BASE="$CATALINA_HOME"
+
 # Get standard Java environment variables
 if $os400; then
   # -r will Only work on the os400 if the files are:
