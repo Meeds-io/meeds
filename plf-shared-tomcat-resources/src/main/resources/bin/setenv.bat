@@ -49,18 +49,18 @@ REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
 REM ---------------------------------------------------------------------------
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
-IF NOT DEFINED EXO_CONF_DIR_NAME SET EXO_CONF_DIR_NAME=gatein\conf
-IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
 IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 IF NOT DEFINED EXO_ASSETS_VERSION SET EXO_ASSETS_VERSION=${project.version}
+IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=false
+IF NOT DEFINED EXO_DATA_DIR SET EXO_DATA_DIR=%CATALINA_BASE%\gatein\data
 
 REM ---------------------------------------------------------------------------
 REM Default Logs configuration
 REM ---------------------------------------------------------------------------
 REM Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
+IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_BASE%\conf\logback.xml
 IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
 IF NOT DEFINED EXO_LOGS_COLORIZED_CONSOLE SET EXO_LOGS_COLORIZED_CONSOLE=
 
@@ -112,7 +112,10 @@ IF /I %EXO_DEBUG% EQU true (
 IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
+  SET EXO_JCR_SESSION_TRACKING=true
 )
+REM JCR session leak detector
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.session.tracking.active=%EXO_JCR_SESSION_TRACKING%
 REM JVM Memory settings
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
 REM Default user locale defined at JVM level
@@ -122,8 +125,11 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.net.preferIPv4Stack=true
 REM Platform profiles
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
 REM Platform paths
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="%EXO_CONF_DIR_NAME%" -Dexo.conf.dir="%EXO_CONF_DIR%"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_HOME%\conf\jaas.conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name="gatein\conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
 REM Assets version
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%

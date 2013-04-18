@@ -47,18 +47,17 @@ REM ---------------------------------------------------------------------------
 REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
 REM ---------------------------------------------------------------------------
-REM SET EXO_PROFILES=default
-REM SET EXO_CONF_DIR_NAME=gatein\conf
-REM SET EXO_CONF_DIR=%CATALINA_HOME%\%EXO_CONF_DIR_NAME%
+REM SET EXO_PROFILES=default,cluster,cluster-index-local
 REM SET EXO_DEBUG=false
 REM SET EXO_DEBUG_PORT=8000
 REM SET EXO_DEV=false
+REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
 
 REM ---------------------------------------------------------------------------
 REM Default Logs configuration
 REM ---------------------------------------------------------------------------
 REM Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-REM SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_HOME%/conf/logback.xml
+REM SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_BASE%/conf/logback.xml
 REM SET EXO_LOGS_DISPLAY_CONSOLE=true
 REM SET EXO_LOGS_COLORIZED_CONSOLE=true
 

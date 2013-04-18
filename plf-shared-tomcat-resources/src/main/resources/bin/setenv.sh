@@ -47,18 +47,18 @@ esac
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
-[ -z $EXO_CONF_DIR_NAME ] && EXO_CONF_DIR_NAME="gatein/conf"
-[ -z $EXO_CONF_DIR ] && EXO_CONF_DIR="$CATALINA_HOME/${EXO_CONF_DIR_NAME}"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
 [ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
+[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=false
+[ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_HOME/conf/logback.xml
+[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
 [ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
 
@@ -109,7 +109,10 @@ fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
+  EXO_JCR_SESSION_TRACKING=true
 fi
+# JCR session leak detector
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.session.tracking.active=${EXO_JCR_SESSION_TRACKING}"
 # JVM Memory settings
 CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
 # Default user locale defined at JVM level
@@ -119,8 +122,11 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.net.preferIPv4Stack=true"
 # Platform profiles
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 # Platform paths
-CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=${EXO_CONF_DIR_NAME} -Dexo.conf.dir=${EXO_CONF_DIR}"
-CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_HOME/conf/jaas.conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=${EXO_DATA_DIR}"
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_BASE/conf/jaas.conf"
 CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"

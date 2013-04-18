@@ -59,6 +59,15 @@ if /I "%1" EQU "--dev" (
 if /I "%1" EQU "--debug" (
   SET EXO_DEBUG=true
 ) else (
+if /I "%1" EQU "--data" (
+  if ""%2""=="""" (
+    echo Missing value for option --data
+    echo(
+    goto usage
+  )
+  SET EXO_DATA_DIR=%2
+  shift
+) else (
 if /I "%1" EQU "--background" (
   SET COMMAND=start
   rem Don't activate console logs if launched as background task
@@ -94,7 +103,7 @@ if /I "%1" EQU "-h" (
   echo Invalid option !
   echo(
   goto usage
-)))))))))))
+))))))))))))
 shift
 goto setArgs
 :doneSetArgs
@@ -111,6 +120,7 @@ goto start
   echo(
   echo   --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)
   echo   --dev              Starts with Platform developer mode
+  echo   --data <path>      Defines a specific directory where to store data (can also be done by setting the environment variable EXO_DATA_DIR)
   echo   -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
   echo   -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
   echo   -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated.

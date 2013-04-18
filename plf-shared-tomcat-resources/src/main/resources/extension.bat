@@ -36,6 +36,11 @@ echo This environment variable is needed to run this program
 goto end
 :okHome
 
+rem Copy CATALINA_BASE from CATALINA_HOME if not defined
+if not "%CATALINA_BASE%" == "" goto gotBase
+set "CATALINA_BASE=%CATALINA_HOME%"
+:gotBase
+
 rem Get standard Java environment variables
 if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
 echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
@@ -57,7 +62,7 @@ goto setArgs
 :doneSetArgs
 
 :execCmd
-%_EXECJAVA% -Dcatalina.home="%CATALINA_HOME%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
+%_EXECJAVA% -Dcatalina.base="%CATALINA_BASE%" -jar "%CATALINA_HOME%\bin\plf-tomcat-extensions-manager.jar" %CMD_LINE_ARGS%
 goto end
 
 :end
