@@ -121,8 +121,8 @@ goto start
   echo   --debug            Starts with JVM Debugger (Use %%EXO_DEBUG_PORT%% to change the port. 8000 by default)
   echo   --dev              Starts with Platform developer mode
   echo   --data <path>      Defines a specific directory where to store data (can also be done by setting the environment variable EXO_DATA_DIR)
-  echo   -c, --color        Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
-  echo   -nc, --nocolor     Enforce using colorized logs in console. (By default colors are activated on non-windows systems)
+  echo   -c, --color        Enforce to use colorized logs in console. (By default colors are activated on non-windows systems)
+  echo   -nc, --nocolor     Enforce to not use colorized logs in console. (By default colors are activated on non-windows systems)
   echo   -b, --background   Starts as a background process. Use stop_eXo.sh to stop it. Console logs are deactivated.
   echo   -h, --help         This help message
   goto end
