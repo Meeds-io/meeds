@@ -28,8 +28,17 @@ REM Settings customisation
 REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :
 REM 1- Rename the file setenv-customize.sample.bat to setenv-customize.bat and uncomment/change values
-REM 2- Use system environment variables of your system or local shell
+REM 2- Use system environment variables of your system or local shell (Get the list in setenv-customize.sample.bat)
 REM ---------------------------------------------------------------------------
+
+rem Get standard Java environment variables
+if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
+echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
+echo This file is needed to run this program
+goto end
+:okSetclasspath
+call "%CATALINA_HOME%\bin\setclasspath.bat" %1
+if errorlevel 1 goto end
 
 rem Get standard environment variables
 if not exist "%CATALINA_BASE%\bin\setenv-customize.bat" goto setEnvCustomize
@@ -130,7 +139,16 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
+REM JAVA_HOME is computed by setclasspath.bat if required
+if not exist "%JAVA_HOME%\bin\javac.exe" goto noJavac
+REM We have a JDK
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djre.lib="%JAVA_HOME%\jre\lib"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip"
+goto okJavac
+:noJavac
+REM We have a JRE
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djre.lib="%JAVA_HOME%\lib"
+:okJavac
 REM Assets version
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
 REM Logback configuration file
@@ -140,3 +158,5 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xm
 
 REM Set the window name
 SET TITLE=eXo Platform ${project.version}
+
+:end
