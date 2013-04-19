@@ -21,13 +21,17 @@
 # -----------------------------------------------------------------------------
 #                  /!\     DON'T MODIFY THIS FILE     /!\
 # -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
+#
 # Settings customisation
+#
+# Refer to eXo Platform Administrators Guide for more details.
+#
 # -----------------------------------------------------------------------------
 # You have 2 ways to customize your installation settings :
 # 1- Rename the file setenv-customize.sample.sh to setenv-customize.sh and uncomment/change values
 # 2- Use system environment variables of your system or local shell (Get the list in setenv-customize.sample.sh)
+# -----------------------------------------------------------------------------
+#                  /!\     DON'T MODIFY THIS FILE     /!\
 # -----------------------------------------------------------------------------
 
 case "`uname`" in
@@ -38,6 +42,10 @@ case "`uname`" in
     exit -1;
   ;;
 esac
+
+if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
+  . "$CATALINA_BASE/bin/setenv-customize.sh"
+fi
 
 # Get standard Java environment variables
 if $os400; then
@@ -56,19 +64,25 @@ else
   fi
 fi
 
-if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
-  . "$CATALINA_BASE/bin/setenv-customize.sh"
-fi
+# -----------------------------------------------------------------------------
+# Default JVM configuration
+# -----------------------------------------------------------------------------
+[ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
+[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=2g
+[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
+[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
+[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
+[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
+[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
+[ -z $EXO_DEV ] && EXO_DEV=false
 
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
-[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
-[ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
-[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=false
+[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING="$EXO_DEV"
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
 
 # -----------------------------------------------------------------------------
@@ -78,17 +92,6 @@ fi
 [ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
 [ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
-
-# -----------------------------------------------------------------------------
-# Default JVM configuration
-# -----------------------------------------------------------------------------
-[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
-[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
-[ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
-[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=2g
-[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
-[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
-[ -z $EXO_JVM_PERMSIZE_MIN ] && EXO_JVM_PERMSIZE_MIN=128m
 
 # -----------------------------------------------------------------------------
 # Default Tomcat configuration
@@ -126,7 +129,6 @@ fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
-  EXO_JCR_SESSION_TRACKING=true
 fi
 # JCR session leak detector
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.session.tracking.active=${EXO_JCR_SESSION_TRACKING}"
@@ -152,6 +154,10 @@ if [ -d "$JAVA_HOME"/jre ]; then
 else
   # This is a JRE
   CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=${JAVA_HOME}/lib"
+  if [ -f "$JAVA_HOME"/../src.zip ]; then
+    # This is a JRE in a JDK
+    CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/../src.zip"
+  fi
 fi
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
