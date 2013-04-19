@@ -21,18 +21,18 @@
 # -----------------------------------------------------------------------------
 #                  /!\     DON'T MODIFY THIS FILE     /!\
 # -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
+#
 # Settings customisation
+#
+# Refer to eXo Platform Administrators Guide for more details.
+#
 # -----------------------------------------------------------------------------
 # You have 2 ways to customize your installation settings :
 # 1- Rename the file setenv-customize.sample.sh to setenv-customize.sh and uncomment/change values
-# 2- Use system environment variables of your system or local shell
+# 2- Use system environment variables of your system or local shell (Get the list in setenv-customize.sample.sh)
 # -----------------------------------------------------------------------------
-
-if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
-  . "$CATALINA_BASE/bin/setenv-customize.sh"
-fi
+#                  /!\     DON'T MODIFY THIS FILE     /!\
+# -----------------------------------------------------------------------------
 
 case "`uname`" in
   CYGWIN*)
@@ -43,15 +43,46 @@ case "`uname`" in
   ;;
 esac
 
+if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
+  . "$CATALINA_BASE/bin/setenv-customize.sh"
+fi
+
+# Get standard Java environment variables
+if $os400; then
+  # -r will Only work on the os400 if the files are:
+  # 1. owned by the user
+  # 2. owned by the PRIMARY group of the user
+  # this will not work if the user belongs in secondary groups
+  . "$CATALINA_HOME"/bin/setclasspath.sh
+else
+  if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
+    . "$CATALINA_HOME"/bin/setclasspath.sh
+  else
+    echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
+    echo "This file is needed to run this program"
+    exit 1
+  fi
+fi
+
+# -----------------------------------------------------------------------------
+# Default JVM configuration
+# -----------------------------------------------------------------------------
+[ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
+[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=2g
+[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
+[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
+[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
+[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
+[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
+[ -z $EXO_DEV ] && EXO_DEV=false
+
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
-[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
-[ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
-[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=false
+[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING="$EXO_DEV"
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
 
 # -----------------------------------------------------------------------------
@@ -61,17 +92,6 @@ esac
 [ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
 [ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
-
-# -----------------------------------------------------------------------------
-# Default JVM configuration
-# -----------------------------------------------------------------------------
-[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
-[ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
-[ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
-[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=2g
-[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
-[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
-[ -z $EXO_JVM_PERMSIZE_MIN ] && EXO_JVM_PERMSIZE_MIN=128m
 
 # -----------------------------------------------------------------------------
 # Default Tomcat configuration
@@ -109,7 +129,6 @@ fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
-  EXO_JCR_SESSION_TRACKING=true
 fi
 # JCR session leak detector
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.session.tracking.active=${EXO_JCR_SESSION_TRACKING}"
@@ -127,7 +146,19 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=$CATALINA_BASE/gatein/conf"
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=${EXO_DATA_DIR}"
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_BASE/conf/jaas.conf"
-CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip -Djre.lib=${JAVA_HOME}/jre/lib"
+# JAVA_HOME is computed by setclasspath.sh if required
+if [ -d "$JAVA_HOME"/jre ]; then
+  # This is a JDK
+  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=${JAVA_HOME}/jre/lib"
+  CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip"
+else
+  # This is a JRE
+  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=${JAVA_HOME}/lib"
+  if [ -f "$JAVA_HOME"/../src.zip ]; then
+    # This is a JRE in a JDK
+    CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/../src.zip"
+  fi
+fi
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
 # Logback configuration file
@@ -138,8 +169,3 @@ if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
 else
   CATALINA_OPTS="$CATALINA_OPTS -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl"
 fi
-# Disable EHCache update checker
-CATALINA_OPTS="$CATALINA_OPTS -Dnet.sf.ehcache.skipUpdateCheck=true"
-# Disable Quartz update checker
-CATALINA_OPTS="$CATALINA_OPTS -Dorg.terracotta.quartz.skipUpdateCheck=true"
-

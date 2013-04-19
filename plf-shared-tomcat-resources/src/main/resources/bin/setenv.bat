@@ -22,13 +22,17 @@
 REM ---------------------------------------------------------------------------
 REM            /!\     DON'T MODIFY THIS FILE      /!\
 REM ---------------------------------------------------------------------------
-
-REM ---------------------------------------------------------------------------
+REM
 REM Settings customisation
+REM
+REM Refer to eXo Platform Administrators Guide for more details.
+REM
 REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :
 REM 1- Rename the file setenv-customize.sample.bat to setenv-customize.bat and uncomment/change values
-REM 2- Use system environment variables of your system or local shell
+REM 2- Use system environment variables of your system or local shell (Get the list in setenv-customize.sample.bat)
+REM ---------------------------------------------------------------------------
+REM            /!\     DON'T MODIFY THIS FILE      /!\
 REM ---------------------------------------------------------------------------
 
 rem Get standard environment variables
@@ -36,6 +40,15 @@ if not exist "%CATALINA_BASE%\bin\setenv-customize.bat" goto setEnvCustomize
 call "%CATALINA_BASE%\bin\setenv-customize.bat"
 
 :setEnvCustomize
+rem Get standard Java environment variables
+if exist "%CATALINA_HOME%\bin\setclasspath.bat" goto okSetclasspath
+echo Cannot find "%CATALINA_HOME%\bin\setclasspath.bat"
+echo This file is needed to run this program
+goto end
+:okSetclasspath
+call "%CATALINA_HOME%\bin\setclasspath.bat" %1
+if errorlevel 1 goto end
+
 REM We validate that Command extensions are available
 VERIFY other 2>nul
 SETLOCAL enableextensions
@@ -46,14 +59,23 @@ IF ERRORLEVEL 1 (
 ENDLOCAL
 
 REM ---------------------------------------------------------------------------
+REM Default JVM configuration
+REM ---------------------------------------------------------------------------
+IF NOT DEFINED EXO_JVM_SIZE_MAX SET EXO_JVM_SIZE_MAX=2g
+IF NOT DEFINED EXO_JVM_SIZE_MIN SET EXO_JVM_SIZE_MIN=512m
+IF NOT DEFINED EXO_JVM_PERMSIZE_MAX SET EXO_JVM_PERMSIZE_MAX=256m
+IF NOT DEFINED EXO_JVM_USER_LANGUAGE SET EXO_JVM_USER_LANGUAGE=en
+IF NOT DEFINED EXO_JVM_USER_REGION SET EXO_JVM_USER_REGION=US
+IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
+IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
+
+REM ---------------------------------------------------------------------------
 REM Default EXO PLATFORM configuration
 REM ---------------------------------------------------------------------------
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
-IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
-IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 IF NOT DEFINED EXO_ASSETS_VERSION SET EXO_ASSETS_VERSION=${project.version}
-IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=false
+IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=%EXO_DEV%
 IF NOT DEFINED EXO_DATA_DIR SET EXO_DATA_DIR=%CATALINA_BASE%\gatein\data
 
 REM ---------------------------------------------------------------------------
@@ -63,16 +85,6 @@ REM Default configuration for logs (using logback framework - http://logback.qos
 IF NOT DEFINED EXO_LOGS_LOGBACK_CONFIG_FILE SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_BASE%\conf\logback.xml
 IF NOT DEFINED EXO_LOGS_DISPLAY_CONSOLE SET EXO_LOGS_DISPLAY_CONSOLE=false
 IF NOT DEFINED EXO_LOGS_COLORIZED_CONSOLE SET EXO_LOGS_COLORIZED_CONSOLE=
-
-REM ---------------------------------------------------------------------------
-REM Default JVM configuration
-REM ---------------------------------------------------------------------------
-IF NOT DEFINED EXO_JVM_USER_LANGUAGE SET EXO_JVM_USER_LANGUAGE=en
-IF NOT DEFINED EXO_JVM_USER_REGION SET EXO_JVM_USER_REGION=US
-IF NOT DEFINED EXO_JVM_SIZE_MAX SET EXO_JVM_SIZE_MAX=2g
-IF NOT DEFINED EXO_JVM_SIZE_MIN SET EXO_JVM_SIZE_MIN=512m
-IF NOT DEFINED EXO_JVM_PERMSIZE_MAX SET EXO_JVM_PERMSIZE_MAX=256m
-IF NOT DEFINED EXO_JVM_PERMSIZE_MIN SET EXO_JVM_PERMSIZE_MIN=128m
 
 REM ---------------------------------------------------------------------------
 REM Default Tomcat configuration
@@ -112,7 +124,6 @@ IF /I %EXO_DEBUG% EQU true (
 IF /I %EXO_DEV% EQU true (
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.exoplatform.container.configuration.debug
   SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.product.developing=true
-  SET EXO_JCR_SESSION_TRACKING=true
 )
 REM JCR session leak detector
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.session.tracking.active=%EXO_JCR_SESSION_TRACKING%
@@ -130,17 +141,27 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip" -Djre.lib="%JAVA_HOME%\jre\lib"
+REM JAVA_HOME is computed by setclasspath.bat if required
+if not exist "%JAVA_HOME%\bin\javac.exe" goto JavaHomeIsJRE
+REM We have a JDK
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djre.lib="%JAVA_HOME%\jre\lib"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\src.zip"
+goto okLibAndSrcPaths
+:JavaHomeIsJRE
+REM We have a JRE
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djre.lib="%JAVA_HOME%\lib"
+if not exist "%JAVA_HOME%\..\src.zip" goto okLibAndSrcPaths
+REM This is a JRE inside a JDK
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djavasrc="%JAVA_HOME%\..\src.zip"
+:okLibAndSrcPaths
 REM Assets version
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
 REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
-REM Disable EHCache update checker
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dnet.sf.ehcache.skipUpdateCheck=true
-REM Disable Quartz update checker
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dorg.terracotta.quartz.skipUpdateCheck=true
 
 REM Set the window name
 SET TITLE=eXo Platform ${project.version}
+
+:end
