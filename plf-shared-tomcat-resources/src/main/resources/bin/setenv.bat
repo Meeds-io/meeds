@@ -23,7 +23,7 @@ REM ---------------------------------------------------------------------------
 REM            /!\     DON'T MODIFY THIS FILE      /!\
 REM ---------------------------------------------------------------------------
 REM
-REM Settings customisation
+REM You mustn't do settings customisations here. Have a look at setenv-customize.sample.bat
 REM
 REM Refer to eXo Platform Administrators Guide for more details.
 REM
