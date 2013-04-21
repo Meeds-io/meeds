@@ -82,6 +82,40 @@
 #EXO_JCR_SESSION_TRACKING=true
 
 # -----------------------------------------------------------------------------
+# SMTP/Emails configuration
+# -----------------------------------------------------------------------------
+
+# Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
+#EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
+
+# Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
+#EXO_EMAIL_FROM=intranet@mycompany.com
+
+# SMTP Server hostname. (Default: localhost)
+#EXO_EMAIL_SMTP_HOST=smtp.gmail.com
+
+# SMTP Server port. (Default: 25)
+#EXO_EMAIL_SMTP_PORT=465
+
+# True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
+#EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
+
+# True to enable the SMTP authentication. (Default: false)
+#EXO_EMAIL_SMTP_AUTH=true
+
+# Username to send for authentication. (Default: <NONE>)
+#EXO_EMAIL_SMTP_USERNAME=account@gmail.com
+
+# Password to send for authentication. (Default: <NONE>)
+#EXO_EMAIL_SMTP_PASSWORD=password
+
+# Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
+#EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
+
+# This class will be used to create SMTP sockets. (Default: <NONE>)
+#EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
+
+# -----------------------------------------------------------------------------
 # JOD Converter configuration
 # -----------------------------------------------------------------------------
 # Used to preview documents

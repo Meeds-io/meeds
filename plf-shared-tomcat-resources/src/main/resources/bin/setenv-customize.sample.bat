@@ -80,6 +80,40 @@ REM SET EXO_DEV=true
 REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 REM SET EXO_JCR_SESSION_TRACKING=true
 
+# -----------------------------------------------------------------------------
+# SMTP/Emails configuration
+# -----------------------------------------------------------------------------
+
+REM Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
+REM SET EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
+
+REM Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
+REM SET EXO_EMAIL_FROM=intranet@mycompany.com
+
+REM SMTP Server hostname. (Default: localhost)
+REM SET EXO_EMAIL_SMTP_HOST=smtp.gmail.com
+
+REM SMTP Server port. (Default: 25)
+REM SET EXO_EMAIL_SMTP_PORT=465
+
+REM True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
+REM SET EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
+
+REM True to enable the SMTP authentication. (Default: false)
+REM SET EXO_EMAIL_SMTP_AUTH=true
+
+REM Username to send for authentication. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_USERNAME=account@gmail.com
+
+REM Password to send for authentication. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_PASSWORD=password
+
+REM Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
+
+REM This class will be used to create SMTP sockets. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
+
 REM -----------------------------------------------------------------------------
 REM JOD Converter configuration
 REM -----------------------------------------------------------------------------
