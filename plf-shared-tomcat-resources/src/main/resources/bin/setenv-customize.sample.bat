@@ -80,9 +80,9 @@ REM SET EXO_DEV=true
 REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 REM SET EXO_JCR_SESSION_TRACKING=true
 
-# -----------------------------------------------------------------------------
-# SMTP/Emails configuration
-# -----------------------------------------------------------------------------
+REM -----------------------------------------------------------------------------
+REM SMTP/Emails configuration
+REM -----------------------------------------------------------------------------
 
 REM Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
 REM SET EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
