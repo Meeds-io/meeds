@@ -26,6 +26,7 @@ REM
 REM You mustn't do settings customisations here. Have a look at setenv-customize.sample.bat
 REM
 REM Refer to eXo Platform Administrators Guide for more details.
+REM http://docs.exoplatform.com
 REM
 REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :
@@ -164,8 +165,28 @@ REM Jod Converter activation
 IF DEFINED EXO_JODCONVERTER_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.enable=%EXO_JODCONVERTER_ENABLE%
 REM Comma separated list of ports numbers to use for open office servers used to convert documents.
 IF DEFINED EXO_JODCONVERTER_PORTS SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.portnumbers=%EXO_JODCONVERTER_PORTS%
-REM The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+REM The absolute path to the office home on the server.
 IF DEFINED EXO_JODCONVERTER_OFFICEHOME SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.officehome=%EXO_JODCONVERTER_OFFICEHOME%
+REM Domain name used to produce absolute URLs in email notifications.
+IF DEFINED EXO_DEPLOYMENT_URL SET CATALINA_OPTS=%CATALINA_OPTS% -Ddomain.url=%EXO_DEPLOYMENT_URL%
+REM Email display in "from" field of email notification.
+IF DEFINED EXO_EMAIL_FROM SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.from=%EXO_EMAIL_FROM%
+REM SMTP Server hostname.
+IF DEFINED EXO_EMAIL_SMTP_HOST SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.host=%EXO_EMAIL_SMTP_HOST%
+REM SMTP Server port.
+IF DEFINED EXO_EMAIL_SMTP_PORT SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.port=%EXO_EMAIL_SMTP_PORT%
+REM True to enable the secure (TLS) SMTP. See RFC 3207.
+IF DEFINED EXO_EMAIL_SMTP_STARTTLS_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.starttls.enable=%EXO_EMAIL_SMTP_STARTTLS_ENABLE%
+REM True to enable the SMTP authentication.
+IF DEFINED EXO_EMAIL_SMTP_AUTH SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.auth=%EXO_EMAIL_SMTP_AUTH%
+REM Username to send for authentication.
+IF DEFINED EXO_EMAIL_SMTP_USERNAME SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.username=%EXO_EMAIL_SMTP_USERNAME%
+REM Password to send for authentication.
+IF DEFINED EXO_EMAIL_SMTP_PASSWORD SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.password=%EXO_EMAIL_SMTP_PASSWORD%
+REM Specify the port to connect to when using the specified socket factory.
+IF DEFINED EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.socketFactory.port=%EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT%
+REM This class will be used to create SMTP sockets.
+IF DEFINED EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.socketFactory.class=%EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS%
 
 REM Set the window name
 SET TITLE=eXo Platform ${project.version}

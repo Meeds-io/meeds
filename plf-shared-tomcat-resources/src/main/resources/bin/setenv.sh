@@ -25,6 +25,7 @@
 # You mustn't do settings customisations here. Have a look at setenv-customize.sample.sh
 #
 # Refer to eXo Platform Administrators Guide for more details.
+# http://docs.exoplatform.com
 #
 # -----------------------------------------------------------------------------
 # You have 2 ways to customize your installation settings :
@@ -173,5 +174,25 @@ fi
 [ ! -z $EXO_JODCONVERTER_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.enable=${EXO_JODCONVERTER_ENABLE}"
 # Comma separated list of ports numbers to use for open office servers used to convert documents.
 [ ! -z $EXO_JODCONVERTER_PORTS ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.portnumbers=${EXO_JODCONVERTER_PORTS}"
-# The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+# The absolute path to the office home on the server.
 [ ! -z $EXO_JODCONVERTER_OFFICEHOME ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.officehome=${EXO_JODCONVERTER_OFFICEHOME}"
+# Domain name used to produce absolute URLs in email notifications.
+[ ! -z $EXO_DEPLOYMENT_URL ] && CATALINA_OPTS="$CATALINA_OPTS -Ddomain.url=${EXO_DEPLOYMENT_URL}"
+# Email display in "from" field of email notification.
+[ ! -z $EXO_EMAIL_FROM ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.from=${EXO_EMAIL_FROM}"
+# SMTP Server hostname.
+[ ! -z $EXO_EMAIL_SMTP_HOST ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.host=${EXO_EMAIL_SMTP_HOST}"
+# SMTP Server port.
+[ ! -z $EXO_EMAIL_SMTP_PORT ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.port=${EXO_EMAIL_SMTP_PORT}"
+# True to enable the secure (TLS) SMTP. See RFC 3207.
+[ ! -z $EXO_EMAIL_SMTP_STARTTLS_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.starttls.enable=${EXO_EMAIL_SMTP_STARTTLS_ENABLE}"
+# True to enable the SMTP authentication.
+[ ! -z $EXO_EMAIL_SMTP_AUTH ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.auth=${EXO_EMAIL_SMTP_AUTH}"
+# Username to send for authentication.
+[ ! -z $EXO_EMAIL_SMTP_USERNAME ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.username=${EXO_EMAIL_SMTP_USERNAME}"
+# Password to send for authentication.
+[ ! -z $EXO_EMAIL_SMTP_PASSWORD ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.password=${EXO_EMAIL_SMTP_PASSWORD}"
+# Specify the port to connect to when using the specified socket factory.
+[ ! -z $EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.socketFactory.port=${EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT}"
+# This class will be used to create SMTP sockets.
+[ ! -z $EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.socketFactory.class=${EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS}"

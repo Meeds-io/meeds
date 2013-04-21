@@ -24,6 +24,7 @@ REM
 REM Settings customisation
 REM
 REM Refer to eXo Platform Administrators Guide for more details.
+REM http://docs.exoplatform.com
 REM
 REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :
@@ -49,10 +50,10 @@ REM Size of the Permanent Generation. (Default : 256m)
 REM SET EXO_JVM_PERMSIZE_MAX=128m
 
 REM Default locale language
-REM EXO_JVM_USER_LANGUAGE="fr"
+REM SET EXO_JVM_USER_LANGUAGE="fr"
 
 REM Default locale region
-REM EXO_JVM_USER_REGION="FR"
+REM SET EXO_JVM_USER_REGION="FR"
 
 REM Loads in-process debugging libraries to attach a debugger (also available with --debug option on start_eXo.bat script)
 REM SET EXO_DEBUG=true
@@ -68,7 +69,7 @@ REM eXo Platform comes with different runtime profiles, enabling you to customiz
 REM SET EXO_PROFILES=default,cluster,cluster-index-local
 
 REM Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-REM EXO_ASSETS_VERSION=42
+REM SET EXO_ASSETS_VERSION=42
 
 REM Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
 REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
@@ -77,7 +78,41 @@ REM Activates the development mode of eXo platform (also available with --dev op
 REM SET EXO_DEV=true
 
 REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
-REM EXO_JCR_SESSION_TRACKING=true
+REM SET EXO_JCR_SESSION_TRACKING=true
+
+# -----------------------------------------------------------------------------
+# SMTP/Emails configuration
+# -----------------------------------------------------------------------------
+
+REM Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
+REM SET EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
+
+REM Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
+REM SET EXO_EMAIL_FROM=intranet@mycompany.com
+
+REM SMTP Server hostname. (Default: localhost)
+REM SET EXO_EMAIL_SMTP_HOST=smtp.gmail.com
+
+REM SMTP Server port. (Default: 25)
+REM SET EXO_EMAIL_SMTP_PORT=465
+
+REM True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
+REM SET EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
+
+REM True to enable the SMTP authentication. (Default: false)
+REM SET EXO_EMAIL_SMTP_AUTH=true
+
+REM Username to send for authentication. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_USERNAME=account@gmail.com
+
+REM Password to send for authentication. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_PASSWORD=password
+
+REM Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
+
+REM This class will be used to create SMTP sockets. (Default: <NONE>)
+REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
 
 REM -----------------------------------------------------------------------------
 REM JOD Converter configuration
