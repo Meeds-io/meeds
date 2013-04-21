@@ -81,6 +81,23 @@
 #EXO_JCR_SESSION_TRACKING=true
 
 # -----------------------------------------------------------------------------
+# JOD Converter configuration
+# -----------------------------------------------------------------------------
+# Used to preview documents
+#
+# Requires to have openoffice/libreoffice server installed
+
+# Jod Converter activation (Default : true)
+#EXO_JODCONVERTER_ENABLE=false
+
+# Comma separated list of ports numbers to use for open office servers used to convert documents.
+# One office server instance will be created for each port. (Default : 2002)
+#EXO_JODCONVERTER_PORTS=2002,2003,2004,2005
+
+# The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+#EXO_JODCONVERTER_OFFICEHOME=/usr/lib/libreoffice
+
+# -----------------------------------------------------------------------------
 # Logs configuration
 # -----------------------------------------------------------------------------
 

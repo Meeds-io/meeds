@@ -79,6 +79,24 @@ REM SET EXO_DEV=true
 REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 REM EXO_JCR_SESSION_TRACKING=true
 
+REM -----------------------------------------------------------------------------
+REM JOD Converter configuration
+REM -----------------------------------------------------------------------------
+REM Used to preview documents
+REM
+REM Requires to have openoffice/libreoffice server installed
+
+REM Jod Converter activation (Default : true)
+REM SET EXO_JODCONVERTER_ENABLE=false
+
+REM Comma separated list of ports numbers to use for open office servers used to convert documents.
+REM One office server instance will be created for each port. (Default : 2002)
+REM SET EXO_JODCONVERTER_PORTS=2002,2003,2004,2005
+
+REM The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+REM Prefer to use the shortname syntax without spaces for the PATH
+REM SET EXO_JODCONVERTER_OFFICEHOME=C:\Progra~1\OpenOf~1
+
 REM ---------------------------------------------------------------------------
 REM Logs configuration
 REM ---------------------------------------------------------------------------
