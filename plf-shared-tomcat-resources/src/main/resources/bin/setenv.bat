@@ -165,7 +165,7 @@ REM Jod Converter activation
 IF DEFINED EXO_JODCONVERTER_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.enable=%EXO_JODCONVERTER_ENABLE%
 REM Comma separated list of ports numbers to use for open office servers used to convert documents.
 IF DEFINED EXO_JODCONVERTER_PORTS SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.portnumbers=%EXO_JODCONVERTER_PORTS%
-REM The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+REM The absolute path to the office home on the server.
 IF DEFINED EXO_JODCONVERTER_OFFICEHOME SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.officehome=%EXO_JODCONVERTER_OFFICEHOME%
 
 REM Set the window name

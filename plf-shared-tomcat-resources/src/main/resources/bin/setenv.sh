@@ -174,5 +174,5 @@ fi
 [ ! -z $EXO_JODCONVERTER_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.enable=${EXO_JODCONVERTER_ENABLE}"
 # Comma separated list of ports numbers to use for open office servers used to convert documents.
 [ ! -z $EXO_JODCONVERTER_PORTS ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.portnumbers=${EXO_JODCONVERTER_PORTS}"
-# The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+# The absolute path to the office home on the server.
 [ ! -z $EXO_JODCONVERTER_OFFICEHOME ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.officehome=${EXO_JODCONVERTER_OFFICEHOME}"

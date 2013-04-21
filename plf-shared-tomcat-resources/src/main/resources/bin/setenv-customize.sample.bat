@@ -50,10 +50,10 @@ REM Size of the Permanent Generation. (Default : 256m)
 REM SET EXO_JVM_PERMSIZE_MAX=128m
 
 REM Default locale language
-REM EXO_JVM_USER_LANGUAGE="fr"
+REM SET EXO_JVM_USER_LANGUAGE="fr"
 
 REM Default locale region
-REM EXO_JVM_USER_REGION="FR"
+REM SET EXO_JVM_USER_REGION="FR"
 
 REM Loads in-process debugging libraries to attach a debugger (also available with --debug option on start_eXo.bat script)
 REM SET EXO_DEBUG=true
@@ -69,7 +69,7 @@ REM eXo Platform comes with different runtime profiles, enabling you to customiz
 REM SET EXO_PROFILES=default,cluster,cluster-index-local
 
 REM Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-REM EXO_ASSETS_VERSION=42
+REM SET EXO_ASSETS_VERSION=42
 
 REM Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
 REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
@@ -78,7 +78,7 @@ REM Activates the development mode of eXo platform (also available with --dev op
 REM SET EXO_DEV=true
 
 REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
-REM EXO_JCR_SESSION_TRACKING=true
+REM SET EXO_JCR_SESSION_TRACKING=true
 
 REM -----------------------------------------------------------------------------
 REM JOD Converter configuration
