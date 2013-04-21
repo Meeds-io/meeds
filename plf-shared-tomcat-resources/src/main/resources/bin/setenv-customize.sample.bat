@@ -24,6 +24,7 @@ REM
 REM Settings customisation
 REM
 REM Refer to eXo Platform Administrators Guide for more details.
+REM http://docs.exoplatform.com
 REM
 REM ---------------------------------------------------------------------------
 REM You have 2 ways to customize your installation settings :

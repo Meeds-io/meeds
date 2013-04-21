@@ -25,6 +25,7 @@
 # You mustn't do settings customisations here. Have a look at setenv-customize.sample.sh
 #
 # Refer to eXo Platform Administrators Guide for more details.
+# http://docs.exoplatform.com
 #
 # -----------------------------------------------------------------------------
 # You have 2 ways to customize your installation settings :
