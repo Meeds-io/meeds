@@ -531,10 +531,5 @@
       <artifactId>exo.portal.web.rest</artifactId>
       <type>war</type>
     </dependency>
-    <!-- Coming from gateIn ??? - org.gatein.web.redirect.implementation.RedirectHandlerImpl -->
-    <dependency>
-      <groupId>org.gatein.web</groupId>
-      <artifactId>redirect</artifactId>
-    </dependency>
   </dependencies>
 </project>
