@@ -40,7 +40,7 @@
     <!-- Get all shared dependencies used by PLF -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-dependencies</artifactId>
+      <artifactId>plf-dependencies</artifactId>
       <type>pom</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
@@ -48,7 +48,7 @@
     <!-- Get required additional files for Tomcat package -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-resources</artifactId>
+      <artifactId>plf-tomcat-resources</artifactId>
       <type>zip</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
@@ -94,7 +94,7 @@
                </descriptors>
                <filters>
                 <!-- Default server.xml is using HSQLDB -->
-                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/hsqldb.filters.properties</filter>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
               </filters>
             </configuration>
           </execution>
@@ -111,7 +111,7 @@
                 <descriptorRef>plf-standalone-tomcat-server-xml-hsqldb</descriptorRef>
               </descriptorRefs>
               <filters>
-                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/hsqldb.filters.properties</filter>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
               </filters>
             </configuration>
           </execution>
@@ -128,7 +128,7 @@
                 <descriptorRef>plf-standalone-tomcat-server-xml-mysql</descriptorRef>
               </descriptorRefs>
               <filters>
-                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/mysql.filters.properties</filter>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/mysql.filters.properties</filter>
               </filters>
             </configuration>
           </execution>
@@ -136,7 +136,7 @@
         <dependencies>
           <dependency>
             <groupId>org.exoplatform.platform.distributions</groupId>
-            <artifactId>plf-shared-assemblies</artifactId>
+            <artifactId>plf-assemblies</artifactId>
             <version>${project.version}</version>
           </dependency>
         </dependencies>
@@ -193,7 +193,7 @@
             <dependencies>
               <dependency>
                 <groupId>org.exoplatform.platform.distributions</groupId>
-                <artifactId>plf-shared-assemblies</artifactId>
+                <artifactId>plf-assemblies</artifactId>
                 <version>${project.version}</version>
               </dependency>
             </dependencies>

@@ -57,7 +57,7 @@
     <!-- Unix shell scripts with exec rights -->
     <fileSet>
       <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <fileMode>0755</fileMode>
       <filtered>true</filtered>
       <includes>
@@ -67,7 +67,7 @@
     <!-- Others files to filter -->
     <fileSet>
       <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <filtered>true</filtered>
       <includes>
         <include>**/*.txt</include>
@@ -86,7 +86,7 @@
     <!-- Don't filter others files -->
     <fileSet>
       <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <excludes>
         <exclude>**/*.sh</exclude>
         <exclude>**/*.txt</exclude>
@@ -155,7 +155,7 @@
     <file>
       <outputDirectory>/conf/</outputDirectory>
       <destName>server.xml</destName>
-      <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-shared-tomcat-resources/conf/server.template.xml</source>
+      <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/server.template.xml</source>
       <filtered>true</filtered>
     </file>
   </files>
@@ -180,7 +180,7 @@
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <!-- This artifact isn't by default in tomcat -->
-        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-extensions-manager:jar</include>
+        <include>org.exoplatform.platform.distributions:plf-tomcat-extensions-manager:jar</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>plf-tomcat-extensions-manager.jar</outputFileNameMapping>
@@ -553,7 +553,7 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform.distributions:plf-shared-tomcat-integration-webapp:war</include>
+        <include>org.exoplatform.platform.distributions:plf-tomcat-integration-webapp:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>integration.war</outputFileNameMapping>
@@ -572,7 +572,7 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform.distributions:plf-shared-root-webapp:war</include>
+        <include>org.exoplatform.platform.distributions:plf-root-webapp:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>ROOT.war</outputFileNameMapping>
@@ -678,7 +678,7 @@
       </includes>
       <excludes>
         <exclude>org.apache.tomcat:tomcat:zip</exclude>
-        <exclude>org.exoplatform.platform.distributions:plf-shared-tomcat-resources:zip</exclude>
+        <exclude>org.exoplatform.platform.distributions:plf-tomcat-resources:zip</exclude>
       </excludes>
       <scope>provided</scope>
       <unpack>true</unpack>

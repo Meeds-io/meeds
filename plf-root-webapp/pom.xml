@@ -26,7 +26,7 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-root-webapp</artifactId>
+  <artifactId>plf-root-webapp</artifactId>
   <packaging>war</packaging>
-  <name>eXo Platform Public Distributions - Shared ROOT WebApp</name>
+  <name>eXo Platform Public Distributions - ROOT WebApp</name>
 </project>

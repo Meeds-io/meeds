@@ -34,14 +34,14 @@
   <name>eXo Platform Public Distributions</name>
   <modules>
     <module>plf-community-tomcat-standalone</module>
-    <module>plf-shared-assemblies</module>
-    <module>plf-shared-dependencies</module>
-    <module>plf-shared-root-webapp</module>
-    <module>plf-shared-tomcat-extension-crsh</module>
-    <module>plf-shared-tomcat-extensions-manager</module>
-    <module>plf-shared-tomcat-integration-webapp</module>
-    <module>plf-shared-tomcat-pc-creator-listener</module>
-    <module>plf-shared-tomcat-resources</module>
+    <module>plf-assemblies</module>
+    <module>plf-dependencies</module>
+    <module>plf-root-webapp</module>
+    <module>plf-tomcat-extension-crsh</module>
+    <module>plf-tomcat-extensions-manager</module>
+    <module>plf-tomcat-integration-webapp</module>
+    <module>plf-tomcat-pc-creator-listener</module>
+    <module>plf-tomcat-resources</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
@@ -142,65 +142,65 @@
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-assemblies</artifactId>
+        <artifactId>plf-assemblies</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-dependencies</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-root-webapp</artifactId>
+        <artifactId>plf-dependencies</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-root-webapp</artifactId>
+        <artifactId>plf-root-webapp</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-extension-crsh</artifactId>
+        <artifactId>plf-tomcat-extension-crsh</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>
       <!-- Extensions Manager for Tomcat distribution -->
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-extensions-manager</artifactId>
+        <artifactId>plf-tomcat-extensions-manager</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+        <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+        <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-shared-tomcat-resources</artifactId>
+        <artifactId>plf-tomcat-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>

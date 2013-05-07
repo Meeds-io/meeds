@@ -26,39 +26,6 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-tomcat-extension-crsh</artifactId>
-  <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Extension - CRaSH</name>
-  <dependencies>
-    <!-- CRaSH webapp for GateIn -->
-    <dependency>
-      <groupId>org.crsh</groupId>
-      <artifactId>crsh.jcr.exo</artifactId>
-      <version>${org.crsh.version}</version>
-      <type>war</type>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>package-extension</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptors>
-                <descriptor>src/main/assemblies/plf-shared-tomcat-extension-crsh.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <artifactId>plf-assemblies</artifactId>
+  <name>eXo Platform Public Distributions - Assemblies</name>
 </project>

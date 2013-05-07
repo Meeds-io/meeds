@@ -26,20 +26,24 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
-  <packaging>war</packaging>
-  <name>eXo Platform Public Distributions - Shared Tomcat Integration WebApp</name>
+  <artifactId>plf-tomcat-pc-creator-listener</artifactId>
+  <packaging>jar</packaging>
+  <name>eXo Platform Public Distributions - Tomcat Portal Containers Creator</name>
+  <description>This module defines a LifecycleListener to attach to a Tomcat host to create all portal containers.</description>
   <dependencies>
     <dependency>
-      <groupId>org.gatein.wci</groupId>
-      <artifactId>wci-tomcat7</artifactId>
-      <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
-      <exclusions>
-        <exclusion>
-          <artifactId>catalina</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-      </exclusions>
+      <groupId>org.exoplatform.kernel</groupId>
+      <artifactId>exo.kernel.commons</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.kernel</groupId>
+      <artifactId>exo.kernel.container</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-catalina</artifactId>
+      <!-- Provided by Apache Tomcat -->
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>

@@ -94,7 +94,7 @@
         <!-- this is a build resource -->
         <exclude>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</exclude>
         <!-- The extensions manager is a special jar deployed in the bin directory -->
-        <exclude>org.exoplatform.platform.distributions:plf-shared-tomcat-extensions-manager:*</exclude>
+        <exclude>org.exoplatform.platform.distributions:plf-tomcat-extensions-manager:*</exclude>
         <!-- PLF-4963 : Don't package any jaxb dep to avoid conflictswith the version provided in Java 6 -->
         <exclude>*:jaxb*:*</exclude>
       </excludes>

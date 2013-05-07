@@ -26,9 +26,9 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-tomcat-extensions-manager</artifactId>
+  <artifactId>plf-tomcat-extensions-manager</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Platform Public Distributions - Shared Tomcat Extensions Manager</name>
+  <name>eXo Platform Public Distributions - Tomcat Extensions Manager</name>
   <description>Command line utility to manage Platform extensions in a standalone Apache Tomcat based distribution.</description>
   <properties>
     <groovy-eclipse-compiler.version>2.7.0-01</groovy-eclipse-compiler.version>

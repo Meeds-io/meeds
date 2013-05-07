@@ -26,9 +26,9 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-tomcat-resources</artifactId>
+  <artifactId>plf-tomcat-resources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Shared Tomcat Resources</name>
+  <name>eXo Platform Public Distributions - Tomcat Resources</name>
   <dependencies>
     <!-- Logging implementation : http://logback.qos.ch/ -->
     <!-- Is configured from conf/logback.xml -->
@@ -68,29 +68,29 @@
     <!-- CRaSH extension for PLF -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-extension-crsh</artifactId>
+      <artifactId>plf-tomcat-extension-crsh</artifactId>
       <type>zip</type>
     </dependency>
     <!-- Extensions Manager for Tomcat distribution -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-extensions-manager</artifactId>
+      <artifactId>plf-tomcat-extensions-manager</artifactId>
     </dependency>
     <!-- GateIn Container Integration Servlet -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+      <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-integration-webapp</artifactId>
+      <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>pom</type>
     </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-tomcat-pc-creator-listener</artifactId>
+      <artifactId>plf-tomcat-pc-creator-listener</artifactId>
     </dependency>
     <!-- Required by logback for colorized console on windows -->
     <dependency>
@@ -147,7 +147,7 @@
         <dependencies>
           <dependency>
             <groupId>org.exoplatform.platform.distributions</groupId>
-            <artifactId>plf-shared-assemblies</artifactId>
+            <artifactId>plf-assemblies</artifactId>
             <version>${project.version}</version>
           </dependency>
         </dependencies>

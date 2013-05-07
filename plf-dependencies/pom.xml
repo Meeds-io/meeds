@@ -26,9 +26,9 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-shared-dependencies</artifactId>
+  <artifactId>plf-dependencies</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Shared Dependencies</name>
+  <name>eXo Platform Public Distributions - Dependencies</name>
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
@@ -411,12 +411,12 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-root-webapp</artifactId>
+      <artifactId>plf-root-webapp</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-shared-root-webapp</artifactId>
+      <artifactId>plf-root-webapp</artifactId>
       <type>pom</type>
     </dependency>
     <!-- Build resource used to import license related files -->
