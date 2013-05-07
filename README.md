@@ -20,7 +20,7 @@ The `settings.xml` file at the root of the project gives you :
 Build options
 -------------
 
-Add `-Pskip-archive` in your build command line to not generate the final zip archive (and thus gain few seconds of build).
+Add `-Dskip-archive` in your build command line to not generate the final zip archive (and thus gain few seconds of build).
 
 *TIP* : Your build will be faster (~40%) using a JDK7
 
