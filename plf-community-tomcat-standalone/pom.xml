@@ -53,20 +53,20 @@
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
-     <!-- Mobile site redirection -->
-     <dependency>
-        <groupId>org.gatein.web</groupId>
-        <artifactId>redirect</artifactId>
-        <!-- Don't expose transitive deps if someone wants the zip as dep -->
-        <scope>provided</scope>
-     </dependency>
-     <dependency>
-        <groupId>org.gatein.portal.portlet</groupId>
-        <artifactId>redirect</artifactId>
-        <type>war</type>
-        <!-- Don't expose transitive deps if someone wants the zip as dep -->
-        <scope>provided</scope>
-     </dependency>
+    <!-- Mobile site redirection -->
+    <dependency>
+      <groupId>org.gatein.web</groupId>
+      <artifactId>redirect</artifactId>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal.portlet</groupId>
+      <artifactId>redirect</artifactId>
+      <type>war</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -89,10 +89,10 @@
                 <descriptorRef>plf-standalone-default-tomcat-extract-dependencies</descriptorRef>
                 <descriptorRef>plf-standalone-default-tomcat-distribution-content</descriptorRef>
               </descriptorRefs>
-               <descriptors>
-                  <descriptor>src/main/assemblies/plf-standalone-community-tomcat-distribution-content.xml</descriptor>
-               </descriptors>
-               <filters>
+              <descriptors>
+                <descriptor>src/main/assemblies/plf-standalone-community-tomcat-distribution-content.xml</descriptor>
+              </descriptors>
+              <filters>
                 <!-- Default server.xml is using HSQLDB -->
                 <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
               </filters>
