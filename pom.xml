@@ -64,7 +64,7 @@
     <!-- The version of Platform To bundle -->
     <org.exoplatform.platform.version>4.0.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
-    <org.apache.tomcat.version>7.0.39</org.apache.tomcat.version>
+    <org.apache.tomcat.version>7.0.40</org.apache.tomcat.version>
     <!-- CRaSH -->
     <org.crsh.version>1.2.1</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
