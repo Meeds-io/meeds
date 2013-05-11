@@ -256,6 +256,14 @@
             <appendAssemblyId>false</appendAssemblyId>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <!-- Don't include libraries into Web Archives -->
+            <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
