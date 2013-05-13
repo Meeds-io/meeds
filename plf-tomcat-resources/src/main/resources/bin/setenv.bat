@@ -161,6 +161,8 @@ REM Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 REM Define the XML Parser
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl
+REM PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
+SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
 REM Jod Converter activation
 IF DEFINED EXO_JODCONVERTER_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.enable=%EXO_JODCONVERTER_ENABLE%
 REM Comma separated list of ports numbers to use for open office servers used to convert documents.

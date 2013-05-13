@@ -170,6 +170,8 @@ if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
 else
   CATALINA_OPTS="$CATALINA_OPTS -Djavax.xml.stream.XMLOutputFactory=com.sun.xml.internal.stream.XMLOutputFactoryImpl -Djavax.xml.stream.XMLInputFactory=com.sun.xml.internal.stream.XMLInputFactoryImpl -Djavax.xml.stream.XMLEventFactory=com.sun.xml.internal.stream.events.XMLEventsFactoryImpl"
 fi
+# PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
+CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
 # Jod Converter activation
 [ ! -z $EXO_JODCONVERTER_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.enable=${EXO_JODCONVERTER_ENABLE}"
 # Comma separated list of ports numbers to use for open office servers used to convert documents.
