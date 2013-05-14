@@ -82,6 +82,11 @@
           <artifactId>javax.servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
+        <exclusion>
+          <artifactId>exo.portal.webui.core</artifactId>
+          <groupId>org.gatein.portal</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -153,6 +158,11 @@
         <exclusion>
           <artifactId>stax-api</artifactId>
           <groupId>javax.xml.stream</groupId>
+        </exclusion>
+        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.eXo -->
+        <exclusion>
+          <artifactId>exo.portal.webui.core</artifactId>
+          <groupId>org.gatein.portal</groupId>
         </exclusion>
       </exclusions>
     </dependency>

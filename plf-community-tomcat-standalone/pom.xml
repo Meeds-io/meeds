@@ -72,6 +72,11 @@
           <artifactId>javax.servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
+        <exclusion>
+          <artifactId>exo.portal.webui.core</artifactId>
+          <groupId>org.gatein.portal</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
   </dependencies>
