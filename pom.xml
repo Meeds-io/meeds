@@ -273,20 +273,19 @@
       <id>exo-release</id>
       <build>
         <plugins>
-          <!-- We must take care to never grab these artifacts in our distribution -->
-          <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
             <executions>
               <execution>
-                <id>analyze-dependencies</id>
+                <id>banned-dependencies</id>
                 <goals>
                   <goal>enforce</goal>
                 </goals>
                 <configuration>
                   <rules>
-                    <!-- WARNING : We shouldn't find these dependencies but are tolerating them. They are excluded in the packaging part. -->
+                    <!-- We must take care to never grab these artifacts in our distribution -->
+                    <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
                     <bannedDependencies>
                       <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
                       <searchTransitive>true</searchTransitive>
@@ -345,19 +344,42 @@
                         <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
                         <exclude>org.jboss.spec.javax.transaction:*</exclude>
                         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
-                        <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
-                        <exclude>org.gatein.shindig:shindig-gadgets</exclude>
                         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
                         <exclude>rome:modules:*</exclude>
                       </excludes>
                       <includes>
                         <!-- This artifact isn't by default in tomcat -->
                         <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
+                        <!-- We can use the tomcat distro -->
+                        <include>org.apache.tomcat:tomcat:zip</include>
                       </includes>
                     </bannedDependencies>
-                    <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
-                    <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
-                    <requireUpperBoundDeps />
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+              <execution>
+                <id>enforce-bytecode-version</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <!-- This rule checks the dependencies transitively and fails if any class of any dependency is having its bytecode version higher than the one specified. -->
+                    <enforceBytecodeVersion>
+                      <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
+                    </enforceBytecodeVersion>
+                  </rules>
+                  <fail>true</fail>
+                </configuration>
+              </execution>
+              <execution>
+                <id>enforce-ban-duplicate-classes</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
                     <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
                     <banDuplicateClasses>
                       <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
@@ -367,14 +389,21 @@
                   <fail>false</fail>
                 </configuration>
               </execution>
+              <execution>
+                <id>enforce-upper-bound-deps</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <!-- WARNING : Maven dependency resolution system didn't selected the higher version required by all transitive dependencies -->
+                    <!-- See: http://maven.apache.org/enforcer/enforcer-rules/requireUpperBoundDeps.html -->
+                    <requireUpperBoundDeps />
+                  </rules>
+                  <fail>false</fail>
+                </configuration>
+              </execution>
             </executions>
-            <dependencies>
-              <dependency>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>extra-enforcer-rules</artifactId>
-                <version>1.0-alpha-3</version>
-              </dependency>
-            </dependencies>
           </plugin>
         </plugins>
       </build>

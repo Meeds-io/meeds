@@ -56,4 +56,30 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <!-- Additional tasks done while performing a release -->
+      <id>exo-release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>banned-dependencies</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <!-- Don't fail in this module. Tomcat deps are in provided scope -->
+                  <fail>false</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
