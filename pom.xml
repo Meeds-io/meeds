@@ -121,29 +121,17 @@
         <artifactId>janino</artifactId>
         <version>${org.codehaus.janino.version}</version>
       </dependency>
-      <!-- Define version for platform-ui artifacts -->
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui-web-eXoResources</artifactId>
-        <version>${org.exoplatform.platform.version}</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui-webui-core</artifactId>
-        <version>${org.exoplatform.platform.version}</version>
-      </dependency>
       <!-- Project modules -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-assemblies</artifactId>
+        <version>${project.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-community-tomcat-standalone</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-assemblies</artifactId>
-        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
@@ -203,6 +191,18 @@
         <artifactId>plf-tomcat-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
+      </dependency>
+      <!-- Define version for platform-ui artifacts -->
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-web-eXoResources</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui-webui-core</artifactId>
+        <version>${org.exoplatform.platform.version}</version>
       </dependency>
       <!-- Required by logback for colorized console on windows -->
       <dependency>

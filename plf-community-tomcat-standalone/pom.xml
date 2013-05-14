@@ -53,19 +53,26 @@
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
-    <!-- Mobile site redirection -->
-    <dependency>
-      <groupId>org.gatein.web</groupId>
-      <artifactId>redirect</artifactId>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
-    </dependency>
     <dependency>
       <groupId>org.gatein.portal.portlet</groupId>
       <artifactId>redirect</artifactId>
       <type>war</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
+    </dependency>
+    <!-- Mobile site redirection -->
+    <dependency>
+      <groupId>org.gatein.web</groupId>
+      <artifactId>redirect</artifactId>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+      <exclusions>
+        <!-- Coming by transitivity from org.gatein.captcha:simplecaptcha -->
+        <exclusion>
+          <artifactId>javax.servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
   <build>
