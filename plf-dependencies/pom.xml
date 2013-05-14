@@ -569,6 +569,11 @@
           <artifactId>ow2-jta-1.1-spec</artifactId>
           <groupId>org.ow2.spec.ee</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.josso:josso-ws -->
+        <exclusion>
+          <artifactId>axis-ant</artifactId>
+          <groupId>org.apache.axis</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>

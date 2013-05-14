@@ -292,8 +292,9 @@
                       <excludes>
                         <!-- No Apache Tomcat artifacts have to be added in the packaging -->
                         <exclude>org.apache.tomcat:*</exclude>
-                        <!-- Ant isn't really useful for us at runtime -->
+                        <!-- Ant and related aren't really useful for us at runtime -->
                         <exclude>org.apache.ant:*</exclude>
+                        <exclude>org.apache.axis:axis-ant:*</exclude>
                         <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
                         <exclude>commons-logging:*</exclude>
                         <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
