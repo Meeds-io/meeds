@@ -165,25 +165,6 @@
       </activation>
       <build>
         <plugins>
-          <!-- Build License related files bundled directly in the archive -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-remote-resources-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>process</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <resourceBundles>
-                <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
-              </resourceBundles>
-              <includeScope>provided</includeScope>
-              <excludeGroupIds>org.exoplatform,com.exoplatform</excludeGroupIds>
-            </configuration>
-          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
@@ -191,7 +172,7 @@
               <!-- Create the distribution zip and attach it to maven -->
               <execution>
                 <id>plf-standalone-tomcat-zip</id>
-                <phase>prepare-package</phase>
+                <phase>package</phase>
                 <goals>
                   <goal>single</goal>
                 </goals>
@@ -209,6 +190,33 @@
                 <version>${project.version}</version>
               </dependency>
             </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>exo-release</id>
+      <build>
+        <plugins>
+          <!-- Build License related files bundled directly in the archive -->
+          <!-- This is a long process and really useful only for released stuffs -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-remote-resources-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>process</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <resourceBundles>
+                <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
+              </resourceBundles>
+              <includeScope>provided</includeScope>
+              <excludeGroupIds>org.exoplatform,com.exoplatform</excludeGroupIds>
+            </configuration>
           </plugin>
         </plugins>
       </build>
