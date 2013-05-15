@@ -23,23 +23,23 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
 
-	<!-- This filter collects runtime request statistics -->
-	<filter>
-		<filter-name>org.exoplatform.portal.application.ApplicationMonitoringFilter</filter-name>
-		<filter-class>org.exoplatform.portal.application.ApplicationMonitoringFilter</filter-class>
-		<lifecycle>ACTION_PHASE</lifecycle>
-		<lifecycle>RENDER_PHASE</lifecycle>
-		<lifecycle>EVENT_PHASE</lifecycle>
-		<lifecycle>RESOURCE_PHASE</lifecycle>
-	</filter>
+  <!-- This filter collects runtime request statistics -->
+  <filter>
+    <filter-name>org.exoplatform.portal.application.ApplicationMonitoringFilter</filter-name>
+    <filter-class>org.exoplatform.portal.application.ApplicationMonitoringFilter</filter-class>
+    <lifecycle>ACTION_PHASE</lifecycle>
+    <lifecycle>RENDER_PHASE</lifecycle>
+    <lifecycle>EVENT_PHASE</lifecycle>
+    <lifecycle>RESOURCE_PHASE</lifecycle>
+  </filter>
 
-	<filter>
-		<filter-name>Portlet Disabler Filter</filter-name> 
-		<filter-class>org.exoplatform.platform.common.portlet.PortletDisablerFilter</filter-class> 
-		<lifecycle>RENDER_PHASE</lifecycle>
-	</filter>
-	<filter-mapping> 
-		<filter-name>Portlet Disabler Filter</filter-name> 
-		<portlet-name>*</portlet-name> 
-	</filter-mapping>
+  <filter>
+    <filter-name>Portlet Disabler Filter</filter-name>
+    <filter-class>org.exoplatform.platform.common.portlet.PortletDisablerFilter</filter-class>
+    <lifecycle>RENDER_PHASE</lifecycle>
+  </filter>
+  <filter-mapping>
+    <filter-name>Portlet Disabler Filter</filter-name>
+    <portlet-name>*</portlet-name>
+  </filter-mapping>
 </portlet-app>

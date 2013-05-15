@@ -124,8 +124,8 @@ def installExtension(String extensionName) {
   }
   println "Installing ${extensionName} extension ..."
   ant.copy(todir: "${catalinaBase}",
-           preservelastmodified: true,
-           verbose: true) {
+      preservelastmodified: true,
+      verbose: true) {
     fileset(dir: "${extensionDirectory}") {
       include(name: "**/*.jar")
       include(name: "**/*.war")

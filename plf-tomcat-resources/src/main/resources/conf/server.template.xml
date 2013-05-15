@@ -66,7 +66,7 @@
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
               poolPreparedStatements="true"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}"/>
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}" />
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
@@ -76,7 +76,7 @@
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
               poolPreparedStatements="true"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}"/>
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}" />
 
   </GlobalNamingResources>
 
@@ -105,7 +105,7 @@
                connectionTimeout="20000" disableUploadTimeout="true"
                URIEncoding="UTF-8"
                compression="off" compressionMinSize="2048"
-               noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript"/>
+               noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript" />
 
     <!-- A "Connector" using the shared thread pool-->
     <!--
@@ -129,7 +129,7 @@
     <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3"
                connectionTimeout="20000"
                redirectPort="8443"
-               URIEncoding="UTF-8"/>
+               URIEncoding="UTF-8" />
 
     <!-- An Engine represents the entry point (within Catalina) that processes
          every request.  The Engine implementation for Tomcat stand alone
@@ -158,7 +158,7 @@
         <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
 
         <!-- This Listener is responsible to create all portlet containers -->
-        <Listener className="org.exoplatform.platform.server.tomcat.PortalContainersCreator"/>
+        <Listener className="org.exoplatform.platform.server.tomcat.PortalContainersCreator" />
 
         <!-- Access log processes all example.
              Documentation at: /docs/config/valve.html

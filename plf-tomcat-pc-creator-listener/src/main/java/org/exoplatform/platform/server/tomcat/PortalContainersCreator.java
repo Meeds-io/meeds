@@ -18,14 +18,13 @@
  */
 package org.exoplatform.platform.server.tomcat;
 
-import java.security.PrivilegedAction;
-
-
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleEvent;
 import org.apache.catalina.LifecycleListener;
 import org.exoplatform.commons.utils.SecurityHelper;
 import org.exoplatform.container.RootContainer;
+
+import java.security.PrivilegedAction;
 
 /**
  *

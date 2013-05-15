@@ -24,7 +24,7 @@
     xmlns="http://www.gatein.org/xml/ns/gatein_controller_1_1"
     separator-escape=":">
 
-  <route path="/standalone/{gtn:path}">    
+  <route path="/standalone/{gtn:path}">
     <route-param qname="gtn:handler">
       <value>standalone</value>
     </route-param>
@@ -68,13 +68,13 @@
       </route-param>
     </route>
     <route path="/{gtn:sitename}/{gtn:path}">
-	  <route-param qname="gtn:handler">
-	    <value>legacy</value>
-	  </route-param>
-	  <path-param qname="gtn:path" encoding="preserve-path">
-	    <pattern>.*</pattern>
-	  </path-param>
-  	</route>
+      <route-param qname="gtn:handler">
+        <value>legacy</value>
+      </route-param>
+      <path-param qname="gtn:path" encoding="preserve-path">
+        <pattern>.*</pattern>
+      </path-param>
+    </route>
   </route>
 
   <!-- Skin handler -->
@@ -203,5 +203,5 @@
     <route-param qname="gtn:handler">
       <value>default</value>
     </route-param>
-  </route> 
+  </route>
 </controller>

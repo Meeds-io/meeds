@@ -18,14 +18,14 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<jbosscache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:jboss:jbosscache-core:config:3.1">
+<jbosscache xmlns="urn:jboss:jbosscache-core:config:3.1">
 
-  <jmxStatistics enabled="${gatein.jgroups.jmxstatistics.enable:true}"/>
+  <jmxStatistics enabled="${gatein.jgroups.jmxstatistics.enable:true}" />
 
   <!-- Eviction configuration -->
   <eviction wakeUpInterval="5000">
     <default algorithmClass="org.jboss.cache.eviction.ExpirationAlgorithm"
-      eventQueueSize="1000000">
+             eventQueueSize="1000000">
       <property name="maxNodes" value="100000" />
       <property name="timeToLive" value="120000" />
       <property name="warnNoExpirationKey" value="false" />
