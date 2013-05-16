@@ -164,6 +164,11 @@
           <artifactId>exo.portal.webui.core</artifactId>
           <groupId>org.gatein.portal</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.picketlink.idm:picketlink-idm-core -->
+        <exclusion>
+          <artifactId>jaxb-impl</artifactId>
+          <groupId>com.sun.xml.bind</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
