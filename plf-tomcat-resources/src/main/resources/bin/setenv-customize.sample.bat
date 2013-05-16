@@ -19,134 +19,133 @@
 
 @echo off
 
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
 REM
-REM Settings customisation
+REM # Settings customisation
 REM
-REM Refer to eXo Platform Administrators Guide for more details.
-REM http://docs.exoplatform.com
+REM # Refer to eXo Platform Administrators Guide for more details.
+REM # http://docs.exoplatform.com
 REM
-REM ---------------------------------------------------------------------------
-REM You have 2 ways to customize your installation settings :
-REM 1- Rename the file setenv-customize.sample.bat to setenv-customize.bat and uncomment/change values below
-REM 2- Use system environment variables of your system or local shell
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
+REM # You have 2 ways to customize your installation settings :
+REM # 1- Rename the file setenv-customize.sample.bat to setenv-customize.bat and uncomment/change values below
+REM # 2- Use system environment variables of your system or local shell
+REM # ---------------------------------------------------------------------------
 
-REM ---------------------------------------------------------------------------
-REM JVM configuration
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
+REM # JVM configuration
+REM # ---------------------------------------------------------------------------
 
-REM Home directory of the JVM to use (Default : try to auto-compute it from existing java executable in path by default)
-REM Prefer to use the shortname syntax without spaces for the PATH
-REM SET JAVA_HOME=C:\Progra~1\Java\jdk6
+REM # Home directory of the JVM to use (Default : try to auto-compute it from existing java executable in path by default)
+REM SET "JAVA_HOME=C:\Program Files\Java\jdk6"
 
-REM Maximum Heap Size to use (Default : 2g)
-REM SET EXO_JVM_SIZE_MAX=1g
+REM # Maximum Heap Size to use (Default : 2g)
+REM SET "EXO_JVM_SIZE_MAX=1g"
 
-REM Minimum Heap Size to use (Default : 512m)
-REM SET EXO_JVM_SIZE_MIN=512m
+REM # Minimum Heap Size to use (Default : 512m)
+REM SET "EXO_JVM_SIZE_MIN=512m""
 
-REM Size of the Permanent Generation. (Default : 256m)
-REM SET EXO_JVM_PERMSIZE_MAX=128m
+REM # Size of the Permanent Generation. (Default : 256m)
+REM SET "EXO_JVM_PERMSIZE_MAX=128m"
 
-REM Default locale language
-REM SET EXO_JVM_USER_LANGUAGE="fr"
+REM # Default locale language
+REM SET "EXO_JVM_USER_LANGUAGE=fr"
 
-REM Default locale region
-REM SET EXO_JVM_USER_REGION="FR"
+REM # Default locale region
+REM SET "EXO_JVM_USER_REGION=FR"
 
-REM Loads in-process debugging libraries to attach a debugger (also available with --debug option on start_eXo.bat script)
-REM SET EXO_DEBUG=true
+REM # Loads in-process debugging libraries to attach a debugger (also available with --debug option on start_eXo.bat script)
+REM SET "EXO_DEBUG=true"
 
-REM Listening port for the debugger
-REM SET EXO_DEBUG_PORT=8000
+REM # Listening port for the debugger
+REM SET "EXO_DEBUG_PORT=8000"
 
-REM ---------------------------------------------------------------------------
-REM PLATFORM configuration
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
+REM # PLATFORM configuration
+REM # ---------------------------------------------------------------------------
 
-REM eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable
-REM SET EXO_PROFILES=default,cluster,cluster-index-local
+REM # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable
+REM SET "EXO_PROFILES=default,cluster,cluster-index-local"
 
-REM Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-REM SET EXO_ASSETS_VERSION=42
+REM # Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
+REM SET "EXO_ASSETS_VERSION=42"
 
-REM Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
-REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
+REM # Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
+REM SET "EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data"
 
-REM Activates the development mode of eXo platform (also available with --dev option on start_eXo.bat script)
-REM SET EXO_DEV=true
+REM # Activates the development mode of eXo platform (also available with --dev option on start_eXo.bat script)
+REM SET "EXO_DEV=true"
 
-REM Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
-REM SET EXO_JCR_SESSION_TRACKING=true
+REM # Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
+REM SET "EXO_JCR_SESSION_TRACKING=true"
 
-REM -----------------------------------------------------------------------------
-REM SMTP/Emails configuration
-REM -----------------------------------------------------------------------------
+REM # -----------------------------------------------------------------------------
+REM # SMTP/Emails configuration
+REM # -----------------------------------------------------------------------------
 
-REM Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
-REM SET EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
+REM # Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
+REM SET "EXO_DEPLOYMENT_URL=https://intranet.mycompany.com"
 
-REM Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
-REM SET EXO_EMAIL_FROM=intranet@mycompany.com
+REM # Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
+REM SET "EXO_EMAIL_FROM=intranet@mycompany.com"
 
-REM SMTP Server hostname. (Default: localhost)
-REM SET EXO_EMAIL_SMTP_HOST=smtp.gmail.com
+REM # SMTP Server hostname. (Default: localhost)
+REM SET "EXO_EMAIL_SMTP_HOST=smtp.gmail.com"
 
-REM SMTP Server port. (Default: 25)
-REM SET EXO_EMAIL_SMTP_PORT=465
+REM # SMTP Server port. (Default: 25)
+REM SET "EXO_EMAIL_SMTP_PORT=465"
 
-REM True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
-REM SET EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
+REM # True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
+REM SET "EXO_EMAIL_SMTP_STARTTLS_ENABLE=true"
 
-REM True to enable the SMTP authentication. (Default: false)
-REM SET EXO_EMAIL_SMTP_AUTH=true
+REM # True to enable the SMTP authentication. (Default: false)
+REM SET "EXO_EMAIL_SMTP_AUTH=true"
 
-REM Username to send for authentication. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_USERNAME=account@gmail.com
+REM # Username to send for authentication. (Default: <NONE>)
+REM SET "EXO_EMAIL_SMTP_USERNAME=account@gmail.com"
 
-REM Password to send for authentication. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_PASSWORD=password
+REM # Password to send for authentication. (Default: <NONE>)
+REM SET "EXO_EMAIL_SMTP_PASSWORD=password"
 
-REM Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
+REM # Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
+REM SET "EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465"
 
-REM This class will be used to create SMTP sockets. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
+REM # This class will be used to create SMTP sockets. (Default: <NONE>)
+REM SET "EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory"
 
-REM -----------------------------------------------------------------------------
-REM JOD Converter configuration
-REM -----------------------------------------------------------------------------
-REM Used to preview documents
+REM # -----------------------------------------------------------------------------
+REM # JOD Converter configuration
+REM # -----------------------------------------------------------------------------
+REM # Used to preview documents
 REM
-REM Requires to have openoffice/libreoffice server installed
+REM # Requires to have openoffice/libreoffice server installed
 
-REM Jod Converter activation (Default : true)
-REM SET EXO_JODCONVERTER_ENABLE=false
+REM # Jod Converter activation (Default : true)
+REM SET "EXO_JODCONVERTER_ENABLE=false"
 
-REM Comma separated list of ports numbers to use for open office servers used to convert documents.
-REM One office server instance will be created for each port. (Default : 2002)
-REM SET EXO_JODCONVERTER_PORTS=2002,2003,2004,2005
+REM # Comma separated list of ports numbers to use for open office servers used to convert documents.
+REM # One office server instance will be created for each port. (Default : 2002)
+REM SET "EXO_JODCONVERTER_PORTS=2002,2003,2004,2005"
 
-REM The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
-REM Prefer to use the shortname syntax without spaces for the PATH
-REM SET EXO_JODCONVERTER_OFFICEHOME=C:\Progra~1\OpenOf~1
+REM # The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
+REM # Prefer to use the shortname syntax without spaces for the PATH
+REM SET "EXO_JODCONVERTER_OFFICEHOME=C:\Program Files\OpenOffice"
 
-REM ---------------------------------------------------------------------------
-REM Logs configuration
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
+REM # Logs configuration
+REM # ---------------------------------------------------------------------------
 
-REM Logback configuration file (http://logback.qos.ch/manual/configuration.html ) - For an advanced customization of logs
-REM SET EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_BASE%/conf/logback.xml
+REM # Logback configuration file (http://logback.qos.ch/manual/configuration.html ) - For an advanced customization of logs
+REM SET "EXO_LOGS_LOGBACK_CONFIG_FILE=%CATALINA_BASE%/conf/logback.xml"
 
-REM SET EXO_LOGS_DISPLAY_CONSOLE=true
+REM SET "EXO_LOGS_DISPLAY_CONSOLE=true"
 
-REM Enforce to display colorized logs in the console (Default: false for windows, true otherwise) (You can use --color and --nocolor options on start_eXo.bat to enforce the configuration)
-REM SET EXO_LOGS_COLORIZED_CONSOLE=true
+REM # Enforce to display colorized logs in the console (Default: false for windows, true otherwise) (You can use --color and --nocolor options on start_eXo.bat to enforce the configuration)
+REM SET "EXO_LOGS_COLORIZED_CONSOLE=true"
 
-REM ---------------------------------------------------------------------------
-REM Tomcat configuration
-REM ---------------------------------------------------------------------------
+REM # ---------------------------------------------------------------------------
+REM # Tomcat configuration
+REM # ---------------------------------------------------------------------------
 
-REM Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.bat script)
-REM SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
+REM # Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.bat script)
+REM SET "EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%"
