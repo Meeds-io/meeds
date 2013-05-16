@@ -74,14 +74,14 @@ fi
 [ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
 [ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
 [ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
+[ -z $EXO_DEBUG ] && EXO_DEBUG=false
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
-[ -z $EXO_DEV ] && EXO_DEV=false
 
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
-[ -z $EXO_DEBUG ] && EXO_DEBUG=false
+[ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING="$EXO_DEV"
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
