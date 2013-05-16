@@ -98,6 +98,8 @@
         <exclude>org.exoplatform.platform.distributions:plf-tomcat-extensions-manager:*</exclude>
         <!-- PLF-4963 : Don't package any jaxb dep to avoid conflicts with the version provided in Java 6 -->
         <exclude>*:jaxb*:*</exclude>
+        <!-- Don't package any XML APIs dep to avoid conflicts the JVM -->
+        <exclude>*:xmlParserAPIs:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>

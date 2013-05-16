@@ -702,6 +702,11 @@
           <artifactId>modules</artifactId>
           <groupId>rome</groupId>
         </exclusion>
+        <!-- Coming by transitivity from caja:htmlparser -->
+        <exclusion>
+          <artifactId>xmlParserAPIs</artifactId>
+          <groupId>xerces</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
