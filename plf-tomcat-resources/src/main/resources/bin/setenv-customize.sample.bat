@@ -21,7 +21,7 @@
 
 REM # ---------------------------------------------------------------------------
 REM
-REM # Settings customisation
+REM # Settings customization
 REM
 REM # Refer to eXo Platform Administrators Guide for more details.
 REM # http://docs.exoplatform.com

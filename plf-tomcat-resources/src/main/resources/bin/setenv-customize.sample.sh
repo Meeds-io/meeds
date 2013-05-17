@@ -20,7 +20,7 @@
 
 # -----------------------------------------------------------------------------
 #
-# Settings customisation
+# Settings customization
 #
 # Refer to eXo Platform Administrators Guide for more details.
 # http://docs.exoplatform.com

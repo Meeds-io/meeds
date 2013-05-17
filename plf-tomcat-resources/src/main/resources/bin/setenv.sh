@@ -22,7 +22,7 @@
 #                  /!\     DON'T MODIFY THIS FILE     /!\
 # -----------------------------------------------------------------------------
 #
-# You mustn't do settings customisations here. Have a look at setenv-customize.sample.sh
+# You mustn't do settings customizations here. Have a look at setenv-customize.sample.sh
 #
 # Refer to eXo Platform Administrators Guide for more details.
 # http://docs.exoplatform.com
