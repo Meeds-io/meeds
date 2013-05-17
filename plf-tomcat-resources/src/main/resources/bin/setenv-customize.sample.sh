@@ -154,3 +154,32 @@
 
 # Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 #EXO_TOMCAT_UNPACK_WARS=true
+
+# -----------------------------------------------------------------------------
+# Advanced settings (We directly append some settings in CATALINA_OPTS)
+# -----------------------------------------------------------------------------
+
+# JVM HeapDumpOnOutOfMemoryError (Useful to debug but the dump is long to produce)
+#CATALINA_OPTS="${CATALINA_OPTS} -XX:+HeapDumpOnOutOfMemoryError"
+#CATALINA_OPTS="${CATALINA_OPTS} -XX:HeapDumpPath=${CATALINA_HOME}/logs/"
+
+# JVM GC Details
+#CATALINA_OPTS="${CATALINA_OPTS} -XX:+PrintGCDetails"
+#CATALINA_OPTS="${CATALINA_OPTS} -Xloggc:${CATALINA_HOME}/logs/gc.log"
+
+# JMX (Sample of configuration to activate it without SSL and with access/password credentials)
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote=true"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.ssl=false"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.password.file=${CATALINA_HOME}/conf/jmxremote.password"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.access.file=${CATALINA_HOME}/conf/jmxremote.access"
+# If you access to JMX though an SSH tunnel
+#CATALINA_OPTS="${CATALINA_OPTS} -Djava.rmi.server.hostname=localhost"
+# If you are behind a proxy you may have to activate the JMX Remote Lifecycle Listener fixes the ports used by the JMX/RMI Server
+# For more details see the configuration file conf/server.xml
+
+# JCR Statistics
+#CATALINA_OPTS="${CATALINA_OPTS} -DJDBCWorkspaceDataContainer.statistics.enabled=true -DJCRStatisticsManager.persistence.timeout=30000"
+
+# CRaSH Extension (change telnet and SSH ports)
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.telnet.port=12345"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.ssh.port=54321"
