@@ -149,3 +149,32 @@ REM # --------------------------------------------------------------------------
 
 REM # Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.bat script)
 REM SET "EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%"
+
+REM # -----------------------------------------------------------------------------
+REM # Advanced settings (We directly append some settings in CATALINA_OPTS)
+REM # -----------------------------------------------------------------------------
+
+REM # JVM HeapDumpOnOutOfMemoryError (Useful to debug but the dump is long to produce)
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -XX:+HeapDumpOnOutOfMemoryError"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -XX:HeapDumpPath=%CATALINA_HOME%/logs/"
+
+REM # JVM GC Details
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -XX:+PrintGCDetails"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Xloggc:%CATALINA_HOME%/logs/gc.log"
+
+REM # JMX (Sample of configuration to activate it without SSL and with access/password credentials)
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcom.sun.management.jmxremote=true"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcom.sun.management.jmxremote.ssl=false"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcom.sun.management.jmxremote.password.file=%CATALINA_HOME%/conf/jmxremote.password"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcom.sun.management.jmxremote.access.file=%CATALINA_HOME%/conf/jmxremote.access"
+REM # If you access to JMX though an SSH tunnel
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Djava.rmi.server.hostname=localhost"
+REM # If you are behind a proxy you may have to activate the JMX Remote Lifecycle Listener fixes the ports used by the JMX/RMI Server
+REM # For more details see the configuration file conf/server.xml
+
+REM # JCR Statistics
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -DJDBCWorkspaceDataContainer.statistics.enabled=true -DJCRStatisticsManager.persistence.timeout=30000"
+
+REM # CRaSH Extension (change telnet and SSH ports)
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.telnet.port=12345"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.ssh.port=54321"
