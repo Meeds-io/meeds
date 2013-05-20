@@ -36,19 +36,19 @@
 # -----------------------------------------------------------------------------
 
 # Home directory of the JVM to use (Default : try to auto-compute it from existing java executable in path by default)
-#JAVA_HOME=/opt/java/jdk6
+#JAVA_HOME="/opt/java/jdk6"
 
 # Use EXO_JVM_VENDOR="IBM" with J9 JVMs (Default : "ORACLE")
 #EXO_JVM_VENDOR="IBM"
 
 # Maximum Heap Size to use (Default : 2g)
-#EXO_JVM_SIZE_MAX=1g
+#EXO_JVM_SIZE_MAX="1g"
 
 # Minimum Heap Size to use (Default : 512m)
-#EXO_JVM_SIZE_MIN=1g
+#EXO_JVM_SIZE_MIN="1g"
 
 # Size of the Permanent Generation. (Default : 256m)
-#EXO_JVM_PERMSIZE_MAX=128m
+#EXO_JVM_PERMSIZE_MAX="128m"
 
 # Default locale language
 #EXO_JVM_USER_LANGUAGE="fr"
@@ -60,7 +60,7 @@
 #EXO_DEBUG=true
 
 # Listening port for the debugger
-#EXO_DEBUG_PORT=8000
+#EXO_DEBUG_PORT="8000"
 
 # -----------------------------------------------------------------------------
 # PLATFORM configuration
@@ -70,10 +70,10 @@
 #EXO_PROFILES="default,cluster,cluster-index-local"
 
 # Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-#EXO_ASSETS_VERSION=42
+#EXO_ASSETS_VERSION="42"
 
 # Main directory where are stored all data (Default: ${CATALINA_BASE}/gatein/data) (also available with --data <path> option on start_eXo.sh script)
-#EXO_DATA_DIR=${HOME}/.eXo-platform/data
+#EXO_DATA_DIR="${HOME}/.eXo-platform/data"
 
 # Activates the development mode of eXo platform (true with --dev option on start_eXo.sh script)
 #EXO_DEV=true
@@ -86,16 +86,16 @@
 # -----------------------------------------------------------------------------
 
 # Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
-#EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
+#EXO_DEPLOYMENT_URL="https://intranet.mycompany.com"
 
 # Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
-#EXO_EMAIL_FROM=intranet@mycompany.com
+#EXO_EMAIL_FROM="intranet@mycompany.com"
 
 # SMTP Server hostname. (Default: localhost)
-#EXO_EMAIL_SMTP_HOST=smtp.gmail.com
+#EXO_EMAIL_SMTP_HOST="smtp.gmail.com"
 
 # SMTP Server port. (Default: 25)
-#EXO_EMAIL_SMTP_PORT=465
+#EXO_EMAIL_SMTP_PORT="465"
 
 # True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
 #EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
@@ -104,16 +104,16 @@
 #EXO_EMAIL_SMTP_AUTH=true
 
 # Username to send for authentication. (Default: <NONE>)
-#EXO_EMAIL_SMTP_USERNAME=account@gmail.com
+#EXO_EMAIL_SMTP_USERNAME="account@gmail.com"
 
 # Password to send for authentication. (Default: <NONE>)
-#EXO_EMAIL_SMTP_PASSWORD=password
+#EXO_EMAIL_SMTP_PASSWORD="password"
 
 # Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
-#EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
+#EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT="465"
 
 # This class will be used to create SMTP sockets. (Default: <NONE>)
-#EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
+#EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS="javax.net.ssl.SSLSocketFactory"
 
 # -----------------------------------------------------------------------------
 # JOD Converter configuration
@@ -127,17 +127,17 @@
 
 # Comma separated list of ports numbers to use for open office servers used to convert documents.
 # One office server instance will be created for each port. (Default : 2002)
-#EXO_JODCONVERTER_PORTS=2002,2003,2004,2005
+#EXO_JODCONVERTER_PORTS="2002,2003,2004,2005"
 
 # The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
-#EXO_JODCONVERTER_OFFICEHOME=/usr/lib/libreoffice
+#EXO_JODCONVERTER_OFFICEHOME="/usr/lib/libreoffice"
 
 # -----------------------------------------------------------------------------
 # Logs configuration
 # -----------------------------------------------------------------------------
 
 # Logback configuration file (http://logback.qos.ch/manual/configuration.html ) - For an advanced customization of logs
-#EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
+#EXO_LOGS_LOGBACK_CONFIG_FILE="$CATALINA_BASE/conf/logback.xml"
 
 # Enforce to display logs in the console (Default: true if started with start_eXo.sh without --background option, false otherwise)
 #EXO_LOGS_DISPLAY_CONSOLE=true
@@ -149,8 +149,8 @@
 # Tomcat configuration
 # -----------------------------------------------------------------------------
 
-# File used to store the PID of the process. (Default: ${CATALINA_BASE}/temp/catalina.pid if start_eXO.sh is launched with --background option. Empty otherwise)
-#CATALINA_PID=$CATALINA_BASE/temp/catalina.pid
+# File used to store the PID of the process. (Default: ${CATALINA_BASE}/temp/catalina.pid if start_eXo.sh is launched with --background option. Empty otherwise)
+#CATALINA_PID="$CATALINA_BASE/temp/catalina.pid"
 
 # Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 #EXO_TOMCAT_UNPACK_WARS=true
@@ -161,17 +161,17 @@
 
 # JVM HeapDumpOnOutOfMemoryError (Useful to debug but the dump is long to produce)
 #CATALINA_OPTS="${CATALINA_OPTS} -XX:+HeapDumpOnOutOfMemoryError"
-#CATALINA_OPTS="${CATALINA_OPTS} -XX:HeapDumpPath=${CATALINA_HOME}/logs/"
+#CATALINA_OPTS="${CATALINA_OPTS} -XX:HeapDumpPath=\"${CATALINA_HOME}/logs/\""
 
 # JVM GC Details
 #CATALINA_OPTS="${CATALINA_OPTS} -XX:+PrintGCDetails"
-#CATALINA_OPTS="${CATALINA_OPTS} -Xloggc:${CATALINA_HOME}/logs/gc.log"
+#CATALINA_OPTS="${CATALINA_OPTS} -Xloggc:\"${CATALINA_HOME}/logs/gc.log\""
 
 # JMX (Sample of configuration to activate it without SSL and with access/password credentials)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote=true"
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.ssl=false"
-#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.password.file=${CATALINA_HOME}/conf/jmxremote.password"
-#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.access.file=${CATALINA_HOME}/conf/jmxremote.access"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.password.file=\"${CATALINA_HOME}/conf/jmxremote.password\""
+#CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.access.file=\"${CATALINA_HOME}/conf/jmxremote.access\""
 # If you access to JMX though an SSH tunnel
 #CATALINA_OPTS="${CATALINA_OPTS} -Djava.rmi.server.hostname=localhost"
 # If you are behind a proxy you may have to activate the JMX Remote Lifecycle Listener fixes the ports used by the JMX/RMI Server

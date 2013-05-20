@@ -44,6 +44,7 @@ case "`uname`" in
   ;;
 esac
 
+# Load custom settings
 if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
   . "$CATALINA_BASE/bin/setenv-customize.sh"
 fi
@@ -54,10 +55,10 @@ if $os400; then
   # 1. owned by the user
   # 2. owned by the PRIMARY group of the user
   # this will not work if the user belongs in secondary groups
-  . "$CATALINA_HOME"/bin/setclasspath.sh
+  . "$CATALINA_HOME/bin/setclasspath.sh"
 else
-  if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
-    . "$CATALINA_HOME"/bin/setclasspath.sh
+  if [ -r "$CATALINA_HOME/bin/setclasspath.sh" ]; then
+    . "$CATALINA_HOME/bin/setclasspath.sh"
   else
     echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
     echo "This file is needed to run this program"
@@ -70,13 +71,13 @@ fi
 # -----------------------------------------------------------------------------
 
 [ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
-[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX=2g
-[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN=512m
-[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX=256m
+[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="2g"
+[ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN="512m"
+[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX="256m"
 [ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
 [ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
-[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT=8000
+[ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT="8000"
 
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
@@ -84,25 +85,25 @@ fi
 
 [ -z $EXO_PROFILES ] && EXO_PROFILES="default"
 [ -z $EXO_DEV ] && EXO_DEV=false
-[ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
-[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING="$EXO_DEV"
-[ -z $EXO_DATA_DIR ] && EXO_DATA_DIR=$CATALINA_BASE/gatein/data
+[ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION="${project.version}"
+[ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=$EXO_DEV
+[ -z $EXO_DATA_DIR ] && EXO_DATA_DIR="$CATALINA_BASE/gatein/data"
 
 # -----------------------------------------------------------------------------
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 
 # Default configuration for logs (using logback framework - http://logback.qos.ch/manual/configuration.html )
-[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE=$CATALINA_BASE/conf/logback.xml
+[ -z $EXO_LOGS_LOGBACK_CONFIG_FILE ] && EXO_LOGS_LOGBACK_CONFIG_FILE="$CATALINA_BASE/conf/logback.xml"
 [ -z $EXO_LOGS_DISPLAY_CONSOLE ] && EXO_LOGS_DISPLAY_CONSOLE=false
-[ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=
+[ -z $EXO_LOGS_COLORIZED_CONSOLE ] && EXO_LOGS_COLORIZED_CONSOLE=""
 
 # -----------------------------------------------------------------------------
 # Default Tomcat configuration
 # -----------------------------------------------------------------------------
 
 # Global Tomcat settings
-[ -z $EXO_TOMCAT_UNPACK_WARS ] && EXO_TOMCAT_UNPACK_WARS="$EXO_DEV"
+[ -z $EXO_TOMCAT_UNPACK_WARS ] && EXO_TOMCAT_UNPACK_WARS=$EXO_DEV
 
 # -----------------------------------------------------------------------------
 # Export the needed system properties for server.xml
@@ -115,7 +116,7 @@ JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS} -DEXO_D
 # -----------------------------------------------------------------------------
 
 # Deactivate j.u.l
-LOGGING_MANAGER=-Dnop
+LOGGING_MANAGER="-Dnop"
 # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 # SLF4J deps
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
@@ -163,22 +164,22 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 
 # Platform paths
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf"
-CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=$CATALINA_BASE/gatein/conf"
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=$CATALINA_BASE/gatein/conf"
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=${EXO_DATA_DIR}"
-CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=$CATALINA_BASE/conf/jaas.conf"
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=\"$CATALINA_BASE/gatein/conf\""
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=\"$CATALINA_BASE/gatein/conf\""
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=\"${EXO_DATA_DIR}\""
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=\"$CATALINA_BASE/conf/jaas.conf\""
 
 # JAVA_HOME is computed by setclasspath.sh if required
-if [ -d "$JAVA_HOME"/jre ]; then
+if [ -d "$JAVA_HOME/jre" ]; then
   # This is a JDK
-  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=${JAVA_HOME}/jre/lib"
-  CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/src.zip"
+  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=\"${JAVA_HOME}/jre/lib\""
+  CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=\"${JAVA_HOME}/src.zip\""
 else
   # This is a JRE
-  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=${JAVA_HOME}/lib"
+  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=\"${JAVA_HOME}/lib\""
   if [ -f "$JAVA_HOME"/../src.zip ]; then
     # This is a JRE in a JDK
-    CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=${JAVA_HOME}/../src.zip"
+    CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=\"${JAVA_HOME}/../src.zip\""
   fi
 fi
 
@@ -186,7 +187,7 @@ fi
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
 
 # Logback configuration file
-CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=${EXO_LOGS_LOGBACK_CONFIG_FILE}"
+CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=\"${EXO_LOGS_LOGBACK_CONFIG_FILE}\""
 
 # Define the XML Parser depending on the JVM vendor
 if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then
@@ -203,7 +204,7 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
 # Comma separated list of ports numbers to use for open office servers used to convert documents.
 [ ! -z $EXO_JODCONVERTER_PORTS ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.portnumbers=${EXO_JODCONVERTER_PORTS}"
 # The absolute path to the office home on the server.
-[ ! -z $EXO_JODCONVERTER_OFFICEHOME ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.officehome=${EXO_JODCONVERTER_OFFICEHOME}"
+[ ! -z $EXO_JODCONVERTER_OFFICEHOME ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.officehome=\"${EXO_JODCONVERTER_OFFICEHOME}\""
 
 # Domain name used to produce absolute URLs in email notifications.
 [ ! -z $EXO_DEPLOYMENT_URL ] && CATALINA_OPTS="$CATALINA_OPTS -Ddomain.url=${EXO_DEPLOYMENT_URL}"
