@@ -82,7 +82,7 @@ fi
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 
-[ -z $EXO_PROFILES ] && EXO_PROFILES="default"
+[ -z $EXO_PROFILES ] && EXO_PROFILES="all"
 [ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION=${project.version}
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING="$EXO_DEV"
