@@ -29,6 +29,8 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
+      <filtered>false</filtered>
+      <lineEnding>keep</lineEnding>
     </fileSet>
   </fileSets>
 </assembly>

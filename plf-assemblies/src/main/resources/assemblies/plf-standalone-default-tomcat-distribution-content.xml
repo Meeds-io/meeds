@@ -32,6 +32,8 @@
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
       <fileMode>0755</fileMode>
+      <filtered>false</filtered>
+      <lineEnding>keep</lineEnding>
       <includes>
         <include>**/*.sh</include>
       </includes>
@@ -40,6 +42,8 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
+      <filtered>false</filtered>
+      <lineEnding>keep</lineEnding>
       <excludes>
         <exclude>**/*.sh</exclude>
         <!-- We need to exclude everything we override -->
@@ -60,6 +64,7 @@
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <fileMode>0755</fileMode>
       <filtered>true</filtered>
+      <lineEnding>unix</lineEnding>
       <includes>
         <include>**/*.sh</include>
       </includes>
@@ -69,11 +74,11 @@
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <filtered>true</filtered>
+      <lineEnding>windows</lineEnding>
       <includes>
         <include>**/*.txt</include>
         <include>**/*.xml</include>
         <include>**/*.properties</include>
-        <include>**/*.sh</include>
         <include>**/*.bat</include>
         <include>**/*.cmd</include>
       </includes>
@@ -87,12 +92,13 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
+      <filtered>false</filtered>
+      <lineEnding>keep</lineEnding>
       <excludes>
         <exclude>**/*.sh</exclude>
         <exclude>**/*.txt</exclude>
         <exclude>**/*.xml</exclude>
         <exclude>**/*.properties</exclude>
-        <exclude>**/*.sh</exclude>
         <exclude>**/*.bat</exclude>
         <exclude>**/*.cmd</exclude>
         <exclude>**/META-INF*</exclude>
@@ -104,6 +110,8 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
+      <filtered>false</filtered>
+      <lineEnding>windows</lineEnding>
       <includes>
         <include>**/DEPENDENCIES.txt</include>
         <include>**/LICENSE.txt</include>
@@ -115,8 +123,9 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
-      <filtered>true</filtered>
       <fileMode>0755</fileMode>
+      <filtered>true</filtered>
+      <lineEnding>unix</lineEnding>
       <includes>
         <include>**/*.sh</include>
       </includes>
@@ -126,11 +135,11 @@
       <outputDirectory>/</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>true</filtered>
+      <lineEnding>windows</lineEnding>
       <includes>
         <include>**/*.txt</include>
         <include>**/*.xml</include>
         <include>**/*.properties</include>
-        <include>**/*.sh</include>
         <include>**/*.bat</include>
         <include>**/*.cmd</include>
       </includes>
@@ -139,12 +148,13 @@
     <fileSet>
       <outputDirectory>/</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
+      <filtered>false</filtered>
+      <lineEnding>keep</lineEnding>
       <excludes>
-        <exclude>**/*.txt</exclude>
         <exclude>**/*.sh</exclude>
+        <exclude>**/*.txt</exclude>
         <exclude>**/*.xml</exclude>
         <exclude>**/*.properties</exclude>
-        <exclude>**/*.sh</exclude>
         <exclude>**/*.bat</exclude>
         <exclude>**/*.cmd</exclude>
       </excludes>
@@ -157,6 +167,7 @@
       <destName>server.xml</destName>
       <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/server.template.xml</source>
       <filtered>true</filtered>
+      <lineEnding>windows</lineEnding>
     </file>
   </files>
   <dependencySets>

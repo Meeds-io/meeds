@@ -33,6 +33,7 @@
       <destName>server-mysql.xml</destName>
       <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/server.template.xml</source>
       <filtered>true</filtered>
+      <lineEnding>windows</lineEnding>
     </file>
   </files>
 </assembly>
