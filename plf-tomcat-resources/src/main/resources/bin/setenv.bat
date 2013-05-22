@@ -85,7 +85,7 @@ REM # --------------------------------------------------------------------------
 REM # Default EXO PLATFORM configuration
 REM # ---------------------------------------------------------------------------
 
-IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=default
+IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=all
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 IF NOT DEFINED EXO_ASSETS_VERSION SET EXO_ASSETS_VERSION=${project.version}
 IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=%EXO_DEV%
