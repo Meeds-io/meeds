@@ -141,6 +141,18 @@
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-extension-crsh</artifactId>
+        <version>${project.version}</version>
+        <type>ear</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-extension-crsh</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -150,12 +162,6 @@
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-extension-crsh</artifactId>
-        <version>${project.version}</version>
-        <type>zip</type>
       </dependency>
       <!-- Extensions Manager for Tomcat distribution -->
       <dependency>
