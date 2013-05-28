@@ -26,9 +26,9 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-tomcat-extension-crsh</artifactId>
-  <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Tomcat Extension - CRaSH</name>
+  <artifactId>plf-extension-crsh</artifactId>
+  <packaging>ear</packaging>
+  <name>eXo Platform Public Distributions - Extension - CRaSH</name>
   <dependencies>
     <!-- CRaSH webapp for GateIn -->
     <dependency>
@@ -41,6 +41,27 @@
   </dependencies>
   <build>
     <plugins>
+      <!-- EAR Extension for JBoss -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <configuration>
+          <generateApplicationXml>true</generateApplicationXml>
+          <!-- Tell maven to package in ear/lib for AS7 -->
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
+          <!-- Enforcer the order of loading - JEE6 min -->
+          <initializeInOrder>true</initializeInOrder>
+          <version>6</version>
+          <modules>
+            <webModule>
+              <groupId>org.crsh</groupId>
+              <artifactId>crsh.jcr.exo</artifactId>
+              <contextRoot>crash</contextRoot>
+            </webModule>
+          </modules>
+        </configuration>
+      </plugin>
+      <!-- ZIP extension for tomcat -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -53,7 +74,7 @@
             </goals>
             <configuration>
               <descriptors>
-                <descriptor>src/main/assemblies/plf-tomcat-extension-crsh.xml</descriptor>
+                <descriptor>src/main/assemblies/plf-extension-crsh.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>

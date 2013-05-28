@@ -68,7 +68,7 @@
     <!-- CRaSH extension for PLF -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-tomcat-extension-crsh</artifactId>
+      <artifactId>plf-extension-crsh</artifactId>
       <type>zip</type>
     </dependency>
     <!-- Extensions Manager for Tomcat distribution -->
