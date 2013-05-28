@@ -51,7 +51,10 @@
           <defaultLibBundleDir>lib</defaultLibBundleDir>
           <!-- Enforcer the order of loading - JEE6 min -->
           <initializeInOrder>true</initializeInOrder>
+          <!-- We are targeting JEE 6 -->
           <version>6</version>
+          <!-- Filter the content of the src/main/application -->
+          <filtering>true</filtering>
           <modules>
             <webModule>
               <groupId>org.crsh</groupId>
