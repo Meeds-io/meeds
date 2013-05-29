@@ -22,8 +22,7 @@
   <deployment>
     <dependencies>
       <!-- Let's depend on the platform EAR -->
-      <module name="deployment.platform-${project.version}.ear">
-      </module>
+      <module name="deployment.platform-${project.version}.ear"/>
     </dependencies>
     <resources>
       <!-- bouncycastle + VFS workaround : https://community.jboss.org/message/806775#806775 -->
