@@ -19,13 +19,16 @@
 
 -->
 <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
-  <!-- This corresponds to the top level deployment. For a war this is the war's module, for an ear -->
-  <!-- This is the top level ear module, which contains all the classes in the EAR's lib folder     -->
   <deployment>
-    <!-- This allows you to define additional dependencies, it is the same as using the Dependencies: manifest attribute -->
     <dependencies>
       <!-- Let's depend on the platform EAR -->
-      <module name="deployment.platform-${project.version}.ear"/>
+      <module name="deployment.platform-${project.version}.ear">
+      </module>
     </dependencies>
+    <resources>
+      <!-- bouncycastle + VFS workaround : https://community.jboss.org/message/806775#806775 -->
+      <!-- To avoid this error with crash : Cannot verify jar:vfs:..../platform-XXXX.ear/lib/bcprov-jdkAA-X.YZ.jar!/ -->
+      <resource-root path="WEB-INF/lib/bcprov-jdk16-1.46.jar" use-physical-code-source="true"/>
+    </resources>
   </deployment>
 </jboss-deployment-structure>

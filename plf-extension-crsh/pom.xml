@@ -27,7 +27,7 @@
     <version>4.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-extension-crsh</artifactId>
-  <packaging>ear</packaging>
+  <packaging>war</packaging>
   <name>eXo Platform Public Distributions - Extension - CRaSH</name>
   <dependencies>
     <!-- CRaSH webapp for GateIn -->
@@ -36,32 +36,38 @@
       <artifactId>crsh.jcr.exo</artifactId>
       <version>${org.crsh.version}</version>
       <type>war</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
   <build>
     <plugins>
-      <!-- EAR Extension for JBoss -->
+      <!-- WAR Extension for JBoss -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-ear-plugin</artifactId>
+        <artifactId>maven-war-plugin</artifactId>
         <configuration>
-          <generateApplicationXml>true</generateApplicationXml>
-          <!-- Tell maven to package in ear/lib for AS7 -->
-          <defaultLibBundleDir>lib</defaultLibBundleDir>
-          <!-- Enforcer the order of loading - JEE6 min -->
-          <initializeInOrder>true</initializeInOrder>
-          <!-- We are targeting JEE 6 -->
-          <version>6</version>
-          <!-- Filter the content of the src/main/application -->
-          <filtering>true</filtering>
-          <modules>
-            <webModule>
+          <webResources>
+            <resource>
+              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+              <filtering>true</filtering>
+              <targetPath>WEB-INF</targetPath>
+              <includes>
+                <include>**/*.xml</include>
+              </includes>
+            </resource>
+          </webResources>
+          <overlays>
+            <overlay>
+              <!-- empty groupId/artifactId represents the current build -->
+            </overlay>
+            <overlay>
               <groupId>org.crsh</groupId>
               <artifactId>crsh.jcr.exo</artifactId>
-              <contextRoot>crash</contextRoot>
-            </webModule>
-          </modules>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </overlay>
+          </overlays>
         </configuration>
       </plugin>
       <!-- ZIP extension for tomcat -->

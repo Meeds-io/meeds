@@ -31,7 +31,7 @@
       <includes>
         <include>org.crsh:crsh.jcr.exo:war</include>
       </includes>
-      <scope>provided</scope>
+      <scope>runtime</scope>
       <outputFileNameMapping>crash.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
