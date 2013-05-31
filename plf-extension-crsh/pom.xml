@@ -27,7 +27,7 @@
     <version>4.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-extension-crsh</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <name>eXo Platform Public Distributions - Extension - CRaSH</name>
   <dependencies>
     <!-- CRaSH webapp for GateIn -->
@@ -40,11 +40,22 @@
     </dependency>
   </dependencies>
   <build>
+    <!-- This name is used to bundle the extension -->
+    <finalName>crash</finalName>
     <plugins>
       <!-- WAR Extension for JBoss -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>customize-crash-war</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>war</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <webResources>
             <resource>
@@ -77,7 +88,7 @@
         <executions>
           <execution>
             <id>package-extension</id>
-            <phase>prepare-package</phase>
+            <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>

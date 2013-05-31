@@ -25,15 +25,11 @@
     <format>zip</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
-  <dependencySets>
-    <dependencySet>
-      <outputDirectory>/crash/webapps</outputDirectory>
-      <includes>
-        <include>org.crsh:crsh.jcr.exo:war</include>
-      </includes>
-      <scope>runtime</scope>
-      <outputFileNameMapping>crash.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-  </dependencySets>
+  <files>
+    <file>
+      <outputDirectory>/${project.build.finalName}/webapps</outputDirectory>
+      <destName>crash.war</destName>
+      <source>${project.build.directory}/${project.build.finalName}.war</source>
+    </file>
+  </files>
 </assembly>

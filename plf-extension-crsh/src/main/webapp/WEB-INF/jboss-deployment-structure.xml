@@ -20,10 +20,6 @@
 -->
 <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
   <deployment>
-    <dependencies>
-      <!-- Let's depend on the platform EAR -->
-      <module name="deployment.platform-${project.version}.ear"/>
-    </dependencies>
     <resources>
       <!-- bouncycastle + VFS workaround : https://community.jboss.org/message/806775#806775 -->
       <!-- To avoid this error with crash : Cannot verify jar:vfs:..../platform-XXXX.ear/lib/bcprov-jdkAA-X.YZ.jar!/ -->
