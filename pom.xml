@@ -38,7 +38,7 @@
     <module>plf-dependencies</module>
     <module>plf-root-webapp</module>
     <module>plf-extension-crsh</module>
-    <module>plf-tomcat-extensions-manager</module>
+    <module>plf-extensions-manager</module>
     <module>plf-tomcat-integration-webapp</module>
     <module>plf-tomcat-pc-creator-listener</module>
     <module>plf-tomcat-resources</module>
@@ -166,7 +166,7 @@
       <!-- Extensions Manager for Tomcat distribution -->
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-tomcat-extensions-manager</artifactId>
+        <artifactId>plf-extensions-manager</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -394,7 +394,7 @@
                         <dependency>
                           <!-- Shaded JAR that won't be in the app server classpath -->
                           <groupId>org.exoplatform.platform.distributions</groupId>
-                          <artifactId>plf-tomcat-extensions-manager</artifactId>
+                          <artifactId>plf-extensions-manager</artifactId>
                           <type>jar</type>
                           <ignoreClasses>
                             <ignoreClass>*</ignoreClass>

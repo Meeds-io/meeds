@@ -105,7 +105,7 @@ if (!extensionsDirectory.isDirectory()) {
 
 def listExtensions() {
   println "Available extensions:"
-  extensionsDirectory.eachFile() { file -> println "  ${file.name}" }
+  extensionsDirectory.eachDir() { dir -> println "  ${dir.name}" }
   println """
 To install an extension use:
   ${scriptName} --install <extension>
@@ -158,7 +158,7 @@ if (options.l) {
 // InstallExtensions
 if (options.i) {
   if ("all".equalsIgnoreCase(options.i)) {
-    extensionsDirectory.eachFile() { file -> installExtension file.name }
+    extensionsDirectory.eachDir() { dir -> installExtension dir.name }
     println """
  # ===============================
  # All extensions installed.
@@ -178,7 +178,7 @@ if (options.i) {
 // UninstallExtension
 if (options.u) {
   if ("all".equalsIgnoreCase(options.u)) {
-    extensionsDirectory.eachFile() { file -> uninstallExtension file.name }
+    extensionsDirectory.eachDir() { dir -> uninstallExtension dir.name }
     println """
  # ==============================
  # All extensions uninstalled.

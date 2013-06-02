@@ -74,7 +74,7 @@
     <!-- Extensions Manager for Tomcat distribution -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-tomcat-extensions-manager</artifactId>
+      <artifactId>plf-extensions-manager</artifactId>
     </dependency>
     <!-- GateIn Container Integration Servlet -->
     <dependency>

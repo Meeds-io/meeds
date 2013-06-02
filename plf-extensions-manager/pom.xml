@@ -26,14 +26,14 @@
     <groupId>org.exoplatform.platform.distributions</groupId>
     <version>4.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>plf-tomcat-extensions-manager</artifactId>
+  <artifactId>plf-extensions-manager</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Platform Public Distributions - Tomcat Extensions Manager</name>
-  <description>Command line utility to manage Platform extensions in a standalone Apache Tomcat based distribution.</description>
+  <name>eXo Platform Public Distributions - Extensions Manager</name>
+  <description>Command line utility to manage Platform extensions.</description>
   <properties>
     <!-- These are specific versions because this is a standalone utility bundled in an AllInOne JAR -->
     <commons-cli.version>1.2</commons-cli.version>
-    <groovy.version>2.1.3</groovy.version>
+    <groovy.version>2.1.4</groovy.version>
     <groovy-eclipse-compiler.version>2.7.0-01</groovy-eclipse-compiler.version>
   </properties>
   <dependencies>
