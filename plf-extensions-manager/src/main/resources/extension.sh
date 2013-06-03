@@ -44,27 +44,55 @@ done
 # Get standard environment variables
 PRGDIR=`dirname "$PRG"`
 
-# Only set CATALINA_HOME if not already set
-[ -z "$CATALINA_HOME" ] && CATALINA_HOME=`cd "$PRGDIR" >/dev/null; pwd`
+# Only set PRODUCT_HOME if not already set
+[ -z "$PRODUCT_HOME" ] && PRODUCT_HOME=`cd "$PRGDIR" >/dev/null; pwd`
 
-# Copy CATALINA_BASE from CATALINA_HOME if not already set
-[ -z "$CATALINA_BASE" ] && CATALINA_BASE="$CATALINA_HOME"
+# -----------------------------------------------------------------------------
+#  Set JAVA_HOME or JRE_HOME if not already set, ensure any provided settings
+#  are valid.
+#
+#  From Apache Tomcat
+# -----------------------------------------------------------------------------
 
-# Get standard Java environment variables
-if $os400; then
-  # -r will Only work on the os400 if the files are:
-  # 1. owned by the user
-  # 2. owned by the PRIMARY group of the user
-  # this will not work if the user belongs in secondary groups
-  . "$CATALINA_HOME"/bin/setclasspath.sh
-else
-  if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then
-    . "$CATALINA_HOME"/bin/setclasspath.sh
+# Make sure prerequisite environment variables are set
+if [ -z "$JAVA_HOME" -a -z "$JRE_HOME" ]; then
+  if $darwin; then
+    # Bugzilla 54390
+    if [ -x '/usr/libexec/java_home' ] ; then
+      export JAVA_HOME=`/usr/libexec/java_home`
+    # Bugzilla 37284 (reviewed).
+    elif [ -d "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home" ]; then
+      export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
+    fi
   else
-    echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
-    echo "This file is needed to run this program"
+    JAVA_PATH=`which java 2>/dev/null`
+    if [ "x$JAVA_PATH" != "x" ]; then
+      JAVA_PATH=`dirname $JAVA_PATH 2>/dev/null`
+      JRE_HOME=`dirname $JAVA_PATH 2>/dev/null`
+    fi
+    if [ "x$JRE_HOME" = "x" ]; then
+      # XXX: Should we try other locations?
+      if [ -x /usr/bin/java ]; then
+        JRE_HOME=/usr
+      fi
+    fi
+  fi
+  if [ -z "$JAVA_HOME" -a -z "$JRE_HOME" ]; then
+    echo "Neither the JAVA_HOME nor the JRE_HOME environment variable is defined"
+    echo "At least one of these environment variable is needed to run this program"
     exit 1
   fi
 fi
+if [ -z "$JRE_HOME" ]; then
+  JRE_HOME="$JAVA_HOME"
+fi
+# Set standard commands for invoking Java.
+_RUNJAVA="$JRE_HOME"/bin/java
+if [ "$os400" != "true" ]; then
+  _RUNJDB="$JAVA_HOME"/bin/jdb
+fi
 
-eval exec \"$_RUNJAVA\" -Dcatalina.base=\"$CATALINA_BASE\" -jar \"$CATALINA_HOME/extensions/plf-extensions-manager.jar\" "$@"
+_PLF_LIBRARIES_PATH="${platform.libraries.path}"
+_PLF_WEBAPPS_PATH="${platform.webapps.path}"
+
+eval exec \"$_RUNJAVA\" -Dproduct.home=\"$PRODUCT_HOME\" -Dplatform.libraries.path=\"$_PLF_LIBRARIES_PATH\" -Dplatform.webapps.path=\"$_PLF_WEBAPPS_PATH\" -jar \"$PRODUCT_HOME/extensions/plf-extensions-manager.jar\" "$@"

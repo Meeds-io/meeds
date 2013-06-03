@@ -84,22 +84,46 @@ if (options.arguments() || [options.l, options.i, options.u].findAll { it }.size
   System.exit 1
 }
 
-if (!System.getProperty("catalina.base")) {
-  println 'error: Erroneous setup, system property catalina.base not defined.'
+if (!System.getProperty("product.home")) {
+  println 'error: Erroneous setup, system property product.home not defined.'
   System.exit 1
 }
 
-catalinaBase = new File(System.getProperty("catalina.base"))
+productHome = new File(System.getProperty("product.home"))
 
-if (!catalinaBase.isDirectory()) {
-  println "error: Erroneous setup, platform home directory (${catalinaBase}) is invalid."
+if (!productHome.isDirectory()) {
+  println "error: Erroneous setup, platform home directory (${productHome}) is invalid."
   System.exit 1
 }
 
-extensionsDirectory = new File(catalinaBase, "extensions")
+extensionsDirectory = new File(productHome, "extensions")
 
 if (!extensionsDirectory.isDirectory()) {
   println "error: Erroneous setup, extensions directory (${extensionsDirectory}) is invalid."
+  System.exit 1
+}
+
+if (!System.getProperty("platform.libraries.path")) {
+  println 'error: Erroneous setup, system property platform.libraries.path not defined.'
+  System.exit 1
+}
+
+librariesDir = new File(productHome, System.getProperty("platform.libraries.path"))
+
+if (!librariesDir.isDirectory()) {
+  println "error: Erroneous setup, platform libraries directory (${librariesDir}) is invalid."
+  System.exit 1
+}
+
+if (!System.getProperty("platform.webapps.path")) {
+  println 'error: Erroneous setup, system property platform.webapps.path not defined.'
+  System.exit 1
+}
+
+webappsDir = new File(productHome, System.getProperty("platform.webapps.path"))
+
+if (!webappsDir.isDirectory()) {
+  println "error: Erroneous setup, platform web applications directory (${webappsDir}) is invalid."
   System.exit 1
 }
 
@@ -117,18 +141,30 @@ To install all avalaible extensions use:
 
 def installExtension(String extensionName) {
   def extensionDirectory = new File(extensionsDirectory, extensionName);
+  def extensionLibDirectory = new File(extensionDirectory, "lib");
+  def extensionWebappDirectory = new File(extensionDirectory, "webapps");
   if (!extensionDirectory.isDirectory()) {
     println "error: Extension \"${extensionName}\" doesn't exist."
     listExtensions()
     System.exit 1
   }
   println "Installing ${extensionName} extension ..."
-  ant.copy(todir: "${catalinaBase}",
-      preservelastmodified: true,
-      verbose: true) {
-    fileset(dir: "${extensionDirectory}") {
-      include(name: "**/*.jar")
-      include(name: "**/*.war")
+  if (extensionLibDirectory.isDirectory()) {
+    ant.copy(todir: "${librariesDir}",
+             preservelastmodified: true,
+             verbose: true) {
+      fileset(dir: "${extensionLibDirectory}") {
+        include(name: "**/*.jar")
+      }
+    }
+  }
+  if (extensionWebappDirectory.isDirectory()) {
+    ant.copy(todir: "${webappsDir}",
+             preservelastmodified: true,
+             verbose: true) {
+      fileset(dir: "${extensionWebappDirectory}") {
+        include(name: "**/*.war")
+      }
     }
   }
   println "Done."
@@ -136,15 +172,25 @@ def installExtension(String extensionName) {
 
 def uninstallExtension(String extensionName) {
   def extensionDirectory = new File(extensionsDirectory, extensionName);
+  def extensionLibDirectory = new File(extensionDirectory, "lib");
+  def extensionWebappDirectory = new File(extensionDirectory, "webapps");
   if (!extensionDirectory.isDirectory()) {
     println "error: Extension \"${extensionName}\" doesn't exist."
     listExtensions()
     System.exit 1
   }
   println "Uninstalling ${extensionName} extension ..."
-  extensionDirectory.eachFileRecurse(FileType.FILES) { file ->
-    ant.delete(
-        file: new File(catalinaBase, extensionDirectory.toURI().relativize(file.toURI()).getPath()))
+  if (extensionLibDirectory.isDirectory()) {
+    extensionLibDirectory.eachFileRecurse(FileType.FILES) { file ->
+      ant.delete(
+          file: new File(librariesDir, extensionLibDirectory.toURI().relativize(file.toURI()).getPath()))
+    }
+  }
+  if (extensionWebappDirectory.isDirectory()) {
+    extensionWebappDirectory.eachFileRecurse(FileType.FILES) { file ->
+      ant.delete(
+          file: new File(webappsDir, extensionWebappDirectory.toURI().relativize(file.toURI()).getPath()))
+    }
   }
   println "Done."
 }
