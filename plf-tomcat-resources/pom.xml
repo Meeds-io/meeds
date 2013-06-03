@@ -65,16 +65,11 @@
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
     </dependency>
-    <!-- CRaSH extension for PLF -->
+    <!-- PLF Shared resources -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-extension-crsh</artifactId>
-      <type>zip</type>
-    </dependency>
-    <!-- Extensions Manager for Tomcat distribution -->
-    <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-extensions-manager</artifactId>
+      <artifactId>plf-packaging-resources</artifactId>
+      <type>pom</type>
     </dependency>
     <!-- GateIn Container Integration Servlet -->
     <dependency>

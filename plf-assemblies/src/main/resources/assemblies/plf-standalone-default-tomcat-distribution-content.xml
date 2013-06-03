@@ -670,71 +670,9 @@
       <outputFileNameMapping>acme-intranet-portlet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- eXo Platform Extensions Manager - Library -->
-    <dependencySet>
-      <outputDirectory>/extensions</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>plf-extensions-manager.jar</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- eXo Platform Extensions Manager - Unix Script -->
-    <dependencySet>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <unpackOptions>
-        <filtered>true</filtered>
-        <includes>
-          <include>*.sh</include>
-        </includes>
-        <lineEnding>unix</lineEnding>
-      </unpackOptions>
-      <fileMode>755</fileMode>
-      <!-- Workaround for MASSEMBLY-554 -->
-      <outputFileNameMapping></outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- eXo Platform Extensions Manager - Windows Script -->
-    <dependencySet>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <unpackOptions>
-        <filtered>true</filtered>
-        <includes>
-          <include>*.bat</include>
-        </includes>
-        <lineEnding>windows</lineEnding>
-      </unpackOptions>
-      <!-- Workaround for MASSEMBLY-554 -->
-      <outputFileNameMapping></outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- All extensions -->
-    <dependencySet>
-      <outputDirectory>/extensions</outputDirectory>
-      <includes>
-        <include>*:*:zip</include>
-      </includes>
-      <excludes>
-        <exclude>org.apache.tomcat:tomcat:zip</exclude>
-        <exclude>org.exoplatform.platform.distributions:plf-tomcat-resources:zip</exclude>
-      </excludes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
   </dependencySets>
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
+    <componentDescriptor>assemblies/plf-extensions-component.xml</componentDescriptor>
   </componentDescriptors>
 </assembly>
