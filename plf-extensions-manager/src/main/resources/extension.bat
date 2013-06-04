@@ -25,12 +25,12 @@ rem Guess PRODUCT_HOME if not defined
 set "CURRENT_DIR=%cd%"
 if not "%PRODUCT_HOME%" == "" goto gotHome
 set "PRODUCT_HOME=%CURRENT_DIR%"
-if exist "%PRODUCT_HOME%\bin\catalina.bat" goto okHome
+if exist "%PRODUCT_HOME%\extensions" goto okHome
 set "PRODUCT_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
 
-if exist "%PRODUCT_HOME%\bin\catalina.bat" goto okHome
+if exist "%PRODUCT_HOME%\extensions" goto okHome
 echo The PRODUCT_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end
