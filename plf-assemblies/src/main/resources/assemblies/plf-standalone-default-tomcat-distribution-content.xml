@@ -186,6 +186,16 @@
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- Common Gatein Configuration -->
+    <dependencySet>
+      <outputDirectory>/gatein/conf</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform.distributions:plf-packaging-resources:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
     <dependencySet>
       <outputDirectory>/lib</outputDirectory>

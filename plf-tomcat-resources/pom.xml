@@ -69,7 +69,7 @@
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-packaging-resources</artifactId>
-      <type>pom</type>
+      <type>zip</type>
     </dependency>
     <!-- GateIn Container Integration Servlet -->
     <dependency>

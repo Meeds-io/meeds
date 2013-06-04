@@ -160,6 +160,12 @@
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-packaging-resources</artifactId>
+        <version>${project.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
