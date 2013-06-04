@@ -18,16 +18,8 @@
     02110-1301 USA, or see the FSF site: http://www.fsf.org.
 
 -->
-<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
-  <deployment>
-    <dependencies>
-      <!-- Let's depend on the platform EAR -->
-      <module name="deployment.platform.ear"/>
-    </dependencies>
-    <resources>
-      <!-- bouncycastle + VFS workaround : https://community.jboss.org/message/806775#806775 -->
-      <!-- To avoid this error with crash : Cannot verify jar:vfs:..../platform-XXXX.ear/lib/bcprov-jdkAA-X.YZ.jar!/ -->
-      <resource-root path="WEB-INF/lib/bcprov-jdk16-1.46.jar" use-physical-code-source="true"/>
-    </resources>
-  </deployment>
-</jboss-deployment-structure>
+<jboss umlns="urn:jboss:1.0">
+    <jboss-deployment-dependencies xmlns="urn:jboss:deployment-dependencies:1.0">
+        <dependency name="platform.ear" />
+    </jboss-deployment-dependencies>
+</jboss>
