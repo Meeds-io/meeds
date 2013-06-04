@@ -1,4 +1,5 @@
 package org.exoplatform.platform.distributions
+
 /**
  * Copyright (C) 2003-2013 eXo Platform SAS.
  *
@@ -19,7 +20,9 @@ package org.exoplatform.platform.distributions
  */
 
 import groovy.io.FileType
-
+import groovy.util.slurpersupport.GPathResult
+import groovy.xml.StreamingMarkupBuilder
+import groovy.xml.XmlUtil
 
 /**
  * Command line utility to manage Platform extensions in a standalone Apache Tomcat based distribution.
@@ -92,7 +95,7 @@ if (!System.getProperty("product.home")) {
 productHome = new File(System.getProperty("product.home"))
 
 if (!productHome.isDirectory()) {
-  println "error: Erroneous setup, platform home directory (${productHome}) is invalid."
+  println "error: Erroneous setup, product home directory (${productHome}) is invalid."
   System.exit 1
 }
 
@@ -139,6 +142,17 @@ To install all avalaible extensions use:
 """
 }
 
+def String serializeXml(GPathResult xml) {
+  XmlUtil.serialize(new StreamingMarkupBuilder().bind {
+    mkp.yield xml
+  })
+}
+
+def processFileInplace(file, Closure processText) {
+  def text = file.text
+  file.write(processText(text))
+}
+
 def installExtension(String extensionName) {
   def extensionDirectory = new File(extensionsDirectory, extensionName);
   def extensionLibDirectory = new File(extensionDirectory, "lib");
@@ -151,19 +165,45 @@ def installExtension(String extensionName) {
   println "Installing ${extensionName} extension ..."
   if (extensionLibDirectory.isDirectory()) {
     ant.copy(todir: "${librariesDir}",
-             preservelastmodified: true,
-             verbose: true) {
+        preservelastmodified: true,
+        verbose: true) {
       fileset(dir: "${extensionLibDirectory}") {
-        include(name: "**/*.jar")
+        include(name: "*.jar")
       }
     }
   }
   if (extensionWebappDirectory.isDirectory()) {
     ant.copy(todir: "${webappsDir}",
-             preservelastmodified: true,
-             verbose: true) {
+        preservelastmodified: true,
+        verbose: true) {
       fileset(dir: "${extensionWebappDirectory}") {
-        include(name: "**/*.war")
+        include(name: "*.war")
+      }
+    }
+    // Update application.xml if it exists
+    def applicationDescriptor = new File(webappsDir, "META-INF/application.xml")
+    if (applicationDescriptor.exists()) {
+      processFileInplace(applicationDescriptor) { text ->
+        application = new XmlSlurper(false, false).parseText(text)
+        extensionWebappDirectory.eachFileRecurse(FileType.FILES) { file ->
+          def webArchive = file.name
+          def webContext = file.name.substring(0, file.name.length() - 4)
+          print "Adding/Updating context declaration /${webContext} for ${webArchive} in application.xml ... "
+          application.depthFirst().findAll { (it.name() == 'module') && (it.'web'.'web-uri'.text() == webArchive) }.each { node ->
+            // remove existing node
+            node.replaceNode {}
+          }
+          application."initialize-in-order" + {
+            module {
+              web {
+                'web-uri'(webArchive)
+                'context-root'(webContext)
+              }
+            }
+          }
+          println "OK"
+        }
+        serializeXml(application)
       }
     }
   }
@@ -183,13 +223,29 @@ def uninstallExtension(String extensionName) {
   if (extensionLibDirectory.isDirectory()) {
     extensionLibDirectory.eachFileRecurse(FileType.FILES) { file ->
       ant.delete(
-          file: new File(librariesDir, extensionLibDirectory.toURI().relativize(file.toURI()).getPath()))
+          file: new File(librariesDir, file.name))
     }
   }
   if (extensionWebappDirectory.isDirectory()) {
+    // Update application.xml if it exists
+    def applicationDescriptor = new File(webappsDir, "META-INF/application.xml")
     extensionWebappDirectory.eachFileRecurse(FileType.FILES) { file ->
       ant.delete(
-          file: new File(webappsDir, extensionWebappDirectory.toURI().relativize(file.toURI()).getPath()))
+          file: new File(webappsDir, file.name))
+      if (applicationDescriptor.exists()) {
+        processFileInplace(applicationDescriptor) { text ->
+          application = new XmlSlurper(false, false).parseText(text)
+          def webArchive = file.name
+          def webContext = file.name.substring(0, file.name.length() - 4)
+          application.depthFirst().findAll { (it.name() == 'module') && (it.'web'.'web-uri'.text() == webArchive) }.each { node ->
+            print "Removing context declaration /${webContext} for ${webArchive} in application.xml ... "
+            // remove existing node
+            node.replaceNode {}
+            println "OK"
+          }
+          serializeXml(application)
+        }
+      }
     }
   }
   println "Done."
