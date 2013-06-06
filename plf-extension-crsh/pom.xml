@@ -36,51 +36,14 @@
       <artifactId>crsh.jcr.exo</artifactId>
       <version>${org.crsh.version}</version>
       <type>war</type>
-      <scope>runtime</scope>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
     <!-- This name is used to bundle the extension -->
     <finalName>crash</finalName>
     <plugins>
-      <!-- WAR Extension for JBoss -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>customize-crash-war</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>war</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <webResources>
-            <resource>
-              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
-              <filtering>true</filtering>
-              <targetPath>WEB-INF</targetPath>
-              <includes>
-                <include>**/*.xml</include>
-              </includes>
-            </resource>
-          </webResources>
-          <overlays>
-            <overlay>
-              <!-- empty groupId/artifactId represents the current build -->
-            </overlay>
-            <overlay>
-              <groupId>org.crsh</groupId>
-              <artifactId>crsh.jcr.exo</artifactId>
-              <includes>
-                <include>**/*</include>
-              </includes>
-            </overlay>
-          </overlays>
-        </configuration>
-      </plugin>
       <!-- ZIP extension for tomcat -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

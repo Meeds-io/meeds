@@ -35,12 +35,6 @@
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-extensions-manager</artifactId>
     </dependency>
-    <!-- CRaSH extension for PLF -->
-    <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-extension-crsh</artifactId>
-      <type>zip</type>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
