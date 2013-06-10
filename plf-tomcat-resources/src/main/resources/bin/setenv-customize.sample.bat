@@ -65,7 +65,7 @@ REM # PLATFORM configuration
 REM # ---------------------------------------------------------------------------
 
 REM # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
-REM SET EXO_PROFILES=all,cluster,cluster-index-local
+REM SET EXO_PROFILES=all,myOwnProfile
 
 REM # Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
 REM SET EXO_ASSETS_VERSION=42

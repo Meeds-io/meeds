@@ -67,7 +67,7 @@
 # -----------------------------------------------------------------------------
 
 # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
-#EXO_PROFILES="all,cluster,cluster-index-local"
+#EXO_PROFILES="all,myOwnProfile"
 
 # Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
 #EXO_ASSETS_VERSION="42"
