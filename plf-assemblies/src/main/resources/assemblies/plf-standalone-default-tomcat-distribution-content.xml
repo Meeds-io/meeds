@@ -194,6 +194,12 @@
       </includes>
       <scope>provided</scope>
       <unpack>true</unpack>
+      <unpackOptions>
+        <excludes>
+          <!-- PLF4 cannot be deployed in Cluster with a Tomcat distribution due to JGroups versions conflicts (IDM vs JBCache) -->
+          <exclude>**/cluster/**</exclude>
+        </excludes>
+      </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
