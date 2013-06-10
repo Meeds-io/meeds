@@ -166,8 +166,14 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir.name=gatein/conf"
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=\"$CATALINA_BASE/gatein/conf\""
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=\"$CATALINA_BASE/gatein/conf\""
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=\"${EXO_DATA_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=\"$CATALINA_BASE/conf/jaas.conf\""
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=\"${EXO_DATA_DIR}\""
+# JCR Data directory
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
+# JCR values
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jcr/values\""
+# JCR indexes
+CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
 
 # JAVA_HOME is computed by setclasspath.sh if required
 if [ -d "$JAVA_HOME/jre" ]; then

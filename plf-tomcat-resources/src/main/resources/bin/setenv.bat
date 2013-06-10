@@ -170,8 +170,14 @@ REM # Platform paths
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name=gatein\conf
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
+REM # JCR Data directory
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.data.dir="%EXO_DATA_DIR%\jcr"
+REM # JCR values
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.storage.data.dir="%EXO_DATA_DIR%\jcr\values"
+REM # JCR indexes
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.index.data.dir="%EXO_DATA_DIR%\jcr\index"
 
 REM # JAVA_HOME is computed by setclasspath.bat if required
 IF NOT EXIST "%JAVA_HOME%\bin\javac.exe" GOTO JavaHomeIsJRE
