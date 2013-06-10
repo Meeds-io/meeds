@@ -49,9 +49,9 @@
       oob_thread_pool.queue_max_size="100"
       oob_thread_pool.rejection_policy="run"/>
   <TCPPING timeout="3000"
-           initial_hosts="${jgroups.tcpping.initial_hosts:host1_IP[7800],host2_IP[7800]}"
+           initial_hosts="${jgroups.tcpping.initial_hosts:localhost[7800]}"
            port_range="1"
-           num_initial_members="3"/>
+           num_initial_members="${jgroups.tcpping.num_initial_members:1}"/>
   <MERGE2 max_interval="100000"
           min_interval="20000"/>
   <FD_SOCK/>
