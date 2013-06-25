@@ -8,21 +8,20 @@ How to build ?
 
 To build the Platform Community Tomcat Standalone package, from the root directory just launch :
 
-    mvn install -s settings.xml
+    mvn install
 
-Take a coffee, a tea, whatever you like the time that Maven downloads the earth and then you'll have the result in `plf-community-tomcat-standalone/target/plf-community-tomcat-standalone-<<CURRENT_VERSION>>/plf-community-tomcat-standalone-<<CURRENT_VERSION>>`
+Take a coffee, a tea, whatever you like the time that Maven downloads the earth and then you'll have the result in `plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>`
 
-The `settings.xml` file at the root of the project gives you :
+If you are using a Maven Repository Manager you need to proxify our repository <https://repository.exoplatform.org/public/> (snapshots and releases).
 
-*   the good setup for remote repositories (You need to declare <https://repository.exoplatform.org/public/> as remote repository if you want to use your own settings)
-*   a custom local repository (`${user.home}/.m2/exo-repository/`) to no pollute your own one.
+If you are using a mirror in your maven settings you need to exlude our repository identifier `repository.exoplatform.org` if your mirror don't proxify it.
 
 Build options
 -------------
 
 Add `-Dskip-archive` in your build command line to not generate the final zip archive (and thus gain few seconds of build).
 
-*TIP* : Your build will be faster (~40%) using a JDK7
+*TIP* : Your build will be faster (~40%) using a JDK7. It will be also faster if you use Apache Maven >= 3.1.
 
 How to launch ?
 ---------------
@@ -44,12 +43,8 @@ Scripts have to be launched from the directory where they are otherwise you have
 Windows 64b users
 -----------------
 
-You can activate the colorized console by editing the configuration file
+You can force to activate the colorized console with the option 
 
-    plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/gatein/configuration.properties
-
-You need to had this line which is commented by default
-
-    exo.logs.console.colorized=true
+    plf-community-tomcat-standalone/target/platform-community-<<CURRENT_VERSION>>/platform-community-<<CURRENT_VERSION>>/start_eXo.bat --color
 
 Depending of your system you may need to install the package [Microsoft Visual C++ 2008 Redistributable Package (x64)](http://www.microsoft.com/en-us/download/confirmation.aspx?id=15336)
