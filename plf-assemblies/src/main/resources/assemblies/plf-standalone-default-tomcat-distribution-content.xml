@@ -615,6 +615,15 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
+        <include>org.exoplatform.platform:platform-extension-portlets-notification:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>platform-notification.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
         <include>org.exoplatform.platform:platform-extension-resources:war</include>
       </includes>
       <scope>provided</scope>

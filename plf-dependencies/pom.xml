@@ -534,6 +534,16 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-extension-portlets-notification</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-extension-portlets-notification</artifactId>
+      <type>pom</type>      
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-resources</artifactId>
       <type>war</type>
     </dependency>
