@@ -49,23 +49,6 @@ if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
   . "$CATALINA_BASE/bin/setenv-customize.sh"
 fi
 
-# Get standard Java environment variables
-if $os400; then
-  # -r will Only work on the os400 if the files are:
-  # 1. owned by the user
-  # 2. owned by the PRIMARY group of the user
-  # this will not work if the user belongs in secondary groups
-  . "$CATALINA_HOME/bin/setclasspath.sh"
-else
-  if [ -r "$CATALINA_HOME/bin/setclasspath.sh" ]; then
-    . "$CATALINA_HOME/bin/setclasspath.sh"
-  else
-    echo "Cannot find $CATALINA_HOME/bin/setclasspath.sh"
-    echo "This file is needed to run this program"
-    exit 1
-  fi
-fi
-
 # -----------------------------------------------------------------------------
 # Default JVM configuration
 # -----------------------------------------------------------------------------
@@ -174,20 +157,6 @@ CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jcr/values\""
 # JCR indexes
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
-
-# JAVA_HOME is computed by setclasspath.sh if required
-if [ -d "$JAVA_HOME/jre" ]; then
-  # This is a JDK
-  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=\"${JAVA_HOME}/jre/lib\""
-  CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=\"${JAVA_HOME}/src.zip\""
-else
-  # This is a JRE
-  CATALINA_OPTS="$CATALINA_OPTS -Djre.lib=\"${JAVA_HOME}/lib\""
-  if [ -f "$JAVA_HOME"/../src.zip ]; then
-    # This is a JRE in a JDK
-    CATALINA_OPTS="$CATALINA_OPTS -Djavasrc=\"${JAVA_HOME}/../src.zip\""
-  fi
-fi
 
 # Assets version
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
