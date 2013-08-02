@@ -213,17 +213,7 @@
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
       <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-fck</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-fck</artifactId>
-      <type>pom</type>
-    </dependency>
+    </dependency>   
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-resources</artifactId>
