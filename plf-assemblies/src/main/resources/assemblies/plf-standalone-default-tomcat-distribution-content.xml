@@ -336,6 +336,15 @@
       <outputFileNameMapping>social-portlet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+		<dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.social:social-webapp-juzu-portlet:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>social-juzu.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
