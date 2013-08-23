@@ -345,6 +345,15 @@
       <outputFileNameMapping>social-juzu.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+		<dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.social:social-notification-extension:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>social-notification-extension.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>

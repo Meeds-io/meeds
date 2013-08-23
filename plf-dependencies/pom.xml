@@ -675,6 +675,16 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-notification-extension</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-notification-extension</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>pom</type>
     </dependency>
