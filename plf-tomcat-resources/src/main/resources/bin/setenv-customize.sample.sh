@@ -183,3 +183,6 @@
 # CRaSH Extension (change telnet and SSH ports)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.telnet.port=12345"
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.ssh.port=54321"
+
+# Hibernate dialect for supporting Postgresql Plus
+#CATALINA_OPTS="${CATALINA_OPTS} -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"

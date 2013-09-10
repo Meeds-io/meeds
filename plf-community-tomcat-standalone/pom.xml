@@ -33,7 +33,7 @@
     <!-- This is used to adapt the extension script to the app server -->
     <platform.libraries.path>lib</platform.libraries.path>
     <platform.webapps.path>webapps</platform.webapps.path>
-   </properties>
+  </properties>
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>

@@ -155,4 +155,40 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>exo-release</id>
+      <build>
+        <plugins>
+          <!-- Validate wellformedness of (almost) all XML files -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>xml-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>validate-xml-files</id>
+                <goals>
+                  <goal>validate</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <validationSets>
+                <validationSet>
+                  <dir>src/main/resources</dir>
+                  <includes>
+                    <include>**/*.xml</include>
+                  </includes>
+                  <excludes>
+                    <!-- This is a template not valid by default -->
+                    <exclude>**/*.template.xml</exclude>
+                  </excludes>
+                </validationSet>
+              </validationSets>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
