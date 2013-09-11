@@ -169,6 +169,24 @@
           <artifactId>jaxb-impl</artifactId>
           <groupId>com.sun.xml.bind</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
+        <exclusion>          
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>          
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+        </exclusion>
+        <!-- Coming by transitivity from org.exoplatform.social:social-component-core -->
+        <exclusion>          
+          <groupId>xerces</groupId>
+          <artifactId>xmlParserAPIs</artifactId>
+        </exclusion>
+        <exclusion>          
+          <groupId>rome</groupId>
+          <artifactId>modules</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
