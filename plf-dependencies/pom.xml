@@ -187,6 +187,11 @@
           <groupId>rome</groupId>
           <artifactId>modules</artifactId>
         </exclusion>
+        <!-- Coming by transitivity from org.exoplatform.kernel:exo.kernel.container -->
+        <exclusion>
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
