@@ -186,3 +186,6 @@
 
 # Hibernate dialect for supporting Postgresql Plus
 #CATALINA_OPTS="${CATALINA_OPTS} -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
+
+# ACME extension (override default acme site data)
+#CATALINA_OPTS="${CATALINA_OPTS} -Dacme.portalConfig.metadata.override=true"
