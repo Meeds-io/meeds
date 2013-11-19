@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.2.x-SNAPSHOT</version>
+    <version>4.x-pkgpub-upgrade-gatein-3.7.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-tomcat-resources</artifactId>
   <packaging>pom</packaging>
