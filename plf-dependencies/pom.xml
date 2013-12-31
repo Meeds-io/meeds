@@ -656,6 +656,16 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-skin</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
+      <artifactId>platform-ui-skin</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-webui-core</artifactId>
     </dependency>
     <dependency>
