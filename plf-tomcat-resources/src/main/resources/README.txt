@@ -60,7 +60,7 @@ Several extensions are not installed by default in the Express and Enterprise ve
     * crash	: Common Reusable SHell to interact with the JVM
     * acme (*)	: A demo website built with eXo Platform 4 (cf. next section for its usage)
     * cmis (*)	: Content Management Interoperability Services 
-    * ide (*)	: Integrated development environment to develop applications online 
+    * ide (*)	: Integrated online environment to develop applications (cf. next section for its usage)
     * wai (*)	: A demo website following Accessibility standards 
 
 On Windows, Open a DOS prompt command, go to PLF_HOME directory and type the command:
@@ -92,6 +92,20 @@ When eXo Platform server is already started and you would like to install acme e
 * Stop eXo Platform server.
 * Set the variable "acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
 * Start eXo Platform server again to continue using it.
+
+----------------------------------------------------------------
+Exclusion of the IDE item from Administration drop-down menu
+----------------------------------------------------------------
+
+When eXo Platform server integrates the ide extension and you would like to exclude the IDE item from Administration drop-down menu, follow the steps below:
+* Stop eXo Platform server
+* Set the variable "ide.portalConfig.metadata.override" as false . This can be done by one of the two ways:
+** Use configuration.properties:
+  In this file, you uncomment the line of this parameter
+** Use customization configuration script:
+  When you use the sample configuration script provided inside eXo Platform 4.0, you can uncomment this variable in the script.
+  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.0 Administration guide for more details of these scripts.
+* Restart eXo Platform server.
 
 ------------------
 eXo Resources

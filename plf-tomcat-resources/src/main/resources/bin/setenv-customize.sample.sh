@@ -189,3 +189,6 @@
 
 # ACME extension (override default acme site data)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dacme.portalConfig.metadata.override=true"
+
+# IDE extension (customize default ide extension)
+#CATALINA_OPTS="${CATALINA_OPTS} -Dide.portalConfig.metadata.override=false"
