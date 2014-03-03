@@ -45,6 +45,19 @@
     </route-param>
   </route>
 
+  <!-- SEO route -->
+  <route path="/{gtn:sitename}/sitemaps.xml">
+    <route-param qname="gtn:handler">
+      <value>sitemap</value>
+    </route-param>
+  </route>
+       
+  <route path="/{gtn:sitename}/robots.txt">
+    <route-param qname="gtn:handler">
+      <value>robots</value>
+    </route-param>
+  </route>  
+
   <!-- The legacy route -->
   <route path="/public">
     <route path="/">
