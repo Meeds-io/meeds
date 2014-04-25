@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.1-M1</version>
+    <version>4.1.0-SNAPSHOT</version>
   </parent>
   <artifactId>plf-packaging-resources</artifactId>
   <packaging>pom</packaging>
