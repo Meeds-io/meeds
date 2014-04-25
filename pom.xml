@@ -63,7 +63,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.1.0-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.1-M1</org.exoplatform.platform.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>7.0.42</org.apache.tomcat.version>
     <!-- CRaSH -->
