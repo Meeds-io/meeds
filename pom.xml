@@ -76,7 +76,7 @@
     <ch.qas.logback.version>1.1.2</ch.qas.logback.version>
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
-    <org.fusesource.jansi.version>1.9</org.fusesource.jansi.version>
+    <org.fusesource.jansi.version>1.11</org.fusesource.jansi.version>
     <!-- ************** -->
     <!-- Build settings -->
     <!-- ************** -->
