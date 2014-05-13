@@ -71,7 +71,7 @@
     <!-- CRaSH -->
     <org.crsh.version>1.2.6</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
-    <org.slf4j.version>1.7.5</org.slf4j.version>
+    <org.slf4j.version>1.7.7</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
     <ch.qas.logback.version>1.0.11</ch.qas.logback.version>
     <!-- Additional LOGBACK dependencies -->
