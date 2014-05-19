@@ -122,6 +122,7 @@ fi
 if $EXO_DEV ; then
   CATALINA_OPTS="$CATALINA_OPTS -Dorg.exoplatform.container.configuration.debug"
   CATALINA_OPTS="$CATALINA_OPTS -Dexo.product.developing=true"
+  CATALINA_OPTS="$CATALINA_OPTS -Dignore.unregistered.webapp=false"
 fi
 
 # JCR session leak detector
