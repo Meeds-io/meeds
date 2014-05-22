@@ -1,5 +1,5 @@
 ====
-    Copyright (C) 2003-2013 eXo Platform SAS.
+    Copyright (C) 2003-2014 eXo Platform SAS.
 
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
@@ -34,13 +34,26 @@ System requirements
     * The eXo server will run on port 8080, make sure this port is not currently in use
 
 -------------------------------------
-How to start the Platform
+How to start the Platform Tomcat
 -------------------------------------
 
     * PLF_HOME is the location of the unzipped eXo Platform server.
     * On Windows: Open a DOS prompt command, go to PLF_HOME directory and type the command: "start_eXo.bat"
     * On Linux: Open a terminal, go to PLF_HOME directory and type the command: "./start_eXo.sh"
 
+------------------------------------
+How to start the Platform Jboss (*)
+------------------------------------
+
+    * PLF_JBOSS_HOME is the location of JBoss EAP 6.1.0 or 6.1.1
+    * Extract eXo Platform Jboss package
+    * Copy all the extracted folders and files into PLF_JBOSS_HOME.
+    * On Windows: Open a DOS prompt command, go to PLF_JBOSS_HOME directory and type the command: "bin\standalone.bat"
+    * On Linux: Open a terminal, go to PLF_JBOSS_HOME directory and type the command: "./bin/standalone.sh"
+
+(*) only available for Enterprise edition.
+
+For more configurations, please check http://docs.exoplatform.com/PLF40/PLFAdministratorGuide.html
 
 ----------------------------------------------------------
 How to access the Platform homepage
