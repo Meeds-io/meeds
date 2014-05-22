@@ -19,7 +19,7 @@
 
 Thank you for downloading eXo Platform ${org.exoplatform.platform.version}.
 
-Follow the installation procedure and start eXo Platform 4 now!
+Follow the installation procedure and start eXo Platform 4.1 now!
 
 ------------------------------
 System requirements
@@ -45,7 +45,7 @@ How to start the Platform Tomcat
 How to start the Platform Jboss (*)
 ------------------------------------
 
-    * PLF_JBOSS_HOME is the location of JBoss EAP 6.1.0 or 6.1.1
+    * PLF_JBOSS_HOME is the location of JBoss EAP 6.2.0
     * Extract eXo Platform Jboss package
     * Copy all the extracted folders and files into PLF_JBOSS_HOME.
     * On Windows: Open a DOS prompt command, go to PLF_JBOSS_HOME directory and type the command: "bin\standalone.bat"
@@ -53,7 +53,7 @@ How to start the Platform Jboss (*)
 
 (*) only available for Enterprise edition.
 
-For more configurations, please check http://docs.exoplatform.com/PLF40/PLFAdministratorGuide.html
+For more configurations, please check http://docs.exoplatform.com/PLF41/PLFAdministratorGuide.html
 
 ----------------------------------------------------------
 How to access the Platform homepage
@@ -99,8 +99,8 @@ When eXo Platform server is already started and you would like to install acme e
 ** Use configuration.properties:
   In this file, you uncomment the line of this parameter
 ** Use customization configuration script:
-  When you use the sample configuration script provided inside eXo Platform 4.0, you can uncomment this variable in the script.
-  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.0 Administration guide for more details of these scripts.
+  When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
+  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 * Stop eXo Platform server.
 * Set the variable "acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
@@ -116,8 +116,8 @@ When eXo Platform server integrates the ide extension and you would like to excl
 ** Use configuration.properties:
   In this file, you uncomment the line of this parameter
 ** Use customization configuration script:
-  When you use the sample configuration script provided inside eXo Platform 4.0, you can uncomment this variable in the script.
-  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.0 Administration guide for more details of these scripts.
+  When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
+  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 
 ------------------

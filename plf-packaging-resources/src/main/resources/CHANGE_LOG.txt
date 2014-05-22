@@ -1,5 +1,5 @@
 =========================
-Changelog Platform 4.0.6
+Changelog Platform ${org.exoplatform.platform.version}
 =========================
 
  

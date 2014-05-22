@@ -20,7 +20,7 @@ I. MAIN CHANGES
 ================
  
  
-Main changes since Platform 4.0.5:
+Main changes since Platform ${org.exoplatform.platform.version}:
 * Bug fixes
 * Localization of application name in Space menu
 * Custom validator of page node name
