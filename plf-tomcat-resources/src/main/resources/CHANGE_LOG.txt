@@ -1,0 +1,1059 @@
+=========================
+Changelog Platform 4.0.6
+=========================
+
+ 
+Platform 4.0.6
+*****************
+    * [PLF-2322] - Unknown Error when we click on the "arrow up" from the Navigation Selector
+    * [PLF-5102] - gatein.jcr.datasource.managed=true doesn't work with JBoss EAP6
+    * [PLF-5509] - NullPointerException when view profile of a deleted user
+    * [PLF-5514] - [Space Navigation] "Show more" button still appears when there are no more search result
+    * [PLF-5624] - [Suggestion] Improve People REST service
+    * [PLF-5648] - [Navigation Management] Recursive paste navigation nodes in navigation editor
+    * [PLF-5820] - Login History and Forum Statistics gadget failed to display charts
+    * [PLF-5826] - [Forum statistics gadget] Uncaught data error
+    * [PLF-5883] - Lose iframe when clicking links in the Getting Started, Suggestions
+
+
+** Feedback
+    * [PLF-5834] - No language field in exo:announcement dialog template
+
+
+** Improvement
+    * [PLF-5811] - Slowness in suggestion portlet
+    * [PLF-5815] - Platform doesn’t work in an IFrame
+
+ 
+eXo GateIn 3.5.10-PLF  
+*************************
+** Bug
+    * [EXOGTN-1088] - Recursive paste navigation nodes in navigation editor
+    * [EXOGTN-1399] - Backport GTNPORTAL-3225 Height and width of Portlets are not updated after setting
+    * [EXOGTN-1758] - Changes in Templates in one node are not replicated immediately to all cluster nodes
+    * [EXOGTN-1761] - [Edit Page Layout] Add tab container button is hidden
+    * [EXOGTN-1767] - [IE8] Impossible to edit/maximize/delete a gadget in the dashboard
+    * [EXOGTN-1777] - XSS vulnerability in UIForm
+    * [EXOGTN-1778] - XSS vulnerability in UIFormTabPane
+    * [EXOGTN-1784] - Failed authentication on service REST after a session timeout
+    * [EXOGTN-1806] - NPE in PicketLinkIDMServiceImpl.getIdentitySession during startup when eXo MBeans are invoked
+
+
+** Improvement
+    * [EXOGTN-1633] - Custom validator of page node name
+
+
+ 
+Integration 4.0.6  
+*******************
+** Bug
+    * [INTEG-181] - [Top Navigation] XSS vulnerability of Quick Search box
+    * [INTEG-263] - [Unified Search] Failed to show result if keyword starts with asterisk
+    * [INTEG-287] - [integ-forum] When moving a question, its activity should also be moved
+    * [INTEG-288] - "Description" field in Metadata has XSS vulnerability in Activity Stream
+    * [INTEG-289] - [Security] Detail of question in FORUM has XSS vulnerability
+    * [INTEG-291] - [Activity Stream] Incorrect thumbnail of Office files shared via Activity Composer
+    * [INTEG-295] - Unified Search failed when Platform runs inside an IFrame
+    * [INTEG-298] - Possible to comment on topic activity although topic or its forum is locked/closed
+    * [INTEG-299] - [integ-ecms] HTML encoding of comments from Content Explorer
+    * [INTEG-308] - [Poll] XSS vulnerability of Poll options
+
+
+ 
+eXo Calendar 4.0.6
+**********************
+** Bug
+    * [CAL-414] - Calendar crashes with username as email address/numbers
+    * [CAL-740] - [IE8] Impossible to add an event by right clicking in calendar
+    * [CAL-895] - Day View is shown under Work Week view
+
+
+ 
+eXo Wiki 4.0.6
+*****************
+** Bug
+    * [WIKI-519] - Broken PageContentArea after unfolding a page from pagetree macro
+    * [WIKI-793] - Creation of page without title
+    * [WIKI-830] - Alert message is posted when adding Wiki portlet to a site
+    * [WIKI-832] - Page not found when open a wiki page from activity stream after quick edit its title
+    * [WIKI-834] - Loading forever of Tree navigation when wiki page is made public
+    * [WIKI-842] - [IE8] Difficult to close Preview Window
+    * [WIKI-846] - [Advanced Search] Wiki Page's content inside Search Result
+    * [WIKI-851] - [Cloud] Error when opening Wiki page link in Rich text mode
+    * [WIKI-853] - [Cloud] No content in Wiki syntax help (Edit page mode)
+    * [WIKI-875] - [integ-wiki] HTML encoding of comments
+    * [WIKI-890] - [Iframe] Impossible to add attachment to wiki page
+
+ 
+ 
+eXo Social 4.0.6
+**********************
+** Bug
+    * [SOC-3339] - Wrong avatar when trying to comment on Activity Stream of other user.
+    * [SOC-3505] - IE8: Don't show Space Menu portlet after edit layout of page
+    * [SOC-3712] - Error in posting activities in case there are both user and space of same name
+    * [SOC-3807] -  [People] Cannot search people by positions in experience
+    * [SOC-3858] - Duplicate activity when add user into space group
+    * [SOC-4038] - [XSS] Applications - Add portlet - Display Name
+    * [SOC-4040] - Space Activities are visible for everyone
+    * [SOC-4102] - [Space Member] Show More button doesn't work
+    * [SOC-4116] - Mail link in user profile is not clickable
+    * [SOC-4222] - [User Popup] Incorrect Activity link when Platform runs inside an IFrame
+    * [SOC-4239] - [IE8]No user avatar in activity's comment.
+
+
+** Feedback
+    * [SOC-4111] - [User profile] The field "position" isn't very clear
+    * [SOC-4114] - [Space Member Management] Auto-complete should contain the full name when inviting users into space
+
+
+** Improvement
+    * [SOC-3006] - Localize the Application titles in Space Menu
+    * [SOC-4118] - Slowness in suggestion portlet
+
+
+ 
+eXo ECMS 4.0.6
+********************
+** Bug
+    * [ECMS-4199] - Content Explorer: Error on Relation Panel of WAI Portal's home page
+    * [ECMS-4263] - NPE in Content By query portlet with By content mode
+    * [ECMS-5082] - The resize pointer doesn't disappear in IE8 and it doesn't resize the column
+    * [ECMS-5271] - Cannot Rename child node while parent node is being locked by not locker
+    * [ECMS-5696] - [CE] Pagination: don't go back to previous page after editing a file
+    * [ECMS-5745] - No file name in warning message when trying to restore files of other user's Public folder
+    * [ECMS-5831] - Cannot create a taxonomy with an accented label and a non-accented path via XML configuration
+    * [ECMS-5832] - Views tab disappears in Content Administration
+    * [ECMS-5897] - [File Management View]  Sort by Name and Date is not correct
+    * [ECMS-5939] - [IE8] Page layout is damaged when edit mode is selected
+    * [ECMS-5942] - Error while displaying Sites Explorer without buttons
+    * [ECMS-6013] - HTML Lists not well displayed in exo content.
+    * [ECMS-6029] - [acme][IE8] Missing illustration images of built-in contents
+    * [ECMS-6049] - Only show symlink in Trash folder when delete a file with a tag
+    * [ECMS-6053] - After being added symlink, published document is changed to draft
+    * [ECMS-6059] - "Label" field in Template Document has XSS vulnerability
+    * [ECMS-6064] - Files without *dc:title* property are not inserted when uploaded and selected with WCM Content Selector
+    * [ECMS-6077] - Can't drag and drop from left to right pane
+    * [ECMS-6078] - Unknown error and exception thrown when removing a document in CLV page
+    * [ECMS-6079] - [CLV] NPE when clicking on Add Property/Node Type button in Search Form
+    * [ECMS-6086] - Unknown error and PathNotFoundException when restoring a file with tags
+    * [ECMS-6087] - [SCV] Lack of scroll bar in search result tab
+    * [ECMS-6096] - "Description" field in Metadata has XSS vulnerability for CLV
+    * [ECMS-6104] - Problem when use insert image in FCKEditor [IE8]
+    * [ECMS-6113] - [IE8, 9] Weird encoding of file name with accent characters
+    * [ECMS-6115] - Permission parameter not taken into account for Group drives
+    * [ECMS-6122] - [Quick Creation Menu] Upload file popup is displayed again after clicking button "Close"
+    * [ECMS-6125] - [WCM Content Selector] Failed to load form due to missing locales
+    * [ECMS-6148] - Cannot load Common Selector when Platform is rendered inside an iframe
+    * [ECMS-6150] - [CLV] Can't display the publication date of nodes
+    * [ECMS-6155] - [IE] Impossible to upload file in Content Explorer when Platform runs inside an IFrame
+    * [ECMS-6168] - Download function doesn't preserve the original file name in non-ASCII characters
+    * [ECMS-6193] - [Advanced search] Impossible to search with date constraints
+
+
+
+eXo JCR 1.15.9
+***********************
+** Bug
+    * [JCR-2281] - Loading all the properties into the cache causes undesirable side effects
+    * [JCR-2283] - Cannot create new user on a preloaded database with 10 thousands of users
+    * [JCR-2296] - TestPermissions fails when the cache is disabled with single mode
+
+
+
+eXo Kernel 2.4.9
+**********************
+** Bug
+    * [KER-280] - Cannot getConfigurationXML of Portal Container via jconsole after doing something in eXo Platform
+
+
+
+=========================
+Changelog Platform 4.0.5
+=========================
+
+ 
+Platform 4.0.5
+*****************
+** Bug
+    * [PLF-5382] - Memory Charts gadget not displayed in IE8
+    * [PLF-5546] - acme configuration overrided some ecms configuration
+    * [PLF-5552] - [IE] Support accent characters in page name
+    * [PLF-5623] - Unable to authenticate user with exo-cmd jmxclient
+    * [PLF-5649] - exo:scriptLabel and exo:script properties of exo:populateToMenu node type are protected
+    * [PLF-5650] - exo:LoginHistoryHome is public by default.
+    * [PLF-5704] - [Space Navigation] Wrong space link when domain name containing 'portal' word
+    * [PLF-5708] - [IE8] Exception thrown when opening Sites/Navigation
+    * [PLF-5801] - LoginHistoryListener should be asynchronous
+
+ 
+eXo GateIn 3.5.9-PLF  
+*************************
+** Bug
+    * [EXOGTN-1064] - Navigation nodes in navigation editor don't change label after portal language changed
+    * [EXOGTN-1314] - Backport GTNPORTAL-3220 Show wrong message when uncheck show publication date in add/edit node
+    * [EXOGTN-1537] - IE9: Action does not work when page url contains special characters
+    * [EXOGTN-1559] - Error on creating new group whose name contains ampersand character
+    * [EXOGTN-1560] - [IE8] Bad UI for all forms have checkbox
+    * [EXOGTN-1637] - Portlet archive containing gatein-resources.xml fails to redeploy
+    * [EXOGTN-1638] - Backport GTNPORTAL-3248 The portlets cannot be displayed after a portal reload
+    * [EXOGTN-1677] - Platform-UI - IE9: Action does not work when page url contains special characters
+    * [EXOGTN-1688] - Navigation nodes in GROUP navigation editor don't change label after portal language changed
+    * [EXOGTN-1695] - [IE8, IE9] Can not rename Dashboard tab if name contains accent chars
+    * [EXOGTN-1705] - Backport GTNPORTAL-2703 Remove "Access Permission" tab when editing Dashboard portlet
+    * [EXOGTN-1708] - Backport GTNPORTAL-3340 Missing resource bundle keys in Permission setting (Application Registry, Portal/Page/Portlet Container/Portlet)
+    * [EXOGTN-1710] - Backport GTNPORTAL-3228 Change Language Selector changes to default language on save
+    * [EXOGTN-1718] - URL query parameters are not propagated when going through the authentication process
+    * [EXOGTN-1723] - Backport GTNPORTAL-2394 The GadgetDeployer should unregister itself as WebAppListener in the stop method
+    * [EXOGTN-1727] - Cannot login as user whose password contains accent character
+
+
+** Improvement
+    * [EXOGTN-1703] - Backport GTNPORTAL-3300 Add possibility to invalidate items in IntegrationCache via JMX call to PicketlinkIDMCacheService.invalidate()
+
+
+ 
+Integration 4.0.5  
+*******************
+** Bug
+    * [INTEG-228] - [integ-wiki][PLF40-Migration] Incorrect Wiki Activity
+    * [INTEG-231] - [Activity] Display all lines in summary field of web content/ product
+    * [INTEG-270] - Summary on content activity is pushed to new line after a character in bold/italic/underline
+    * [INTEG-282] - When editing a webcontent, comments lines are divided into different activity comments
+
+
+ 
+eXo Calendar 4.0.5
+**********************
+** Bug
+    * [CAL-529] - Cannot change end time of event by resizing in working pane on IE
+    * [CAL-787] - CLONE - Not show warning message, or show event on working pane if event is repeated by past time
+    * [CAL-801] - InvalidItemStateException when drag & drop time of a task/event from space
+    * [CAL-829] - Failed to render Calendar with List View as default view
+    * [CAL-830] - [IE] Cannot switch between view if calendar portlet locates in a page whose name contains accent character.
+    * [CAL-872] - [Security] XSS vulnerability of "Display Name" when adding a remote calendar
+
+
+** Improvement
+    * [CAL-812] - Calendar is slow when accessing its home
+
+
+ 
+eXo Wiki 4.0.5
+*****************
+** Bug
+    * [WIKI-404] - Incorrect UI behavior of the left wiki tree
+    * [WIKI-405] - Incorrect UI of Space Switcher
+    * [WIKI-439] - [IE8] Some UI error with checkbox and BreadCrumb
+    * [WIKI-455] - Wiki resize error on left navigation
+    * [WIKI-491] - Content of wiki page is displayed wrongly
+    * [WIKI-538] - Cancel button is not on the same row with progress bar
+    * [WIKI-544] - Can save a wiki page until a ressource is uploaded
+    * [WIKI-568] - [IE9] Error when moving page from space to space OR from space to intranet
+    * [WIKI-620] - [Wiki] Rename a page as a removed one will use incorrect attachments
+    * [WIKI-686] - [IE8, 9] Several problems when page title has accent characters
+    * [WIKI-689] - Exception when adding wiki portlet into a new site
+    * [WIKI-696] - Page Not Found when opening Change Language from a page has accent characters in the title
+    * [WIKI-789] - Page name is no more displayed after expanding the left panel to the maximum width
+    * [WIKI-808] - Wiki Tree is automatically closed when accessing sub page whose name contains accent character
+    * [WIKI-815] - Failed to migrate version history of space wiki pages
+    * [WIKI-823] - AutoSave feature does not work when editing wiki page
+
+ 
+ 
+eXo Social 4.0.5
+**********************
+** Bug
+    * [SOC-3149] - Possible XSS attack by adding new activity stream
+    * [SOC-3298] - [Space Members] Alphabet bar disappears when no result found
+    * [SOC-3462] - [XSS] My Activity Stream - share link
+    * [SOC-3556] - "The target block ID to update is not found : UIComposer" when switch view mode with User Activity Stream Portlet
+    * [SOC-3916] - [Profile] Wrong validators of Organization and Position
+    * [SOC-3917] - Encoding problem of Position update in Activity Stream
+    * [SOC-3947] - [Connections] Wrong buttons in user pop-up
+    * [SOC-3973] - Impossible to save user experience in German due to date format error
+    * [SOC-4044] - [Security] XSS vulnerability when mouse over user popup
+    * [SOC-4095] - Warning message during startup for component OSHtmlSanitizerProcessor
+    * [SOC-4144] - [Activity Composer]Not show inputLink textbox at the first click on 'AddLink' icon
+    * [SOC-4162] - [Experience] Wrong validation of starting and ending dates
+
+ 
+eXo ECMS 4.0.5
+********************
+** Bug
+    * [ECMS-5218] - Create by without author name
+    * [ECMS-5268] - Exception when upload file with * character
+    * [ECMS-5331] - Bad layout when add Default primary type and Required primary type for node type
+    * [ECMS-5443] - Exception when add symlink to multiple nodes containing checked in ones
+    * [ECMS-5469] - Impossible to create nodetype with child node name *
+    * [ECMS-5527] - Image in Illustrated webcontent is overflown in a CLV
+    * [ECMS-5596] - CLONE - Error when create HTML file in acme folder
+    * [ECMS-5675] - [acme] Search button is shown as text
+    * [ECMS-5682] - Pagination does not work with permissions
+    * [ECMS-5692] - InvalidItemState when delete a document from dms-system workspacce
+    * [ECMS-5719] - UnsupportedRepositoryOperationException and node with check-in parent is still locked after relogin
+    * [ECMS-5734] - [ECMAdmin] NPE when canceling the modification of a category tree
+    * [ECMS-5755] - [acme] Print and Close actions hidden by Trial Banner
+    * [ECMS-5778] - [PLF40-Migration] Unknown error when opening old action scripts
+    * [ECMS-5780] - [integ-ecms] Incorrect Activity of ECMS Script
+    * [ECMS-5786] - XSS with weblink
+    * [ECMS-5789] - NPE when user has not sufficient permission on default portal
+    * [ECMS-5795] - CLONE - A 2nd time staged document is displayed in CLV portlet
+    * [ECMS-5800] - exo:scriptLabel and exo:script properties are protected
+    * [ECMS-5812] - [IE] Support accent characters in page name
+    * [ECMS-5819] - CLONE - Error showing PDF file in a linked detail page
+    * [ECMS-5833] - JS error when deleting a document having accent character in name in German
+    * [ECMS-5862] - [TC-4.0.4] [Intranet Home Page] Slowness in clv.UICLVPortlet invocation
+    * [ECMS-5866] - [IE8] Weird UI of checkboxes
+    * [ECMS-5868] - CLONE - Uploaded groovy file is neither recognized nor editable
+    * [ECMS-5880] - [CLV] Missing scroll bar in Search Result tab
+    * [ECMS-5902] - "Show Drives" button and some menu did not work after selecting the folders
+    * [ECMS-5904] - [Security] Many fields in Site Explorer-Saved Searches-Advanced Search have XSS vulnerability
+    * [ECMS-5905] - [Security] "Query" field in Saved Query has XSS vulnerability
+    * [ECMS-5911] - [PLF40-Migration] Failed to Add Translation after the migration from Platform 3.5
+    * [ECMS-5927] - [CLV By Content] Weird UI of Time Box in Search Form
+    * [ECMS-5948] - ArrayIndexOutOfBoundsException when saving an ECMS script
+    * [ECMS-5956] - [ECMAdmin] UI error when showing a node type in draft
+    * [ECMS-5994] - [IE8][Content Explorer] Impossible to delete a comment for a node
+    * [ECMS-6009] - [IE8] "The target block ID to update is not found:UISideBar" when opening Admin VIew
+    * [ECMS-6012] - Intranet homepage become blank in the case shared site doesn't exist
+    * [ECMS-6036] - Problems of content activity after deleting nodes
+    * [ECMS-6038] - Return acme homepage when open any page in search result
+    * [ECMS-6082] - SEO Management (robots.txt and sitemaps.xml) doesn't work
+    * [ECMS-6085] - Impossible to re-publish contents outside of Collaboration/sites
+    * [ECMS-6089] - [IE8] [Content Explorer] Exception thrown when clicking on the link of Relations
+
+
+** Feedback
+    * [ECMS-5308] - [ECMAdmin] Wrong Deletion icon in Tag list
+    * [ECMS-5518] - [Content Explorer] Should keep current page after copy
+    * [ECMS-5815] - Show Draft [current revision] after publish a document
+    * [ECMS-5946] - When editing a webcontent, comments lines are divided into different activity comments
+
+
+
+eXo JCR 1.15.8
+***********************
+** Bug
+    * [JCR-2260] - Query does not work well with QueryImpl.setOffset() and setLimit()
+    * [JCR-2263] - [Cluster] Content is visible twice in CLV and Versions
+    * [JCR-2270] - Changes are not properly purged once indexed on slaves
+
+
+
+eXo Kernel 2.4.8
+**********************
+** Bug
+    * [KER-276] - Cluster configuration creates NPE in AbstractExoCache.select() at initialization
+
+
+
+=========================
+Changelog Platform 4.0.4
+=========================
+
+ 
+Platform 4.0.4
+*****************
+** Bug
+    * [PLF-4907] - Problem when editing Inline the Announcement portlet
+    * [PLF-5018] - HTML markup in History tab of Login History gadget
+    * [PLF-5104] - [acme] Product template must be updated
+    * [PLF-5131] - Home page's calendar only shows the first occurrence of repetitive events
+    * [PLF-5448] - [acme] UI bug in Search Field on ACME home page
+    * [PLF-5465] - [IE8 ] Impossible to switch between days in Home Page's Calendar
+    * [PLF-5479] - Template “No Pagination” is displayed when acme extension is not installed
+    * [PLF-5482] - [IE8] Broken Trial Banner
+    * [PLF-5489] - Wrong behavior when opening a space in the currently opened application
+    * [PLF-5494] - NPE error while getting dashboards information in DashboardInformationRESTService
+    * [PLF-5516] - "Post an activity" is not strikethrough when sharing a file, link
+    * [PLF-5517] - [Who's online] User Popup doesn't allow HTTPS
+    * [PLF-5573] - [IE] Loading forever of user popup
+    * [PLF-5577] - [Forum statistics Gadget] Wrong information of Maximum number of online users
+
+** Feedback
+    * [PLF-5266] - [UXP-ERGO] Select Content Popup should open the currently selected node
+
+
+ 
+eXo GateIn 3.5.8-PLF  
+*************************
+** Bug
+    * [EXOGTN-1460] - [Organization Management] Message language does not change when changing user language
+    * [EXOGTN-1514] - [eXo Cloud] Impossible to re-import Portal data
+    * [EXOGTN-1582] - Invalid Email addresses when domain part begins with digit character
+    * [EXOGTN-1588] - [DateTimePicker] Impossible to select time after clicking to scroll bar
+ 
+
+ 
+Integration 4.0.4  
+*******************
+** Bug
+    * [INTEG-220] - Unified Search must use jquery javascript module correctly
+    * [INTEG-222] - [integ-forum] Bugs in Topic Activity
+    * [INTEG-224] - Wiki activity comments are not in multi-languages
+    * [INTEG-227] - No version update of content activity after checkin/checkout
+    * [INTEG-230] - Mention Name in activity stream is not shown correctly
+     * [INTEG-236] - XSS vulnerability in Metadata title field
+    * [INTEG-238] - [integ-forum][Migration] Nested activities due to NumberFormatException inside AnswerUIActivity.gtmpl
+    * [INTEG-242] - [integ-forum][Migration] Some problems of Forum Activity after migration from PLF 3.5
+    * [INTEG-245] - First comment is lost for deployed document
+
+
+ 
+eXo Calendar 4.0.4
+**********************
+** Bug
+    * [CAL-708] - Delete and Select Event in Month View
+    * [CAL-723] - i18n of DateTimePicker
+    * [CAL-794] - Tasks with attachment is not shown in Week and Work Week view
+
+
+ 
+eXo Wiki 4.0.4
+*****************
+** Bug
+    * [WIKI-380] - Open link in a new window doesn't work
+    * [WIKI-523] - When saving a draft, my typing is stopped
+    * [WIKI-537] - Incorrect UI of Page Permission in special case
+    * [WIKI-566] - [Jboss] Error when selecting Link, Image, Macro in add wiki at rich text mode
+    * [WIKI-576] - Incorrect auto-saving after previewing
+    * [WIKI-654] - Display * character beside user fullname in warning message when editing a page
+    * [WIKI-658] - Lack of tooltip if mouse over the [Rename] button of "Move wiki page" action's popup
+    * [WIKI-675] - NPE but no warning message when 2 users edit the same page
+    * [WIKI-681] - WikiAdvanceSearchForm: Slowness in getUserWikiOptions
+    * [WIKI-727] - Cannot add/remove permission in Wiki Settings
+    * [WIKI-728] - Empty Form of Attach File in Space wiki and User wiki pages
+    * [WIKI-735] - Images are broken for normal users
+    * [WIKI-747] - Remove wiki's activity after deleting wiki page
+    * [WIKI-750] - [Security] DDoS vulnerability with /rest/wiki/upload/portal/root/home service
+    * [WIKI-754] - [PLF40-Migration] Serialization failure when saving and publishing activity on an old space page
+    * [WIKI-762] - [PLF40-Migration] [WARN] Failed to get version of wiki page due to session.logout()
+    * [WIKI-764] - Exception of duplicate entry in WikiServiceImpl.createHelpPages
+    * [WIKI-765] - User has not permission can see wiki page's content
+    * [WIKI-766] - Wiki email notifications doesn't work
+    * [WIKI-780] - Incorrect counter of attachments
+    * [WIKI-791] - Notification emails about wiki page's version migration
+    * [WIKI-794] - Failed to access huge wiki pages after version history migration
+
+** Improvement
+    * [WIKI-740] - WikiServiceImpl.getPageById invocation causes slowness
+    * [WIKI-741] - Slowness observed with PageImpl.getAttachmentsExcludeContent
+    * [WIKI-742] - Slowness in Wiki BreadCrumb Rendering
+    * [WIKI-743] - Slowness when checking permissions: Utils.canModifyPagePermission
+    * [WIKI-746] - Slowness when invoking PageImpl.checkin for wiki page update
+
+ 
+ 
+eXo Social 4.0.4
+**********************
+** Bug
+    * [SOC-3204] - Incorrect UI of Liker list
+    * [SOC-3529] - [Feature Unified Search] Search connector doesn't work properly with Japanese data
+    * [SOC-3633] - No content displays on My Space Gadget
+    * [SOC-3763] - [Migration] Space activities are not correctly migrated from Platform 3.5
+    * [SOC-3768] - [Performance] Error while rendering Space Activity Stream due to Deadlock
+    * [SOC-3818] - Connect function should not be possible with a deleted user
+    * [SOC-3878] - User Popup doesn't allow HTTPS
+    * [SOC-3889] - Feedmash job does not execute correctly
+    * [SOC-3891] - [Migration] Failed to comment on an activity from Platform 3.5
+    * [SOC-3913] - Social Widget doesn't work
+    * [SOC-3915] - Empty Activity stream
+    * [SOC-3921] - Wrong use of jquery on space page
+    * [SOC-3922] - Slowness at Connection page for the first loading or at cache update
+    * [SOC-3942] - Impossible to like any activity
+    * [SOC-3952] - My activity stream is broken
+    * [SOC-3965] - SyntaxError popup when click on View/hide comments
+    * [SOC-3994] - [IE] window.location.origin returns undefined
+    * [SOC-3757] - [User Activity] No more than 20 activities on other user's activity stream 
+
+
+ 
+eXo ECMS 4.0.4
+********************
+** Bug
+    * [ECMS-4003] - Warning "You don't have permission to access any template" when adding New Content by user not in /platform/administrators group
+    * [ECMS-4633] - FriendlyURL doesn't work
+    * [ECMS-4790] - Incorrect UI of Manage Actions
+    * [ECMS-5427] - UIDocumentNodeList encounters NPE for linked node
+    * [ECMS-5537] - Manage publication doesn't work correctly during editing content
+    * [ECMS-5563] - Impossibility to publish content without having the right of delete
+    * [ECMS-5666] - RepositoryException when input a white space before "template name" field
+    * [ECMS-5669] - [CLV By Content] Folder path is empty when move up and move down content
+    * [ECMS-5672] - User identity not found while rendering group drives in UIDrivesArea
+    * [ECMS-5686] - IE - XSS on "select relation" - Content Management
+    * [ECMS-5691] - Wrong webdav link on IE
+    * [ECMS-5709] - Cannot rename document via WEBDAV
+    * [ECMS-5717] - Problem when delete many nodes with the same title
+    * [ECMS-5733] - Content By Query works incorrectly
+    * [ECMS-5735] - Unknown error when deleting a folder containing $ character
+    * [ECMS-5749] - The layout of Site Explorer will be broken when contains a crash file
+    * [ECMS-5758] - [Unified search] Bad performance of File search
+    * [ECMS-5759] - XSS in Site Explorer/New Content/CSS File
+    * [ECMS-5767] - [Security] DDoS vulnerability with /rest/fckconnector/jcr/uploadFile/upload/ service
+    * [ECMS-5768] - [Security] DDoS vulnerability with /rest/wcmDriver/uploadFile/upload service
+    * [ECMS-5769] - [Security] CSRF vulnerability with /portal/rest/wcmDriver/uploadFile/control service
+    * [ECMS-5770] - Impossible to rename file in Documents/Public
+    * [ECMS-5816] - [Unified Search] Failed to display the document search result
+    * [ECMS-5836] - Issues with Comment of content activity
+    * [ECMS-5896] - Target node is renamed when renaming symlink node
+
+
+** Feedback
+    * [ECMS-5457] - [UXP-ERGO] Select Content Popup should open the currently selected node
+    * [ECMS-5574] - Template “No Pagination” is displayed when acme extension is not installed
+    * [ECMS-5750] - Enable DMS Structure should not display by default for all users
+
+
+** Improvement
+    * [ECMS-5635] - [Performance][Content Explorer] Slowness in showDocument
+
+
+
+eXo JCR 1.15.7
+***********************
+** Bug
+    * [JCR-2230] - The total amount of indexing threads should remain consistent
+    * [JCR-2235] - [Cluster] Exception when add jcr-node on Node1 and edit or add child jcr-node on Node2
+
+
+eXo Kernel 2.4.7
+**********************
+** Improvement
+    * [KER-259] - Add ability to turn off automatic portal container restart on portlet application redeploy when -Dexo.product.developing=true is used
+    * [KER-274] - Warning when a PortalContainerDef contains a non-existent dependency
+
+
+
+=========================
+Changelog Platform 4.0.3
+=========================
+
+ 
+Platform 4.0.3
+***************
+** Bug
+    * [PLF-4993] - PathNotFoundException after installing acme
+    * [PLF-4994] - Site created from acme template is broken
+    * [PLF-5111] - Content Navigation menu doesn't work
+    * [PLF-5114] - [Navigation by Content] Weird tree of Target Parent Navigation
+    * [PLF-5398] - [CLV] No RSS link with empty header
+    * [PLF-5406] - Account Setup page does not contain Content-Type header
+
+
+** Improvement
+    * [PLF-5372] - Slowness in readNavigationsAndCache() method of Group Navigation
+    * [PLF-5402] - Improve the loading speed of Space Navigation
+
+
+ 
+eXo GateIn 3.5.7-PLF  
+*********************
+** Bug
+    * [EXOGTN-1522] - Checkbox selection on "add gadget into category" is lost after switch page by paginator
+    * [EXOGTN-1565] - Don't load portlet javascript when edit portlet
+    * [EXOGTN-1572] - [IE 8] Content Selector is not well rendered
+ 
+
+ 
+Integration 4.0.3  
+********************
+** Bug
+    * [INTEG-197] - Null in ECMS activities after migration from PLF-3.5
+    * [INTEG-209] - [integ-forum] Incorrect links in Poll activity of another user's stream
+    * [INTEG-210] - [integ-forum] Wrong vote counter on Poll activity
+    * [INTEG-211] - [integ-ecms] MissingPropertyException of labelYouAndOthersLikeThis and labelOneAndOthersLikeThis in FileUIActivity.gtmpl
+    * [INTEG-213] - [integ-wiki] No destination path on activity when move page from space to intranet
+    * [INTEG-214] - [integ-calendar][Migration] Broken Activity Stream due to deleted events
+    * [INTEG-215] - [integ-calendar] MissingPropertyException of labelYouAndOthersLikeThis in CalendarUIActivity.gtmpl
+    * [INTEG-219] - Display "View Changes" page from wiki's activity
+ 
+ 
+ 
+eXo Calendar 4.0.3
+*******************
+** Bug
+    * [CAL-526] - UI bug of Repeat field on IE9
+    * [CAL-560] - HTTP status 404 when clicking on Link on invitation email of event on calendar of space
+    * [CAL-657] - Show events on wrong day in list view
+    * [CAL-666] - [Group Calendar] - Problems when adding a user that doesn't exist
+    * [CAL-685] - [Share Calendar] "Select recipient" persists in the list in non-English languages
+    * [CAL-689] - Missing information in Popup of Task/Event
+    * [CAL-690] - Starting date in mini-calendar is not consistent with Views
+    * [CAL-693] - Wrong starting day of monthly event by day of week
+
+
+ 
+eXo Wiki 4.0.3
+***************
+** Bug 
+            * [WIKI-476] - Missing Icons in some macros (Warning, Info, Tip)
+    * [WIKI-515] - [Wiki] Bugs when moving to a location in page by clicking to bookmark (anchor with #)
+    * [WIKI-540] - [XSS] Wiki - Search Result displayed
+    * [WIKI-547] - Attached file no longer exists after previewing a new page
+    * [WIKI-586] - [XSS] Preview Wiki template
+    * [WIKI-597] - Exception when renaming a page like the title of a removed one
+    * [WIKI-624] - UI Error on resize
+    * [WIKI-636] - Some problems with wiki portlet in public mode
+    * [WIKI-637] - No destination path on activity when move page from space to intranet
+    * [WIKI-638] - List box Show result per page in search page display value wrong
+    * [WIKI-642] - Javascript error when switching page with accent characters to Rich Text Mode
+    * [WIKI-647] - Weird rendering of box macros
+    * [WIKI-668] - Image URL broken if hostname contains the word portal
+
+ 
+ 
+eXo Social 4.0.3
+*****************
+** Bug
+    * [SOC-3446] - Empty display name of an application category impacts space creation (NPE, corrupted database)
+    * [SOC-3545] - Both agendas in space application are removed after removing one of them
+    * [SOC-3553] - [IE] Duplicate alert message after editing a space
+    * [SOC-3554] - [FF21] Must press Enter twice to search space by asterisk character
+    * [SOC-3584] - Incorrect space activity title in REST response
+    * [SOC-3617] - Wrong image size when sharing a link with thumbnail
+    * [SOC-3658] - Can't add comment on Activity Stream with My Space Filter
+    * [SOC-3682] - [Cloud] No Users in All Connections page
+    * [SOC-3689] - [Upgrade] Some Activity Stream are duplicated after "Load More"
+    * [SOC-3698] - Space injection failed because of JCRItemExistsException: [social] ADD PROPERTY. Item already exists in storage
+    * [SOC-3720] - [Upgrade] Several problems of Activity Stream after Loading More
+    * [SOC-3723] - [Migration] "Block ID to update not found: ExtendContainer" when Loading More
+    * [SOC-3738] - Long text title is not displayed correctly in Wiki Activity
+    * [SOC-3742] - Cannot close confirmation popup when click x icon
+
+
+** Improvement
+    * [SOC-3642] - Slowness in displaying Space activities
+    * [SOC-3665] - Slowness in getLastAccessedSpace of Space Navigation
+    * [SOC-3693] - Slowness in checking activities at Activity Container
+    * [SOC-3736] - [Performances] Use ConversationState to load membership information
+
+
+ 
+eXo ECMS 4.0.3
+***************
+** Bug
+    * [ECMS-3451] - CLV - Sort by title is case-sensitive
+    * [ECMS-4789] - Incorrect UI of Properties Management
+    * [ECMS-4950] - [SECURITY-Access] All folders of collaboration workspace are public by default
+    * [ECMS-5103] - Not show correctly category with special characters
+    * [ECMS-5112] - Unknown error when adding new folder with special characters in 'Name'  field
+    * [ECMS-5344] - [IE9, 10]: Hidden paging in WCM Content Selector
+    * [ECMS-5384] - VersionException when uploading a file in a node whose parent is in 'Check in' status
+    * [ECMS-5385] - The rename miniform doesn't disappear when clicking outside it
+    * [ECMS-5428] - Null in ECMS activities after migration from PLF-3.5
+    * [ECMS-5444] - AccessControlException when edit html file
+    * [ECMS-5446] - XSS - Trash - View information
+    * [ECMS-5452] - CKEditor does not load after opening insert image ("image icon") with IE
+    * [ECMS-5454] - PathNotFoundException when click on folder after web content is deleted on WebDav
+    * [ECMS-5455] - CKEditor table editor loses previously configured cell properties
+    * [ECMS-5458] - Impossible to create subcontent with same type as current node
+    * [ECMS-5459] - Pagination information is wrong in the search results
+    * [ECMS-5467] - Problem in manage publication with obsolete state
+    * [ECMS-5470] - CheckBox field value reset when used in metadata dialog
+    * [ECMS-5490] - XSS - executing script when edit a web content containing a link with hexa characters
+    * [ECMS-5496] - Resize side bar doesn't work on Site Explorer
+    * [ECMS-5508] - Failed to check the affection of JS file in shared site
+    * [ECMS-5509] - Content of anonymous users are automatically visible
+    * [ECMS-5521] - [IE8] Problem on Display image in Thumbnail view on Insert content link
+    * [ECMS-5523] - [IE8,9] UI error when editing dialog of template
+    * [ECMS-5524] - [WCM Content Selector] Problem to access a content with a "%" in the title
+    * [ECMS-5525] - [REG] Cannot search by comment of document
+    * [ECMS-5531] - [CLV] No RSS link with empty header
+    * [ECMS-5534] - [IE8] Problem with content with accented character in the name
+    * [ECMS-5539] - Old name of node does not display in rename popup at list view, admin view
+    * [ECMS-5540] - Cannot rename a file name that contains character '+'
+    * [ECMS-5555] - Cannot access Trash drive after deleting a folder which contains a symlink
+    * [ECMS-5556] - Broken comment of a document in some views (Admin, List)
+    * [ECMS-5557] - [Add Category] popup disappears when choosing newly created category or category of extension
+    * [ECMS-5572] - Problem of deleting unlock permission
+    * [ECMS-5580] - [Migration] Need to migrate Taxonomy action
+    * [ECMS-5586] - After removing a css file, this css file still affect
+    * [ECMS-5590] - Several problems of deleting symlinks in Trash
+    * [ECMS-5604] - Add To Favorite failed when adding new users
+    * [ECMS-5627] - Interceptor not updated after edit in IDE
+    * [ECMS-5633] - ConstraintViolationException when opening acme/events folder after adding a File
+    * [ECMS-5639] - Unknown error when add "Name" script is blank
+    * [ECMS-5665] - Override parameter does not work in LinkDeploymentPlugin
+    * [ECMS-5746] - "Unknown error" popup displays when user deletes a file in Personal document
+
+
+** Improvement
+    * [ECMS-5624] - [Templates WCM Deployment] Improve InlineEditingField method to parametrize the deployment of artifacts
+ 
+ 
+ 
+eXo JCR 1.15.6
+***************
+** Bug
+    * [JCR-2195] - Sybase 15.7 - error "Repository data is NOT consistent"
+    * [JCR-2205] - Local Index Recovery Filters don't work in JPP6
+    * [JCR-2212] - Revert lastLoginTime change
+
+
+
+==============================
+Changelog Platform 4.0.2
+==============================
+
+ 
+Platform 4.0.2
+***************
+** Bug
+    * [PLF-5109] - "Cannot get path of Logo" while running performance test
+    * [PLF-5239] - [IE8] Cannot download document from REST service
+    * [PLF-5245] - Home page's Calendar crashes in some languages (German, Swedish)
+    * [PLF-5273] - Impossible to start PLF 4.0.1 when having space on the path of JAVA_HOME
+    * [PLF-5308] - "Who Is Online" portlet takes a lot of time when user login
+    * [PLF-5333] - Account Setup screen reappears in second startup when skipping it at the first time.
+
+
+** Feedback
+    * [PLF-4757] - [Account Setup] Allow to skip the account creation
+    * [PLF-4862] - Top bar menus don't show sub-menus on mouse over
+    * [PLF-5133] - [Login Screen] Form submit when clicking at a certain place outside fields
+    * [PLF-5159] - Cannot perform unified search when standing at acme site
+
+ 
+ 
+eXo GateIn 3.5.6-PLF  
+*********************
+** Bug
+    * [EXOGTN-1450] - Private redirection does not work with public page
+    * [EXOGTN-1474] - Startup time increased due to gadget's javascript files fetched on internet 
+ 
+
+ 
+Integration 4.0.2  
+******************
+** Bug
+    * [INTEG-144] - [integ-ecms-social] Activity Stream crashes due to scheduled publication
+    * [INTEG-198] - [integ-forum-social] Broken Activity Stream when Poll has link inside options
+    * [INTEG-202] - [integ-forum-social] Fixed position of Forum Activities after upgrading from Platform 4.0.1
+ 
+ 
+ 
+eXo Calendar 4.0.2
+*******************
+** Bug
+    * [CAL-627] - Calendar is broken in Japanese
+    * [CAL-647] - Take into account repetitive events when sending request to view event's details
+    * [CAL-671] - [Group calendar] JS error when adding a non-existent user in French
+ 
+
+ 
+eXo Wiki 4.0.2
+***************
+** Bug 
+    * [WIKI-325] - Space Switcher must only display spaces where wiki application exist
+    * [WIKI-367] - Cannot attach file when add link for wiki page
+    * [WIKI-368] - Error when edit wiki page link
+    * [WIKI-511] - Problem in displaying accented/special characters in Rich text editor mode in Chrome
+    * [WIKI-546] - [PLF-jboss] Code macro doesn't work
+    * [WIKI-570] - All wiki pages are displayed twice after creating page with specific content
+    * [WIKI-573] - Autosave draft doesn't work in Rich Text mode
+    * [WIKI-601] - Impossible to publish Wiki
+    * [WIKI-619] - Wiki service return Null page in WikiRestServiceImpl
+ 
+ 
+ 
+eXo Social 4.0.2
+**********************
+** Bug
+    * [SOC-3169] - Explanation of the registration field doesn't change
+    * [SOC-3349] - Filter All (Space, People) is broken in French
+    * [SOC-3424] - For "clo", only space type is displayed
+    * [SOC-3439] - Space menu disappeared after renaming space
+    * [SOC-3444] - Searching spaces by SpaceServiceImpl.getAccessibleSpacesByFilter is not correct in some cases
+    * [SOC-3449] - Wrong last updated time in Rest response for user activity stream
+    * [SOC-3486] - Encoding problem in Social Status Message
+    * [SOC-3511] - Error in Suggestion Portlet due to PeopleRestServices
+    * [SOC-3544] - Broken UI when showing all comments on stream that has UILinkActivity
+    * [SOC-3567] - [Intranet-homepage] Wrong behavior in Suggestions portlet
+    * [SOC-3608] - [Upgrade] User Activity Stream crashes after upgrading from Platform 4.0.1
+    * [SOC-3609] - [Upgrade] NPE when upgrade with SpaceActivityStreamUpgradePlugin
+    * [SOC-3610] - [Upgrade] Failed to create portal container when migrating from Platform 4.0.1
+    * [SOC-3626] - [Upgrade] UndeclaredThrowableException of UserActivityStreamUpdaterPlugin during data upgrade from Platform 4.0.1
+    * [SOC-3628] - "liked" old activity is pushed to top of Activity Stream
+    * [SOC-3644] - Cannot add comment after clicks on Refresh button on Activity Stream
+    * [SOC-3710] - Loop of Lazy Upgrade Activity Stream after migration
+
+
+** Feedback
+    * [SOC-3249] - [Profile] Feedback about Edit Experience
+
+
+** Improvement
+    * [SOC-3430] - Slowness in UIActivitiesLoader init
+
+
+ 
+eXo ECMS 4.0.2
+********************
+** Bug
+    * [ECMS-4055] - Blank message when copy/cut 1 deleted node and paste to other nodes
+    * [ECMS-4989] - Order of content in Content List View is not correct with Symlinks content
+    * [ECMS-5046] - Inability to remove unlinked links when in trash
+    * [ECMS-5065] - Weird display of folder title (CLV by folder, Add Symlink)
+    * [ECMS-5200] - Accented characters are not properly saved in Template Management in Windows Server
+    * [ECMS-5202] - CalendarField value problem with sub node in dialog
+    * [ECMS-5303] - [Navigation by Content] Impossible to select page for list/detail
+    * [ECMS-5304] - Impossible to display RSS feed with webcontent having apostrophe and double quote
+    * [ECMS-5310] - Problem when search with hyphen or accent character
+    * [ECMS-5338] - Webdav rename does not work correctly and causes a failure to preview
+    * [ECMS-5358] - WebcontentChildUpgradeService is executed in each startup of the platform
+    * [ECMS-5369] - New action cannot execute
+    * [ECMS-5373] - [Migration] Error while rendering the porlet IllegalArgumentException: Workspace Name is null
+    * [ECMS-5375] - UnsupportedRepositoryOperationException when publish a web content under a web content
+    * [ECMS-5386] - WEBDAV Remove symlink or favorited file also remove original file
+    * [ECMS-5434] - "Internal server error" when loading properties of document with CMIS Workbench
+    * [ECMS-5447] - File Explorer crashes when opening a web-content in List View
+    * [ECMS-5453] - Tags are not well ordered
+    * [ECMS-5456] - [UXP] Back link from a search result content always goes to the first result page (Chrome, IE)
+    * [ECMS-5466] - "Page not found" displayed when click on node which has not page
+    * [ECMS-5597] - Slow loading of symlinks in Content List Viewer 
+
+
+
+eXo JCR 1.15.5
+***************
+** Bug
+    * [JCR-2201] - eXo JCR is slow with MS SQL
+
+
+** Improvement
+    * [COR-298] - Support Enterprise DB Postgres Plus Advanced Server 9.2
+    * [JCR-2190] - Support PostgreSQL 9.2
+    * [JCR-2191] - Support Enterprise DB Postgres Plus Advanced Server 9.2
+
+
+
+=========================
+Changelog Platform 4.0.1
+=========================
+
+
+Platform 4.0.1
+******************
+** Bug
+    * [PLF-3988] - The Search box isn't expanded with "ALT+space"        
+    * [PLF-4131] - Wrong display of many calendars in the list "Display additional calendar"
+    * [PLF-4363] - Portlets are not correctly loaded/displayed
+    * [PLF-4369] - Invalid CSS is displayed
+    * [PLF-4370] - The color of event is not updated after edit of color's calendar
+    * [PLF-4495] - Wrong Display of Intranet Homepage.
+    * [PLF-4575] - First login is not rendered
+    * [PLF-4627] - Weird display of Login Form in French
+    * [PLF-4658] - Unified Search doesn't search into private folder
+    * [PLF-4677] - NullPointerException when add new page for group in Manage Pages
+    * [PLF-4716] - [PLF-4][Create/navigation] Lost tags 'ul' on create menu
+    * [PLF-4728] - Search as you type
+    * [PLF-4729] - Results are grouped by type
+    * [PLF-4783] - [Feature Unified Search] Show more results doesn't work
+    * [PLF-4833] - Page appears in Admin Tool Bar despite permissions were removed
+    * [PLF-4890] - Display results only of current site
+    * [PLF-4900] - Empty portal template doesn't work correctly       
+    * [PLF-4936] - Unified search: PLF will be very slow after search anything
+    * [PLF-4937] - Error when joining an open space from Suggestions list
+    * [PLF-4958] - IE8- Bad display of "Floating result" at Quick search menu
+    * [PLF-4988] - IE- Bad display of event menu
+    * [PLF-4997] - lost space navigation context on top bar
+    * [PLF-5001] - Disappearing of some portlets on the Home Page
+    * [PLF-5002] - Can't get the Rest service list on PLF4.0-GA
+    * [PLF-5074] - [PLF 4.0 Jboss] Space Switcher requires authentication
+    * [PLF-5076] - [PLF 4.0 Jboss] Some homepage portlets don't appear (Getting Started, Invitations, Suggestions)
+    * [PLF-5090] - Can't find bundle for portlet Branding
+    * [PLF-5097] - Display a page in the Search Result page: image url, url in detail content
+    * [PLF-5154] - [Jboss] [FF21] Getting started gadget is not displayed for other user if it has been deleted by admin
+    * [PLF-5161] - Impossible to start PLF 4.0.1 with minimal profile
+		
+		
+		
+		
+eXo GateIn 3.5.5-PLF  
+***************************
+** Bug
+    * [EXOGTN-1178] - Problem when changing owner type to "group" in "add"page
+    * [EXOGTN-1330] - UIPageIterator does not display well when iterating to page with number > 10
+    * [EXOGTN-1428] - JBossCacheWorkspaceStorageCache has to have a different jbosscache-cluster-name for portal-system workspace
+    * [EXOGTN-1448] - Wrong message when add new user and input valid in Display Name
+		
+		
+		
+		
+Integration 4.0.1  
+**********************
+** Bug
+    * [INTEG-141] - Correct jzLoad problem in master
+    * [INTEG-168] - Encoding errors in activities
+    * [INTEG-170] - Unified Search - Problem with all results urls
+    * [INTEG-191] - Show all comments on stream what has File Activity threw exception 
+		
+		
+		
+		
+eXo Calendar 4.0.1
+*********************
+** Bug
+    * [CAL-514] - Impossible to load my remote calendar
+    * [CAL-523] - Show wrong time of event in invitation email when set Time zone To GMT + 1
+    * [CAL-542] - Bad UI of the list of views in French
+    * [CAL-552] - UI Error in Monthview Weekview, Workweek day header
+    * [CAL-567] - Task & Event buttons don't work
+    * [CAL-574] - Horizontal scrollbar is displayed when create event scheduled on multiple days
+    * [CAL-575] - Day in Event Summary is shifted 1 day
+    * [CAL-576] - [IE8] Calendar grid continues to extend horizontally
+    * [CAL-583] - Current event (+30min from current time) is not displayed in the Floating result
+    * [CAL-594] - Error in CacheableLockManagerImpl properties' values
+    * [CAL-596] - [Month view] Day header is not updated following WeekStartOn value of user settings
+    * [CAL-603] - Events are duplicated when opening the edit form
+		
+		
+		
+		
+eXo Wiki 4.0.1
+*********************
+** Bug
+ 
+    * [WIKI-404] - Incorrect behavior of the left wiki tree
+    * [WIKI-456] - All words are not matched in unified search
+    * [WIKI-463] - Wiki error on content style if collapse
+    * [WIKI-469] - [Wiki Page][Page Info] Error when accessing Page Info
+    * [WIKI-471] - Strange behavior of markup cache on save action
+    * [WIKI-481] - Broken layout on wiki link
+    * [WIKI-488] - Cannot display current space name on space switcher
+    * [WIKI-490] - Cannot select a template after search in "Select Template" form when adding new page from template
+    * [WIKI-492] - Cannot switch from Rich text mode to markup mode
+    * [WIKI-499] - Wiki page disappears after creating or editing
+    * [WIKI-501] - Cannot edit page
+    * [WIKI-506] - Cannot see spaces if we create more than 10 spaces
+    * [WIKI-509] - UIPageIterator does not display well when iterating to page with number > 10
+    * [WIKI-521] - Wiki activity is not displaying the action "view changes" at the right position
+    * [WIKI-524] - [Unified Search] Results is duplicated when click show More result
+    * [WIKI-526] - [Unified search] Wiki page search bugs
+    * [WIKI-545] - [Unified Search] Excerpt has strange characters
+		
+		
+		
+		
+eXo Social 4.0.1
+*********************
+** Bug
+    * [SOC-2984] - Bad display of the button "Comments" in the stream of space
+    * [SOC-3076] - Display profile's popup of user liker
+    * [SOC-3079] - Display user profile's popup in a comment from activity
+    * [SOC-3139] - Exception occurs when change the Space name
+    * [SOC-3204] - Incorrect UI of Liker list
+    * [SOC-3213] - Incorrect UI of Space List
+    * [SOC-3214] - Incorrect UI of User List
+    * [SOC-3238] - [Space] UI glitch of group tree in Select target group
+    * [SOC-3279] - Not Display a Hidden Space in the Search Result
+    * [SOC-3281] - [IE8][Space Navigation] Not showing Applications after clicking on the [More] button
+    * [SOC-3297] - [Space Menu] Display of "More" dropdown menu
+    * [SOC-3305] - Cancel request button does not work
+    * [SOC-3311] - Placeholder is not removed when commenting an activity
+    * [SOC-3328] - NPE when search people with search text box is blank by pressing Enter keyboard
+    * [SOC-3342] - Add a share link
+    * [SOC-3345] - [Activity] - Reload all activities after closing document viewer
+    * [SOC-3352] - Unified Search - Problem with URL of space results
+    * [SOC-3364] - In Space Menu Portlet, item doesn't appear selected
+    * [SOC-3369] - Do not see new user in connection list
+    * [SOC-3376] - Do not wrap content of a Activities and a Comments when content too long
+    * [SOC-3377] - ModelOverriderUpdaterPlugin: Problem of session.logout (upgrade from 3.5.x to 4.0)
+    * [SOC-3378] - Make spaces URLs from PLF-3.5 work on PLF-4
+    * [SOC-3380] - Number of all uses in connection is not correct
+    * [SOC-3393] - Activity stream broken
+    * [SOC-3402] - Spaces Search doesn't work
+    * [SOC-3404] - Error in CacheableLockManagerImpl properties' values
+    * [SOC-3414] - "Remove connection" does not work in page "Connections"
+    * [SOC-3420] - Added node can't be shown in space
+    * [SOC-3423] - Groovy template exception when go to home page after a friend shared a file
+		
+		
+		
+		
+eXo ECMS 4.0.1
+*********************
+** Bug
+    * [ECMS-4192] - Cannot use fullscreen feature when adding or editing the content
+    * [ECMS-4472] - Impossible to delete a file with an invalid characters
+    * [ECMS-4593] - The Paste action isn't appears after the first selection of the target folder
+    * [ECMS-4776] - Print function on SCV does not work
+    * [ECMS-4817] - TemplateRuntimeException when editing metadata
+    * [ECMS-4829] - Cannot drag and drop node in the left panel
+    * [ECMS-4888] - [Tag] No suggestion of available tag when creating new tag
+    * [ECMS-4929] - The jump of the sidebar to the bottom of page
+    * [ECMS-4953] - Problem on the layout of browser preferences
+    * [ECMS-4982] - Pager in Content Selector is not shown
+    * [ECMS-4991] - Child nodes do not appear when change to FileView tab in a WebContent
+    * [ECMS-5018] - Problem of content with accent character in the name
+    * [ECMS-5021] - Errors in the log about unified search rest service
+    * [ECMS-5028] - Display Location in File Result in Search page
+    * [ECMS-5034] - Cannot access folders/files after restore them from Trash to User Personal Drive
+    * [ECMS-5047] - Show blank message when select status in publication
+    * [ECMS-5049] - NPE with BaseSearchServiceConnector class
+    * [ECMS-5062] - In File View, selected item remains selected but action menu context belongs to parent node
+    * [ECMS-5080] - Align configuration preview for documents on thumbnail, view, activity
+    * [ECMS-5091] - 2 editors with the same content on Edit announcement form,
+    * [ECMS-5102] - User who is not locker can edit permission of locked node
+    * [ECMS-5116] - IDE: Cannot save file under dev-monit workspace
+    * [ECMS-5117] - Keep an existing file when upload in Document
+    * [ECMS-5120] - Icon of drive is shown in bad layout on IE9
+    * [ECMS-5133] - Issues with document's name containing & character
+    * [ECMS-5145] - NPE while click content's link on activity stream after migrating data from PLF 3.5.x to PLF 4.0.0
+    * [ECMS-5146] - Edit portlet Mode of Fast Content Creator
+    * [ECMS-5151] - Bad performance of wcm.search.connector.BaseSearchServiceConnector.search
+    * [ECMS-5152] - TemplateRuntimeException when view activity stream of documents uploaded via webdav
+    * [ECMS-5155] - Cannot choose contents of group drive when selecting content for a CLV or SCV
+    * [ECMS-5169] - Cannot open a document from "Waiting For My Approval" list
+    * [ECMS-5170] - error when try to open a file with a long name
+    * [ECMS-5178] - After creating new query in Manage query, CE is shown in code lines
+    * [ECMS-5181] - Drag and Drop does not work on Icon View
+    * [ECMS-5183] - JS warning displays when switching from one view to another view
+    * [ECMS-5185] - Document Activities are nested in activities stream
+    * [ECMS-5188] - Exception when comment & click on activity's link of an existed document
+    * [ECMS-5189] - Not display pages for user without access permission in the search page
+    * [ECMS-5191] - TemplateRuntimeException when SCV/ CLV has content as an announcement
+    * [ECMS-5192] - Wrong displaying content of file in SCV/CLV
+    * [ECMS-5193] - Not Display pages without navigation in the Search Result
+    * [ECMS-5196] - Uploading a file into Web Contents folder breaks the WCM Content Selector
+    * [ECMS-5197] - [IE8] Image cannot be selected in Content Selector
+    * [ECMS-5199] - NPE when using fileexplorer portlet
+    * [ECMS-5201] - Office documents preview not working in content detail portlet in Windows environment
+    * [ECMS-5207] - UIPageIterator does not display well when iterating to page with number > 10
+    * [ECMS-5220] - [Unified search] All words should match
+    * [ECMS-5221] - Search sentence
+    * [ECMS-5222] - Display a page in the Search Result page
+    * [ECMS-5223] - Update Search result after uncheck "All Sites"
+    * [ECMS-5225] - NodePathUpgradePlugin blocked in migrating intranet site's web contents (3.5.x to 4.0)
+    * [ECMS-5237] - AccessDeniedException and cannot delete node by user having only delete permission
+    * [ECMS-5239] - [Single Content View] Cannot display web-content after publication
+    * [ECMS-5243] - Several problems when Editing Contact Us
+    * [ECMS-5266] - Error in CacheableLockManagerImpl properties' values
+    * [ECMS-5270] - Right Click actions don't work
+    * [ECMS-5272] - Several problems with Product template
+    * [ECMS-5275] - Spaces Document Applications do not work properly
+    * [ECMS-5281] - Cannot edit or delete a tag
+    * [ECMS-5283] - Inserted documents/medias in a web content by FCK Content Selector does not appear except image
+    * [ECMS-5284] - Impossible to Insert a portal link into a content
+		
+		
+		
+		
+eXo Core 2.5.4-GA
+***********************
+** Bug
+    * [COR-289] - Can't publish document with user having any membership
+		
+		
+		
+		
+eXo JCR 1.15.4-GA
+**********************
+** Bug
+    * [JCR-2122] Cannot use single quote in node names
+    * [JCR-2125] Unexpected behavior while importing data with IMPORT_UUID_COLLISION_REPLACE_EXISTING
+    * [JCR-2168] ArrayIndexOutOfBoundsException when access webdav on Windows 7
+
+
+
