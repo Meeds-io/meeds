@@ -198,7 +198,32 @@
         <excludes>
           <!-- PLF4 cannot be deployed in Cluster with a Tomcat distribution due to JGroups versions conflicts (IDM vs JBCache) -->
           <exclude>**/cluster/**</exclude>
+          <!-- CHANGE_LOG, README, RELEASE_NOTES -->
+          <exclude>CHANGE_LOG.txt</exclude>
+          <exclude>README.txt</exclude>
+          <exclude>RELEASE_NOTES.txt</exclude>
         </excludes>
+      </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- CHANGE_LOG, README, RELEASE_NOTES -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform.distributions:plf-packaging-resources:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <outputFileNameMapping></outputFileNameMapping>
+      <unpackOptions>
+        <includes>
+          <!-- CHANGE_LOG, README, RELEASE_NOTES -->
+          <include>CHANGE_LOG.txt</include>
+          <include>README.txt</include>
+          <include>RELEASE_NOTES.txt</include>
+        </includes>
+        <filtered>true</filtered>
+        <lineEnding>windows</lineEnding>
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>

@@ -1,10 +1,10 @@
 ========================================
-Release notes - eXo Platform 4.0.6
+Release notes - eXo Platform ${org.exoplatform.platform.version}
 ========================================
  
  
-Date: 23/05/2014
-Version: 4.0.6
+Date: ${build.date}
+Version: ${org.exoplatform.platform.version}
  
  
 I.    MAIN CHANGES

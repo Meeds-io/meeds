@@ -39,6 +39,21 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>create-timestamp</goal>
+            </goals>
+            <configuration>
+              <timestampFormat>dd/MM/yyyy</timestampFormat>
+              <timestampPropertyName>build.date</timestampPropertyName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
