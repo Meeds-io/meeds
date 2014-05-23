@@ -43,6 +43,7 @@
     <module>plf-tomcat-integration-webapp</module>
     <module>plf-tomcat-pc-creator-listener</module>
     <module>plf-tomcat-resources</module>
+    <module>plf-community-sources</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
@@ -130,7 +131,14 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!-- Project modules -->
+      <!-- Project artifacts -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-public-distributions</artifactId>
+        <version>${project.version}</version>
+        <classifier>source-release</classifier>
+        <type>zip</type>
+      </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-assemblies</artifactId>
