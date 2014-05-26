@@ -68,7 +68,7 @@
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.0.0-alpha-5</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
-    <org.apache.tomcat.version>7.0.53</org.apache.tomcat.version>
+    <org.apache.tomcat.version>7.0.54</org.apache.tomcat.version>
     <!-- CRaSH -->
     <org.crsh.version>1.2.6</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
