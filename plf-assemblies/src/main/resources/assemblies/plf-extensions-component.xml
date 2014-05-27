@@ -80,5 +80,58 @@
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- eXo Platform Add-ons Manager - Unix Script -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <includes>
+          <include>*.sh</include>
+        </includes>
+        <lineEnding>unix</lineEnding>
+      </unpackOptions>
+      <fileMode>755</fileMode>
+      <!-- Workaround for MASSEMBLY-554 -->
+      <outputFileNameMapping></outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- eXo Platform Extensions Manager - Windows Script -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <includes>
+          <include>*.bat</include>
+        </includes>
+        <lineEnding>windows</lineEnding>
+      </unpackOptions>
+      <!-- Workaround for MASSEMBLY-554 -->
+      <outputFileNameMapping></outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- eXo Platform Extensions Manager - Others files -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <excludes>
+          <exclude>*.bat</exclude>
+          <exclude>*.sh</exclude>
+        </excludes>
+      </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
   </dependencySets>
 </component>

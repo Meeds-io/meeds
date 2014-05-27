@@ -30,7 +30,13 @@
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions - Shared Resources</name>
   <dependencies>
-    <!-- Extensions Manager for Tomcat distribution -->
+    <!-- Add-ons Manager -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>addons-manager</artifactId>
+      <type>zip</type>
+    </dependency>
+    <!-- Legacy Extensions Manager -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-extensions-manager</artifactId>
