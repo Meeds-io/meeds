@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>4.1-M2</version>
+  <version>4.1.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions</name>
   <modules>
@@ -47,7 +47,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
-    <tag>4.1-M2</tag>
+    <tag>HEAD</tag>
     <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
   </scm>
   <properties>
@@ -63,7 +63,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.1-M2</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.1.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.0.0-alpha-4</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->

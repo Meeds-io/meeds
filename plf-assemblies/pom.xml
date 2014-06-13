@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.1-M2</version>
+    <version>4.1.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-assemblies</artifactId>
   <name>eXo Platform Public Distributions - Assemblies</name>
