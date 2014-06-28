@@ -66,7 +66,7 @@
     <!-- The version of Platform To bundle -->
     <org.exoplatform.platform.version>4.1.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>1.0.0-alpha-5</org.exoplatform.platform.addons-manager.version>
+    <org.exoplatform.platform.addons-manager.version>1.0.0-RC1</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>7.0.54</org.apache.tomcat.version>
     <!-- CRaSH -->
