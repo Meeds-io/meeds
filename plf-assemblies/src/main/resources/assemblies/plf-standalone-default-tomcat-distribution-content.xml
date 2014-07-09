@@ -56,6 +56,8 @@
         <exclude>**/NOTICE*</exclude>
         <exclude>**/RELEASE-NOTES*</exclude>
         <exclude>**/RUNNING*</exclude>
+        <!-- PLF-5893 Wrong warning message when connect with disabled user -->
+        <exclude>**/conf/context.xml</exclude>
       </excludes>
     </fileSet>
     <!-- Unix shell scripts with exec rights -->
