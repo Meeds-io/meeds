@@ -172,6 +172,14 @@
       <filtered>true</filtered>
       <lineEnding>windows</lineEnding>
     </file>
+    <!-- exo-sample.properties -->
+    <file>
+      <outputDirectory>/gatein/conf</outputDirectory>
+      <destName>exo-sample.properties</destName>
+      <source>${project.build.directory}/${project.build.finalName}/dependencies/platform-extension-config/conf/platform/exo-sample.properties</source>
+      <filtered>false</filtered>
+      <lineEnding>windows</lineEnding>
+    </file>
   </files>
   <dependencySets>
     <!-- Extract license file -->

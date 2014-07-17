@@ -47,5 +47,15 @@
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- Platform Extension Configuration -->
+    <dependencySet>
+      <outputDirectory>platform-extension-config</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:platform-extension-config:jar</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
   </dependencySets>
 </assembly>
