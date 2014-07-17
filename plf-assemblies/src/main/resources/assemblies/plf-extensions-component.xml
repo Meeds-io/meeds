@@ -90,7 +90,7 @@
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
-          <include>*.sh</include>
+          <include>addon</include>
         </includes>
         <lineEnding>unix</lineEnding>
       </unpackOptions>
@@ -109,7 +109,7 @@
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
-          <include>*.bat</include>
+          <include>addon.bat</include>
         </includes>
         <lineEnding>windows</lineEnding>
       </unpackOptions>
@@ -127,8 +127,8 @@
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
-          <exclude>*.bat</exclude>
-          <exclude>*.sh</exclude>
+          <exclude>addon.bat</exclude>
+          <exclude>addon</exclude>
         </excludes>
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
