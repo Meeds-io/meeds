@@ -199,8 +199,6 @@
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
-          <!-- PLF4 cannot be deployed in Cluster with a Tomcat distribution due to JGroups versions conflicts (IDM vs JBCache) -->
-          <exclude>**/cluster/**</exclude>
           <!-- CHANGE_LOG, README, RELEASE_NOTES -->
           <exclude>CHANGE_LOG.txt</exclude>
           <exclude>README.txt</exclude>
