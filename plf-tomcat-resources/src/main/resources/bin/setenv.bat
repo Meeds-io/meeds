@@ -70,6 +70,7 @@ REM # --------------------------------------------------------------------------
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=all
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
 IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=%EXO_DEV%
+IF NOT DEFINED EXO_CONF_DIR SET EXO_CONF_DIR=%CATALINA_BASE%\gatein\conf
 IF NOT DEFINED EXO_DATA_DIR SET EXO_DATA_DIR=%CATALINA_BASE%\gatein\data
 
 REM # ---------------------------------------------------------------------------
@@ -150,8 +151,8 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
 
 REM # Platform paths
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name=gatein\conf
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%CATALINA_BASE%\gatein\conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%CATALINA_BASE%\gatein\conf"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%EXO_CONF_DIR%"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
 REM # JCR Data directory

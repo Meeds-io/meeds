@@ -67,6 +67,9 @@ REM # --------------------------------------------------------------------------
 REM # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
 REM SET EXO_PROFILES=all,myOwnProfile
 
+REM # Main directory where are stored all configuration files (Default: %CATALINA_BASE%\gatein\conf)
+REM SET EXO_CONF_DIR=%HOMEPATH%\eXo-platform\conf
+
 REM # Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
 REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
 

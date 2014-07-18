@@ -69,6 +69,9 @@
 # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
 #EXO_PROFILES="all,myOwnProfile"
 
+# Main directory where are stored all configuration files (Default: ${CATALINA_BASE}/gatein/conf)
+#EXO_CONF_DIR="${HOME}/.eXo-platform/conf"
+
 # Main directory where are stored all data (Default: ${CATALINA_BASE}/gatein/data) (also available with --data <path> option on start_eXo.sh script)
 #EXO_DATA_DIR="${HOME}/.eXo-platform/data"
 
