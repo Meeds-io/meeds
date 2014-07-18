@@ -150,7 +150,6 @@ REM # Platform profiles
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.profiles=%EXO_PROFILES%
 
 REM # Platform paths
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir.name=gatein\conf
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
