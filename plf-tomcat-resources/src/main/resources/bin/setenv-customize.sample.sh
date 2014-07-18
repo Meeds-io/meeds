@@ -69,9 +69,6 @@
 # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
 #EXO_PROFILES="all,myOwnProfile"
 
-# Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-#EXO_ASSETS_VERSION="42"
-
 # Main directory where are stored all data (Default: ${CATALINA_BASE}/gatein/data) (also available with --data <path> option on start_eXo.sh script)
 #EXO_DATA_DIR="${HOME}/.eXo-platform/data"
 
@@ -80,57 +77,6 @@
 
 # Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 #EXO_JCR_SESSION_TRACKING=true
-
-# -----------------------------------------------------------------------------
-# SMTP/Emails configuration
-# -----------------------------------------------------------------------------
-
-# Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
-#EXO_DEPLOYMENT_URL="https://intranet.mycompany.com"
-
-# Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
-#EXO_EMAIL_FROM="intranet@mycompany.com"
-
-# SMTP Server hostname. (Default: localhost)
-#EXO_EMAIL_SMTP_HOST="smtp.gmail.com"
-
-# SMTP Server port. (Default: 25)
-#EXO_EMAIL_SMTP_PORT="465"
-
-# True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
-#EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
-
-# True to enable the SMTP authentication. (Default: false)
-#EXO_EMAIL_SMTP_AUTH=true
-
-# Username to send for authentication. (Default: <NONE>)
-#EXO_EMAIL_SMTP_USERNAME="account@gmail.com"
-
-# Password to send for authentication. (Default: <NONE>)
-#EXO_EMAIL_SMTP_PASSWORD="password"
-
-# Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
-#EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT="465"
-
-# This class will be used to create SMTP sockets. (Default: <NONE>)
-#EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS="javax.net.ssl.SSLSocketFactory"
-
-# -----------------------------------------------------------------------------
-# JOD Converter configuration
-# -----------------------------------------------------------------------------
-# Used to preview documents
-#
-# Requires to have openoffice/libreoffice server installed
-
-# Jod Converter activation (Default : true)
-#EXO_JODCONVERTER_ENABLE=false
-
-# Comma separated list of ports numbers to use for open office servers used to convert documents.
-# One office server instance will be created for each port. (Default : 2002)
-#EXO_JODCONVERTER_PORTS="2002,2003,2004,2005"
-
-# The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
-#EXO_JODCONVERTER_OFFICEHOME="/usr/lib/libreoffice"
 
 # -----------------------------------------------------------------------------
 # Logs configuration

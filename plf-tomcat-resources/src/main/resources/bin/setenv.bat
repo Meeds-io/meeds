@@ -69,7 +69,6 @@ REM # --------------------------------------------------------------------------
 
 IF NOT DEFINED EXO_PROFILES SET EXO_PROFILES=all
 IF NOT DEFINED EXO_DEV SET EXO_DEV=false
-IF NOT DEFINED EXO_ASSETS_VERSION SET EXO_ASSETS_VERSION=${project.version}
 IF NOT DEFINED EXO_JCR_SESSION_TRACKING SET EXO_JCR_SESSION_TRACKING=%EXO_DEV%
 IF NOT DEFINED EXO_DATA_DIR SET EXO_DATA_DIR=%CATALINA_BASE%\gatein\data
 
@@ -162,10 +161,6 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.storage.data.dir="%EXO_DATA_DIR%\
 REM # JCR indexes
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.index.data.dir="%EXO_DATA_DIR%\jcr\index"
 
-
-REM # Assets version
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.assets.version=%EXO_ASSETS_VERSION%
-
 REM # Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"
 
@@ -174,34 +169,6 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xm
 
 REM # PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
-
-REM # Jod Converter activation
-IF DEFINED EXO_JODCONVERTER_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.enable=%EXO_JODCONVERTER_ENABLE%
-REM # Comma separated list of ports numbers to use for open office servers used to convert documents.
-IF DEFINED EXO_JODCONVERTER_PORTS SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.portnumbers=%EXO_JODCONVERTER_PORTS%
-REM # The absolute path to the office home on the server.
-IF DEFINED EXO_JODCONVERTER_OFFICEHOME SET CATALINA_OPTS=%CATALINA_OPTS% -Djodconverter.officehome="%EXO_JODCONVERTER_OFFICEHOME%"
-
-REM # Domain name used to produce absolute URLs in email notifications.
-IF DEFINED EXO_DEPLOYMENT_URL SET CATALINA_OPTS=%CATALINA_OPTS% -Ddomain.url=%EXO_DEPLOYMENT_URL%
-REM # Email display in from field of email notification.
-IF DEFINED EXO_EMAIL_FROM SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.from=%EXO_EMAIL_FROM%
-REM # SMTP Server hostname.
-IF DEFINED EXO_EMAIL_SMTP_HOST SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.host=%EXO_EMAIL_SMTP_HOST%
-REM # SMTP Server port.
-IF DEFINED EXO_EMAIL_SMTP_PORT SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.port=%EXO_EMAIL_SMTP_PORT%
-REM # True to enable the secure (TLS) SMTP. See RFC 3207.
-IF DEFINED EXO_EMAIL_SMTP_STARTTLS_ENABLE SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.starttls.enable=%EXO_EMAIL_SMTP_STARTTLS_ENABLE%
-REM # True to enable the SMTP authentication.
-IF DEFINED EXO_EMAIL_SMTP_AUTH SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.auth=%EXO_EMAIL_SMTP_AUTH%
-REM # Username to send for authentication.
-IF DEFINED EXO_EMAIL_SMTP_USERNAME SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.username="%EXO_EMAIL_SMTP_USERNAME%"
-REM # Password to send for authentication.
-IF DEFINED EXO_EMAIL_SMTP_PASSWORD SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.password="%EXO_EMAIL_SMTP_PASSWORD%"
-REM # Specify the port to connect to when using the specified socket factory.
-IF DEFINED EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.socketFactory.port=%EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT%
-REM # This class will be used to create SMTP sockets.
-IF DEFINED EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS SET CATALINA_OPTS=%CATALINA_OPTS% -Dsmtp.socketFactory.class=%EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS%
 
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}

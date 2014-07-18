@@ -68,7 +68,6 @@ fi
 
 [ -z $EXO_PROFILES ] && EXO_PROFILES="all"
 [ -z $EXO_DEV ] && EXO_DEV=false
-[ -z $EXO_ASSETS_VERSION ] && EXO_ASSETS_VERSION="${project.version}"
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=$EXO_DEV
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR="$CATALINA_BASE/gatein/data"
 
@@ -159,9 +158,6 @@ CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jc
 # JCR indexes
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
 
-# Assets version
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.assets.version=${EXO_ASSETS_VERSION}"
-
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=\"${EXO_LOGS_LOGBACK_CONFIG_FILE}\""
 
@@ -174,31 +170,3 @@ fi
 
 # PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
 CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
-
-# Jod Converter activation
-[ ! -z $EXO_JODCONVERTER_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.enable=${EXO_JODCONVERTER_ENABLE}"
-# Comma separated list of ports numbers to use for open office servers used to convert documents.
-[ ! -z $EXO_JODCONVERTER_PORTS ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.portnumbers=${EXO_JODCONVERTER_PORTS}"
-# The absolute path to the office home on the server.
-[ ! -z $EXO_JODCONVERTER_OFFICEHOME ] && CATALINA_OPTS="$CATALINA_OPTS -Djodconverter.officehome=\"${EXO_JODCONVERTER_OFFICEHOME}\""
-
-# Domain name used to produce absolute URLs in email notifications.
-[ ! -z $EXO_DEPLOYMENT_URL ] && CATALINA_OPTS="$CATALINA_OPTS -Ddomain.url=${EXO_DEPLOYMENT_URL}"
-# Email display in "from" field of email notification.
-[ ! -z $EXO_EMAIL_FROM ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.from=${EXO_EMAIL_FROM}"
-# SMTP Server hostname.
-[ ! -z $EXO_EMAIL_SMTP_HOST ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.host=${EXO_EMAIL_SMTP_HOST}"
-# SMTP Server port.
-[ ! -z $EXO_EMAIL_SMTP_PORT ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.port=${EXO_EMAIL_SMTP_PORT}"
-# True to enable the secure (TLS) SMTP. See RFC 3207.
-[ ! -z $EXO_EMAIL_SMTP_STARTTLS_ENABLE ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.starttls.enable=${EXO_EMAIL_SMTP_STARTTLS_ENABLE}"
-# True to enable the SMTP authentication.
-[ ! -z $EXO_EMAIL_SMTP_AUTH ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.auth=${EXO_EMAIL_SMTP_AUTH}"
-# Username to send for authentication.
-[ ! -z $EXO_EMAIL_SMTP_USERNAME ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.username=${EXO_EMAIL_SMTP_USERNAME}"
-# Password to send for authentication.
-[ ! -z $EXO_EMAIL_SMTP_PASSWORD ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.password=${EXO_EMAIL_SMTP_PASSWORD}"
-# Specify the port to connect to when using the specified socket factory.
-[ ! -z $EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.socketFactory.port=${EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT}"
-# This class will be used to create SMTP sockets.
-[ ! -z $EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS ] && CATALINA_OPTS="$CATALINA_OPTS -Dsmtp.socketFactory.class=${EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS}"
