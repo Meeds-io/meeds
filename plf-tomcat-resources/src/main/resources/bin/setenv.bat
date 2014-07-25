@@ -153,13 +153,13 @@ REM # Platform paths
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.conf.dir="%EXO_CONF_DIR%"
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.security.auth.login.config="%CATALINA_BASE%\conf\jaas.conf"
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.data.dir="%EXO_DATA_DIR%"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.data.dir="%EXO_DATA_DIR%"
 REM # JCR Data directory
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.data.dir="%EXO_DATA_DIR%\jcr"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.data.dir="%EXO_DATA_DIR%\jcr"
 REM # JCR values
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.storage.data.dir="%EXO_DATA_DIR%\jcr\values"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.storage.data.dir="%EXO_DATA_DIR%\jcr\values"
 REM # JCR indexes
-SET CATALINA_OPTS=%CATALINA_OPTS% -Dgatein.jcr.index.data.dir="%EXO_DATA_DIR%\jcr\index"
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.index.data.dir="%EXO_DATA_DIR%\jcr\index"
 
 REM # Logback configuration file
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dlogback.configurationFile="%EXO_LOGS_LOGBACK_CONFIG_FILE%"

@@ -34,13 +34,13 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <property name="exo.logs.rolling.maxFileSize" value="100Mb" />
   <!-- Number of archives to keep -->
   <property name="exo.logs.rolling.maxHistory" value="60" />
-  <!-- Allow to customize previous settings by defining these properties in ${catalina.base}/gatein/conf/exo.properties -->
+  <!-- Allow to customize previous settings by defining these properties in ${exo.conf.dir}/exo.properties -->
   <define name="EXO_PROPERTIES_FILE_EXISTS" class="ch.qos.logback.core.property.FileExistsPropertyDefiner">
-    <path>${catalina.base}/gatein/conf/exo.properties</path>
+    <path>${exo.conf.dir}/exo.properties</path>
   </define>
   <if condition='property("EXO_PROPERTIES_FILE_EXISTS").equals("true")'>
     <then>
-      <property file="${catalina.base}/gatein/conf/exo.properties" />
+      <property file="${exo.conf.dir}/exo.properties" />
     </then>
   </if>
   <!--

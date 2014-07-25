@@ -150,13 +150,13 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.profiles=${EXO_PROFILES}"
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=\"${EXO_CONF_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=\"${EXO_CONF_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=\"$CATALINA_BASE/conf/jaas.conf\""
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.data.dir=\"${EXO_DATA_DIR}\""
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.data.dir=\"${EXO_DATA_DIR}\""
 # JCR Data directory
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
 # JCR values
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jcr/values\""
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jcr/values\""
 # JCR indexes
-CATALINA_OPTS="$CATALINA_OPTS -Dgatein.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
 
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=\"${EXO_LOGS_LOGBACK_CONFIG_FILE}\""
