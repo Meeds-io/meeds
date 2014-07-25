@@ -39,8 +39,8 @@ REM # --------------------------------------------------------------------------
 REM # Home directory of the JVM to use (Default : try to auto-compute it from existing java executable in path by default)
 REM SET JAVA_HOME=C:\Program Files\Java\jdk6
 
-REM # Maximum Heap Size to use (Default : 2g)
-REM SET EXO_JVM_SIZE_MAX=1g
+REM # Maximum Heap Size to use (Default : 3g)
+REM SET EXO_JVM_SIZE_MAX=4g
 
 REM # Minimum Heap Size to use (Default : 512m)
 REM SET EXO_JVM_SIZE_MIN=512m

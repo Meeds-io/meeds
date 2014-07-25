@@ -41,8 +41,8 @@
 # Use EXO_JVM_VENDOR="IBM" with J9 JVMs (Default : "ORACLE")
 #EXO_JVM_VENDOR="IBM"
 
-# Maximum Heap Size to use (Default : 2g)
-#EXO_JVM_SIZE_MAX="1g"
+# Maximum Heap Size to use (Default : 3g)
+#EXO_JVM_SIZE_MAX="4g"
 
 # Minimum Heap Size to use (Default : 512m)
 #EXO_JVM_SIZE_MIN="1g"

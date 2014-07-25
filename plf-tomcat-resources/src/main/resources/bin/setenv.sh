@@ -54,7 +54,7 @@ fi
 # -----------------------------------------------------------------------------
 
 [ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
-[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="2g"
+[ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="3g"
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN="512m"
 [ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX="256m"
 [ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
