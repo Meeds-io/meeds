@@ -21,65 +21,6 @@
 <component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
   <dependencySets>
-    <!-- eXo Platform Extensions Manager - Library -->
-    <dependencySet>
-      <outputDirectory>/extensions</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>plf-extensions-manager.jar</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- eXo Platform Extensions Manager - Unix Script -->
-    <dependencySet>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <unpackOptions>
-        <filtered>true</filtered>
-        <includes>
-          <include>*.sh</include>
-        </includes>
-        <lineEnding>unix</lineEnding>
-      </unpackOptions>
-      <fileMode>755</fileMode>
-      <!-- Workaround for MASSEMBLY-554 -->
-      <outputFileNameMapping></outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- eXo Platform Extensions Manager - Windows Script -->
-    <dependencySet>
-      <outputDirectory>/</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-extensions-manager:jar</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <unpackOptions>
-        <filtered>true</filtered>
-        <includes>
-          <include>*.bat</include>
-        </includes>
-        <lineEnding>windows</lineEnding>
-      </unpackOptions>
-      <!-- Workaround for MASSEMBLY-554 -->
-      <outputFileNameMapping></outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- All extensions -->
-    <dependencySet>
-      <outputDirectory>/extensions</outputDirectory>
-      <includes>
-        <include>*:*-extension-*:zip</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- eXo Platform Add-ons Manager - Unix Script -->
     <dependencySet>
       <outputDirectory>/</outputDirectory>
@@ -99,7 +40,7 @@
       <outputFileNameMapping></outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- eXo Platform Extensions Manager - Windows Script -->
+    <!-- eXo Platform Add-ons Manager - Windows Script -->
     <dependencySet>
       <outputDirectory>/</outputDirectory>
       <includes>
@@ -117,7 +58,7 @@
       <outputFileNameMapping></outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- eXo Platform Extensions Manager - Others files -->
+    <!-- eXo Platform Add-ons Manager - Others files -->
     <dependencySet>
       <outputDirectory>/</outputDirectory>
       <includes>

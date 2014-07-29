@@ -743,6 +743,6 @@
   </dependencySets>
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
-    <componentDescriptor>assemblies/plf-extensions-component.xml</componentDescriptor>
+    <componentDescriptor>assemblies/plf-addons-component.xml</componentDescriptor>
   </componentDescriptors>
 </assembly>

@@ -123,15 +123,15 @@ REM # For more details see the configuration file conf/server.xml
 REM # JCR Statistics
 REM SET CATALINA_OPTS=%CATALINA_OPTS% -DJDBCWorkspaceDataContainer.statistics.enabled=true -DJCRStatisticsManager.persistence.timeout=30000
 
-REM # CRaSH Extension (change telnet and SSH ports)
+REM # CRaSH add-on (change telnet and SSH ports)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.telnet.port=12345"
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.ssh.port=54321"
 
 REM # Hibernate dialect for supporting Postgresql Plus
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
 
-REM # ACME extension (override default acme site data)
+REM # ACME add-on (override default acme site data)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dacme.portalConfig.metadata.override=true"
 
-REM # IDE extension (customize default ide extension data)
+REM # IDE add-on (customize default ide add-on data)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dide.portalConfig.metadata.override=false"

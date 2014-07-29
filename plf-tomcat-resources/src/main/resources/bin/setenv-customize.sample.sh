@@ -129,15 +129,15 @@
 # JCR Statistics
 #CATALINA_OPTS="${CATALINA_OPTS} -DJDBCWorkspaceDataContainer.statistics.enabled=true -DJCRStatisticsManager.persistence.timeout=30000"
 
-# CRaSH Extension (change telnet and SSH ports)
+# CRaSH add-on (change telnet and SSH ports)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.telnet.port=12345"
 #CATALINA_OPTS="${CATALINA_OPTS} -Dcrash.ssh.port=54321"
 
 # Hibernate dialect for supporting Postgresql Plus
 #CATALINA_OPTS="${CATALINA_OPTS} -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
 
-# ACME extension (override default acme site data)
+# ACME add-on (override default acme site data)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dacme.portalConfig.metadata.override=true"
 
-# IDE extension (customize default ide extension)
+# IDE add-on (customize default ide add-on)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dide.portalConfig.metadata.override=false"

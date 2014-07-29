@@ -36,8 +36,6 @@
     <module>plf-assemblies</module>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-dependencies</module>
-    <module>plf-extension-crsh</module>
-    <module>plf-extensions-manager</module>
     <module>plf-packaging-resources</module>
     <module>plf-root-webapp</module>
     <module>plf-tomcat-integration-webapp</module>
@@ -69,8 +67,6 @@
     <org.exoplatform.platform.addons-manager.version>1.0.0-RC3</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>7.0.54</org.apache.tomcat.version>
-    <!-- CRaSH -->
-    <org.crsh.version>1.2.6</org.crsh.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.7</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
@@ -155,24 +151,6 @@
         <artifactId>plf-dependencies</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-extension-crsh</artifactId>
-        <version>${project.version}</version>
-        <type>war</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-extension-crsh</artifactId>
-        <version>${project.version}</version>
-        <type>zip</type>
-      </dependency>
-      <!-- Extensions Manager -->
-      <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
-        <artifactId>plf-extensions-manager</artifactId>
-        <version>${project.version}</version>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
@@ -408,15 +386,6 @@
                       <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
                       <findAllDuplicates>true</findAllDuplicates>
                       <dependencies>
-                        <dependency>
-                          <!-- Shaded JAR that won't be in the app server classpath -->
-                          <groupId>org.exoplatform.platform.distributions</groupId>
-                          <artifactId>plf-extensions-manager</artifactId>
-                          <type>jar</type>
-                          <ignoreClasses>
-                            <ignoreClass>*</ignoreClass>
-                          </ignoreClasses>
-                        </dependency>
                         <dependency>
                           <!-- We override GateIn L&F from org.gatein.portal:exo.portal.webui.core -->
                           <groupId>org.exoplatform.platform-ui</groupId>

@@ -36,11 +36,6 @@
       <artifactId>addons-manager</artifactId>
       <type>zip</type>
     </dependency>
-    <!-- Legacy Extensions Manager -->
-    <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
-      <artifactId>plf-extensions-manager</artifactId>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
