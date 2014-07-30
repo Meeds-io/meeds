@@ -29,11 +29,6 @@
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions - Community Tomcat Standalone</name>
-  <properties>
-    <!-- This is used to adapt the extension script to the app server -->
-    <platform.libraries.path>lib</platform.libraries.path>
-    <platform.webapps.path>webapps</platform.webapps.path>
-  </properties>
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>

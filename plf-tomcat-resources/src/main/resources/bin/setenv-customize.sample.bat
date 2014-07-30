@@ -39,8 +39,8 @@ REM # --------------------------------------------------------------------------
 REM # Home directory of the JVM to use (Default : try to auto-compute it from existing java executable in path by default)
 REM SET JAVA_HOME=C:\Program Files\Java\jdk6
 
-REM # Maximum Heap Size to use (Default : 2g)
-REM SET EXO_JVM_SIZE_MAX=1g
+REM # Maximum Heap Size to use (Default : 3g)
+REM SET EXO_JVM_SIZE_MAX=4g
 
 REM # Minimum Heap Size to use (Default : 512m)
 REM SET EXO_JVM_SIZE_MIN=512m
@@ -67,8 +67,8 @@ REM # --------------------------------------------------------------------------
 REM # eXo Platform comes with different runtime profiles, enabling you to customize which modules you want to enable/disable. (Default: all)
 REM SET EXO_PROFILES=all,myOwnProfile
 
-REM # Assets versions used in static resources URLs. Useful to manage caches. (Default: The product version)
-REM SET EXO_ASSETS_VERSION=42
+REM # Main directory where are stored all configuration files (Default: %CATALINA_BASE%\gatein\conf)
+REM SET EXO_CONF_DIR=%HOMEPATH%\eXo-platform\conf
 
 REM # Main directory where are stored all data (Default: %CATALINA_BASE%\gatein\data) (also available with --data <path> option on start_eXo.bat script)
 REM SET EXO_DATA_DIR=%HOMEPATH%\eXo-platform\data
@@ -78,58 +78,6 @@ REM SET EXO_DEV=true
 
 REM # Activates the JCR sessions leaks detector (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
 REM SET EXO_JCR_SESSION_TRACKING=true
-
-REM # -----------------------------------------------------------------------------
-REM # SMTP/Emails configuration
-REM # -----------------------------------------------------------------------------
-
-REM # Domain name used to produce absolute URLs in email notifications. (Default: http://localhost:8080)
-REM SET EXO_DEPLOYMENT_URL=https://intranet.mycompany.com
-
-REM # Email display in "from" field of email notification. (Default: noreply@exoplatform.com)
-REM SET EXO_EMAIL_FROM=intranet@mycompany.com
-
-REM # SMTP Server hostname. (Default: localhost)
-REM SET EXO_EMAIL_SMTP_HOST=smtp.gmail.com
-
-REM # SMTP Server port. (Default: 25)
-REM SET EXO_EMAIL_SMTP_PORT=465
-
-REM # True to enable the secure (TLS) SMTP. See RFC 3207. (Default: false)
-REM SET EXO_EMAIL_SMTP_STARTTLS_ENABLE=true
-
-REM # True to enable the SMTP authentication. (Default: false)
-REM SET EXO_EMAIL_SMTP_AUTH=true
-
-REM # Username to send for authentication. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_USERNAME=account@gmail.com
-
-REM # Password to send for authentication. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_PASSWORD=password
-
-REM # Specify the port to connect to when using the specified socket factory. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_PORT=465
-
-REM # This class will be used to create SMTP sockets. (Default: <NONE>)
-REM SET EXO_EMAIL_SMTP_SOCKET_FACTORY_CLASS=javax.net.ssl.SSLSocketFactory
-
-REM # -----------------------------------------------------------------------------
-REM # JOD Converter configuration
-REM # -----------------------------------------------------------------------------
-REM # Used to preview documents
-REM
-REM # Requires to have openoffice/libreoffice server installed
-
-REM # Jod Converter activation (Default : true)
-REM SET EXO_JODCONVERTER_ENABLE=false
-
-REM # Comma separated list of ports numbers to use for open office servers used to convert documents.
-REM # One office server instance will be created for each port. (Default : 2002)
-REM SET EXO_JODCONVERTER_PORTS=2002,2003,2004,2005
-
-REM # The absolute path to the office home on the server. (Default : Path automatically discovered based on the OS default locations)
-REM # Prefer to use the shortname syntax without spaces for the PATH
-REM SET EXO_JODCONVERTER_OFFICEHOME=C:\Program Files\OpenOffice
 
 REM # ---------------------------------------------------------------------------
 REM # Logs configuration
@@ -175,15 +123,15 @@ REM # For more details see the configuration file conf/server.xml
 REM # JCR Statistics
 REM SET CATALINA_OPTS=%CATALINA_OPTS% -DJDBCWorkspaceDataContainer.statistics.enabled=true -DJCRStatisticsManager.persistence.timeout=30000
 
-REM # CRaSH Extension (change telnet and SSH ports)
+REM # CRaSH add-on (change telnet and SSH ports)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.telnet.port=12345"
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dcrash.ssh.port=54321"
 
 REM # Hibernate dialect for supporting Postgresql Plus
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
 
-REM # ACME extension (override default acme site data)
+REM # ACME add-on (override default acme site data)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dacme.portalConfig.metadata.override=true"
 
-REM # IDE extension (customize default ide extension data)
+REM # IDE add-on (customize default ide add-on data)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dide.portalConfig.metadata.override=false"

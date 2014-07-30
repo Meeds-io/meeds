@@ -162,6 +162,16 @@
         <exclude>**/*.cmd</exclude>
       </excludes>
     </fileSet>
+    <!-- Configuration sample files -->
+    <fileSet>
+      <outputDirectory>/gatein/conf</outputDirectory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/platform-extension-config/conf/platform/</directory>
+      <filtered>false</filtered>
+      <lineEnding>windows</lineEnding>
+      <includes>
+        <include>**/*-sample.properties</include>
+      </includes>
+    </fileSet>
   </fileSets>
   <files>
     <!-- Default server.xml file -->
@@ -199,8 +209,6 @@
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
-          <!-- PLF4 cannot be deployed in Cluster with a Tomcat distribution due to JGroups versions conflicts (IDM vs JBCache) -->
-          <exclude>**/cluster/**</exclude>
           <!-- CHANGE_LOG, README, RELEASE_NOTES -->
           <exclude>CHANGE_LOG.txt</exclude>
           <exclude>README.txt</exclude>
@@ -735,6 +743,6 @@
   </dependencySets>
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
-    <componentDescriptor>assemblies/plf-extensions-component.xml</componentDescriptor>
+    <componentDescriptor>assemblies/plf-addons-component.xml</componentDescriptor>
   </componentDescriptors>
 </assembly>

@@ -23,7 +23,7 @@
 Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
-<configuration scan="${EXO_DEV}" scanPeriod="30 seconds">
+<configuration scan="${EXO_DEV}" scanPeriod="30 seconds" debug="false">
   <!-- Enable JMX to configure logs -->
   <jmxConfigurator />
   <!-- Default pattern used for printing logs in files and on the console for systems that doesn't support a colorized output -->
@@ -34,8 +34,15 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <property name="exo.logs.rolling.maxFileSize" value="100Mb" />
   <!-- Number of archives to keep -->
   <property name="exo.logs.rolling.maxHistory" value="60" />
-  <!-- Load configuration properties to customize this setup -->
-  <property file="${catalina.base}/gatein/conf/configuration.properties" />
+  <!-- Allow to customize previous settings by defining these properties in ${exo.conf.dir}/exo.properties -->
+  <define name="EXO_PROPERTIES_FILE_EXISTS" class="ch.qos.logback.core.property.FileExistsPropertyDefiner">
+    <path>${exo.conf.dir}/exo.properties</path>
+  </define>
+  <if condition='property("EXO_PROPERTIES_FILE_EXISTS").equals("true")'>
+    <then>
+      <property file="${exo.conf.dir}/exo.properties" />
+    </then>
+  </if>
   <!--
   LevelChangePropagator propagates changes made to the level of any logback-classic logger onto the java.util.logging framework.
   Such propagation eliminates the performance impact of disabled log statements.

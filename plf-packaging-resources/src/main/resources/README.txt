@@ -66,25 +66,23 @@ How to access the Platform homepage
     * Enter the following URL into your browser's address bar: http://localhost:8080/portal
 
 -------------------------------------
-How to install extensions
+How to install add-ons
 -------------------------------------
 
-Several extensions are not installed by default in the Express and Enterprise version of eXo Platform 4: 
-    * crash	: Common Reusable SHell to interact with the JVM
-    * acme (*)	: A demo website built with eXo Platform 4 (cf. next section for its usage)
-    * cmis (*)	: Content Management Interoperability Services 
-    * ide (*)	: Integrated online environment to develop applications (cf. next section for its usage)
-    * wai (*)	: A demo website following Accessibility standards 
+Several add-ons are not installed by default in the Express and Enterprise version of eXo Platform 4:
+    * crash-addon	    : Common Reusable SHell to interact with the JVM
+    * cmis-addon (*)	: Content Management Interoperability Services
+    * ide-addon (*) 	: Integrated online environment to develop applications (cf. next section for its usage)
+    * acme-sample (*)	: A demo website built with eXo Platform 4 (cf. next section for its usage)
+    * wai-sample (*)	: A demo website following Accessibility standards
 
 On Windows, Open a DOS prompt command, go to PLF_HOME directory and type the command:
-    * To install an extension use: extension.bat --install <extension>
-    * To install all available extensions use: extension.bat --install all
-    * List all available extensions use: extension.bat --list
+    * To install an add-on use: addon.bat install <add-on>
+    * List all available add-ons use: addon.bat list
 
 On Linux: Open a terminal, go to PLF_HOME directory and type the command :
-    * To install an extension use: extension.sh --install <extension>
-    * To install all available extensions use: extension.sh --install all
-    * List all available extensions use: extension.sh --list
+    * To install an add-on use: addon --install <add-on>
+    * List all available add-ons use: addon list
 
 (*) only on Express and Enterprise editions
 
@@ -92,9 +90,9 @@ On Linux: Open a terminal, go to PLF_HOME directory and type the command :
 Deployment of acme website
 -----------------------------
 
-When eXo Platform server is already started and you would like to install acme extension, you need to follow the steps below:
+When eXo Platform server is already started and you would like to install acme add-on, you need to follow the steps below:
 * Stop eXo Platform server
-* Install acme extension with the extension script
+* Install acme add-on with the addon script
 * Set the variable "acme.portalConfig.metadata.override" as true. This can be done by one of the two ways:
 ** Use configuration.properties:
   In this file, you uncomment the line of this parameter
@@ -110,7 +108,7 @@ When eXo Platform server is already started and you would like to install acme e
 Exclusion of the IDE item from Administration drop-down menu
 ----------------------------------------------------------------
 
-When eXo Platform server integrates the ide extension and you would like to exclude the IDE item from Administration drop-down menu, follow the steps below:
+When eXo Platform server integrates the ide add-on and you would like to exclude the IDE item from Administration drop-down menu, follow the steps below:
 * Stop eXo Platform server
 * Set the variable "ide.portalConfig.metadata.override" as false . This can be done by one of the two ways:
 ** Use configuration.properties:
