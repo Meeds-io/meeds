@@ -20,8 +20,7 @@ I. MAIN CHANGES
 
 Main changes since Platform 4.1-M2:
 * Bug fixes
-* Video Calls Addon
-* Social Notification
+* Dynamic Portlet Container
 
 
 =========================
@@ -29,7 +28,7 @@ II. STARTUP INSTRUCTIONS
 =========================
 
 
-The file readme.txt contains information on how to start the product.
+The file README.txt contains information on how to start the product.
 
 
 ===================
@@ -41,7 +40,84 @@ The upgrade procedure is only guaranteed and tested to be transparent from the p
 However, if you still insist on skipping versions, we strongly advise to read all upgrade notes of the versions you are skipping to see if your project is impacted by any previous upgrade procedure.
 
 ---------------------------------------------
-Upgrading from Platform 4.1-M1 to 4.1-M2
+ Upgrading from Platform 4.1-M2 to 4.1.0-RC1
+---------------------------------------------
+
+* Prepare bundle:
+** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
+** Go to $PLATFORM-4.1.0-RC1-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.1.0-RC1-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.1-M2-to-4.1.0-RC1-sample.properties to upgrade.properties
+* Start server. The upgrade will be run automatically.
+* Stop server.
+* Remove/Rename the file upgrade.properties
+* Restart the server. You're ready.
+
+ Description of the plugins used in this upgrade
+**************************************************
+
+# ECMS-5998: Change exo:actions property of exo:actionable node to be optionable 
+commons.upgrade.ActionableNodeTypeUpgradePlugin.enable=true
+
+# ECMS-6276: Add properties 'exo:name' and 'exo:lastModifiedDate' to site node's child nodes
+commons.upgrade.SiteDataUpgradePlugin.enable=true
+
+# ECMS-6219: Update CSS File's templates (view and dialog)
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+
+# WIKI-655: Change application name of Wiki in space to wiki
+commons.upgrade.WikiNameUpgradePlugin.enable=true
+
+# PLF-6012: Add Dynamic portlet containers into legacy pages
+commons.upgrade.PageUpgradePlugin.enable=true
+
+# PLF-5248, PLF-5928, PLF-5930, PLF-5931: Update resource bundles of built-in gadgets
+commons.upgrade.Upgrade-Gadgets.enable=true
+
+---------------------------------------------
+ Upgrading from Platform 4.0.7 to 4.1.0-RC1
+---------------------------------------------
+
+* Prepare bundle:
+** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
+** Go to $PLATFORM-4.1.0-RC1-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.1.0-RC1-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.0.7-to-4.1.0-RC1-sample.properties to upgrade.properties
+* Start server. The upgrade will be run automatically.
+* Stop server.
+* Remove/Rename the file upgrade.properties
+* Restart the server. You're ready.
+
+ Description of the plugins used in this upgrade
+**************************************************
+
+The number in parentheses indicates the version for this upgrade.
+
+# ECMS-6276: Add properties 'exo:name' and 'exo:lastModifiedDate' to site node's child nodes (4.1.0-RC1)
+commons.upgrade.SiteDataUpgradePlugin.enable=true
+
+# ECMS-5336: Update Product's templates (view and dialog) (4.1-M1)
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+
+# ECMS-3854: Customize the sizing of Flash preview (4.1-M1)
+commons.upgrade.FlashNodeTypeUpgradePlugin.enable=true
+
+# WIKI-655: Change application name of Wiki in space to wiki (4.1.0-RC1)
+commons.upgrade.WikiNameUpgradePlugin.enable=true
+
+# FORUM-663: Upgrade groovy template on FAQPortlet's preference (4.1-M1)
+commons.upgrade.FAQPreferenceTemplateUpdaterPlugin.enable=true
+
+# PLF-5218: Add Notifications Setting Management to Top Navigation bar (4.1-M1)
+# ECMS-5822: Add Video calls to Top Navigation bar (4.1-M2)
+commons.upgrade.Upgrade-PortalData.enable=true
+
+# PLF-6012: Add Dynamic portlet containers into legacy pages (4.1.0-RC1)
+commons.upgrade.PageUpgradePlugin.enable=true
+
+# PLF-5248, PLF-5928, PLF-5930, PLF-5931: Update resource bundles of built-in gadgets (4.1.0-RC1)
+commons.upgrade.Upgrade-Gadgets.enable=true
+
+---------------------------------------------
+ Upgrading from Platform 4.1-M1 to 4.1-M2
 ---------------------------------------------
 
 * Prepare bundle:
@@ -123,7 +199,7 @@ commons.upgrade.SanitizationUpgradePlugin.enable=true
 # PLF-5218: Notifications Setting Management
 commons.upgrade.Upgrade-PortalData.enable=true
 
-# FORUM-663: Upgrade groovy template on FQAPortlet's preference
+# FORUM-663: Upgrade groovy template on FAQPortlet's preference
 commons.upgrade.FAQPreferenceTemplateUpdaterPlugin.enable=true
 
 # PLF-5820: Update gadgets
