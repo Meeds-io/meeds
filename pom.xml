@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>4.1.0-RC1</version>
+  <version>4.1.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions</name>
   <modules>
@@ -46,7 +46,7 @@
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
     <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
-    <tag>4.1.0-RC1</tag>
+    <tag>HEAD</tag>
     <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
   </scm>
   <properties>
