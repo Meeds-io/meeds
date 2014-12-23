@@ -137,7 +137,7 @@
 #CATALINA_OPTS="${CATALINA_OPTS} -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
 
 # ACME add-on (override default acme site data)
-#CATALINA_OPTS="${CATALINA_OPTS} -Dacme.portalConfig.metadata.override=true"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dexo.acme.portalConfig.metadata.override=true"
 
 # IDE add-on (customize default ide add-on)
-#CATALINA_OPTS="${CATALINA_OPTS} -Dide.portalConfig.metadata.override=false"
+#CATALINA_OPTS="${CATALINA_OPTS} -Dexo.ide.portalConfig.metadata.override=false"

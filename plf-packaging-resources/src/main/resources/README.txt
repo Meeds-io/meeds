@@ -29,8 +29,8 @@ System requirements
     * Memory:  4GB of RAM (8GB recommended)
     * Disk:    2GB (depending of the amount of data)
     * OS:      Windows or Linux
-    * JDK:     Java 6 or 7 (Set the JAVA_HOME environment variable)
-    * Browser: Google Chrome 25+, Firefox 19+ or Internet Explorer 8+
+    * JDK:     Java 7 (Set the JAVA_HOME environment variable)
+    * Browser: Google Chrome 25+, Firefox 19+ or Internet Explorer 9+
     * The eXo server will run on port 8080, make sure this port is not currently in use
 
 -------------------------------------
@@ -70,7 +70,7 @@ How to install add-ons
 -------------------------------------
 
 Several add-ons are not installed by default in the Express and Enterprise version of eXo Platform 4:
-    * crash-addon	    : Common Reusable SHell to interact with the JVM
+    * crash-addon	: Common Reusable SHell to interact with the JVM
     * cmis-addon (*)	: Content Management Interoperability Services
     * ide-addon (*) 	: Integrated online environment to develop applications (cf. next section for its usage)
     * acme-sample (*)	: A demo website built with eXo Platform 4 (cf. next section for its usage)
@@ -93,15 +93,15 @@ Deployment of acme website
 When eXo Platform server is already started and you would like to install acme add-on, you need to follow the steps below:
 * Stop eXo Platform server
 * Install acme add-on with the addon script
-* Set the variable "acme.portalConfig.metadata.override" as true. This can be done by one of the two ways:
-** Use configuration.properties:
-  In this file, you uncomment the line of this parameter
+* Set the variable "exo.acme.portalConfig.metadata.override" as true. This can be done by one of the two ways:
+** Use exo.properties:
+   In this file, you uncomment the line of this parameter and set the value to "true".
 ** Use customization configuration script:
-  When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
-  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
+   When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
+   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 * Stop eXo Platform server.
-* Set the variable "acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
+* Set the variable "exo.acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
 * Start eXo Platform server again to continue using it.
 
 ----------------------------------------------------------------
@@ -110,12 +110,12 @@ Exclusion of the IDE item from Administration drop-down menu
 
 When eXo Platform server integrates the ide add-on and you would like to exclude the IDE item from Administration drop-down menu, follow the steps below:
 * Stop eXo Platform server
-* Set the variable "ide.portalConfig.metadata.override" as false . This can be done by one of the two ways:
-** Use configuration.properties:
-  In this file, you uncomment the line of this parameter
+* Set the variable "exo.ide.portalConfig.metadata.override" as false . This can be done by one of the two ways:
+** Use exo.properties:
+   In this file, you uncomment the line of this parameter and set its value to "false".
 ** Use customization configuration script:
-  When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
-  Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
+   When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
+   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 
 ------------------

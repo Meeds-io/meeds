@@ -131,7 +131,7 @@ REM # Hibernate dialect for supporting Postgresql Plus
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dhibernate.dialect=org.hibernate.dialect.PostgresPlusDialect"
 
 REM # ACME add-on (override default acme site data)
-REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dacme.portalConfig.metadata.override=true"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dexo.acme.portalConfig.metadata.override=true"
 
 REM # IDE add-on (customize default ide add-on data)
-REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dide.portalConfig.metadata.override=false"
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dexo.ide.portalConfig.metadata.override=false"
