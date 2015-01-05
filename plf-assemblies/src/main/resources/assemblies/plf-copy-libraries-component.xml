@@ -96,6 +96,8 @@
         <exclude>*:jaxb*:*</exclude>
         <!-- Don't package any XML APIs dep to avoid conflicts the JVM -->
         <exclude>*:xmlParserAPIs:*</exclude>
+        <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
+        <exclude>org.icepdf:icepdf-core:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
