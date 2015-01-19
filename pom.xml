@@ -339,8 +339,6 @@
                         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
                         <!-- TO BE FIXED : We cannot exclude it because we need its dependencies but not its jar :( -->
                         <!-- <exclude>org.gatein.shindig:shindig-gadgets</exclude> -->
-                        <!-- This artifact is replaced to override GateIn UI -->
-                        <exclude>org.gatein.portal:exo.portal.webui.core:jar</exclude>
                         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
                         <exclude>rome:modules:*</exclude>
                         <!-- PLF-4963 : Don't package any jaxb dep to avoid conflicts with the version provided in Java 6 -->
@@ -375,34 +373,7 @@
                   </rules>
                   <fail>true</fail>
                 </configuration>
-              </execution>
-              <execution>
-                <id>enforce-ban-duplicate-classes</id>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-                <configuration>
-                  <rules>
-                    <!-- WARNING : Find all classes delivered in several artifacts that may create conflicts and arbitrary selection depending of the app server, classloader, ... -->
-                    <banDuplicateClasses>
-                      <message>Maven found in the dependency tree some artifacts with duplicated classes. You should take care to exclude them in the packaging level and to cleanup the dependency tree.</message>
-                      <findAllDuplicates>true</findAllDuplicates>
-                      <dependencies>
-                        <dependency>
-                          <!-- We override GateIn L&F from org.gatein.portal:exo.portal.webui.core -->
-                          <groupId>org.exoplatform.platform-ui</groupId>
-                          <artifactId>platform-ui-webui-core</artifactId>
-                          <type>jar</type>
-                          <ignoreClasses>
-                            <ignoreClass>org.exoplatform.webui.*</ignoreClass>
-                          </ignoreClasses>
-                        </dependency>
-                      </dependencies>
-                    </banDuplicateClasses>
-                  </rules>
-                  <fail>false</fail>
-                </configuration>
-              </execution>
+              </execution>              
               <execution>
                 <id>enforce-upper-bound-deps</id>
                 <goals>

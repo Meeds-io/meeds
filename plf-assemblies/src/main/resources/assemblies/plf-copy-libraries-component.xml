@@ -86,8 +86,6 @@
         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
         <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
         <exclude>org.gatein.shindig:shindig-gadgets</exclude>
-        <!-- This artifact is replaced to override GateIn UI -->
-        <exclude>org.gatein.portal:exo.portal.webui.core:jar</exclude>
         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
         <exclude>rome:modules:*</exclude>
         <!-- this is a build resource -->
