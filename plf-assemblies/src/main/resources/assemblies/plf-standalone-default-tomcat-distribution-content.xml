@@ -256,10 +256,19 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform-ui:platform-ui-web-eXoResources:war</include>
+        <include>org.gatein.portal:exo.portal.web.eXoResources:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>eXoResources.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform-ui:platform-ui-skin:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>eXoSkin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>

@@ -82,11 +82,6 @@
           <artifactId>javax.servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
-        <exclusion>
-          <artifactId>exo.portal.webui.core</artifactId>
-          <groupId>org.gatein.portal</groupId>
-        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -158,11 +153,6 @@
         <exclusion>
           <artifactId>stax-api</artifactId>
           <groupId>javax.xml.stream</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.eXo -->
-        <exclusion>
-          <artifactId>exo.portal.webui.core</artifactId>
-          <groupId>org.gatein.portal</groupId>
         </exclusion>
         <!-- Coming by transitivity from org.picketlink.idm:picketlink-idm-core -->
         <exclusion>
@@ -646,17 +636,13 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
-      <artifactId>platform-ui-web-eXoResources</artifactId>
+      <artifactId>platform-ui-skin</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
-      <artifactId>platform-ui-web-eXoResources</artifactId>
+      <artifactId>platform-ui-skin</artifactId>
       <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform-ui</groupId>
-      <artifactId>platform-ui-webui-core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
@@ -837,6 +823,11 @@
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.portlet.web</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.web.eXoResources</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
