@@ -548,15 +548,6 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.forum:forum-answer-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>faq.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
         <include>org.exoplatform.forum:forum-gadgets:war</include>
       </includes>
       <scope>provided</scope>
