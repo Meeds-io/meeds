@@ -96,6 +96,8 @@
         <exclude>*:xmlParserAPIs:*</exclude>
         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
         <exclude>org.icepdf:icepdf-core:*</exclude>
+        <!-- COR-338: Exclude Apache poi-ooxml 3.8. Platform uses now 3.8-eXo01 -->
+        <exclude>org.apache.poi:poi-ooxml:[3.8]</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
