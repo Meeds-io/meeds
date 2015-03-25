@@ -3,271 +3,113 @@ Changelog Platform ${org.exoplatform.platform.version}
 =========================
 
  
-eXo Platform 4.1-M2  
+eXo Platform 4.2.0-M2  
 *************************
 
 ** Bug
-    * [PLF-5689] - Cross icon is not functionnal
-    * [PLF-5690] - After Weemo Download, the bar is displayed again for few second
-    * [PLF-5692] - user can acces to video call addons while he don't have permission
-    * [PLF-5693] - Text field to input user/group name is not editable
-    * [PLF-5694] - The owner is deleted after a cancel of the confirmation pop up
-    * [PLF-5695] - In Admin Call video page, the button "Cancel" should not be displayed
-    * [PLF-5696] - Video Call cannot be performed
-    * [PLF-5697] - Check the call button in Suggestion gadget popover
-    * [PLF-5698] - Check the call button in Profile page
-    * [PLF-5720] - CLONE - [IE] Loading forever of user popup
-    * [PLF-5729] - Update the new attributes for video calls admin portlet
-    * [PLF-5744] - Video Calls - Weemo Driver Installer is displayed after clicking on Download
-    * [PLF-5746] - Video Calls - Driver installed, the message is still displayed
-    * [PLF-5747] - Video Calls - No mousover on a disabled button
-    * [PLF-5748] - Video Calls - Review layout of Call button and User Popup for connected users
-    * [PLF-5749] - Video Calls - Call button always disabled 
-    * [PLF-5751] - Video Calls - Missing hint for the user/group selector text field
-    * [PLF-5753] - Video Calls - Inconsistency with Any permission
-    * [PLF-5754] - Video Calls - Can't turn off if the fields are not filled
-    * [PLF-5755] - Video Calls - Test Weemo Connection isn't done on updated fields
-    * [PLF-5757] - Video Calls - Common Certificate name isn't updated
-    * [PLF-5760] - Video Calls - Wrong popup, icon and hint for the group selector 
-    * [PLF-5761] - Video Calls - Fail to update existing permissions
-    * [PLF-5764] - Video Calls - Remove space in Weemo settings
-    * [PLF-5769] - Video Calls - Update name for the 1:1 permission column
-    * [PLF-5778] - nonexistent user can be added to the permission list
-    * [PLF-5779] - existant user is not added with the full name in the list of owner
-    * [PLF-5780] - Bad displays of "Invitation Received" in connexion page
-    * [PLF-5784] - The call button is displayed in user's profile page
-    * [PLF-5787] - Wrong UI for mandatory messages
-    * [PLF-5790] - Error in Video Call portlet after click on "Test Weemo Connection"
-    * [PLF-5791] - The link "Dowload Weemo" gives an old weemo version 4.2.1191
-    * [PLF-5807] - An error pop up is displayed when click Test weemo connection 
-    * [PLF-5809] - The Button Call in user's profile page is not functionnal
-    * [PLF-5810] - The Call button is displayed in profile page of the user owner of the session
-    * [PLF-5823] - Lack of question icon on Delete confirmation
-    * [PLF-5891] - [SpaceNavigationPortlet] Wrong URL when switching between spaces
-    * [PLF-5948] - Video calls - Calls are unstable
-    * [PLF-5958] - Incorrect UI of Who's online 
+    * [PLF-5874] - Redundant User navigation in built-in Answers page
+
+
+** Task
+    * [PLF-6211] - PLF 4.2 - Fix blocker & critical violation on Sonar 
+    * [PLF-6217] - Release Platform 4.2.0-M2
+
+
+eXo ECMS 4.2.0-M2  
+*************************
+
+** Bug
+    * [ECMS-5818] - Drive manager service always reinit data at startup
+    * [ECMS-6051] - Unknown error and exception thrown when creating a web content with name "%"
+    * [ECMS-6054] - Problem when restore many nodes with the same title
+    * [ECMS-6057] - When editing a webcontent, summary and comment lines are shown incorrectly
+    * [ECMS-6106] - [ECM Admin] Impossible to import a node type
+    * [ECMS-6121] - Script isn't saved in File
+    * [ECMS-6185] - SuperType is mandatory while adding a mixin
+    * [ECMS-6218] - [Content Explorer] Wrong date validator in Advanced Search form
+    * [ECMS-6250] - Display incorrect alert message when paste an image file
+    * [ECMS-6323] - Information message is shown twice after clicking Delete icon on a content of CLV
+    * [ECMS-6355] - Display error message when add new Category start with '%' character
+    * [ECMS-6363] - Unknow error message displays when adding label with "[" character
+    * [ECMS-6380] - Error during removing audited node
+    * [ECMS-6382] - [CKEditor] Allow to customize Shift Enter mode
+    * [ECMS-6430] - [CKEditor][IE11] All buttons (Close, OK, Cancel) doesn't work when attaching image 
+    * [ECMS-6447] -  IllegalArgumentException when restoring file containing index
+    * [ECMS-6467] - Cannot search file content containing ' character in acme
+    * [ECMS-6477] - Cannot delete child nodes after rename a node at first time
+    * [ECMS-6479] - Cannot cut and paste a document into a Content Folder
+    * [ECMS-6500] - Unknown error when adding query with : in name
+    * [ECMS-6517] - [Unified Search]: Duplicated documents search results when content and title contain the keyword
 
 ** Feedback
-    * [PLF-5688] - The Weemo install driver bar appears only after setting the key
-    * [PLF-5758] - Video Calls - Typo in the admin portlet url
-    * [PLF-5767] - Video Calls - Review some french labels
-    * [PLF-5785] - Confirmation Delete pop up is displayed from the top of the page
-    * [PLF-5788] - One mandatory message is displayed for many empty fields
-    * [PLF-5805] - The settings confirmation message is wrong displayed 
-    * [PLF-5825] - "Move" icon is displayed over a pop up
+    * [ECMS-5052] - [ECMAdmin] UI glitches and UXP in Edit Category Tree screens
+
+
+eXo Commons 4.2.0-M2  
+*************************
+
+** Bug
+    * [COMMONS-391] - Escape content data in ckeditor
 
 ** Improvement
-    * [PLF-5682] - User Status rest service on Who's online portlet
+    * [COMMONS-355] - [CKEditor] Allow to customize Shift Enter mode
+    * [COMMONS-382] - Upgrade to latest stable version of CKEditor (4.4.x)
 
-** Task
-    * [PLF-5836] - Documentation - Update links of the Help feature 4.1
-    * [PLF-5856] - [crowdin 4.1] Update properties/xml files on Platform 4.1
-    * [PLF-5867] - Use Jboss EAP 6.1.1 for Platform 4.0.6 (internal usage)
-    * [PLF-5892] - Data upgrade in Platform 4.1-M2
-    * [PLF-5951] - Update credentials and urls which given by weemo
-    * [PLF-5960] - Release PLF 4.1-M2
+** Sub-task
+    * [COMMONS-383] - Label of Insert Portal Link plugin is 'undefined' in IE
 
 
-eXo ECMS 4.1-M2  
+
+eXo WIKI 4.2.0-M2  
 *************************
 
 ** Bug
-    * [ECMS-5157] - Incorrect UI of Version Info
-    * [ECMS-5595] - Several problems with Product template
-    * [ECMS-5878] - Acme icons disappear
-    * [ECMS-6046] - Sites explorer is broken when edit default.html of a web content then Save&Close
-    * [ECMS-6134] - UXP issues when creating folders
-    * [ECMS-6181] - Acme homepage is not shown properly
-    * [ECMS-6189] - [Migration] can not create webcontent and file after migration from PLF-4.0.x to PLF-4.1-M1
-    * [ECMS-6190] - Wrong behavior when adding more than 1 permission to Document dialog/view
-    * [ECMS-6212] - Versioning doesn't work on Cloud
-    * [ECMS-6244] - NPE when uploading .txt file to a web content
-    * [ECMS-6247] - NPE when rename file in Documents
-
-** Documentation
-    * [ECMS-6073] - Documentation for weemo extension
-
-** Improvement
-    * [ECMS-6126] - ERROR: getUserState() failed because of o.e.services.user.UserStateService when checking user status
-    * [ECMS-6227] - Improve code on template of file UIToolbarContainer.gtmpl
-
-** New Feature
-    * [ECMS-5822] - Video Calls Addon
-
-** Task
-    * [ECMS-6161] - [crowdin 4.1] Update properties/xml files on Platform 4.1
-    * [ECMS-6201] - Backport fix from 4.0.6 to 4.1.x
-
-eXo Commons 4.1-M2  
-*************************
-
-** Bug
-    * [COMMONS-309] - [Activity Composer] Problems when sharing a file
-    * [COMMONS-334] - Big font size are cut in Font size list
-
-** Task
-    * [COMMONS-316] - [crowdin 4.1] Update properties/xml files on Platform 4.1
-    * [COMMONS-318] - Add JUnit test for some services are using for weemo
-
-
-eXo WIKI 4.1-M2  
-*************************
-
-** Bug
-    * [WIKI-593] - Invalid percent escape for page with national name
-    * [WIKI-685] - Error when creating/adding/editing/switching page in IE.
-    * [WIKI-705] - Hard-coded labels in some Page version forms
-    * [WIKI-884] - [Unified search] Cannot search for content of a Wiki page
+    * [WIKI-420] - Incorrect behavior of Search Completion
+    * [WIKI-871] - Display wrong position of page when add/edit a page has the same title with existing page
+    * [WIKI-945] - [Create wiki page][Attach image] Name of image is displayed after closing preview mode
+    * [WIKI-974] - Loss content while saving a page with page's name existed.
+    * [WIKI-984] - [Export to PDF] Missing non-Latin letters
 
 ** Feedback
-    * [WIKI-907] - CLONE - border of tables missing in wiki
+    * [WIKI-551] - Confusing usage of Revision
+
+
+
+eXo Social 4.2.0-M2  
+*************************
+
+** Bug
+    * [SOC-4696] - [User Profile] Duplicated ear on user navigation
+
+
+eXo Calendar 4.2.0-M2  
+*************************
+
+** Bug
+    * [CAL-534] - Should improve the way to repeat with the day of the week option
+    * [CAL-1018] - [Unified Search]: Problem when search event with key search contain number
 
 ** Task
-    * [WIKI-881] - [crowdin 4.1] Update properties/xml files on Platform 4.1
-
-
-eXo Social 4.1-M2  
-*************************
-
-** Bug
-    * [SOC-3505] - IE8: Don't show Space Menu portlet after edit layout of page
-    * [SOC-3711] - Error in posting activities in case of there is the same in name of space and user.
-    * [SOC-3712] - Error in posting activities when there are user and space of same name
-    * [SOC-3807] -  [People] Cannot search people by positions in experience
-    * [SOC-4038] - [XSS] Applications - Add portlet - Display Name
-    * [SOC-4102] - [Space Member] Show More button doesn't work
-    * [SOC-4116] - The mail link in user profile is not clickable
-    * [SOC-4120] - [performance] [soc-notification] Post on space home too slow cause by sending instant email and display activities
-    * [SOC-4156] - text linked to activity attachment is not displayed in email notif
-    * [SOC-4199] - [Jboss] social-notification-extension exception
-    * [SOC-4215] - [Notification] [More] or [Others] in digest mail is shown in wrong style
-    * [SOC-4216] - [Notification] Wrong to show title of User Notification setting on Navigation
-    * [SOC-4218] - [Connection] Search area is broken when typing into name field
-    * [SOC-4220] - Comment of updating user profile is only displayed on user activity stream 
-    * [SOC-4222] - [User Popup] Incorrect Activity link when Platform runs inside an IFrame
-    * [SOC-4226] - [Generic user popup] Not refresh automatically after click Connect in Connection application
-    * [SOC-4236] - [Suggestion gadget] Deleted user is displayed in the gadget
-    * [SOC-4239] - [IE8]No user avatar in activity's comment.
-    * [SOC-4252] - Exception when approve a censor post in forum
-    * [SOC-4257] - [Send digest mail] Send mail function is not stable
-    * [SOC-4259] - [Profile] Unknown error raised when update position on Profile page.
-    * [SOC-4262] - [Activity Stream] Error in creating activity references when approve censor post on Forums.
-    * [SOC-4263] - [Spaces] Redirect to intranet home page after creating successfuly a space
-    * [SOC-4272] - Cannot like or comment an activity on which I'm mentioned
-    * [SOC-4281] - UndeclaredThrowableException of UIActivitiesLoader while posting on stream
-    * [SOC-4283] - Invitation portlet show myself and duplicate
-    * [SOC-4292] - [XSRF] UIBasicInfoSection Form need to be configured to prevent the change of user profile
-    * [SOC-4300] - UndeclaredThrowableException of UIActivitiesLoader by NullPointerException while posting on stream
-
-** Documentation
-    * [SOC-4164] - Improve Social Caches documentation
-
-** Feedback
-    * [SOC-4111] - [User profile] The field "position" isn't very clear
-    * [SOC-4114] - [Space Member Management] Auto-complete should contain the full name when inviting users into space
-    * [SOC-4183] - Too much log INFO on notification
-    * [SOC-4189] - Space navigation when creating new node in a space
-    * [SOC-4207] - [Notification] Feedback should be updated when user refuse request to join from the 2nd time
-    * [SOC-4209] - [Space Notification] Feedback should be updated when users refuse space invitation after accepting it
-
-** Improvement
-    * [SOC-3006] - [Space] Localize the Application titles in Space Menu
-    * [SOC-4118] - Slowness in suggestion portlet
-    * [SOC-4217] - [Notification] Improves computing way to build receiver for Activity notification with HashSet
-
-** Task
-    * [SOC-4135] - [Contact Information] Hard-coded values of Gender, Telephone, SMS
-    * [SOC-4223] - [crowdin 4.1] Update properties/xml files on Platform 4.1
-    * [SOC-4275] - Sonar build failed due to empty class
-
-eXo Calendar 4.1-M2  
-*************************
-
-** Bug
-    * [CAL-731] - Changes made to exception events are lost after editing all the events
-    * [CAL-836] - End date suggestion default config not load as well
-    * [CAL-904] - Display bad labels in the confirmation pop-up when editing/deleting recurring event
-    * [CAL-919] - Select Group label is not shown on IE9
-    * [CAL-949] - Bad label in the confirmation pop-up when dragging and dropping to resize a recurring event
-    * [CAL-952] - Incorrect message in the confirmation pop-up when deleting recurring events in month view
-
-
-eXo Forum 4.1-M2  
-*************************
-
-** Bug
-    * [FORUM-540] - Checkbox to select/ unselect all categories in Export Categories screen does not work
-    * [FORUM-702] - Get posts by postFilter return wrong result 
-    * [FORUM-751] - XSS with bbcode tag which support attribute like size, color, url
-    * [FORUM-764] - [Answer] XSS vulnerability in Author Field 
-    * [FORUM-775] - Not show poll after vote a poll
-    * [FORUM-776] - [Topic] Empty confirmation message when clicking Watch List
-    * [FORUM-804] - [IE8] Can not jump to the last reply when click on 'View the latest reply'
-    * [FORUM-808] - Got "Failed to save category error" when creating new space
-    * [FORUM-835] - [Answers] When moving a question, its activity should also be moved 
-    * [FORUM-836] - Topic with two message's pages is lost when deleting first message of page 2
-    * [FORUM-843] - [IE8-Answer] Exception thrown when answer a question on a page of accent characters
-    * [FORUM-851] - Private Post is not displayed when clicking on 'Click here' link in the Notification
-    * [FORUM-853] - [Forum] Activity is't updated after approving a censored post in topic
-    * [FORUM-857] - [Poll] Not link to Poll page when click on 'Vote' and Poll's name incase add poll from Poll portlet
-    * [FORUM-864] - Code is shown when not select any Post to Censor
-    * [FORUM-869] - Wrong display poll in poll portlet when access by url
-    * [FORUM-883] - [Poll] Poll isn't shown when view topic page
-    * [FORUM-888] - [Forum]Problems in Italian due to unescaped single quote
-    * [FORUM-900] - FAQ is empty with renamed spaces
-    * [FORUM-908] - Cannot save category scoping if click Save on other tab
-
-** Documentation
-    * [FORUM-841] - Create Forum / FAQ/ Answers Caches documentation
-
-** Feedback
-    * [FORUM-855] - [Topic] Should be show only one wanrning message when add blank Tag by pressing Enter key to Submit
-
-** Improvement
-    * [FORUM-675] - Get domain URL not flexible now
-
-
-eXo Integration 4.1-M2  
-*************************
-
-** Bug
-    * [INTEG-316] - Exception on broadcasting events occurs when manage publication
-
-** Task
-    * [INTEG-300] - [crowdin 4.1] Update properties/xml files on Platform 4.1
+    * [CAL-1070] - Remove workaround for CS standalone from calendar project 
+    * [CAL-1079] - Fix Sonar critical issue
 
  
-eXo GateIn 3.5.10-PLF  
+eXo GateIn 4.2.0-M2-PLF  
 *************************
-** Bug
-    * [EXOGTN-1088] - Recursive paste navigation nodes in navigation editor
-    * [EXOGTN-1399] - Backport GTNPORTAL-3225 Height and width of Portlets are not updated after setting
-    * [EXOGTN-1758] - Changes in Templates in one node are not replicated immediately to all cluster nodes
-    * [EXOGTN-1761] - [Edit Page Layout] Add tab container button is hidden
-    * [EXOGTN-1767] - [IE8] Impossible to edit/maximize/delete a gadget in the dashboard
-    * [EXOGTN-1777] - XSS vulnerability in UIForm
-    * [EXOGTN-1778] - XSS vulnerability in UIFormTabPane
-    * [EXOGTN-1784] - Failed authentication on service REST after a session timeout
-    * [EXOGTN-1806] - NPE in PicketLinkIDMServiceImpl.getIdentitySession during startup when eXo MBeans are invoked
 
+** Bug
+    * [EXOGTN-1368] - Unknown error when create a page with name "FAQ" under default node
+
+** Task
+    * [EXOGTN-1987] - Upgrade version of maven release plugin
+    * [EXOGTN-1938] - Moving Answer & FAQ as a seperated eXo add-on
 
 ** Improvement
-    * [EXOGTN-1633] - Custom validator of page node name
+    * [EXOGTN-1882] - Migrate from Juzu 0.6 to 1.0.0 in PLF 4.2 
+    * [EXOGTN-1955] - [platform-ui] UICheckBoxInput and AbstractValidator not easy to use label
+
 
  
-eXo JCR 1.15.9
-***********************
-** Bug
-    * [JCR-2281] - Loading all the properties into the cache causes undesirable side effects
-    * [JCR-2283] - Cannot create new user on a preloaded database with 10 thousands of users
-    * [JCR-2296] - TestPermissions fails when the cache is disabled with single mode
-
-
-eXo Kernel 2.4.9
-**********************
-** Bug
-    * [KER-280] - Cannot getConfigurationXML of Portal Container via jconsole after doing something in eXo Platform
-
 
 
 

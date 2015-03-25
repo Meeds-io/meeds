@@ -1,243 +1,98 @@
 ========================================
-Release notes - eXo Platform ${org.exoplatform.platform.version}
+Release notes - eXo Platform 4.2.0-M2
 ========================================
- 
- 
-Date: ${build.date}
-Version: ${org.exoplatform.platform.version}
- 
- 
+
+
+Date: 25/03/2015
+Version: 4.2.0-M2
+
 I.    MAIN CHANGES
 II.   STARTUP INSTRUCTIONS
 III.  UPGRADE NOTES
 
+= I. MAIN CHANGES =
 
+Main changes since Platform 4.2.0-M2
+* Skin module
 
-================
-I. MAIN CHANGES
-================
-
-
-Main changes since Platform 4.1-M2:
-* Bug fixes
-* Dynamic Portlet Container
-
-
-=========================
-II. STARTUP INSTRUCTIONS
-=========================
-
+= II. STARTUP INSTRUCTIONS =
 
 The file README.txt contains information on how to start the product.
 
-
-===================
-III. UPGRADE NOTES
-===================
-
+= III. UPGRADE NOTES =
 
 The upgrade procedure is only guaranteed and tested to be transparent from the previous maintenance version (x.y.z from x.y.z-1). So, we recommend to apply upgrade procedures for all versions between your current and the target one.
 However, if you still insist on skipping versions, we strongly advise to read all upgrade notes of the versions you are skipping to see if your project is impacted by any previous upgrade procedure.
 
----------------------------------------------
- Upgrading from Platform 4.1-M2 to 4.1.0-RC1
----------------------------------------------
+== Upgrading from Platform 4.1.0 to 4.2.0-M2 ==
 
 * Prepare bundle:
-** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
-** Go to $PLATFORM-4.1.0-RC1-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.1.0-RC1-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.1-M2-to-4.1.0-RC1-sample.properties to upgrade.properties
+** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
+** Go to $PLATFORM-4.2.0-M2-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-M2-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.1.0-to-4.2.0-M2-sample.properties to upgrade.properties
 * Start server. The upgrade will be run automatically.
 * Stop server.
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
- Description of the plugins used in this upgrade
-**************************************************
+=== Description of the plugins used in this upgrade ===
 
-# ECMS-5998: Change exo:actions property of exo:actionable node to be optionable 
-commons.upgrade.ActionableNodeTypeUpgradePlugin.enable=true
+* The number in parentheses indicates the version for this upgrade.
 
-# ECMS-6276: Add properties 'exo:name' and 'exo:lastModifiedDate' to site node's child nodes
-commons.upgrade.SiteDataUpgradePlugin.enable=true
+# Proceed to the upgrade if it's first time you run this service
+commons.upgrade.proceedIfFirstRun=false
 
-# ECMS-6219: Update CSS File's templates (view and dialog)
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+# Skin module improvement
+commons.upgrade.UserViewUpgradePlugin.enable=true
 
-# WIKI-655: Change application name of Wiki in space to wiki
-commons.upgrade.WikiNameUpgradePlugin.enable=true
-
-# PLF-6012: Add Dynamic portlet containers into legacy pages
-commons.upgrade.PageUpgradePlugin.enable=true
-
-# PLF-5248, PLF-5928, PLF-5930, PLF-5931: Update resource bundles of built-in gadgets
-commons.upgrade.Upgrade-Gadgets.enable=true
-
----------------------------------------------
- Upgrading from Platform 4.0.7 to 4.1.0-RC1
----------------------------------------------
-
-* Prepare bundle:
-** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
-** Go to $PLATFORM-4.1.0-RC1-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.1.0-RC1-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.0.7-to-4.1.0-RC1-sample.properties to upgrade.properties
-* Start server. The upgrade will be run automatically.
-* Stop server.
-* Remove/Rename the file upgrade.properties
-* Restart the server. You're ready.
-
- Description of the plugins used in this upgrade
-**************************************************
-
-The number in parentheses indicates the version for this upgrade.
-
-# ECMS-6276: Add properties 'exo:name' and 'exo:lastModifiedDate' to site node's child nodes (4.1.0-RC1)
-commons.upgrade.SiteDataUpgradePlugin.enable=true
-
-# ECMS-5336: Update Product's templates (view and dialog) (4.1-M1)
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
-
-# ECMS-3854: Customize the sizing of Flash preview (4.1-M1)
-commons.upgrade.FlashNodeTypeUpgradePlugin.enable=true
-
-# WIKI-655: Change application name of Wiki in space to wiki (4.1.0-RC1)
-commons.upgrade.WikiNameUpgradePlugin.enable=true
-
-# FORUM-663: Upgrade groovy template on FAQPortlet's preference (4.1-M1)
-commons.upgrade.FAQPreferenceTemplateUpdaterPlugin.enable=true
-
-# PLF-5218: Add Notifications Setting Management to Top Navigation bar (4.1-M1)
-# ECMS-5822: Add Video calls to Top Navigation bar (4.1-M2)
-commons.upgrade.Upgrade-PortalData.enable=true
-
-# PLF-6012: Add Dynamic portlet containers into legacy pages (4.1.0-RC1)
-commons.upgrade.PageUpgradePlugin.enable=true
-
-# PLF-5248, PLF-5928, PLF-5930, PLF-5931: Update resource bundles of built-in gadgets (4.1.0-RC1)
-commons.upgrade.Upgrade-Gadgets.enable=true
-
----------------------------------------------
- Upgrading from Platform 4.1-M1 to 4.1-M2
----------------------------------------------
-
-* Prepare bundle:
-** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
-
-** The following upgrade plugin must be activated in the $PLATFORM-4.1-M2-TOMCAT_HOME/gatein/conf/configuration.properties (Tomcat bundle) or $PLATFORM-4.1-M2-JBOSS_HOME/standalone/configuration/gatein/configuration.properties (Jboss bundle) file:
-
-# ECMS-5822: Video calls Addon
-commons.upgrade.Upgrade-PortalData.enable=true
-
-# ECMS-6020: Update WCM Search Result template
-# PLF-5806: Update AccessibleBanner template in WAI extension
+# Skin module improvement
 commons.upgrade.WCMTemplateUpgradePlugin.enable=true
 
-# PLF-5834: Update dialog template of Announcement
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true	
- 
-# PLF-5820: Update gadgets
-commons.upgrade.Upgrade-Gadgets.enable=true
-
-# ECMS-4199: Update translation link for websites using Sample Accessible Website Template (a.k.a WAI)
-# (only necessary when WAI extension was installed in the old server)
-commons.upgrade.WaiportalTranslationsUpgradePlugin.enable=true
-
-* Start server. The upgrade will be run automatically
-* Stop server and deactivate the above upgrade configurations:
-
-commons.upgrade.Upgrade-PortalData.enable=false
-commons.upgrade.WCMTemplateUpgradePlugin.enable=false
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=false
-commons.upgrade.Upgrade-Gadgets.enable=false
-commons.upgrade.WaiportalTranslationsUpgradePlugin.enable=false
-
-* All the Upgrade Plugins which are available in configuration.properties but do not mention above must be set as false.
-
-* Restart the server. The upgrade process is done.
-
-
----------------------------------------------
-Upgrading from Platform 4.0.4 to 4.1-M2
----------------------------------------------
- 
-* Prepare bundle:
-** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 6 in Administrator Guide for the detail.
-
-** The following upgrade plugin must be activated in the $PLATFORM-4.1-M2-TOMCAT_HOME/gatein/conf/configuration.properties (Tomcat bundle) or $PLATFORM-4.1-M2-JBOSS_HOME/standalone/configuration/gatein/configuration.properties (Jboss bundle) file:
-
-
-# ECMS-5800: Change the properties exo:script and exo:scriptLabel in built-in ECMS action node types
-commons.upgrade.ActionTypeUpgradePlugin.enable=true
-
-# ECMS-5778, ECMS-5553, ECMS-5615
-commons.upgrade.ScriptUpgradePlugin.enable=true
-
-# ECMS-5812, ECMS-5934, ECMS-5994, ECMS-5951, ECMS-5898, ECMS-5799, ECMS-5629,ECMS-6020,PLF-5806
+# Skin module improvement
 commons.upgrade.SiteExplorerTemplateUpgradePlugin.enable=true
-commons.upgrade.WCMTemplateUpgradePlugin.enable=true
 
-# ECMS-5779: Upgrade templates to view/edit metadata
-commons.upgrade.MetadataTemplateUpgradePlugin.enable=true
-# comment the following line with data created from Platform 4.0.
-unchanged-metadata-templates=rma:transferable, rma:accessionable, rma:vitalRecord, rma:cutoffable, rma:holdable, rma:record, rma:destroyable
+# ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
+commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
 
-# WIKI-706: Remove Wiki Sandbox pages (*only necessary* for the data created from Platform 3.5)
-commons.upgrade.RemoveSandboxPageUpgradePlugin.enable=true
-
-# PLF-5650: Remove public read permission from exo:LoginHistoryHome node
-commons.upgrade.UpgradeExoLoginHistoryHome.enable=true
-
-# ECMS-3854: Customize the sizing of Flash preview
-commons.upgrade.FlashNodeTypeUpgradePlugin.enable=true
-
-# ECMS-5336, ECMS-5370, ECMS-5584, ECMS-5484, ECMS-5417, ECMS-5759, ECMS-5650, PLF-5834 
+# ECMS-6354: Illustrated Web Content - Hard coded initial content
+# ECMS-5566: Improve label formats for better translations
+# Skin module improvement
 commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
 
-# ECMS-5569: Config of Personal drive does not match with the specs
-commons.upgrade.SanitizationUpgradePlugin.enable=true
+# PLF-5874: Redundant User navigation in built-in Answers page (4.2.0-M2)
+commons.upgrade.AnswerPageUpgradePlugin.enable=true
 
-# PLF-5218: Notifications Setting Management
-commons.upgrade.Upgrade-PortalData.enable=true
-
-# FORUM-663: Upgrade groovy template on FAQPortlet's preference
-commons.upgrade.FAQPreferenceTemplateUpdaterPlugin.enable=true
-
-# PLF-5820: Update gadgets
+# UI-3473: Cache level gadget is broken, some information is empty
 commons.upgrade.Upgrade-Gadgets.enable=true
-# ECMS-4199: Update translation link for websites using Sample Accessible Website Template (a.k.a WAI) (only necessary when WAI extension was installed in the old server)
-commons.upgrade.WaiportalTranslationsUpgradePlugin.enable=true
 
 
-* Start server. The upgrade will be run automatically
-* Stop server and deactivate the above upgrade configurations:
 
-commons.upgrade.ActionTypeUpgradePlugin.enable=false
-commons.upgrade.ScriptUpgradePlugin.enable=false
-commons.upgrade.SiteExplorerTemplateUpgradePlugin.enable=false
-commons.upgrade.WCMTemplateUpgradePlugin.enable=false
-commons.upgrade.MetadataTemplateUpgradePlugin.enable=false
-#unchanged-metadata-templates=rma:transferable, rma:accessionable, rma:vitalRecord, rma:cutoffable, rma:holdable, rma:record, rma:destroyable
-commons.upgrade.RemoveSandboxPageUpgradePlugin.enable=false
-commons.upgrade.UpgradeExoLoginHistoryHome.enable=false
-commons.upgrade.FlashNodeTypeUpgradePlugin.enable=false
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=false
-commons.upgrade.SanitizationUpgradePlugin.enable=false
-commons.upgrade.FAQPreferenceTemplateUpdaterPlugin.enable=false
-commons.upgrade.Upgrade-Gadgets.enable=false
-commons.upgrade.WaiportalTranslationsUpgradePlugin.enable=false
+== Upgrading from Platform 4.2.0-M1 to 4.2.0-M2 ==
 
-* All the Upgrade Plugins which are available in configuration.properties but do not mention above must be set as false.
+* Prepare bundle:
+** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
+** Go to $PLATFORM-4.2.0-M2-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-M2-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.2.0-M1-to-4.2.0-M2-sample.properties to upgrade.properties
+* Start server. The upgrade will be run automatically.
+* Stop server.
+* Remove/Rename the file upgrade.properties
+* Restart the server. You're ready.
 
-* Restart the server. The upgrade process is done.
+=== Description of the plugins used in this upgrade ===
 
-Description of Plugins introduced in Platform 4.1-M2
-*****************************************************
-* ActionTypeUpgradePlugin: This plugin is introduced by ECMS-5800 to change the properties exo:script and exo:scriptLabel in built-in ECMS action node types. It allows user to change the values of these properties.
-* MetadataTemplateUpgradePlugin: This plugin is introduced by ECMS-5779 to update the templates to view/edit metadata.
-* RemoveSandboxPageUpgradePlugin: This plugin is introduced by WIKI-706. It deletes all Wiki Sandbox pages generated in Platform 3.5.
-* UpgradeExoLoginHistoryHome: This plugin is introduced by PLF-5650 to remove public read permission from exo:LoginHistoryHome node.
-* FlashNodeTypeUpgradePlugin: This plugin is introduced by ECMS-3854 to customize the sizing of Flash preview
-* SanitizationUpgradePlugin: This plugin is introduced by ECMS-5569 to correct the setting of personal drive.
-* WaiportalTranslationsUpgradePlugin: This plugin is introduced by ECMS-4199 to update translation link for websites using Sample Accessible Websit Template.
+* The number in parentheses indicates the version for this upgrade.
+
+# ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
+commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
+
+# ECMS-6354: Illustrated Web Content - Hard coded initial content
+# ECMS-5566: Improve label formats for better translations
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+
+# PLF-5874: Redundant User navigation in built-in Answers page (4.2.0-M2)
+commons.upgrade.AnswerPageUpgradePlugin.enable=true
+
+# UI-3473: Cache level gadget is broken, some information is empty
+commons.upgrade.Upgrade-Gadgets.enable=true
 
 
