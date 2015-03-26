@@ -12,8 +12,15 @@ III.  UPGRADE NOTES
 
 = I. MAIN CHANGES =
 
-Main changes since Platform 4.2.0-M2
-* Skin module
+Main changes since Platform 4.2.0-M1
+
+* Upgrade Juzu from 0.6.2 to 1.0.0-cr2
+* Upgrade ICEPdf from 4.3.2 to 5.1.1
+* Upgrade PicketLink IDM from 1.4.5 to 1.4.6
+* Upgrade Infinispan from 5.1.7 to 5.1.8
+* Upgrade CKEditor from 4.1.2 to 4.4.6
+* SSO as an add-on
+* Answers FAQ as an add-on
 
 = II. STARTUP INSTRUCTIONS =
 

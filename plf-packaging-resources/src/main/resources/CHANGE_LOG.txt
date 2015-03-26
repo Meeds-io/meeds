@@ -10,11 +10,6 @@ eXo Platform 4.2.0-M2
     * [PLF-5874] - Redundant User navigation in built-in Answers page
 
 
-** Task
-    * [PLF-6211] - PLF 4.2 - Fix blocker & critical violation on Sonar 
-    * [PLF-6217] - Release Platform 4.2.0-M2
-
-
 eXo ECMS 4.2.0-M2  
 *************************
 
@@ -40,6 +35,10 @@ eXo ECMS 4.2.0-M2
     * [ECMS-6479] - Cannot cut and paste a document into a Content Folder
     * [ECMS-6500] - Unknown error when adding query with : in name
     * [ECMS-6517] - [Unified Search]: Duplicated documents search results when content and title contain the keyword
+    * [ECMS-6503] - Wrong message when adding action type with special characters
+    * [ECMS-6353] - User who is not granted to view a category still see this category
+    * [ECMS-6356] - Display incorrect category name with special characters when add a category to content
+    * [ECMS-6292] - Exception occurs when Inserting a script in field "Property" of Advanced Search
 
 ** Feedback
     * [ECMS-5052] - [ECMAdmin] UI glitches and UXP in Edit Category Tree screens
@@ -54,10 +53,6 @@ eXo Commons 4.2.0-M2
 ** Improvement
     * [COMMONS-355] - [CKEditor] Allow to customize Shift Enter mode
     * [COMMONS-382] - Upgrade to latest stable version of CKEditor (4.4.x)
-
-** Sub-task
-    * [COMMONS-383] - Label of Insert Portal Link plugin is 'undefined' in IE
-
 
 
 eXo WIKI 4.2.0-M2  
@@ -89,20 +84,12 @@ eXo Calendar 4.2.0-M2
     * [CAL-534] - Should improve the way to repeat with the day of the week option
     * [CAL-1018] - [Unified Search]: Problem when search event with key search contain number
 
-** Task
-    * [CAL-1070] - Remove workaround for CS standalone from calendar project 
-    * [CAL-1079] - Fix Sonar critical issue
 
- 
 eXo GateIn 4.2.0-M2-PLF  
 *************************
 
 ** Bug
     * [EXOGTN-1368] - Unknown error when create a page with name "FAQ" under default node
-
-** Task
-    * [EXOGTN-1987] - Upgrade version of maven release plugin
-    * [EXOGTN-1938] - Moving Answer & FAQ as a seperated eXo add-on
 
 ** Improvement
     * [EXOGTN-1882] - Migrate from Juzu 0.6 to 1.0.0 in PLF 4.2 
