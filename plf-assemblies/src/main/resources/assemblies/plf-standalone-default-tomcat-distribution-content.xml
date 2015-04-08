@@ -56,9 +56,6 @@
         <exclude>**/NOTICE*</exclude>
         <exclude>**/RELEASE-NOTES*</exclude>
         <exclude>**/RUNNING*</exclude>
-        <!-- The startup is horribly slow with websocket -->
-        <!-- http://wiki.apache.org/tomcat/HowTo/FasterStartUp -->
-        <exclude>**/lib/tomcat7-websocket.jar</exclude>
       </excludes>
     </fileSet>
     <!-- Unix shell scripts with exec rights -->
