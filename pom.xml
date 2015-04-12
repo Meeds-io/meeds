@@ -64,7 +64,7 @@
     <!-- The version of Platform To bundle -->
     <org.exoplatform.platform.version>4.2.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>1.0.0</org.exoplatform.platform.addons-manager.version>
+    <org.exoplatform.platform.addons-manager.version>1.0.1</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>7.0.55</org.apache.tomcat.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
