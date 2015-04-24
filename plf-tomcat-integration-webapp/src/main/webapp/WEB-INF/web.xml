@@ -30,4 +30,6 @@
     <servlet-class>org.gatein.wci.tomcat.TC7ContainerServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+
+  <absolute-ordering/>
 </web-app>

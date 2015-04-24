@@ -28,4 +28,6 @@
 
   <display-name>Welcome to eXo platform</display-name>
   <description>Welcome to eXo platform</description>
+
+  <absolute-ordering/>
 </web-app>
