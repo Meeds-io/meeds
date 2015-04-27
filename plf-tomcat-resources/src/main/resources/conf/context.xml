@@ -27,6 +27,6 @@
   <!-- Default set of monitored resources -->
   <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
-  <Valve className="org.gatein.sso.agent.tomcat.ServletAccessValve" />
+  <Valve className="org.gatein.sso.agent.tomcat.ServletAccessValve" asyncSupported="true"/>
 
 </Context>
