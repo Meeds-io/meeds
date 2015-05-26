@@ -182,6 +182,11 @@
           <artifactId>servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.database -->
+        <exclusion>
+          <artifactId>ow2-jta-1.1-spec</artifactId>
+          <groupId>org.ow2.spec.ee</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -430,6 +435,11 @@
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
+    </dependency>
+    <!-- PLF-5361 - Add infinispan artifacts -->
+    <dependency>
+      <groupId>org.exoplatform.kernel</groupId>
+      <artifactId>exo.kernel.component.ext.cache.impl.infinispan.v5</artifactId>
     </dependency>
     <!-- Platform Upgrade Plugins -->
     <dependency>
@@ -782,6 +792,22 @@
           <groupId>javax.activation</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
+    <dependency>
+        <groupId>org.gatein.portal</groupId>
+        <artifactId>exo.portal.component.web.oauth-web</artifactId>
+        <exclusions>
+            <exclusion>
+                <artifactId>sso-integration</artifactId>
+                <groupId>org.gatein.sso</groupId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+    <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
+    <dependency>
+        <groupId>org.gatein.cdi</groupId>
+        <artifactId>gatein-cdi-injection</artifactId>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>

@@ -336,9 +336,6 @@
                         <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
                         <exclude>org.jboss.spec.javax.transaction:*</exclude>
                         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
-                        <!-- Workaround for GTNPORTAL-2782 Decouple gadgets-core from shindig-gadgets -->
-                        <!-- TO BE FIXED : We cannot exclude it because we need its dependencies but not its jar :( -->
-                        <!-- <exclude>org.gatein.shindig:shindig-gadgets</exclude> -->
                         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
                         <exclude>rome:modules:*</exclude>
                         <!-- PLF-4963 : Don't package any jaxb dep to avoid conflicts with the version provided in Java 6 -->
