@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>4.3.x-SNAPSHOT</version>
+  <version>4.3.x-pkgpub-task-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Platform Public Distributions</name>
   <modules>
@@ -62,7 +62,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.3.x-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.3.x-plf-task-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.0.2</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->

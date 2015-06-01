@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.3.x-SNAPSHOT</version>
+    <version>4.3.x-pkgpub-task-SNAPSHOT</version>
   </parent>
   <artifactId>plf-packaging-resources</artifactId>
   <packaging>pom</packaging>
