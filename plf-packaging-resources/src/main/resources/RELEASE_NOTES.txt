@@ -1,10 +1,10 @@
 ========================================
-Release notes - eXo Platform 4.2.0-M2
+Release notes - eXo Platform 4.2.0
 ========================================
 
 
-Date: 25/03/2015
-Version: 4.2.0-M2
+Date: 22/06/2015
+Version: 4.2.0
 
 I.    MAIN CHANGES
 II.   STARTUP INSTRUCTIONS
@@ -12,15 +12,10 @@ III.  UPGRADE NOTES
 
 = I. MAIN CHANGES =
 
-Main changes since Platform 4.2.0-M1
+Main changes since Platform 4.2.0-RC1
 
-* Upgrade Juzu from 0.6.2 to 1.0.0-cr2
-* Upgrade ICEPdf from 4.3.2 to 5.1.1
-* Upgrade PicketLink IDM from 1.4.5 to 1.4.6
-* Upgrade Infinispan from 5.1.7 to 5.1.8
-* Upgrade CKEditor from 4.1.2 to 4.4.6
-* SSO as an add-on
-* Answers FAQ as an add-on
+* Bug fixes
+
 
 = II. STARTUP INSTRUCTIONS =
 
@@ -31,12 +26,12 @@ The file README.txt contains information on how to start the product.
 The upgrade procedure is only guaranteed and tested to be transparent from the previous maintenance version (x.y.z from x.y.z-1). So, we recommend to apply upgrade procedures for all versions between your current and the target one.
 However, if you still insist on skipping versions, we strongly advise to read all upgrade notes of the versions you are skipping to see if your project is impacted by any previous upgrade procedure.
 
-== Upgrading from Platform 4.1.0 to 4.2.0-M2 ==
+== Upgrading from Platform 4.1.0 to 4.2.0 ==
 
 * Prepare bundle:
 ** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
-** Go to $PLATFORM-4.2.0-M2-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-M2-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.1.0-to-4.2.0-M2-sample.properties to upgrade.properties
+** Go to $PLATFORM-4.2.0-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.1.0-to-4.2.0-sample.properties to upgrade.properties
 * Start server. The upgrade will be run automatically.
 * Stop server.
 * Remove/Rename the file upgrade.properties
@@ -49,22 +44,29 @@ However, if you still insist on skipping versions, we strongly advise to read al
 # Proceed to the upgrade if it's first time you run this service
 commons.upgrade.proceedIfFirstRun=false
 
-# Skin module improvement
+#ECMS-6815: Open Document in Office
+commons.upgrade.SiteExplorerTemplateUpgradePlugin.enable=true
+
+#ECMS-6815: Open Document in Office
 commons.upgrade.UserViewUpgradePlugin.enable=true
 
-# Skin module improvement
-commons.upgrade.WCMTemplateUpgradePlugin.enable=true
+#ECMS-6487: Document Preview
+# ECMS-5566: update Comment's view
+# PLF-6066: update the dialog template of content types in exo-acme-sample addon and in exo-wai-sample addon
+#ECMS-6812: Webcontent content is encoded many times
+#ECMS-6829: [acme-website] Impossible to create Contact Us
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
 
-# Skin module improvement
-commons.upgrade.SiteExplorerTemplateUpgradePlugin.enable=true
+#ECMS-6479: Update label format in WCM Search Result when there are results
+#ECMS-6017: HTML Lists not well displayed in HTML file
+#ECMS-6857: [XSS]"Description" field in Metadata has XSS vulnerability for CLV
+commons.upgrade.WCMTemplateUpgradePlugin.enable=true
 
 # ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
 commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
 
-# ECMS-6354: Illustrated Web Content - Hard coded initial content
-# ECMS-5566: Improve label formats for better translations
-# Skin module improvement
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+# ECMS-6590: update AddToFavorites.groovy
+commons.upgrade.ScriptUpgradePlugin.enable=true
 
 # PLF-5874: Redundant User navigation in built-in Answers page (4.2.0-M2)
 commons.upgrade.AnswerPageUpgradePlugin.enable=true
@@ -72,14 +74,25 @@ commons.upgrade.AnswerPageUpgradePlugin.enable=true
 # UI-3473: Cache level gadget is broken, some information is empty
 commons.upgrade.Upgrade-Gadgets.enable=true
 
+#SOC-4458: Intranet Notifications - Register new page View All Notification PLF 4.2-RC1
+commons.upgrade.Upgrade-PortalData.enable=true
+
+#SOC-4458: Intranet Notifications - Register new node type to store the Intranet Notifications PLF 4.2-RC1
+commons.upgrade.UpgradeNotifcationNodeTypePlugin.enable=true
+
+#SOC-4458: Intranet Notifications - Migrate use setting from old version to use Intranet Notification system PLF 4.2-RC1 (4.2.0-RC1)
+commons.upgrade.UpgradeUserNotificationSettingPlugin.enable=true
+
+#SOC-4399: Missing post and Server become slow when share activities on Activity Stream (4.2.0-RC1)
+commons.upgrade.ModelOverriderUpdaterPlugin.enable=true
 
 
-== Upgrading from Platform 4.2.0-M1 to 4.2.0-M2 ==
+== Upgrading from Platform 4.2.0-RC1 to 4.2.0 ==
 
 * Prepare bundle:
 ** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
-** Go to $PLATFORM-4.2.0-M2-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-M2-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.2.0-M1-to-4.2.0-M2-sample.properties to upgrade.properties
+** Go to $PLATFORM-4.2.0-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Rename upgrade-4.2.0-RC1-to-4.2.0-sample.properties to upgrade.properties
 * Start server. The upgrade will be run automatically.
 * Stop server.
 * Remove/Rename the file upgrade.properties
@@ -89,17 +102,10 @@ commons.upgrade.Upgrade-Gadgets.enable=true
 
 * The number in parentheses indicates the version for this upgrade.
 
-# ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
-commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
-
-# ECMS-6354: Illustrated Web Content - Hard coded initial content
-# ECMS-5566: Improve label formats for better translations
+#ECMS-6812: Webcontent content is encoded many times
+#ECMS-6829: [acme-website] Impossible to create Contact Us
 commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
 
-# PLF-5874: Redundant User navigation in built-in Answers page (4.2.0-M2)
-commons.upgrade.AnswerPageUpgradePlugin.enable=true
-
-# UI-3473: Cache level gadget is broken, some information is empty
-commons.upgrade.Upgrade-Gadgets.enable=true
-
-
+#ECMS-6017: HTML Lists not well displayed in HTML file
+#ECMS-6857: [XSS]"Description" field in Metadata has XSS vulnerability for CLV
+commons.upgrade.WCMTemplateUpgradePlugin.enable=true

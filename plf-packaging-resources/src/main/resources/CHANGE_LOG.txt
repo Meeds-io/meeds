@@ -3,102 +3,153 @@ Changelog Platform ${org.exoplatform.platform.version}
 =========================
 
  
-eXo Platform 4.2.0-M2  
+eXo Platform 4.2.0  
 *************************
 
 ** Bug
-    * [PLF-5874] - Redundant User navigation in built-in Answers page
+    * [PLF-6142] - common.module.ModuleRegistry.isPortletActive causes infinite loop
+    * [PLF-6154] - Intensive usage of OrgSrv
+    * [PLF-6185] - [Suggestion Gadget] did not display 1 People without common connections
+    * [PLF-6202] - [User Profile] Unknown error when drag and drop a portlet to Dynamic column
+    * [PLF-6227] - [PLF-Jboss] Cannot connect to WebDAV from Windows machine to Linux server
+    * [PLF-6230] - JODConverter cannot detect LibreOffice 4.1 on Mac OSX
+    * [PLF-6246] - [acme-website]: Error while trying to add the mixin exo:navigable of Event3
+    * [PLF-6252] - ArrayIndexOutOfBoundsException when accessing intranet's Wiki or "Edit my profile"
+    * [PLF-6255] - Layout of PLF 4.2 is broken on IE9
+    * [PLF-6256] - [Suggestions gadget] Generic User Popup is not shown
+    * [PLF-6262] - Can not scroll up after scroll down when cofigure quick search
+    * [PLF-6271] - Tooltip text is encoded when File name contains accent chars
+    * [PLF-6272] - [Upgrade 4.1.1 to 4.2-RC1]: Error in AnswerPageUpgradePlugin
+    * [PLF-6285] - [Ubuntu 14.04.2] MIME type isn't recognized when uploading file via Nautilus
+    * [PLF-6297] - [Unified Search] Searching word is cut-off in advanced search
+    * [PLF-6317] - [acme] Missing Login and Logout links
+    * [PLF-6325] - [acme] Bad UI and loading forever when editing Banner and Footer
+    * [PLF-6328] - [Suggestions Gadget] Avatar of user is not showed when mouser over on an user
+    * [PLF-6332] - [Cluster] java.lang.ClassNotFoundException: org.exoplatform.faq.service.notify.NotifyJob occurs when starting nodes with upgrade data
 
 
-eXo ECMS 4.2.0-M2  
+eXo ECMS 4.2.0  
 *************************
 
 ** Bug
-    * [ECMS-5818] - Drive manager service always reinit data at startup
-    * [ECMS-6051] - Unknown error and exception thrown when creating a web content with name "%"
-    * [ECMS-6054] - Problem when restore many nodes with the same title
-    * [ECMS-6057] - When editing a webcontent, summary and comment lines are shown incorrectly
-    * [ECMS-6106] - [ECM Admin] Impossible to import a node type
+    * [ECMS-5417] - CLONE - XSS - executing script when edit a web content containing a link with hexa characters
+    * [ECMS-5839] - [ECMAdmin][Manage Document Tempalte]: Close button does not work in feature Add/Edit Template
+    * [ECMS-6017] - HTML Lists not well displayed in HTML file 
     * [ECMS-6121] - Script isn't saved in File
-    * [ECMS-6185] - SuperType is mandatory while adding a mixin
-    * [ECMS-6218] - [Content Explorer] Wrong date validator in Advanced Search form
-    * [ECMS-6250] - Display incorrect alert message when paste an image file
-    * [ECMS-6323] - Information message is shown twice after clicking Delete icon on a content of CLV
-    * [ECMS-6355] - Display error message when add new Category start with '%' character
-    * [ECMS-6363] - Unknow error message displays when adding label with "[" character
-    * [ECMS-6380] - Error during removing audited node
-    * [ECMS-6382] - [CKEditor] Allow to customize Shift Enter mode
-    * [ECMS-6430] - [CKEditor][IE11] All buttons (Close, OK, Cancel) doesn't work when attaching image 
-    * [ECMS-6447] -  IllegalArgumentException when restoring file containing index
-    * [ECMS-6467] - Cannot search file content containing ' character in acme
-    * [ECMS-6477] - Cannot delete child nodes after rename a node at first time
-    * [ECMS-6479] - Cannot cut and paste a document into a Content Folder
-    * [ECMS-6500] - Unknown error when adding query with : in name
-    * [ECMS-6517] - [Unified Search]: Duplicated documents search results when content and title contain the keyword
-    * [ECMS-6503] - Wrong message when adding action type with special characters
-    * [ECMS-6353] - User who is not granted to view a category still see this category
-    * [ECMS-6356] - Display incorrect category name with special characters when add a category to content
-    * [ECMS-6292] - Exception occurs when Inserting a script in field "Property" of Advanced Search
+    * [ECMS-6387] - [CKEditor][IE 11] Cannot decorate the content
+    * [ECMS-6434] - [WebDav][Jboss] HTTP 500 Internal Server Error when renaming a file/folder
+    * [ECMS-6648] - [CKEditor]: Home AS, Number List and Bullet lines should not be combined in one line.
+    * [ECMS-6692] - Can not close [Import] window after Import an any kind of file to a Illustrated Web content
+    * [ECMS-6731] - [Content Explorer] Explorer cannot switch page
+    * [ECMS-6748] - [SE-Advance Search]: Can not search following property and document type 
+    * [ECMS-6775] - Pagination does not work in different views
+    * [ECMS-6799] - Comment is not updated in AS when removing tags in Edit Tag screen
+    * [ECMS-6812] - Webcontent content is encoded many times
+    * [ECMS-6817] - [Site Explorer] Check in / Checkout actions are not displayed in Collaboration drive
+    * [ECMS-6821] - [Document Preview][IE11] Show scroll bars when closed Preview mode
+    * [ECMS-6823] - [Open in Office]: Can NOT edit remote
+    * [ECMS-6827] - [Open in Office] Cannot view file content
+    * [ECMS-6829] - [acme-website] Impossible to create Contact Us
+    * [ECMS-6841] - Bad display of the title of the SCV icon
+    * [ECMS-6846] - [webdav] two activities created for 1 file when it is edited using webdav
+    * [ECMS-6848] - [Symlink activity] Exception posted when Click on symlink file in AS
+    * [ECMS-6852] - [Views] Restore button is shown when Enable Version is not ticked.
+    * [ECMS-6854] - [Upgrade 4.1.1 to 4.2-RC1]: Content page of SE is empty when upgrading from 4.1.1 to 4.2-RC1
+    * [ECMS-6857] - [XSS]"Description" field in Metadata has XSS vulnerability for CLV
+    * [ECMS-6859] - [XSS]"Label" field in Template Document has XSS vulnerability
+    * [ECMS-6866] - Exception when edit default.html file in Power-Fire
+    * [ECMS-6868] - Back button in file explorer does not keep the current "page" when we have pagination
+    * [ECMS-6872] - Pagination of right panels in Site Explorer doesn't work
+    * [ECMS-6873] - Unknown error when changing page (left side) in site explorer
+    * [ECMS-6876] - "View Document" from contextual menu doesn't work correctly
+    * [ECMS-6879] - [Regression] - CK editor does not load after opening insert image ("image icon") with IE
+    * [ECMS-6882] - TemplateRuntimeException and UI broken after services run
+    * [ECMS-6891] - [acme portal] popup menu is not displayed fully
+    * [ECMS-6892] - [IE9][acme] Impossible to switch between pages
+    * [ECMS-6895] - [IE10] [SEO] Unknown error and error exception posted when SEO is clicked
+    * [ECMS-6902] - [IE9, IE10] Document Preview doesn't work
+    * [ECMS-6904] - [Multiupload] Unicode value in the confirmation message when Cancel to upload All files
+    * [ECMS-6909] - "Unknown error" and PathNotFoundException when download multiple files
+    * [ECMS-6916] - Error syntax displays when clicking Open in .... on IE9 & IE11
+    * [ECMS-6924] - [Open In Office] Windows users - Cannot open MS Word files after a period of use
+    * [ECMS-6930] - [Draft] status does not display in edit mode
+    * [ECMS-6932] - [SCV] Cannot print pdf document
+    * [ECMS-6938] - NPE in SEO form
+    * [ECMS-6939] - [Open in Offices] Authentication is required continuously when open a file to edit
+    * [ECMS-6947] - [Acme] Search function does not work
+    * [ECMS-6968] - [Site Explorer][Upload] Cannot open office files on WebDav
+    * [ECMS-6973] - [Views] Wrong buttons are displayed in View form
+    * [ECMS-6976] - [CKEditor] Content CKeditor is encoded many times
+    * [ECMS-6977] - Editing a webContent displays the HTML code in the WYSIWYG editor
 
-** Feedback
-    * [ECMS-5052] - [ECMAdmin] UI glitches and UXP in Edit Category Tree screens
 
-
-eXo Commons 4.2.0-M2  
+eXo Commons 4.2.0  
 *************************
 
 ** Bug
-    * [COMMONS-391] - Escape content data in ckeditor
+    * [COMMONS-366] - <a target="_blank" > is destroyed by Antisamy
+    * [COMMONS-407] - [IE11][Document Selector] Broken encoding of Folder name
+    * [COMMONS-408] - [IE 9, IE 10] Cannot upload file in Activity Composer
+    * [COMMONS-413] - [IE9] Cannot upload file by activity composer
+    * [COMMONS-414] - [CKEditor] Button "Insert Special Characters" does not work in some languages (Vietnamese, Arabic, Japanese, Lithuanian)
+    * [COMMONS-419] - Notification Mail are to all users (even if not synchronized)
 
-** Improvement
-    * [COMMONS-355] - [CKEditor] Allow to customize Shift Enter mode
-    * [COMMONS-382] - Upgrade to latest stable version of CKEditor (4.4.x)
 
-
-eXo WIKI 4.2.0-M2  
+eXo WIKI 4.2.0 
 *************************
 
 ** Bug
-    * [WIKI-420] - Incorrect behavior of Search Completion
-    * [WIKI-871] - Display wrong position of page when add/edit a page has the same title with existing page
-    * [WIKI-945] - [Create wiki page][Attach image] Name of image is displayed after closing preview mode
-    * [WIKI-974] - Loss content while saving a page with page's name existed.
-    * [WIKI-984] - [Export to PDF] Missing non-Latin letters
-
-** Feedback
-    * [WIKI-551] - Confusing usage of Revision
+    * [WIKI-715] - [Advanced Search] Search by the keyboard "Enter" is not performed 
+    * [WIKI-1031] - Tip text should be in gray color and disappeared when textbox is clicked
+    * [WIKI-1040] - User can change wiki page content without permission
 
 
 
-eXo Social 4.2.0-M2  
+eXo Social 4.2.0 
 *************************
 
 ** Bug
-    * [SOC-4696] - [User Profile] Duplicated ear on user navigation
+    * [SOC-4768] - Inconsistency of connection's activities
+    * [SOC-4810] - [User profile] End Date of Experience is updated incorrectly in other languages
+    * [SOC-4812] - [User Profile] Text by default in About me is not opaque
+    * [SOC-4817] - [User Profile] Connections section is updated incorrectly when Cancel Request
+    * [SOC-4821] - [IE11] Tip text should be in gray color
+    * [SOC-4828] - [IE11][Space] App List is displayed in 2 lines 
+    * [SOC-4832] - After renaming a space this space related activities are not published to the main activity stream
+    * [SOC-4837] - NoSuchPropertyException: Property latestLazyCreatedTime cannot be loaded from node
+    * [SOC-4855] - Impossible to change space avatar
+    * [SOC-4858] - Unknown error when clicking a tab of alphabet filter in Space's Member tab
+    * [SOC-4862] - [IE9, IE10][User Profile] Edit User Profile button and link do not work
+    * [SOC-4865] - [Migration] Mini connection portlet in User Profiles does not display
+    * [SOC-4866] - [Migration] Exceptions about Web notification in log after migrate from PLF-4.2.0-M2 to PLF-4.2.0-RC1
+    * [SOC-4867] - CLONE - [Intranet Notification] Wrong mention style
+    * [SOC-4870] - [IE9,10] Cannot navigate to Edit my profile page in IE9
+    * [SOC-4872] - [IE][Email Notifications][Activity] Comment box is not opened when click [Reply] link from email notification
+    * [SOC-4880] - Security vulnerabilities with space invitation service "/acceptInvitationToJoinSpace/"
+    * [SOC-4882] - [User Notification Settings] Loss of non-ASCII characters when clicking on Reset button
+    * [SOC-4885] - Property relationshipNo cannot be loaded
+    * [SOC-4900] - [Intranet Notification] WebNotificationJob consumes a lot of resources
+    * [SOC-4906] - [Cluster][Intranet Notifications]Not receive intranet notifications between 2 friends on 2 other nodes
+    * [SOC-4918] - [Cluster] "Missing protocol in comet URL" Exception when starting 2 nodes enabling cometd
 
 
-eXo Calendar 4.2.0-M2  
+eXo Calendar 4.2.0  
 *************************
 
 ** Bug
-    * [CAL-534] - Should improve the way to repeat with the day of the week option
-    * [CAL-1018] - [Unified Search]: Problem when search event with key search contain number
+    * [CAL-1104] - [Recurring Event] Incorrect editing when duration happens between 2 days
+    * [CAL-1105] - Cannot drag and drop a recurring event successfully in the space's calendar
+    * [CAL-1113] - Reminder pop-up is NOT displayed when opening Calendar
+    * [CAL-1115] - [Edit Recurring event] Missing the last occurence in the recurring series after editing with "Following events""
+    * [CAL-1119] - [Unified Search] Click on group event result does NOT open event details
+    * [CAL-1125] - In calendar the field viewPermision is wrote with one "s"
+    * [CAL-1139] - [Calendar][Event]Cannot edit an event in search results
 
 
-eXo GateIn 4.2.0-M2-PLF  
+eXo GateIn 4.2.0-PLF  
 *************************
 
 ** Bug
-    * [EXOGTN-1368] - Unknown error when create a page with name "FAQ" under default node
-
-** Improvement
-    * [EXOGTN-1882] - Migrate from Juzu 0.6 to 1.0.0 in PLF 4.2 
-    * [EXOGTN-1955] - [platform-ui] UICheckBoxInput and AbstractValidator not easy to use label
-
-
- 
-
-
-
-
-
+    * [EXOGTN-2000] - Unknown error when click on Up Level icon in Group Management
+    * [EXOGTN-2004] - CLONE - [Unified Search] Missing scroll bar inside Setting form
+    * [EXOGTN-2005] - Bad display of calendar in search content form
