@@ -19,7 +19,7 @@
 
 Thank you for downloading eXo Platform ${org.exoplatform.platform.version}.
 
-Follow the installation procedure and start eXo Platform 4.1 now!
+Follow the installation procedure and start eXo Platform 4.2 now!
 
 ------------------------------
 System requirements
@@ -97,8 +97,8 @@ When eXo Platform server is already started and you would like to install acme a
 ** Use exo.properties:
    In this file, you uncomment the line of this parameter and set the value to "true".
 ** Use customization configuration script:
-   When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
-   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
+   When you use the sample configuration script provided inside eXo Platform 4.2, you can uncomment this variable in the script.
+   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.2 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 * Stop eXo Platform server.
 * Set the variable "exo.acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
@@ -114,8 +114,8 @@ When eXo Platform server integrates the ide add-on and you would like to exclude
 ** Use exo.properties:
    In this file, you uncomment the line of this parameter and set its value to "false".
 ** Use customization configuration script:
-   When you use the sample configuration script provided inside eXo Platform 4.1, you can uncomment this variable in the script.
-   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.1 Administration guide for more details of these scripts.
+   When you use the sample configuration script provided inside eXo Platform 4.2, you can uncomment this variable in the script.
+   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.2 Administration guide for more details of these scripts.
 * Restart eXo Platform server.
 
 ------------------
