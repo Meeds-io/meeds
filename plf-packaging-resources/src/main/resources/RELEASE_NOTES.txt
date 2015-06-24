@@ -12,9 +12,20 @@ III.  UPGRADE NOTES
 
 = I. MAIN CHANGES =
 
-Main changes since Platform 4.2.0-RC1
+Main changes since Platform 4.1.1
 
-* Bug fixes
+* Skin Module
+* Document Preview
+* Open Document in Office
+* On-site Notifications
+* User Profile Redesign
+* New REST APIs in Calendar
+* Spring MVC Support
+* Answers add-on (Answer & FAQ applications)
+* SSO add-ons: SPNEGO, CAS, SAML2, OpenAM, JOSSO
+* Upgrade to Juzu 1.0.0
+* Upgrade to CKEditor 4.4.6
+* Upgrade to CometD 3
 
 
 = II. STARTUP INSTRUCTIONS =
@@ -26,12 +37,12 @@ The file README.txt contains information on how to start the product.
 The upgrade procedure is only guaranteed and tested to be transparent from the previous maintenance version (x.y.z from x.y.z-1). So, we recommend to apply upgrade procedures for all versions between your current and the target one.
 However, if you still insist on skipping versions, we strongly advise to read all upgrade notes of the versions you are skipping to see if your project is impacted by any previous upgrade procedure.
 
-== Upgrading from Platform 4.1.0 to 4.2.0 ==
+== Upgrading from Platform 4.1.1 to 4.2.0 ==
 
 * Prepare bundle:
 ** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
 ** Go to $PLATFORM-4.2.0-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.1.0-to-4.2.0-sample.properties to upgrade.properties
+** Rename upgrade-4.1.1-to-4.2.0-sample.properties to upgrade.properties
 * Start server. The upgrade will be run automatically.
 * Stop server.
 * Remove/Rename the file upgrade.properties
@@ -65,9 +76,6 @@ commons.upgrade.WCMTemplateUpgradePlugin.enable=true
 # ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
 commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
 
-# ECMS-6590: update AddToFavorites.groovy
-commons.upgrade.ScriptUpgradePlugin.enable=true
-
 # PLF-5874: Redundant User navigation in built-in Answers page (4.2.0-M2)
 commons.upgrade.AnswerPageUpgradePlugin.enable=true
 
@@ -87,25 +95,8 @@ commons.upgrade.UpgradeUserNotificationSettingPlugin.enable=true
 commons.upgrade.ModelOverriderUpdaterPlugin.enable=true
 
 
-== Upgrading from Platform 4.2.0-RC1 to 4.2.0 ==
+== Known issues ==
 
-* Prepare bundle:
-** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
-** Go to $PLATFORM-4.2.0-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-4.2.0-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
-** Rename upgrade-4.2.0-RC1-to-4.2.0-sample.properties to upgrade.properties
-* Start server. The upgrade will be run automatically.
-* Stop server.
-* Remove/Rename the file upgrade.properties
-* Restart the server. You're ready.
-
-=== Description of the plugins used in this upgrade ===
-
-* The number in parentheses indicates the version for this upgrade.
-
-#ECMS-6812: Webcontent content is encoded many times
-#ECMS-6829: [acme-website] Impossible to create Contact Us
-commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
-
-#ECMS-6017: HTML Lists not well displayed in HTML file
-#ECMS-6857: [XSS]"Description" field in Metadata has XSS vulnerability for CLV
-commons.upgrade.WCMTemplateUpgradePlugin.enable=true
+ECMS-6818: Remote edit does not work on Chrome 42
+EXOGTN-1963: SPNEGO doesn't work when using Firefox client on the same Window 8 with PLF 4.2
+EXOGTN-1969: [SSO - OpenAM] Cannot login to PLF with cross domain authentication since OpenAM 10.1
