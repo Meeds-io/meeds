@@ -1,14 +1,15 @@
 ========================================
-Release notes - eXo Platform 4.2.0
+Release notes - eXo Platform ${org.exoplatform.platform.version}
 ========================================
 
 
-Date: 22/06/2015
-Version: 4.2.0
+Date: ${build.date}
+Version: ${org.exoplatform.platform.version}
 
 I.    MAIN CHANGES
 II.   STARTUP INSTRUCTIONS
 III.  UPGRADE NOTES
+IV.   KNOWN ISSUES
 
 = I. MAIN CHANGES =
 
@@ -52,25 +53,22 @@ However, if you still insist on skipping versions, we strongly advise to read al
 
 * The number in parentheses indicates the version for this upgrade.
 
-# Proceed to the upgrade if it's first time you run this service
-commons.upgrade.proceedIfFirstRun=false
-
-#ECMS-6815: Open Document in Office
+# ECMS-6815: Open Document in Office
 commons.upgrade.SiteExplorerTemplateUpgradePlugin.enable=true
 
-#ECMS-6815: Open Document in Office
+# ECMS-6815: Open Document in Office
 commons.upgrade.UserViewUpgradePlugin.enable=true
 
-#ECMS-6487: Document Preview
+# ECMS-6487: Document Preview
 # ECMS-5566: update Comment's view
 # PLF-6066: update the dialog template of content types in exo-acme-sample addon and in exo-wai-sample addon
-#ECMS-6812: Webcontent content is encoded many times
-#ECMS-6829: [acme-website] Impossible to create Contact Us
+# ECMS-6812: Webcontent content is encoded many times
+# ECMS-6829: [acme-website] Impossible to create Contact Us
 commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
 
-#ECMS-6479: Update label format in WCM Search Result when there are results
-#ECMS-6017: HTML Lists not well displayed in HTML file
-#ECMS-6857: [XSS]"Description" field in Metadata has XSS vulnerability for CLV
+# ECMS-6479: Update label format in WCM Search Result when there are results
+# ECMS-6017: HTML Lists not well displayed in HTML file
+# ECMS-6857: [XSS]"Description" field in Metadata has XSS vulnerability for CLV
 commons.upgrade.WCMTemplateUpgradePlugin.enable=true
 
 # ECMS-6054: Problem when restore many nodes with the same title (4.2.0-M2)
@@ -80,23 +78,25 @@ commons.upgrade.RestoreLocationNodeTypeUpgradePlugin.enable=true
 commons.upgrade.AnswerPageUpgradePlugin.enable=true
 
 # UI-3473: Cache level gadget is broken, some information is empty
+# Update resource bundles for built-in gadgets
 commons.upgrade.Upgrade-Gadgets.enable=true
 
-#SOC-4458: Intranet Notifications - Register new page View All Notification PLF 4.2-RC1
+# SOC-4458: Intranet Notifications - Register new page View All Notification PLF 4.2-RC1
 commons.upgrade.Upgrade-PortalData.enable=true
 
-#SOC-4458: Intranet Notifications - Register new node type to store the Intranet Notifications PLF 4.2-RC1
+# SOC-4458: Intranet Notifications - Register new node type to store the Intranet Notifications PLF 4.2-RC1
 commons.upgrade.UpgradeNotifcationNodeTypePlugin.enable=true
 
-#SOC-4458: Intranet Notifications - Migrate use setting from old version to use Intranet Notification system PLF 4.2-RC1 (4.2.0-RC1)
+# SOC-4458: Intranet Notifications - Migrate use setting from old version to use Intranet Notification system PLF 4.2-RC1 (4.2.0-RC1)
 commons.upgrade.UpgradeUserNotificationSettingPlugin.enable=true
 
-#SOC-4399: Missing post and Server become slow when share activities on Activity Stream (4.2.0-RC1)
+# SOC-4399: Missing post and Server becomes slow when share activities on Activity Stream (4.2.0-RC1)
 commons.upgrade.ModelOverriderUpdaterPlugin.enable=true
 
 
-== Known issues ==
+== IV. KNOWN ISSUES ==
 
-ECMS-6818: Remote edit does not work on Chrome 42
-EXOGTN-1963: SPNEGO doesn't work when using Firefox client on the same Window 8 with PLF 4.2
-EXOGTN-1969: [SSO - OpenAM] Cannot login to PLF with cross domain authentication since OpenAM 10.1
+* ECMS-6818: Remote edit does not work on Chrome 42
+* EXOGTN-1963: SPNEGO doesn't work when using Firefox client on the same Window 8 with PLF 4.2
+* EXOGTN-1969: Cannot login to PLF with cross domain authentication since OpenAM 10.1
+* EXOGTN-1991: [SSO] Failed to auto-save wiki page
