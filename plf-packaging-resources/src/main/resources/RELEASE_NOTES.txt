@@ -93,6 +93,9 @@ commons.upgrade.UpgradeUserNotificationSettingPlugin.enable=true
 # SOC-4399: Missing post and Server becomes slow when share activities on Activity Stream (4.2.0-RC1)
 commons.upgrade.ModelOverriderUpdaterPlugin.enable=true
 
+#SOC-4498: User Profile Redesign feature : remove old profile page, add new profile page (4.2.0-RC1)
+commons.upgrade.ProfilePageUpgradePlugin.enable=true
+
 
 == IV. KNOWN ISSUES ==
 

@@ -1,5 +1,5 @@
 ====
-    Copyright (C) 2003-2014 eXo Platform SAS.
+    Copyright (C) 2003-2015 eXo Platform SAS.
 
     This is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as
@@ -130,6 +130,3 @@ Support           http://support.exoplatform.com
 eXo               http://www.exoplatform.com
 Training          http://www.exoplatform.com/company/public/website/services/development/development-training
 Consulting        http://www.exoplatform.com/company/public/website/services/development/development-consulting
-
-
-
