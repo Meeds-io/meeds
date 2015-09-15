@@ -24,7 +24,7 @@
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
-    <version>14</version>
+    <version>15</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
