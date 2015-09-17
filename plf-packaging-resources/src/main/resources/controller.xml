@@ -45,6 +45,17 @@
     </route-param>
   </route>
 
+  <route path="/forgot-password">
+    <route-param qname="gtn:handler">
+      <value>forgot-password</value>
+    </route-param>
+    <request-param qname="gtn:token" name="token" value-mapping="never-empty"/>
+    <request-param qname="gtn:initURL" name="initURL" value-mapping="never-empty"/>
+    <request-param qname="gtn:lang" name="lang" value-mapping="never-empty">
+      <pattern>([A-Za-z]{2}(-[A-Za-z]{2})?)?</pattern>
+    </request-param>
+  </route>
+
   <!-- SEO route -->
   <route path="/{gtn:sitename}/sitemaps.xml">
     <route-param qname="gtn:handler">
