@@ -19,7 +19,7 @@
 
 Thank you for downloading eXo Platform ${org.exoplatform.platform.version}.
 
-Follow the installation procedure and start eXo Platform 4.2 now!
+Follow the installation procedure and start eXo Platform 4.3 now!
 
 ------------------------------
 System requirements
@@ -53,7 +53,7 @@ How to start the Platform Jboss (*)
 
 (*) only available for Enterprise edition.
 
-For more configurations, please check http://docs.exoplatform.com/PLF41/PLFAdministratorGuide.html
+For more configurations, please check http://docs.exoplatform.com/PLF42/PLFAdministratorGuide.html
 
 ----------------------------------------------------------
 How to access the Platform homepage
@@ -69,7 +69,7 @@ How to access the Platform homepage
 How to install add-ons
 -------------------------------------
 
-Several add-ons are not installed by default in the Express and Enterprise version of eXo Platform 4:
+Several add-ons are not installed by default in the Trial and Enterprise version of eXo Platform 4:
     * crash-addon	: Common Reusable SHell to interact with the JVM
     * cmis-addon (*)	: Content Management Interoperability Services
     * ide-addon (*) 	: Integrated online environment to develop applications (cf. next section for its usage)
@@ -81,10 +81,10 @@ On Windows, Open a DOS prompt command, go to PLF_HOME directory and type the com
     * List all available add-ons use: addon.bat list
 
 On Linux: Open a terminal, go to PLF_HOME directory and type the command :
-    * To install an add-on use: addon --install <add-on>
+    * To install an add-on use: addon install <add-on>
     * List all available add-ons use: addon list
 
-(*) only on Express and Enterprise editions
+(*) only compatible with Trial and Enterprise editions
 
 -----------------------------
 Deployment of acme website
