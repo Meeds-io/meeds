@@ -111,7 +111,7 @@
          Define a non-SSL HTTP/1.1 Connector on port 8080
     -->
     <Connector address="0.0.0.0" port="8080" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               enableLookups="false" redirectPort="8443"
+               enableLookups="false" redirectPort="8443" bindOnInit="false"
                connectionTimeout="20000" disableUploadTimeout="true"
                URIEncoding="UTF-8"
                compression="off" compressionMinSize="2048"
@@ -138,6 +138,7 @@
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
     <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3"
+               bindOnInit="false"
                connectionTimeout="20000"
                redirectPort="8443"
                URIEncoding="UTF-8" />
