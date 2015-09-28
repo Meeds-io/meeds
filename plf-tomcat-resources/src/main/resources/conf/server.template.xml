@@ -66,7 +66,7 @@
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
               poolPreparedStatements="true"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}" />
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${connectionParameters}" />
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
@@ -76,7 +76,7 @@
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
               poolPreparedStatements="true"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}" />
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${connectionParameters}" />
 
     <!-- eXo JPA Datasource for portal -->
     <Resource name="exo-jpa_portal" auth="Container" type="javax.sql.DataSource"
@@ -86,7 +86,7 @@
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="false"
               poolPreparedStatements="true"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${encoding}" />
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${jpaConnectionParameters}" />
 
   </GlobalNamingResources>
 
