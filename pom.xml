@@ -346,6 +346,8 @@
                         <exclude>org.icepdf:icepdf-core:*</exclude>
                         <!-- COR-338: Exclude Apache poi-ooxml 3.8. Platform uses now 3.8-eXo01 -->
                         <exclude>org.apache.poi:poi-ooxml:[3.8]</exclude>
+                        <!-- DEP-101: Elasticsearch depends on lucene version incompatible with the JCR -->
+                        <exclude>org.apache.lucene:*:4</exclude>
                       </excludes>
                       <includes>
                         <!-- This artifact isn't by default in tomcat -->
