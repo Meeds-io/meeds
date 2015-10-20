@@ -119,6 +119,11 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
+    <!-- PLF-6409: Required by Liquibase to use slf4j -->
+    <dependency>
+      <groupId>com.mattbertolini</groupId>
+      <artifactId>liquibase-slf4j</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
