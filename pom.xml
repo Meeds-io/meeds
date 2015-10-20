@@ -132,8 +132,8 @@
         <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-public-distributions</artifactId>
         <version>${project.version}</version>
-        <classifier>source-release</classifier>
         <type>zip</type>
+        <classifier>source-release</classifier>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
@@ -374,7 +374,7 @@
                   </rules>
                   <fail>true</fail>
                 </configuration>
-              </execution>              
+              </execution>
               <execution>
                 <id>enforce-upper-bound-deps</id>
                 <goals>

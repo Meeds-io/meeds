@@ -160,22 +160,22 @@
           <groupId>com.sun.xml.bind</groupId>
         </exclusion>
         <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
-        <exclusion>          
-          <groupId>commons-logging</groupId>
+        <exclusion>
           <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
         </exclusion>
-        <exclusion>          
-          <groupId>javax.servlet</groupId>
+        <exclusion>
           <artifactId>javax.servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
         </exclusion>
         <!-- Coming by transitivity from org.exoplatform.social:social-component-core -->
-        <exclusion>          
-          <groupId>xerces</groupId>
+        <exclusion>
           <artifactId>xmlParserAPIs</artifactId>
+          <groupId>xerces</groupId>
         </exclusion>
-        <exclusion>          
-          <groupId>rome</groupId>
+        <exclusion>
           <artifactId>modules</artifactId>
+          <groupId>rome</groupId>
         </exclusion>
         <!-- Coming by transitivity from org.exoplatform.kernel:exo.kernel.container -->
         <exclusion>
@@ -208,7 +208,7 @@
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
       <type>pom</type>
-    </dependency>   
+    </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-resources</artifactId>
@@ -523,7 +523,7 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-notification</artifactId>
-      <type>pom</type>      
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -795,14 +795,14 @@
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
-        <groupId>org.gatein.portal</groupId>
-        <artifactId>exo.portal.component.web.oauth-web</artifactId>
-        <exclusions>
-            <exclusion>
-                <artifactId>sso-integration</artifactId>
-                <groupId>org.gatein.sso</groupId>
-            </exclusion>
-        </exclusions>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.component.web.oauth-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>sso-integration</artifactId>
+          <groupId>org.gatein.sso</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -810,8 +810,8 @@
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
-        <groupId>org.gatein.cdi</groupId>
-        <artifactId>gatein-cdi-injection</artifactId>
+      <groupId>org.gatein.cdi</groupId>
+      <artifactId>gatein-cdi-injection</artifactId>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
@@ -857,6 +857,6 @@
       <groupId>org.gatein.cdi</groupId>
       <artifactId>gatein-cdi-contexts</artifactId>
       <type>jar</type>
-    </dependency>    
+    </dependency>
   </dependencies>
 </project>
