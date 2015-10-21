@@ -57,10 +57,14 @@ fi
 [ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="3g"
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN="512m"
 [ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX="256m"
-[ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
 [ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT="8000"
+
+# PLF-6451: Not use Turkish locale
+if [ -z $EXO_JVM_USER_LANGUAGE ] || [ $EXO_JVM_USER_LANGUAGE = "tr" ]; then
+  EXO_JVM_USER_LANGUAGE="en"
+fi
 
 # -----------------------------------------------------------------------------
 # Default EXO PLATFORM configuration
