@@ -124,6 +124,11 @@
       <groupId>com.mattbertolini</groupId>
       <artifactId>liquibase-slf4j</artifactId>
     </dependency>
+    <!-- PLF-6409: Required by Liquibase to not generate error -->
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

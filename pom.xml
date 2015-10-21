@@ -74,6 +74,8 @@
     <!-- Additional LOGBACK dependencies -->
     <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
     <org.fusesource.jansi.version>1.11</org.fusesource.jansi.version>
+    <!-- PLF-6409: Liquibase dependency -->
+    <org.snakeyaml.version>1.13</org.snakeyaml.version>
     <!-- ************** -->
     <!-- Build settings -->
     <!-- ************** -->
@@ -236,6 +238,12 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>${org.slf4j.version}</version>
+      </dependency>
+      <!-- PLF-6409: Required by Liquibase to not generate error -->
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${org.snakeyaml.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
