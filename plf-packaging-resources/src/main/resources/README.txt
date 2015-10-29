@@ -1,25 +1,5 @@
-====
-    Copyright (C) 2003-2015 eXo Platform SAS.
-
-    This is free software; you can redistribute it and/or modify it
-    under the terms of the GNU Lesser General Public License as
-    published by the Free Software Foundation; either version 3 of
-    the License, or (at your option) any later version.
-
-    This software is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this software; if not, write to the Free
-    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
-    02110-1301 USA, or see the FSF site: http://www.fsf.org.
-====
 
 Thank you for downloading eXo Platform ${org.exoplatform.platform.version}.
-
-Follow the installation procedure and start eXo Platform 4.3 now!
 
 ------------------------------
 System requirements
@@ -30,8 +10,12 @@ System requirements
     * Disk:    2GB (depending of the amount of data)
     * OS:      Windows or Linux
     * JDK:     Java 7 (Set the JAVA_HOME environment variable)
-    * Browser: Google Chrome 25+, Firefox 19+ or Internet Explorer 9+
-    * The eXo server will run on port 8080, make sure this port is not currently in use
+    * Browser: Google Chrome 25+, Firefox 19+ or Internet Explorer 10+
+    * The eXo Platform server will run on port 8080, make sure this port is not currently in use
+
+
+More compatibility info is available at : 
+http://community.exoplatform.com/portal/intranet/wiki/group/spaces/platform_4/Compatibility
 
 -------------------------------------
 How to start the Platform Tomcat
@@ -41,19 +25,6 @@ How to start the Platform Tomcat
     * On Windows: Open a DOS prompt command, go to PLF_HOME directory and type the command: "start_eXo.bat"
     * On Linux: Open a terminal, go to PLF_HOME directory and type the command: "./start_eXo.sh"
 
-------------------------------------
-How to start the Platform Jboss (*)
-------------------------------------
-
-    * PLF_JBOSS_HOME is the location of JBoss EAP 6.2.0
-    * Extract eXo Platform Jboss package
-    * Copy all the extracted folders and files into PLF_JBOSS_HOME.
-    * On Windows: Open a DOS prompt command, go to PLF_JBOSS_HOME directory and type the command: "bin\standalone.bat"
-    * On Linux: Open a terminal, go to PLF_JBOSS_HOME directory and type the command: "./bin/standalone.sh"
-
-(*) only available for Enterprise edition.
-
-For more configurations, please check http://docs.exoplatform.com/PLF42/PLFAdministratorGuide.html
 
 ----------------------------------------------------------
 How to access the Platform homepage
@@ -69,64 +40,23 @@ How to access the Platform homepage
 How to install add-ons
 -------------------------------------
 
-Several add-ons are not installed by default in the Trial and Enterprise version of eXo Platform 4:
-    * crash-addon	: Common Reusable SHell to interact with the JVM
-    * cmis-addon (*)	: Content Management Interoperability Services
-    * ide-addon (*) 	: Integrated online environment to develop applications (cf. next section for its usage)
-    * acme-sample (*)	: A demo website built with eXo Platform 4 (cf. next section for its usage)
-    * wai-sample (*)	: A demo website following Accessibility standards
+Several add-ons are not installed by default. To find a list of compatible add-ons, use the add-ons manager.
+
 
 On Windows, Open a DOS prompt command, go to PLF_HOME directory and type the command:
     * To install an add-on use: addon.bat install <add-on>
     * List all available add-ons use: addon.bat list
 
 On Linux: Open a terminal, go to PLF_HOME directory and type the command :
-    * To install an add-on use: addon install <add-on>
+    * To install an add-on use: addon --install <add-on>
     * List all available add-ons use: addon list
 
-(*) only compatible with Trial and Enterprise editions
-
------------------------------
-Deployment of acme website
------------------------------
-
-When eXo Platform server is already started and you would like to install acme add-on, you need to follow the steps below:
-* Stop eXo Platform server
-* Install acme add-on with the addon script
-* Set the variable "exo.acme.portalConfig.metadata.override" as true. This can be done by one of the two ways:
-** Use exo.properties:
-   In this file, you uncomment the line of this parameter and set the value to "true".
-** Use customization configuration script:
-   When you use the sample configuration script provided inside eXo Platform 4.2, you can uncomment this variable in the script.
-   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.2 Administration guide for more details of these scripts.
-* Restart eXo Platform server.
-* Stop eXo Platform server.
-* Set the variable "exo.acme.portalConfig.metadata.override" as false or comment again the corresponding line of this variable.
-* Start eXo Platform server again to continue using it.
-
-----------------------------------------------------------------
-Exclusion of the IDE item from Administration drop-down menu
-----------------------------------------------------------------
-
-When eXo Platform server integrates the ide add-on and you would like to exclude the IDE item from Administration drop-down menu, follow the steps below:
-* Stop eXo Platform server
-* Set the variable "exo.ide.portalConfig.metadata.override" as false . This can be done by one of the two ways:
-** Use exo.properties:
-   In this file, you uncomment the line of this parameter and set its value to "false".
-** Use customization configuration script:
-   When you use the sample configuration script provided inside eXo Platform 4.2, you can uncomment this variable in the script.
-   Please refer to "Customizing environment variables in Tomcat" or "Installing JBoss EAP" in Platform 4.2 Administration guide for more details of these scripts.
-* Restart eXo Platform server.
 
 ------------------
 eXo Resources
 ------------------
 
-Community         http://community.exoplatform.org
-Forum             http://forum.exoplatform.org
-Documentation     http://docs.exoplatform.com
-Blog              http://blog.exoplatform.org
-Support           http://support.exoplatform.com
-eXo               http://www.exoplatform.com
-Training          http://www.exoplatform.com/company/public/website/services/development/development-training
-Consulting        http://www.exoplatform.com/company/public/website/services/development/development-consulting
+Community         https://community.exoplatform.com
+Documentation     https://docs.exoplatform.com
+Blog              https://www.exoplatform.com/blog
+eXo               https://www.exoplatform.com
