@@ -648,12 +648,21 @@
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>
+        <outputDirectory>/webapps</outputDirectory>
+        <includes>
+            <include>org.exoplatform.platform:platform-extension-portlets-platformNavigation:war</include>
+        </includes>
+        <scope>provided</scope>
+        <outputFileNameMapping>platformNavigation.war</outputFileNameMapping>
+        <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform:platform-extension-portlets-platformNavigation:war</include>
+        <include>org.exoplatform.platform:platform-registration:war</include>
       </includes>
       <scope>provided</scope>
-      <outputFileNameMapping>platformNavigation.war</outputFileNameMapping>
+      <outputFileNameMapping>registrationPLF.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>

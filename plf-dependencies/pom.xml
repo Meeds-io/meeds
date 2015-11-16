@@ -628,6 +628,16 @@
       <type>pom</type>
     </dependency>
     <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-registration</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-registration</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-skin</artifactId>
       <type>war</type>
