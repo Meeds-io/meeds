@@ -3,153 +3,318 @@ Changelog Platform ${org.exoplatform.platform.version}
 =========================
 
  
-eXo Platform 4.2.0  
+eXo Platform 4.3.0-RC1  
 *************************
 
 ** Bug
-    * [PLF-6142] - common.module.ModuleRegistry.isPortletActive causes infinite loop
-    * [PLF-6154] - Intensive usage of OrgSrv
-    * [PLF-6185] - [Suggestion Gadget] did not display 1 People without common connections
-    * [PLF-6202] - [User Profile] Unknown error when drag and drop a portlet to Dynamic column
-    * [PLF-6227] - [PLF-Jboss] Cannot connect to WebDAV from Windows machine to Linux server
-    * [PLF-6230] - JODConverter cannot detect LibreOffice 4.1 on Mac OSX
-    * [PLF-6246] - [acme-website]: Error while trying to add the mixin exo:navigable of Event3
-    * [PLF-6252] - ArrayIndexOutOfBoundsException when accessing intranet's Wiki or "Edit my profile"
-    * [PLF-6255] - Layout of PLF 4.2 is broken on IE9
-    * [PLF-6256] - [Suggestions gadget] Generic User Popup is not shown
-    * [PLF-6262] - Can not scroll up after scroll down when cofigure quick search
-    * [PLF-6271] - Tooltip text is encoded when File name contains accent chars
-    * [PLF-6272] - [Upgrade 4.1.1 to 4.2-RC1]: Error in AnswerPageUpgradePlugin
-    * [PLF-6285] - [Ubuntu 14.04.2] MIME type isn't recognized when uploading file via Nautilus
-    * [PLF-6297] - [Unified Search] Searching word is cut-off in advanced search
-    * [PLF-6317] - [acme] Missing Login and Logout links
-    * [PLF-6325] - [acme] Bad UI and loading forever when editing Banner and Footer
-    * [PLF-6328] - [Suggestions Gadget] Avatar of user is not showed when mouser over on an user
-    * [PLF-6332] - [Cluster] java.lang.ClassNotFoundException: org.exoplatform.faq.service.notify.NotifyJob occurs when starting nodes with upgrade data
+    * [PLF-6046] - [Home Page's Calendar] Incorrect date in the title
+    * [PLF-6100] - [Quick search] Quick search work incorrectly when hit enter
+    * [PLF-6343] - [MySQL] "MySQLSyntaxErrorException: Specified key was too long" with UTF8
+    * [PLF-6364] - [Cluster] WARNs like "no physical address for 3f84a85f-076d-c0fc-4a16-d6f1529187ea, dropping message" continuously many times appear in log file in both 2 nodes
+    * [PLF-6368] - [Cluster] Balancer node runs not stablely (Sometimes, system automatically log out and i have to log in again when testing) with Tomcat
+    * [PLF-6396] - Cannot search in ECMS or WIKI
+    * [PLF-6401] - Can not open 'Personal Document' folder when uploading a file from top navigation
+    * [PLF-6405] - [Responsive Layout] upload function didnt work on responsive layout feature
+    * [PLF-6415] - [Responsive Layout] All buttons on the top navigation bar do not work after going to Branding page on viewport <=1024px
+    * [PLF-6416] - Cannot start PLF with Oracle 12 C
+    * [PLF-6420] - CLONE - [Responsive Layout] Left menu is KO in some cases
+    * [PLF-6442] - [User Profile] Broken UI after making many changes in the User Profile Page
+    * [PLF-6451] - Platform fails to start with Turkish locale
+    * [PLF-6452] - [Registration] Community Edition Welcome Screen in case eXo Tribe is NOT available
+    * [PLF-6453] - [Registration] Cannot authorized by Sign in using 3rd party oAuth account or register new account
+    * [PLF-6459] - [Registration] [Jboss] Register software feature can not run on java8
+    * [PLF-6460] - [Registration] No error message displays when error happens during this last register call,
+    * [PLF-6478] - Preview image on activity stream not fully responsive
+    * [PLF-6487] - [Unified Search]Cannot search content of File documet
+    * [PLF-6489] - [Tomcat - PLF4.3] Cannot create a user
+    * [PLF-6490] - [Registration][Jboss] Cannot access to login screen
+
+** Feedback
+    * [PLF-5281] - Simpler article content type
+
+** Improvement
+    * [PLF-6422] - Upgrade to JCR 1.16.2-GA
+    * [PLF-6470] - Allow users to customize the location of license.xml 
+
+** New Feature
+    * [PLF-6409] - Add Liquibase dependencies to eXo distribs
+    * [PLF-6427] - Register Software
 
 
-eXo ECMS 4.2.0  
+eXo ECMS 4.3.0-RC1  
 *************************
 
 ** Bug
-    * [ECMS-5417] - CLONE - XSS - executing script when edit a web content containing a link with hexa characters
-    * [ECMS-5839] - [ECMAdmin][Manage Document Tempalte]: Close button does not work in feature Add/Edit Template
-    * [ECMS-6017] - HTML Lists not well displayed in HTML file 
-    * [ECMS-6121] - Script isn't saved in File
-    * [ECMS-6387] - [CKEditor][IE 11] Cannot decorate the content
-    * [ECMS-6434] - [WebDav][Jboss] HTTP 500 Internal Server Error when renaming a file/folder
-    * [ECMS-6648] - [CKEditor]: Home AS, Number List and Bullet lines should not be combined in one line.
-    * [ECMS-6692] - Can not close [Import] window after Import an any kind of file to a Illustrated Web content
-    * [ECMS-6731] - [Content Explorer] Explorer cannot switch page
-    * [ECMS-6748] - [SE-Advance Search]: Can not search following property and document type 
-    * [ECMS-6775] - Pagination does not work in different views
-    * [ECMS-6799] - Comment is not updated in AS when removing tags in Edit Tag screen
-    * [ECMS-6812] - Webcontent content is encoded many times
-    * [ECMS-6817] - [Site Explorer] Check in / Checkout actions are not displayed in Collaboration drive
-    * [ECMS-6821] - [Document Preview][IE11] Show scroll bars when closed Preview mode
-    * [ECMS-6823] - [Open in Office]: Can NOT edit remote
-    * [ECMS-6827] - [Open in Office] Cannot view file content
-    * [ECMS-6829] - [acme-website] Impossible to create Contact Us
-    * [ECMS-6841] - Bad display of the title of the SCV icon
-    * [ECMS-6846] - [webdav] two activities created for 1 file when it is edited using webdav
-    * [ECMS-6848] - [Symlink activity] Exception posted when Click on symlink file in AS
-    * [ECMS-6852] - [Views] Restore button is shown when Enable Version is not ticked.
-    * [ECMS-6854] - [Upgrade 4.1.1 to 4.2-RC1]: Content page of SE is empty when upgrading from 4.1.1 to 4.2-RC1
-    * [ECMS-6857] - [XSS]"Description" field in Metadata has XSS vulnerability for CLV
-    * [ECMS-6859] - [XSS]"Label" field in Template Document has XSS vulnerability
-    * [ECMS-6866] - Exception when edit default.html file in Power-Fire
-    * [ECMS-6868] - Back button in file explorer does not keep the current "page" when we have pagination
-    * [ECMS-6872] - Pagination of right panels in Site Explorer doesn't work
-    * [ECMS-6873] - Unknown error when changing page (left side) in site explorer
-    * [ECMS-6876] - "View Document" from contextual menu doesn't work correctly
-    * [ECMS-6879] - [Regression] - CK editor does not load after opening insert image ("image icon") with IE
-    * [ECMS-6882] - TemplateRuntimeException and UI broken after services run
-    * [ECMS-6891] - [acme portal] popup menu is not displayed fully
-    * [ECMS-6892] - [IE9][acme] Impossible to switch between pages
-    * [ECMS-6895] - [IE10] [SEO] Unknown error and error exception posted when SEO is clicked
-    * [ECMS-6902] - [IE9, IE10] Document Preview doesn't work
-    * [ECMS-6904] - [Multiupload] Unicode value in the confirmation message when Cancel to upload All files
-    * [ECMS-6909] - "Unknown error" and PathNotFoundException when download multiple files
-    * [ECMS-6916] - Error syntax displays when clicking Open in .... on IE9 & IE11
-    * [ECMS-6924] - [Open In Office] Windows users - Cannot open MS Word files after a period of use
-    * [ECMS-6930] - [Draft] status does not display in edit mode
-    * [ECMS-6932] - [SCV] Cannot print pdf document
-    * [ECMS-6938] - NPE in SEO form
-    * [ECMS-6939] - [Open in Offices] Authentication is required continuously when open a file to edit
-    * [ECMS-6947] - [Acme] Search function does not work
-    * [ECMS-6968] - [Site Explorer][Upload] Cannot open office files on WebDav
-    * [ECMS-6973] - [Views] Wrong buttons are displayed in View form
-    * [ECMS-6976] - [CKEditor] Content CKeditor is encoded many times
-    * [ECMS-6977] - Editing a webContent displays the HTML code in the WYSIWYG editor
+    * [ECMS-5963] - CLONE - Comment for a document has vulnerability
+    * [ECMS-6004] - Lack of expand icon with taxonomies nodes
+    * [ECMS-6284] - [Cluster]: New document template is not updated on node 2 after creating on node 1 successfully
+    * [ECMS-6304] - Name of web content file does not accept accented characters
+    * [ECMS-6397] - when paginating a folder that contain more than page, page does not return to top of the list
+    * [ECMS-6442] - [Cluster] Not show updates on Preference on Site explorer on other node
+    * [ECMS-6629] - [WCM]: Pagination, missing arrow icons when moving to other page
+    * [ECMS-6638] - [WCM]: Edit mode, tooltip text of button should be shown fully
+    * [ECMS-6640] - [Site Explorer]: "The target block ID to update is not found: UIPopupContainer" when editing a document
+    * [ECMS-6714] - [Open in Office][Action bar] The CheckIn/CheckOut actions are not displayed in action bar
+    * [ECMS-6765] - Cannot create a taxonomy with an accented label
+    * [ECMS-6783] - [Content Explorer] Permission of node's owner displays incorrectly after node's permission is modified
+    * [ECMS-6795] - [Site Explorer] Empty content after changed a new content for a file 
+    * [ECMS-6798] - Category's name is displayed incorrectly in AS when category contains accent chars
+    * [ECMS-6831] - Cannot add Symlink for a node to other one which has "check-in" status
+    * [ECMS-6832] - [UXPaaS][Document Preview]MKV Video is shown over Preview mode
+    * [ECMS-6869] - [Site Explorer] Wrong display of HTML File
+    * [ECMS-6870] - [IE] Cannot upload file to a folder whose name contains special characters
+    * [ECMS-6875] - Document is NOT locked after editing it
+    * [ECMS-6880] - [SECURITY] Access to a restricted image via the thumbnailImage Rest service
+    * [ECMS-6957] - [Site Explorer][Edit]Content's name of the file is not correct after saving the file
+    * [ECMS-6962] - [Cluster][Activity Stream]Not show the file on AS when upload file via webdav
+    * [ECMS-6971] - [Cluster][Search] Link Path in browser is incorrect and title of files in result is encoded
+    * [ECMS-6983] - Error when create new content in a new category
+    * [ECMS-6987] - [Remote Edit] Cannot view the  document in MS Office when Platform runs with Java 8
+    * [ECMS-6999] - [Document Selector] Permission denied when upload file via Activity Composer
+    * [ECMS-7000] - Open in Office - Can't save file on Mac
+    * [ECMS-7002] - [SE]: Error when delete any item in SE
+    * [ECMS-7003] - Error when upload file on Personal Document
+    * [ECMS-7004] - Unknown error when comment to node in SE
+    * [ECMS-7022] - [Cluster] [Admin] Data of Action is not sync in all nodes
+    * [ECMS-7025] - [Cluster][WCM] Unknown error when user edits script
+    * [ECMS-7026] - [Cluster][WCM] Cannot share new namespace between nodes
+    * [ECMS-7027] - [cluster][WCM] Cannot share new nodetype between nodes
+    * [ECMS-7028] - [Cluster][WCM] Cannot create document template
+    * [ECMS-7033] - Permission denied when adding a document node in intranet/category/intranet
+    * [ECMS-7051] - User cannot remove file uploaded in Personal Documents
+    * [ECMS-7094] - '+' character instead of space when downloading a file
+    * [ECMS-7140] - Need to correct typo for Content, Node & Template 
+    * [ECMS-7149] - [Personal Documents] Cannot open Personal folder
+    * [ECMS-7170] - Unknown error after creating View with tab's name contains space character
+    * [ECMS-7174] - PathNotFoundException when saving a webcontent with image
+    * [ECMS-7177] - No popup displays when paste existed file by clipboard
+    * [ECMS-7178] - There is no "Versions" button in task bar of child node
+    * [ECMS-7180] - Sometimes exception occurs when upload file via webdav
+    * [ECMS-7205] - The refresh of the SCV content  not done immediately in anonymous mode .
+    * [ECMS-7209] - [Share Content Activity] Comment and Tag are not displayed on the activity of shared content
+    * [ECMS-7212] - [Activity Content] No comment is added in activity stream in case File content is approved
+    * [ECMS-7231] - [CLV] Problems when adding many files with "By Content"
+    * [ECMS-7248] - Error showing PDF file in a linked detail page
+    * [ECMS-7253] - Problem with document activity
+    * [ECMS-7277] - ECM Admin UI broken when resize browser
+
+** Improvement
+    * [ECMS-7175] - Problem when removing some right click actions
+    * [ECMS-7232] - [Document Versioning] New version info is not displayed in Version Info pop-up
+
+** New Feature
+    * [ECMS-7005] - WCM Template pack feature
+    * [ECMS-6493] - Share in Content Explorer
 
 
-eXo Commons 4.2.0  
+eXo Commons 4.3.0-RC1  
 *************************
 
 ** Bug
-    * [COMMONS-366] - <a target="_blank" > is destroyed by Antisamy
-    * [COMMONS-407] - [IE11][Document Selector] Broken encoding of Folder name
-    * [COMMONS-408] - [IE 9, IE 10] Cannot upload file in Activity Composer
-    * [COMMONS-413] - [IE9] Cannot upload file by activity composer
-    * [COMMONS-414] - [CKEditor] Button "Insert Special Characters" does not work in some languages (Vietnamese, Arabic, Japanese, Lithuanian)
-    * [COMMONS-419] - Notification Mail are to all users (even if not synchronized)
+    * [COMMONS-361] - Syntax error displays when deleting web content with long name
+    * [COMMONS-372] - [IE11] [CKEditor] Cursor not shown immediately from the second creation
+    * [COMMONS-432] - [Social notification] Email validation is not correct with some domain part values
+    * [COMMONS-438] - [UserState] Error "Permission denied" for VideoCalls node when normal user logged in
+    * [COMMONS-452] - [Dynamic portlet container] Invalid default name
+    * [COMMONS-456] - Allow to configure dialect in ISPNCacheableLockManagerImpl
 
 
-eXo WIKI 4.2.0 
+eXo WIKI 4.3.0-RC1 
 *************************
 
 ** Bug
-    * [WIKI-715] - [Advanced Search] Search by the keyboard "Enter" is not performed 
-    * [WIKI-1031] - Tip text should be in gray color and disappeared when textbox is clicked
-    * [WIKI-1040] - User can change wiki page content without permission
+    * [WIKI-904] - [TC-4.0.6][Wiki Write Page]MySQLTransactionRollbackException when adding wiki page 
+    * [WIKI-965] - "Formula" macro doesn't work
+    * [WIKI-992] - [TC-PLF-4.2-M1][WIKI WRITE PAGE UPDATE] VersionException happens when saving a page
+    * [WIKI-995] - [SSO] Failed to perform auto save wiki page
+    * [WIKI-1034] - [IE][Wiki][Accent Characters] Page history is not displayed when clicking on version number at top area
+    * [WIKI-1035] - [IE][Wiki][Accent Characters] Cannot delete relation
+    * [WIKI-1053] - Error when init WikiPortlet with java 8
+    * [WIKI-1071] - [SSO-CAS] Cannot search content of wiki page
+    * [WIKI-1072] - Searching in page attachments doesn't work anymore in PLF 4.3
+    * [WIKI-1073] - [SSO-CAS] NOT receive email of watch wiki page
+    * [WIKI-1082] - [TC-4.3.x]WIKI-RDBMS-Refactoring][WIKI READ PAGE] NullPointerException when reading wiki page
+    * [WIKI-1088] - Encoding problem when create a wiki page after merge wiki-rdbms
+    * [WIKI-1089] - Cannot save draft
 
 
-
-eXo Social 4.2.0 
+eXo Social 4.3.0-RC1 
 *************************
 
 ** Bug
+    * [SOC-4408] - [Activity Composer] Post automatic URL parser erroneously picks up all dot separated characters
+    * [SOC-4485] - Need to update Space Description field after deleting it's content  (No description)
+    * [SOC-4487] - Cannot inject membership into spaces
     * [SOC-4768] - Inconsistency of connection's activities
-    * [SOC-4810] - [User profile] End Date of Experience is updated incorrectly in other languages
-    * [SOC-4812] - [User Profile] Text by default in About me is not opaque
-    * [SOC-4817] - [User Profile] Connections section is updated incorrectly when Cancel Request
-    * [SOC-4821] - [IE11] Tip text should be in gray color
-    * [SOC-4828] - [IE11][Space] App List is displayed in 2 lines 
-    * [SOC-4832] - After renaming a space this space related activities are not published to the main activity stream
-    * [SOC-4837] - NoSuchPropertyException: Property latestLazyCreatedTime cannot be loaded from node
-    * [SOC-4855] - Impossible to change space avatar
-    * [SOC-4858] - Unknown error when clicking a tab of alphabet filter in Space's Member tab
-    * [SOC-4862] - [IE9, IE10][User Profile] Edit User Profile button and link do not work
-    * [SOC-4865] - [Migration] Mini connection portlet in User Profiles does not display
-    * [SOC-4866] - [Migration] Exceptions about Web notification in log after migrate from PLF-4.2.0-M2 to PLF-4.2.0-RC1
-    * [SOC-4867] - CLONE - [Intranet Notification] Wrong mention style
-    * [SOC-4870] - [IE9,10] Cannot navigate to Edit my profile page in IE9
-    * [SOC-4872] - [IE][Email Notifications][Activity] Comment box is not opened when click [Reply] link from email notification
-    * [SOC-4880] - Security vulnerabilities with space invitation service "/acceptInvitationToJoinSpace/"
-    * [SOC-4882] - [User Notification Settings] Loss of non-ASCII characters when clicking on Reset button
-    * [SOC-4885] - Property relationshipNo cannot be loaded
-    * [SOC-4900] - [Intranet Notification] WebNotificationJob consumes a lot of resources
-    * [SOC-4906] - [Cluster][Intranet Notifications]Not receive intranet notifications between 2 friends on 2 other nodes
-    * [SOC-4918] - [Cluster] "Missing protocol in comet URL" Exception when starting 2 nodes enabling cometd
+    * [SOC-4771] - [User Profile] Remove Experience Tooltip
+    * [SOC-4797] - Still receive Digest emails after check "never notify me" in My notification setting
+    * [SOC-4826] - [Activity] Incorrect List of users who like the activity
+    * [SOC-4834] - Method setSpaceApplicationConfigPlugin doesn't set default homeApplication config
+    * [SOC-4859] - TemplateRuntimeException when People Directory app is opened
+    * [SOC-4881] - Warning when posting a valid link
+    * [SOC-4894] - [Space] Comment is added while there is no change in Description of space
+    * [SOC-4905] - SQLException while injecting topics
+    * [SOC-4913] - UndeclaredThrowableException while posting activities on stream
+    * [SOC-4916] - [performance] slowness when loading activities stream
+    * [SOC-4925] - javax.persistence.RollbackException while injecting post
+    * [SOC-4926] - [Social Activity MySQL] Profile Migration is failed by Session.logout()
+    * [SOC-4938] - [Social Activity MySQL] Cleanup the Activity and ActivityRef quite slowly.
+    * [SOC-4944] - [Social Activity Mysql] Space activities have wrong providerId after migration
+    * [SOC-4945] - [on-site notification] full activities are displayed instead of an excerpt
+    * [SOC-4951] - javax.persistence.RollbackException while posting comment
+    * [SOC-4952] - java.lang.IllegalStateException: Transaction not active while posting comment
+    * [SOC-4962] - [Social Activity Addon] Wrong display on Feed and My Activities stream
+    * [SOC-4967] - [Space Members] Blank form shown and exception posted in console when manager is deleted
+    * [SOC-4969] - [Cluster][Intranet Notifications] Mark all as read function is not updated on other node
+    * [SOC-4970] - [Cluster][Intranet Notifications] Notification number is not updated on other node
+    * [SOC-4976] - [PLF-4.3.x][SOCIAL-REST_API][GET_SPACE_IDENTITY]: Cannot get an identity with space type
+    * [SOC-4977] - [Social Activity Addon] The activity display error when input with Vietnamese, Japanese, Chinese language on RDBMS
+    * [SOC-4978] - Loading social homepage activity stream is very slow with IDM connections pool full
+    * [SOC-4981] - Problem when migrating community dataset from PLF42 to PLF43-RDBMS
+    * [SOC-4984] - Failed to cleanup for Activity when migrating community dataset from PLF42 to PLF43-RDBMS
+    * [SOC-4989] - Can not "Load more" in Activity Stream
+    * [SOC-4994] - [Social Activity Addon] Activity migration run from start when re-start tomcat
+    * [SOC-4999] - [Social-Addon] MUST check the connection between 2 identities have connected or not
+    * [SOC-5001] - REST getActivityId doesn't work
+    * [SOC-5005] - Tooltip of Permalink icon should be displayed under the icon
+    * [SOC-5009] - Position of Link icons should be aligned a little bit
+    * [SOC-5010] - Icon of Permalink icon is not displayed in Activity when Sharing a file
+    * [SOC-5011] - Activity Permalink should be applied to activities of "Share Content"
+    * [SOC-5012] - [Social Activity Addon] Nothing display when hover the cursor on avatar of a connection
+    * [SOC-5014] - [PLF_4.3.x_SOCIAL_REST_API][REST_WRITE_ACTIVITY_COMMENT_NEW] : NullPointerException
+    * [SOC-5016] - Comment is not highlighted when click on comment notification
+    * [SOC-5019] - Exception when post many activities
+    * [SOC-5021] - [Social Activity Addon] READ_SPACE_HOME performance issue
+    * [SOC-5022] - [Social Activity Addon] READ_PROFILE performance issue
+    * [SOC-5023] - [Social Activity Addon] POST_ON_STREAM performance issue
+    * [SOC-5024] - [Social Activity Addon] POST_ON_STREAM_HALF_DELETED performance issue
+    * [SOC-5025] - [Social Activity Addon] POST_ON_SPACE performance issue
+    * [SOC-5026] - [REST API] Display name of space is null after update space by id
+    * [SOC-5027] - [Social Activity Addon] MENTION_ON_STREAM_HALF_DELETED performance issue
+    * [SOC-5028] - Return incorrect result after getting members of selected space
+    * [SOC-5029] - [Social Activity Addon] COMMENT_ON_ACTIVITY_PURIFIED performance issue
+    * [SOC-5031] - [REST API] Cannot delete space's activities by using rest api
+    * [SOC-5032] - No permission but can delete activity's comment of others
+    * [SOC-5033] - Can update user with the same email of existed user in platform
+    * [SOC-5034] - [PLF_4.3.x_SOCIAL_REST_API][REST_READ_All_RELATIONSHIPS] : OutOfMemoryError
+    * [SOC-5039] - [Social Activity Addon] exception: java.lang.NullPointerException: null: Error during the processAction phase
+    * [SOC-5043] - [REST API] Wrong response code after updating space's groupId
+    * [SOC-5045] - [REST API] Cannot update space's membership by Id
+    * [SOC-5046] - [PLF_4.3.x_SOCIAL_REST_API][REST_READ_USERS_RELATIONSHIPS]: Slowness in getUsersRelationships
+    * [SOC-5047] - [REST API] Manager in space cannot update space's activities of others
+    * [SOC-5049] - Inconsistency of connection's activities
+    * [SOC-5050] - Wrong return list of relationship users
+    * [SOC-5054] - Cannot see friend's activities
+    * [SOC-5055] - [Social-RDBMS] Activity of Wiki does not appear in AS of User B After User A add a wiki
+    * [SOC-5056] - [RDBMS addon] Unknown error while sharing link with unlimited description
+    * [SOC-5057] - Can not share activity with attached image after delete text in "activity composer" box
+    * [SOC-5058] - [RDBMS Addon] Old activity is pushed on top of the stream "All activities"
+    * [SOC-5059] - Relation acitivity is not updated when user has new connection
+    * [SOC-5060] - [After migrating] Problem with displaying the content of the user profile activity
+    * [SOC-5061] - Platform administrator can delete a space in which he is not manager.
+    * [SOC-5063] - [PLF_4.3.x][SOCIAL_REST_READ_USER_ACTIVITIES] : Slowness in getActivityOfInactiveUser
+    * [SOC-5066] - [REST API]Tagged user of an activity cannot get activity's likes
+    * [SOC-5068] - [REST API] No notification after sending request connect with other user.
+    * [SOC-5074] - [RDBMS Addon] Can not start package with rdbms-addon in jboss with command
+    * [SOC-5076] - Cannot remove the Forums app from the Space's actions bar
+    * [SOC-5078] - [Activiy Stream] Cannot loading activity stream after changing language 
+    * [SOC-5080] - [Social-RDBMS] InvalidItemStateException occurs when migrate data from jcr to RDBMS
+    * [SOC-5084] - [Activity Stream] Display many warning messages when attach invalid link by press Enter key
+    * [SOC-5085] - [Activity Stream] Unknown Error displayed when sharing a not existed link
+    * [SOC-5086] - [Activity Stream] Unknown Error displayed when sharing an activity with HTML code
+    * [SOC-5090] - [Activity Stream] unknown Error displayed when sharing an empty activity
+    * [SOC-5095] - Space should be removed from 'My Spaces' after user leaves off space
+    * [SOC-5096] - [PLF_4.3.x_SOCIAL_REST_API][REST_WRITE_RELATIONSHIP_UPDATE] : NullPointerException in manageRefList
+    * [SOC-5099] - Duplicate comment when add comment on Forum Activity
+    * [SOC-5117] - [Social-RDBMS] Comment on a "Connections" activity is not display in 'My Activities' stream
+    * [SOC-5118] - [Social-RDBMS] Can not add category for node in tomcat with java7
+    * [SOC-5119] - [SocialRestV1] updateUserById - wrong logic of checking email
+    * [SOC-5125] - [SocialRestV1] wrong logic of returnSize
+    * [SOC-5128] - [SocialRestV1] the Rest allows forcible relationship
+    * [SOC-5129] - [SocialRestV1] wrong json model of Comment
+    * [SOC-5134] - [SocialRestV1] getSpacesMemberships method - wrong returnSize
+    * [SOC-5135] - Social REST APIs: can delete the last manager of a space via /rest/v1/social/spacesMemberships/{id}
+    * [SOC-5137] - Social REST APIs: can not get relationships when identityId is of a space
+    * [SOC-5145] - SocialRestApi - method getSpacesMemberships - missing parameter status
+    * [SOC-5148] - Strange result when search spaces
+    * [SOC-5149] - [Search in connections] Combining search does not work properly
+    * [SOC-5150] - [Search in connections] Can not search with special characters
+    * [SOC-5151] - [Connections] Cannot search by position - when updated it in Portal
+    * [SOC-5152] - [Search in connection - My Connections] Auto suggestion does not work in 'My Connections' tab
+    * [SOC-5154] - [Space Invitation] Disappear invited user when selected user in the list by auto-completed
+    * [SOC-5158] - [Social Rest] A lot of warning in Console due to use swagger annotation making noisy
+    * [SOC-5166] - [Responsive] Can't view an activity and can't share a link
+    * [SOC-5167] - Status button in Activity detail page didn't work
+    * [SOC-5176] - [Generic User popup] Button disappears for disabled user
+    * [SOC-5177] - My Pages of a deleted user
+    * [SOC-5178] - Exception when delete uploaded content
+    * [SOC-5179] - Cannot share file  in Activity stream
 
+** New Feature
+    * [SOC-4928] - [Social Activity Addon] Implements StreamFilter for Feed, Connections, My Spaces and Owner
+    * [SOC-4929] - [Social Activity Addon] Implements get Older and Newer for StreamFilter for Feed, Connections, My Spaces and Owner
+    * [SOC-4930] - [Social Activity Addon] Implements CRUD Comment and updates the activity.
+    * [SOC-4931] - [Social Activity Addon] Apply the liquibase to manage the DB structure
+            
 
-eXo Calendar 4.2.0  
+eXo Calendar 4.3.0-RC1  
 *************************
 
 ** Bug
-    * [CAL-1104] - [Recurring Event] Incorrect editing when duration happens between 2 days
-    * [CAL-1105] - Cannot drag and drop a recurring event successfully in the space's calendar
-    * [CAL-1113] - Reminder pop-up is NOT displayed when opening Calendar
-    * [CAL-1115] - [Edit Recurring event] Missing the last occurence in the recurring series after editing with "Following events""
-    * [CAL-1119] - [Unified Search] Click on group event result does NOT open event details
-    * [CAL-1125] - In calendar the field viewPermision is wrote with one "s"
-    * [CAL-1139] - [Calendar][Event]Cannot edit an event in search results
+    * [CAL-705] - Cannot resize an event with duration of 30 minutes in Week view
+    * [CAL-1122] - Request a ICS calendar with no event/tasks, nothing return
+    * [CAL-1123] - When the field groups is fill, no one is owner
+    * [CAL-1136] - Impossible to edit the field " groups "
+    * [CAL-1137] - When john wants to edit the owner of the calendar the error code is wrong
+    * [CAL-1147] - No reminder pop-up when Platform uses Apache web server
+    * [CAL-1155] - CalendarRestApi sub-resources are wrong
+    * [CAL-1157] - CalendarRestApi - null attachments
+    * [CAL-1175] - CalendarRestApi - returned task status is always empty
+    * [CAL-1184] - Can not export Personal Calendar
+    * [CAL-1188] - Cannot delete a personal/group/shared calendar 
+    * [CAL-1189] - Unknown error when click view on deleted event
+
+** Improvement
+    * [CAL-1083] - Reminder mails are always in English
 
 
-eXo GateIn 4.2.0-PLF  
+eXo Integration 4.3.0-RC1
 *************************
 
 ** Bug
-    * [EXOGTN-2000] - Unknown error when click on Up Level icon in Group Management
-    * [EXOGTN-2004] - CLONE - [Unified Search] Missing scroll bar inside Setting form
-    * [EXOGTN-2005] - Bad display of calendar in search content form
+    * [INTEG-417] - Avoid systemComment variable on postActivity of org.exoplatform.wcm.ext.component.activity.listener.Utils
+    * [INTEG-423] - [integ-ecms] Comment when updating summary for content is not right
+    * [INTEG-426] - wrong position of x icon
+    * [INTEG-432] - [Unified Search] Missing content type "Task" in the Filter
+    * [INTEG-435] - Bad display of Recent Activities in my profil
+
+
+eXo GateIn 4.3.0-RC1-PLF  
+*************************
+
+** Bug
+    * [EXOGTN-1416] - Composite CSS file of portlet in portals is not build properly
+    * [EXOGTN-1883] - Rethrow exception in case of recovering transaction
+    * [EXOGTN-1947] - Delete users function got CSRF vulnerability
+    * [EXOGTN-1969] - [SSO - OpenAM] Cannot login to PLF with cross domain authentication
+    * [EXOGTN-1971] - Backport GTNPORTAL-3569 Reduce the performance impact of TemplateService cache in a cluster
+    * [EXOGTN-1990] - Not allow "+" character in email address while registering 
+    * [EXOGTN-1991] - [SSO] Failed to perform auto save wiki page
+    * [EXOGTN-2097] - CLONE - [Responsive Layout] The mini Calendar drop-down does not display in the From and To fields on large Android phone.
+    * [EXOGTN-2099] - The global chromattic session doesn't close properly
+    * [EXOGTN-2101] - [SSO-SAML] idp-sig.war is not integrated in exo-saml add-on
+    * [EXOGTN-2102] - [SSO-SPNEGO][Windows] Cannot login by SSO
+    * [EXOGTN-2103] - [SSO-CAS] Lib files is not deleted in package
+    * [EXOGTN-2104] - The field New password is prefilled on FF only
+    * [EXOGTN-2106] - Email content is not supported in multilanguages.
+    * [EXOGTN-2107] - Send button is not disabled when the field Username or Email address is not input
+    * [EXOGTN-2110] - Sender info is not matched with Notification definition
+    * [EXOGTN-2114] - [Forgot Password] Cannot start Jboss package with Java 8
+
+** Improvement
+    * [EXOGTN-1779] - Let "overwrite" import mode delete pages
+    * [EXOGTN-1984] - Backport GTNPORTAL-3402 - Custom password policy
+    * [EXOGTN-2075] - Make UIPopupWindow behaviour same to bootstrap modal
+
+** New Feature
+    * [EXOGTN-1977] - Forgotten password feature on login page
