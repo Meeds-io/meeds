@@ -37,7 +37,6 @@ import java.util.regex.Pattern;
  *   </ul>
  * </p>
  *
- * @author Maxime Gréau <mgreau@exoplatform.com>
  */
 class JavaVersion {
 

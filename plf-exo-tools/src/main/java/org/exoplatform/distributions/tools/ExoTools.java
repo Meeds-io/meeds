@@ -22,20 +22,16 @@
 package org.exoplatform.distributions.tools;
 
 /**
- * Main class for the exo-tools JAR.<br/>
+ * Main class for the exo-tools JAR.<br>
  *
  * This library is used by the startup scripts to configure the environment (JVM)
  * according to system parameters.
  *
- * <p>
- *   The exo-tools.jar is present at the following path:
- *   <ul>
+ * The exo-tools.jar is present at the following path:
+ * <ul>
  *   <li>PLF Tomcat: $CATALINA_HOME/bin/exo-tools.jar</li>
  *   <li>PLF JBoss: $JBOSS_HOME/bin/exo-tools.jar</li>
- *   </ul>
- * </p>
- *
- * @author Maxime Gréau <mgreau@exoplatform.com>
+ * </ul>
  */
 public final class ExoTools {
 
