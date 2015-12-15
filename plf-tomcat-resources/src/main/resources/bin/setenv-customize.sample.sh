@@ -50,6 +50,9 @@
 # Size of the Permanent Generation. (Default : 256m)
 #EXO_JVM_PERMSIZE_MAX="128m"
 
+# Size of the Metaspace. (Default : 256m)
+#EXO_JVM_METASPACE_SIZE_MAX="128m"
+
 # Default locale language
 #EXO_JVM_USER_LANGUAGE="fr"
 

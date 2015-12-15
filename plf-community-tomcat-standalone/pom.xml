@@ -53,6 +53,15 @@
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
+    <!-- PLF-6510: Get exo-tools.jar used by PLF startup scripts -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-exo-tools</artifactId>
+      <version>${project.version}</version>
+      <type>jar</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
     <!-- Build resource used to import license related files -->
     <dependency>
       <groupId>org.exoplatform.resources</groupId>

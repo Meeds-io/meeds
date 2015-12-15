@@ -752,5 +752,6 @@
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
     <componentDescriptor>assemblies/plf-addons-component.xml</componentDescriptor>
+    <componentDescriptor>assemblies/plf-exo-tools-component.xml</componentDescriptor>
   </componentDescriptors>
 </assembly>

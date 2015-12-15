@@ -57,6 +57,7 @@ fi
 [ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="3g"
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN="512m"
 [ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX="256m"
+[ -z $EXO_JVM_METASPACE_SIZE_MAX ] && EXO_JVM_METASPACE_SIZE_MAX="256m"
 [ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
 [ -z $EXO_DEBUG ] && EXO_DEBUG=false
 [ -z $EXO_DEBUG_PORT ] && EXO_DEBUG_PORT="8000"
@@ -133,7 +134,15 @@ fi
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.session.tracking.active=${EXO_JCR_SESSION_TRACKING}"
 
 # JVM memory allocation pool parameters
-CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX} -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
+CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX}"
+
+# PLF-6510: Configure the JVM according to the version
+cmd=$(java -jar $CATALINA_HOME/bin/exo-tools.jar isJava8OrSuperior)
+if [ $? == 0 ]; then
+  CATALINA_OPTS="$CATALINA_OPTS -XX:MaxMetaspaceSize=${EXO_JVM_METASPACE_SIZE_MAX}"
+else
+  CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
+fi
 
 # Reduce the RMI GCs to once per hour for Sun JVMs.
 CATALINA_OPTS="$CATALINA_OPTS -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"

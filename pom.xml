@@ -36,6 +36,7 @@
     <module>plf-assemblies</module>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-dependencies</module>
+    <module>plf-exo-tools</module>
     <module>plf-packaging-resources</module>
     <module>plf-root-webapp</module>
     <module>plf-tomcat-integration-webapp</module>
@@ -153,6 +154,12 @@
         <artifactId>plf-dependencies</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-exo-tools</artifactId>
+        <version>${project.version}</version>
+        <type>jar</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
