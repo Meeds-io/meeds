@@ -68,6 +68,8 @@
         <exclude>jdom:*</exclude>
         <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
         <exclude>xpp3:xpp3_min</exclude>
+        <!-- DEP-105: These artifacts are in conflict with others ones under org.ogce:xpp3 -->
+        <exclude>xpp3:xpp3</exclude>
         <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
         <exclude>commons-beanutils:commons-beanutils-core</exclude>
         <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
