@@ -48,8 +48,8 @@ REM SET EXO_JVM_SIZE_MIN=512m
 REM # Size of the Permanent Generation. (Default : 256m)
 REM SET EXO_JVM_PERMSIZE_MAX=128m
 
-REM # Size of the Metaspace. (Default : 256m)
-REM SET EXO_JVM_METASPACE_SIZE_MAX=128m
+REM # Size of the Metaspace. (Default : 512m)
+REM SET EXO_JVM_METASPACE_SIZE_MAX=256m
 
 REM # Default locale language
 REM SET EXO_JVM_USER_LANGUAGE=fr
