@@ -662,7 +662,7 @@
         <include>org.exoplatform.platform:platform-registration:war</include>
       </includes>
       <scope>provided</scope>
-      <outputFileNameMapping>registrationPLF.war</outputFileNameMapping>
+      <outputFileNameMapping>registration.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>
