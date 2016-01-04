@@ -138,7 +138,7 @@ CATALINA_OPTS="$CATALINA_OPTS -Xms${EXO_JVM_SIZE_MIN} -Xmx${EXO_JVM_SIZE_MAX}"
 
 # PLF-6510: Configure the JVM according to the version
 cmd=$(java -jar $CATALINA_HOME/bin/exo-tools.jar isJava8OrSuperior)
-if [ $? == 0 ]; then
+if [ $? = 0 ]; then
   CATALINA_OPTS="$CATALINA_OPTS -XX:MaxMetaspaceSize=${EXO_JVM_METASPACE_SIZE_MAX}"
 else
   CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=${EXO_JVM_PERMSIZE_MAX}"
