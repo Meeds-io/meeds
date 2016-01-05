@@ -64,9 +64,6 @@ IF NOT DEFINED EXO_JVM_USER_REGION SET EXO_JVM_USER_REGION=US
 IF NOT DEFINED EXO_DEBUG SET EXO_DEBUG=false
 IF NOT DEFINED EXO_DEBUG_PORT SET EXO_DEBUG_PORT=8000
 
-REM # PLF-6451: Not use Turkish locale
-IF /I %EXO_JVM_USER_LANGUAGE% EQU tr SET EXO_JVM_USER_LANGUAGE=en
-
 REM # ---------------------------------------------------------------------------
 REM # Default EXO PLATFORM configuration
 REM # ---------------------------------------------------------------------------
