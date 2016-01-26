@@ -179,3 +179,6 @@ fi
 
 # PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
 CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
+
+# PLF-6550: Fix Startup problem when JVM hangs because of lack of entropy
+CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
