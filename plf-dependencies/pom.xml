@@ -357,6 +357,15 @@
           <artifactId>xml-apis</artifactId>
           <groupId>xml-apis</groupId>
         </exclusion>
+        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.document -->
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-logging-api</artifactId>
+          <groupId>commons-logging</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <!-- ECMS Upgrade Plugins -->
