@@ -104,7 +104,11 @@ REM # Deactivate j.u.l
 SET LOGGING_MANAGER=-Dnop
 REM # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 REM # SLF4J deps
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar
+IF DEFINED CLASSPATH (
+  SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar
+) ELSE (
+  SET CLASSPATH=%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar
+)
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jul-to-slf4j-${org.slf4j.version}.jar
 REM # LogBack deps
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-core-${ch.qas.logback.version}.jar

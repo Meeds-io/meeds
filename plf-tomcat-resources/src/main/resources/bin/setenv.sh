@@ -103,7 +103,11 @@ JAVA_OPTS="$JAVA_OPTS -DEXO_TOMCAT_UNPACK_WARS=${EXO_TOMCAT_UNPACK_WARS} -DEXO_D
 LOGGING_MANAGER="-Dnop"
 # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 # SLF4J deps
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+if [ ! -z $CLASSPATH ]; then
+  CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+else
+  CLASSPATH="$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+fi
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/jul-to-slf4j-${org.slf4j.version}.jar"
 # LogBack deps
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-core-${ch.qas.logback.version}.jar"
