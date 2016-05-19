@@ -516,13 +516,6 @@
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-portlets-platformNavigation</artifactId>
       <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.exoplatform.forum:forum-application-create -->
-        <exclusion>
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
