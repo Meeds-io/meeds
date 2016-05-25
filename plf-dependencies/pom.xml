@@ -766,16 +766,6 @@
       <artifactId>social-webapp-resources</artifactId>
       <type>pom</type>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-extension-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
     <!-- WIKI Upgrade Plugins -->
     <dependency>
       <groupId>org.exoplatform.wiki</groupId>
