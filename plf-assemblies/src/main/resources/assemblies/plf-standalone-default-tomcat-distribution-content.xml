@@ -572,24 +572,6 @@
       <outputFileNameMapping>calendar.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.calendar:calendar-resources:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>csResources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.calendar:calendar-extension-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>calendar-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Wiki wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>

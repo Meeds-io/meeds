@@ -32,60 +32,6 @@
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-extension-webapp</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.exoplatform.kernel:exo.kernel.component.common -->
-        <exclusion>
-          <artifactId>activation</artifactId>
-          <groupId>javax.activation</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.kernel:exo.kernel.container -->
-        <exclusion>
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.jcr:exo.jcr.component.core -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.jboss.cache:jbosscache-core -->
-        <exclusion>
-          <artifactId>jboss-transaction-api</artifactId>
-          <groupId>org.jboss.javaee</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.sun.xml.stream:sjsxp -->
-        <exclusion>
-          <artifactId>stax-api</artifactId>
-          <groupId>javax.xml.stream</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-resources</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.gatein.captcha:simplecaptcha -->
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
       <artifactId>calendar-webapp</artifactId>
       <type>war</type>
     </dependency>
