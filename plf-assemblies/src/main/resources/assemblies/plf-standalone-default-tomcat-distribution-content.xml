@@ -517,42 +517,6 @@
       <outputFileNameMapping>forum.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.forum:forum-forumResources:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>forumResources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.forum:forum-poll-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>poll.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.forum:forum-gadgets:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>forum-gadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.forum:forum-extension-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>forum-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Calendar wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
