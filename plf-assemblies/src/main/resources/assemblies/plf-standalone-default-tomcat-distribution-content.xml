@@ -456,15 +456,6 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.ecms:ecms-apps-gadget-publication:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoDMSGadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
         <include>org.exoplatform.ecms:ecms-apps-portlet-presentation:war</include>
       </includes>
       <scope>provided</scope>

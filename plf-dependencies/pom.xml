@@ -167,16 +167,6 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-gadget-publication</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-gadget-publication</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
       <artifactId>ecms-apps-portlet-administration</artifactId>
       <type>war</type>
     </dependency>
