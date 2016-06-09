@@ -63,7 +63,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.4.0-M02</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>4.4.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.0.2</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
