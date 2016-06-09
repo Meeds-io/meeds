@@ -137,13 +137,7 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.jcr.session.tracking.active=%EXO_JCR_SES
 
 SET CATALINA_OPTS=%CATALINA_OPTS% -Xms%EXO_JVM_SIZE_MIN% -Xmx%EXO_JVM_SIZE_MAX%
 
-REM # PLF-6510: Configure the JVM according to the version
-java.exe -jar %CATALINA_HOME%\bin\exo-tools.jar isJava8OrSuperior
-IF NOT ERRORLEVEL 0 (
-  SET CATALINA_OPTS=%CATALINA_OPTS% -XX:MaxPermSize=%EXO_JVM_PERMSIZE_MAX%
-) ELSE (
-  SET CATALINA_OPTS=%CATALINA_OPTS% -XX:MaxMetaspaceSize=%EXO_JVM_METASPACE_SIZE_MAX%
-)
+SET CATALINA_OPTS=%CATALINA_OPTS% -XX:MaxMetaspaceSize=%EXO_JVM_METASPACE_SIZE_MAX%
 
 REM # Reduce the RMI GCs to once per hour for Sun JVMs.
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000
