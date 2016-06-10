@@ -36,6 +36,8 @@
         <exclude>**/temp/*</exclude>
         <exclude>**/logs/*</exclude>
         <exclude>**/work/*</exclude>
+        <exclude>addons/archives/**</exclude>
+        <exclude>addons/catalogs/**</exclude>
       </excludes>
     </fileSet>
   </fileSets>
