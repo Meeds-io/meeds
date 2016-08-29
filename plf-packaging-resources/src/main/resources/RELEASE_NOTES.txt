@@ -68,7 +68,15 @@ However, if you still insist on skipping versions, we strongly advise to read al
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
-== Upgrading from Platform 4.3.0 to ${org.exoplatform.platform.version} ==
+== Upgrading from Platform 4.3.1 to ${org.exoplatform.platform.version} ==
+
+=== Description of the plugins used in this upgrade ===
+
+=== Unified search ===
+
+* Notice that you need to reindex in order to apply the fix INTEG-458 for existing contents
+
+== Upgrading from Platform 4.3.0 to 4.3.1 ==
 
 === Description of the plugins used in this upgrade ===
 
