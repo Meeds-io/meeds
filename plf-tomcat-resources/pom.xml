@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-tomcat-resources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Tomcat Resources</name>
+  <name>eXo PLF:: Platform Public Distributions - Tomcat Resources</name>
   <dependencies>
     <!-- Logging implementation : http://logback.qos.ch/ -->
     <!-- Is configured from conf/logback.xml -->

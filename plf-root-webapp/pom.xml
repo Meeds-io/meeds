@@ -28,5 +28,5 @@
   </parent>
   <artifactId>plf-root-webapp</artifactId>
   <packaging>war</packaging>
-  <name>eXo Platform Public Distributions - ROOT WebApp</name>
+  <name>eXo PLF:: Platform Public Distributions - ROOT WebApp</name>
 </project>

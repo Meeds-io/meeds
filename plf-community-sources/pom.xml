@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-community-sources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Sources</name>
+  <name>eXo PLF:: Platform Public Distributions - Sources</name>
   <profiles>
     <profile>
       <!-- Additional tasks done while performing a release -->

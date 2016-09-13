@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Community Tomcat Standalone</name>
+  <name>eXo PLF:: Platform Public Distributions - Community Tomcat Standalone</name>
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>

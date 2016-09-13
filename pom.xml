@@ -31,7 +31,7 @@
   <artifactId>plf-public-distributions</artifactId>
   <version>4.4.x-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions</name>
+  <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
     <module>plf-assemblies</module>
     <module>plf-community-tomcat-standalone</module>

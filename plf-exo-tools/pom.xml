@@ -30,7 +30,7 @@
   </parent>
   <artifactId>plf-exo-tools</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Platform Public Distributions - eXo Tools</name>
+  <name>eXo PLF:: Platform Public Distributions - eXo Tools</name>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

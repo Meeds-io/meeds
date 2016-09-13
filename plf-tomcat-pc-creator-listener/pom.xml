@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-tomcat-pc-creator-listener</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Platform Public Distributions - Tomcat Portal Containers Creator</name>
+  <name>eXo PLF:: Platform Public Distributions - Tomcat Portal Containers Creator</name>
   <description>This module defines a LifecycleListener to attach to a Tomcat host to create all portal containers.</description>
   <dependencies>
     <dependency>

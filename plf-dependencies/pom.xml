@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-dependencies</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Dependencies</name>
+  <name>eXo PLF:: Platform Public Distributions - Dependencies</name>
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.calendar</groupId>

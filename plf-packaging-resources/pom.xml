@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-packaging-resources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Platform Public Distributions - Shared Resources</name>
+  <name>eXo PLF:: Platform Public Distributions - Shared Resources</name>
   <dependencies>
     <!-- Add-ons Manager -->
     <dependency>
