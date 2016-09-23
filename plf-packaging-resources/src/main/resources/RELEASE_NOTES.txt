@@ -72,6 +72,9 @@ However, if you still insist on skipping versions, we strongly advise to read al
 
 === Description of the plugins used in this upgrade ===
 
+#PLF-6737: No signature of method: static org.exoplatform.services.deployment.Utils.sanitize() when using the Announcement template
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+
 === Unified search ===
 
 * Notice that you need to reindex in order to apply the fix INTEG-458 for existing contents
