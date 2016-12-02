@@ -57,6 +57,6 @@ eXo Resources
 ------------------
 
 Community         https://community.exoplatform.com
-Documentation     https://docs.exoplatform.com
+Documentation     https://www.exoplatform.com/docs
 Blog              https://www.exoplatform.com/blog
 eXo               https://www.exoplatform.com

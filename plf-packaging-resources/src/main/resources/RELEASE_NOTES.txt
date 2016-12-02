@@ -15,6 +15,70 @@ IV.   KNOWN ISSUES
 
 Main changes since Platform 4.3
 
+* Features
+** Text formatting in microblog
+** Notifications should always include a link to originating app
+** Preview documents on search results
+** @mentions in documents comments
+** Align Document versioning screen with wiki
+** Invite space members from Members app
+** Share Document to user
+** Display space avatar in the activity streams
+** Forum Redesign
+** Add excerpt of the comment in notifications
+** Text formatting for comments
+** Disable Activities by type by configuration
+** Elasticsearch in PLF
+** Social RDBMS in PLF
+** Wiki RDBMS in PLF
+** New file storage (File RDBMS)
+** Database implementation of File API
+** Quartz in database by default
+* Improvements
+** Improvement in user suggestions when @mentioning
+** Make people search accents and typos insensitive
+** Merge Wars inside each App - only one war per App (Wiki, Calendar, Forum, Commons)
+** Reduce PLF Startup time
+* Upgrade
+** Upgrade Tomcat to 7.0.72
+** Upgrade JBoss to 6.4
+** Upgrade com.ibm.icu:icu4j from 3.8.1 to 56.1
+** Upgrade com.mattbertolini:liquibase-slf4j from 1.2.1 to 2.0.0
+** Upgrade com.thoughtworks.xstream:xstream from 1.3.1 to 1.4.8
+** Upgrade commons-codec:commons-codec from 1.4 to 1.10
+** Upgrade commons-collections:commons-collections from 3.2.1 to 3.2.2
+** Upgrade commons-io:commons-io from 2.1 to 2.4
+** Upgrade javax.mail:mail from 1.4.7 to 1.5.5
+** Upgrade javax.validation:validation-api from 1.0.0.GA to 1.1.0.Final
+** Upgrade javax.ws.rs:jsr311-api from 1.0 to 1.1.1
+** Upgrade net.sourceforge.cssparser:cssparser from 0.9.14 to 0.9.18
+** Upgrade net.sourceforge.nekohtml:nekohtml from 1.9.20 to 1.9.22
+** Upgrade org.apache.pdfbox:pdfbox from 1.7.1 to 1.8.11
+** Upgrade org.apache.poi:poi* from 3.10.1 to 3.13
+** Upgrade org.aspectj:aspectjrt from 1.8.6 to 1.8.8
+** Upgrade org.chromattic:chromattic from 1.3.0-beta4 to 1.3.0
+** Upgrade org.cometd.java:bayeux-api from 3.0.5 to 3.0.9
+** Upgrade org.cometd.java:cometd-java-* from 3.0.5 to 3.0.9
+** Upgrade org.elasticsearch:elasticsearch from 1.7.3 to 2.3.2
+** Upgrade org.hibernate:hibernate-c3p0 from 4.1.12.Final to 4.2.21.Final
+** Upgrade org.hibernate:hibernate-core from 4.1.12.Final to 4.2.21.Final
+** Upgrade org.hibernate:hibernate-entitymanager from 4.1.12.Final to 4.2.21.Final
+** Upgrade org.hibernate:hibernate-validator from 4.2.0.Final to 4.2.1.Final
+** Upgrade org.hibernate.common:hibernate-commons-annotations from 4.0.4.Final to 4.0.5.Final
+** Upgrade org.infinispan:infinispan-core from 5.2.9.Final to 5.2.15.Final
+** Upgrade org.javassist:javassist from 3.14.0-GA to 3.20.0-GA
+** Upgrade org.jibx:jibx-run from 1.2.5 to 1.2.6
+** Upgrade org.liquibase:liquibase-core from 3.4.1 to 3.4.2
+** Upgrade org.owasp.antisamy:antisamy from 1.4.5 to 1.5.3
+** Upgrade org.quartz-scheduler:quartz from 2.1.7 to 2.2.2
+** Upgrade org.slf4j:slf4j-* from 1.7.7 to 1.7.18
+** Upgrade org.staxnav:staxnav.core from 0.9.6 to 0.9.8
+** Upgrade org.xhtmlrenderer:flying-saucer-* from 9.0.6 to 9.0.8
+** Upgrade org.xwiki.commons from 5.4.2 to 5.4.7
+** Upgrade org.xwiki.platform from 5.4.2 to 5.4.7
+** Upgrade org.xwiki.rendering:* from 5.4.2 to 5.4.7
+** Upgrade pdf.js to 1.4.20
+** Upgrade ckeditor to 4.5.9
 * Bug fixes
 
 Main changes since Platform 4.2
@@ -75,9 +139,26 @@ However, if you still insist on skipping versions, we strongly advise to read al
 #PLF-6737: No signature of method: static org.exoplatform.services.deployment.Utils.sanitize() when using the Announcement template
 commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
 
+In addition, upgrade scripts are automatically run at startup in this version to migrate wiki and social data from JCR to JPA.
+Wiki data migration is done synchronously, meaning that the eXo Platform instance will be available only once the data migration is done.
+Social data migration is done asynchronously, meaning that the data migration will run after the eXo Platform start.
+
+=== Architecture changes ===
+
+Since the version 4.4.0, eXo Platform requires Elasticsearch.
+eXo Platform is shipped with an embedded version of Elasticsearch which automatically starts when eXo Platform starts.
+This embedded Elasticsearch instance is recommended for development and test but not for production.
+For production it is recommended to run a standalone Elasticsearch cluster (please refer to Elasticsearch official documentation for more details).
+In order to use a standalone Elasticsearch cluster, the following properties must be defined in exo.properties:
+* exo.es.embedded.enabled=false - Disable the default Embedded Elasticsearch
+* exo.es.index.server.url=<indexing_URL> - URL of the node used for indexing
+* exo.es.search.server.url=<searching_URL> - URL of the node used for searching
+
+For advanced configuration and more details please refer to the eXo Platform documentation.
+
 === Unified search ===
 
-* Notice that you need to reindex in order to apply the fix INTEG-458 for existing contents
+*  Data must be reindexed in order to apply the fix INTEG-458 for existing contents.
 
 == Upgrading from Platform 4.3.0 to 4.3.1 ==
 
