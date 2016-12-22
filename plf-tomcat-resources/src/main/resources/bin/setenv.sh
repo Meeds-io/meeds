@@ -180,3 +180,6 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
 
 # PLF-6550: Fix Startup problem when JVM hangs because of lack of entropy
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
+
+# PLF-6965 set default file encoding to UTF-8 Independently from OS default charset
+CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"

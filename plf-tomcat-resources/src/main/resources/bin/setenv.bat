@@ -175,6 +175,9 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djavax.xml.stream.XMLOutputFactory=com.sun.xm
 REM # PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
 SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
 
+REM # PLF-6965 # set default file encoding to UTF-8 Independently from OS default charset
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding="UTF-8"
+
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}
 
