@@ -164,6 +164,8 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.storage.data.dir=\"${EXO_DATA_DIR}/jcr/values\""
 # JCR indexes
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.index.data.dir=\"${EXO_DATA_DIR}/jcr/index\""
+# Files storage
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.files.storage.dir=\"${EXO_DATA_DIR}/files\""
 
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=\"${EXO_LOGS_LOGBACK_CONFIG_FILE}\""
