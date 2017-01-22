@@ -87,7 +87,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # Global Tomcat settings
-[ -z $EXO_TOMCAT_UNPACK_WARS ] && EXO_TOMCAT_UNPACK_WARS=$EXO_DEV
+[ -z $EXO_TOMCAT_UNPACK_WARS ] && EXO_TOMCAT_UNPACK_WARS=true
 
 # -----------------------------------------------------------------------------
 # Export the needed system properties for server.xml
