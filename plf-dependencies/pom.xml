@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>4.5.x-SNAPSHOT</version>
+    <version>5.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-dependencies</artifactId>
   <packaging>pom</packaging>
@@ -105,7 +105,7 @@
           <artifactId>jaxb-impl</artifactId>
           <groupId>com.sun.xml.bind</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.portal:exo.portal.webui.portal -->
+        <!-- Coming by transitivity from org.exoplatform.gatein.portal:exo.portal.webui.portal -->
         <exclusion>
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
@@ -326,7 +326,7 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- used by org.gatein.portal:exo.portal.web.portal and org.gatein.portal:exo.portal.web.rest but not declared -->
+    <!-- used by org.exoplatform.gatein.portal:exo.portal.web.portal and org.exoplatform.gatein.portal:exo.portal.web.rest but not declared -->
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
@@ -433,7 +433,7 @@
       <artifactId>platform-extension-webapp</artifactId>
       <type>pom</type>
       <exclusions>
-        <!-- Coming from org.gatein.sso:sso-saml-plugin -->
+        <!-- Coming from org.exoplatform.gatein.sso:sso-saml-plugin -->
         <exclusion>
           <artifactId>log4j</artifactId>
           <groupId>log4j</groupId>
@@ -453,7 +453,7 @@
           <artifactId>activation</artifactId>
           <groupId>javax.activation</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.sso:sso-saml-plugin -->
+        <!-- Coming by transitivity from org.exoplatform.gatein.sso:sso-saml-plugin -->
         <exclusion>
           <artifactId>javax.servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
@@ -676,7 +676,7 @@
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.management</artifactId>
       <exclusions>
         <!-- Coming by transitivity from org.exoplatform.ws:exo.ws.rest.core -->
@@ -688,12 +688,12 @@
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.web.oauth-web</artifactId>
       <exclusions>
         <exclusion>
           <artifactId>sso-integration</artifactId>
-          <groupId>org.gatein.sso</groupId>
+          <groupId>org.exoplatform.gatein.sso</groupId>
         </exclusion>
         <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
         <exclusion>
@@ -713,42 +713,42 @@
       <artifactId>gatein-cdi-injection</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.eXoGadgets</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.gadgets-server</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.portlet.dashboard</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.portlet.exoadmin</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.portlet.web</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.web.eXoResources</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.web.portal</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.gatein.portal</groupId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.web.rest</artifactId>
       <type>war</type>
     </dependency>

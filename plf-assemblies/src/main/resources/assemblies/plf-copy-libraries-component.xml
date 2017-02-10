@@ -51,7 +51,7 @@
         <exclude>xstream:xstream:*</exclude>
         <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
         <exclude>jdom:*:*</exclude>
-        <!-- These old versions of eXo portal are in conflict with new ones under org.gatein.portal -->
+        <!-- These old versions of eXo portal are in conflict with new ones under org.exoplatform.gatein.portal -->
         <exclude>org.exoplatform.portal:*:*</exclude>
         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
         <exclude>javax.servlet:*</exclude>

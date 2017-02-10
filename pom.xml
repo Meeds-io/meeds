@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>4.5.x-SNAPSHOT</version>
+  <version>5.0.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
@@ -63,7 +63,7 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>4.5.x-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>5.0.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.1.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
@@ -325,7 +325,7 @@
                         <exclude>xstream:xstream:*</exclude>
                         <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
                         <exclude>jdom:*:*</exclude>
-                        <!-- These old versions of eXo portal are in conflict with new ones under org.gatein.portal -->
+                        <!-- These old versions of eXo portal are in conflict with new ones under org.exoplatform.gatein.portal -->
                         <exclude>org.exoplatform.portal:*:*</exclude>
                         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
                         <exclude>javax.servlet:*</exclude>
