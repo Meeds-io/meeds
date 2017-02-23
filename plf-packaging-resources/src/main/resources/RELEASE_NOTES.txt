@@ -132,6 +132,12 @@ However, if you still insist on skipping versions, we strongly advise to read al
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
+== Upgrading from Platform 4.4.0 to ${org.exoplatform.platform.version} ==
+
+=== Search ===
+
+*  Data must be reindexed in order to apply the fix PLF-6326 for existing contents.
+
 == Upgrading from Platform 4.3.1 to ${org.exoplatform.platform.version} ==
 
 === Description of the plugins used in this upgrade ===

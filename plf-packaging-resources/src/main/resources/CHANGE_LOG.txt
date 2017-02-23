@@ -6,172 +6,120 @@ Changelog Platform ${org.exoplatform.platform.version}
 eXo Platform ${org.exoplatform.platform.version} 
 *************************
 
-** New Features
-    * PFR-1109 - Preview documents on search results
-    * PLF-6613 - Quartz in database by default
-    * PLF-6644 - Elasticsearch in PLF
-
 ** Tasks
-    * PLF-6544 - [Remote edit] Add MIME type to support MicrosoftOffice on Windows 10
-    * PLF-6557 - Upgrade packaged Apache Tomcat 7.0.63 -> 7.0.69
-    * PLF-6628 - Upgrade Javascript libraries
-    * PLF-6630 - Upgrade ckeditor to 4.5.9
-    * PLF-6648 - Remove Quartz sql from jboss packaging
+    * PLF-7042 - Upgrade Tomcat 7.0.75
 
 ** Improvements
-    * PLF-6565 - Improvement in user suggestions when @mentioning
-    * PLF-6614 - Merge Wars inside each App - only one war per App (Wiki, Calendar, Forum, Commons)
-    * PLF-6620 - Reduce PLF Startup time
-    * PLF-6681 - File activities : Open in Documents + better preview + activity content improvements
-    * PLF-6708 - Preview when click on a document result in unified search
-    * PLF-6753 - Be able to share a document with users not just with spaces
+    * PLF-6345 - Default language in Social notifications
 
 ** Bugs
-    * PLF-6554 - Fix javadoc errors raised by doclint (JDK 8)
-    * PLF-6588 - [WhoIsOnline Portlet] Http Session problem
-    * PLF-6602 - Accepting/refusing an invitation from the on-site notificaiton should update the UI
-    * PLF-6625 - Activate AddDateTimeAction for "soc:spacedefinition" in Social WS
-    * PLF-6640 - LiquibaseDataInitializer starts too late.
-    * PLF-6643 - Websocket error in debug consol in fresh jboss 4.3.0
-
+    * PLF-6326 - [ECMS Search]: Excerpt in search result contains useless information
+    * PLF-6686 - Some keys on the keyboard do not work normally when adding a comment before sharing a document
+    * PLF-6687 - intranet site name embedded in source code
+    * PLF-6724 - Performance regression caused by "TemplateService" cache settings
+    * PLF-6840 - Session timeout not working reliably
+    * PLF-6918 - Error design in attach file area when uploading a ppt, word and excel document
+    * PLF-6943 - A useless space is displayed when clicking on Show comments button in smartphone
+    * PLF-7004 - eXo platform 4.4 does not start with minimal profile
+    * PLF-7008 - [TC-PLF-4.4.0-RC01][Cluster] Stabilize Cluster under heavy load
+    * PLF-7031 - The indexing administration application doesn't work under JBoss EAP distribution
+    * PLF-7045 - Unable to preview a document in search screen
+    * PLF-7047 - Notifications window exceeds browser window frame
+    * PLF-7057 - Some user searches never end
+    * PLF-7059 - Update Gatein WCI packaged jar in PLF to 2.5.0
+    * PLF-7062 - [SOC-RDBMS]: Review the space cache usage
+    * PLF-7063 - Review the ResourceBundle cache usage
+    * PLF-7074 - Exception with infinispan tomcat clustered node
+    * PLF-7076 - [Privacy] Uploading a document in my documents fires an activity visible to my network
+    * PLF-7089 - Suggestion window: replace "Inviter" with "Se connecter"
 
 eXo ECMS ${org.exoplatform.platform.version}
 *************************
 
-** New Features
-    * PFR-1110 - @mentions in documents comments
-    * PFR-1111 - Align Document versioning screen with wiki
-    * PFR-1113 - Share Document to user
-
 ** Tasks
-    * ECMS-7447 - Remove unused gadgets
+    * ECMS-6162 - [Unified Search] BaseSearchServiceConnector consumes all the CPUs of the server
 
 ** Improvements
-    * ECMS-7430 - Stop calling /rest/state/ping if the last call failed
-    * ECMS-7431 - [Open in Office] upgrade ITHit to 2.0.1735.0
-    * ECMS-7442 - Performance improvement at ActionServiceContainerImpl
+    * ECMS-7254 - Cannot save metadata property of type Double
+    * ECMS-7593 - Error JCR occured after delete a base version
 
 ** Bugs
-    * ECMS-6711 - [Open in Office] Cannot open file with HTTPS on Ubuntu
-    * ECMS-7204 - [Unified Search] Search results contain HTML tags for new nodetype
-    * ECMS-7405 - Fix javadoc errors raised by doclint (JDK 8)
-    * ECMS-7427 - List View : Move via D&D does not work everywhere on the line
-    * ECMS-7428 - Icon View : Drag and Drop to move a file into a folder does not work
-    * ECMS-7444 - Property definition is not found exception after deploying the "Spaces-Categories" Add-on
-    * ECMS-7454 - should not use ThreadLocal for user navigation
-    * ECMS-7472 - Document Content: exo fields: exo:title crashed by exo: name
-    * ECMS-7481 - Add confirm message when drag and drop a file on another
-    * ECMS-7482 - PathNotFoundException when saving a new content of a new nodetype which is added to the list of values of the property exo:affectedNodeTypeNames
-    * ECMS-7508 - Impossible to navigate under a customized node
+    * ECMS-7307 - Timezone problem when publishing a document from the staged state
+    * ECMS-7513 - Display the rootCause of this exception: Repository not found. Ignoring
+    * ECMS-7572 - [Unified search] Bad performance for unified search
+    * ECMS-7584 - Unable to open shared file from link in mail
 
 eXo Commons ${org.exoplatform.platform.version}
 *************************
 
-** New Features
-    * COMMONS-484 - New file storage (File RDBMS)
-    * COMMONS-502 - Database implementation of File API 
-
-** Improvements
-    * COMMONS-474 - Provide a common HTML sanitizer based on owasp Java HTML sanitizer
-
 ** Bugs
-    * COMMONS-472 - Fix javadoc errors raised by doclint (JDK 8)
-    * COMMONS-508 - wrong styles combo name in CKeditor configuration (exoConfig.js)
+    * COMMONS-416 - Language in email notification
+    * COMMONS-500 - Loop on es indexation if an error occurs
+    * COMMONS-519 - In CKEditor, when want to insert image, button "Browse Server" is not displayed
+    * COMMONS-520 - Avoid to clear notifications cache when no changes made
+    * COMMONS-521 - Fix SettingService cache to consider null objects
+    * COMMONS-522 - Avoid using lock for single user transaction
+    * COMMONS-523 - Avoid persisting UserStateService information
+    * COMMONS-525 - Test on slideshare integration fails
 
 eXo WIKI ${org.exoplatform.platform.version}
 *************************
 
 ** Bugs
-    * WIKI-1167 - Tests failures with JDK 8
-    * WIKI-1168 - Fix javadoc errors raised by doclint (JDK 8)
-    * WIKI-1170 - Do not add watcher mixin when reading watchers of a page
-    * WIKI-1212 - Broken attendence indicator images under "Attendees" in Meeting Notes
-    * WIKI-1213 - [WIKI]: Incorrect modification date
-    * WIKI-1237 - Unknown error message displays when adding relations with Intranet portal
+    * WIKI-1308 - Wrong indexation when a draft page is saved
 
 eXo Social ${org.exoplatform.platform.version}
 *************************
 
-** New Feature
-    * PFR-1011 - Text formatting in microblog
-    * PFR-1108 - Notifications should always include a link to originating app
-    * PFR-1112 - Invite space members from Members app
-    * PFR-1117 - Add excerpt of the comment in notifications
-    * PFR-1131 - Text formatting for comments
-    * SOC-5487 - Disable Activities by type by configuration
-    * Social RDBMS in PLF
-
 ** Tasks
-    * SOC-5211 - [Activity] Missing the translation of user's gender
+    * SOC-5667 - Stabilize Unit Tests on Core Module
 
 ** Improvements
-    * SOC-5351 - Make people search accents and typos insensitive
-    * SOC-5363 - Add tooltips on like buttons
-    * SOC-5408 - Display space avatar in the activity streams
+    * SOC-5485 - [Regression]:Refused Spaces suggestions should not be displayed again
 
 ** Bugs
-    * SOC-5233 - Space not listed in Share dialog if it does not contain the Wiki app
-    * SOC-5238 - Visiblity attribute is not changed when updating a space using REST API
-    * SOC-5239 - Fix javadoc errors raised by doclint (JDK 8)
-    * SOC-5307 - head chopped on profile picture
-    * SOC-5347 - Prevent unauthenticated users to access path /rest/jcr/repository/social/production
-    * SOC-5420 - [Share Activity] slowness and cache issues with a crowded space
-    * SOC-5483 - problem in notifications with sender name
-    * SOC-5510 - Space activities should be deleted with the space
-    * SOC-5511 - 10 ajax queries on avatar picture hovering
-    * SOC-5513 - [Notification] When choose to reset My notifications settings, the form appears under the screen
-    * SOC-5562 - Improvement in user suggestions when @mentioning in the Activity Stream
+    * SOC-5257 - No notification when we mention a user who has a username which begins with a number
+    * SOC-5493 - After Delete a space, "Show More" button in Spaces lists do not work
+    * SOC-5505 - Activity is re-saved each time someone leave a comment
+    * SOC-5549 - Hidden spaces never found in unified search
+    * SOC-5579 - [Dashboard] Add gadget button is not displayed after closing Dashboard Workspace popup
+    * SOC-5649 - Problem with conversationState in a listener
+    * SOC-5662 - [SOC-RDBMS]: Review the SpacesCount cache usage
+    * SOC-5663 - Improve get relationship operation
+    * SOC-5673 - Can not rename a space
 
 eXo Calendar ${org.exoplatform.platform.version}
 *************************
 
-** Improvements
-    * CAL-1226 - Make URLs in event descriptions clickable
-
 ** Bugs
-    * CAL-1193 - [Repetitive Event] Wrong date when starting time is in previous day in GMT
-    * CAL-1215 - Tests failures with JDK 8
-    * CAL-1221 - Fix javadoc errors raised by doclint (JDK 8)
-    * CAL-1224 - Bad translation for Location in french
-    * CAL-1225 - User picker in Participants tab is case sensitive
-    * CAL-1237 - Wrong From fied's value in a calendar reminder email notification after open relay mail configuration
+    * CAL-1249 - [Security] calendar import got XSS issue
+    * CAL-1267 - [Calendar Integration] Performance regression for calendar read home
+    * CAL-1272 - URLS not clickable in events popover
 
 eXo Integration ${org.exoplatform.platform.version}
 *************************
 
 ** Bugs
-    * INTEG-451 - Fix javadoc errors raised by doclint (JDK 8)
-    * INTEG-457 - [Unified Search] Defaut sort by date is made from the most old to the most recent
-    * INTEG-458 - [Unified search] File not found when it contains "_"
-    * INTEG-463 - org.exoplatform.commons.search.driver.jcr.JcrSearchDriver problem in replaceSpecialCharacters
+    * INTEG-461 - An offline user can disable the search UnifiedSearch
 
 eXo Forum ${org.exoplatform.platform.version}
 *************************
 
-** Improvements
-    * PFR-1116 - [Forum] Mobile friendly topic list
-    * FORUM-1240 - The topic Title is cut even there is a blank space
-
 ** Bugs
-    * FORUM-1234 - Fix javadoc errors raised by doclint (JDK 8)
-    * FORUM-1239 - An email notification is sent to the author when he replies or adds a new post in his own topic
-    * FORUM-1248 - Forum Data is not correctly build
+    * FORUM-1318 - Topic edition takes wrong person in activity comment
+    * FORUM-1319 - [Private Messages] Problem in accessing Private Messages when delete user
 
 eXo GateIn ${org.exoplatform.platform.version}
 *************************
 
-** Tasks
-
 ** Improvements
-    * EXOGTN-2178 - Improve ResourceBundleService start time
-    * EXOGTN-2213 - Drop the application name in portlets references
+    * EXOGTN-2149 - Add validator for property of type Double
+    * EXOGTN-2249 - PL IDM DB only mode should be automatically detected
 
 ** Bugs
-    * EXOGTN-2173 - Fix javadoc errors raised by doclint (JDK 8)
-    * EXOGTN-2192 - Improve performance when changing the password of the user
-    * EXOGTN-2205 - single login - session not expiring at logout
-    * EXOGTN-2209 - JS modules are loaded several times in dev mode
-    * EXOGTN-2219 - organizationservice is always null when called in a listener
-    * EXOGTN-2220 - NewPortalConfigListner override NewPortalConfig params
-    * EXOGTN-2222 - Improve performance when changing the password of the user
-    * EXOGTN-2240 - User from LDAP/AD are not visible with disable user feature
+    * EXOGTN-2169 - [Unified Search] Search Page doesn't keep the query after language switch
+    * EXOGTN-2223 - JBID_IO_ATTR_TEXT_VALUES.TEXT_ATTR_VALUE_ID column should be indexed
+    * EXOGTN-2234 - Template statistics collection use blocker operation
+    * EXOGTN-2236 - Remove unnecessary bottleneck from ServletContainer
+    * EXOGTN-2241 - server is blocked while starting
+    * EXOGTN-2248 - Fix DescriptionService cache to cache null values
