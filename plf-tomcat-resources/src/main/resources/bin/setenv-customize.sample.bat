@@ -98,8 +98,10 @@ REM # --------------------------------------------------------------------------
 REM # Tomcat configuration
 REM # ---------------------------------------------------------------------------
 
-REM # Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.bat script)
-REM SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
+REM # Explode all wars in the webapps directory (Default: true)
+REM # Warning : setting this value to false could lead to slower startup and performance issues as
+REM # explained in Tomcat documentation : https://tomcat.apache.org/migration-8.html#Tomcat_8.0.x_noteable_changes
+REM SET EXO_TOMCAT_UNPACK_WARS=false
 
 REM # -----------------------------------------------------------------------------
 REM # Advanced settings (We directly append some settings in CATALINA_OPTS)

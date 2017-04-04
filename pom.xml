@@ -67,7 +67,7 @@
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.1.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
-    <org.apache.tomcat.version>7.0.75</org.apache.tomcat.version>
+    <org.apache.tomcat.version>8.5.13</org.apache.tomcat.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.7</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
@@ -116,6 +116,12 @@
         <groupId>org.apache.tomcat</groupId>
         <artifactId>tomcat-catalina-jmx-remote</artifactId>
         <version>${org.apache.tomcat.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-util</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <!-- Required by conditional processing in logback -->
       <dependency>

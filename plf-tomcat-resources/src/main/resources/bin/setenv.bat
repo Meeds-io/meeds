@@ -88,7 +88,7 @@ REM # Default Tomcat configuration
 REM # ---------------------------------------------------------------------------
 
 REM # Global Tomcat settings
-IF NOT DEFINED EXO_TOMCAT_UNPACK_WARS SET EXO_TOMCAT_UNPACK_WARS=%EXO_DEV%
+IF NOT DEFINED EXO_TOMCAT_UNPACK_WARS SET EXO_TOMCAT_UNPACK_WARS=true
 
 REM # ---------------------------------------------------------------------------
 REM # Export the needed system properties for server.xml

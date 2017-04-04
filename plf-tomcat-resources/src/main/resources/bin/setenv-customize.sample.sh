@@ -104,8 +104,10 @@
 # File used to store the PID of the process. (Default: ${CATALINA_BASE}/temp/catalina.pid if start_eXo.sh is launched with --background option. Empty otherwise)
 #CATALINA_PID="$CATALINA_BASE/temp/catalina.pid"
 
-# Explodes all wars in the webapps directory (Default: $EXO_DEV. true with --dev option on start_eXo.sh script)
-#EXO_TOMCAT_UNPACK_WARS=true
+# Explode all wars in the webapps directory (Default: true)
+# Warning : setting this value to false could lead to slower startup and performance issues as
+# explained in Tomcat documentation : https://tomcat.apache.org/migration-8.html#Tomcat_8.0.x_noteable_changes
+#EXO_TOMCAT_UNPACK_WARS=false
 
 # -----------------------------------------------------------------------------
 # Advanced settings (We directly append some settings in CATALINA_OPTS)

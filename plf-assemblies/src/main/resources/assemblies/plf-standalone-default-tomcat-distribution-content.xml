@@ -49,7 +49,6 @@
         <!-- We need to exclude everything we override -->
         <exclude>**/conf/server.xml</exclude>
         <exclude>**/conf/logging.properties</exclude>
-        <exclude>**/conf/Catalina/localhost/*</exclude>
         <exclude>**/conf/tomcat-users.xml</exclude>
         <exclude>**/webapps/**</exclude>
         <exclude>**/LICENSE*</exclude>
