@@ -134,6 +134,11 @@ However, if you still insist on skipping versions, we strongly advise to read al
 
 == Upgrading from Platform 4.4.0 to ${org.exoplatform.platform.version} ==
 
+=== Description of the plugins used in this upgrade ===
+
+# PLF-7186 Search Indexing Management page does not appear after PLF upgrade
+commons.upgrade.Upgrade-PortalData.enable=true
+
 === Search ===
 
 *  Data must be reindexed in order to apply the fix PLF-6326 for existing contents.
