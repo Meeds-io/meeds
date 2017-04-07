@@ -13,6 +13,10 @@ IV.   KNOWN ISSUES
 
 = I. MAIN CHANGES =
 
+Main changes since Platform 4.4.0
+
+* Bug fixes
+
 Main changes since Platform 4.3
 
 * Features
@@ -139,9 +143,18 @@ However, if you still insist on skipping versions, we strongly advise to read al
 # PLF-7186 Search Indexing Management page does not appear after PLF upgrade
 commons.upgrade.Upgrade-PortalData.enable=true
 
+# ECMS-7595: Cannot download a document : the Download button is not visible
+commons.upgrade.NodeTypeTemplateUpgradePlugin.enable=true
+
 === Search ===
 
-*  Data must be reindexed in order to apply the fix PLF-6326 for existing contents.
+* JCR data must be reindexed in order to apply the fix PLF-6326 for existing contents.
+* Elasticsearch spaces index must be recreated in order to apply SOC-5549
+
+=== Troubleshooting ===
+
+In a cluster environment, database locks issues can happen when starting the nodes the first time after the upgrade.
+The best solution to fix this is to start and stop completely one of the nodes to do the upgrade, then start the cluster.
 
 == Upgrading from Platform 4.3.1 to ${org.exoplatform.platform.version} ==
 

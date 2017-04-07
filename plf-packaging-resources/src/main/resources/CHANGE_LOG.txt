@@ -31,7 +31,13 @@ eXo Platform ${org.exoplatform.platform.version}
     * PLF-7063 - Review the ResourceBundle cache usage
     * PLF-7074 - Exception with infinispan tomcat clustered node
     * PLF-7076 - [Privacy] Uploading a document in my documents fires an activity visible to my network
+    * PLF-7083 - Invalid format when saving document .docx with Microsoft Office 2016
     * PLF-7089 - Suggestion window: replace "Inviter" with "Se connecter"
+    * PLF-7132 - Last word of the comment are displayed splitted in the Document Preview Comment
+    * PLF-7133 - Different versions of Juzu Core & Plugins in PLF Packaging Archive
+    * PLF-7147 - [web-pack add-on ] Can not edit/remove responsive containers when using the Agital template.
+    * PLF-7186 - Search Indexing Management page does not appear after PLF upgrade
+    * PLF-7187 - MixinCleanerUpgradePlugin upgrade plugin should not be activated by default on social data
 
 eXo ECMS ${org.exoplatform.platform.version}
 *************************
@@ -46,8 +52,10 @@ eXo ECMS ${org.exoplatform.platform.version}
 ** Bugs
     * ECMS-7307 - Timezone problem when publishing a document from the staged state
     * ECMS-7513 - Display the rootCause of this exception: Repository not found. Ignoring
+    * ECMS-7520 - [Document Versioning] IE11, the preview screen cannot be closed
     * ECMS-7572 - [Unified search] Bad performance for unified search
     * ECMS-7584 - Unable to open shared file from link in mail
+    * ECMS-7595 - Cannot download a document : the Download button is not visible
 
 eXo Commons ${org.exoplatform.platform.version}
 *************************
@@ -86,7 +94,13 @@ eXo Social ${org.exoplatform.platform.version}
     * SOC-5649 - Problem with conversationState in a listener
     * SOC-5662 - [SOC-RDBMS]: Review the SpacesCount cache usage
     * SOC-5663 - Improve get relationship operation
+    * SOC-5668 - Tasks: Can not be removed in spaces
     * SOC-5673 - Can not rename a space
+    * SOC-5676 - User is redirected to a wrong URL when clicking on a link in email notification
+    * SOC-5682 - [PLF441-RC06][Tomcat server][Cluster] Notification is not displayed in All Notifications page
+    * SOC-5690 - Cannot add an event from the uiIcon in the navbar
+    * SOC-5694 - The document preview in the AS displays wrong version
+    * SOC-5698 - [Document versionning]: restore a version doesn not display the correct version restored
 
 eXo Calendar ${org.exoplatform.platform.version}
 *************************
@@ -95,6 +109,7 @@ eXo Calendar ${org.exoplatform.platform.version}
     * CAL-1249 - [Security] calendar import got XSS issue
     * CAL-1267 - [Calendar Integration] Performance regression for calendar read home
     * CAL-1272 - URLS not clickable in events popover
+    * CAL-1273 - Unknown error in Advanced search
 
 eXo Integration ${org.exoplatform.platform.version}
 *************************
@@ -106,6 +121,7 @@ eXo Forum ${org.exoplatform.platform.version}
 *************************
 
 ** Bugs
+    * FORUM-1084 - The test case org.exoplatform.forum.service.TopicTestCase.testTopic UNSTABLE
     * FORUM-1318 - Topic edition takes wrong person in activity comment
     * FORUM-1319 - [Private Messages] Problem in accessing Private Messages when delete user
 
