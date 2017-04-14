@@ -136,7 +136,20 @@ However, if you still insist on skipping versions, we strongly advise to read al
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
-== Upgrading from Platform 4.4.0 to ${org.exoplatform.platform.version} ==
+== Upgrading from Platform 4.4.1 to ${org.exoplatform.platform.version} ==
+
+=== Description of the plugins used in this upgrade ===
+
+=== Major Components Upgrades ===
+
+* Tomcat 8.5
+Tomcat has been upgraded from 7.0 version to 8.5. The main changes related to this upgrade are:
+** conf/Catalina/localhost/context.xml.default has been removed, and all customizations related to Context have been gathered in conf/context.xml.
+** the property org.apache.catalina.startup.ContextConfig.jarsToSkip has been removed from conf/catalina.properties since it is not supported anymore and has been replaced by the JarScanning tag in conf/context.xml. The scanManifest has also been disabled (feature introduced in Tomcat 8.0) to avoid dependencies issues at startup.
+** war files are now exploded by default. This is a change introduced by Tomcat 8.0 (https://tomcat.apache.org/migration-8.html#Tomcat_8.0.x_noteable_changes). The variable SET EXO_TOMCAT_UNPACK_WARS can be set to false (defaults to true) in setenv-customize.sh|bat to not explode wars but this can lead to slower startup and performance issues, as mentioned in the link above.
+** Tomcat 8.5 comes with Servlet 3.1 (was 3.0 in Tomcat 7.0), JSP 2.3 (was 2.2 in Tomcat 7.0), EL 3.0 (was 2.2 in Tomcat 7.0)
+
+== Upgrading from Platform 4.4.0 to 4.4.1 ==
 
 === Description of the plugins used in this upgrade ===
 
