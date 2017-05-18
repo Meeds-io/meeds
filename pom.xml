@@ -86,7 +86,7 @@
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>exo-es-embedded</addon.exo.es.embedded.id>
-    <addon.exo.es.embedded.version>1.0.x-SNAPSHOT</addon.exo.es.embedded.version>
+    <addon.exo.es.embedded.version>2.0.x-SNAPSHOT</addon.exo.es.embedded.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>

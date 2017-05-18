@@ -146,3 +146,6 @@
 
 # IDE add-on (customize default ide add-on)
 #CATALINA_OPTS="${CATALINA_OPTS} -Dexo.ide.portalConfig.metadata.override=false"
+
+# EXO ES Embedded custom elasticsearch.yml configuration absolute path
+# CATALINA_OPTS="${CATALINA_OPTS} -Dexo.es.embedded.configuration.file=/path/to/file"

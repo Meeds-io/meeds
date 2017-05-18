@@ -140,3 +140,6 @@ REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dexo.acme.portalConfig.metadata.override
 
 REM # IDE add-on (customize default ide add-on data)
 REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dexo.ide.portalConfig.metadata.override=false"
+
+REM # EXO ES Embedded custom elasticsearch.yml configuration absolute path
+REM SET "CATALINA_OPTS=%CATALINA_OPTS% -Dexo.es.embedded.configuration.file=/path/to/file"
