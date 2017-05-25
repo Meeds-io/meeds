@@ -42,11 +42,6 @@
       <exclusions>
         <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
         <exclusion>
-          <artifactId>args4j</artifactId>
-          <groupId>args4j</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
-        <exclusion>
           <artifactId>protobuf-java</artifactId>
           <groupId>com.google.protobuf</groupId>
         </exclusion>
@@ -80,12 +75,12 @@
           <artifactId>xpp3_min</artifactId>
           <groupId>xpp3</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-gadgets -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-gadgets -->
         <exclusion>
           <artifactId>el-api</artifactId>
           <groupId>org.apache.tomcat</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-common -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
         <exclusion>
           <artifactId>jasper-el</artifactId>
           <groupId>org.apache.tomcat</groupId>
@@ -371,12 +366,12 @@
       <artifactId>platform-extension-portlets-homepage</artifactId>
       <type>pom</type>
       <exclusions>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-social-api -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
         <exclusion>
           <artifactId>xpp3_min</artifactId>
           <groupId>xpp3</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-social-api -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
         <exclusion>
           <artifactId>geronimo-stax-api_1.0_spec</artifactId>
           <groupId>org.apache.geronimo.specs</groupId>
@@ -386,7 +381,7 @@
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-social-api -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
         <exclusion>
           <artifactId>xml-apis</artifactId>
           <groupId>xml-apis</groupId>
@@ -580,12 +575,12 @@
       <artifactId>social-webapp-opensocial</artifactId>
       <type>pom</type>
       <exclusions>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-common -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
         <exclusion>
           <artifactId>el-api</artifactId>
           <groupId>org.apache.tomcat</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-common -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
         <exclusion>
           <artifactId>jasper-el</artifactId>
           <groupId>org.apache.tomcat</groupId>
@@ -600,7 +595,7 @@
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-common -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
         <exclusion>
           <artifactId>xml-apis</artifactId>
           <groupId>xml-apis</groupId>
@@ -610,7 +605,7 @@
           <artifactId>jdom</artifactId>
           <groupId>jdom</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.gatein.shindig:shindig-gadgets -->
+        <!-- Coming by transitivity from org.apache.shindig:shindig-gadgets -->
         <exclusion>
           <artifactId>modules</artifactId>
           <groupId>rome</groupId>
