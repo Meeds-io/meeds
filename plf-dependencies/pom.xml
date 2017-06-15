@@ -326,11 +326,6 @@
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
     </dependency>
-    <!-- PLF-5361 - Add infinispan artifacts -->
-    <dependency>
-      <groupId>org.exoplatform.kernel</groupId>
-      <artifactId>exo.kernel.component.ext.cache.impl.infinispan.v5</artifactId>
-    </dependency>
     <!-- Platform Upgrade Plugins -->
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
