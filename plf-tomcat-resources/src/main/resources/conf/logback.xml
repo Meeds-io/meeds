@@ -92,6 +92,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="org.apache.shindig" level="WARN" />
   <logger name="com.google.javascript.jscomp" level="WARN" />
   <logger name="org.apache.tomcat.util.digester.Digester" level="ERROR" />
+  <logger name="org.apache.catalina.realm.JAASRealm" level="ERROR"/>
   <logger name="org.cometd.websocket.server" level="WARN" />
   <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
     <then>
