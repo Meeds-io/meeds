@@ -185,3 +185,8 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
 
 # PLF-6965 set default file encoding to UTF-8 Independently from OS default charset
 CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
+
+cmd=$(java -jar $CATALINA_HOME/bin/exo-tools.jar isJava9OrSuperior)
+if [ $? = 0 ]; then
+  CATALINA_OPTS="$CATALINA_OPTS --add-modules java.activation --add-modules java.xml.bind"
+fi

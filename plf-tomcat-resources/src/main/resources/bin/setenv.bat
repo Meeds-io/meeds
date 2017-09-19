@@ -180,6 +180,11 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
 REM # PLF-6965 # set default file encoding to UTF-8 Independently from OS default charset
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding="UTF-8"
 
+java.exe -jar %CATALINA_HOME%\bin\exo-tools.jar isJava9OrSuperior
+IF ERRORLEVEL 0 (
+  SET CATALINA_OPTS=%CATALINA_OPTS% --add-modules java.activation --add-modules java.xml.bind
+)
+
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}
 
