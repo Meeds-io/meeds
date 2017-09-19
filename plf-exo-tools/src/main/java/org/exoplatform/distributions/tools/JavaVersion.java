@@ -32,8 +32,8 @@ import java.util.regex.Pattern;
  * <p>
  *   Example of String Java Version:
  *   <ul>
- *     <li>Minor version is 7: 1.7, 1.7.0, 1.7.0_4</li>
- *     <li>Minor version is 8: 1.8, 1.8.0, 1.8.0_65</li>
+ *     <li>Java 8: 1.8, 1.8.0, 1.8.0_65</li>
+ *     <li>Java 9: 9, 9.0, 9.1.1</li>
  *   </ul>
  * </p>
  *
@@ -41,13 +41,13 @@ import java.util.regex.Pattern;
 class JavaVersion {
 
   /** Pattern based on official Java version format */
-  final Pattern regex = Pattern.compile("([\\d]+)\\.([\\d]+)(?:.*|$)");
+  final Pattern regex = Pattern.compile("([\\d]+)(?:[\\.\\+]([\\d]+)(?:.*|$))?");
 
-  /** Default value for Java 1.x */
+  /** Default value for Java major version */
   private int systemJavaMajorVersion = 1;
 
-  /** Default value for Java 7 */
-  private int systemJavaMinorVersion = 7;
+  /** Default value for Java minor version */
+  private int systemJavaMinorVersion = 8;
 
   JavaVersion(String version) {
     extractVersions(version);
@@ -56,19 +56,43 @@ class JavaVersion {
   /**
    * Extract major and minor versions as int from a String Java version.
    *
-   * @param systemJavaVersion Java Version as String ie: 1.7.0_45
+   * @param systemJavaVersion Java Version as String ie: 1.8.0_45
    */
   void extractVersions(final String systemJavaVersion) {
     try {
       Matcher regexMatcher = regex.matcher(systemJavaVersion);
       if (regexMatcher.find()) {
         systemJavaMajorVersion = Integer.parseInt(regexMatcher.group(1));
-        systemJavaMinorVersion = Integer.parseInt(regexMatcher.group(2));
+        String minorVersion = regexMatcher.group(2);
+        if(minorVersion != null) {
+          systemJavaMinorVersion = Integer.parseInt(minorVersion);
+        } else if(systemJavaMajorVersion == 9) {
+          systemJavaMinorVersion = 0;
+        }
       }
     } catch (Exception ex){
-      // By default JDK 7 version is used.
+      // By default JDK 8 version is used.
     }
   }
+
+  /**
+   * Check if the version is superior or equal to the Java System Major Version.
+   * @param version Java major version to compare
+   * @return 0 if true, -1 otherwise
+   */
+  public final int isMajorVersionSuperiorOrEqual(int version) {
+    return ((systemJavaMajorVersion >= version) ? 0 : -1);
+  }
+
+  /**
+   * Check if the version is equal to the Java System Major Version.
+   * @param version Java major version to compare
+   * @return 0 if true, -1 otherwise
+   */
+  public final int isMajorVersionEqual(int version) {
+    return ((systemJavaMajorVersion == version) ? 0 : -1);
+  }
+
 
   /**
    * Check if the version is superior or equal to the Java System Minor Version.
