@@ -180,10 +180,25 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
 REM # PLF-6965 # set default file encoding to UTF-8 Independently from OS default charset
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding="UTF-8"
 
-java.exe -jar %CATALINA_HOME%\bin\exo-tools.jar isJava9OrSuperior
-IF ERRORLEVEL 0 (
-  SET CATALINA_OPTS=%CATALINA_OPTS% --add-modules java.activation --add-modules java.xml.bind
-)
+REM # Used JDK_JAVA_OPTIONS for JDK 9 options since this variable is only recognized by JDK 9+
+SET JDK_JAVA_OPTIONS=--add-modules java.activation --add-modules java.xml.bind
+REM # Open all required modules for reflective access operations
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.io=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.lang=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.lang.invoke=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.lang.reflect=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.math=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.net=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.nio=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.text=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util.concurrent=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/sun.nio.ch=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.management/java.lang.management=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.desktop/java.awt.font=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
 
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}
