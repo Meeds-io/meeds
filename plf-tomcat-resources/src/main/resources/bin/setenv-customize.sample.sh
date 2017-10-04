@@ -47,9 +47,6 @@
 # Minimum Heap Size to use (Default : 512m)
 #EXO_JVM_SIZE_MIN="1g"
 
-# Size of the Permanent Generation. (Default : 256m)
-#EXO_JVM_PERMSIZE_MAX="128m"
-
 # Size of the Metaspace. (Default : 512m)
 #EXO_JVM_METASPACE_SIZE_MAX="256m"
 
