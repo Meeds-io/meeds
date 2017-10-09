@@ -38,8 +38,6 @@ public final class ExoTools {
   /** Java Version from the system */
   public static final String systemJavaVersion  = System.getProperty("java.version");
 
-  public static final String CMD_JAVA_7         = "isJava7";
-
   public static final String CMD_JAVA_8         = "isJava8";
 
   public static final String CMD_JAVA_8_OR_MORE = "isJava8OrSuperior";
@@ -73,16 +71,14 @@ public final class ExoTools {
     final JavaVersion javaVersion = new JavaVersion(systemJavaVersion);
 
     switch (args[0]) {
-      case CMD_JAVA_7:
-        return javaVersion.isMinorVersionEqual(7);
       case CMD_JAVA_8:
         return javaVersion.isMinorVersionEqual(8);
       case CMD_JAVA_8_OR_MORE:
         return javaVersion.isMinorVersionSuperiorOrEqual(8);
       case CMD_JAVA_9:
-        return javaVersion.isMinorVersionEqual(9);
+        return javaVersion.isMajorVersionEqual(9);
       case CMD_JAVA_9_OR_MORE:
-        return javaVersion.isMinorVersionSuperiorOrEqual(9);
+        return javaVersion.isMajorVersionSuperiorOrEqual(9);
       default:
         return -1;
     }

@@ -20,31 +20,21 @@
  */
 package org.exoplatform.distributions.tools;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 
 public class JavaVersionTest {
 
   @Test
-  public final void testJava7Version(){
-    JavaVersion jv = new JavaVersion("1.7.0_25");
-
-    assertTrue(jv.isMinorVersionEqual(8) == -1);
-    assertTrue(jv.isMinorVersionEqual(9) == -1);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(9) == -1);
-  }
-
-  @Test
   public final void testBadFormatVersion(){
     JavaVersion jv = new JavaVersion("12_7");
 
-    // if we can't determine the version, we consider that it's Java 7
-    assertTrue(jv.isMinorVersionEqual(7) == 0);
-    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    // if we can't determine the version, we consider that it's Java 8
+    assertTrue(jv.isMinorVersionEqual(8) == 0);
     assertTrue(jv.isMinorVersionEqual(9) == -1);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
+    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == 0);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(9) == -1);
   }
 
@@ -52,21 +42,18 @@ public class JavaVersionTest {
   public final void testJava8Version(){
     JavaVersion jv = new JavaVersion("1.8.0_25");
 
-    assertTrue(jv.isMinorVersionEqual(7) == -1);
     assertTrue(jv.isMinorVersionEqual(8) == 0);
     assertTrue(jv.isMinorVersionEqual(9) == -1);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == 0);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(9) == -1);
 
     jv = new JavaVersion("1.8.0");
-    assertTrue(jv.isMinorVersionEqual(7) == -1);
     assertTrue(jv.isMinorVersionEqual(8) == 0);
     assertTrue(jv.isMinorVersionEqual(9) == -1);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == 0);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(9) == -1);
 
     jv = new JavaVersion("1.8");
-    assertTrue(jv.isMinorVersionEqual(7) == -1);
     assertTrue(jv.isMinorVersionEqual(8) == 0);
     assertTrue(jv.isMinorVersionEqual(9) == -1);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == 0);
@@ -76,14 +63,24 @@ public class JavaVersionTest {
 
   @Test
   public final void testJava9Version(){
-    JavaVersion jv = new JavaVersion("1.9.0_25");
+    JavaVersion jv = new JavaVersion("9");
 
-    assertTrue(jv.isMinorVersionEqual(7) == -1);
     assertTrue(jv.isMinorVersionEqual(8) == -1);
-    assertTrue(jv.isMinorVersionEqual(9) == 0);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(7) == 0);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == 0);
-    assertTrue(jv.isMinorVersionSuperiorOrEqual(9) == 0);
-  }
+    assertTrue(jv.isMajorVersionEqual(9) == 0);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
 
+    jv = new JavaVersion("9.0");
+    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    assertTrue(jv.isMajorVersionEqual(9) == 0);
+    assertTrue(jv.isMinorVersionEqual(0) == 0);
+    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
+
+    jv = new JavaVersion("9.0.1");
+    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    assertTrue(jv.isMajorVersionEqual(9) == 0);
+    assertTrue(jv.isMinorVersionEqual(0) == 0);
+    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
+  }
 }

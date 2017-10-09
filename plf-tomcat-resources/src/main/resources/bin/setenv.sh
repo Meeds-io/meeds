@@ -56,7 +56,6 @@ fi
 [ -z $EXO_JVM_VENDOR ] && EXO_JVM_VENDOR="ORACLE"
 [ -z $EXO_JVM_SIZE_MAX ] && EXO_JVM_SIZE_MAX="3g"
 [ -z $EXO_JVM_SIZE_MIN ] && EXO_JVM_SIZE_MIN="512m"
-[ -z $EXO_JVM_PERMSIZE_MAX ] && EXO_JVM_PERMSIZE_MAX="256m"
 [ -z $EXO_JVM_METASPACE_SIZE_MAX ] && EXO_JVM_METASPACE_SIZE_MAX="512m"
 [ -z $EXO_JVM_USER_LANGUAGE ] && EXO_JVM_USER_LANGUAGE="en"
 [ -z $EXO_JVM_USER_REGION ] && EXO_JVM_USER_REGION="US"
@@ -185,3 +184,25 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
 
 # PLF-6965 set default file encoding to UTF-8 Independently from OS default charset
 CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
+
+# Used JDK_JAVA_OPTIONS for JDK 9 options since this variable is only recognized by JDK 9+
+JDK_JAVA_OPTIONS="--add-modules java.activation --add-modules java.xml.bind"
+# Open all required modules for reflective access operations
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.io=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang.invoke=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang.reflect=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.math=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.net=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.nio=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.text=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.util=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.util.concurrent=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/sun.nio.ch=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.management/java.lang.management=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.desktop/java.awt.font=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED"
+
+export JDK_JAVA_OPTIONS
