@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>5.0.x-SNAPSHOT</version>
+    <version>5.1.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-tomcat-integration-webapp</artifactId>
   <packaging>war</packaging>
