@@ -66,6 +66,8 @@ while [ "$1" != "" ]; do
     shift
 done
 
-export CATALINA_PID=${CATALINA_PID:-"$PRGDIR/temp/catalina.pid"}
+if [ -f ${CATALINA_PID:-"$PRGDIR/temp/catalina.pid"} ]; then
+  export CATALINA_PID=${CATALINA_PID:-"$PRGDIR/temp/catalina.pid"}
+fi
 
 exec "$PRGDIR"/"$EXECUTABLE" stop "$@"
