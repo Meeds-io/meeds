@@ -120,6 +120,13 @@
     </path-param>
   </route>
 
+  <!-- ECMS Sites JS files -->
+  <route path="/javascript/{gtn:sitename}.js">
+    <route-param qname="gtn:handler">
+      <value>javascript</value>
+    </route-param>
+  </route>
+
   <!-- Static resource handler needs to be before the portal handler -->
   <route path="/{gtn:path}">
     <route-param qname="gtn:handler">
