@@ -9,13 +9,14 @@ System requirements
     * Memory:  4GB of RAM (8GB recommended)
     * Disk:    2GB (depending of the amount of data)
     * OS:      Windows or Linux
-    * JDK:     Java 7 (Set the JAVA_HOME environment variable)
-    * Browser: Google Chrome 25+, Firefox 19+ or Internet Explorer 10+
+    * JDK:     Java 8 (Set the JAVA_HOME environment variable)
+    * Browser (desktop): Google Chrome 62+, Firefox 52.4+, Edge 15+ or Internet Explorer 11+
+    * Browser (mobile): Google Chrome 61+ (Android and iOS) or Safari 10.1+ (iOS)
     * The eXo Platform server will run on port 8080, make sure this port is not currently in use
 
 
 More compatibility info is available at : 
-http://community.exoplatform.com/portal/intranet/wiki/group/spaces/platform_4/Compatibility
+https://www.exoplatform.com/legal/supported-environments.pdf
 
 -------------------------------------
 How to start the Platform Tomcat
