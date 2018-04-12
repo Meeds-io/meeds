@@ -24,7 +24,7 @@
   <parent>
     <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
-    <version>18-SNAPSHOT</version>
+    <version>18-M01</version>
     <relativePath />
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
