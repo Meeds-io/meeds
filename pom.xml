@@ -67,7 +67,7 @@
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>1.3.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
-    <org.apache.tomcat.version>8.5.24</org.apache.tomcat.version>
+    <org.apache.tomcat.version>8.5.30</org.apache.tomcat.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
     <org.slf4j.version>1.7.7</org.slf4j.version>
     <!-- LOGBACK implementation to use to manage logs -->
