@@ -98,6 +98,8 @@
         <exclude>org.icepdf:icepdf-core:*</exclude>
         <!-- COR-338: Exclude Apache poi-ooxml 3.8. Platform uses now 3.8-eXo01 -->
         <exclude>org.apache.poi:poi-ooxml:[3.8]</exclude>
+        <!-- Avoid any direct addon inclusion on the distribution packages -->
+        <exclude>org.exoplatform.addons.*:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
