@@ -31,6 +31,9 @@
   <artifactId>plf-exo-tools</artifactId>
   <packaging>jar</packaging>
   <name>eXo PLF:: Platform Public Distributions - eXo Tools</name>
+  <properties>
+    <exo.test.coverage.ratio>0.35</exo.test.coverage.ratio>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
