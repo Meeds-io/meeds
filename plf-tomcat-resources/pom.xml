@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>5.1.x-SNAPSHOT</version>
+    <version>5.2.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-tomcat-resources</artifactId>
   <packaging>pom</packaging>
