@@ -36,15 +36,19 @@ package org.exoplatform.distributions.tools;
 public final class ExoTools {
 
   /** Java Version from the system */
-  public static final String systemJavaVersion  = System.getProperty("java.version");
+  public static final String systemJavaVersion   = System.getProperty("java.version");
 
-  public static final String CMD_JAVA_8         = "isJava8";
+  public static final String CMD_JAVA_8          = "isJava8";
 
-  public static final String CMD_JAVA_8_OR_MORE = "isJava8OrSuperior";
+  public static final String CMD_JAVA_8_OR_MORE  = "isJava8OrSuperior";
 
-  public static final String CMD_JAVA_9         = "isJava9";
+  public static final String CMD_JAVA_9          = "isJava9";
 
-  public static final String CMD_JAVA_9_OR_MORE = "isJava9OrSuperior";
+  public static final String CMD_JAVA_9_OR_MORE  = "isJava9OrSuperior";
+
+  public static final String CMD_JAVA_11         = "isJava11";
+
+  public static final String CMD_JAVA_11_OR_MORE = "isJava11OrSuperior";
 
   /**
    * eXo Tools entrypoint.
@@ -79,6 +83,10 @@ public final class ExoTools {
         return javaVersion.isMajorVersionEqual(9);
       case CMD_JAVA_9_OR_MORE:
         return javaVersion.isMajorVersionSuperiorOrEqual(9);
+      case CMD_JAVA_11:
+        return javaVersion.isMajorVersionEqual(11);
+      case CMD_JAVA_11_OR_MORE:
+        return javaVersion.isMajorVersionSuperiorOrEqual(11);
       default:
         return -1;
     }

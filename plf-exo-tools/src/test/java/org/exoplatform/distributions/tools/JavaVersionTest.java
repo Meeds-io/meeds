@@ -22,7 +22,7 @@ package org.exoplatform.distributions.tools;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class JavaVersionTest {
@@ -82,5 +82,48 @@ public class JavaVersionTest {
     assertTrue(jv.isMinorVersionEqual(0) == 0);
     assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
     assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
+  }
+
+  @Test
+  public final void testJava11Version(){
+    JavaVersion jv = new JavaVersion("11");
+
+    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    assertTrue(jv.isMajorVersionEqual(9) == -1);
+    assertTrue(jv.isMajorVersionEqual(11) == 0);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(11) == 0);
+
+    jv = new JavaVersion("11.0");
+    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    assertTrue(jv.isMajorVersionEqual(9) == -1);
+    assertTrue(jv.isMajorVersionEqual(11) == 0);
+    assertTrue(jv.isMinorVersionEqual(0) == 0);
+    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(11) == 0);
+
+    jv = new JavaVersion("11.0.1");
+    assertTrue(jv.isMinorVersionEqual(8) == -1);
+    assertTrue(jv.isMajorVersionEqual(9) == -1);
+    assertTrue(jv.isMajorVersionEqual(11) == 0);
+    assertTrue(jv.isMinorVersionEqual(0) == 0);
+    assertTrue(jv.isMinorVersionSuperiorOrEqual(8) == -1);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(9) == 0);
+    assertTrue(jv.isMajorVersionSuperiorOrEqual(11) == 0);
+  }
+
+  @Test
+  public void testEquals() {
+    JavaVersion jv825 = new JavaVersion("1.8.0_25");
+    JavaVersion jv845 = new JavaVersion("1.8.0_45");
+    JavaVersion jv11 = new JavaVersion("11");
+    JavaVersion jv1101 = new JavaVersion("11.0.1");
+
+    assertEquals(jv825, jv825);
+    assertEquals(jv825, jv845);
+    assertEquals(jv825, jv845);
+    assertNotEquals(jv825, new Object());
+    assertEquals(jv11, jv1101);
+    assertNotEquals(jv825, jv1101);
   }
 }

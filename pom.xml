@@ -359,15 +359,12 @@
                         <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
                         <exclude>stax:*</exclude>
                         <exclude>javax.xml.stream:*</exclude>
-                        <exclude>javax.activation:*</exclude>
                         <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
                         <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
                         <exclude>org.jboss.spec.javax.transaction:*</exclude>
                         <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
                         <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
                         <exclude>rome:modules:*</exclude>
-                        <!-- PLF-4963 : Don't package any jaxb dep to avoid conflicts with the version provided in Java 6 -->
-                        <exclude>*:jaxb*:*</exclude>
                         <!-- Don't package any XML APIs dep to avoid conflicts the JVM -->
                         <exclude>*:xmlParserAPIs:*</exclude>
                         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->

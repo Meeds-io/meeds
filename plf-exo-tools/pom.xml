@@ -32,7 +32,7 @@
   <packaging>jar</packaging>
   <name>eXo PLF:: Platform Public Distributions - eXo Tools</name>
   <properties>
-    <exo.test.coverage.ratio>0.35</exo.test.coverage.ratio>
+    <exo.test.coverage.ratio>0.47</exo.test.coverage.ratio>
   </properties>
   <dependencies>
     <dependency>

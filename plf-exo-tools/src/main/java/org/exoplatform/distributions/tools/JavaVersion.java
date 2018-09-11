@@ -62,12 +62,15 @@ class JavaVersion {
     try {
       Matcher regexMatcher = regex.matcher(systemJavaVersion);
       if (regexMatcher.find()) {
-        systemJavaMajorVersion = Integer.parseInt(regexMatcher.group(1));
-        String minorVersion = regexMatcher.group(2);
-        if(minorVersion != null) {
-          systemJavaMinorVersion = Integer.parseInt(minorVersion);
-        } else if(systemJavaMajorVersion == 9) {
+        String strSystemJavaMajorVersion = regexMatcher.group(1);
+        systemJavaMajorVersion = Integer.parseInt(strSystemJavaMajorVersion);
+        if(strSystemJavaMajorVersion.equals(systemJavaVersion)) {
           systemJavaMinorVersion = 0;
+        } else {
+          String minorVersion = regexMatcher.group(2);
+          if (minorVersion != null) {
+            systemJavaMinorVersion = Integer.parseInt(minorVersion);
+          }
         }
       }
     } catch (Exception ex){
