@@ -10,8 +10,8 @@ System requirements
     * Disk:    2GB (depending of the amount of data)
     * OS:      Windows or Linux
     * JDK:     Java 8 (Set the JAVA_HOME environment variable)
-    * Browser (desktop): Google Chrome 62+, Firefox 52.4+, Edge 15+ or Internet Explorer 11+
-    * Browser (mobile): Google Chrome 61+ (Android and iOS) or Safari 10.1+ (iOS)
+    * Browser (desktop): Google Chrome 68+, Firefox 60+, Edge 17+
+    * Browser (mobile): Google Chrome 68+ (Android and iOS) or Safari 11.1+ (iOS)
     * The eXo Platform server will run on port 8080, make sure this port is not currently in use
 
 
