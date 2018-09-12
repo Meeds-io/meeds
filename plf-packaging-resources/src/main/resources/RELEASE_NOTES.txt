@@ -13,6 +13,23 @@ IV.   KNOWN ISSUES
 
 = I. MAIN CHANGES =
 
+Main changes since Platform 5.0
+
+* Features
+** Mobile Push Notifications
+** Leave Chat Room
+* Improvements
+** Improve Chat UI/UX
+** Task Permissions
+** Simplify Cache Administration
+** Improve Multi-Source Users/Groups/Roles Import
+** Smarter User Data Integration
+* Upgrades
+** Upgrade to JBoss EAP 7.1
+** Upgrade org.apache.pdfbox:fontbox from 1.8.11 to 1.8.14
+** Upgrade org.apache.pdfbox:jempbox from 1.8.11 to 1.8.14
+** Upgrade org.apache.pdfbox:pdfbox from 1.8.11 to 1.8.14
+
 Main changes since Platform 4.4
 
 * Features
@@ -169,7 +186,13 @@ The file README.txt contains information on how to start the product.
 The upgrade procedure is only guaranteed and tested to be transparent from the previous maintenance version (x.y.z from x.y.z-1). So, we recommend to apply upgrade procedures for all versions between your current and the target one.
 However, if you still insist on skipping versions, we strongly advise to read all upgrade notes of the versions you are skipping to see if your project is impacted by any previous upgrade procedure.
 
-== Upgrading from the previous Platform version ==
+== Upgrading from the previous Platform version (since Platform 5.1) ==
+
+Since Platform 5.1, the file upgrade.properties is not used anymore, the upgrade process has been simplified to:
+* Move data (files + database) to the new Platform installation
+* Start the server. You're ready.
+
+== Upgrading from the previous Platform version (before Platform 5.1) ==
 
 * Prepare bundle:
 ** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
@@ -180,7 +203,13 @@ However, if you still insist on skipping versions, we strongly advise to read al
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
-== Upgrading from Platform 4.4.4 to ${org.exoplatform.platform.version} ==
+== Upgrading from Platform 5.0.0 to ${org.exoplatform.platform.version} ==
+
+=== Major Components Upgrades ===
+
+* JBoss EAP 7.1
+
+== Upgrading from Platform 4.4.4 to 5.0.0 ==
 
 === Major Components Upgrades ===
 
@@ -336,13 +365,6 @@ commons.upgrade.DisableUserUpgradePlugin.enable=true
 commons.upgrade.DisableUserUpgradePlugin.numberOfThreads=20
 commons.upgrade.DisableUserUpgradePlugin.batchSize=100
 
-=== Disable-user feature ===
-
-- Notice that you need to upgrade user database only if you use disable-user feature with PicketlinkIDM organization service implementation, for other implementation such as: jdbc implementation, you don't need to active the upgrade plugin for upgrading user data.
-- If you don't want the “disable-user” feature (so you don't need to upgrade your user database when using PicketlinkIDM), you can add this to exo.properties configuration file
-exo.disable.user.activated=false. The feature will be hidden from PLF, and the disable-user upgrade plugin is also ignored
-
 == IV. KNOWN ISSUES ==
 
-* ECMS-6818: Remote edit does not work on Chrome 42
-* EXOGTN-1963: SPNEGO doesn't work when using Firefox client on the same Window 8 with PLF 4.2
+* PLF-7984 : Stopping PLF with JBoss EAP 7.1 hangs forever
