@@ -57,32 +57,32 @@
 
     <!-- eXo IDM Datasource for portal -->
     <Resource name="exo-idm_portal" auth="Container" type="javax.sql.DataSource"
-              initialSize="5" maxTotal="20" minIdle="5" maxIdle="15" maxWaitMillis="10000"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              initialSize="5" maxActive="20" minIdle="5" maxIdle="15" maxWait="10000"
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption}
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
-              poolPreparedStatements="true"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${connectionParameters}" />
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
-              initialSize="5" maxTotal="20" minIdle="5" maxIdle="15" maxWaitMillis="10000"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              initialSize="5" maxActive="20" minIdle="5" maxIdle="15" maxWait="10000"
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption} 
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
-              poolPreparedStatements="true"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${connectionParameters}" />
 
     <!-- eXo JPA Datasource for portal -->
     <Resource name="exo-jpa_portal" auth="Container" type="javax.sql.DataSource"
-              initialSize="5" maxTotal="20" minIdle="5" maxIdle="15" maxWaitMillis="10000"
+              factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+              initialSize="5" maxActive="20" minIdle="5" maxIdle="15" maxWait="10000"
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption}
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
-              poolPreparedStatements="true"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${jpaConnectionParameters}" />
 
   </GlobalNamingResources>
