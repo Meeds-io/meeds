@@ -4,246 +4,40 @@ Changelog Platform ${org.exoplatform.platform.version}
 
 Changelogs of previous releases are available at https://community.exoplatform.com/portal/intranet/wiki/group/spaces/platform_4/Release_Notes.
 
-eXo Kernel ${org.exoplatform.platform.version}
-*************************
-
-** Improvement
-    * [KER-327] - Add the field reply-to org.exoplatform.services.mail.Message
-
-eXo JCR ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [JCR-2467] - Warn log at startup about exo.jcr.spoolConfig.swap.live.time parameter
-
 eXo GateIn ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [EXOGTN-2309] - Not show message alert when input a description over 255 character
-    * [EXOGTN-2316] - the page is not well displayed when selecting "Hide Site Layout"
-    * [EXOGTN-2326] - Wrong behavior when editing a script
-    * [EXOGTN-2379] - Typo in forgot password
-    * [EXOGTN-2382] - Page is not updated on node 2 when edit the page on node1
-    * [EXOGTN-2385] - Comments are displayed twice while editing a script
-    * [EXOGTN-2386] - Icon of new node is not well displayed in left navigation
-    * [EXOGTN-2387] - Warn log about exo.auth.case.insensitive parameter when displaying login form
-
-** Improvement
-    * [EXOGTN-2332] - Organization entities import in database from external source
-
-eXo Commons ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [COMMONS-571] - Stabilize build for TemplateTestCase
-    * [COMMONS-572] - Notification migration started even with an empty database
-
-
-eXo ECMS ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [ECMS-5016] - "Name" of Scripts has XSS vulnerability
-    * [ECMS-7795] - Delete button position is not displayed correctly in the share doc popup
-    * [ECMS-7796] - Could NOT update permission for a node which does not have exo:owner property
-    * [ECMS-7797] - Space and user names are not displayed correctly when its name contains "q" "y" and "p"
-    * [ECMS-7803] - Cannot change ecm.site.javascript.cache settings
-    * [ECMS-7804] - The position of Can edit/ Can view buttons is not correct
-    * [ECMS-7815] - Stabilize CI Build
-    * [ECMS-7820] - Compare doc's doesn't work
-    * [ECMS-7823] - Pending contents are not displayed in dashboard
-    * [ECMS-7824] - Last modification date should be displayed in file search result
-    * [ECMS-7830] - the tooltip is not well displayed when hover on settings button document of space
-    * [ECMS-7833] - Context menu is not displayed in empty folder
+    * [EXOGTN-2384] - Hibernate error after an IDM error
+    * [EXOGTN-2396] - Unit test TestPLIDMExternalStoreImportService.testImportGroups fails randomly
+    * [EXOGTN-2401] - Wrong Gatein dep dependency version in WCI project
+ 
 
 eXo Social ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [SOC-5586] - wrong message is displayed when "Email"/"URL"/"Phone"/"First and Last name" field contains more than the maximum of characters allowed
-    * [SOC-5792] - Spaces have username and firstname
-    * [SOC-5841] - No tooltip is displayed when i mouse over the activity deleted
-    * [SOC-5905] - Disable user should not appear in the invitation Gadget
-    * [SOC-5919] - [Security] XSS vulnerability in user's Job Title
-    * [SOC-5933] - Instant messaging should be in order
-    * [SOC-6047] - Letter filter does not work in My Connections
-    * [SOC-6049] - Viewer files do not work in Activity stream
-    * [SOC-6055] - change avatar is not saved from the first click
-    * [SOC-6059] - Space access info disappears when refreshing page
-    * [SOC-6067] - Standard user can edit app's title within a space
-    * [SOC-6069] - notification is not sent when user comment activity after closing previous notification
-    * [SOC-6070] - Strange behavior when select the access&Edit permissions for a space
-    * [SOC-6074] - Switch button is not displayed in space settings
-    * [SOC-6075] - Notification is not sent when commenting a shared document
-    * [SOC-6078] - space name is not displayed in the notification
-
-** Improvement
-    * [SOC-6064] - user is not redirected to the reply when the comment has many replies
-
-eXo Wiki ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [WIKI-1331] - No alert message displays when uploading 2 attachments with same name
-    * [WIKI-1385] - monospace and strike wiki syntax are not working
-    * [WIKI-1397] - An alert message should be displayed when attach an image with special characters to wiki page 
-    * [WIKI-1403] - Update button should be not attached to the select List Box
-    * [WIKI-1405] - Choose file button and the image name should be aligned in the file upload box
-    * [WIKI-1406] - The draft saved message is not displayed correctly
-    * [WIKI-1410] - Problem when autosave a wiki page without title
-    * [WIKI-1420] - Wiki data are not removed and still orphan on space deletion
-    * [WIKI-1432] - Unknown error appears when remove an attachment image in a wiki page (source editor)
-    * [WIKI-1433] - No message is displayed when have no permission to edit in wiki page
-
-eXo Calendar ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [CAL-1318] - Calendar gadget is not well displayed when scrolling in edit event popup
-    * [CAL-1339] - Can not add calendar
-    * [CAL-1340] - No popup is displayed when click next on remote calendar
-    * [CAL-1347] - scroll bar should be displayed in displayed calendar tab
-
-** Task
-    * [CAL-1337] - Fix Sonar blocker and critical violations
-
-eXo Forum ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [FORUM-1315] - [Forum administration] Fail to import forum from zip file
-    * [FORUM-1333] - Watches action is displayed with a delete icon
-    * [FORUM-1351] - [Security] [Regression] XSS issue with Forum topic content
-    * [FORUM-1360] - Quote text should have a blue background
-    * [FORUM-1377] - User Birthday is not shown in the View Public profile
-    * [FORUM-1379] - Home phone/ work phone are not shown in the user profile
-    * [FORUM-1386] - "New Topic" form must be above the navigation bar
-    * [FORUM-1387] - Forum notifications sent with wrong reply links
-    * [FORUM-1398] - [security] Private posts are displayed to unauthenticated users
+    * [SOC-5960] - Experiences are saved several times on database
+    * [SOC-6021] - Problem with links in notifications
+    * [SOC-6052] - Wrong page titles
+    
 
 eXo Platform ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [PLF-7079] - Enable to use accent in the PLF Account Setup screen
-    * [PLF-7403] - Do not hide icons of user and password fields in the login page when using Chrome credentials manager
-    * [PLF-7570] - [Default-Skin] Bread crumb is not well displayed when it's too long
-    * [PLF-7594] - the padding between the comment and like icons is too much
-    * [PLF-7787] - [JBoss] Remember me token is not recognized
-    * [PLF-7790] - a small button to fold/unfold sub node is not displayed
-    * [PLF-7794] - Search error when using Elasticsearch reserved chararcters
-    * [PLF-7804] - Direct to wrong page if clicking on Help icon when users is on space/answer
-    * [PLF-7854] - [jboss] Instance id not added on the JSESSIONID cookie
-    * [PLF-7970] - Cannot preview a file from the AS while using the Turkish language.
-    * [PLF-7971] - Missing spacing between the two sections "Ad a role" and "Edit Roles"
-    * [PLF-7988] - No notification is sent when we attach a link on AS
-    * [PLF-8006] - Find a space is not working on MySpace application
-    * [PLF-8020] - A connection with a user Y loads all users *Y* from the database
-    * [PLF-8029] - Improve Web notifications DB Model
-    * [PLF-8031] - Web Notifs randomly goes back in badge
-    * [PLF-8034] - Server starting is taking lot of time because of "NodeHierarchyCreatorImpl"
-    * [PLF-8053] - Wrong behavior when post numbered messages on the user's AS
-    * [PLF-8056] - The "Chat" button moves when click on the "Connect" button
-    * [PLF-8057] - The "Call" button disappeared when I click on the "Connect" button
-    * [PLF-8066] - Push notifications settings should be initialized with the same values than the On-site notifications
-    * [PLF-8074] - Test TestEnableUserUpgradePlugin fails
-    * [PLF-8078] - Search link on shared document opens a blank page
-    * [PLF-8079] - [Suggestions portlet] suggest ist for spaces that I am already member
-    * [PLF-8081] - Can not search by sentence surround by double quote
-    * [PLF-8083] - Unified search results details are always in english
-    * [PLF-8084] - Change Push Notifications missing configuration log lovel to WARN
-    * [PLF-8090] - Failed start Organization Service
-    * [PLF-8096] - drop down menu is not well displayed when scrolling down
-    * [PLF-8098] - Upgrade ElasticSearch dependencies to 5.6.11
-    * [PLF-8101] - [Enterprise-skin] wrong icons of username and password on login page
-    * [PLF-8103] - blanc page appears when we click on ' print ' button
-    * [PLF-8106] - Impossible to configure WebRTC when default STUN servers are disabled
-    * [PLF-8107] - the " Space Application Installer " menu display is incorrect
-    * [PLF-8109] - Typo on Datastorage cache TTL configuration variable
-    * [PLF-8111] - WebRTC settings Credentials should not be mandatory
-    * [PLF-8112] - Web Conference settings screen title is wrong
-    * [PLF-8124] - Platform broken in some languages
-    * [PLF-8136] - Switch buttons should be displayed on Notification settings page
-    * [PLF-8138] - Login blocked during the ldap synchronization
-
-** Improvement
-    * [PLF-7717] - Refine Transparent Upgrade plugins configurations to avoid defining upgrade.properties file
-    * [PLF-7850] - Harmonize cache configuration in cluster and local modes
-    * [PLF-7855] - Upgrade to JBoss EAP 7.1
-    * [PLF-7866] - Optimize initialized data size when creating/synchronizing a user
-    * [PLF-7977] - Shared document still uses old style for document activity
-
-** New Feature
-    * [PLF-8040] - Mobile Push Notifications
-
-** Task
-    * [PLF-7216] - Link to eXo website on powered by
-    * [PLF-8099] - Default cache configuration changes between 5.0 and 5.1
-    * [PLF-8132] - Load docker.properties instead of upgrade.properties
-
-eXo Task 2.1.0
+    * [PLF-8097] - eXo platform 5  start with many errors in minimal profile
+    * [PLF-8102] - Wrong RTL-Arabic text alignment in ativity stream
+    * [PLF-8141] - No timeout specified on the SMTP Transport for email notification
+    * [PLF-8165] - Username/password icons are not well displayed when login
+    * [PLF-8168] - Space search is not consistent
+    * [PLF-8228] - XSS vulnerability in task with variable DueCategory
+    * [PLF-8229] - XSS vulnerability in task with variable Keyword
+    
+eXo AM 1.3.1
 **************
 
 ** Bug
-    * [TA-524] - Confirmation popup after clone a task is not displayed
-    * [TA-544] - Unable to add a task with assignee and coworker
-    * [TA-594] - Use autocomplete feature to search project
-    * [TA-622] - Pop-up "Let's create your first task" should not be over add project menu
-    * [TA-634] - Warning message appear when mentioning a user in a task project
-    * [TA-635] - Label that is modified by admin of project is not shown modified for task creator
-    * [TA-636] - Label that is modified by space manager is not shown modified for task creator
-    * [TA-637] - Label that is modified by a coworker is not shown modified for task creator
-    * [TA-638] - Label that is modified by an assignee is not shown modified for task creator
-    * [TA-646] - Show task status and priority as readOnly field for Observer
-    * [TA-648] - Index of table TASK_COMMENT_MENTIONED_USERS is not created
-    * [TA-650] - Build fail on tasks
-    * [TA-652] - Can not create a task in space from chat
-    * [TA-653] - Subtask permalink does not work correctly
-    * [TA-655] - Task assigned to user in team chat room is not displayed in user's incoming
+    * [AM-153] - no way to pass http proxy to /opt/exo/addon
 
-** Improvement
-    * [TA-331] - [Authorization] Everyone in Project/Space Project can delete task which not created by him
 
-** Task
-    * [TA-641] - Fix Sonar blocker and critical violations
-
-eXo Chat 2.1.0
-**************
-
-** Bug
-    * [CHAT-839] - Show/Hide Offline users Toggle tooltip in the Chat should be updated.
-    * [CHAT-844] - Use new parameter dbServerHosts in default configuration
-    * [CHAT-858] - Wrong message on chat icon when a user leaves the room
-    * [CHAT-927] - dbServerHost and dbServerPort ignore when they are specified via environment variables
-    * [CHAT-942] - Chat doesn't work in standalone mode
-    * [CHAT-943] - In special case the chat server URL is malformed
-    * [CHAT-944] - Number mongodb's queries increases after the new chat ui deployment
-    * [CHAT-946] - Mini chat disappears when refreshing or going to other page
-    * [CHAT-947] - Only first URL in message is clickable
-    * [CHAT-948] - Not my Chat messages are displayed as mine
-    * [CHAT-949] - Bad URL to chat server
-    * [CHAT-950] - Slow loading of chat page
-    * [CHAT-951] - Error when multiple instances of VueI18n in page
-    * [CHAT-952] - The display of the number of members in a room is NOT updated
-    * [CHAT-955] - Focus in message composer lost after message edition
-    * [CHAT-958] - Upload file fail on Chat when the file is a bit big size
-    * [CHAT-959] - All my favorites were lost when we upgrade to the new chat
-    * [CHAT-960] - emoticons are too close to the name of the sender
-    * [CHAT-961] - Missing emoticons on the new chat like the beer
-    * [CHAT-962] - Adding a task from Chat doesn't work on jBoss
-    * [CHAT-966] - Vulnerability on unshiftio/url-parse dependency
-    * [CHAT-975] - Some strings are not translated in new chat
-    * [CHAT-976] - JS error when the addon is deployed on a community version
-    * [CHAT-980] - Encoding issue when we edit a message with 2 or more & characters
-
-** Improvement
-    * [CHAT-835] - Improve the Chat UI/UX
-    * [CHAT-979] - Add loading image on rooms list
-
-** New feature
-    * [CHAT-838] - Possibility of Leaving Rooms in Chat
-
-** Task
-    * [CHAT-851] - Use Mongo 3.6 in tests
-    * [CHAT-945] - Useless server WARN log
