@@ -13,6 +13,13 @@ eXo GateIn ${org.exoplatform.platform.version}
     * [EXOGTN-2401] - Wrong Gatein dep dependency version in WCI project
  
 
+eXo ECMS ${org.exoplatform.platform.version}
+*************************
+
+** Bug
+    * [ECMS-7845] - Unknown error when editing personal content from content explorer
+	
+	
 eXo Social ${org.exoplatform.platform.version}
 *************************
 
@@ -39,5 +46,11 @@ eXo AM 1.3.1
 
 ** Bug
     * [AM-153] - no way to pass http proxy to /opt/exo/addon
+	
+eXo Task 2.1.1
+**************
+
+** Bug
+    * [TA-546] - In tasks app, in a space, displayed with board view and group by assignee, unable to move task
 
 
