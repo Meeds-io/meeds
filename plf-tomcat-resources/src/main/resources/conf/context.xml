@@ -36,6 +36,7 @@
   <Manager pathname="" />
 
   <Valve className="org.gatein.sso.agent.tomcat.ServletAccessValve" asyncSupported="true"/>
+  <Valve className="org.apache.catalina.valves.ErrorReportValve" showReport="false" showServerInfo="false"/>
   <!-- Uncomment this to enable Comet connection tacking (provides events
          on session expiration as well as webapp lifecycle) -->
   <!--
