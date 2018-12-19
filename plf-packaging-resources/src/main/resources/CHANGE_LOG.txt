@@ -38,8 +38,7 @@ eXo Platform ${org.exoplatform.platform.version}
     * [PLF-8141] - No timeout specified on the SMTP Transport for email notification
     * [PLF-8165] - Username/password icons are not well displayed when login
     * [PLF-8168] - Space search is not consistent
-    * [PLF-8228] - XSS vulnerability in task with variable DueCategory
-    * [PLF-8229] - XSS vulnerability in task with variable Keyword
+
     
 eXo AM 1.3.1
 **************
