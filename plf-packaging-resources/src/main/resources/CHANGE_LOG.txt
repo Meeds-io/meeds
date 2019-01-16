@@ -8,48 +8,26 @@ eXo GateIn ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [EXOGTN-2384] - Hibernate error after an IDM error
-    * [EXOGTN-2396] - Unit test TestPLIDMExternalStoreImportService.testImportGroups fails randomly
-    * [EXOGTN-2401] - Wrong Gatein dep dependency version in WCI project
- 
+    * [EXOGTN-2352] - Email valid but not accepted in our platform
+     
 
-eXo ECMS ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [ECMS-7845] - Unknown error when editing personal content from content explorer
-	
-	
 eXo Social ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [SOC-5960] - Experiences are saved several times on database
-    * [SOC-6021] - Problem with links in notifications
-    * [SOC-6052] - Wrong page titles
+    * [SOC-6122] - Reduce Space Name limitations
     
-
+	
 eXo Platform ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [PLF-8097] - eXo platform 5  start with many errors in minimal profile
-    * [PLF-8102] - Wrong RTL-Arabic text alignment in ativity stream
-    * [PLF-8141] - No timeout specified on the SMTP Transport for email notification
-    * [PLF-8165] - Username/password icons are not well displayed when login
-    * [PLF-8168] - Space search is not consistent
-
+    * [PLF-8173] - Improve performance when listing a lot of users in Manage Users app
+    * [PLF-8217] - Faulty "standalone.conf.bat" file in exo distribution when using windows
     
-eXo AM 1.3.1
-**************
-
-** Bug
-    * [AM-153] - no way to pass http proxy to /opt/exo/addon
 	
-eXo Task 2.1.1
-**************
-
-** Bug
-    * [TA-546] - In tasks app, in a space, displayed with board view and group by assignee, unable to move task
-
-
+** Improvement
+    * [PLF-7034] - Change the tomcat default connection pool
+	
+** Task
+    * [PLF-8191] - Upgrade to Tomcat 8.5.35
