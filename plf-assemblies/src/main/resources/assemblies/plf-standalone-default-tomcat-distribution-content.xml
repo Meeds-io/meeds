@@ -666,15 +666,6 @@
       <outputFileNameMapping>acme-intranet.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-acme-intranet-portlet:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>acme-intranet-portlet.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
   </dependencySets>
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>

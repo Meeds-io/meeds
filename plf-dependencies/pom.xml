@@ -457,16 +457,6 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-sample-acme-intranet-webapp</artifactId>
       <type>war</type>
     </dependency>
