@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>5.2.x-SNAPSHOT</version>
+    <version>5.3.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-root-webapp</artifactId>
   <packaging>war</packaging>
