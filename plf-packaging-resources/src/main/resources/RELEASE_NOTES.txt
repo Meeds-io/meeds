@@ -13,6 +13,17 @@ IV.   KNOWN ISSUES
 
 = I. MAIN CHANGES =
 
+Main changes since Platform 5.1
+
+* Features
+** Edit activities and comments
+** Spaces Administration
+** Improved Create Event
+** New pluggability capabilities in Chat
+* Improvements
+** Better JCR security
+* Bug fixes
+
 Main changes since Platform 5.0
 
 * Features
@@ -203,7 +214,15 @@ Since Platform 5.1, the file upgrade.properties is not used anymore, the upgrade
 * Remove/Rename the file upgrade.properties
 * Restart the server. You're ready.
 
-== Upgrading from Platform 5.0.0 to ${org.exoplatform.platform.version} ==
+== Upgrading from Platform 5.1.0 to ${org.exoplatform.platform.version} ==
+
+=== Data migration ===
+
+The following data migration are performed on the first startup of PLF ${org.exoplatform.platform.version}:
+* Login History data are moved from JCR to JPA
+* Product Information data are moved from JCR to JPA
+
+== Upgrading from Platform 5.0.0 to 5.1.0 ==
 
 === Major Components Upgrades ===
 
