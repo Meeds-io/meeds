@@ -22,6 +22,7 @@ Main changes since Platform 5.1
 ** New pluggability capabilities in Chat
 * Improvements
 ** Better JCR security
+* Drop JBoss support
 * Bug fixes
 
 Main changes since Platform 5.0
@@ -207,7 +208,7 @@ Since Platform 5.1, the file upgrade.properties is not used anymore, the upgrade
 
 * Prepare bundle:
 ** If eXo Platform is connected to a populated organizational data source, Organization Integration Service must be activated so that the data are synchronized. Please refer to chapter 7 "LDAP Integration" in Administrator Guide for the detail.
-** Go to $PLATFORM-${org.exoplatform.platform.version}-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle) or $PLATFORM-${org.exoplatform.platform.version}-JBOSS_HOME/standalone/configuration/gatein/ folder (Jboss bundle).
+** Go to $PLATFORM-${org.exoplatform.platform.version}-TOMCAT_HOME/gatein/conf/ folder (Tomcat bundle).
 ** Rename upgrade—sample.properties to upgrade.properties
 * Start server. The upgrade will be run automatically.
 * Stop server.
