@@ -4,150 +4,34 @@ Changelog Platform ${org.exoplatform.platform.version}
 
 Changelogs of previous releases are available at https://community.exoplatform.com/portal/intranet/wiki/group/spaces/platform_4/Release_Notes.
 
-eXo Kernel ${org.exoplatform.platform.version}
-*************************
-
-eXo JCR ${org.exoplatform.platform.version}
-*************************
-
-eXo GateIn ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [EXOGTN-2251] - Make PLIDM consistent on LDAP disconnection
-    * [EXOGTN-2384] - Hibernate error after an IDM error
-    * [EXOGTN-2401] - Wrong Gatein dep dependency version in WCI project
-    * [EXOGTN-2406] - NPE when reading JMX Bean attributes during startup
-    * [EXOGTN-2418] - cannot Add new tab for Dashboard
-
-** Improvement
-    * [EXOGTN-2397] - Gender field missing empty field
-
 eXo Commons ${org.exoplatform.platform.version}
 *************************
 
-eXo ECMS ${org.exoplatform.platform.version}
-*************************
-
 ** Bug
-    * [ECMS-7825] - Can't find file when its name is a single word
-    * [ECMS-7827] - Missing FR translate in content selector upload popup
-    * [ECMS-7841] - can not select permission when adding document template
-    * [ECMS-7844] - Fix Sonar blocker issues
-    * [ECMS-7845] - Unknown error when editing personal content from content explorer
-    * [ECMS-7846] - Document app doesn't work at all for normal users
-    * [ECMS-7881] - color of SEO is still red when input data
-    * [ECMS-7882] - color of SEO is not orange when I Input data for Description or Keywords field only
-    * [ECMS-7883] - delete button is displayed when select a default folder
-    * [ECMS-7889] - Document's template is empty
-    * [ECMS-7890] - Unknown error appears when click on Advanced Scripts
-    * [ECMS-7895] - favorite node are not displayed for user is not owner
-    * [ECMS-7896] - Right-click actions are not filtered based on user permissions
-    * [ECMS-7909] - [Open in Office] Can't open a shared file in different form
-    * [ECMS-7917] - Unknown error appears when search a document in site explorer
-    * [ECMS-7922] - Unkown error pop up is displayed when add a category tree
-
+    * [COMMONS-577] - Test CachedWebNotificationStorageTest.testUpdate fails randomly
+	
 eXo Social ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [SOC-6021] - Problem with links in notifications
-    * [SOC-6028] - Exception in the logs when assigning an user as a manager to a space group
-    * [SOC-6052] - Wrong page titles
-    * [SOC-6081] - file name/Type/size positions should be aligned
-    * [SOC-6122] - Reduce Space Name limitations
-    * [SOC-6128] - Social Activity REST Service returns wrong identity URL for spaces
-    * [SOC-6131] - Tooltip of user and space are displayed in top left corner in some cases
-    * [SOC-6137] - Blank space under activities comments must be removed
-    * [SOC-6177] - Activity is displayed on the bottom of "My activities" when a user is mentioned on it
-    * [SOC-6197] - Can't reply to comment with a link
-
-** Improvement
-    * [SOC-6090] - Mark all as read in All Notifications page
-
-** New feature
-    * [SOC-5712] - Editable activities and comments
-    * [SOC-6143] - Spaces Administration
-
+    * [SOC-6041] - Problem with detection of the URL in activity stream
+    
 eXo Wiki ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [WIKI-1417] - "null" is displayed when saving draft without title only with oracle db
-
-eXo Calendar ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [CAL-1428] - Qwick search doesn't work when share a personal calendar
-    * [CAL-1431] - Add Middle East Month naming style Calendar
-    * [CAL-1451] - Wrong category name is displayed on calendar
-    * [CAL-1460] - Calendar/ Details Tab are not displayed
-
-** Improvement
-    * [CAL-1358] - Improve the Create event popup
-
-eXo Forum ${org.exoplatform.platform.version}
-*************************
-
-** Bug
-    * [FORUM-1401] - user must log in to be displayed in manage users popup
-    * [FORUM-1412] - HTML code displayed when quote a post
-
-** Improvement
-    * [FORUM-1409] - Add capability to track an opened topic event
+    * [WIKI-1448] - Links in Activity Stream doesn't work after remove/add wiki application
 
 eXo Platform ${org.exoplatform.platform.version}
 *************************
 
 ** Bug
-    * [PLF-7052] - People section on profile is displayed improperly when user has no connections yet.
-    * [PLF-7607] - [Default-Skin][Responsive] Displayed Calendars tab in Calendar settings popup is displayed with bad format.
-    * [PLF-7961] - Searching file find default.html
-    * [PLF-8052] - Incorrect page title on the "View all notifications" page
-    * [PLF-8097] - eXo platform 5 start with many errors in minimal profile
-    * [PLF-8102] - Wrong RTL-Arabic text alignment in ativity stream
-    * [PLF-8141] - No timeout specified on the SMTP Transport for email notification
-    * [PLF-8150] - No update in an activity page when i click on a notification received for the same page
-    * [PLF-8168] - Space search is not consistent
-    * [PLF-8173] - Improve performance when listing a lot of users in Manage Users app
-    * [PLF-8174] - Out of memory in heap space encoutered by Wiki Page
-    * [PLF-8210] - Unified search is not working with files containing "_" in their titles.
-    * [PLF-8239] - Remove environment variable exo.file-rdbms.algorithm.checksum
-    * [PLF-8261] - When adding image in microblog, the image path is an absolute one, with the domain name
-    * [PLF-8298] - Login History table is not created on postgresql
-
-** Improvement
-    * [PLF-7904] - Unify Show more Button with new style
-    * [PLF-8146] - not possible to return the user avatar image to its default
-    * [PLF-8178] - Display Update Notifications in the Browser Tab
-    * [PLF-8189] - Move data related to product information from JCR to JPA
-    * [PLF-8190] - Move data related to login history from JCR to JPA
-    * [PLF-8256] - Make Secure JCR folders upgrade plugins asynchronous
-
-** Task
-    * [PLF-8265] - Do not build JBoss distribution anymore
-
-eXo Task 2.2.0
-**************
-
-** Bug
-    * [TA-514] - Task list chops title
-    * [TA-546] - In tasks app, in a space, displayed with board view and group by assignee, unable to move task
-    * [TA-659] - Cannot update the project of a task
-    * [TA-670] - problem in formatting mail notification when mentioning someone in a task.
-    * [TA-671] - Wrong due date is added when creating task with chat
-
-eXo Chat 2.2.0
-**************
-
-** Bug
-    * [CHAT-928] - Presence status should be at the same level of the username
-    * [CHAT-983] - Mini chat is not well displayed when trying to open message
-    * [CHAT-994] - can not edit message with return to line
-    * [CHAT-999] - Scroll at top when loading a room
-    * [CHAT-1008] - changes are saved in notifications when I click on cancel button
-
-** Improvement
-    * [CHAT-972] - Clearing filter in chat is not convenient
-    * [CHAT-1001] - Add a badge of unread messages in the Mini Chat
+    * [PLF-8166] - Application icons on space doesn't appear
+    * [PLF-8238] - Unsorted "Experiences" displayed in the user Profile
+    * [PLF-8307] - [Lecko Addon] dump file is not deleted after export on Windows
+    * [PLF-8312] - [Agital] multi-level menu not displayed when mouse hover menu of Corporate Website added
+    * [PLF-8323] - The display of file explorer is blocked when the user has no FavoriteFolder
+    * [PLF-8334] - Email notification template should be responsive for Outlook Application
+    * [PLF-8336] - Bad UI Content Management Status Column Width Limit
+    * [PLF-8352] - Blank page on the documents application after closing the browsing preferences popup
+    * [PLF-8355] - CRSF check fails when rendering portlets
