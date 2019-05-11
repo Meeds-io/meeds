@@ -26,7 +26,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>5.2.x-SNAPSHOT</version>
+    <version>5.2.1</version>
   </parent>
   <artifactId>plf-exo-tools</artifactId>
   <packaging>jar</packaging>
