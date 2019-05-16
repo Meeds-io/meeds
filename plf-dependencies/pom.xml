@@ -24,7 +24,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>org.exoplatform.platform.distributions</groupId>
-    <version>5.2.1</version>
+    <version>5.2.x-acc222-SNAPSHOT</version>
   </parent>
   <artifactId>plf-dependencies</artifactId>
   <packaging>pom</packaging>
