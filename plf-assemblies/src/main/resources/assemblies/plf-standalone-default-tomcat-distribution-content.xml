@@ -568,6 +568,15 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
+        <include>org.exoplatform.platform:portlets:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>portlets.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
         <include>org.exoplatform.platform:platform-extension-portlet-branding:war</include>
       </includes>
       <scope>provided</scope>
