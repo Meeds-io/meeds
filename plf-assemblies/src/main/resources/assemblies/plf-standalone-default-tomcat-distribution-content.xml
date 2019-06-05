@@ -323,15 +323,6 @@
       <outputFileNameMapping>exoadmin.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.portlet.dashboard:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>dashboard.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Commons wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
