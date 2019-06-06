@@ -299,24 +299,6 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.gadgets-server:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoGadgetServer.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.eXoGadgets:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoGadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
         <include>org.exoplatform.gatein.portal:exo.portal.portlet.exoadmin:war</include>
       </includes>
       <scope>provided</scope>
@@ -386,15 +368,6 @@
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>social-notification-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-opensocial:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>
