@@ -313,16 +313,6 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
       <artifactId>portlets</artifactId>
       <type>war</type>
     </dependency>

@@ -601,16 +601,6 @@
       <outputFileNameMapping>platform-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- Platform Gadgets wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-exo-gadget-pack-gadget-pack:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>gadget-pack.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
