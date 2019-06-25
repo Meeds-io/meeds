@@ -601,24 +601,6 @@
       <outputFileNameMapping>platform-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-gadgets-sample-exo-gadget-resources:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>exo-gadget-resources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-gadgets-sample-gadgets:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>intranet-gadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Platform INTRANET website wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
