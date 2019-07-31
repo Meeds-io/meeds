@@ -555,6 +555,15 @@
       <outputFileNameMapping>unified-search.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.integration:integ-news-webapp:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>news.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
     <!-- Platform wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
