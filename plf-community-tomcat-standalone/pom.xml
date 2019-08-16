@@ -71,6 +71,31 @@
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
+    <!-- Add-ons dependencies to be sure to not release PLF with SNAPSHOTS add-ons -->
+    <dependency>
+      <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
+      <artifactId>exo-es-embedded-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.wallet</groupId>
+      <artifactId>wallet-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.kudos</groupId>
+      <artifactId>kudos-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.perk-store</groupId>
+      <artifactId>perk-store-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -172,6 +197,15 @@
                 <echo message="Installing add-ons..." />
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.es.embedded.id}:${addon.exo.es.embedded.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.kudos.id}:${addon.exo.kudos.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.perk-store.id}:${addon.exo.perk-store.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.wallet.id}:${addon.exo.wallet.version}" />
                 </exec>
               </target>
             </configuration>
