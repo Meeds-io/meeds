@@ -311,16 +311,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-news-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-news-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
     <!-- used by org.exoplatform.gatein.portal:exo.portal.web.portal and org.exoplatform.gatein.portal:exo.portal.web.rest but not declared -->
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
