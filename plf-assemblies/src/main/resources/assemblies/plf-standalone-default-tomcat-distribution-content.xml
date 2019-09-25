@@ -299,37 +299,10 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.gadgets-server:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoGadgetServer.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.eXoGadgets:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoGadgets.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
         <include>org.exoplatform.gatein.portal:exo.portal.portlet.exoadmin:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>exoadmin.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.portlet.dashboard:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>dashboard.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- Commons wars -->
@@ -395,15 +368,6 @@
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>social-notification-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-opensocial:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <dependencySet>
@@ -568,6 +532,15 @@
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
+        <include>org.exoplatform.platform:portlets:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>portlets.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
         <include>org.exoplatform.platform:platform-extension-portlet-branding:war</include>
       </includes>
       <scope>provided</scope>
@@ -626,34 +599,6 @@
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>platform-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- Platform Gadgets wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-exo-gadget-pack-gadget-pack:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>gadget-pack.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-gadgets-sample-exo-gadget-resources:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>exo-gadget-resources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform:platform-sample-gadgets-sample-gadgets:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>intranet-gadgets.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- Platform INTRANET website wars -->

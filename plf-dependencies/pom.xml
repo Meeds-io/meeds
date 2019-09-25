@@ -70,16 +70,6 @@
           <artifactId>xpp3_min</artifactId>
           <groupId>xpp3</groupId>
         </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-gadgets -->
-        <exclusion>
-          <artifactId>el-api</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
-        <exclusion>
-          <artifactId>jasper-el</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
         <!-- Coming by transitivity from rome:rome -->
         <exclusion>
           <artifactId>jdom</artifactId>
@@ -323,12 +313,12 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
+      <artifactId>portlets</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-exo-gadget-pack-gadget-pack</artifactId>
+      <artifactId>portlets</artifactId>
       <type>pom</type>
     </dependency>
     <dependency>
@@ -351,25 +341,10 @@
       <artifactId>platform-extension-portlets-homepage</artifactId>
       <type>pom</type>
       <exclusions>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
-        <exclusion>
-          <artifactId>xpp3_min</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
-        <exclusion>
-          <artifactId>geronimo-stax-api_1.0_spec</artifactId>
-          <groupId>org.apache.geronimo.specs</groupId>
-        </exclusion>
         <!-- Coming by transitivity from org.apache.httpcomponents:httpclient -->
         <exclusion>
           <artifactId>commons-logging</artifactId>
           <groupId>commons-logging</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-social-api -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -467,26 +442,6 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-exo-gadget-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-gadgets-sample-gadgets</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-registration</artifactId>
       <type>war</type>
     </dependency>
@@ -534,58 +489,6 @@
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-opensocial</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-opensocial</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
-        <exclusion>
-          <artifactId>el-api</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
-        <exclusion>
-          <artifactId>jasper-el</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from commons-betwixt:commons-betwixt -->
-        <exclusion>
-          <artifactId>commons-beanutils-core</artifactId>
-          <groupId>commons-beanutils</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from commons-betwixt:commons-betwixt -->
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-common -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from rome:rome -->
-        <exclusion>
-          <artifactId>jdom</artifactId>
-          <groupId>jdom</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.shindig:shindig-gadgets -->
-        <exclusion>
-          <artifactId>modules</artifactId>
-          <groupId>rome</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from caja:htmlparser -->
-        <exclusion>
-          <artifactId>xmlParserAPIs</artifactId>
-          <groupId>xerces</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -679,21 +582,6 @@
     <dependency>
       <groupId>org.gatein.cdi</groupId>
       <artifactId>gatein-cdi-injection</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.eXoGadgets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.gadgets-server</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.dashboard</artifactId>
-      <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.gatein.portal</groupId>
