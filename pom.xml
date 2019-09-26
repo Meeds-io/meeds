@@ -93,6 +93,8 @@
     <addon.exo.perk-store.version>1.1.x-SNAPSHOT</addon.exo.perk-store.version>
     <addon.exo.wallet.id>exo-wallet</addon.exo.wallet.id>
     <addon.exo.wallet.version>1.0.x-SNAPSHOT</addon.exo.wallet.version>
+    <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
+    <addon.exo.gamification.version>1.1.x-SNAPSHOT</addon.exo.gamification.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
@@ -297,6 +299,13 @@
         <groupId>org.exoplatform.addons.perk-store</groupId>
         <artifactId>perk-store-packaging</artifactId>
         <version>${addon.exo.perk-store.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.gamification</groupId>
+        <artifactId>gamification-packaging</artifactId>
+        <version>${addon.exo.gamification.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
