@@ -96,6 +96,12 @@
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.gamification</groupId>
+      <artifactId>gamification-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -206,6 +212,9 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.wallet.id}:${addon.exo.wallet.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.gamification.id}:${addon.exo.gamification.version}" />
                 </exec>
               </target>
             </configuration>
