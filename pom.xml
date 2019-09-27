@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.exoplatform.platform.distributions</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>5.3.x-SNAPSHOT</version>
+  <version>6.0.x-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
@@ -63,9 +63,9 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>5.3.x-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.platform.version>6.0.x-SNAPSHOT</org.exoplatform.platform.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>1.5.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
+    <org.exoplatform.platform.addons-manager.version>2.0.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>8.5.45</org.apache.tomcat.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
@@ -86,13 +86,13 @@
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>exo-es-embedded</addon.exo.es.embedded.id>
-    <addon.exo.es.embedded.version>2.3.x-SNAPSHOT</addon.exo.es.embedded.version>
+    <addon.exo.es.embedded.version>3.0.x-SNAPSHOT</addon.exo.es.embedded.version>
     <addon.exo.kudos.id>exo-kudos</addon.exo.kudos.id>
-    <addon.exo.kudos.version>1.1.x-SNAPSHOT</addon.exo.kudos.version>
+    <addon.exo.kudos.version>2.0.x-SNAPSHOT</addon.exo.kudos.version>
     <addon.exo.perk-store.id>exo-perk-store</addon.exo.perk-store.id>
-    <addon.exo.perk-store.version>1.1.x-SNAPSHOT</addon.exo.perk-store.version>
+    <addon.exo.perk-store.version>2.0.x-SNAPSHOT</addon.exo.perk-store.version>
     <addon.exo.wallet.id>exo-wallet</addon.exo.wallet.id>
-    <addon.exo.wallet.version>1.0.x-SNAPSHOT</addon.exo.wallet.version>
+    <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
     <addon.exo.gamification.version>1.1.x-SNAPSHOT</addon.exo.gamification.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
