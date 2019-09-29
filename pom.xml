@@ -94,7 +94,7 @@
     <addon.exo.wallet.id>exo-wallet</addon.exo.wallet.id>
     <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
-    <addon.exo.gamification.version>1.1.x-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
