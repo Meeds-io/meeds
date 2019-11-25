@@ -33,6 +33,7 @@
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
+    <module>plf-community-edition-service</module>
     <module>plf-assemblies</module>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-dependencies</module>
@@ -152,6 +153,11 @@
         <scope>import</scope>
       </dependency>
       <!-- Project artifacts -->
+      <dependency>
+        <groupId>org.exoplatform.platform.distributions</groupId>
+        <artifactId>plf-community-edition-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.exoplatform.platform.distributions</groupId>
         <artifactId>plf-public-distributions</artifactId>

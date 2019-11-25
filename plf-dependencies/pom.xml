@@ -136,6 +136,11 @@
       <artifactId>social-webapp-resources</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Platform - common configuration for all distributions  -->
+    <dependency>
+      <groupId>org.exoplatform.platform</groupId>
+      <artifactId>platform-extension-config</artifactId>
+    </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
       <groupId>org.exoplatform.gatein.portal</groupId>

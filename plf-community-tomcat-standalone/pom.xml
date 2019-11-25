@@ -32,8 +32,8 @@
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-component-edition-community</artifactId>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-community-edition-service</artifactId>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
