@@ -55,6 +55,10 @@
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.framework.web</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.component.webdav</artifactId>
+    </dependency>
     <!-- Platform UI -->
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
@@ -140,6 +144,15 @@
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
       <artifactId>platform-extension-config</artifactId>
+    </dependency>
+    <!-- SSO - integration SSO jars  -->
+    <dependency>
+      <groupId>org.exoplatform.gatein.sso</groupId>
+      <artifactId>sso-agent</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.sso</groupId>
+      <artifactId>sso-integration</artifactId>
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
