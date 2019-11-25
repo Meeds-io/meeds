@@ -140,6 +140,12 @@
       <artifactId>social-webapp-resources</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Platform Distrib - integration.war  -->
+    <dependency>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-tomcat-integration-webapp</artifactId>
+      <type>war</type>
+    </dependency>
     <!-- Platform - common configuration for all distributions  -->
     <dependency>
       <groupId>org.exoplatform.platform</groupId>
@@ -210,8 +216,17 @@
       <artifactId>exo.portal.component.jdbc</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.apache.portals.bridges</groupId>
+      <artifactId>portals-bridges-common</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.gatein.cdi</groupId>
       <artifactId>gatein-cdi-contexts</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>javax.ccpp</groupId>
+      <artifactId>ccpp</artifactId>
       <type>jar</type>
     </dependency>
   </dependencies>

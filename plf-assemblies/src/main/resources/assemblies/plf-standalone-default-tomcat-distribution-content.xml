@@ -379,6 +379,16 @@
       <outputFileNameMapping>social-extension.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
+    <!-- Platform distrib - integration.war -->
+    <dependencySet>
+      <outputDirectory>/webapps</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform.distributions:plf-tomcat-integration-webapp:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>integration.war</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
   </dependencySets>
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
