@@ -33,13 +33,4 @@
     <lifecycle>RESOURCE_PHASE</lifecycle>
   </filter>
 
-  <filter>
-    <filter-name>Portlet Disabler Filter</filter-name>
-    <filter-class>org.exoplatform.platform.common.portlet.PortletDisablerFilter</filter-class>
-    <lifecycle>RENDER_PHASE</lifecycle>
-  </filter>
-  <filter-mapping>
-    <filter-name>Portlet Disabler Filter</filter-name>
-    <portlet-name>*</portlet-name>
-  </filter-mapping>
 </portlet-app>
