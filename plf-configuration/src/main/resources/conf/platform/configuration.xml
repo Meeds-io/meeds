@@ -68,6 +68,16 @@
         <!-- Use this lock factory to lock index files on cluster wide -->
         <property name="org.exoplatform.jcr.lucene.store.FSDirectoryLockFactoryClass" value="org.apache.lucene.store.NativeFSLockFactory" />
       </properties-param>
+      <properties-param>
+        <name>ProductEditionProperty</name>
+        <description>Product edition property</description>
+        <property name="exo.product.edition" value="community" />
+      </properties-param>
+      <properties-param profiles="enterprise">
+        <name>ProductEditionProperty</name>
+        <description>Product edition property</description>
+        <property name="exo.product.edition" value="enterprise" />
+      </properties-param>
     </init-params>
   </component>
 
