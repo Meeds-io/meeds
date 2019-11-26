@@ -69,20 +69,8 @@
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.jcr</groupId>
-          <artifactId>jcr-parent</artifactId>
-          <type>zip</type>
-          <classifier>source-release</classifier>
-        </dependency>
-        <dependency>
           <groupId>org.exoplatform.kernel</groupId>
           <artifactId>kernel-parent</artifactId>
-          <type>zip</type>
-          <classifier>source-release</classifier>
-        </dependency>
-        <dependency>
-          <groupId>org.exoplatform.platform</groupId>
-          <artifactId>platform</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
