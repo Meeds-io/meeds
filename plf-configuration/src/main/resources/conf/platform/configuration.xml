@@ -1,0 +1,270 @@
+<configuration
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+  <!-- PLF-4469 : replace the PropertyConfigurator to be able to load optional files - without any error -->
+  <component>
+    <key>org.exoplatform.container.PropertyConfigurator</key>
+    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
+    <init-params>
+      <values-param>
+        <name>properties.urls</name>
+        <!-- Configuration file for default configuration of docker images -->
+        <value>file:${exo.conf.dir}/docker.properties</value>
+        <!-- PLF-4469 : Load user configuration from ${exo.conf.dir}/exo.properties if it exists -->
+        <value>file:${exo.conf.dir}/exo.properties</value>
+        <!-- PLF-4469 : configuration.properties must be loaded from classpath to get default settings -->
+        <value>jar:/conf/platform/configuration.properties</value>
+      </values-param>
+      <properties-param>
+        <name>JGroupsProperties</name>
+        <description>Jgroups configuration</description>
+        <property name="exo.jcr.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-jcr-udp.xml" />
+        <property name="exo.jcr.cluster.jgroups.config-url" value="jar:/conf/platform/jgroups/jgroups-jcr-udp.xml" />
+        <property name="exo.service.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-service-udp.xml" />
+      </properties-param>
+      <properties-param profiles="cluster-jgroups-tcp">
+        <name>JGroupsProperties</name>
+        <description>Jgroups configuration</description>
+        <property name="exo.jcr.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-jcr-tcp.xml" />
+        <property name="exo.jcr.cluster.jgroups.config-url" value="jar:/conf/platform/jgroups/jgroups-jcr-tcp.xml" />
+        <property name="exo.service.cluster.jgroups.config" value="conf/platform/jgroups/jgroups-service-tcp.xml" />
+      </properties-param>
+      <properties-param>
+        <name>CacheManagementProperties</name>
+        <description>Filter used to notify caches</description>
+        <property name="exo.jcr.cache.config" value="jar:/conf/platform/jcr/infinispan/local/cache-config.xml" />
+        <property name="exo.jcr.cache.config.workspace.portal-system" value="jar:/conf/platform/jcr/infinispan/local/cache-config-portal-system.xml" />
+        <property name="exo.jcr.lock.cache.config" value="jar:/conf/platform/jcr/infinispan/local/lock-config.xml" />
+        <property name="exo.jcr.index.cache.config" value="jar:/conf/platform/jcr/infinispan/local/indexer-config.xml" />
+        <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/local/cache-config.xml" />
+      </properties-param>
+      <properties-param profiles="cluster">
+        <name>CacheManagementProperties</name>
+        <description>Filter used to notify caches</description>
+        <property name="exo.jcr.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/cache-config.xml" />
+        <property name="exo.jcr.cache.config.workspace.portal-system" value="jar:/conf/platform/jcr/infinispan/cluster/cache-config-portal-system.xml" />
+        <property name="exo.jcr.lock.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/lock-config.xml" />
+        <property name="exo.jcr.index.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/indexer-config.xml" />
+        <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-config.xml" />
+        <property name="exo.cache.async.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-async-config.xml" />
+      </properties-param>
+      <properties-param>
+        <name>ChangeFilterClass</name>
+        <description>Filter used to notify changes in the jcr index in standalone</description>
+        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.DefaultChangesFilter" />
+        <property name="org.exoplatform.jcr.lucene.store.FSDirectoryLockFactoryClass" value="org.apache.lucene.store.SimpleFSLockFactory" />
+      </properties-param>
+      <properties-param profiles="cluster">
+        <name>ChangeFilterClass</name>
+        <description>Filter used to notify changes in the jcr index in cluster</description>
+        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.ispn.LocalIndexChangesFilter" />
+      </properties-param>
+      <properties-param profiles="cluster-index-shared">
+        <name>ChangeFilterClass</name>
+        <description>Filter used to notify changes in the jcr index in cluster</description>
+        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.ispn.ISPNIndexChangesFilter" />
+        <!-- Use this lock factory to lock index files on cluster wide -->
+        <property name="org.exoplatform.jcr.lucene.store.FSDirectoryLockFactoryClass" value="org.apache.lucene.store.NativeFSLockFactory" />
+      </properties-param>
+    </init-params>
+  </component>
+
+  <!-- This declares the default portal container for Platform -->
+  <component>
+    <type>org.exoplatform.container.definition.PortalContainerConfig</type>
+    <init-params>
+      <value-param>
+        <name>default.portal.container</name>
+        <value>portal</value>
+      </value-param>
+      <value-param>
+        <name>default.rest.context</name>
+        <value>rest</value>
+      </value-param>
+      <value-param>
+        <name>ignore.unregistered.webapp</name>
+        <value>${ignore.unregistered.webapp:true}</value>
+      </value-param>       
+      <!-- The name of the default security realm -->
+      <value-param>
+        <name>default.realm.name</name>
+        <value>${exo.security.domain}</value>
+      </value-param>
+      <object-param>
+        <name>default.portal.definition</name>
+        <object type="org.exoplatform.container.definition.PortalContainerDefinition">
+          <field name="dependencies">
+            <collection type="java.util.ArrayList">
+               <!-- gatein -->
+               <value>
+                  <string>portal</string>
+               </value>
+               <value>
+                  <string>registration</string>
+               </value>
+               <value>
+                  <string>exoadmin</string>
+               </value>
+               <value>
+                  <string>eXoGadgets</string>
+               </value>
+               <value>
+                  <string>eXoGadgetServer</string>
+               </value>
+               <value>
+                  <string>rest</string>
+               </value>
+               <value>
+                  <string>web</string>
+               </value>
+               <value>
+                  <string>eXoResources</string>
+               </value>
+                <value>
+                    <string>eXoSkin</string>
+                </value>
+               <!-- commons -->
+
+               <value>
+                  <string>commons-extension</string>
+               </value>
+               <value>
+                  <string>cometd</string>
+               </value>
+
+               <!-- collab -->
+               <value profiles="all">
+                  <string>calendar</string>
+               </value>
+
+               <!-- ECM -->
+               <value>
+                  <string>eXoWCMResources</string>
+               </value>
+               <value>
+                  <string>ecmexplorer</string>
+               </value>
+               <value>
+                  <string>ecmadmin</string>
+               </value>
+               <value>
+                  <string>ecm-wcm-core</string>
+               </value>
+               <value>
+                  <string>ecm-wcm-extension</string>
+               </value>
+               <value>
+                  <string>presentation</string>
+               </value>
+               <value>
+                  <string>searches</string>
+               </value>
+               <value>
+                  <string>authoring-apps</string>
+               </value>
+               <value>
+                  <string>seo</string>
+               </value>
+
+               <!-- SOCIAL -->
+
+               <value profiles="all">
+                  <string>social-extension</string>
+               </value>
+               <value profiles="all">
+                  <string>social-notification-extension</string>
+               </value>
+               <value profiles="all">
+                  <string>social-resources</string>
+               </value>
+               <value profiles="all">
+                  <string>social</string>
+               </value>
+               <value profiles="all">
+                  <string>social-portlet</string>
+               </value>
+               <value profiles="all">
+                  <string>social-juzu</string>
+               </value>
+               <value>
+                  <string>social-vue-portlet</string>
+               </value>
+
+               <!-- Knowledge -->
+               <value profiles="all">
+                  <string>forum</string>
+               </value>
+               <value profiles="all">
+                  <string>wiki</string>
+               </value>
+               <!-- Contains shared layout -->
+               <value>
+                  <string>platform-extension</string>
+               </value>
+               <value>
+                  <string>portlets</string>
+               </value>
+               <value>
+                  <string>platformNavigation</string>
+               </value>
+               <value>
+                  <string>homepage-portlets</string>
+               </value>
+               <value>
+                  <string>eXoPlatformResources</string>
+               </value>
+               <value>
+                  <string>platform-branding</string>
+               </value>
+               <value>
+                  <string>unified-search</string>
+               </value>
+               <value>
+                  <string>platform-notification</string>
+               </value>
+            </collection>
+          </field>
+
+          <!-- A map of settings tied to the default portal container -->
+          <field name="settings">
+            <map type="java.util.HashMap">
+              <!-- TODO check cometd name -->
+              <entry>
+                <key>
+                  <string>sample</string>
+                </key>
+                <value>
+                  <string>value</string>
+                </value>
+              </entry>
+            </map>
+          </field>
+        </object>
+      </object-param>
+    </init-params>
+  </component>
+  <!--
+		it is necessary to declare this empty plugin in order to activate the
+		extension mechanism
+	-->
+  <external-component-plugins>
+    <target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+    <component-plugin>
+      <name>Add PortalContainer Definitions</name>
+      <set-method>registerPlugin</set-method>
+      <type>org.exoplatform.container.definition.PortalContainerDefinitionPlugin</type>
+      <init-params>
+        <object-param>
+          <name>portal</name>
+          <object type="org.exoplatform.container.definition.PortalContainerDefinition">
+            <field name="name">
+              <string>portal</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+</configuration>

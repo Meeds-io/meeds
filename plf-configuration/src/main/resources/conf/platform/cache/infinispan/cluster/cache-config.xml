@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2017 eXo Platform SAS.
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="urn:infinispan:config:8.2"
+            xsi:schemaLocation="urn:infinispan:config:8.2 http://www.infinispan.org/schemas/infinispan-config-8.2.xsd">
+  <threads>
+    <thread-factory name="infinispan-factory" group-name="infinispan" thread-name-pattern="%G %i" priority="5" />
+
+    <!-- listener-executor -->
+    <blocking-bounded-queue-thread-pool name="infinispan-listener" thread-factory="infinispan-factory"
+                                        core-threads="1" max-threads="5" queue-length="0" keepalive-time="0"/>
+    <!-- listener-executor -->
+    <blocking-bounded-queue-thread-pool name="infinispan-async" thread-factory="infinispan-factory"
+                                        core-threads="1" max-threads="5" queue-length="0" keepalive-time="0"/>
+    <!-- expiration-executor -->
+    <scheduled-thread-pool name="infinispan-expiration" thread-factory="infinispan-factory" />
+  </threads>
+
+  <jgroups transport="org.infinispan.remoting.transport.jgroups.JGroupsTransport">
+    <stack-file name="stack" path="${exo.service.cluster.jgroups.config}"/>
+  </jgroups>
+
+  <cache-container name="template" default-cache="default" async-executor="infinispan-async" expiration-executor="infinispan-expiration"   listener-executor="infinispan-listener"
+                   statistics="true">
+    <jmx duplicate-domains="true" domain="services.ispn.cache" mbean-server-lookup="org.infinispan.jmx.PlatformMBeanServerLookup"/>
+    <transport cluster="${exo.cluster.partition.name}-services" node-name="${exo.cluster.node.name}"  stack="stack"/>
+    <replicated-cache-configuration  mode="SYNC" name="default" statistics="true" remote-timeout="240000">
+      <locking isolation="READ_COMMITTED" concurrency-level="500" striping="false" write-skew="false" acquire-timeout="${exo.cache.lockacquisitiontimeout:180000}"/>
+      <transaction locking="PESSIMISTIC" mode="NON_XA" transaction-manager-lookup="org.exoplatform.services.transaction.infinispan.JBossStandaloneJTAManagerLookup" />
+      <eviction size="${exo.cache.eviction.maxEntries:1000000}" strategy="LIRS" thread-policy="DEFAULT"/>
+      <state-transfer enabled="${exo.cache.cluster.statetransfer.fetchinmemorystate:false}" timeout="${exo.cache.cluster.statetransfer.timeout:240000}" />
+      <expiration interval="${exo.cache.expiration.wakeupinterval:120000}"/>
+    </replicated-cache-configuration>
+  </cache-container>
+</infinispan>

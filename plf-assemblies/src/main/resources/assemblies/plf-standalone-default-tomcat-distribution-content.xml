@@ -163,7 +163,7 @@
     <!-- Configuration sample files -->
     <fileSet>
       <outputDirectory>/gatein/conf</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/platform-extension-config/conf/platform/</directory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-configuration/conf/platform/</directory>
       <filtered>false</filtered>
       <lineEnding>windows</lineEnding>
       <includes>

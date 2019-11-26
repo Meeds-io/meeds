@@ -148,8 +148,8 @@
     </dependency>
     <!-- Platform - common configuration for all distributions  -->
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-config</artifactId>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-configuration</artifactId>
     </dependency>
     <!-- SSO - integration SSO jars  -->
     <dependency>

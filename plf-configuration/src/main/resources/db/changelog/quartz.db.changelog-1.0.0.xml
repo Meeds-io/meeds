@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="quartz" id="1.0.0-1" dbms="hsqldb">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="db/sql/tables_hsqldb.sql"
+                relativeToChangelogFile="false"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-2" dbms="mysql">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="db/sql/tables_mysql_innodb.sql"
+                relativeToChangelogFile="false"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-3" dbms="mssql">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter="\nGO"
+                path="db/sql/tables_sqlServer.sql"
+                relativeToChangelogFile="false"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-4" dbms="postgresql">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="db/sql/tables_postgres.sql"
+                relativeToChangelogFile="false"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+    <!--Oracle should run drop tables outside sql script-->
+    <changeSet author="quartz" id="1.0.0-5" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_FIRED_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_FIRED_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-6" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_PAUSED_TRIGGER_GRPS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_PAUSED_TRIGGER_GRPS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-7" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_SCHEDULER_STATE"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_SCHEDULER_STATE"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-8" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_LOCKS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_LOCKS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-9" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_SIMPLE_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_SIMPLE_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-10" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_SIMPROP_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_SIMPROP_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-11" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_CRON_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_CRON_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-12" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_BLOB_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_BLOB_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-13" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_TRIGGERS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-14" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_JOB_DETAILS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_JOB_DETAILS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-15" dbms="oracle">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="QRTZ_CALENDARS"/>
+        </preConditions>
+        <dropTable tableName="QRTZ_CALENDARS"/>
+    </changeSet>
+    <changeSet author="quartz" id="1.0.0-16" dbms="oracle">
+        <sqlFile
+                encoding="utf8"
+                endDelimiter=";"
+                path="db/sql/tables_oracle.sql"
+                relativeToChangelogFile="false"
+                splitStatements="true"
+                stripComments="true"/>
+    </changeSet>
+</databaseChangeLog>
