@@ -65,7 +65,8 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>6.0.x-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.social.version>6.0.x-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.platform-ui.version>6.0.x-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>2.0.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
@@ -102,6 +103,20 @@
   </properties>
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>social</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui</artifactId>
+        <version>${org.exoplatform.platform-ui.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!-- Logging implementation : http://logback.qos.ch/ -->
       <dependency>
         <groupId>ch.qos.logback</groupId>
@@ -144,14 +159,6 @@
         <artifactId>addons-manager</artifactId>
         <version>${org.exoplatform.platform.addons-manager.version}</version>
         <type>zip</type>
-      </dependency>
-      <!-- Import versions from platform project -->
-      <dependency>
-        <groupId>org.exoplatform.platform</groupId>
-        <artifactId>platform</artifactId>
-        <version>${org.exoplatform.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
       <!-- Project artifacts -->
       <dependency>
