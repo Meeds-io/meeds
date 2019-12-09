@@ -162,94 +162,112 @@
       </dependency>
       <!-- Project artifacts -->
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-configuration</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-community-edition-service</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-public-distributions</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-public-distributions</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
         <classifier>source-release</classifier>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-assemblies</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-community-tomcat-standalone</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-community-tomcat-standalone</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-dependencies</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-community-sources</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-exo-tools</artifactId>
         <version>${project.version}</version>
         <type>jar</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-packaging-resources</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-packaging-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
