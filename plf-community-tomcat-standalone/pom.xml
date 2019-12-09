@@ -158,7 +158,7 @@
                 <descriptorRef>plf-standalone-tomcat-server-xml-hsqldb</descriptorRef>
               </descriptorRefs>
               <filters>
-                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/ /conf/hsqldb.filters.properties</filter>
               </filters>
             </configuration>
           </execution>
@@ -176,6 +176,40 @@
               </descriptorRefs>
               <filters>
                 <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/mysql.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for Postgres -->
+          <execution>
+            <id>plf-server-xml-postgres</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-postgres</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/postgres.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for Postgresplus -->
+          <execution>
+            <id>plf-server-xml-postgresplus</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-postgresplus</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/postgresplus.filters.properties</filter>
               </filters>
             </configuration>
           </execution>
