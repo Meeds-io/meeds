@@ -89,15 +89,21 @@
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>exo-es-embedded</addon.exo.es.embedded.id>
-    <addon.exo.es.embedded.version>3.0.x-portal-rdbms-SNAPSHOT</addon.exo.es.embedded.version>
+    <addon.exo.es.embedded.version>3.0.x-SNAPSHOT</addon.exo.es.embedded.version>
     <addon.exo.kudos.id>exo-kudos</addon.exo.kudos.id>
-    <addon.exo.kudos.version>2.0.x-portal-rdbms-SNAPSHOT</addon.exo.kudos.version>
+    <addon.exo.kudos.version>2.0.x-SNAPSHOT</addon.exo.kudos.version>
     <addon.exo.perk-store.id>exo-perk-store</addon.exo.perk-store.id>
-    <addon.exo.perk-store.version>2.0.x-portal-rdbms-SNAPSHOT</addon.exo.perk-store.version>
+    <addon.exo.perk-store.version>2.0.x-SNAPSHOT</addon.exo.perk-store.version>
     <addon.exo.wallet.id>exo-wallet</addon.exo.wallet.id>
-    <addon.exo.wallet.version>2.0.x-portal-rdbms-SNAPSHOT</addon.exo.wallet.version>
+    <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
-    <addon.exo.gamification.version>2.0.x-portal-rdbms-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.enterprise-skin.id>exo-enterprise-skin</addon.exo.enterprise-skin.id>
+    <addon.exo.enterprise-skin.version>6.0.x-SNAPSHOT</addon.exo.enterprise-skin.version>
+    <addon.exo.push-notifications.id>exo-push-notifications</addon.exo.push-notifications.id>
+    <addon.exo.push-notifications.version>2.0.x-SNAPSHOT</addon.exo.push-notifications.version>
+    <addon.exo.digital-workplace.id>exo-digital-workplace</addon.exo.digital-workplace.id>
+    <addon.exo.digital-workplace.version>1.0.x-SNAPSHOT</addon.exo.digital-workplace.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
@@ -343,6 +349,34 @@
         <groupId>org.exoplatform.addons.gamification</groupId>
         <artifactId>gamification-packaging</artifactId>
         <version>${addon.exo.gamification.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.enterprise-skin</groupId>
+        <artifactId>skin-addon-packaging</artifactId>
+        <version>${addon.exo.enterprise-skin.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.digital-workplace</groupId>
+        <artifactId>digital-workplace-packaging</artifactId>
+        <version>${addon.exo.digital-workplace.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.legacy-intranet</groupId>
+        <artifactId>legacy-intranet-packaging</artifactId>
+        <version>${addon.exo.legacy-intranet.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.push-notifications</groupId>
+        <artifactId>exo-push-notifications-addon-packaging</artifactId>
+        <version>${addon.exo.push-notifications.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
