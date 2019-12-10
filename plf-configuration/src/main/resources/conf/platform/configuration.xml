@@ -118,12 +118,6 @@
                   <string>exoadmin</string>
                </value>
                <value>
-                  <string>eXoGadgets</string>
-               </value>
-               <value>
-                  <string>eXoGadgetServer</string>
-               </value>
-               <value>
                   <string>rest</string>
                </value>
                <value>
@@ -132,9 +126,6 @@
                <value>
                   <string>eXoResources</string>
                </value>
-                <value>
-                    <string>eXoSkin</string>
-                </value>
                <!-- commons -->
 
                <value>
@@ -143,10 +134,31 @@
                <value>
                   <string>cometd</string>
                </value>
+               <value>
+                  <string>welcome-screens</string>
+               </value>
+               <value>
+                  <string>unified-search</string>
+               </value>
 
-               <!-- collab -->
+               <!-- SOCIAL -->
                <value profiles="all">
-                  <string>calendar</string>
+                  <string>social-extension</string>
+               </value>
+               <value profiles="all">
+                  <string>social-notification-extension</string>
+               </value>
+               <value profiles="all">
+                  <string>social-resources</string>
+               </value>
+               <value profiles="all">
+                  <string>social-portlet</string>
+               </value>
+               <value profiles="all">
+                  <string>social-juzu</string>
+               </value>
+               <value>
+                  <string>social-vue-portlet</string>
                </value>
 
                <!-- ECM -->
@@ -178,28 +190,9 @@
                   <string>seo</string>
                </value>
 
-               <!-- SOCIAL -->
-
+               <!-- collab -->
                <value profiles="all">
-                  <string>social-extension</string>
-               </value>
-               <value profiles="all">
-                  <string>social-notification-extension</string>
-               </value>
-               <value profiles="all">
-                  <string>social-resources</string>
-               </value>
-               <value profiles="all">
-                  <string>social</string>
-               </value>
-               <value profiles="all">
-                  <string>social-portlet</string>
-               </value>
-               <value profiles="all">
-                  <string>social-juzu</string>
-               </value>
-               <value>
-                  <string>social-vue-portlet</string>
+                  <string>calendar</string>
                </value>
 
                <!-- Knowledge -->
@@ -208,31 +201,6 @@
                </value>
                <value profiles="all">
                   <string>wiki</string>
-               </value>
-               <!-- Contains shared layout -->
-               <value>
-                  <string>platform-extension</string>
-               </value>
-               <value>
-                  <string>portlets</string>
-               </value>
-               <value>
-                  <string>platformNavigation</string>
-               </value>
-               <value>
-                  <string>homepage-portlets</string>
-               </value>
-               <value>
-                  <string>eXoPlatformResources</string>
-               </value>
-               <value>
-                  <string>platform-branding</string>
-               </value>
-               <value>
-                  <string>unified-search</string>
-               </value>
-               <value>
-                  <string>platform-notification</string>
                </value>
             </collection>
           </field>

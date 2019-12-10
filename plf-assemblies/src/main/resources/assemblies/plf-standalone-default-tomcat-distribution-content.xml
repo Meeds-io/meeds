@@ -250,152 +250,16 @@
     <!-- ================================ -->
     <!-- we reference each war to package -->
     <!-- ================================ -->
-    <!-- Portal wars -->
     <dependencySet>
       <outputDirectory>/webapps</outputDirectory>
       <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.web.eXoResources:war</include>
+        <include>org.exoplatform.gatein.portal:*:war</include>
+        <include>org.exoplatform.commons:*:war</include>
+        <include>org.exoplatform.social:*:war</include>
+        <include>org.exoplatform.platform.distributions:*:war</include>
       </includes>
       <scope>provided</scope>
-      <outputFileNameMapping>eXoResources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform-ui:platform-ui-skin:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>eXoSkin.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.web.rest:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>rest.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.portlet.web:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>web.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.web.portal:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>portal.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.gatein.portal:exo.portal.portlet.exoadmin:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>exoadmin.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- Commons wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.commons:commons-comet-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>cometd.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.commons:commons-extension-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>commons-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- Social wars -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-resources:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-resources.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-portlet:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-portlet.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-		<dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-juzu-portlet:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-juzu.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-webapp-vue-portlet:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-vue-portlet.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-		<dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-notification-extension:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-notification-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.social:social-extension-war:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>social-extension.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <!-- Platform distrib - integration.war -->
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-tomcat-integration-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>integration.war</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
-    <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
-      <includes>
-        <include>org.exoplatform.platform.distributions:plf-root-webapp:war</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>ROOT.war</outputFileNameMapping>
+      <outputFileNameMapping>${artifact.build.finalName}.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
   </dependencySets>

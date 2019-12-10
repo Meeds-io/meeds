@@ -103,17 +103,17 @@ LOGGING_MANAGER="-Dnop"
 # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 # SLF4J deps
 if [ ! -z $CLASSPATH ]; then
-  CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+  CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/slf4j-api.jar"
 else
-  CLASSPATH="$CATALINA_HOME/lib/slf4j-api-${org.slf4j.version}.jar"
+  CLASSPATH="$CATALINA_HOME/lib/slf4j-api.jar"
 fi
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/jul-to-slf4j-${org.slf4j.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/jul-to-slf4j.jar"
 # LogBack deps
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-core-${ch.qas.logback.version}.jar"
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-classic-${ch.qas.logback.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-core.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-classic.jar"
 # Janino deps (used by logback for conditional processing in the config file)
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/janino-${org.codehaus.janino.version}.jar"
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler-${org.codehaus.janino.version}.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/janino.jar"
+CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler.jar"
 
 # -----------------------------------------------------------------------------
 # Compute the CATALINA_OPTS
@@ -178,7 +178,7 @@ fi
 
 # PLF-4968/JCR-2164 : Avoid Exception when starting with Java 7 (http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6804124)
 CATALINA_OPTS="$CATALINA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
-
+  
 # PLF-6550: Fix Startup problem when JVM hangs because of lack of entropy
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
 

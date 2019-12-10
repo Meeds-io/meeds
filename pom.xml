@@ -367,13 +367,6 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.legacy-intranet</groupId>
-        <artifactId>legacy-intranet-packaging</artifactId>
-        <version>${addon.exo.legacy-intranet.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
         <groupId>org.exoplatform.addons.push-notifications</groupId>
         <artifactId>exo-push-notifications-addon-packaging</artifactId>
         <version>${addon.exo.push-notifications.version}</version>
