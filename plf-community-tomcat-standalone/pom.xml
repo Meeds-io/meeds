@@ -32,14 +32,14 @@
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-community-edition-service</artifactId>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
     <!-- Get all shared dependencies used by PLF -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-dependencies</artifactId>
       <type>pom</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
@@ -47,7 +47,7 @@
     </dependency>
     <!-- Get required additional files for Tomcat package -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-resources</artifactId>
       <type>zip</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
@@ -55,9 +55,8 @@
     </dependency>
     <!-- PLF-6510: Get exo-tools.jar used by PLF startup scripts -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-exo-tools</artifactId>
-      <version>${project.version}</version>
       <type>jar</type>
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
@@ -234,7 +233,7 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>org.exoplatform.platform.distributions</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>plf-assemblies</artifactId>
             <version>${project.version}</version>
           </dependency>
@@ -317,7 +316,7 @@
             </executions>
             <dependencies>
               <dependency>
-                <groupId>org.exoplatform.platform.distributions</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>plf-assemblies</artifactId>
                 <version>${project.version}</version>
               </dependency>

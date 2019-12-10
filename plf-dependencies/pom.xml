@@ -31,6 +31,26 @@
   <name>eXo PLF:: Platform Public Distributions - Dependencies</name>
   <dependencies>
     <dependency>
+      <groupId>org.chromattic</groupId>
+      <artifactId>chromattic.api</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.chromattic</groupId>
+      <artifactId>chromattic.common</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.chromattic</groupId>
+      <artifactId>chromattic.spi</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.chromattic</groupId>
+      <artifactId>chromattic.metamodel</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
       <type>war</type>
@@ -170,14 +190,18 @@
       <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.management</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.component.portal</artifactId>
+    </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
       <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.web.oauth-web</artifactId>
       <exclusions>
         <exclusion>
-          <artifactId>sso-integration</artifactId>
           <groupId>org.exoplatform.gatein.sso</groupId>
+          <artifactId>sso-integration</artifactId>
         </exclusion>
         <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
         <exclusion>
@@ -234,5 +258,11 @@
       <artifactId>ccpp</artifactId>
       <type>jar</type>
     </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+
   </dependencies>
 </project>
