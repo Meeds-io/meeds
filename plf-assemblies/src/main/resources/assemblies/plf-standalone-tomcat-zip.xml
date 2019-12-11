@@ -25,7 +25,7 @@
     <format>zip</format>
   </formats>
   <includeBaseDirectory>true</includeBaseDirectory>
-  <baseDirectory>/</baseDirectory>
+  <baseDirectory>${project.build.finalName}</baseDirectory>
   <fileSets>
     <fileSet>
       <directory>${project.basedir}/target/${project.build.finalName}/${project.build.finalName}</directory>
