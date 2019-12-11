@@ -257,6 +257,7 @@
         <include>org.exoplatform.commons:*:war</include>
         <include>org.exoplatform.social:*:war</include>
         <include>org.exoplatform.platform.distributions:*:war</include>
+        <include>org.exoplatform.platform-ui:*:war</include>
       </includes>
       <scope>provided</scope>
       <outputFileNameMapping>${artifact.build.finalName}.war</outputFileNameMapping>

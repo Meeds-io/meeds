@@ -80,6 +80,7 @@
       <artifactId>platform-ui-skin</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Platform Distrib -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-root-webapp</artifactId>
@@ -90,10 +91,16 @@
       <artifactId>plf-root-webapp</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Social -->
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-extension-war</artifactId>
+      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
@@ -102,17 +109,17 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-search-portlet</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
       <artifactId>social-notification-extension</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-notification-extension</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-extension-war</artifactId>
       <type>pom</type>
     </dependency>
     <dependency>
