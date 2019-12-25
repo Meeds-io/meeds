@@ -9,4 +9,12 @@
   <artifactId>plf-community-edition-service</artifactId>
   <packaging>jar</packaging>
   <name>eXo PLF:: Platform - Community Edition Information</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.exoplatform.kernel</groupId>
+      <artifactId>exo.kernel.container</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
