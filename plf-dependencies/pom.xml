@@ -60,15 +60,6 @@
       <artifactId>commons-extension-webapp</artifactId>
       <type>pom</type>
     </dependency>
-    <!-- used by org.exoplatform.gatein.portal:exo.portal.web.portal and org.exoplatform.gatein.portal:exo.portal.web.rest but not declared -->
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.component.webdav</artifactId>
-    </dependency>
     <!-- Platform UI -->
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
