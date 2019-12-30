@@ -182,6 +182,11 @@
       <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.portal</artifactId>
     </dependency>
+    <!-- org.exoplatform.services.rest.ext.service.RestServicesListApplication used in runtime -->
+    <dependency>
+      <groupId>org.exoplatform.ws</groupId>
+      <artifactId>exo.ws.rest.ext</artifactId>
+    </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
       <groupId>org.exoplatform.gatein.portal</groupId>
@@ -227,10 +232,6 @@
       <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.web.rest</artifactId>
       <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.jdbc</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.portals.bridges</groupId>
