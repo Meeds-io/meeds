@@ -20,53 +20,23 @@
       <properties-param>
         <name>JGroupsProperties</name>
         <description>Jgroups configuration</description>
-        <property name="exo.jcr.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-jcr-udp.xml" />
-        <property name="exo.jcr.cluster.jgroups.config-url" value="jar:/conf/platform/jgroups/jgroups-jcr-udp.xml" />
         <property name="exo.service.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-service-udp.xml" />
       </properties-param>
       <properties-param profiles="cluster-jgroups-tcp">
         <name>JGroupsProperties</name>
         <description>Jgroups configuration</description>
-        <property name="exo.jcr.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-jcr-tcp.xml" />
-        <property name="exo.jcr.cluster.jgroups.config-url" value="jar:/conf/platform/jgroups/jgroups-jcr-tcp.xml" />
         <property name="exo.service.cluster.jgroups.config" value="conf/platform/jgroups/jgroups-service-tcp.xml" />
       </properties-param>
       <properties-param>
         <name>CacheManagementProperties</name>
         <description>Filter used to notify caches</description>
-        <property name="exo.jcr.cache.config" value="jar:/conf/platform/jcr/infinispan/local/cache-config.xml" />
-        <property name="exo.jcr.cache.config.workspace.portal-system" value="jar:/conf/platform/jcr/infinispan/local/cache-config-portal-system.xml" />
-        <property name="exo.jcr.lock.cache.config" value="jar:/conf/platform/jcr/infinispan/local/lock-config.xml" />
-        <property name="exo.jcr.index.cache.config" value="jar:/conf/platform/jcr/infinispan/local/indexer-config.xml" />
         <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/local/cache-config.xml" />
       </properties-param>
       <properties-param profiles="cluster">
         <name>CacheManagementProperties</name>
         <description>Filter used to notify caches</description>
-        <property name="exo.jcr.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/cache-config.xml" />
-        <property name="exo.jcr.cache.config.workspace.portal-system" value="jar:/conf/platform/jcr/infinispan/cluster/cache-config-portal-system.xml" />
-        <property name="exo.jcr.lock.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/lock-config.xml" />
-        <property name="exo.jcr.index.cache.config" value="jar:/conf/platform/jcr/infinispan/cluster/indexer-config.xml" />
         <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-config.xml" />
         <property name="exo.cache.async.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-async-config.xml" />
-      </properties-param>
-      <properties-param>
-        <name>ChangeFilterClass</name>
-        <description>Filter used to notify changes in the jcr index in standalone</description>
-        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.DefaultChangesFilter" />
-        <property name="org.exoplatform.jcr.lucene.store.FSDirectoryLockFactoryClass" value="org.apache.lucene.store.SimpleFSLockFactory" />
-      </properties-param>
-      <properties-param profiles="cluster">
-        <name>ChangeFilterClass</name>
-        <description>Filter used to notify changes in the jcr index in cluster</description>
-        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.ispn.LocalIndexChangesFilter" />
-      </properties-param>
-      <properties-param profiles="cluster-index-shared">
-        <name>ChangeFilterClass</name>
-        <description>Filter used to notify changes in the jcr index in cluster</description>
-        <property name="gatein.jcr.index.changefilterclass" value="org.exoplatform.services.jcr.impl.core.query.ispn.ISPNIndexChangesFilter" />
-        <!-- Use this lock factory to lock index files on cluster wide -->
-        <property name="org.exoplatform.jcr.lucene.store.FSDirectoryLockFactoryClass" value="org.apache.lucene.store.NativeFSLockFactory" />
       </properties-param>
       <properties-param>
         <name>ProductEditionProperty</name>
