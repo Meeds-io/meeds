@@ -18,27 +18,6 @@
         <value>jar:/conf/platform/configuration.properties</value>
       </values-param>
       <properties-param>
-        <name>JGroupsProperties</name>
-        <description>Jgroups configuration</description>
-        <property name="exo.service.cluster.jgroups.config" value="jar:/conf/platform/jgroups/jgroups-service-udp.xml" />
-      </properties-param>
-      <properties-param profiles="cluster-jgroups-tcp">
-        <name>JGroupsProperties</name>
-        <description>Jgroups configuration</description>
-        <property name="exo.service.cluster.jgroups.config" value="conf/platform/jgroups/jgroups-service-tcp.xml" />
-      </properties-param>
-      <properties-param>
-        <name>CacheManagementProperties</name>
-        <description>Filter used to notify caches</description>
-        <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/local/cache-config.xml" />
-      </properties-param>
-      <properties-param profiles="cluster">
-        <name>CacheManagementProperties</name>
-        <description>Filter used to notify caches</description>
-        <property name="exo.cache.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-config.xml" />
-        <property name="exo.cache.async.config.template" value="jar:/conf/platform/cache/infinispan/cluster/cache-async-config.xml" />
-      </properties-param>
-      <properties-param>
         <name>ProductEditionProperty</name>
         <description>Product edition property</description>
         <property name="exo.product.edition" value="community" />
