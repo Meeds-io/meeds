@@ -98,7 +98,7 @@
         <!-- Avoid any direct addon inclusion on the distribution packages -->
         <exclude>org.exoplatform.addons.*:*</exclude>
       </excludes>
-      <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
       <scope>provided</scope>
     </dependencySet>
