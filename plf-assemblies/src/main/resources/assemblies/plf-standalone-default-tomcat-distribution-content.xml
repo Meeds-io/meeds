@@ -244,7 +244,7 @@
         <include>org.apache.tomcat:tomcat-catalina-jmx-remote:*</include>
       </includes>
       <scope>provided</scope>
-      <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+      <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
     <!-- ================================ -->

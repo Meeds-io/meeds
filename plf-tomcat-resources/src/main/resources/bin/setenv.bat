@@ -104,19 +104,19 @@ SET LOGGING_MANAGER=-Dnop
 REM # Add additional bootstrap entries for logging purpose using SLF4J+Logback
 REM # SLF4J deps
 IF DEFINED CLASSPATH (
-  SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\slf4j-api.jar
+  SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar
 ) ELSE (
-  SET CLASSPATH=%CATALINA_HOME%\lib\slf4j-api.jar
+  SET CLASSPATH=%CATALINA_HOME%\lib\slf4j-api-${org.slf4j.version}.jar
 )
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jul-to-slf4j.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jul-to-slf4j-${org.slf4j.version}.jar
 REM # LogBack deps
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-core.jar
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-classic.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-core-${ch.qas.logback.version}.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-classic-${ch.qas.logback.version}.jar
 REM # Janino deps (used by logback for conditional processing in the config file)
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\janino.jar
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\commons-compiler.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\janino-${org.codehaus.janino.version}.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\commons-compiler-${org.codehaus.janino.version}.jar
 REM # Jansi deps for colorized output on windows
-SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jansi.jar
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jansi-${org.fusesource.jansi.version}.jar
 
 REM # ---------------------------------------------------------------------------
 REM # Compute the CATALINA_OPTS
@@ -208,6 +208,6 @@ SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
 
 REM # Set the window name
-SET TITLE=eXo Platform 6.0.x-lightweight-SNAPSHOT
+SET TITLE=eXo Platform ${project.version}
 
 :end
