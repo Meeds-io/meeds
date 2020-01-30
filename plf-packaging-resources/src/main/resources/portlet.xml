@@ -33,13 +33,11 @@
     <lifecycle>RESOURCE_PHASE</lifecycle>
   </filter>
 
+  <!-- This filter avoid displaying disabled portlets switch kernel profiles -->
   <filter>
-    <filter-name>Portlet Disabler Filter</filter-name>
-    <filter-class>org.exoplatform.platform.common.portlet.PortletDisablerFilter</filter-class>
+    <filter-name>org.exoplatform.portal.application.PortletDisablerFilter</filter-name>
+    <filter-class>org.exoplatform.portal.application.PortletDisablerFilter</filter-class>
     <lifecycle>RENDER_PHASE</lifecycle>
   </filter>
-  <filter-mapping>
-    <filter-name>Portlet Disabler Filter</filter-name>
-    <portlet-name>*</portlet-name>
-  </filter-mapping>
+
 </portlet-app>

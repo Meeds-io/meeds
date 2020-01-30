@@ -43,6 +43,7 @@
     </dependency>
   </dependencies>
   <build>
+    <finalName>integration</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

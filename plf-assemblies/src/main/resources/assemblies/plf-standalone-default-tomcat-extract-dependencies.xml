@@ -49,9 +49,9 @@
     </dependencySet>
     <!-- Platform Extension Configuration -->
     <dependencySet>
-      <outputDirectory>platform-extension-config</outputDirectory>
+      <outputDirectory>plf-configuration</outputDirectory>
       <includes>
-        <include>org.exoplatform.platform:platform-extension-config:jar</include>
+        <include>org.exoplatform.platform.distributions:plf-configuration:jar</include>
       </includes>
       <scope>provided</scope>
       <unpack>true</unpack>

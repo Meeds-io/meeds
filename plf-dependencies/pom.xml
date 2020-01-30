@@ -31,86 +31,6 @@
   <name>eXo PLF:: Platform Public Distributions - Dependencies</name>
   <dependencies>
     <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.calendar</groupId>
-      <artifactId>calendar-webapp</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
-        <exclusion>
-          <artifactId>protobuf-java</artifactId>
-          <groupId>com.google.protobuf</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
-        <exclusion>
-          <artifactId>ant</artifactId>
-          <groupId>org.apache.ant</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
-        <exclusion>
-          <artifactId>jsr305</artifactId>
-          <groupId>com.google.code.findbugs</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.javascript:closure-compiler -->
-        <exclusion>
-          <artifactId>junit</artifactId>
-          <groupId>junit</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.picketlink.idm:picketlink-idm-common -->
-        <exclusion>
-          <artifactId>log4j</artifactId>
-          <groupId>log4j</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.thoughtworks.xstream:xstream -->
-        <exclusion>
-          <artifactId>xpp3_min</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from rome:rome -->
-        <exclusion>
-          <artifactId>jdom</artifactId>
-          <groupId>jdom</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.sun.istack:istack-commons-runtime -->
-        <exclusion>
-          <artifactId>stax-api</artifactId>
-          <groupId>javax.xml.stream</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.gatein.portal:exo.portal.webui.portal -->
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.social:social-component-core -->
-        <exclusion>
-          <artifactId>xmlParserAPIs</artifactId>
-          <groupId>xerces</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>modules</artifactId>
-          <groupId>rome</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.kernel:exo.kernel.container -->
-        <exclusion>
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.database -->
-        <exclusion>
-          <artifactId>ow2-jta-1.1-spec</artifactId>
-          <groupId>org.ow2.spec.ee</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
       <type>war</type>
@@ -122,6 +42,16 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
+      <artifactId>commons-welcome-screens-webapp</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.commons</groupId>
+      <artifactId>commons-registration</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
       <type>war</type>
     </dependency>
@@ -130,326 +60,7 @@
       <artifactId>commons-extension-webapp</artifactId>
       <type>pom</type>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-administration</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-administration</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.apache.xmlgraphics:batik-css -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>xml-apis-ext</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-explorer</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-presentation</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.exoplatform.ecms:ecms-ext-authoring-services -->
-        <exclusion>
-          <artifactId>geronimo-stax-api_1.0_spec</artifactId>
-          <groupId>org.apache.geronimo.specs</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.totsp.feedpod:itunes-com-podcast -->
-        <exclusion>
-          <artifactId>jdom</artifactId>
-          <groupId>jdom</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-search</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-search</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-seo</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-portlet-seo</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-resources-wcm</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-apps-resources-wcm</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-core-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-core-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-authoring-apps</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-authoring-apps</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-fastcontentcreator-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-ext-fastcontentcreator-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-packaging-wcm-webapp</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.document -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.document -->
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>commons-logging-api</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- ECMS Upgrade Plugins -->
-    <dependency>
-      <groupId>org.exoplatform.ecms</groupId>
-      <artifactId>ecms-upgrade-plugins</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forum-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.forum</groupId>
-      <artifactId>forum-forum-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-search-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-search-portlet</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.juzu:juzu-bom-core -->
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- used by org.exoplatform.gatein.portal:exo.portal.web.portal and org.exoplatform.gatein.portal:exo.portal.web.rest but not declared -->
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.web</artifactId>
-    </dependency>
-    <!-- Platform Upgrade Plugins -->
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-component-upgrade-plugins</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>portlets</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>portlets</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlet-branding</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlet-branding</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-homepage</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-homepage</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from org.apache.httpcomponents:httpclient -->
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-platformNavigation</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-notification</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-portlets-notification</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-resources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-resources</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-extension-webapp</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming from org.exoplatform.gatein.sso:sso-saml-plugin -->
-        <exclusion>
-          <artifactId>log4j</artifactId>
-          <groupId>log4j</groupId>
-        </exclusion>
-        <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
-        <exclusion>
-          <artifactId>xpp3</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.thoughtworks.xstream:xstream -->
-        <exclusion>
-          <artifactId>xpp3_min</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.gatein.sso:sso-saml-plugin -->
-        <exclusion>
-          <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.picketlink:picketlink-core -->
-        <exclusion>
-          <artifactId>commons-logging-api</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.apache.santuario:xmlsec -->
-        <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.exoplatform.core:exo.core.component.database -->
-        <exclusion>
-          <artifactId>ow2-jta-1.1-spec</artifactId>
-          <groupId>org.ow2.spec.ee</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from org.josso:josso-ws -->
-        <exclusion>
-          <artifactId>axis-ant</artifactId>
-          <groupId>org.apache.axis</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-sample-acme-intranet-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-registration</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-registration</artifactId>
-      <type>pom</type>
-    </dependency>
+    <!-- Platform UI -->
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-skin</artifactId>
@@ -460,6 +71,7 @@
       <artifactId>platform-ui-skin</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Platform Distrib -->
     <dependency>
       <groupId>org.exoplatform.platform.distributions</groupId>
       <artifactId>plf-root-webapp</artifactId>
@@ -470,6 +82,7 @@
       <artifactId>plf-root-webapp</artifactId>
       <type>pom</type>
     </dependency>
+    <!-- Social -->
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
@@ -477,17 +90,27 @@
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-notification-extension</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-notification-extension</artifactId>
+      <artifactId>social-extension-war</artifactId>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-extension-war</artifactId>
+      <artifactId>social-search-portlet</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-search-portlet</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-notification-extension</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-notification-extension</artifactId>
       <type>pom</type>
     </dependency>
     <dependency>
@@ -530,32 +153,39 @@
       <artifactId>social-webapp-resources</artifactId>
       <type>pom</type>
     </dependency>
-    <!-- WIKI Upgrade Plugins -->
+    <!-- Platform Distrib - integration.war  -->
     <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-upgrade-plugins</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-webapp</artifactId>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
     </dependency>
+    <!-- Platform - common configuration for all distributions  -->
     <dependency>
-      <groupId>org.exoplatform.wiki</groupId>
-      <artifactId>wiki-webapp</artifactId>
-      <type>pom</type>
-      <exclusions>
-        <!-- Coming by transitivity from dom4j:dom4j -->
-        <exclusion>
-          <artifactId>xml-apis</artifactId>
-          <groupId>xml-apis</groupId>
-        </exclusion>
-      </exclusions>
+      <groupId>org.exoplatform.platform.distributions</groupId>
+      <artifactId>plf-configuration</artifactId>
+    </dependency>
+    <!-- SSO - integration SSO jars  -->
+    <dependency>
+      <groupId>org.exoplatform.gatein.sso</groupId>
+      <artifactId>sso-agent</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.sso</groupId>
+      <artifactId>sso-integration</artifactId>
     </dependency>
     <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
     <dependency>
       <groupId>org.exoplatform.gatein.portal</groupId>
       <artifactId>exo.portal.component.management</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.component.portal</artifactId>
+    </dependency>
+    <!-- org.exoplatform.services.rest.ext.service.RestServicesListApplication used in runtime -->
+    <dependency>
+      <groupId>org.exoplatform.ws</groupId>
+      <artifactId>exo.ws.rest.ext</artifactId>
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
@@ -563,8 +193,8 @@
       <artifactId>exo.portal.component.web.oauth-web</artifactId>
       <exclusions>
         <exclusion>
-          <artifactId>sso-integration</artifactId>
           <groupId>org.exoplatform.gatein.sso</groupId>
+          <artifactId>sso-integration</artifactId>
         </exclusion>
         <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
         <exclusion>
@@ -573,11 +203,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-component-oauth-auth</artifactId>
-    </dependency>
-
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>
       <groupId>org.gatein.cdi</groupId>
@@ -609,13 +234,24 @@
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.jdbc</artifactId>
+      <groupId>org.apache.portals.bridges</groupId>
+      <artifactId>portals-bridges-common</artifactId>
     </dependency>
     <dependency>
       <groupId>org.gatein.cdi</groupId>
       <artifactId>gatein-cdi-contexts</artifactId>
       <type>jar</type>
     </dependency>
+    <dependency>
+      <groupId>javax.ccpp</groupId>
+      <artifactId>ccpp</artifactId>
+      <type>jar</type>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+
   </dependencies>
 </project>

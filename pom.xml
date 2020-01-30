@@ -33,6 +33,8 @@
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
+    <module>plf-configuration</module>
+    <module>plf-community-edition-service</module>
     <module>plf-assemblies</module>
     <module>plf-community-tomcat-standalone</module>
     <module>plf-dependencies</module>
@@ -63,7 +65,8 @@
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.platform.version>6.0.x-SNAPSHOT</org.exoplatform.platform.version>
+    <org.exoplatform.social.version>6.0.x-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.platform-ui.version>6.0.x-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>2.0.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
@@ -95,11 +98,31 @@
     <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
     <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.enterprise-skin.id>exo-enterprise-skin</addon.exo.enterprise-skin.id>
+    <addon.exo.enterprise-skin.version>6.0.x-SNAPSHOT</addon.exo.enterprise-skin.version>
+    <addon.exo.push-notifications.id>exo-push-notifications</addon.exo.push-notifications.id>
+    <addon.exo.push-notifications.version>2.0.x-SNAPSHOT</addon.exo.push-notifications.version>
+    <addon.exo.digital-workplace.id>exo-digital-workplace</addon.exo.digital-workplace.id>
+    <addon.exo.digital-workplace.version>1.0.x-SNAPSHOT</addon.exo.digital-workplace.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.exoplatform.social</groupId>
+        <artifactId>social</artifactId>
+        <version>${org.exoplatform.social.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui</artifactId>
+        <version>${org.exoplatform.platform-ui.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!-- Logging implementation : http://logback.qos.ch/ -->
       <dependency>
         <groupId>ch.qos.logback</groupId>
@@ -143,94 +166,114 @@
         <version>${org.exoplatform.platform.addons-manager.version}</version>
         <type>zip</type>
       </dependency>
-      <!-- Import versions from platform project -->
-      <dependency>
-        <groupId>org.exoplatform.platform</groupId>
-        <artifactId>platform</artifactId>
-        <version>${org.exoplatform.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
       <!-- Project artifacts -->
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-configuration</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-community-edition-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-public-distributions</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-public-distributions</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
         <classifier>source-release</classifier>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-assemblies</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-community-tomcat-standalone</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-community-tomcat-standalone</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-dependencies</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-community-sources</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-exo-tools</artifactId>
         <version>${project.version}</version>
         <type>jar</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-packaging-resources</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-packaging-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-root-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>war</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-pc-creator-listener</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform.distributions</groupId>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
@@ -306,6 +349,27 @@
         <groupId>org.exoplatform.addons.gamification</groupId>
         <artifactId>gamification-packaging</artifactId>
         <version>${addon.exo.gamification.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.enterprise-skin</groupId>
+        <artifactId>skin-addon-packaging</artifactId>
+        <version>${addon.exo.enterprise-skin.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.digital-workplace</groupId>
+        <artifactId>digital-workplace-packaging</artifactId>
+        <version>${addon.exo.digital-workplace.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.push-notifications</groupId>
+        <artifactId>exo-push-notifications-addon-packaging</artifactId>
+        <version>${addon.exo.push-notifications.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
