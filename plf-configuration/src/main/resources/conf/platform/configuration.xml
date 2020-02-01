@@ -75,6 +75,36 @@
                <value>
                   <string>eXoResources</string>
                </value>
+               <value>
+                  <string>commons-extension</string>
+               </value>
+               <value>
+                  <string>cometd</string>
+               </value>
+               <value>
+                  <string>welcome-screens</string>
+               </value>
+               <value>
+                  <string>social-extension</string>
+               </value>
+               <value>
+                  <string>social-notification-extension</string>
+               </value>
+               <value>
+                  <string>social-resources</string>
+               </value>
+               <value>
+                  <string>social-portlet</string>
+               </value>
+               <value>
+                  <string>social-juzu</string>
+               </value>
+               <value>
+                  <string>social-vue-portlet</string>
+               </value>
+               <value>
+                  <string>unified-search</string>
+               </value>
             </collection>
           </field>
 
