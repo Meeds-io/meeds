@@ -234,6 +234,10 @@
       <type>war</type>
     </dependency>
     <dependency>
+      <groupId>net.sourceforge.htmlcleaner</groupId>
+      <artifactId>htmlcleaner</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.apache.portals.bridges</groupId>
       <artifactId>portals-bridges-common</artifactId>
     </dependency>
