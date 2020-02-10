@@ -98,8 +98,6 @@
     <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
     <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
-    <addon.exo.enterprise-skin.id>exo-enterprise-skin</addon.exo.enterprise-skin.id>
-    <addon.exo.enterprise-skin.version>6.0.x-SNAPSHOT</addon.exo.enterprise-skin.version>
     <addon.exo.push-notifications.id>exo-push-notifications</addon.exo.push-notifications.id>
     <addon.exo.push-notifications.version>2.0.x-SNAPSHOT</addon.exo.push-notifications.version>
     <addon.exo.digital-workplace.id>exo-digital-workplace</addon.exo.digital-workplace.id>
@@ -349,13 +347,6 @@
         <groupId>org.exoplatform.addons.gamification</groupId>
         <artifactId>gamification-packaging</artifactId>
         <version>${addon.exo.gamification.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.enterprise-skin</groupId>
-        <artifactId>skin-addon-packaging</artifactId>
-        <version>${addon.exo.enterprise-skin.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>

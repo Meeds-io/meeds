@@ -102,12 +102,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.addons.enterprise-skin</groupId>
-      <artifactId>skin-addon-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.addons.push-notifications</groupId>
       <artifactId>exo-push-notifications-addon-packaging</artifactId>
       <type>zip</type>
@@ -260,9 +254,6 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.gamification.id}:${addon.exo.gamification.version}" />
-                </exec>
-                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.exo.enterprise-skin.id}:${addon.exo.enterprise-skin.version}" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.digital-workplace.id}:${addon.exo.digital-workplace.version}" />
