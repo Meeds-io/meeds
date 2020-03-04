@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.exoplatform.platform.distributions</groupId>
+    <artifactId>plf-services</artifactId>
+    <version>6.0.x-SNAPSHOT</version>
+  </parent>
+  <artifactId>plf-configuration</artifactId>
+  <packaging>jar</packaging>
+  <name>eXo PLF:: Platform Public Distributions - Services - Container Config</name>
+  <build>
+    <resources>
+      <!-- Filtered resources -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <!-- Not filtered resources -->
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>**/*.properties</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <!-- We want to use only the syntax @*@ to not be in conflict with the ${*} syntax used in kernel config file -->
+          <useDefaultDelimiters>false</useDefaultDelimiters>
+          <delimiters>
+            <delimiter>@</delimiter>
+          </delimiters>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
