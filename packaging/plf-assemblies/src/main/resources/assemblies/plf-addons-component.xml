@@ -1,0 +1,78 @@
+<!--
+
+    Copyright (C) 2003-2013 eXo Platform SAS.
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 3 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+<component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
+  <dependencySets>
+    <!-- eXo Platform Add-ons Manager - Unix Script -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <includes>
+          <include>addon</include>
+        </includes>
+        <lineEnding>unix</lineEnding>
+      </unpackOptions>
+      <fileMode>755</fileMode>
+      <!-- Workaround for MASSEMBLY-554 -->
+      <outputFileNameMapping></outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- eXo Platform Add-ons Manager - Windows Script -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <includes>
+          <include>addon.bat</include>
+        </includes>
+        <lineEnding>windows</lineEnding>
+      </unpackOptions>
+      <!-- Workaround for MASSEMBLY-554 -->
+      <outputFileNameMapping></outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <!-- eXo Platform Add-ons Manager - Others files -->
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>org.exoplatform.platform:addons-manager:zip</include>
+      </includes>
+      <scope>provided</scope>
+      <unpack>true</unpack>
+      <unpackOptions>
+        <excludes>
+          <exclude>addon.bat</exclude>
+          <exclude>addon</exclude>
+        </excludes>
+      </unpackOptions>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+  </dependencySets>
+</component>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_7 http://www.gatein.org/xml/ns/gatein_objects_1_7"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_7">
+
+  <page>
+    <name>settings</name>
+    <title>Settings</title>
+    <access-permissions>*:/platform/users</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container id="NotificationSettingsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <access-permissions>*:/platform/users</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>social-juzu</application-ref>
+          <portlet-ref>NotificationSettingsPortlet</portlet-ref>
+        </portlet>
+        <title>Notifications Settings</title>
+        <access-permissions>*:/platform/users</access-permissions>
+        <show-info-bar>false</show-info-bar>
+        <show-application-state>true</show-application-state>
+      </portlet-application>
+    </container>
+  </page>
+
+</page-set>

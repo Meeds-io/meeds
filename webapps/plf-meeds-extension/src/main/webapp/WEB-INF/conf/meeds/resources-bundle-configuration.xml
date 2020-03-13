@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.resources.ResourceBundleService</target-component>
+        <component-plugin>
+        <name>Meeds Portal Bundle</name>
+        <set-method>addResourceBundle</set-method>
+        <type>org.exoplatform.services.resources.impl.BaseResourceBundlePlugin</type>
+        <init-params>
+          <values-param>
+            <name>init.resources</name>
+            <description>Initiate the following resources during the first launch</description>
+            <value>locale.navigation.portal.meeds</value>
+          </values-param>
+          <values-param>
+            <name>portal.resource.names</name>
+            <value>locale.navigation.portal.meeds</value>
+          </values-param>
+        </init-params>
+        </component-plugin>
+    </external-component-plugins>
+
+</configuration>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+    <component-plugin>
+      <name>Change PortalContainer Definitions</name>
+      <set-method>registerChangePlugin</set-method>
+      <type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+      <priority>200</priority>
+      <init-params>
+        <value-param>
+          <name>apply.default</name>
+          <value>true</value>
+        </value-param>
+        <values-param>
+          <name>add.profiles</name>
+          <value>meeds</value>
+        </values-param>
+        <object-param>
+          <name>change</name>
+          <object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependencies">
+            <field name="dependencies">
+              <collection type="java.util.ArrayList">
+                <value>
+                  <string>meeds</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>     
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+</configuration>
