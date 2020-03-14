@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2003-2010 eXo Platform SAS.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Affero General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+-->
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.social.core.space.spi.SpaceTemplateService</target-component>
+    <component-plugin>
+      <name>DefaultSpaceApplicationHandler</name>
+      <set-method>registerSpaceApplicationHandler</set-method>
+      <type>org.exoplatform.social.core.space.impl.DefaultSpaceApplicationHandler</type>
+      <init-params>
+        <value-param>
+          <name>templateName</name>
+          <value>${exo.social.template.default:crowdFunding}</value>
+        </value-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>Space Template Configuration</name>
+      <set-method>registerSpaceTemplatePlugin</set-method>
+      <type>org.exoplatform.social.core.space.SpaceTemplateConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>template</name>
+          <description>Space Template</description>
+          <object type="org.exoplatform.social.core.space.SpaceTemplate">
+            <field name="name">
+              <string>crowdFunding</string>
+            </field>
+            <field name="visibility">
+              <string>private</string>
+            </field>
+            <field name="registration">
+              <string>open</string>
+            </field>
+            <field name="bannerPath">
+              <string>war:/conf/social-extension/social/crowdFundingBanner.png</string>
+            </field>
+            <field name="permissions">
+              <string>${exo.social.space.template.crowdFunding.permissions:*:/platform/users}</string>
+            </field>
+            <field name="invitees">
+              <string>${exo.social.space.template.crowdFunding.invitees:}</string>
+            </field>
+            <field name="homePageApplication">
+              <object type="org.exoplatform.social.core.space.SpaceApplication">
+                <field name="portletApp">
+                  <string>social-portlet</string>
+                </field>
+                <field name="portletName">
+                  <string>SpaceActivityStreamPortlet</string>
+                </field>
+                <field name="appTitle">
+                  <string>Home</string>
+                </field>
+              </object>
+            </field>
+            <field name="applications">
+              <collection type="java.util.ArrayList">
+                <value>
+                  <object type="org.exoplatform.social.core.space.SpaceApplication">
+                    <field name="portletApp">
+                      <string>social-portlet</string>
+                    </field>
+                    <field name="portletName">
+                      <string>MembersPortlet</string>
+                    </field>
+                    <field name="appTitle">
+                      <string>Members</string>
+                    </field>
+                    <field name="removable">
+                      <boolean>true</boolean>
+                    </field>
+                    <field name="order">
+                      <int>700</int>
+                    </field>
+                    <field name="uri">
+                      <string>members</string>
+                    </field>
+                  </object>
+                </value>
+                <value>
+                  <object type="org.exoplatform.social.core.space.SpaceApplication">
+                    <field name="portletApp">
+                      <string>social-portlet</string>
+                    </field>
+                    <field name="portletName">
+                      <string>SpaceSettingPortlet</string>
+                    </field>
+                    <field name="appTitle">
+                      <string>Space Settings</string>
+                    </field>
+                    <field name="removable">
+                      <boolean>false</boolean>
+                    </field>
+                    <field name="order">
+                      <int>1000</int>
+                    </field>
+                    <field name="uri">
+                      <string>settings</string>
+                    </field>
+                  </object>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+</configuration>
