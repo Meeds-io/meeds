@@ -65,26 +65,26 @@
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
     </dependency>
-    <!-- PLF Shared resources -->
+    <!-- Shared resources -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-packaging-resources</artifactId>
       <type>zip</type>
     </dependency>
-    <!-- GateIn Container Integration Servlet -->
+    <!-- Kernel Container Integration Servlet -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>pom</type>
     </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-pc-creator-listener</artifactId>
     </dependency>
     <!-- Required by logback for colorized console on windows -->
@@ -151,7 +151,7 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>org.exoplatform.platform.distributions</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>plf-assemblies</artifactId>
             <version>${project.version}</version>
           </dependency>

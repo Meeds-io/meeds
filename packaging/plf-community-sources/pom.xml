@@ -81,7 +81,7 @@
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.platform.distributions</groupId>
+          <groupId>${project.groupId}</groupId>
           <artifactId>plf-public-distributions</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>

@@ -58,7 +58,7 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>org.exoplatform.platform.distributions</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>plf-assemblies</artifactId>
             <version>${project.version}</version>
           </dependency>

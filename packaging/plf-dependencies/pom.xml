@@ -73,17 +73,17 @@
     </dependency>
     <!-- Platform Distrib -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-meeds-extension</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-root-webapp</artifactId>
       <type>war</type>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-root-webapp</artifactId>
       <type>pom</type>
     </dependency>
@@ -160,13 +160,13 @@
     </dependency>
     <!-- Platform Distrib - integration.war  -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
     </dependency>
     <!-- Platform - common configuration for all distributions  -->
     <dependency>
-      <groupId>org.exoplatform.platform.distributions</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-configuration</artifactId>
     </dependency>
     <!-- SSO - integration SSO jars  -->
