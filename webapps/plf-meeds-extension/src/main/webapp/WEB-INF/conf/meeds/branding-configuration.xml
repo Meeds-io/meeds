@@ -24,6 +24,7 @@
         <value>${exo.branding.theme.tertiaryColor:tertiaryColor:#e25d5d}</value>
         <value>${exo.branding.theme.greyColor:greyColor:#999999}</value>
         <value>${exo.branding.theme.greyColorLighten1:greyColorLighten1:#999999}</value>
+        <value>${exo.branding.theme.textColor:textColor:#20282c}</value>
       </values-param>
     </init-params>
   </component>
