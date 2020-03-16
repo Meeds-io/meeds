@@ -31,11 +31,6 @@
       <name>administration</name>
       <label>#{administration.title}</label>
       <node>
-        <name>registry</name>
-        <label>#{administration.application-registry}</label>
-        <page-reference>group::/platform/administrators::registry</page-reference>
-      </node>
-      <node>
         <name>newStaff</name>
         <label>#{administration.newstaff}</label>
         <page-reference>group::/platform/administrators::newStaff</page-reference>
