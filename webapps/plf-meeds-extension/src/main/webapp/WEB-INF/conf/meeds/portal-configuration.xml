@@ -24,9 +24,6 @@
             <field name="predefinedOwner">
               <collection type="java.util.HashSet">
                 <value>
-                  <string>global</string>
-                </value>
-                <value>
                   <string>meeds</string>
                 </value>
               </collection>
