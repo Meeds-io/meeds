@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+  <external-component-plugins>
+    <target-component>org.exoplatform.portal.config.UserPortalConfigService</target-component>
+    <component-plugin>
+      <name>new.portal.config.user.listener</name>
+      <set-method>initListener</set-method>
+      <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
+      <description>This listener creates a page for Meeds site</description>
+      <init-params>
+        <value-param>
+          <name>default.portal</name>
+          <description>The default portal</description>
+          <value>meeds</value>
+        </value-param>
+        <object-param>
+          <name>portal.configuration</name>
+          <description>description</description>
+          <object type="org.exoplatform.portal.config.NewPortalConfig">
+            <field name="ownerType">
+              <string>portal</string>
+            </field>
+            <field name="predefinedOwner">
+              <collection type="java.util.HashSet">
+                <value>
+                  <string>global</string>
+                </value>
+                <value>
+                  <string>meeds</string>
+                </value>
+              </collection>
+            </field>
+            <field name="override">
+              <boolean>${exo.meeds.portalConfig.metadata.override:true}</boolean>
+            </field>
+            <field name="importMode">
+              <string>${exo.meeds.portalConfig.metadata.importmode:insert}</string>
+            </field>
+            <field name="location">
+              <string>war:/conf/meeds/</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+</configuration>

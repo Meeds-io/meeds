@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+  <component>
+    <key>org.exoplatform.portal.branding.BrandingService</key>
+    <type>org.exoplatform.portal.branding.BrandingServiceImpl</type>
+    <init-params>
+      <value-param>
+        <name>exo.branding.company.name</name>
+        <value>${exo.branding.company.name:Employee Recognition}</value>
+      </value-param>
+      <value-param>
+        <name>exo.branding.company.logo</name>
+        <value>${exo.branding.company.logo:war:/../logo/MeedsLogo.png}</value>
+      </value-param>
+      <value-param>
+        <name>exo.branding.theme.path</name>
+        <value>${exo.branding.theme.path:war:/conf/branding/branding.less}</value>
+      </value-param>
+      <values-param>
+        <name>exo.branding.theme.variables</name>
+        <value>${exo.branding.theme.primaryColor:primaryColor:#3f8487}</value>
+        <value>${exo.branding.theme.secondaryColor:secondaryColor:#e25d5d}</value>
+        <value>${exo.branding.theme.tertiaryColor:tertiaryColor:#e25d5d}</value>
+        <value>${exo.branding.theme.greyColor:greyColor:#999999}</value>
+        <value>${exo.branding.theme.greyColorLighten1:greyColorLighten1:#999999}</value>
+        <value>${exo.branding.theme.textColor:textColor:#20282c}</value>
+      </values-param>
+    </init-params>
+  </component>
+</configuration>

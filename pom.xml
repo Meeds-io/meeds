@@ -22,8 +22,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>maven-parent-pom</artifactId>
     <groupId>org.exoplatform</groupId>
+    <artifactId>maven-parent-pom</artifactId>
     <version>21-M01</version>
     <relativePath />
   </parent>
@@ -33,18 +33,9 @@
   <packaging>pom</packaging>
   <name>eXo PLF:: Platform Public Distributions</name>
   <modules>
-    <module>plf-configuration</module>
-    <module>plf-community-edition-service</module>
-    <module>plf-assemblies</module>
-    <module>plf-community-tomcat-standalone</module>
-    <module>plf-dependencies</module>
-    <module>plf-exo-tools</module>
-    <module>plf-packaging-resources</module>
-    <module>plf-root-webapp</module>
-    <module>plf-tomcat-integration-webapp</module>
-    <module>plf-tomcat-pc-creator-listener</module>
-    <module>plf-tomcat-resources</module>
-    <module>plf-community-sources</module>
+    <module>services</module>
+    <module>webapps</module>
+    <module>packaging</module>
   </modules>
   <scm>
     <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
@@ -100,8 +91,8 @@
     <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
     <addon.exo.push-notifications.id>exo-push-notifications</addon.exo.push-notifications.id>
     <addon.exo.push-notifications.version>2.0.x-SNAPSHOT</addon.exo.push-notifications.version>
-    <addon.exo.digital-workplace.id>exo-digital-workplace</addon.exo.digital-workplace.id>
-    <addon.exo.digital-workplace.version>1.0.x-SNAPSHOT</addon.exo.digital-workplace.version>
+    <addon.exo.app-center.id>exo-app-center</addon.exo.app-center.id>
+    <addon.exo.app-center.version>2.0.x-SNAPSHOT</addon.exo.app-center.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
@@ -249,6 +240,18 @@
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
+        <artifactId>plf-meeds-extension</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>plf-meeds-extension</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
         <artifactId>plf-tomcat-integration-webapp</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -313,56 +316,6 @@
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
         <version>${org.snakeyaml.version}</version>
-      </dependency>
-      <!-- Supported Add-ons embedded -->
-      <dependency>
-        <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
-        <artifactId>exo-es-embedded-packaging</artifactId>
-        <version>${addon.exo.es.embedded.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.wallet</groupId>
-        <artifactId>wallet-packaging</artifactId>
-        <version>${addon.exo.wallet.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.kudos</groupId>
-        <artifactId>kudos-packaging</artifactId>
-        <version>${addon.exo.kudos.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.perk-store</groupId>
-        <artifactId>perk-store-packaging</artifactId>
-        <version>${addon.exo.perk-store.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.gamification</groupId>
-        <artifactId>gamification-packaging</artifactId>
-        <version>${addon.exo.gamification.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.digital-workplace</groupId>
-        <artifactId>digital-workplace-packaging</artifactId>
-        <version>${addon.exo.digital-workplace.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.addons.push-notifications</groupId>
-        <artifactId>exo-push-notifications-addon-packaging</artifactId>
-        <version>${addon.exo.push-notifications.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Copyright (C) 2009 eXo Platform SAS. This is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version. This software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License 
+  for more details. You should have received a copy of the GNU Lesser General Public License along with this software; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA, or see the FSF site: http://www.fsf.org. -->
+
+<page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2 http://www.gatein.org/xml/ns/gatein_objects_1_2" xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
+  <page>
+    <name>newStaff</name>
+    <title>New Staff</title>
+    <access-permissions>manager:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+
+    <portlet-application>
+      <portlet>
+        <application-ref>exoadmin</application-ref>
+        <portlet-ref>AccountPortlet</portlet-ref>
+      </portlet>
+      <title>New Staff</title>
+      <access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+      <show-application-state>false</show-application-state>
+    </portlet-application>
+  </page>
+  <page>
+    <name>management</name>
+    <title>Organization Management</title>
+    <access-permissions>manager:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+
+    <portlet-application>
+      <portlet>
+        <application-ref>exoadmin</application-ref>
+        <portlet-ref>OrganizationPortlet</portlet-ref>
+      </portlet>
+      <title>Organization Management</title>
+      <access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
+  </page>
+  <page>
+    <name>branding</name>
+    <title>Branding</title>
+    <access-permissions>manager:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <portlet-application>
+      <portlet>
+        <application-ref>exoadmin</application-ref>
+        <portlet-ref>Branding</portlet-ref>
+      </portlet>
+      <title>Branding Portlet</title>
+      <access-permissions>manager:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
+  </page>
+  <page>
+    <name>spacesTemplates</name>
+    <title>Space Templates Management</title>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <show-max-window>false</show-max-window>
+    <portlet-application>
+      <portlet>
+        <application-ref>social-vue-portlet</application-ref>
+        <portlet-ref>SpaceTemplates</portlet-ref>
+      </portlet>
+      <access-permissions>*:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
+  </page>
+  <page>
+    <name>notification</name>
+    <title>Notifications Administration</title>
+    <access-permissions>manager:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <portlet-application>
+      <portlet>
+        <application-ref>commons-extension</application-ref>
+        <portlet-ref>NotificationsAdminJuzuPortlet</portlet-ref>
+        <preferences></preferences>
+      </portlet>
+      <title>Notifications Administration</title>
+      <access-permissions>manager:/platform/administrators</access-permissions>
+      <show-info-bar>false</show-info-bar>
+      <show-application-state>false</show-application-state>
+      <show-application-mode>false</show-application-mode>
+    </portlet-application>
+  </page>
+</page-set>

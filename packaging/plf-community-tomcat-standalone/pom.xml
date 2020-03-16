@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2003-2013 eXo Platform SAS.
+
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 3 of
+    the License, or (at your option) any later version.
+
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.exoplatform.platform.distributions</groupId>
+    <artifactId>plf-packaging</artifactId>
+    <version>6.0.x-SNAPSHOT</version>
+  </parent>
+  <artifactId>plf-community-tomcat-standalone</artifactId>
+  <packaging>pom</packaging>
+  <name>eXo PLF:: Platform Public Distributions - Packaging - Community Tomcat Standalone</name>
+  <dependencies>
+    <!-- This artifact is needed to configure Platform in community mode -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-community-edition-service</artifactId>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+    <!-- Get all shared dependencies used by PLF -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-dependencies</artifactId>
+      <type>pom</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+    <!-- Get required additional files for Tomcat package -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-tomcat-resources</artifactId>
+      <type>zip</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+    <!-- PLF-6510: Get exo-tools.jar used by PLF startup scripts -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-exo-tools</artifactId>
+      <type>jar</type>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+    <!-- Build resource used to import license related files -->
+    <dependency>
+      <groupId>org.exoplatform.resources</groupId>
+      <artifactId>exo-lgpl-license-resource-bundle</artifactId>
+      <!-- It's version is set in parent pom -->
+      <version>${version.exo-lgpl-license-resource-bundle}</version>
+      <!-- Don't expose transitive deps if someone wants the zip as dep -->
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <!-- The name that we'll use for our distribution directory -->
+    <finalName>platform-community-${project.version}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>create-timestamp</goal>
+            </goals>
+            <configuration>
+              <timestampFormat>dd/MM/yyyy</timestampFormat>
+              <timestampPropertyName>build.date</timestampPropertyName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <!-- Create the distribution directory with all content -->
+          <execution>
+            <id>plf-standalone-tomcat-distribution-content</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-default-tomcat-extract-dependencies</descriptorRef>
+                <descriptorRef>plf-standalone-default-tomcat-distribution-content</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <!-- Default server.xml is using HSQLDB -->
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for HSQLDB -->
+          <execution>
+            <id>plf-server-xml-hsqldb</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-hsqldb</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/hsqldb.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for MySQL -->
+          <execution>
+            <id>plf-server-xml-mysql</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-mysql</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/mysql.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for Postgres -->
+          <execution>
+            <id>plf-server-xml-postgres</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-postgres</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/postgres.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+          <!-- server.xml file for Postgresplus -->
+          <execution>
+            <id>plf-server-xml-postgresplus</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <attach>false</attach>
+              <descriptorRefs>
+                <descriptorRef>plf-standalone-tomcat-server-xml-postgresplus</descriptorRef>
+              </descriptorRefs>
+              <filters>
+                <filter>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/postgresplus.filters.properties</filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>plf-assemblies</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>install-add-ons</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target name="install-add-ons">
+                <echo message="Installing add-ons..." />
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.es.embedded.id}:${addon.exo.es.embedded.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.kudos.id}:${addon.exo.kudos.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.perk-store.id}:${addon.exo.perk-store.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.wallet.id}:${addon.exo.wallet.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.gamification.id}:${addon.exo.gamification.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.app-center.id}:${addon.exo.app-center.version}" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.push-notifications.id}:${addon.exo.push-notifications.version}" />
+                </exec>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>create-archive</id>
+      <activation>
+        <property>
+          <name>!skip-archive</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <!-- Create the distribution zip and attach it to maven -->
+              <execution>
+                <id>plf-standalone-tomcat-zip</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptorRefs>
+                    <descriptorRef>plf-standalone-tomcat-zip</descriptorRef>
+                  </descriptorRefs>
+                </configuration>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>plf-assemblies</artifactId>
+                <version>${project.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>exo-release</id>
+      <build>
+        <plugins>
+          <!-- Build License related files bundled directly in the archive -->
+          <!-- This is a long process and really useful only for released stuffs -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-remote-resources-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>process</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <resourceBundles>
+                <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
+              </resourceBundles>
+              <includeScope>provided</includeScope>
+              <excludeGroupIds>org.exoplatform,com.exoplatform</excludeGroupIds>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

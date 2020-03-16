@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portal-config>
+    <portal-name>meeds</portal-name>
+    <locale>en</locale>
+    <access-permissions>*:/platform/users</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <properties>
+        <entry key="sessionAlive">onDemand</entry>
+        <entry key="showPortletInfo">0</entry>
+    </properties>
+    <portal-layout>
+       <page-body> </page-body>
+    </portal-layout>
+</portal-config>

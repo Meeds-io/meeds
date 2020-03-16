@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node-navigation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_7 http://www.gatein.org/xml/ns/gatein_objects_1_7"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_7">
+  <priority>4</priority>
+  <page-nodes>
+    <node>
+      <name>stream</name>
+      <label>#{portal.meeds.stream}</label>
+      <page-reference>portal::meeds::stream</page-reference>
+    </node>
+  </page-nodes>
+
+</node-navigation>
