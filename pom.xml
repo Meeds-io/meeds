@@ -27,21 +27,21 @@
     <version>21-M01</version>
     <relativePath />
   </parent>
-  <groupId>org.exoplatform.platform.distributions</groupId>
+  <groupId>org.meeds.distribution</groupId>
   <artifactId>plf-public-distributions</artifactId>
   <version>6.0.x-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo PLF:: Platform Public Distributions</name>
+  <name>eXo Meeds:: Meeds Public Distribution</name>
   <modules>
     <module>services</module>
     <module>webapps</module>
     <module>packaging</module>
   </modules>
   <scm>
-    <connection>scm:git:git://github.com/exoplatform/platform-public-distributions.git</connection>
-    <developerConnection>scm:git:git@github.com:exoplatform/platform-public-distributions.git</developerConnection>
+    <connection>scm:git:git://github.com/meeds-io/meeds.git</connection>
+    <developerConnection>scm:git:git@github.com:meeds-io/meeds.git</developerConnection>
     <tag>HEAD</tag>
-    <url>http://fisheye.exoplatform.org/browse/projects/platform-public-distributions</url>
+    <url>https://github.com/meeds-io/meeds</url>
   </scm>
   <properties>
     <!-- **************************************** -->
@@ -51,7 +51,7 @@
     <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
-    <jenkins.job.name>platform-public-distributions-master-pkg</jenkins.job.name>
+    <jenkins.job.name>meeds-master-pkg</jenkins.job.name>
     <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
@@ -328,13 +328,6 @@
           <artifactId>gmaven-plugin</artifactId>
           <configuration>
             <providerSelection>2.0</providerSelection>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <configuration>
-            <appendAssemblyId>false</appendAssemblyId>
           </configuration>
         </plugin>
       </plugins>

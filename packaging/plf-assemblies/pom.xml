@@ -22,10 +22,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.exoplatform.platform.distributions</groupId>
+    <groupId>org.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
     <version>6.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-assemblies</artifactId>
-  <name>eXo PLF:: Platform Public Distributions - Packaging - Assemblies</name>
+  <name>eXo Meeds:: Meeds Public Distribution - Packaging - Assemblies</name>
 </project>

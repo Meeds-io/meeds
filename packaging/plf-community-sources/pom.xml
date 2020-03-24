@@ -22,13 +22,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.exoplatform.platform.distributions</groupId>
+    <groupId>org.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
     <version>6.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-community-sources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo PLF:: Platform Public Distributions - Packaging - Sources</name>
+  <name>eXo Meeds:: Meeds Public Distribution - Packaging - Sources</name>
   <profiles>
     <profile>
       <!-- Additional tasks done while performing a release -->
@@ -38,6 +38,9 @@
           <!-- Create a dedicated archive with all platform sources -->
           <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
             <executions>
               <execution>
                 <id>platform-sources</id>
