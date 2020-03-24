@@ -22,13 +22,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.exoplatform.platform.distributions</groupId>
+    <groupId>org.meeds.distribution</groupId>
     <artifactId>plf-services</artifactId>
     <version>6.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>plf-tomcat-pc-creator-listener</artifactId>
   <packaging>jar</packaging>
-  <name>eXo PLF:: Platform Public Distributions - Services - Tomcat Portal Containers Creator</name>
+  <name>eXo Meeds:: Meeds Public Distribution - Services - Tomcat Portal Containers Creator</name>
   <description>This module defines a LifecycleListener to attach to a Tomcat host to create all portal containers.</description>
   <dependencies>
     <dependency>
