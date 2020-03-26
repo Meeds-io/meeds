@@ -9,37 +9,4 @@
   <artifactId>plf-configuration</artifactId>
   <packaging>jar</packaging>
   <name>eXo Meeds:: Meeds Public Distribution - Services - Container Config</name>
-  <build>
-    <resources>
-      <!-- Filtered resources -->
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/*.properties</include>
-        </includes>
-      </resource>
-      <resource>
-        <!-- Not filtered resources -->
-        <directory>src/main/resources</directory>
-        <filtering>false</filtering>
-        <excludes>
-          <exclude>**/*.properties</exclude>
-        </excludes>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <configuration>
-          <!-- We want to use only the syntax @*@ to not be in conflict with the ${*} syntax used in kernel config file -->
-          <useDefaultDelimiters>false</useDefaultDelimiters>
-          <delimiters>
-            <delimiter>@</delimiter>
-          </delimiters>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
