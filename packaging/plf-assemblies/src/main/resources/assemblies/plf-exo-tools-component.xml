@@ -25,7 +25,7 @@
     <dependencySet>
       <outputDirectory>/bin</outputDirectory>
       <includes>
-        <include>org.meeds.distribution:plf-exo-tools:jar</include>
+        <include>io.meeds.distribution:plf-exo-tools:jar</include>
       </includes>
       <scope>provided</scope>
       <unpack>false</unpack>

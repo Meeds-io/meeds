@@ -41,7 +41,7 @@
     <dependencySet>
       <outputDirectory>plf-tomcat-resources</outputDirectory>
       <includes>
-        <include>org.meeds.distribution:plf-tomcat-resources:zip</include>
+        <include>io.meeds.distribution:plf-tomcat-resources:zip</include>
       </includes>
       <scope>provided</scope>
       <unpack>true</unpack>
@@ -51,7 +51,7 @@
     <dependencySet>
       <outputDirectory>plf-configuration</outputDirectory>
       <includes>
-        <include>org.meeds.distribution:plf-configuration:jar</include>
+        <include>io.meeds.distribution:plf-configuration:jar</include>
       </includes>
       <scope>provided</scope>
       <unpack>true</unpack>
