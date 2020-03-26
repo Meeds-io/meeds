@@ -49,6 +49,10 @@
     <!-- **************************************** -->
     <jira.project.key>PLF</jira.project.key>
     <!-- **************************************** -->
+    <!-- Repository settings                      -->
+    <!-- **************************************** -->
+    <exo.snapshots.repo.url>https://repository.exoplatform.org/content/repositories/meeds-snapshots</exo.snapshots.repo.url>
+    <!-- **************************************** -->
     <!-- Jenkins Settings                         -->
     <!-- **************************************** -->
     <jenkins.job.name>meeds-master-pkg</jenkins.job.name>
