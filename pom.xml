@@ -79,19 +79,19 @@
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
-    <addon.exo.es.embedded.id>es-embedded</addon.exo.es.embedded.id>
+    <addon.exo.es.embedded.id>exo-es-embedded</addon.exo.es.embedded.id>
     <addon.exo.es.embedded.version>3.0.x-SNAPSHOT</addon.exo.es.embedded.version>
-    <addon.exo.kudos.id>kudos</addon.exo.kudos.id>
+    <addon.exo.kudos.id>exo-kudos</addon.exo.kudos.id>
     <addon.exo.kudos.version>2.0.x-SNAPSHOT</addon.exo.kudos.version>
-    <addon.exo.perk-store.id>perk-store</addon.exo.perk-store.id>
+    <addon.exo.perk-store.id>exo-perk-store</addon.exo.perk-store.id>
     <addon.exo.perk-store.version>2.0.x-SNAPSHOT</addon.exo.perk-store.version>
-    <addon.exo.wallet.id>wallet</addon.exo.wallet.id>
+    <addon.exo.wallet.id>exo-wallet</addon.exo.wallet.id>
     <addon.exo.wallet.version>2.0.x-SNAPSHOT</addon.exo.wallet.version>
-    <addon.exo.gamification.id>gamification</addon.exo.gamification.id>
+    <addon.exo.gamification.id>exo-gamification</addon.exo.gamification.id>
     <addon.exo.gamification.version>2.0.x-SNAPSHOT</addon.exo.gamification.version>
-    <addon.exo.push-notifications.id>push-notifications</addon.exo.push-notifications.id>
+    <addon.exo.push-notifications.id>exo-push-notifications</addon.exo.push-notifications.id>
     <addon.exo.push-notifications.version>2.0.x-SNAPSHOT</addon.exo.push-notifications.version>
-    <addon.exo.app-center.id>app-center</addon.exo.app-center.id>
+    <addon.exo.app-center.id>exo-app-center</addon.exo.app-center.id>
     <addon.exo.app-center.version>2.0.x-SNAPSHOT</addon.exo.app-center.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
