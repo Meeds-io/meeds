@@ -24,7 +24,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>plf-public-distributions</artifactId>
-    <groupId>org.meeds.distribution</groupId>
+    <groupId>io.meeds.distribution</groupId>
     <version>1.0.x-SNAPSHOT</version>
   </parent>
 

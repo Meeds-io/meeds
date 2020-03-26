@@ -27,7 +27,7 @@
     <version>21-M01</version>
     <relativePath />
   </parent>
-  <groupId>org.meeds.distribution</groupId>
+  <groupId>io.meeds.distribution</groupId>
   <artifactId>plf-public-distributions</artifactId>
   <version>1.0.x-SNAPSHOT</version>
   <packaging>pom</packaging>
