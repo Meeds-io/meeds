@@ -25,6 +25,16 @@
       </container>
       <container id="StreamRightContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>*:/platform/users</access-permissions>
+        <portlet-application>
+          <portlet>
+            <application-ref>social-vue-portlet</application-ref>
+            <portlet-ref>GettingStarted</portlet-ref>
+          </portlet>
+          <title>Getting Started</title>
+          <access-permissions>*:/platform/users</access-permissions>
+          <show-info-bar>false</show-info-bar>
+          <show-application-state>true</show-application-state>
+        </portlet-application>
       </container>
     </container>
   </page>
