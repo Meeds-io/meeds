@@ -51,6 +51,33 @@
             <show-application-state>true</show-application-state>
           </portlet-application>
         </container>
+        <container id="PerkstoreWalletContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+          <access-permissions>*:/platform/users</access-permissions>
+          <container id="PerkstoreContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+            <access-permissions>*:/platform/users</access-permissions>
+            <portlet-application>
+              <portlet>
+                <application-ref>perk-store</application-ref>
+                <portlet-ref>PerkstoreOrder</portlet-ref>
+              </portlet>
+              <title>Perkstore Order</title>
+              <access-permissions>*:/platform/users</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="WalletContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+            <access-permissions>*:/platform/users</access-permissions>
+            <portlet-application>
+              <portlet>
+                <application-ref>wallet</application-ref>
+                <portlet-ref>WalletBalance</portlet-ref>
+              </portlet>
+              <title>Wallet</title>
+              <access-permissions>*:/platform/users</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+        </container>
       </container>
     </container>
   </page>
