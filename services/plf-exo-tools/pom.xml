@@ -26,7 +26,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-services</artifactId>
-    <version>1.0.x-SNAPSHOT</version>
+    <version>1.0.0-M25</version>
   </parent>
   <artifactId>plf-exo-tools</artifactId>
   <packaging>jar</packaging>

@@ -29,7 +29,7 @@
   </parent>
   <groupId>io.meeds.distribution</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>1.0.x-SNAPSHOT</version>
+  <version>1.0.0-M25</version>
   <packaging>pom</packaging>
   <name>eXo Meeds:: Meeds Public Distribution</name>
   <modules>
@@ -40,7 +40,7 @@
   <scm>
     <connection>scm:git:git://github.com/meeds-io/meeds.git</connection>
     <developerConnection>scm:git:git@github.com:meeds-io/meeds.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>1.0.0-M25</tag>
     <url>https://github.com/meeds-io/meeds</url>
   </scm>
   <properties>
