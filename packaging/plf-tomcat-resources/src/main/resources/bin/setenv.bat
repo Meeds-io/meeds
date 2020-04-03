@@ -185,7 +185,7 @@ IF DEFINED JAVA_HOME (
 )
 
 REM # Used JDK_JAVA_OPTIONS for JDK 9 options since this variable is only recognized by JDK 9+
-%javaExec% -jar %CATALINA_HOME%\bin\exo-tools.jar isJava11OrSuperior
+%javaExec% -jar "%CATALINA_HOME%"\bin\exo-tools.jar isJava11OrSuperior
 IF ERRORLEVEL 1 (
   SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-modules java.activation --add-modules java.xml.bind
 )
