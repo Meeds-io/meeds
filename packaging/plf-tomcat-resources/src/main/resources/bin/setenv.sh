@@ -191,7 +191,7 @@ if [ ! -z "$JAVA_HOME" ]; then
 fi
 
 # Used JDK_JAVA_OPTIONS for JDK 9+ options since this variable is only recognized by JDK 9+
-cmd=$($javaExec -jar $CATALINA_HOME/bin/exo-tools.jar isJava11OrSuperior)
+cmd=$($javaExec -jar "$CATALINA_HOME"/bin/exo-tools.jar isJava11OrSuperior)
 if [ $? != 0 ]; then
   JDK_JAVA_OPTIONS="--add-modules java.activation --add-modules java.xml.bind"
 fi
