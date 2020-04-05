@@ -61,9 +61,6 @@
                   <string>portal</string>
                </value>
                <value>
-                  <string>registration</string>
-               </value>
-               <value>
                   <string>exoadmin</string>
                </value>
                <value>
@@ -80,9 +77,6 @@
                </value>
                <value>
                   <string>cometd</string>
-               </value>
-               <value>
-                  <string>welcome-screens</string>
                </value>
                <value>
                   <string>social-extension</string>
@@ -106,21 +100,6 @@
                   <string>unified-search</string>
                </value>
             </collection>
-          </field>
-
-          <!-- A map of settings tied to the default portal container -->
-          <field name="settings">
-            <map type="java.util.HashMap">
-              <!-- TODO check cometd name -->
-              <entry>
-                <key>
-                  <string>sample</string>
-                </key>
-                <value>
-                  <string>value</string>
-                </value>
-              </entry>
-            </map>
           </field>
         </object>
       </object-param>
