@@ -25,16 +25,73 @@
       </container>
       <container id="StreamRightContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-vue-portlet</application-ref>
-            <portlet-ref>GettingStarted</portlet-ref>
-          </portlet>
-          <title>Getting Started</title>
+        <container id="GettingStartedContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-vue-portlet</application-ref>
+              <portlet-ref>GettingStarted</portlet-ref>
+            </portlet>
+            <title>Getting Started</title>
+            <access-permissions>*:/platform/users</access-permissions>
+            <show-info-bar>false</show-info-bar>
+            <show-application-state>true</show-application-state>
+          </portlet-application>
+        </container>
+        <container id="ProfileStatsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+          <access-permissions>*:/platform/users</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>ProfileStats</portlet-ref>
+            </portlet>
+            <title>Profile Stats</title>
+            <access-permissions>*:/platform/users</access-permissions>
+            <show-info-bar>false</show-info-bar>
+            <show-application-state>true</show-application-state>
+          </portlet-application>
+        </container>
+        <container id="PerkstoreWalletContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+          <access-permissions>*:/platform/users</access-permissions>
+          <container id="PerkstoreContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+            <access-permissions>*:/platform/users</access-permissions>
+            <portlet-application>
+              <portlet>
+                <application-ref>perk-store</application-ref>
+                <portlet-ref>PerkstoreOrder</portlet-ref>
+              </portlet>
+              <title>Perkstore Order</title>
+              <access-permissions>*:/platform/users</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="WalletContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+            <access-permissions>*:/platform/users</access-permissions>
+            <portlet-application>
+              <portlet>
+                <application-ref>wallet</application-ref>
+                <portlet-ref>WalletBalance</portlet-ref>
+              </portlet>
+              <title>Wallet</title>
+              <access-permissions>*:/platform/users</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+        </container>
+        <container id="WhoIsOnLineContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+          <access-permissions>*:/platform/users</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on line</title>
+            <access-permissions>*:/platform/users</access-permissions>
+            <show-info-bar>false</show-info-bar>
+            <show-application-state>false</show-application-state>
+            <show-application-mode>false</show-application-mode>
+          </portlet-application>
+        </container>
       </container>
     </container>
   </page>
