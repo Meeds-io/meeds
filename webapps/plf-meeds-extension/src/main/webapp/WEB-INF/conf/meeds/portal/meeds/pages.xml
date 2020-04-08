@@ -8,7 +8,7 @@
     <title>Stream</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="StreamPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    <container id="StreamPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
       <access-permissions>*:/platform/users</access-permissions>
       <container id="StreamMainContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>*:/platform/users</access-permissions>
@@ -86,6 +86,20 @@
               <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
             </portlet>
             <title>Who is on line</title>
+            <access-permissions>*:/platform/users</access-permissions>
+            <show-info-bar>false</show-info-bar>
+            <show-application-state>false</show-application-state>
+            <show-application-mode>false</show-application-mode>
+          </portlet-application>
+        </container>
+        <container id="SuggestionsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+          <access-permissions>*:/platform/users</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-vue-portlet</application-ref>
+              <portlet-ref>SuggestionsPeopleAndSpace</portlet-ref>
+            </portlet>
+            <title>Suggestions peoples and spaces</title>
             <access-permissions>*:/platform/users</access-permissions>
             <show-info-bar>false</show-info-bar>
             <show-application-state>false</show-application-state>
