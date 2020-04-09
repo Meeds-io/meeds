@@ -29,10 +29,10 @@
               </collection>
             </field>
             <field name="override">
-              <boolean>${exo.meeds.portalConfig.metadata.override:true}</boolean>
+              <boolean>${meeds.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${exo.meeds.portalConfig.metadata.importmode:insert}</string>
+              <string>${meeds.portalConfig.metadata.importmode:insert}</string>
             </field>
             <field name="location">
               <string>war:/conf/meeds/</string>
