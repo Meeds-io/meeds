@@ -24,7 +24,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-services</artifactId>
-    <version>1.0.x-SNAPSHOT</version>
+    <version>1.0.0-M27</version>
   </parent>
   <artifactId>plf-tomcat-pc-creator-listener</artifactId>
   <packaging>jar</packaging>
