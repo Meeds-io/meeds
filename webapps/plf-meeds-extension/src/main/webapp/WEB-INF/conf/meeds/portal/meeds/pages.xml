@@ -53,13 +53,13 @@
         </container>
         <container id="PerkstoreWalletContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           <access-permissions>*:/platform/users</access-permissions>
-          <container id="PerkstoreContainer" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>PerkstoreContainer</name>
+          <container id="PerkstoreWidgetContainer" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>PerkstoreWidgetContainer</name>
             <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="WalletContainer" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>WalletContainer</name>
+          <container id="WalletWidgetContainer" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>WalletWidgetContainer</name>
             <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
