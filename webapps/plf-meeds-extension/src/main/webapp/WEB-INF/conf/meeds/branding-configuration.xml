@@ -11,7 +11,7 @@
       </value-param>
       <value-param>
         <name>exo.branding.company.logo</name>
-        <value>${exo.branding.company.logo:war:/../logo/MeedsLogo.png}</value>
+        <value>${exo.branding.company.logo:/images/logo/MeedsLogo.png}</value>
       </value-param>
       <value-param>
         <name>exo.branding.theme.path</name>
