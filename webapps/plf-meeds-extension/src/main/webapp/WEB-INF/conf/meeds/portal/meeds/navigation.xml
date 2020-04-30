@@ -7,7 +7,7 @@
     <node>
       <name>stream</name>
       <label>#{portal.meeds.stream}</label>
-      <page-reference>portal::meeds::stream</page-reference>
+      <page-reference>portal::global::stream</page-reference>
     </node>
   </page-nodes>
 
