@@ -42,7 +42,7 @@
                       <boolean>false</boolean>
                     </field>
                     <field name="order">
-                      <int>300</int>
+                      <int>500</int>
                     </field>
                     <field name="uri">
                       <string>SpaceWallet</string>
