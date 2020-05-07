@@ -25,7 +25,7 @@
   <parent>
     <artifactId>plf-public-distributions</artifactId>
     <groupId>io.meeds.distribution</groupId>
-    <version>1.0.x-SNAPSHOT</version>
+    <version>1.0.0-M31</version>
   </parent>
 
   <name>eXo Meeds:: Meeds Public Distribution - Packaging</name>
