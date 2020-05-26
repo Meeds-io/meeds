@@ -85,10 +85,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                       <string>Members</string>
                     </field>
                     <field name="removable">
-                      <boolean>true</boolean>
+                      <boolean>false</boolean>
                     </field>
                     <field name="order">
-                      <int>700</int>
+                      <int>100</int>
                     </field>
                     <field name="uri">
                       <string>members</string>
