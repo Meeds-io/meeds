@@ -155,13 +155,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </Connector>
     -->
 
-    <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3"
-               bindOnInit="false"
-               connectionTimeout="20000"
-               redirectPort="8443"
-               URIEncoding="UTF-8" />
-
     <!-- An Engine represents the entry point (within Catalina) that processes
          every request.  The Engine implementation for Tomcat stand alone
          analyzes the HTTP headers included with the request, and passes them
