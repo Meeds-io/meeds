@@ -25,28 +25,24 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   <page-nodes>
     <node>
-      <name>administration</name>
-      <label>#{administration.title}</label>
-      <node>
-        <name>newStaff</name>
-        <label>#{administration.newstaff}</label>
-        <page-reference>group::/platform/administrators::newStaff</page-reference>
-      </node>
-      <node>
-        <name>management</name>
-        <label>#{administration.management}</label>
-        <page-reference>group::/platform/administrators::management</page-reference>
-      </node>
+      <name>usersManagement</name>
+      <label>#{administration.usersManagement}</label>
+      <page-reference>group::/platform/administrators::usersManagement</page-reference>
+    </node>
+    <node>
+      <name>groupsManagement</name>
+      <label>#{administration.groupsManagement}</label>
+      <page-reference>group::/platform/administrators::groupsManagement</page-reference>
+    </node>
+    <node>
+      <name>membershipsManagement</name>
+      <label>#{administration.membershipsManagement}</label>
+      <page-reference>group::/platform/administrators::membershipsManagement</page-reference>
     </node>
     <node>
       <name>branding</name>
       <label>#{administration.Branding}</label>
       <page-reference>group::/platform/administrators::branding</page-reference>
-    </node>
-    <node>
-      <name>spacesTemplates</name>
-      <label>#{administration.spacesTemplates}</label>
-      <page-reference>group::/platform/administrators::spacesTemplates</page-reference>
     </node>
     <node>
       <name>notification</name>
