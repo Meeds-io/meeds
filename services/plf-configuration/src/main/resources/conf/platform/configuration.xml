@@ -44,6 +44,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <description>Product edition property</description>
         <property name="exo.product.edition" value="enterprise" />
       </properties-param>
+      <properties-param>
+        <name>EnableMainStreamComposerProperty</name>
+        <description>Enable main stream composer property</description>
+        <property name="exo.config.mainStreamComposer.enabled" value="false" />
+      </properties-param>
+      <properties-param profiles="enterprise">
+        <name>EnableMainStreamComposerProperty</name>
+        <description>Enable main stream composer property</description>
+        <property name="exo.config.mainStreamComposer.enabled" value="true" />
+      </properties-param>
     </init-params>
   </component>
 
