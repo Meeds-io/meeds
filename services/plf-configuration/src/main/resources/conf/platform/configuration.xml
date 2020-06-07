@@ -101,9 +101,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                   <string>social-juzu</string>
                </value>
                <value>
-                  <string>social-vue-portlet</string>
-               </value>
-               <value>
                   <string>unified-search</string>
                </value>
             </collection>
