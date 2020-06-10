@@ -34,21 +34,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <!-- PLF-4469 : configuration.properties must be loaded from classpath to get default settings -->
         <value>jar:/conf/platform/configuration.properties</value>
       </values-param>
-      <properties-param>
-        <name>ProductEditionProperty</name>
-        <description>Product edition property</description>
-        <property name="exo.product.edition" value="community" />
-      </properties-param>
-      <properties-param profiles="enterprise">
-        <name>ProductEditionProperty</name>
-        <description>Product edition property</description>
-        <property name="exo.product.edition" value="enterprise" />
-      </properties-param>
-      <properties-param profiles="community">
-        <name>EnableMainStreamComposerProperty</name>
-        <description>Enable main stream composer property</description>
-        <property name="exo.config.mainStreamComposer.enabled" value="false" />
-      </properties-param>
     </init-params>
   </component>
 
