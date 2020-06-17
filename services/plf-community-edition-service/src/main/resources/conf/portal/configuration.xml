@@ -42,7 +42,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <properties-param>
         <name>EnableMainStreamComposerProperty</name>
         <description>Enable main stream composer property</description>
-        <property name="exo.config.mainStreamComposer.enabled" value="true" />
+        <property name="exo.config.mainStreamComposer.enabled" value="${exo.config.mainStreamComposer.enabled:true}" />
       </properties-param>
     </init-params>
   </component>
