@@ -78,6 +78,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- maven-release-plugin -->
     <preparationGoals>clean install</preparationGoals>
     <!-- ************** -->
+    <!-- Add-ons nexus repository name for SNAPSHOT and RELEASES -->
+    <!-- ************** -->
+    <addon.repository.name>public</addon.repository.name>
+    <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>meeds-es-embedded</addon.exo.es.embedded.id>
@@ -490,6 +494,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <url>https://repository.exoplatform.org/public</url>
         </pluginRepository>
       </pluginRepositories>
+    </profile>
+    <profile>
+      <id>release</id>
+      <properties>
+        <!-- ************** -->
+        <!-- Add-ons nexus repository name for STAGING when RELEASING -->
+        <!-- ************** -->
+        <addon.repository.name>staging</addon.repository.name>
+      </properties>
     </profile>
   </profiles>
 </project>
