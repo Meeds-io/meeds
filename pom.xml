@@ -496,7 +496,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </pluginRepositories>
     </profile>
     <profile>
-      <id>exo-staging</id>
+      <id>release</id>
       <properties>
         <!-- ************** -->
         <!-- Add-ons nexus repository name for STAGING when RELEASING -->
