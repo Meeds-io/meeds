@@ -182,6 +182,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <artifactId>xpp3</artifactId>
           <groupId>xpp3</groupId>
         </exclusion>
+        <!-- Coming by transitivity from com.google.http-client:google-http-client-jackson2 -->
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
