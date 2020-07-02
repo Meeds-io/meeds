@@ -78,10 +78,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- maven-release-plugin -->
     <preparationGoals>clean install</preparationGoals>
     <!-- ************** -->
-    <!-- Add-ons nexus repository name for SNAPSHOT and RELEASES -->
-    <!-- ************** -->
-    <addon.repository.name>public</addon.repository.name>
-    <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>meeds-es-embedded</addon.exo.es.embedded.id>
@@ -110,6 +106,57 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- Pre-bundled addons -->
+      <dependency>
+        <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
+        <artifactId>exo-es-embedded-packaging</artifactId>
+        <version>${addon.exo.es.embedded.version}</version>
+        <scope>provided</scope>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.wallet</groupId>
+        <artifactId>wallet-packaging</artifactId>
+        <version>${addon.exo.wallet.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.kudos</groupId>
+        <artifactId>kudos-packaging</artifactId>
+        <version>${addon.exo.kudos.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.perk-store</groupId>
+        <artifactId>perk-store-packaging</artifactId>
+        <version>${addon.exo.perk-store.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.gamification</groupId>
+        <artifactId>gamification-packaging</artifactId>
+        <version>${addon.exo.gamification.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.push-notifications</groupId>
+        <artifactId>exo-push-notifications-addon-packaging</artifactId>
+        <version>${addon.exo.push-notifications.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.app-center</groupId>
+        <artifactId>app-center-packaging</artifactId>
+        <version>${addon.exo.app-center.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <!-- Dependencies -->
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
         <artifactId>platform-ui</artifactId>
@@ -494,15 +541,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <url>https://repository.exoplatform.org/public</url>
         </pluginRepository>
       </pluginRepositories>
-    </profile>
-    <profile>
-      <id>release</id>
-      <properties>
-        <!-- ************** -->
-        <!-- Add-ons nexus repository name for STAGING when RELEASING -->
-        <!-- ************** -->
-        <addon.repository.name>staging</addon.repository.name>
-      </properties>
     </profile>
   </profiles>
 </project>
