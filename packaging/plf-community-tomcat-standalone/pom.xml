@@ -67,6 +67,49 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <!-- Don't expose transitive deps if someone wants the zip as dep -->
       <scope>provided</scope>
     </dependency>
+    <!-- Pre-bundled addons -->
+    <dependency>
+      <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
+      <artifactId>exo-es-embedded-packaging</artifactId>
+      <scope>provided</scope>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.wallet</groupId>
+      <artifactId>wallet-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.kudos</groupId>
+      <artifactId>kudos-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.perk-store</groupId>
+      <artifactId>perk-store-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.gamification</groupId>
+      <artifactId>gamification-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.push-notifications</groupId>
+      <artifactId>exo-push-notifications-addon-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.app-center</groupId>
+      <artifactId>app-center-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
