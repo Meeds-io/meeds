@@ -60,7 +60,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
               removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
-              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${connectionParameters}" />
+              username="${username}" password="${password}" driverClassName="${driverClassName}" url="${url}${jpaConnectionParameters}" />
 
     <!-- eXo JCR Datasource for portal -->
     <Resource name="exo-jcr_portal" auth="Container" type="javax.sql.DataSource"
