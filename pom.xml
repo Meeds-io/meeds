@@ -93,7 +93,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.push-notifications.id>meeds-push-notifications</addon.exo.push-notifications.id>
     <addon.exo.push-notifications.version>2.1.x-SNAPSHOT</addon.exo.push-notifications.version>
     <addon.exo.app-center.id>meeds-app-center</addon.exo.app-center.id>
-    <addon.exo.app-center.version>2.0.x-SNAPSHOT</addon.exo.app-center.version>
+    <addon.exo.app-center.version>2.1.x-SNAPSHOT</addon.exo.app-center.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
