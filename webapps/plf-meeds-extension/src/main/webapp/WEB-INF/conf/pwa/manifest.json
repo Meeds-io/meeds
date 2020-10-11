@@ -1,0 +1,33 @@
+{
+  "name": "Meeds.io",
+  "short_name": "meeds-io",
+  "icons": [
+    {
+       "src": "/meeds/images/logo/MeedsLogo.png",
+       "sizes": "512x512",
+       "type": "image/png"
+    },
+    {
+       "src": "/meeds/images/logo/MeedsLogo.png",
+       "sizes": "225x225",
+       "type": "image/png"
+    },
+    {
+      "src": "/eXoResources/skin/images/ShareImages/Background/maskable.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+       "src": "/portal/favicon.ico",
+       "sizes": "16x16",
+       "type": "image/x-icon"
+    }
+  ],
+  "scope": "/",
+  "start_url": "/portal/meeds/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3f8487",
+  "prefer_related_applications": false
+}
