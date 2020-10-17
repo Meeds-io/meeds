@@ -105,7 +105,7 @@ while [ "$1" != "" ]; do
         exit
       fi
       shift
-      export EXO_CLUSTER_CURRENT_HOST="$1"
+      export EXO_CLUSTER_NODE_NAME="$1"
     ;;
     --cluster-host )
       if [ $# -lt 2 ]
