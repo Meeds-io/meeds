@@ -98,7 +98,7 @@ if [ "${EXO_CLUSTER}" = "true" ]; then
   CATALINA_OPTS="${CATALINA_OPTS} -Dexo.es.embedded.enabled=false -Dexo.cometd.oort.configType=static"
   EXO_PROFILES="$EXO_PROFILES,cluster"
 
-  [ -n "$EXO_CLUSTER_CURRENT_HOST" ] && CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cluster.node.name=${EXO_CLUSTER_CURRENT_HOST}"
+  [ -n "$EXO_CLUSTER_NODE_NAME" ] && CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cluster.node.name=${EXO_CLUSTER_NODE_NAME}"
 
   if [ -n "$EXO_CLUSTER_HOSTS" ]; then
     CLUSTER_HOSTS=$(echo $EXO_CLUSTER_HOSTS | tr '\r' ' ' | tr '\n' ' ')
@@ -114,7 +114,7 @@ if [ "${EXO_CLUSTER}" = "true" ]; then
         [ -z "${exo_cluster_tcp1_port}" ] && exo_cluster_tcp1_port=7800
         [ -z "${exo_cluster_tcp2_port}" ] && exo_cluster_tcp2_port=7900
 
-        if [ "${exo_cluster_name}" = "${EXO_CLUSTER_CURRENT_HOST}" ]; then
+        if [ "${exo_cluster_name}" = "${EXO_CLUSTER_NODE_NAME}" ]; then
           CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cometd.oort.url=${exo_cluster_http_protocol}://${exo_cluster_address}:${exo_cluster_http_port}/cometd/cometd"
           CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcp.bind_addr=${exo_cluster_address}"
           CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcp.bind_port=${exo_cluster_tcp1_port}"
