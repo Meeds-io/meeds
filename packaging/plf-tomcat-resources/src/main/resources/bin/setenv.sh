@@ -71,6 +71,77 @@ fi
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR="$CATALINA_BASE/gatein/data"
 
 # -----------------------------------------------------------------------------
+# EXO PLATFORM Blob storage configuration
+# -----------------------------------------------------------------------------
+
+if [ -n  "$EXO_BLOB_FS" ]; then
+  if [ "${EXO_BLOB_FS}" = "true" ]; then
+    CATALINA_OPTS="${CATALINA_OPTS} -Dexo.files.binaries.storage.type=fs -Dexo.jcr.storage.enabled=true"
+  else
+    CATALINA_OPTS="${CATALINA_OPTS} -Dexo.files.binaries.storage.type=rdbms -Dexo.jcr.storage.enabled=false"
+  fi
+else
+  [ "${EXO_CLUSTER}" = "true" ] && CATALINA_OPTS="${CATALINA_OPTS} -Dexo.files.binaries.storage.type=rdbms -Dexo.jcr.storage.enabled=false"
+fi
+
+# -----------------------------------------------------------------------------
+# EXO PLATFORM ES configuration
+# -----------------------------------------------------------------------------
+
+[ -n "$EXO_ES_URL" ] && CATALINA_OPTS="${CATALINA_OPTS} -Dexo.es.index.server.url=${EXO_ES_URL} -Dexo.es.search.server.url=${EXO_ES_URL}"
+
+# -----------------------------------------------------------------------------
+# EXO PLATFORM Cluster configuration
+# -----------------------------------------------------------------------------
+
+if [ "${EXO_CLUSTER}" = "true" ]; then
+  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.es.embedded.enabled=false -Dexo.cometd.oort.configType=static"
+  EXO_PROFILES="$EXO_PROFILES,cluster"
+
+  [ -n "$EXO_CLUSTER_NODE_NAME" ] && CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cluster.node.name=${EXO_CLUSTER_NODE_NAME}"
+
+  if [ -n "$EXO_CLUSTER_HOSTS" ]; then
+    CLUSTER_HOSTS=$(echo $EXO_CLUSTER_HOSTS | tr '\r' ' ' | tr '\n' ' ')
+    for CLUSTER_HOST in $CLUSTER_HOSTS
+    do
+      CLUSTER_HOST_PARTS=$(echo $CLUSTER_HOST | sed "s/,/;exo_cluster_/g")
+      eval "exo_cluster_${CLUSTER_HOST_PARTS}"
+      for CLUSTER_HOST_PART in $CLUSTER_HOST_PARTS
+      do
+        [ -z "${exo_cluster_http_protocol}" ] && exo_cluster_http_protocol=http
+        [ -z "${exo_cluster_address}" ] && exo_cluster_address=localhost
+        [ -z "${exo_cluster_http_port}" ] && exo_cluster_http_port=8080
+        [ -z "${exo_cluster_tcp1_port}" ] && exo_cluster_tcp1_port=7800
+        [ -z "${exo_cluster_tcp2_port}" ] && exo_cluster_tcp2_port=7900
+
+        if [ "${exo_cluster_name}" = "${EXO_CLUSTER_NODE_NAME}" ]; then
+          CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cometd.oort.url=${exo_cluster_http_protocol}://${exo_cluster_address}:${exo_cluster_http_port}/cometd/cometd"
+          CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcp.bind_addr=${exo_cluster_address}"
+          CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcp.bind_port=${exo_cluster_tcp1_port}"
+          CATALINA_OPTS="${CATALINA_OPTS} -Dexo.service.cluster.jgroups.tcp.bind_addr=${exo_cluster_address}"
+          CATALINA_OPTS="${CATALINA_OPTS} -Dexo.service.cluster.jgroups.tcp.bind_port=${exo_cluster_tcp2_port}"
+        fi
+
+        if [ -z $EXO_CLUSTER_HOSTS_TCP_1 ]; then
+          EXO_CLUSTER_HOSTS_TCP_1="${exo_cluster_address}[${exo_cluster_tcp1_port}]"
+        else
+          EXO_CLUSTER_HOSTS_TCP_1="${EXO_CLUSTER_HOSTS_TCP_1},${exo_cluster_address}[${exo_cluster_tcp1_port}]"
+        fi
+
+        if [ -z $EXO_CLUSTER_HOSTS_TCP_2 ]; then
+          EXO_CLUSTER_HOSTS_TCP_2="${exo_cluster_address}[${exo_cluster_tcp2_port}]"
+        else
+          EXO_CLUSTER_HOSTS_TCP_2="${EXO_CLUSTER_HOSTS_TCP_2},${exo_cluster_address}[${exo_cluster_tcp2_port}]"
+        fi
+      done
+    done
+
+    CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_1}"
+    CATALINA_OPTS="${CATALINA_OPTS} -Dexo.service.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_2}"
+  fi
+fi
+
+# -----------------------------------------------------------------------------
 # Default Logs configuration
 # -----------------------------------------------------------------------------
 
