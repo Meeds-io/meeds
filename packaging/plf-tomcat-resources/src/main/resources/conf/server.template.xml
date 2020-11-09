@@ -161,7 +161,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
          on to the appropriate Host (virtual host).
          Documentation at /docs/config/engine.html -->
 
-    <Engine name="Catalina" defaultHost="localhost">
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="${exo.cluster.node.name}">
 
       <Host name="localhost" appBase="webapps" startStopThreads="-1"
             unpackWARs="${EXO_TOMCAT_UNPACK_WARS}" autoDeploy="true">
