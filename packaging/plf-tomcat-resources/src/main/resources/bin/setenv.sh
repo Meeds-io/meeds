@@ -139,6 +139,8 @@ if [ "${EXO_CLUSTER}" = "true" ]; then
     CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_1}"
     CATALINA_OPTS="${CATALINA_OPTS} -Dexo.service.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_2}"
   fi
+else
+  CATALINA_OPTS="${CATALINA_OPTS} -Dexo.cluster.node.name="
 fi
 
 # -----------------------------------------------------------------------------
