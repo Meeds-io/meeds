@@ -136,10 +136,6 @@ if [ "${EXO_CLUSTER}" = "true" ]; then
           fi
         fi
 
-        if [ -z $EXO_CLUSTER_OORT_CLOUD ]; then
-          EXO_CLUSTER_OORT_CLOUD=""
-        fi
-
         if [ -z $EXO_CLUSTER_HOSTS_TCP_2 ]; then
           EXO_CLUSTER_HOSTS_TCP_2="${exo_cluster_address}[${exo_cluster_tcp2_port}]"
         else
@@ -147,6 +143,10 @@ if [ "${EXO_CLUSTER}" = "true" ]; then
         fi
       done
     done
+
+    if [ -z $EXO_CLUSTER_OORT_CLOUD ]; then
+      EXO_CLUSTER_OORT_CLOUD=""
+    fi
 
     CATALINA_OPTS="${CATALINA_OPTS} -Dexo.jcr.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_1}"
     CATALINA_OPTS="${CATALINA_OPTS} -Dexo.service.cluster.jgroups.tcpping.initial_hosts=${EXO_CLUSTER_HOSTS_TCP_2}"
