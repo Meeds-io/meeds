@@ -47,6 +47,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <artifactId>commons-extension-webapp</artifactId>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.commons</groupId>
+      <artifactId>commons-dlp</artifactId>
+      <type>jar</type>
+    </dependency>
     <!-- Platform UI -->
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
