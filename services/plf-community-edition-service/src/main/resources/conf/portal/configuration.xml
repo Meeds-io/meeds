@@ -44,6 +44,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <description>Enable main stream composer property</description>
         <property name="exo.config.mainStreamComposer.enabled" value="${exo.config.mainStreamComposer.enabled:true}" />
       </properties-param>
+      <properties-param>
+        <name>EnableDlpFeature</name>
+        <description>Enable dlp feature</description>
+        <property name="exo.feature.dlp.enabled" value="${exo.feature.dlp.enabled:false}" />
+      </properties-param>
     </init-params>
   </component>
 </configuration>
