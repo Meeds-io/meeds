@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <groupId>io.meeds.distribution</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>1.2.x-SNAPSHOT</version>
+  <version>1.2.x-maintenance-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Meeds:: Meeds Public Distribution</name>
   <modules>
@@ -57,10 +57,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.social.version>6.2.x-SNAPSHOT</org.exoplatform.social.version>
-    <org.exoplatform.platform-ui.version>6.2.x-SNAPSHOT</org.exoplatform.platform-ui.version>
+    <org.exoplatform.social.version>6.2.x-maintenance-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.platform-ui.version>6.2.x-maintenance-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>2.2.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
+    <org.exoplatform.platform.addons-manager.version>2.2.x-maintenance-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
     <!-- The apache tomcat version to bundle -->
     <org.apache.tomcat.version>8.5.55</org.apache.tomcat.version>
     <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
@@ -81,19 +81,19 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.exo.es.embedded.id>meeds-es-embedded</addon.exo.es.embedded.id>
-    <addon.exo.es.embedded.version>3.2.x-SNAPSHOT</addon.exo.es.embedded.version>
+    <addon.exo.es.embedded.version>3.2.x-maintenance-SNAPSHOT</addon.exo.es.embedded.version>
     <addon.exo.kudos.id>meeds-kudos</addon.exo.kudos.id>
-    <addon.exo.kudos.version>2.2.x-SNAPSHOT</addon.exo.kudos.version>
+    <addon.exo.kudos.version>2.2.x-maintenance-SNAPSHOT</addon.exo.kudos.version>
     <addon.exo.perk-store.id>meeds-perk-store</addon.exo.perk-store.id>
-    <addon.exo.perk-store.version>2.2.x-SNAPSHOT</addon.exo.perk-store.version>
+    <addon.exo.perk-store.version>2.2.x-maintenance-SNAPSHOT</addon.exo.perk-store.version>
     <addon.exo.wallet.id>meeds-wallet</addon.exo.wallet.id>
-    <addon.exo.wallet.version>2.2.x-SNAPSHOT</addon.exo.wallet.version>
+    <addon.exo.wallet.version>2.2.x-maintenance-SNAPSHOT</addon.exo.wallet.version>
     <addon.exo.gamification.id>meeds-gamification</addon.exo.gamification.id>
-    <addon.exo.gamification.version>2.2.x-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.gamification.version>2.2.x-maintenance-SNAPSHOT</addon.exo.gamification.version>
     <addon.exo.push-notifications.id>meeds-push-notifications</addon.exo.push-notifications.id>
-    <addon.exo.push-notifications.version>2.2.x-SNAPSHOT</addon.exo.push-notifications.version>
+    <addon.exo.push-notifications.version>2.2.x-maintenance-SNAPSHOT</addon.exo.push-notifications.version>
     <addon.exo.app-center.id>meeds-app-center</addon.exo.app-center.id>
-    <addon.exo.app-center.version>2.2.x-SNAPSHOT</addon.exo.app-center.version>
+    <addon.exo.app-center.version>2.2.x-maintenance-SNAPSHOT</addon.exo.app-center.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
