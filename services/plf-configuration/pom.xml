@@ -26,6 +26,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <artifactId>plf-configuration</artifactId>
   <packaging>jar</packaging>
   <name>eXo Meeds:: Meeds Public Distribution - Services - Container Config</name>
+  <properties>
+     <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+     <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+  </properties>
   <build>
     <resources>
       <!-- Filtered resources -->
