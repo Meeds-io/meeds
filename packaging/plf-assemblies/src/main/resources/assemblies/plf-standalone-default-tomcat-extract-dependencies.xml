@@ -24,16 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <includeBaseDirectory>true</includeBaseDirectory>
   <baseDirectory>dependencies</baseDirectory>
   <dependencySets>
-    <!-- Apache Tomcat Bundle -->
-    <dependencySet>
-      <outputDirectory>apache-tomcat</outputDirectory>
-      <includes>
-        <include>org.apache.tomcat:tomcat:zip</include>
-      </includes>
-      <scope>provided</scope>
-      <unpack>true</unpack>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- Common Tomcat resources for PLF -->
     <dependencySet>
       <outputDirectory>plf-tomcat-resources</outputDirectory>

@@ -42,18 +42,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </scm>
   <properties>
     <!-- **************************************** -->
-    <!-- Jira Settings                            -->
-    <!-- **************************************** -->
-    <jira.project.key>PLF</jira.project.key>
-    <!-- **************************************** -->
-    <!-- Repository settings                      -->
-    <!-- **************************************** -->
-    <exo.snapshots.repo.url>https://repository.exoplatform.org/content/repositories/meeds-snapshots</exo.snapshots.repo.url>
-    <!-- **************************************** -->
-    <!-- Jenkins Settings                         -->
-    <!-- **************************************** -->
-    <jenkins.job.name>meeds-master-pkg</jenkins.job.name>
-    <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
@@ -61,22 +49,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <org.exoplatform.platform-ui.version>6.2.x-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>2.2.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
-    <!-- The apache tomcat version to bundle -->
-    <org.apache.tomcat.version>8.5.55</org.apache.tomcat.version>
-    <!-- SLF4J version to use to wrap all loggers in our product and its dependencies -->
-    <org.slf4j.version>1.7.7</org.slf4j.version>
-    <!-- LOGBACK implementation to use to manage logs -->
-    <ch.qas.logback.version>1.1.2</ch.qas.logback.version>
-    <!-- Additional LOGBACK dependencies -->
-    <org.codehaus.janino.version>2.6.1</org.codehaus.janino.version>
-    <org.fusesource.jansi.version>1.11</org.fusesource.jansi.version>
-    <!-- PLF-6409: Liquibase dependency -->
-    <org.snakeyaml.version>1.13</org.snakeyaml.version>
-    <!-- ************** -->
-    <!-- Build settings -->
-    <!-- ************** -->
-    <!-- maven-release-plugin -->
-    <preparationGoals>clean install</preparationGoals>
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
@@ -99,12 +71,26 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </properties>
   <dependencyManagement>
     <dependencies>
+      <!-- Dependencies -->
       <dependency>
         <groupId>org.exoplatform.social</groupId>
         <artifactId>social</artifactId>
         <version>${org.exoplatform.social.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform-ui</groupId>
+        <artifactId>platform-ui</artifactId>
+        <version>${org.exoplatform.platform-ui.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.platform</groupId>
+        <artifactId>addons-manager</artifactId>
+        <version>${org.exoplatform.platform.addons-manager.version}</version>
+        <type>zip</type>
       </dependency>
       <!-- Pre-bundled addons -->
       <dependency>
@@ -155,57 +141,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <version>${addon.exo.app-center.version}</version>
         <type>zip</type>
         <scope>provided</scope>
-      </dependency>
-      <!-- Dependencies -->
-      <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
-        <artifactId>platform-ui</artifactId>
-        <version>${org.exoplatform.platform-ui.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <!-- Logging implementation : http://logback.qos.ch/ -->
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>${ch.qas.logback.version}</version>
-      </dependency>
-      <!-- Official Apache Distribution -->
-      <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat</artifactId>
-        <version>${org.apache.tomcat.version}</version>
-        <type>zip</type>
-      </dependency>
-      <!-- Used to write a listener -->
-      <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-catalina</artifactId>
-        <version>${org.apache.tomcat.version}</version>
-      </dependency>
-      <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
-      <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-catalina-jmx-remote</artifactId>
-        <version>${org.apache.tomcat.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-util</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <!-- Required by conditional processing in logback -->
-      <dependency>
-        <groupId>org.codehaus.janino</groupId>
-        <artifactId>janino</artifactId>
-        <version>${org.codehaus.janino.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.exoplatform.platform</groupId>
-        <artifactId>addons-manager</artifactId>
-        <version>${org.exoplatform.platform.addons-manager.version}</version>
-        <type>zip</type>
       </dependency>
       <!-- Project artifacts -->
       <dependency>
@@ -330,44 +265,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <artifactId>plf-tomcat-resources</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
-      </dependency>
-      <!-- Required by logback for colorized console on windows -->
-      <dependency>
-        <groupId>org.fusesource.jansi</groupId>
-        <artifactId>jansi</artifactId>
-        <version>${org.fusesource.jansi.version}</version>
-      </dependency>
-      <!-- Use SLF4J and not commons-logging -->
-      <!-- commons-logging must be removed from dependencies -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
-        <version>${org.slf4j.version}</version>
-      </dependency>
-      <!-- Redirect everything from JUL to SLF4J -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jul-to-slf4j</artifactId>
-        <version>${org.slf4j.version}</version>
-      </dependency>
-      <!-- Use SLF4J and not log4j -->
-      <!-- log4j must be removed from dependencies -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>log4j-over-slf4j</artifactId>
-        <version>${org.slf4j.version}</version>
-      </dependency>
-      <!-- SLF4J API -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${org.slf4j.version}</version>
-      </dependency>
-      <!-- PLF-6409: Required by Liquibase to not generate error -->
-      <dependency>
-        <groupId>org.yaml</groupId>
-        <artifactId>snakeyaml</artifactId>
-        <version>${org.snakeyaml.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -515,32 +412,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           </plugin>
         </plugins>
       </build>
-    </profile>
-    <profile>
-      <id>project-repositories</id>
-      <activation>
-        <property>
-          <name>!skip-project-repositories</name>
-        </property>
-      </activation>
-      <repositories>
-        <repository>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-          <id>repository.exoplatform.org</id>
-          <url>https://repository.exoplatform.org/public</url>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-          <id>repository.exoplatform.org</id>
-          <url>https://repository.exoplatform.org/public</url>
-        </pluginRepository>
-      </pluginRepositories>
     </profile>
   </profiles>
 </project>

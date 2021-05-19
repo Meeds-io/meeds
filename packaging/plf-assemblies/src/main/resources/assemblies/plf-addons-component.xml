@@ -20,7 +20,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <dependencySets>
     <!-- eXo Platform Add-ons Manager - Unix Script -->
     <dependencySet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>
@@ -39,7 +39,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependencySet>
     <!-- eXo Platform Add-ons Manager - Windows Script -->
     <dependencySet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>
@@ -57,7 +57,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependencySet>
     <!-- eXo Platform Add-ons Manager - Others files -->
     <dependencySet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>

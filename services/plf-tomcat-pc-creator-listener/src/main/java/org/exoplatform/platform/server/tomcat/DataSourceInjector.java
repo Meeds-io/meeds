@@ -26,7 +26,7 @@ import javax.naming.NamingException;
 
 import org.apache.catalina.Engine;
 import org.apache.naming.factory.ResourceLinkFactory;
-import org.gatein.wci.tomcat.TC7ServletContainerContext;
+import org.gatein.wci.tomcat.TomcatServletContainerContext;
 
 import org.exoplatform.container.BaseContainerLifecyclePlugin;
 import org.exoplatform.container.ExoContainer;
@@ -67,12 +67,12 @@ public class DataSourceInjector extends BaseContainerLifecyclePlugin {
   }
 
   private Context getGlobalNamingContext() {
-    // TC7ContainerServlet will start when integration.war context is deployed.
-    // The TC7ContainerServlet instantiates the TC7ServletContainerContext.
+    // TomcatContainerServlet will start when integration.war context is deployed.
+    // The TomcatContainerServlet instantiates the TomcatServletContainerContext.
     // The integration.war is started before the PortalContainer starts
-    // So we are sure that the instance TC7ServletContainerContext is instantiated
+    // So we are sure that the instance TomcatServletContainerContext is instantiated
     // If not, an exception will be thrown in initContainer method and the server startup fails
-    TC7ServletContainerContext servletContainerContext = TC7ServletContainerContext.getInstanceIfPresent();
+    TomcatServletContainerContext servletContainerContext = TomcatServletContainerContext.getInstanceIfPresent();
     if (servletContainerContext != null) {
       Engine e = (Engine) servletContainerContext.getEngine();
       return e.getService().getServer().getGlobalNamingContext();

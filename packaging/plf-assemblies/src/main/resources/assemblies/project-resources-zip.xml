@@ -24,7 +24,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>false</filtered>
       <lineEnding>keep</lineEnding>

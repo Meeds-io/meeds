@@ -110,6 +110,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -150,6 +156,29 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <configuration>
               <timestampFormat>dd/MM/yyyy</timestampFormat>
               <timestampPropertyName>build.date</timestampPropertyName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>apache-tomcat</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.tomcat</groupId>
+                  <artifactId>tomcat</artifactId>
+                  <type>zip</type>
+                  <outputDirectory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat</outputDirectory>
+                  <includes>apache-tomcat*/**</includes>
+                </artifactItem>
+              </artifactItems>
             </configuration>
           </execution>
         </executions>
@@ -261,6 +290,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
+          <execution>
+            <id>remove-tomcat-version-from-folder</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <!-- Remove tomcat version from folder name to avoid declaring tomcat version in current module
+                  for more flexibility when upgrading Tomcat -->
+                <move todir="${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat">
+                  <fileset dir="${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/">
+                    <include name="**/apache-tomcat-*/**" />
+                  </fileset>
+                  <mapper type="regexp" from="^(.*)apache-tomcat-([^/]+)(.*)" to="\1/\3" />
+                </move>
+              </target>
+            </configuration>
+          </execution>
           <execution>
             <id>install-add-ons</id>
             <phase>prepare-package</phase>

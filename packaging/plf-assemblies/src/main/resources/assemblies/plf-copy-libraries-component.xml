@@ -23,7 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- ================================ -->
     <!-- Libraries to put in Tomcat lib directory -->
     <dependencySet>
-      <outputDirectory>/lib</outputDirectory>
+      <outputDirectory>${file.separator}lib</outputDirectory>
       <includes>
         <include>*:*:jar</include>
       </includes>
