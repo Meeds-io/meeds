@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>org.exoplatform</groupId>
     <artifactId>maven-parent-pom</artifactId>
-    <version>23-M06</version>
+    <version>23-M08</version>
     <relativePath />
   </parent>
   <groupId>io.meeds.distribution</groupId>
