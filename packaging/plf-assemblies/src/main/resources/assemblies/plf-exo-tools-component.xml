@@ -20,7 +20,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <dependencySets>
 
     <dependencySet>
-      <outputDirectory>/bin</outputDirectory>
+      <outputDirectory>${file.separator}bin</outputDirectory>
       <includes>
         <include>io.meeds.distribution:plf-exo-tools:jar</include>
       </includes>

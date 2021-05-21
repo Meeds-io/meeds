@@ -24,7 +24,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
   <servlet>
     <servlet-name>ContainerServlet</servlet-name>
-    <servlet-class>org.gatein.wci.tomcat.TC7ContainerServlet</servlet-class>
+    <servlet-class>org.gatein.wci.tomcat.TomcatContainerServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 

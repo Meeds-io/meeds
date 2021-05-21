@@ -29,12 +29,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.gatein.wci</groupId>
-      <artifactId>wci-tomcat8</artifactId>
+      <artifactId>wci-tomcat</artifactId>
       <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
       <exclusions>
         <exclusion>
           <artifactId>catalina</artifactId>
           <groupId>org.apache.tomcat</groupId>
+        </exclusion>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
         </exclusion>
       </exclusions>
     </dependency>

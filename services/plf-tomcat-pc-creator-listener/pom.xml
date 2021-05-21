@@ -58,7 +58,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependency>
     <dependency>
       <groupId>org.exoplatform.gatein.wci</groupId>
-      <artifactId>wci-tomcat8</artifactId>
+      <artifactId>wci-tomcat</artifactId>
     </dependency>
   </dependencies>
   <profiles>

@@ -26,8 +26,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <fileSets>
     <!-- Unix shell scripts with exec rights -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
+      <outputDirectory>${file.separator}</outputDirectory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/</directory>
       <fileMode>0755</fileMode>
       <filtered>false</filtered>
       <lineEnding>keep</lineEnding>
@@ -37,8 +37,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Others files -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
-      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/apache-tomcat-${org.apache.tomcat.version}/</directory>
+      <outputDirectory>${file.separator}</outputDirectory>
+      <directory>${project.build.directory}/${project.build.finalName}/dependencies/apache-tomcat/</directory>
       <filtered>false</filtered>
       <lineEnding>keep</lineEnding>
       <excludes>
@@ -58,7 +58,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Unix shell scripts with exec rights -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <fileMode>0755</fileMode>
       <filtered>true</filtered>
@@ -69,7 +69,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Others files to filter -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <filtered>true</filtered>
       <lineEnding>windows</lineEnding>
@@ -88,7 +88,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Don't filter others files -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/</directory>
       <filtered>false</filtered>
       <lineEnding>keep</lineEnding>
@@ -106,7 +106,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- eXo platform - License file and related -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.build.directory}/maven-shared-archive-resources/</directory>
       <filtered>false</filtered>
       <lineEnding>windows</lineEnding>
@@ -119,7 +119,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Local resources from the project - to allow to override -->
     <!-- Unix shell scripts with exec rights -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
       <fileMode>0755</fileMode>
       <filtered>true</filtered>
@@ -130,7 +130,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Others files to filter -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>true</filtered>
       <lineEnding>windows</lineEnding>
@@ -144,7 +144,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Don't filter others files -->
     <fileSet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <directory>${project.basedir}/src/main/resources/</directory>
       <filtered>false</filtered>
       <lineEnding>keep</lineEnding>
@@ -159,7 +159,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </fileSet>
     <!-- Configuration sample files -->
     <fileSet>
-      <outputDirectory>/gatein/conf</outputDirectory>
+      <outputDirectory>gatein/conf</outputDirectory>
       <directory>${project.build.directory}/${project.build.finalName}/dependencies/plf-configuration/conf/platform/</directory>
       <filtered>false</filtered>
       <lineEnding>windows</lineEnding>
@@ -171,7 +171,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <files>
     <!-- Default server.xml file -->
     <file>
-      <outputDirectory>/conf/</outputDirectory>
+      <outputDirectory>${file.separator}conf</outputDirectory>
       <destName>server.xml</destName>
       <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/server.template.xml</source>
       <filtered>true</filtered>
@@ -181,7 +181,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <dependencySets>
     <!-- Extract license file -->
     <dependencySet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <includes>
         <include>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</include>
       </includes>
@@ -196,7 +196,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependencySet>
     <!-- Common Gatein Configuration -->
     <dependencySet>
-      <outputDirectory>/gatein/conf</outputDirectory>
+      <outputDirectory>${file.separator}gatein${file.separator}conf</outputDirectory>
       <includes>
         <include>io.meeds.distribution:plf-packaging-resources:zip</include>
       </includes>
@@ -214,7 +214,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependencySet>
     <!-- CHANGE_LOG, README, RELEASE_NOTES -->
     <dependencySet>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory>${file.separator}</outputDirectory>
       <includes>
         <include>io.meeds.distribution:plf-packaging-resources:zip</include>
       </includes>
@@ -235,7 +235,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependencySet>
     <!-- We only authorize this additional tomcat artifact for now -->
     <dependencySet>
-      <outputDirectory>/lib</outputDirectory>
+      <outputDirectory>${file.separator}lib</outputDirectory>
       <includes>
         <!-- This artifact isn't by default in tomcat -->
         <include>org.apache.tomcat:tomcat-catalina-jmx-remote:*</include>
@@ -248,7 +248,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- we reference each war to package -->
     <!-- ================================ -->
     <dependencySet>
-      <outputDirectory>/webapps</outputDirectory>
+      <outputDirectory>${file.separator}webapps</outputDirectory>
       <includes>
         <include>org.exoplatform.gatein.portal:*:war</include>
         <include>org.exoplatform.commons:*:war</include>

@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <files>
     <!-- Default server.xml file -->
     <file>
-      <outputDirectory>/conf/</outputDirectory>
+      <outputDirectory>${file.separator}conf</outputDirectory>
       <destName>server-mysql.xml</destName>
       <source>${project.build.directory}/${project.build.finalName}/dependencies/plf-tomcat-resources/conf/server.template.xml</source>
       <filtered>true</filtered>
