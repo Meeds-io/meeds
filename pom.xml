@@ -42,6 +42,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </scm>
   <properties>
     <!-- **************************************** -->
+    <!-- Repository settings                      -->
+    <!-- **************************************** -->
+    <exo.snapshots.repo.url>https://repository.exoplatform.org/content/repositories/meeds-snapshots</exo.snapshots.repo.url>
+    <!-- **************************************** -->
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
