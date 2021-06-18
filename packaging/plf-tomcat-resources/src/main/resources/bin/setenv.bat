@@ -206,6 +206,9 @@ SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.desktop/java.awt.font=A
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.lang.module=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/jdk.internal.module=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% -noverify
 
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}
