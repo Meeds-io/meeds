@@ -112,6 +112,8 @@ SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\jul-to-slf4j.jar
 REM # LogBack deps
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-core.jar
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\logback-classic.jar
+REM Servlet API deps (used by logback)
+SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\servlet-api.jar
 REM # Janino deps (used by logback for conditional processing in the config file)
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\janino.jar
 SET CLASSPATH=%CLASSPATH%;%CATALINA_HOME%\lib\commons-compiler.jar
