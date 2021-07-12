@@ -56,8 +56,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
-    <addon.exo.es.embedded.id>meeds-es-embedded</addon.exo.es.embedded.id>
-    <addon.exo.es.embedded.version>3.2.x-SNAPSHOT</addon.exo.es.embedded.version>
     <addon.exo.kudos.id>meeds-kudos</addon.exo.kudos.id>
     <addon.exo.kudos.version>2.2.x-SNAPSHOT</addon.exo.kudos.version>
     <addon.exo.perk-store.id>meeds-perk-store</addon.exo.perk-store.id>
@@ -97,13 +95,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <type>zip</type>
       </dependency>
       <!-- Pre-bundled addons -->
-      <dependency>
-        <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
-        <artifactId>exo-es-embedded-packaging</artifactId>
-        <version>${addon.exo.es.embedded.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
-      </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.wallet</groupId>
         <artifactId>wallet-packaging</artifactId>

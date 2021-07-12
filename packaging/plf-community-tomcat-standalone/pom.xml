@@ -69,12 +69,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependency>
     <!-- Pre-bundled addons -->
     <dependency>
-      <groupId>org.exoplatform.addons.exo-es-embedded</groupId>
-      <artifactId>exo-es-embedded-packaging</artifactId>
-      <scope>provided</scope>
-      <type>zip</type>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.addons.wallet</groupId>
       <artifactId>wallet-packaging</artifactId>
       <type>zip</type>
@@ -318,9 +312,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <configuration>
               <target name="install-add-ons">
                 <echo message="Installing add-ons..." />
-                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.exo.es.embedded.id}:${addon.exo.es.embedded.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
-                </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.kudos.id}:${addon.exo.kudos.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
