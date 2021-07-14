@@ -89,19 +89,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                   <string>social-extension</string>
                </value>
                <value>
-                  <string>social-notification-extension</string>
-               </value>
-               <value>
-                  <string>social-resources</string>
-               </value>
-               <value>
                   <string>social-portlet</string>
-               </value>
-               <value>
-                  <string>social-juzu</string>
-               </value>
-               <value>
-                  <string>unified-search</string>
                </value>
             </collection>
           </field>
