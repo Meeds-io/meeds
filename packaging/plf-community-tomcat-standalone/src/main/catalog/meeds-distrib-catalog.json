@@ -111,5 +111,21 @@
     "supportedDistributions": "community",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-notes",
+    "version": "${addon.exo.notes.version}",
+    "unstable": true,
+    "name": "Notes Add-on",
+    "description": "Manage Notes.",
+    "sourceUrl": "https://github.com/meeds-io/notes",
+    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/notes/notes-packaging/${addon.exo.notes.version}/notes-packaging-${addon.exo.notes.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]

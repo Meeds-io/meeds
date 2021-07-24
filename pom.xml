@@ -68,6 +68,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.push-notifications.version>2.2.x-SNAPSHOT</addon.exo.push-notifications.version>
     <addon.exo.app-center.id>meeds-app-center</addon.exo.app-center.id>
     <addon.exo.app-center.version>2.2.x-SNAPSHOT</addon.exo.app-center.version>
+    <addon.exo.notes.id>meeds-notes</addon.exo.notes.id>
+    <addon.exo.notes.version>1.0.x-SNAPSHOT</addon.exo.notes.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
   </properties>
@@ -134,6 +136,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>org.exoplatform.addons.app-center</groupId>
         <artifactId>app-center-packaging</artifactId>
         <version>${addon.exo.app-center.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.notes</groupId>
+        <artifactId>notes-packaging</artifactId>
+        <version>${addon.exo.notes.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
