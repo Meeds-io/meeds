@@ -72,6 +72,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.notes.version>1.1.x-SNAPSHOT</addon.exo.notes.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
+    
+    <!-- Sonar properties -->
+    <sonar.organization>meeds-io</sonar.organization>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -417,5 +420,34 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         </plugins>
       </build>
     </profile>
-  </profiles>
+    
+          <!-- This profile is used to allow github action to build branches. The github action is used for sonar analysis -->
+
+      <profile>
+         <id>project-repositories</id>
+         <activation>
+            <property>
+               <name>!skip-project-repositories</name>
+            </property>
+         </activation>
+         <repositories>
+            <repository>
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+               <id>repository.exoplatform.org</id>
+               <url>https://repository.exoplatform.org/public</url>
+            </repository>
+         </repositories>
+         <pluginRepositories>
+            <pluginRepository>
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+               <id>repository.exoplatform.org</id>
+               <url>https://repository.exoplatform.org/public</url>
+            </pluginRepository>
+         </pluginRepositories>
+      </profile>
+   </profiles>
 </project>
