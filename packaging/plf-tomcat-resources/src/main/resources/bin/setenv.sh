@@ -43,6 +43,9 @@ case "`uname`" in
 esac
 
 # Load custom settings
+if [ -r "$CATALINA_BASE/bin/setenv-extend.sh" ]; then
+  . "$CATALINA_BASE/bin/setenv-extend.sh"
+fi
 if [ -r "$CATALINA_BASE/bin/setenv-customize.sh" ]; then
   . "$CATALINA_BASE/bin/setenv-customize.sh"
 fi
@@ -64,7 +67,8 @@ fi
 # Default EXO PLATFORM configuration
 # -----------------------------------------------------------------------------
 
-[ -z $EXO_PROFILES ] && EXO_PROFILES="all"
+[ -z $EXO_DEFAULT_PROFILES ] && EXO_DEFAULT_PROFILES="all"
+[ -z $EXO_PROFILES ] && EXO_PROFILES=$EXO_DEFAULT_PROFILES
 [ -z $EXO_DEV ] && EXO_DEV=false
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=$EXO_DEV
 [ -z $EXO_CONF_DIR ] && EXO_CONF_DIR="$CATALINA_BASE/gatein/conf"
