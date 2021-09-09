@@ -37,66 +37,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </init-params>
   </component>
 
-  <!-- This declares the default portal container for Platform -->
-  <component>
-    <type>org.exoplatform.container.definition.PortalContainerConfig</type>
-    <init-params>
-      <value-param>
-        <name>default.portal.container</name>
-        <value>portal</value>
-      </value-param>
-      <value-param>
-        <name>default.rest.context</name>
-        <value>rest</value>
-      </value-param>
-      <value-param>
-        <name>ignore.unregistered.webapp</name>
-        <value>${ignore.unregistered.webapp:true}</value>
-      </value-param>       
-      <!-- The name of the default security realm -->
-      <value-param>
-        <name>default.realm.name</name>
-        <value>${exo.security.domain}</value>
-      </value-param>
-      <object-param>
-        <name>default.portal.definition</name>
-        <object type="org.exoplatform.container.definition.PortalContainerDefinition">
-          <field name="dependencies">
-            <collection type="java.util.ArrayList">
-               <!-- gatein -->
-               <value>
-                  <string>portal</string>
-               </value>
-               <value>
-                  <string>exoadmin</string>
-               </value>
-               <value>
-                  <string>rest</string>
-               </value>
-               <value>
-                  <string>web</string>
-               </value>
-               <value>
-                  <string>eXoResources</string>
-               </value>
-               <value>
-                  <string>commons-extension</string>
-               </value>
-               <value>
-                  <string>cometd</string>
-               </value>
-               <value>
-                  <string>social-extension</string>
-               </value>
-               <value>
-                  <string>social-portlet</string>
-               </value>
-            </collection>
-          </field>
-        </object>
-      </object-param>
-    </init-params>
-  </component>
   <!--
 		it is necessary to declare this empty plugin in order to activate the
 		extension mechanism
