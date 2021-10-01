@@ -1,0 +1,47 @@
+name: Create and publish a Meeds binary
+
+on:
+  push:
+    tags:
+      - '[1-9].[0-9].[0-9]'
+      - '[1-9].[0-9].[0-9]-RC[0-9][0-9]'
+env:
+  DOWNLOAD_URL: 'https://repository.exoplatform.org/content/groups/public/io/meeds/distribution/plf-community-tomcat-standalone'
+  DOWNLOAD_BINARY_PREFFIX: 'plf-community-tomcat-standalone'
+  TARGET_BINARY_PREFFIX: 'meeds-tomcat-standalone'
+jobs:
+  publish:
+    name: build_release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Get Release version
+        run: |
+           echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+           [[ ${GITHUB_REF#refs/*/} =~ .*-RC[0-9][0-9]$ ]] && echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV || echo "IS_PRE_RELEASE=false" >> $GITHUB_ENV
+      - name: Download Meeds binary from Nexus
+        run: |
+            wget ${DOWNLOAD_URL}/${RELEASE_VERSION}/${DOWNLOAD_BINARY_PREFFIX}-${RELEASE_VERSION}.zip
+            mv ${DOWNLOAD_BINARY_PREFFIX}-${RELEASE_VERSION}.zip ${TARGET_BINARY_PREFFIX}-${RELEASE_VERSION}.zip
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: ${{ env.IS_PRE_RELEASE }}
+          release_name: ${{ env.RELEASE_VERSION }}
+          tag_name: ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: upload Meeds binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.TARGET_BINARY_PREFFIX }}-${{ env.RELEASE_VERSION }}.zip
+          asset_name: ${{ env.TARGET_BINARY_PREFFIX }}-${{ env.RELEASE_VERSION }}.zip
+          asset_content_type: application/zip
