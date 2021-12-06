@@ -134,7 +134,7 @@
     "name": "challenges Add-on",
     "description": "Manage challenges.",
     "sourceUrl": "https://github.com/meeds-io/challenges",
-    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/challenges/challenges-packaging/${addon.exo.challenges.version}/challenges-packaging-${addon.exo.challenges.version}.zip",
+    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/challenges/challenges-packaging/${addon.exo.challenges.version}/challenges-packaging-${addon.exo.challenges.version}.zip",
     "vendor": "Meeds.io",
     "author": "Meeds.io",
     "license": "LGPLv3",
