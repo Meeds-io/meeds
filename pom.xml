@@ -70,6 +70,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.app-center.version>2.3.x-SNAPSHOT</addon.exo.app-center.version>
     <addon.exo.notes.id>meeds-notes</addon.exo.notes.id>
     <addon.exo.notes.version>1.1.x-SNAPSHOT</addon.exo.notes.version>
+    <addon.exo.challenges.id>meeds-challenges</addon.exo.challenges.id>
+    <addon.exo.challenges.version>1.0.x-SNAPSHOT</addon.exo.challenges.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
     
@@ -146,6 +148,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>org.exoplatform.addons.notes</groupId>
         <artifactId>notes-packaging</artifactId>
         <version>${addon.exo.notes.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.challenges</groupId>
+        <artifactId>challenges-packaging</artifactId>
+        <version>${addon.exo.challenges.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
