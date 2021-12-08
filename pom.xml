@@ -152,7 +152,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.challenges</groupId>
+        <groupId>org.exoplatform.challenges</groupId>
         <artifactId>challenges-packaging</artifactId>
         <version>${addon.exo.challenges.version}</version>
         <type>zip</type>
