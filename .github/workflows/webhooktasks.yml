@@ -1,0 +1,51 @@
+name: eXo PR Task Webhook
+
+on:
+  pull_request:
+    types: [opened, reopened, closed]
+  pull_request_review:
+    types: [submitted]
+
+env:
+  message: ${{ github.event.pull_request.title }}
+  state: ${{ github.event.pull_request.state }}
+  pull_number: ${{ github.event.pull_request.number }}
+  repo_name: ${{ github.event.repository.full_name }}
+jobs:
+  check_tasks:
+    name: Check for eXo tasks identifiers
+    runs-on: ubuntu-latest
+    steps:
+      - name: eXo Tasks Webhook
+        run: |
+          TASKS_IDS="$(echo ${message:-}| grep -oP '[0-9]{4,}' | xargs)"
+          if [ -z "${TASKS_IDS}" ]; then
+            echo "No tasks found! Abort."
+            exit 0
+          fi
+          echo "OK Task(s) found! Starting notifications..."
+          link="PR <a href=\"https://github.com/${repo_name}/pull/${pull_number}\">${repo_name}#${pull_number}</a>"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            if [ "${{ github.event.pull_request.merged }}" = "true" ]; then
+              msg="$link has been merged."
+            else
+              msg="$link has been ${{ github.event.action }}."
+            fi
+          elif [ "${{ github.event_name }}" = "pull_request_review" ] && [ "${{ github.event.action }}" = "submitted" ]; then
+            if [ "${{ github.event.review.state }}" = "changes_requested" ]; then
+              msg="$link requires some changes."
+            else
+              msg="$link has been ${{ github.event.review.state }}."
+            fi
+          fi
+          echo "*** Message is:"
+          echo ${msg}
+          echo "***"
+          for TASK_ID in ${TASKS_IDS}; do
+            echo "Commenting to Task #${TASK_ID}..."
+            curl -s -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XPOST --data-urlencode "${msg}" "${TRIBE_TASK_REST_PREFIXE_URL}/comments/${TASK_ID}"
+          done
+        env:
+          TRIBE_USERNAME: ${{ secrets.TRIBE_USERNAME }}
+          TRIBE_PASSWORD: ${{ secrets.TRIBE_PASSWORD }}
+          TRIBE_TASK_REST_PREFIXE_URL: ${{ secrets.TRIBE_TASK_REST_PREFIXE_URL }}
