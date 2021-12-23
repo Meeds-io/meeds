@@ -11,6 +11,7 @@ env:
   state: ${{ github.event.pull_request.state }}
   pull_number: ${{ github.event.pull_request.number }}
   repo_name: ${{ github.event.repository.full_name }}
+  base_branch_name: ${{ github.event.pull_request.base.ref }}
 jobs:
   check_tasks:
     name: Check for eXo tasks identifiers
@@ -27,7 +28,7 @@ jobs:
           link="PR <a href=\"https://github.com/${repo_name}/pull/${pull_number}\">${repo_name}#${pull_number}</a>"
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             if [ "${{ github.event.pull_request.merged }}" = "true" ]; then
-              msg="$link has been merged."
+              msg="$link has been merged into ${base_branch_name}."
             else
               msg="$link has been ${{ github.event.action }}."
             fi
