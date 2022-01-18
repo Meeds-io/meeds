@@ -94,23 +94,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
     </dependency>
-    <!-- Use SLF4J and not commons-logging -->
-    <!-- commons-logging must be removed from dependencies -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-    </dependency>
-    <!-- Redirect everything from JUL to SLF4J -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jul-to-slf4j</artifactId>
-    </dependency>
-    <!-- Use SLF4J and not log4j -->
-    <!-- log4j must be removed from dependencies -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>log4j-over-slf4j</artifactId>
-    </dependency>
     <!-- SLF4J API -->
     <dependency>
       <groupId>org.slf4j</groupId>
