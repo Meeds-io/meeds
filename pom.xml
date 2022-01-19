@@ -334,7 +334,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
                         <exclude>org.slf4j:slf4j-jcl:*</exclude>
                         <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
-                        <exclude>org.slf4j:slf4j-logj12:*</exclude>
+                        <exclude>org.slf4j:slf4j-log4j12:*</exclude>
+                        <exclude>org.slf4j:slf4j-simple:*</exclude>
                         <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
                         <exclude>org.slf4j:slf4j-jdk14:*</exclude>
                         <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
