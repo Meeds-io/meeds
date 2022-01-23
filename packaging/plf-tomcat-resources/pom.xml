@@ -38,25 +38,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <artifactId>tomcat</artifactId>
       <type>zip</type>
     </dependency>
-    <!-- Additional Tomcat JAR to allow to fix JMX ports. Useful when the server is behind a firewall -->
-    <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat-catalina-jmx-remote</artifactId>
-      <exclusions>
-        <exclusion>
-          <artifactId>tomcat-coyote</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>tomcat-catalina</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>tomcat-juli</artifactId>
-          <groupId>org.apache.tomcat</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <!-- Required by conditional processing in logback -->
     <dependency>
       <groupId>org.codehaus.janino</groupId>

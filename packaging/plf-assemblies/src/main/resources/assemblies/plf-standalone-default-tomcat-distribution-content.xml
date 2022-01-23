@@ -233,17 +233,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
-    <!-- We only authorize this additional tomcat artifact for now -->
-    <dependencySet>
-      <outputDirectory>${file.separator}lib</outputDirectory>
-      <includes>
-        <!-- This artifact isn't by default in tomcat -->
-        <include>org.apache.tomcat:tomcat-catalina-jmx-remote:*</include>
-      </includes>
-      <scope>provided</scope>
-      <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
-      <useProjectArtifact>false</useProjectArtifact>
-    </dependencySet>
     <!-- ================================ -->
     <!-- we reference each war to package -->
     <!-- ================================ -->
