@@ -98,6 +98,50 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 <value>
                   <object type="org.exoplatform.social.core.space.SpaceApplication">
                     <field name="portletApp">
+                        <string>task-management</string>
+                    </field>
+                    <field name="portletName">
+                        <string>TasksManagement</string>
+                    </field>
+                    <field name="appTitle">
+                        <string>Tasks</string>
+                    </field>
+                    <field name="removable">
+                        <boolean>true</boolean>
+                    </field>
+                    <field name="order">
+                        <int>200</int>
+                    </field>
+                    <field name="uri">
+                        <string>tasks</string>
+                    </field>
+                  </object>
+                </value>
+                <value>
+                  <object type="org.exoplatform.social.core.space.SpaceApplication">
+                    <field name="portletApp">
+                      <string>notes</string>
+                    </field>
+                    <field name="portletName">
+                      <string>Notes</string>
+                    </field>
+                    <field name="appTitle">
+                      <string>notes</string>
+                    </field>
+                    <field name="removable">
+                      <boolean>true</boolean>
+                    </field>
+                    <field name="order">
+                      <int>300</int>
+                    </field>
+                    <field name="uri">
+                      <string>notes</string>
+                    </field>
+                  </object>
+                </value>
+                <value>
+                  <object type="org.exoplatform.social.core.space.SpaceApplication">
+                    <field name="portletApp">
                       <string>social-portlet</string>
                     </field>
                     <field name="portletName">

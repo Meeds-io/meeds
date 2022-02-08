@@ -72,6 +72,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.notes.version>1.1.x-maintenance-SNAPSHOT</addon.exo.notes.version>
     <addon.exo.challenges.id>meeds-challenges</addon.exo.challenges.id>
     <addon.exo.challenges.version>1.0.x-maintenance-SNAPSHOT</addon.exo.challenges.version>
+    <addon.exo.tasks.id>meeds-tasks</addon.exo.tasks.id>
+    <addon.exo.tasks.version>3.3.x-maintenance-SNAPSHOT</addon.exo.tasks.version>
+    <addon.exo.analytics.id>meeds-analytics</addon.exo.analytics.id>
+    <addon.exo.analytics.version>1.2.x-maintenance-SNAPSHOT</addon.exo.analytics.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
     
@@ -155,6 +159,20 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>org.exoplatform.challenges</groupId>
         <artifactId>challenges-packaging</artifactId>
         <version>${addon.exo.challenges.version}</version>
+        <type>zip</type>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.analytics</groupId>
+        <artifactId>analytics-packaging</artifactId>
+        <version>${addon.exo.analytics.version}</version>
+        <scope>provided</scope>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.task</groupId>
+        <artifactId>task-management-packaging</artifactId>
+        <version>${addon.exo.tasks.version}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>

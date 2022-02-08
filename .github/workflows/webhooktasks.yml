@@ -11,6 +11,7 @@ env:
   state: ${{ github.event.pull_request.state }}
   pull_number: ${{ github.event.pull_request.number }}
   requested_reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}
+  creator: ${{ github.event.pull_request.user.login }}
   repo_name: ${{ github.event.repository.full_name }}
   base_branch_name: ${{ github.event.pull_request.base.ref }}
 jobs:
@@ -33,12 +34,12 @@ jobs:
               if [ ! -z "${ghLogins}" ]; then
                 tribeUsers=""
                 for ghLogin in ${ghLogins}; do
-                  response=$(curl -s -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XGET "${TRIBE_GAMGH_CONNECTOR_REST_URL}/users/${ghLogin}" || echo "")
+                  response=$(curl -s -f -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XGET "${TRIBE_GAMGH_CONNECTOR_REST_URL}/users/${ghLogin}" || echo "")
                   [ -z "${response}" ] || tribeUsers="${tribeUsers} @${response}"
                 done
                 if [ ! -z "${tribeUsers}" ]; then
                   echo "Requested reviewers are: $(echo ${tribeUsers} | tr -d '@')."
-                  msg="$link requested reviews from ${tribeUsers} ."
+                  msg="💭 $link requested a review from ${tribeUsers} ."
                 else
                  echo "Could not get Tribe users' identifiers! Abort"
                  exit 0
@@ -48,15 +49,20 @@ jobs:
                 exit 0
               fi
             elif [ "${{ github.event.pull_request.merged }}" = "true" ]; then
-              msg="$link has been merged into ${base_branch_name}."
+              msg="🌟 $link has been merged into ${base_branch_name}."
             else
-              msg="$link has been ${{ github.event.action }}."
+              msg="ℹ️ $link has been ${{ github.event.action }}."
             fi
           elif [ "${{ github.event_name }}" = "pull_request_review" ] && [ "${{ github.event.action }}" = "submitted" ]; then
+            mentionCreator=""
+            response=$(curl -s -f -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XGET "${TRIBE_GAMGH_CONNECTOR_REST_URL}/users/${creator}" || echo "")
+            [ -z "${response}" ] || mentionCreator=" FYI @${response} "
             if [ "${{ github.event.review.state }}" = "changes_requested" ]; then
-              msg="$link requires some changes."
+              msg="🛠️ $link requires some changes.${mentionCreator}"
+            elif [ "${{ github.event.review.state }}" = "approved" ]; then
+              msg="✅ $link has been ${{ github.event.review.state }}.${mentionCreator}"
             else
-              msg="$link has been ${{ github.event.review.state }}."
+              msg="ℹ️ $link has been ${{ github.event.review.state }}."
             fi
           fi
           echo "*** Message is:"
