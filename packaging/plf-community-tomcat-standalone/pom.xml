@@ -141,7 +141,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
-    <dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
