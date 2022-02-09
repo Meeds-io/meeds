@@ -161,5 +161,22 @@
     "supportedDistributions": "community",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-poll",
+    "version": "${addon.exo.poll.version}",
+    "unstable": false,
+    "name": "Poll add-on",
+    "description": "Poll",
+    "sourceUrl": "https://github.com/meeds-io/poll",
+    "documentationUrl": "https://github.com/meeds-io/poll",
+    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/poll/poll-packaging/${addon.exo.poll.version}/poll-packaging-${addon.exo.poll.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
