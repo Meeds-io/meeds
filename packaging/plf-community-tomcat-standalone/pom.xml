@@ -135,6 +135,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>provided</scope>
       <type>zip</type>
     </dependency>
+    <dependency>
+      <groupId>org.exoplatform.addons.poll</groupId>
+      <artifactId>poll-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -366,6 +372,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.analytics.id}:${addon.exo.analytics.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.exo.poll.id}:${addon.exo.poll.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
               </target>
             </configuration>

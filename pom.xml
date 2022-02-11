@@ -76,6 +76,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.tasks.version>3.3.x-SNAPSHOT</addon.exo.tasks.version>
     <addon.exo.analytics.id>meeds-analytics</addon.exo.analytics.id>
     <addon.exo.analytics.version>1.2.x-SNAPSHOT</addon.exo.analytics.version>
+    <addon.exo.poll.id>meeds-poll</addon.exo.poll.id>
+    <addon.exo.poll.version>1.0.x-SNAPSHOT</addon.exo.poll.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
     
@@ -175,6 +177,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <version>${addon.exo.tasks.version}</version>
         <type>zip</type>
         <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.poll</groupId>
+        <artifactId>poll-packaging</artifactId>
+        <version>${addon.exo.poll.version}</version>
+        <scope>provided</scope>
+        <type>zip</type>
       </dependency>
       <!-- Project artifacts -->
       <dependency>
