@@ -10,7 +10,7 @@ env:
   message: ${{ github.event.pull_request.title }}
   state: ${{ github.event.pull_request.state }}
   pull_number: ${{ github.event.pull_request.number }}
-  requested_reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}
+  requested_reviewer: ${{ github.event.requested_reviewer.login }}
   creator: ${{ github.event.pull_request.user.login }}
   repo_name: ${{ github.event.repository.full_name }}
   base_branch_name: ${{ github.event.pull_request.base.ref }}
@@ -30,22 +30,12 @@ jobs:
           link="PR <a href=\"https://github.com/${repo_name}/pull/${pull_number}\">${repo_name}#${pull_number}</a>"
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             if [ "${{ github.event.action }}" = "review_requested" ]; then
-              ghLogins="$(echo ${requested_reviewers} | jq '.[].login' | tr -d '\"' | xargs)"
-              if [ ! -z "${ghLogins}" ]; then
-                tribeUsers=""
-                for ghLogin in ${ghLogins}; do
-                  response=$(curl -s -f -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XGET "${TRIBE_GAMGH_CONNECTOR_REST_URL}/users/${ghLogin}" || echo "")
-                  [ -z "${response}" ] || tribeUsers="${tribeUsers} @${response}"
-                done
-                if [ ! -z "${tribeUsers}" ]; then
-                  echo "Requested reviewers are: $(echo ${tribeUsers} | tr -d '@')."
-                  msg="💭 $link requested a review from ${tribeUsers} ."
-                else
-                 echo "Could not get Tribe users' identifiers! Abort"
-                 exit 0
-                fi
+              tribeUser=$(curl -s -f -L -u ${TRIBE_USERNAME}:${TRIBE_PASSWORD} -XGET "${TRIBE_GAMGH_CONNECTOR_REST_URL}/users/${requested_reviewer}" || echo "")
+              if [ ! -z "${tribeUser}" ]; then
+                echo "Requested reviewer is: ${tribeUser}."
+                msg="💭 $link requested a review from @${tribeUser} "
               else
-                echo "No Github reviewers' identifiers were found! Abort!"
+                echo "Could not get Tribe user identifier! Abort"
                 exit 0
               fi
             elif [ "${{ github.event.pull_request.merged }}" = "true" ]; then
