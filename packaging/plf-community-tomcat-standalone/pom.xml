@@ -72,49 +72,49 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>org.exoplatform.addons.wallet</groupId>
       <artifactId>wallet-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.kudos</groupId>
       <artifactId>kudos-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.perk-store</groupId>
       <artifactId>perk-store-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.gamification</groupId>
       <artifactId>gamification-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.push-notifications</groupId>
       <artifactId>exo-push-notifications-addon-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.app-center</groupId>
       <artifactId>app-center-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.notes</groupId>
       <artifactId>notes-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.challenges</groupId>
       <artifactId>challenges-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.tomcat</groupId>
@@ -126,20 +126,20 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>org.exoplatform.addons.task</groupId>
       <artifactId>task-management-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.analytics</groupId>
       <artifactId>analytics-packaging</artifactId>
       <version>${addon.exo.analytics.version}</version>
-      <scope>provided</scope>
+      <scope>runtime</scope>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.poll</groupId>
       <artifactId>poll-packaging</artifactId>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
   <build>
