@@ -83,7 +83,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="ws" level="INFO" />
   <logger name="XMLResolvingServiceImpl" level="INFO" />
   <logger name="TRAXTemplatesServiceImpl" level="INFO" />
-  <logger name="org.hibernate" level="INFO" />
+  <logger name="org.hibernate" level="ERROR" />
   <logger name="com.arjuna" level="INFO" />
   <logger name="org.jboss" level="INFO" />
   <logger name="com.google.javascript.jscomp" level="WARN" />
