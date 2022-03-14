@@ -29,7 +29,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </JarScanner>
 
   <!-- Disable session persistence across Tomcat restarts -->
-  <Manager pathname="" />
+  <Manager pathname=""/>
 
   <Valve className="org.gatein.sso.agent.tomcat.ServletAccessValve" asyncSupported="true"/>
   <Valve className="org.apache.catalina.valves.ErrorReportValve" showReport="false" showServerInfo="false"/>
@@ -37,4 +37,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <ResourceLink name="exo-jcr_portal" global="exo-jcr_portal" type="javax.sql.DataSource"/>
   <ResourceLink name="exo-idm_portal" global="exo-idm_portal" type="javax.sql.DataSource"/>
   <ResourceLink name="exo-jpa_portal" global="exo-jpa_portal" type="javax.sql.DataSource"/>
+
+  <CookieProcessor sameSiteCookies="Lax"/>
 </Context>
