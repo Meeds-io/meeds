@@ -111,12 +111,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.challenges</groupId>
-      <artifactId>challenges-packaging</artifactId>
-      <type>zip</type>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat</artifactId>
       <type>zip</type>
@@ -363,9 +357,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.notes.id}:${addon.exo.notes.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
-                </exec>
-                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.exo.challenges.id}:${addon.exo.challenges.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.tasks.id}:${addon.exo.tasks.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
