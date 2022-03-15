@@ -146,22 +146,6 @@
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
   },{
-    "id": "meeds-challenges",
-    "version": "${addon.exo.challenges.version}",
-    "unstable": true,
-    "name": "challenges Add-on",
-    "description": "Manage challenges.",
-    "sourceUrl": "https://github.com/meeds-io/challenges",
-    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/challenges/challenges-packaging/${addon.exo.challenges.version}/challenges-packaging-${addon.exo.challenges.version}.zip",
-    "vendor": "Meeds.io",
-    "author": "Meeds.io",
-    "license": "LGPLv3",
-    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
-    "mustAcceptLicense": false,
-    "supportedDistributions": "community",
-    "supportedApplicationServers": "tomcat",
-    "compatibility": "[${project.version},)"
-  },{
     "id": "meeds-poll",
     "version": "${addon.exo.poll.version}",
     "unstable": false,
