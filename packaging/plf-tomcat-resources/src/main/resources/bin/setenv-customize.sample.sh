@@ -144,3 +144,7 @@
 
 # EXO ES Embedded custom elasticsearch.yml configuration absolute path
 # CATALINA_OPTS="${CATALINA_OPTS} -Dexo.es.embedded.configuration.file=/path/to/file"
+
+# Define a custom value for sameSite on cookies. Value must be in [unset, none, Lax, strict]
+# Default value is Lax. unset and none are not recommended
+#CATALINA_OPTS="$CATALINA_OPTS -Dexo.cookie.samesite=Lax"
