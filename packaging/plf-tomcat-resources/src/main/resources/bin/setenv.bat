@@ -181,6 +181,10 @@ SET CATALINA_OPTS=%CATALINA_OPTS% -Djava.util.Arrays.useLegacyMergeSort=true
 REM # PLF-6965 # set default file encoding to UTF-8 Independently from OS default charset
 SET CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding="UTF-8"
 
+REM # Define the default value for sameSite on cookies
+SET CATALINA_OPTS=%CATALINA_OPTS% -Dexo.cookie.samesite="Lax"
+
+
 SET javaExec=java.exe
 IF DEFINED JAVA_HOME (
   SET javaExec="%JAVA_HOME%\bin\java.exe"

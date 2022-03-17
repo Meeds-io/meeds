@@ -38,5 +38,5 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <ResourceLink name="exo-idm_portal" global="exo-idm_portal" type="javax.sql.DataSource"/>
   <ResourceLink name="exo-jpa_portal" global="exo-jpa_portal" type="javax.sql.DataSource"/>
 
-  <CookieProcessor sameSiteCookies="Lax"/>
+  <CookieProcessor sameSiteCookies="${exo.cookie.samesite}"/>
 </Context>
