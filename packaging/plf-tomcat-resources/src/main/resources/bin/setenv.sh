@@ -271,6 +271,9 @@ CATALINA_OPTS="$CATALINA_OPTS -Djava.security.egd=file:/dev/./urandom"
 # PLF-6965 set default file encoding to UTF-8 Independently from OS default charset
 CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8"
 
+# Define the default value for sameSite on cookies
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.cookie.samesite=Lax"
+
 javaExec=java
 if [ ! -z "$JAVA_HOME" ]; then
   javaExec=$JAVA_HOME/bin/java
