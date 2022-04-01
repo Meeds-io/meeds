@@ -162,5 +162,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-gamification-github",
+    "version": "${addon.meeds.gamification-github.version}",
+    "unstable": false,
+    "name": "Gamification Github connector add-on",
+    "description": "Gamification Github connector add-on",
+    "sourceUrl": "https://github.com/meeds-io/gamification-github",
+    "documentationUrl": "https://github.com/meeds-io/gamification-github",
+    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/gamification-github/gamification-github-packaging/${addon.meeds.gamification-github.version}/gamification-github-packaging-${addon.meeds.gamification-github.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
