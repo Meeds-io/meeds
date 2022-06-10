@@ -1,15 +1,8 @@
----
-name: Pull Request Template 
-about: Create a pull request 
-title: ''
-labels: ''
-assignees: ''
+#Title for a fix : 
+fix: Fix the problem from of the user drawer meeds-io/meeds#1234 MEEDS-XXXXXX
 
----
-#the github reference to the fixed issue (new feature or fix)  
-meeds-io/meeds#1234  
-#the task number in tribe (for eXo) or in builders app (for Meeds)  
-EXO-XXXXX / MEEDS-XXXXX 
+#Title for a feature :
+feat: Send mail when someone order a product meeds-io/meeds#1234 MEEDS-XXXXXX
 
 #Why is this change needed?  
 #Prior to this change, ...  
