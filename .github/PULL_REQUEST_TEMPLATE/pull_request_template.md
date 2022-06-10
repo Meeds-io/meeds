@@ -9,6 +9,10 @@ feat: Send mail when someone order a product meeds-io/meeds#1234 MEEDS-XXXXXX
 #How does it address the issue?  
 #This change ...  
 
+#If my commit is a fix, I checked  
+#- it didn't break api  
+#- it didn't change data model  
+
 #|<---- Try To Limit Each Line to a Maximum Of 72 Characters ---->|  
 #Provide links or keys to any relevant tickets, articles or other resources  
 #--------------------  
