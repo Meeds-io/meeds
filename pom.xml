@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <groupId>io.meeds.distribution</groupId>
   <artifactId>plf-public-distributions</artifactId>
-  <version>1.4.x-SNAPSHOT</version>
+  <version>1.4.x-devx-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Meeds:: Meeds Public Distribution</name>
   <modules>
@@ -49,7 +49,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.social.version>6.4.x-SNAPSHOT</org.exoplatform.social.version>
+    <org.exoplatform.social.version>6.4.x-devx-SNAPSHOT</org.exoplatform.social.version>
     <org.exoplatform.platform-ui.version>6.4.x-SNAPSHOT</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
     <org.exoplatform.platform.addons-manager.version>2.4.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
