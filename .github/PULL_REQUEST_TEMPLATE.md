@@ -1,12 +1,3 @@
----
-name: '{New Feature/Fix} Pull Request'
-title: 'feat/fix:FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' 
-about: ''
-labels: ''
-assignees: ''
-
----
-
 <!-- Ensure to provide github issue and task id in the title -->
 <!-- Choose between feat and fix in the title to differenciate a new feature from a fix -->
 <!-- Title format must be :
