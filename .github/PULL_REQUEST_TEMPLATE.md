@@ -1,21 +1,19 @@
 ---
-name: New Feature Pull Request about: Design a new feature using functional and technical specifications templates 
-title: 'feat:FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' 
+name: '{New Feature/Fix} Pull Request'
+title: 'feat/fix:FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' 
 labels: ''
 assignees: ''
 
 ---
-<!--
-Ensure to provide github issue and task id in the title
--->
+<!-- Ensure to provide github issue and task id in the title -->
+<!-- Choose between feat and fix in the title to differenciate a new feature from a fix -->
 
-<!--
-Feature description : describe the feature by answering theses questions :
-Why is this change needed?
-Prior to this change, ...
-How does it address the issue?
-This change ...
--->
+<!-- Description : describe the feature/the fix by answering theses questions : -->
+<!-- Why is this change needed?-->
+<!-- Prior to this change, ...-->
+<!-- How does it address the issue?-->
+<!-- This change ...-->
+
 
 <!-- Tips : 
 Try To Limit Each Line to a Maximum Of 72 Characters
