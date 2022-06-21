@@ -1,5 +1,7 @@
 ---
-name: Fix Pull Request title: 'fix: FIX TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' labels: ''
+name: Fix Pull Request 
+title: 'fix: FIX TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' 
+labels: ''
 assignees: ''
 
 ---

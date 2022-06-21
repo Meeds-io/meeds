@@ -1,6 +1,7 @@
 ---
-name: New Feature Pull Request about: Design a new feature using functional and technical specifications templates title: 'feat:
-FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' labels: ''
+name: New Feature Pull Request about: Design a new feature using functional and technical specifications templates 
+title: 'feat:FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX' 
+labels: ''
 assignees: ''
 
 ---
