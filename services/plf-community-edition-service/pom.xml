@@ -27,6 +27,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <packaging>jar</packaging>
   <name>eXo Meeds:: Meeds Public Distribution - Services - Community Edition Information</name>
 
+  <properties>
+     <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+     <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.exoplatform.kernel</groupId>
