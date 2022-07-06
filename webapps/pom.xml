@@ -22,7 +22,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-public-distributions</artifactId>
-    <version>1.4.x-SNAPSHOT</version>
+    <version>1.4.x-meed-SNAPSHOT</version>
   </parent>
 
   <name>eXo Meeds:: Meeds Public Distribution - Webapps</name>
