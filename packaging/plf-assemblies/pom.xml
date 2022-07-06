@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
-    <version>1.4.x-SNAPSHOT</version>
+    <version>1.4.x-meed-SNAPSHOT</version>
   </parent>
   <artifactId>plf-assemblies</artifactId>
   <name>eXo Meeds:: Meeds Public Distribution - Packaging - Assemblies</name>
