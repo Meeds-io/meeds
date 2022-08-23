@@ -26,6 +26,7 @@ jobs:
         run: |
             wget ${DOWNLOAD_URL}/${RELEASE_VERSION}/${DOWNLOAD_BINARY_PREFFIX}-${RELEASE_VERSION}.zip
             mv ${DOWNLOAD_BINARY_PREFFIX}-${RELEASE_VERSION}.zip ${TARGET_BINARY_PREFFIX}-${RELEASE_VERSION}.zip
+            sha256sum ${TARGET_BINARY_PREFFIX}-${RELEASE_VERSION}.zip > SHA256SUMS
       - name: release
         uses: actions/create-release@v1
         id: create_release
@@ -45,3 +46,12 @@ jobs:
           asset_path: ${{ env.TARGET_BINARY_PREFFIX }}-${{ env.RELEASE_VERSION }}.zip
           asset_name: ${{ env.TARGET_BINARY_PREFFIX }}-${{ env.RELEASE_VERSION }}.zip
           asset_content_type: application/zip
+      - name: upload Meeds SHA256SUMS
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: SHA256SUMS
+          asset_name: SHA256SUMS
+          asset_content_type: text/plain
