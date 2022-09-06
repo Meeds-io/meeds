@@ -407,8 +407,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <exclude>*:xmlParserAPIs:*</exclude>
                         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
                         <exclude>org.icepdf:icepdf-core:*</exclude>
-                        <!-- COR-338: Exclude Apache poi-ooxml 3.8. Platform uses now 3.8-eXo01 -->
-                        <exclude>org.apache.poi:poi-ooxml:[3.8]</exclude>
                         <!-- DEP-101: Elasticsearch depends on lucene version incompatible with the JCR -->
                         <exclude>org.apache.lucene:*:4</exclude>
                       </excludes>
@@ -417,6 +415,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
                         <!-- We can use the tomcat distro -->
                         <include>org.apache.tomcat:tomcat:zip</include>
+                        <!--only 1.0 of badArtifact is allowed-->
+                        <include>org.apache.logging.log4j:log4j-api:[2.18.0,)</include>
                       </includes>
                     </bannedDependencies>
                   </rules>
