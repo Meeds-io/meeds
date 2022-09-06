@@ -37,7 +37,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>commons-logging:*</exclude>
         <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
         <exclude>log4j:*</exclude>
-        <exclude>org.apache.logging.log4j:*</exclude>
         <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
         <exclude>org.slf4j:slf4j-jcl:*</exclude>
         <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
@@ -90,8 +89,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>*:xmlParserAPIs:*</exclude>
         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
         <exclude>org.icepdf:icepdf-core:*</exclude>
-        <!-- COR-338: Exclude Apache poi-ooxml 3.8. Platform uses now 3.8-eXo01 -->
-        <exclude>org.apache.poi:poi-ooxml:[3.8]</exclude>
         <!-- Avoid any direct addon inclusion on the distribution packages -->
         <exclude>org.exoplatform.addons.*:*</exclude>
       </excludes>
