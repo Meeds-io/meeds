@@ -1,9 +1,9 @@
 <!-- Ensure to provide github issue and task id in the title -->
 <!-- Choose between feat and fix in the title to differenciate a new feature from a fix -->
 <!-- Title format must be :
-feat: FEATURE TITLE meeds-io/meeds#1234 MEEDS-XXXXXX
+feat: FEATURE TITLE - MEED-XXXX - meeds-io/meeds#1234
 or
-fix: Fix TITLE meeds-io/meeds#1234 MEEDS-XXXXXX
+fix: Fix TITLE - MEED-XXXX - meeds-io/meeds#1234
 -->
 
 <!-- Description : describe the feature/the fix by answering theses questions : -->
