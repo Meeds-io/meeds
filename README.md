@@ -68,3 +68,8 @@ cosign verify --key cosign.pub ghcr.io/meeds-io/meeds/meeds-io:develop
 ```json
 [{"critical":{"identity":{"docker-reference":"ghcr.io/meeds-io/meeds/meeds-io"},"image":{"docker-manifest-digest":"sha256:da29f98a3000ae5232ceb2502ce2ae10903969c762b1d3d4e43a8b7104b87888"},"type":"cosign container image signature"},"optional":null}]
 ```
+
+## Thanks to all the contributors ❤️
+<a href = "https://github.com/Meeds-io/meeds/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Meeds-io/meeds"/>
+</a>
