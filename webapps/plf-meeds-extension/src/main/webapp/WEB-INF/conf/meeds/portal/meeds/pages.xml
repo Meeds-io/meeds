@@ -20,5 +20,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_7 http://www.gatein.org/xml/ns/gatein_objects_1_7"
   xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_7">
 
+  <page>
+    <name>overview</name>
+    <title>overview</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>*:/platform/rewarding</edit-permission>
+  </page>
   
 </page-set>
