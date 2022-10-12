@@ -25,6 +25,30 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <title>overview</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>*:/platform/rewarding</edit-permission>
+    <container id="MeedsOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+     <edit-permission>*:/platform/rewarding</edit-permission>
+      <container id="OverviewBannerContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="overview">
+       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+       <edit-permission>*:/platform/rewarding</edit-permission>
+        <portlet-application>
+          <portlet>
+            <application-ref>banner</application-ref>
+            <portlet-ref>OverviewBanner</portlet-ref>
+            <preferences>
+              <preference>
+                <name>banner</name>
+                <value>Overview Banner</value>
+                <read-only>false</read-only>
+              </preference>
+            </preferences>
+          </portlet>
+          <title>banner</title>
+          <access-permissions>*:/platform/users</access-permissions>
+          <show-info-bar>false</show-info-bar>
+        </portlet-application>
+      </container>
+    </container>
   </page>
   
 </page-set>
