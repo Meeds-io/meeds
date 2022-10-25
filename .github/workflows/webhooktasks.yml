@@ -10,4 +10,8 @@ jobs:
   check_tasks:
     name: Check for eXo tasks identifiers
     uses: exoplatform/swf-scripts/.github/workflows/ghawebhooktasks.yml@master
-    secrets: inherit
+    secrets:
+      SERVER_USERNAME: ${{ secrets.TRIBE_USERNAME }}
+      SERVER_PASSWORD: ${{ secrets.TRIBE_PASSWORD }}
+      SERVER_TASK_REST_PREFIXE_URL: ${{ secrets.TRIBE_TASK_REST_PREFIXE_URL }}
+      SERVER_GAMGH_CONNECTOR_REST_URL: ${{ secrets.TRIBE_GAMGH_CONNECTOR_REST_URL }}
