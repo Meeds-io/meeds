@@ -24,35 +24,41 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <title>overview</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>*:/platform/rewarding</edit-permission>
-    <container id="MeedsOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    <container id="MeedsOverviewPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
+      <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <container id="topOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       <portlet-application>
         <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>OverviewBanner</portlet-ref>
-          <preferences>
-	    <preference>
-		<name>bannerUrl</name>
-		<value>/meeds/images/banner/overviewBanner.webp</value>
-		<read-only>false</read-only>
-	    </preference>
-            <preference>
-		<name>bannerTitle</name>
-		<value>portal.meeds.overview.title</value>
-		<read-only>false</read-only>
-	    </preference>
-            <preference>
-		<name>bannerCaption</name>
-		<value>portal.meeds.overview.caption</value>
-		<read-only>false</read-only>
-	    </preference>
-	</preferences>
+        <application-ref>social-portlet</application-ref>
+        <portlet-ref>OverviewBanner</portlet-ref>
+        <preferences>
+	      <preference>
+		      <name>bannerUrl</name>
+		      <value>/meeds/images/banner/overviewBanner.webp</value>
+		      <read-only>false</read-only>
+	      </preference>
+        <preference>
+		      <name>bannerTitle</name>
+		      <value>portal.meeds.overview.title</value>
+		      <read-only>false</read-only>
+	      </preference>
+        <preference>
+		      <name>bannerCaption</name>
+		      <value>portal.meeds.overview.caption</value>
+		      <read-only>false</read-only>
+	       </preference>
+	      </preferences>
         </portlet>
         <title>Overview Banner Portlet</title>
         <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
         <show-info-bar>false</show-info-bar>
         <show-application-state>false</show-application-state>
       </portlet-application>
+      </container>
+      <container id="contentOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      </container>
+    </container>
     </container>
   </page>
   
