@@ -67,6 +67,17 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
                   <show-info-bar>false</show-info-bar>
                 </portlet-application>
               </container>
+              <container id="ReputationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+                <portlet-application>
+                  <portlet>
+                    <application-ref>gamification-portlets</application-ref>
+                    <portlet-ref>myReputation</portlet-ref>
+                  </portlet>
+                  <title>My Reputation</title>
+                  <access-permissions>*:/platform/users</access-permissions>
+                  <show-info-bar>false</show-info-bar>
+                </portlet-application>
+              </container>
             </container>
             <container id="overviewBottomContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
             </container>
