@@ -33,11 +33,6 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
                         <portlet-ref>OverviewBanner</portlet-ref>
                         <preferences>
                             <preference>
-                                <name>resourceBundlePath</name>
-                                <value>locale.navigation.portal.meeds</value>
-                                <read-only>false</read-only>
-                            </preference>
-                            <preference>
                                 <name>bannerUrl</name>
                                 <value>/meeds/images/banner/overviewBanner.webp</value>
                                 <read-only>false</read-only>
