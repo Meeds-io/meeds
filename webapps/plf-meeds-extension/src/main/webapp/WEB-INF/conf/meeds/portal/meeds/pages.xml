@@ -55,7 +55,7 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
                     <show-application-state>false</show-application-state>
                 </portlet-application>
             </container>
-            <container id="overviewMiddleContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="pt-3 pt-sm-5 px-3 px-sm-0">
+            <container id="overviewMiddleContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="py-3 py-sm-5 px-3 px-sm-0">
               <container id="contributionsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
                 <portlet-application>
                   <portlet>
@@ -67,8 +67,19 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
                   <show-info-bar>false</show-info-bar>
                 </portlet-application>
               </container>
+              <container id="ReputationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="px-0 pl-sm-5 py-5 py-sm-0">
+                <portlet-application>
+                  <portlet>
+                    <application-ref>gamification-portlets</application-ref>
+                    <portlet-ref>myReputation</portlet-ref>
+                  </portlet>
+                  <title>My Reputation</title>
+                  <access-permissions>*:/platform/users</access-permissions>
+                  <show-info-bar>false</show-info-bar>
+                </portlet-application>
+              </container>
             </container>
-            <container id="overviewBottomContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+            <container id="overviewBottomContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="pt-3 pt-sm-5 px-3 px-sm-0">
             </container>
           </container>
         </container>
