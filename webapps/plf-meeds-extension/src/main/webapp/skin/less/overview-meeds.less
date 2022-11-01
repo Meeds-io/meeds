@@ -1,0 +1,33 @@
+/*--------------- Overview Page Containers Structure ---------------------------*/
+#meedsOverviewPage {
+    #overviewMiddleContainer {
+        #overviewMiddleContainerChildren {
+            display: flex;
+            flex-direction: row;
+            max-width: 100%;
+            max-height: 340px;
+            #contributionsContainer {
+                width: 34%;
+            }
+            #ReputationContainer {
+                width: 34%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #meedsOverviewPage {
+        #overviewMiddleContainer {
+            #overviewMiddleContainerChildren{
+                flex-direction: column;
+                #ReputationContainer{
+                    width: 100%;
+                }
+                #contributionsContainer {
+                    width: 100%;
+                }
+            }
+        }
+}
+}
