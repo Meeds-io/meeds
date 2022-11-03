@@ -78,6 +78,17 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
                   <show-info-bar>false</show-info-bar>
                 </portlet-application>
               </container>
+              <container id="RewardsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="px-0 pl-sm-5 py-5 py-sm-0">
+                <portlet-application>
+                  <portlet>
+                    <application-ref>gamification-portlets</application-ref>
+                    <portlet-ref>myRewards</portlet-ref>
+                  </portlet>
+                  <title>My Rewards</title>
+                  <access-permissions>*:/platform/users</access-permissions>
+                  <show-info-bar>false</show-info-bar>
+                </portlet-application>
+              </container>
             </container>
             <container id="overviewBottomContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="pt-3 pt-sm-5 px-3 px-sm-0">
             </container>
