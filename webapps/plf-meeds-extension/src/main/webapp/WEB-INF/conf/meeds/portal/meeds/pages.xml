@@ -18,71 +18,116 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 -->
 <page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_8 http://www.exoplatform.org/xml/ns/gatein_objects_1_8" 
 xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
-    <page>
-        <name>overview</name>
-        <title>overview</title>
-        <access-permissions>*:/platform/rewarding</access-permissions>
-        <edit-permission>*:/platform/rewarding</edit-permission>
-        <container id="meedsOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="VuetifyApp">
+  <page>
+    <name>overview</name>
+    <title>overview</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>*:/platform/rewarding</edit-permission>
+    <container id="meedsOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="VuetifyApp">
+      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="v-application v-application--is-ltr v-application--wrap singlePageApplication">
+        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+        <container id="overviewPage" template="system:/groovy/portal/webui/container/UIVRowContainer.gtmpl">
+          <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+          <container id="overviewBannerContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col-12 pt-0">
             <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="v-application v-application--is-ltr v-application--wrap singlePageApplication">
-            <container id="overviewTopContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="px-3 px-sm-0 pb-sm-5 pb-5">
-                <portlet-application>
-                    <portlet>
-                        <application-ref>social-portlet</application-ref>
-                        <portlet-ref>OverviewBanner</portlet-ref>
-                        <preferences>
-                            <preference>
-                                <name>bannerUrl</name>
-                                <value>/meeds/images/banner/overviewBanner.webp</value>
-                                <read-only>false</read-only>
-                            </preference>
-                            <preference>
-                                <name>bannerTitle</name>
-                                <value>portal.meeds.overview.title</value>
-                                <read-only>false</read-only>
-                            </preference>
-                            <preference>
-                                <name>bannerCaption</name>
-                                <value>portal.meeds.overview.caption</value>
-                                <read-only>false</read-only>
-                            </preference>
-                        </preferences>
-                    </portlet>
-                    <title>Overview Banner Portlet</title>
-                    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-                    <show-info-bar>false</show-info-bar>
-                    <show-application-state>false</show-application-state>
-                </portlet-application>
-            </container>
-            <container id="overviewMiddleContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="py-3 py-sm-5 px-3 px-sm-0">
-              <container id="contributionsContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-                <portlet-application>
-                  <portlet>
-                    <application-ref>gamification-portlets</application-ref>
-                    <portlet-ref>myContributions</portlet-ref>
-                  </portlet>
-                  <title>My contributions</title>
-                  <access-permissions>*:/platform/users</access-permissions>
-                  <show-info-bar>false</show-info-bar>
-                </portlet-application>
-              </container>
-              <container id="ReputationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="px-0 pl-sm-5 py-5 py-sm-0">
-                <portlet-application>
-                  <portlet>
-                    <application-ref>gamification-portlets</application-ref>
-                    <portlet-ref>myReputation</portlet-ref>
-                  </portlet>
-                  <title>My Reputation</title>
-                  <access-permissions>*:/platform/users</access-permissions>
-                  <show-info-bar>false</show-info-bar>
-                </portlet-application>
-              </container>
-            </container>
-            <container id="overviewBottomContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="pt-3 pt-sm-5 px-3 px-sm-0">
-            </container>
+            <portlet-application>
+              <portlet>
+                <application-ref>social-portlet</application-ref>
+                <portlet-ref>OverviewBanner</portlet-ref>
+                <preferences>
+                  <preference>
+                    <name>bannerUrl</name>
+                    <value>/meeds/images/banner/overviewBanner.webp</value>
+                    <read-only>false</read-only>
+                  </preference>
+                  <preference>
+                    <name>bannerTitle</name>
+                    <value>portal.meeds.overview.title</value>
+                    <read-only>false</read-only>
+                  </preference>
+                  <preference>
+                    <name>bannerCaption</name>
+                    <value>portal.meeds.overview.caption</value>
+                    <read-only>false</read-only>
+                  </preference>
+                </preferences>
+              </portlet>
+              <title>Overview Banner Portlet</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+              <show-application-state>false</show-application-state>
+            </portlet-application>
+          </container>
+          <container id="contributionsContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>myContributions</portlet-ref>
+              </portlet>
+              <title>My Contributions</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="ReputationContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>myReputation</portlet-ref>
+              </portlet>
+              <title>My Reputation</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="RewardsContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>myRewards</portlet-ref>
+              </portlet>
+              <title>My Rewards</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="TopContributorsContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>topContributors</portlet-ref>
+              </portlet>
+              <title>Top Contributors</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="ChanllengesOverviewContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>challengesOverview</portlet-ref>
+              </portlet>
+              <title>Challenges Overview</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container id="ProgramsOverviewContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>programsOverview</portlet-ref>
+              </portlet>
+              <title>Programs Overview</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
           </container>
         </container>
-    </page>
+      </container>
+    </container>
 
-</page-set> 
+  </page>
+</page-set>
