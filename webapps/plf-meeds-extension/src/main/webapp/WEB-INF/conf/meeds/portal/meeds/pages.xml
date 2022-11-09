@@ -21,7 +21,7 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
   <page>
     <name>overview</name>
     <title>overview</title>
-    <access-permissions>*:/platform/rewarding</access-permissions>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/rewarding</edit-permission>
     <container id="meedsOverviewPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="VuetifyApp">
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
