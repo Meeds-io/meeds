@@ -92,13 +92,13 @@ xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
               <show-info-bar>false</show-info-bar>
             </portlet-application>
           </container>
-          <container id="TopContributorsContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
+          <container id="TopChallengersContainer" template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl" cssClass="col col-sm-12 col-md-6 col-lg-4">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>topContributors</portlet-ref>
+                <portlet-ref>topChallengers</portlet-ref>
               </portlet>
-              <title>Top Contributors</title>
+              <title>Top Challengers</title>
               <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
               <show-info-bar>false</show-info-bar>
             </portlet-application>
