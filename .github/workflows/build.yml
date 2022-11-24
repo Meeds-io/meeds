@@ -8,5 +8,7 @@ jobs:
   build:
     name: Analyse Module with SonarCloud
     uses: exoplatform/swf-scripts/.github/workflows/sonarcloud.yml@master
+    with:
+      jdk_major_version: 17
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
