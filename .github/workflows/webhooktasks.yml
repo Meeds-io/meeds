@@ -1,4 +1,4 @@
-name: eXo PR Task Webhook
+name: PLF PR Task Webhook
 
 on:
   pull_request:
@@ -8,10 +8,25 @@ on:
 
 jobs:
   check_tasks:
-    name: Check for eXo tasks identifiers
+    name: Check for PLF tasks identifiers
     uses: exoplatform/swf-scripts/.github/workflows/ghawebhooktasks.yml@master
+    strategy:
+      matrix:
+        include:
+          - TARGET_SERVER: builders
+            SERVER_USERNAME: BUILDERS_USERNAME
+            SERVER_PASSWORD: BUILDERS_PASSWORD
+            SERVER_TASK_REST_PREFIXE_URL: BUILDERS_TASK_REST_PREFIXE_URL
+            SERVER_GAMGH_CONNECTOR_REST_URL: BUILDERS_GAMGH_CONNECTOR_REST_URL
+          - TARGET_SERVER: tribe
+            SERVER_USERNAME: TRIBE_USERNAME
+            SERVER_PASSWORD: TRIBE_PASSWORD
+            SERVER_TASK_REST_PREFIXE_URL: TRIBE_TASK_REST_PREFIXE_URL
+            SERVER_GAMGH_CONNECTOR_REST_URL: TRIBE_GAMGH_CONNECTOR_REST_URL
+    with:
+      TARGET_SERVER: ${{ matrix.TARGET_SERVER }}
     secrets:
-      SERVER_USERNAME: ${{ secrets.TRIBE_USERNAME }}
-      SERVER_PASSWORD: ${{ secrets.TRIBE_PASSWORD }}
-      SERVER_TASK_REST_PREFIXE_URL: ${{ secrets.TRIBE_TASK_REST_PREFIXE_URL }}
-      SERVER_GAMGH_CONNECTOR_REST_URL: ${{ secrets.TRIBE_GAMGH_CONNECTOR_REST_URL }}
+      SERVER_USERNAME: ${{ secrets[matrix.SERVER_USERNAME] }}
+      SERVER_PASSWORD: ${{ secrets[matrix.SERVER_PASSWORD] }}
+      SERVER_TASK_REST_PREFIXE_URL: ${{ secrets[matrix.SERVER_TASK_REST_PREFIXE_URL] }}
+      SERVER_GAMGH_CONNECTOR_REST_URL: ${{ secrets[matrix.SERVER_GAMGH_CONNECTOR_REST_URL] }}
