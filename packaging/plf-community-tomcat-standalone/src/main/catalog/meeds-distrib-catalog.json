@@ -179,5 +179,23 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "exo-layout-management",
+    "version": "${addon.exo.layout-management.version}",
+    "unstable": false,
+    "name": "Layout management add-on",
+    "description": "Layout management add-on",
+    "sourceUrl": "https://github.com/exoplatform/layout-management",
+    "documentationUrl": "https://github.com/exoplatform/layout-management",
+    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/layout-management/layout-management-packaging/${addon.exo.layout-management.version}/layout-management-packaging-${addon.exo.layout-management.version}.zip",
+    "vendor": "eXo",
+    "author": "eXo",
+    "authorEmail": "support@exoplatform.com",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
