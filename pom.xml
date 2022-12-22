@@ -80,7 +80,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.gamification-github.version>1.1.x-meedsv2-SNAPSHOT</addon.meeds.gamification-github.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
-    
+
+    <addon.exo.layout-management.id>exo-layout-management</addon.exo.layout-management.id>
+    <addon.exo.layout-management.version>1.4.x-SNAPSHOT</addon.exo.layout-management.version>
+
     <!-- Sonar properties -->
     <sonar.organization>meeds-io</sonar.organization>
   </properties>
@@ -93,6 +96,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <version>${org.exoplatform.social.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.layout-management</groupId>
+        <artifactId>layout-management-packaging</artifactId>
+        <version>${addon.exo.layout-management.version}</version>
+        <scope>provided</scope>
+        <type>zip</type>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.platform-ui</groupId>
