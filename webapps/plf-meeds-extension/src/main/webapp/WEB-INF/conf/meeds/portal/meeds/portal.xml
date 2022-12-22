@@ -19,7 +19,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <portal-config>
     <portal-name>meeds</portal-name>
     <locale>en</locale>
-    <access-permissions>*:/platform/users</access-permissions>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <properties>
         <entry key="sessionAlive">onDemand</entry>
