@@ -120,46 +120,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>org.exoplatform.gatein.sso</groupId>
       <artifactId>sso-integration</artifactId>
     </dependency>
-    <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.management</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>javax.xml.stream</groupId>
-          <artifactId>stax-api</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.portal</artifactId>
-    </dependency>
     <!-- org.exoplatform.services.rest.ext.service.RestServicesListApplication used in runtime -->
     <dependency>
       <groupId>org.exoplatform.ws</groupId>
       <artifactId>exo.ws.rest.ext</artifactId>
-    </dependency>
-    <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.web.oauth-web</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.exoplatform.gatein.sso</groupId>
-          <artifactId>sso-integration</artifactId>
-        </exclusion>
-        <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
-        <exclusion>
-          <artifactId>xpp3</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.http-client:google-http-client-jackson2 -->
-        <exclusion>
-          <groupId>com.fasterxml.jackson.core</groupId>
-          <artifactId>jackson-core</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
     <dependency>

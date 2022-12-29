@@ -91,6 +91,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>org.icepdf:icepdf-core:*</exclude>
         <!-- Avoid any direct addon inclusion on the distribution packages -->
         <exclude>org.exoplatform.addons.*:*</exclude>
+        <!-- Exclude all test JAR dependencies -->
+        <exclude>org.exoplatform.commons:commons-testing:jar</exclude>
+        <exclude>*:*:jar:test-jar</exclude>
+        <exclude>*:*:jar:test-sources</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
