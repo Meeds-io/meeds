@@ -30,7 +30,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>io.meeds.distribution:plf-tomcat-resources:zip</include>
       </includes>
-      <scope>provided</scope>
+      <scope>runtime</scope>
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
@@ -40,7 +40,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>io.meeds.distribution:plf-configuration:jar</include>
       </includes>
-      <scope>provided</scope>
+      <scope>runtime</scope>
       <unpack>true</unpack>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>

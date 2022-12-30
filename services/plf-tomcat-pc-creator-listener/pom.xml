@@ -35,24 +35,21 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.kernel</groupId>
-      <artifactId>exo.kernel.commons</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.kernel</groupId>
-      <artifactId>exo.kernel.container</artifactId>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.component.api</artifactId>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
-          <artifactId>servlet-api</artifactId>
           <groupId>javax.servlet</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>common-logging</artifactId>
-          <groupId>org.gatein.common</groupId>
-        </exclusion>
-        <exclusion>
           <artifactId>javax.servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
+        </exclusion>
+        <exclusion>
+          <groupId>io.swagger.core.v3</groupId>
+          <artifactId>swagger-annotations</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
