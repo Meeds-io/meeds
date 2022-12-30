@@ -51,6 +51,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>org.exoplatform.portal:*:*</exclude>
         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
         <exclude>javax.servlet:*</exclude>
+        <!-- Avoid javax.websocket-api.jar should be provided by container -->
+        <exclude>*:javax.websocket-api</exclude>
         <exclude>com.google.gwt:gwt-user:*</exclude>
         <exclude>javax.servlet.jsp:*</exclude>
         <!-- Testing stuffs should never come here -->
@@ -90,11 +92,23 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
         <exclude>org.icepdf:icepdf-core:*</exclude>
         <!-- Avoid any direct addon inclusion on the distribution packages -->
+        <exclude>io.meeds.addons.*:*</exclude>
         <exclude>org.exoplatform.addons.*:*</exclude>
+        <!-- Avoid test scoped jars -->
+        <exclude>*:*:test-jar</exclude>
+        <exclude>*:*:*:test-jar</exclude>
+        <exclude>org.exoplatform.commons:commons-testing:*</exclude>
+        <exclude>*:*.test.*:*</exclude>
+        <!-- Avoid swagger -->
+        <exclude>io.swagger.core.*:*:*</exclude>
+        <!-- Avoid lombok.jar used in compilation time -->
+        <exclude>org.projectlombok.*:*</exclude>
+        <!-- Avoid joda-time.jar is depreccated and not used anymore -->
+        <exclude>*:joda-time</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependencySet>
   </dependencySets>
 </component>

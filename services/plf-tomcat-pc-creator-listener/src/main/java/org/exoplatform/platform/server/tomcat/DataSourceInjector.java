@@ -27,7 +27,9 @@ import javax.naming.NamingException;
 import org.apache.catalina.Engine;
 import org.apache.naming.factory.ResourceLinkFactory;
 import org.gatein.wci.tomcat.TomcatServletContainerContext;
+import org.picocontainer.Startable;
 
+import org.exoplatform.commons.api.persistence.DataInitializer;
 import org.exoplatform.container.BaseContainerLifecyclePlugin;
 import org.exoplatform.container.ExoContainer;
 import org.exoplatform.container.PortalContainer;
@@ -64,6 +66,12 @@ public class DataSourceInjector extends BaseContainerLifecyclePlugin {
     for (String dsName : datasourceNames) {
       ResourceLinkFactory.registerGlobalResourceAccess(globalNamingContext, dsName, dsName);
     }
+
+    // Start Database Schema Before anything else
+    DataInitializer dataInitializer = container.getComponentInstanceOfType(DataInitializer.class);
+    if (dataInitializer instanceof Startable dataInitializerStartable) {
+      dataInitializerStartable.start();
+    }
   }
 
   private Context getGlobalNamingContext() {
@@ -74,14 +82,14 @@ public class DataSourceInjector extends BaseContainerLifecyclePlugin {
     // If not, an exception will be thrown in initContainer method and the server startup fails
     TomcatServletContainerContext servletContainerContext = TomcatServletContainerContext.getInstanceIfPresent();
     if (servletContainerContext != null) {
-      Engine e = (Engine) servletContainerContext.getEngine();
+      Engine e = servletContainerContext.getEngine();
       return e.getService().getServer().getGlobalNamingContext();
     }
     return null;
   }
 
   private List<String> getListOfDatasources(Context globalNamingContext) throws NamingException {
-    List<String> datasourceNames = new ArrayList<String>();
+    List<String> datasourceNames = new ArrayList<>();
     NamingEnumeration<NameClassPair> list = globalNamingContext.list("/");
     while (list.hasMore()) {
       NameClassPair next = list.next();
