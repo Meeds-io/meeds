@@ -22,8 +22,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
    xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
 
    <container-lifecycle-plugin>
-    <name>DataSourceInjector</name>
-    <type>org.exoplatform.platform.server.tomcat.DataSourceInjector</type>
+      <name>DataSourceInjector</name>
+      <type>org.exoplatform.platform.server.tomcat.DataSourceInjector</type>
    </container-lifecycle-plugin>
 
 </configuration>
