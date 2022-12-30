@@ -24,7 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
@@ -43,7 +42,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
@@ -61,7 +59,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>org.exoplatform.platform:addons-manager:zip</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
