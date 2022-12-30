@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
-contact@meeds.io
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-You should have received a copy of the GNU Lesser General Public License
-along with this program; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+  This file is part of the Meeds project (https://meeds.io/).
+  Copyright (C) 2020 Meeds Association
+  contact@meeds.io
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -31,32 +32,32 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-community-edition-service</artifactId>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-configuration</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <!-- Get all shared dependencies used by PLF -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-dependencies</artifactId>
       <type>pom</type>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <!-- Get required additional files for Tomcat package -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-resources</artifactId>
       <type>zip</type>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <!-- PLF-6510: Get exo-tools.jar used by PLF startup scripts -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-exo-tools</artifactId>
-      <type>jar</type>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <!-- Build resource used to import license related files -->
     <dependency>
@@ -64,51 +65,50 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <artifactId>exo-lgpl-license-resource-bundle</artifactId>
       <!-- It's version is set in parent pom -->
       <version>${version.exo-lgpl-license-resource-bundle}</version>
-      <!-- Don't expose transitive deps if someone wants the zip as dep -->
-      <scope>provided</scope>
+      <scope>runtime</scope>
     </dependency>
     <!-- Pre-bundled addons -->
     <dependency>
       <groupId>org.exoplatform.addons.wallet</groupId>
       <artifactId>wallet-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.kudos</groupId>
       <artifactId>kudos-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.perk-store</groupId>
       <artifactId>perk-store-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.gamification</groupId>
       <artifactId>gamification-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.push-notifications</groupId>
       <artifactId>exo-push-notifications-addon-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.app-center</groupId>
       <artifactId>app-center-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.notes</groupId>
       <artifactId>notes-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.tomcat</groupId>
@@ -120,26 +120,26 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>org.exoplatform.addons.task</groupId>
       <artifactId>task-management-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.analytics</groupId>
       <artifactId>analytics-packaging</artifactId>
       <version>${addon.exo.analytics.version}</version>
-      <scope>runtime</scope>
+      <scope>provided</scope>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.poll</groupId>
       <artifactId>poll-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.addons.gamification-github</groupId>
       <artifactId>gamification-github-packaging</artifactId>
       <type>zip</type>
-      <scope>runtime</scope>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
@@ -442,7 +442,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
               <resourceBundles>
                 <resourceBundle>org.exoplatform.resources:exo-lgpl-license-resource-bundle:${version.exo-lgpl-license-resource-bundle}</resourceBundle>
               </resourceBundles>
-              <includeScope>provided</includeScope>
+              <includeScope>compile</includeScope>
               <excludeGroupIds>org.exoplatform,com.exoplatform</excludeGroupIds>
             </configuration>
           </plugin>
