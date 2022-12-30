@@ -185,7 +185,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>org.exoplatform.resources:exo-lgpl-license-resource-bundle:*</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <includes>
@@ -200,7 +199,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>io.meeds.distribution:plf-packaging-resources:zip</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <unpackOptions>
         <excludes>
@@ -218,7 +216,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>io.meeds.distribution:plf-packaging-resources:zip</include>
       </includes>
-      <scope>provided</scope>
       <unpack>true</unpack>
       <outputFileNameMapping></outputFileNameMapping>
       <unpackOptions>
@@ -245,7 +242,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <include>io.meeds.distribution:*:war</include>
         <include>org.exoplatform.platform-ui:*:war</include>
       </includes>
-      <scope>provided</scope>
       <outputFileNameMapping>${artifact.build.finalName}.war</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
     </dependencySet>
