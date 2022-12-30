@@ -66,7 +66,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <portlet-application>
         <portlet>
           <application-ref>social-portlet</application-ref>
-          <portlet-ref>IDMMembershipsManagement</portlet-ref>
+          <portlet-ref>IDMMembershipTypesManagement</portlet-ref>
         </portlet>
         <title>Memberships Management</title>
         <access-permissions>manager:/platform/administrators</access-permissions>

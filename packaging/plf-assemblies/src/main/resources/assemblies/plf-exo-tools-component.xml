@@ -24,7 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <includes>
         <include>io.meeds.distribution:plf-exo-tools:jar</include>
       </includes>
-      <scope>provided</scope>
       <unpack>false</unpack>
       <fileMode>755</fileMode>
       <useProjectArtifact>false</useProjectArtifact>
