@@ -55,15 +55,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>plf-tomcat-integration-webapp</artifactId>
-      <type>pom</type>
-    </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-pc-creator-listener</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- Required by logback for colorized console on windows -->
     <dependency>
@@ -79,6 +80,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
     </dependency>
     <!-- PLF-6409: Required by Liquibase to not generate error -->
     <dependency>
