@@ -25,6 +25,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <name>overview</name>
       <label>#{portal.meeds.overview}</label>
       <page-reference>portal::global::overview</page-reference>
+      <node>
+        <name>contributions</name>
+        <label>#{portal.meeds.contributions}</label>
+        <page-reference>portal::global::contributions</page-reference>
+      </node>
+      <node>
+        <name>perkstore</name>
+        <label>#{portal.meeds.perks}</label>
+        <page-reference>portal::global::perkstore</page-reference>
+      </node>
     </node>
     <node>
       <name>stream</name>
