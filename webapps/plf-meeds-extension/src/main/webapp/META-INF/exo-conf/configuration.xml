@@ -26,6 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <properties-param>
         <name>MeedsPortalConfigProperties</name>
         <property name="exo.social.groups.portalConfig.metadata.importmode" value="${exo.social.groups.portalConfig.metadata.importmode:OVERWRITE}" />
+        <property name="exo.social.portalConfig.profilePage.importmode" value="${exo.social.portalConfig.profilePage.importmode:MERGE}" />
       </properties-param>
     </init-params>
   </component>
