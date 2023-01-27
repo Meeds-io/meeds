@@ -1,9 +1,9 @@
 # Coding Guidelines
 
-This document is an extension to [CONTRIBUTING](./CONTRIBUTING.md) and provides more details about the coding guidelines and best practices to follow by commmitters.
-It's meant to be used for code reviews with the aim at improving quality and consistency of the code. Failure to comply with these guidelines may result in rejection of pull requests.
+This document is an extension to [CONTRIBUTING](./CONTRIBUTING.md) and provides more details about the coding guidelines and best practices to follow by committers.
+It's meant to be used for code reviews with the aim of improving quality and consistency of the code. Failure to comply with these guidelines may result in rejection of pull requests.
 
-To propose a change in the coding guidelines, simply submit a pull request on this document. make sure you give a unique ID to any guideline in the form of DEVSTD-<ID> so it can be easily refered.
+To propose a change in the coding guidelines, simply submit a pull request on this document. make sure you give a unique ID to any guideline in the form of DEVSTD-<ID> so it can be easily referred.
 
 ## General
 
@@ -25,13 +25,13 @@ To propose a change in the coding guidelines, simply submit a pull request on th
   Commits inside PRs must have clear description
   
 ### DEVSTD-18
-  No whitespace changes or formatting changes has to be made in PRs. In fact, the PR can become unreadable with those changes.
+  No whitespace changes or formatting changes have to be made in PRs. In fact, the PR can become unreadable with those changes.
   
 ### DEVSTD-19
   Before requesting a PR, ensure that the build passes and that the branch is up to date with destination branch
   
 ### DEVSTD-20
-  When merging a PR, if it's about a fix or a quick win, the PR should be squached to a single commit and then merged. Else, if it's a Feature, a "Merge" commit should be added to destination branch
+  When merging a PR, if it's about a fix or a quick win, the PR should be squashed to a single commit and then merged. Else, if it's a Feature, a "Merge" commit should be added to destination branch
   
 ### DEVSTD-48	
   Use a clear commit message of format TASK-XYZ (replace XYZ by task number) and a clear description that explains:
@@ -71,7 +71,7 @@ To propose a change in the coding guidelines, simply submit a pull request on th
   
 ### DEVSTD-15	
   Add Unit tests. 
-  When the issue is about a bug, the test has to fail wihout the fix and must succeeds with the proposed patch
+  When the issue is about a bug, the test has to fail without the fix and must succeed with the proposed patch
   
 ### DEVSTD-16	
   Use and implement equals and hashcode methods to compare Objects
@@ -88,7 +88,7 @@ To propose a change in the coding guidelines, simply submit a pull request on th
   No exception should be swallowed. A log.debug is sometimes sufficient, if the exception is expected
   
 ### DEVSTD-24	
-  An exception should be either loggued or rethrown, not both
+  An exception should be either logged or rethrown, not both
   
 ### DEVSTD-13	
   Never swallow exceptions
@@ -100,14 +100,14 @@ To propose a change in the coding guidelines, simply submit a pull request on th
 ## Persistence  
   
 ### DEVSTD-27	
-  Make sure that all RDBMS fields accepts emoticons characters and that it's displayed correctly in front-end only if explicitly not acceptable 
+  Make sure that all RDBMS fields accept emoticons characters and that it's displayed correctly in front-end only if explicitly not acceptable 
   
 ### DEVSTD-28	
   Avoid using org.exoplatform.services.security.ConversationState.getCurrent() in Service & Storage layers. 
   In fact, the access to the currently connected user should be done from higher layer such as REST Service / Portlet. 
   
 ### DEVSTD-32	
-  Data structure upgrades of JPA Entities has to be made using Liquibase changelogs
+  Data structure upgrades of JPA Entities have to be made using Liquibase changelogs
   
 ### DEVSTD-33	
   Data content upgrades has to be made using Commons-Upgrade API (See link for more details)
@@ -120,7 +120,7 @@ To propose a change in the coding guidelines, simply submit a pull request on th
 ## REST APIs
   
 ### DEVSTD-36	
-  Use @RolesAllowed annontation in ALL REST endpoint METHODs (not classes) in order to restrict access whether to all connected "users" or to "administrators" only (when this is about an administration operation).
+  Use @RolesAllowed annotation in ALL REST endpoint METHODs (not classes) in order to restrict access whether to all connected "users" or to "administrators" only (when this is about an administration operation).
 Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access to an endpoint, thus a token validation process MUST be made for anonymous users, see org.exoplatform.social.rest.impl.user.UserRestResourcesV1.getUserAvatarById AND org.exoplatform.agenda.rest.AgendaEventRest.sendEventResponse
   
 ### DEVSTD-37	
@@ -143,10 +143,10 @@ Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access 
 - For the client side, we will have to use v-text or {{}} to display the information to make sure that it's escaped (Never use v-html here)
   
 ### DEVSTD-41	
-  Use HTTP 404 response code instead of 403 when the URL uses username as path parameter or query parameter. This will avoid to give information about the existance of a User having the requested username
+  Use HTTP 404 response code instead of 403 when the URL uses username as path parameter or query parameter. This will avoid to give information about the existence of a User having the requested username
   
 ###  DEVSTD-42	
-  Never give the possibility for Server to make HTTP requests to internet (adding a URL as parameter that will be fetched by Server for example or even conscieving a flow in the application that let Server making a flow to internet) => Avoid SSRF attacks
+  Never give the possibility for Server to make HTTP requests to internet (adding a URL as parameter that will be fetched by Server for example or even conceiving a flow in the application that let Server making a flow to internet) => Avoid SSRF attacks
   
 ### DEVSTD-43	
   Avoid giving access to 'ANY' (anonymous access) to non static and non restricted resources. For example, default JCR nodes MUST grant access to authenticated users (/platform/users) at minimum
@@ -168,7 +168,7 @@ Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access 
 ### DEVSTD-47	
   Separate interfaces from their implementation, put each in a separate jar. This will help define new implementations for available services depending on the defined architecture (Monoloith, Microservice, etc ...)
  - All services interfaces, Exceptions should be included in an API module (JAR)
- - All implementations and Utils classes sould be put inside Implementations module (JAR)
+ - All implementations and Utils classes should be put inside Implementations module (JAR)
 
 
 ## Javascript
@@ -183,10 +183,10 @@ Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access 
   Avoid defining colors outside the file variables.less of platform-ui project.
   
 ### DEVSTD-31	
-  Avoid defining new colors that wasn't specified in branding chart of eXo Platform by designers
+  Avoid defining new colors that weren't specified in branding chart of eXo Platform by designers
   
 ### DEVSTD-34	
-  When naming a Vue file, it has to be an explicit name that references the addon/project, the module/portlet and its name. This naming convension is like naming an FQN of a class. In fact, in eXo Platform, we have multiple Vue instances in a single page, by using this naming convension, we will avoid names collision, same as defining the same FQN of a java class in two jars.
+  When naming a Vue file, it has to be an explicit name that references the addon/project, the module/portlet and its name. This naming convention is like naming an FQN of a class. In fact, in eXo Platform, we have multiple Vue instances in a single page, by using this naming convention, we will avoid names collision, same as defining the same FQN of a java class in two jars.
   
 ### DEVSTD-35	
   Each portlet style has to be defined with parent ID style, example: #AwsomePortletId {...other styles...}. This will avoid applying styles on other elements outside the portlet and thus avoid regressions.
