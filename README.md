@@ -14,7 +14,7 @@ Take a coffee, a tea, whatever you like the time that Maven downloads the earth 
 
 If you are using a Maven Repository Manager you need to proxify our repository <https://repository.exoplatform.org/public/> (snapshots and releases).
 
-If you are using a mirror in your maven settings you need to exlude our repository identifier `repository.exoplatform.org` if your mirror don't proxify it.
+If you are using a mirror in your maven settings you need to exclude our repository identifier `repository.exoplatform.org` if your mirror doesn't proxify it.
 
 Build options
 -------------
@@ -24,7 +24,7 @@ Add `-Dskip-archive` in your build command line to not generate the final zip ar
 How to launch ?
 ---------------
 
-From the top level directory of the project oou can launch the server you just generated with :
+From the top level directory of the project you can launch the server you just generated with :
 
     plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>/start_eXo.(sh|bat)
 
