@@ -27,186 +27,126 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <packaging>pom</packaging>
   <name>eXo Meeds:: Meeds Public Distribution - Packaging - Dependencies</name>
   <dependencies>
+    <!-- Portal  -->
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.portlet.exoadmin</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.portlet.web</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.web.eXoResources</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.web.portal</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.gatein.portal</groupId>
+      <artifactId>exo.portal.web.rest</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- Commons -->
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
       <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-comet-webapp</artifactId>
-      <type>pom</type>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
       <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-extension-webapp</artifactId>
-      <type>pom</type>
+      <scope>runtime</scope>
     </dependency>
     <!-- Platform UI -->
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-skin</artifactId>
       <type>war</type>
+      <scope>runtime</scope>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform-ui</groupId>
-      <artifactId>platform-ui-skin</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- Platform Distrib -->
+    <!-- Meeds.io Distrib -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-meeds-extension</artifactId>
       <type>war</type>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-root-webapp</artifactId>
       <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>plf-root-webapp</artifactId>
-      <type>pom</type>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-integration-webapp</artifactId>
       <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- Meeds.io - common configuration for all distributions  -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-configuration</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <!-- Social -->
     <dependency>
       <groupId>org.exoplatform.social</groupId>
+      <artifactId>social-webapp-portlet</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>war</type>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>pom</type>
+      <scope>import</scope>
       <exclusions>
+        <exclusion>
+          <groupId>org.exoplatform.gatein.portal</groupId>
+          <artifactId>exo.portal.component.test.core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.exoplatform.gatein.portal</groupId>
+          <artifactId>exo.portal.component.test.web</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.exoplatform.commons</groupId>
+          <artifactId>commons-testing</artifactId>
+        </exclusion>
         <exclusion>
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
         </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-portlet</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-webapp-portlet</artifactId>
-      <type>pom</type>
-    </dependency>
-    <!-- Platform - common configuration for all distributions  -->
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>plf-configuration</artifactId>
-    </dependency>
-    <!-- SSO - integration SSO jars  -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.sso</groupId>
-      <artifactId>sso-agent</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.sso</groupId>
-      <artifactId>sso-integration</artifactId>
-    </dependency>
-    <!-- org.exoplatform.management.RestManagementProvider used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.management</artifactId>
-      <exclusions>
         <exclusion>
-          <groupId>javax.xml.stream</groupId>
-          <artifactId>stax-api</artifactId>
+          <groupId>io.swagger.core.v3</groupId>
+          <artifactId>swagger-annotations</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.portal</artifactId>
-    </dependency>
-    <!-- org.exoplatform.services.rest.ext.service.RestServicesListApplication used in runtime -->
-    <dependency>
-      <groupId>org.exoplatform.ws</groupId>
-      <artifactId>exo.ws.rest.ext</artifactId>
-    </dependency>
-    <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.component.web.oauth-web</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.exoplatform.gatein.sso</groupId>
-          <artifactId>sso-integration</artifactId>
-        </exclusion>
-        <!-- DEP-105: Coming by transitivity from picocontainer:picocontainer -->
-        <exclusion>
-          <artifactId>xpp3</artifactId>
-          <groupId>xpp3</groupId>
-        </exclusion>
-        <!-- Coming by transitivity from com.google.http-client:google-http-client-jackson2 -->
-        <exclusion>
-          <groupId>com.fasterxml.jackson.core</groupId>
-          <artifactId>jackson-core</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- org.gatein.security.oauth.webapi.OAuthDelegateFilter used but not declared in GateIn ? -->
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.exoadmin</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.portlet.web</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.web.eXoResources</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.web.portal</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
-      <artifactId>exo.portal.web.rest</artifactId>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>net.sourceforge.htmlcleaner</groupId>
-      <artifactId>htmlcleaner</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.portals.bridges</groupId>
-      <artifactId>portals-bridges-common</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-
-
-
-
   </dependencies>
 </project>
