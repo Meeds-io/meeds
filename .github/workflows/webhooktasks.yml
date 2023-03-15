@@ -1,0 +1,21 @@
+name: eXo Pull Request Tribe Notifications
+
+on:
+  pull_request:
+    types: [opened, reopened, closed, review_requested]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  notify_tasks:
+    name: Check for tasks identifiers
+    runs-on: ubuntu-latest
+    steps:
+      - name: eXo Tasks Webhook
+        uses: Green-Hub-Tools/notifs-task@v1
+        with:
+          SERVER_URL: 'https://community.exoplatform.com'
+          SERVER_DEFAULT_SITENAME: 'dw'
+          SERVER_USERNAME: ${{ secrets.TRIBE_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.TRIBE_PASSWORD }}
+          TASKS_REGEX_FILTER: '(task|maint|exo)((-|_)[0-9]{4,})+' 
