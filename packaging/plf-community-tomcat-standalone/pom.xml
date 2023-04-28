@@ -93,12 +93,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.addons.push-notifications</groupId>
-      <artifactId>exo-push-notifications-addon-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.exoplatform.addons.app-center</groupId>
       <artifactId>app-center-packaging</artifactId>
       <type>zip</type>
@@ -357,9 +351,6 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.app-center.id}:${addon.exo.app-center.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
-                </exec>
-                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.exo.push-notifications.id}:${addon.exo.push-notifications.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.notes.id}:${addon.exo.notes.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
