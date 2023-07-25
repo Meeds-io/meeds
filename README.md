@@ -68,7 +68,7 @@ cosign verify --key cosign.pub ghcr.io/meeds-io/meeds/meeds-io:develop
 ```json
 [{"critical":{"identity":{"docker-reference":"ghcr.io/meeds-io/meeds/meeds-io"},"image":{"docker-manifest-digest":"sha256:da29f98a3000ae5232ceb2502ce2ae10903969c762b1d3d4e43a8b7104b87888"},"type":"cosign container image signature"},"optional":null}]
 ```
-Also starting with Meeds `1.5.0-M11` from DockerHub, Meeds docker will be signed with `cosign` tool. In order to verify its signature:
+Also starting with Meeds `1.5.0-M11` from DockerHub, Meeds docker [meedsio/meeds](https://hub.docker.com/r/meedsio/meeds) image will be signed with `cosign` tool. In order to verify its signature:
 
 Execute the following command:
 ```bash
