@@ -20,8 +20,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>plf-public-distributions</artifactId>
     <groupId>io.meeds.distribution</groupId>
+    <artifactId>meeds</artifactId>
     <version>1.6.x-exo-SNAPSHOT</version>
   </parent>
 

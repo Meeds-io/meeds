@@ -82,7 +82,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         </dependency>
         <dependency>
           <groupId>${project.groupId}</groupId>
-          <artifactId>plf-public-distributions</artifactId>
+          <artifactId>meeds</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>

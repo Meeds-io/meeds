@@ -123,8 +123,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <artifactId>commons-testing</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
+          <groupId>jakarta.servlet</groupId>
+          <artifactId>jakarta.servlet-api</artifactId>
         </exclusion>
         <exclusion>
           <groupId>io.swagger.core.v3</groupId>

@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <relativePath />
   </parent>
   <groupId>io.meeds.distribution</groupId>
-  <artifactId>plf-public-distributions</artifactId>
+  <artifactId>meeds</artifactId>
   <version>1.6.x-exo-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>eXo Meeds:: Meeds Public Distribution</name>
@@ -110,80 +110,80 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <!-- Pre-bundled addons -->
       <dependency>
         <groupId>org.exoplatform.addons.wallet</groupId>
-        <artifactId>wallet-packaging</artifactId>
+        <artifactId>wallet</artifactId>
         <version>${addon.exo.wallet.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.kudos</groupId>
-        <artifactId>kudos-packaging</artifactId>
+        <artifactId>kudos</artifactId>
         <version>${addon.exo.kudos.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.perk-store</groupId>
-        <artifactId>perk-store-packaging</artifactId>
+        <artifactId>perk-store</artifactId>
         <version>${addon.exo.perk-store.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.gamification</groupId>
-        <artifactId>gamification-packaging</artifactId>
+        <artifactId>gamification</artifactId>
         <version>${addon.exo.gamification.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.app-center</groupId>
-        <artifactId>app-center-packaging</artifactId>
+        <artifactId>app-center</artifactId>
         <version>${addon.exo.app-center.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.notes</groupId>
-        <artifactId>notes-packaging</artifactId>
+        <artifactId>notes</artifactId>
         <version>${addon.exo.notes.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.analytics</groupId>
-        <artifactId>analytics-packaging</artifactId>
+        <artifactId>analytics-parent</artifactId>
         <version>${addon.exo.analytics.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.task</groupId>
-        <artifactId>task-management-packaging</artifactId>
+        <artifactId>task-management-parent</artifactId>
         <version>${addon.exo.tasks.version}</version>
-        <type>zip</type>
-        <scope>provided</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.poll</groupId>
-        <artifactId>poll-packaging</artifactId>
+        <artifactId>poll-parent</artifactId>
         <version>${addon.exo.poll.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.exoplatform.addons.gamification-github</groupId>
-        <artifactId>gamification-github-packaging</artifactId>
+        <artifactId>gamification-github</artifactId>
         <version>${addon.meeds.gamification-github.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>io.meeds.gamification-twitter</groupId>
-        <artifactId>gamification-twitter-packaging</artifactId>
+        <artifactId>gamification-twitter-parent</artifactId>
         <version>${addon.meeds.gamification-twitter.version}</version>
-        <scope>provided</scope>
-        <type>zip</type>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <!-- Project artifacts -->
       <dependency>
@@ -198,13 +198,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>plf-public-distributions</artifactId>
+        <artifactId>meeds</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>plf-public-distributions</artifactId>
+        <artifactId>meeds</artifactId>
         <version>${project.version}</version>
         <type>zip</type>
         <classifier>source-release</classifier>
