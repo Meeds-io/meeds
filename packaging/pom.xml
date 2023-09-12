@@ -22,7 +22,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>meeds</artifactId>
-    <version>7.0.x-meed-SNAPSHOT</version>
+    <version>7.0.x-whitepaper-SNAPSHOT</version>
   </parent>
 
   <name>Meeds:: Meeds:: Meeds Public Distribution - Packaging</name>
