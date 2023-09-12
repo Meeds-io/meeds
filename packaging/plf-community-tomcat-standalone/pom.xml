@@ -22,7 +22,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
-    <version>7.0.x-meed-SNAPSHOT</version>
+    <version>7.0.x-meeds-qaui-SNAPSHOT</version>
   </parent>
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
