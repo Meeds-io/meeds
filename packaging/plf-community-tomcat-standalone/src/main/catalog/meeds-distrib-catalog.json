@@ -187,7 +187,7 @@
     "description": "Gamification Twitter connector add-on",
     "sourceUrl": "https://github.com/meeds-io/gamification-twitter",
     "documentationUrl": "https://github.com/meeds-io/gamification-twitter",
-    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/gamification-twitter/gamification-twitter-packaging/${addon.meeds.gamification-twitter.version}/gamification-twitter-packaging-${addon.meeds.gamification-twitter.version}.zip",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/gamification-twitter/gamification-twitter-packaging/${addon.meeds.gamification-twitter.version}/gamification-twitter-packaging-${addon.meeds.gamification-twitter.version}.zip",
     "vendor": "Meeds.io",
     "author": "Meeds.io",
     "license": "LGPLv3",
