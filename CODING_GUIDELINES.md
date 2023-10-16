@@ -111,10 +111,6 @@ To propose a change in the coding guidelines, simply submit a pull request on th
   
 ### DEVSTD-33	
   Data content upgrades has to be made using Commons-Upgrade API (See link for more details)
-  
-### DEVSTD-52	
-  Avoid using SessionProviderService.getSystemSessionProvider in Service & Bottom layer since this Service shares the session provider in a thread local in User HTTP Requests.
-  
 
 
 ## REST APIs
@@ -197,5 +193,7 @@ Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access 
   Avoid adding CSS in Vue components and place it in gatein-resources.xml as portlet skin
   
 ### DEVSTD-26	
-  Use "computed" properties as much as possible inside Vue components instead of objects attributes direct access
+  Use "computed" properties as much as possible inside Vue components instead of objects attributes direct access and instead of computing results to display in DOM using method calls.
 
+### DEVSTD-52	
+  When modifying a REST API parameters, you must make sure to alter the `prefetch` directive configured in `porlet.xml`, JSP or GTMPL.
