@@ -176,21 +176,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </route>
 
   <!-- The legacy route -->
-  <route path="/public">
-    <route path="/">
-      <route-param qname="gtn:handler">
-        <value>default</value>
-      </route-param>
-    </route>
-    <route path="/{gtn:sitename}/{gtn:path}">
-      <route-param qname="gtn:handler">
-        <value>legacy</value>
-      </route-param>
-      <path-param qname="gtn:path" encoding="preserve-path">
-        <pattern>.*</pattern>
-      </path-param>
-    </route>
-  </route>
   <route path="/private">
     <route path="/">
       <route-param qname="gtn:handler">
