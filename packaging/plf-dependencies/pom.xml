@@ -69,6 +69,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>plf-sites-extension</artifactId>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>plf-root-webapp</artifactId>
       <type>war</type>
       <scope>runtime</scope>
