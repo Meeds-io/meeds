@@ -31,6 +31,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <property name="io.meeds.useWebuiResources" value="false" />
         <property name="exo.feature.PostToNetwork.enabled" value="${exo.feature.PostToNetwork.enabled:true}" />
         <property name="exo.feature.SNVFullPageAccess.enabled" value="${exo.feature.SNVFullPageAccess.enabled:false}" />
+        <property name="exo.portal.dynamic.group.layout.useCurrentPortalLayout" value="false" />
+        <property name="exo.portal.dynamic.user.layout.useCurrentPortalLayout" value="false" />
+        <property name="exo.portal.dynamic.space.layout.useCurrentPortalLayout" value="false" />
       </properties-param>
     </init-params>
   </component>
