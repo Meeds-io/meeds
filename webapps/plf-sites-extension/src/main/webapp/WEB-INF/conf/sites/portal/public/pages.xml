@@ -40,21 +40,6 @@
         <container
           template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
           cssClass="mb-5">
-          <access-permissions>*:/platform/administrators</access-permissions>
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>BannerPublishSite</portlet-ref>
-            </portlet>
-            <title>Banner Publish Site</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-          </portlet-application>
-        </container>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="mb-5">
           <access-permissions>Everyone</access-permissions>
           <portlet-application>
             <portlet>
