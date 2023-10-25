@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<configuration
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.portal.config.UserPortalConfigService</target-component>
+    <component-plugin>
+      <name>public.config</name>
+      <set-method>initListener</set-method>
+      <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
+      <init-params>
+        <object-param>
+          <name>portal.configuration</name>
+          <object type="org.exoplatform.portal.config.NewPortalConfig">
+            <field name="predefinedOwner">
+              <collection type="java.util.HashSet">
+                <value>
+                  <string>public</string>
+                </value>
+              </collection>
+            </field>
+            <field name="ownerType">
+              <string>portal</string>
+            </field>
+            <field name="location">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="override">
+              <boolean>${io.meeds.public.portalConfig.metadata.override:true}</boolean>
+            </field>
+            <field name="importMode">
+              <string>${io.meeds.public.portalConfig.metadata.importmode:insert}</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+</configuration>

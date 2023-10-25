@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 This file is part of the Meeds project (https://meeds.io/).
 Copyright (C) 2020 Meeds Association
@@ -15,25 +16,17 @@ along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.meeds.distribution</groupId>
-    <artifactId>plf-public-distributions</artifactId>
+    <artifactId>plf-webapps</artifactId>
     <version>1.5.x-meedsv2-SNAPSHOT</version>
   </parent>
-
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps</name>
-  <artifactId>plf-webapps</artifactId>
-  <packaging>pom</packaging>
-
-  <modules>
-    <module>plf-root-webapp</module>
-    <module>plf-tomcat-integration-webapp</module>
-    <module>plf-meeds-extension</module>
-    <module>plf-sites-extension</module>
-  </modules>
-
+  <artifactId>plf-sites-extension</artifactId>
+  <packaging>war</packaging>
+  <name>eXo Meeds:: Meeds Public Distribution - Webapps - common sites definition WebApp</name>
+  <build>
+    <finalName>sites</finalName>
+  </build>
 </project>
