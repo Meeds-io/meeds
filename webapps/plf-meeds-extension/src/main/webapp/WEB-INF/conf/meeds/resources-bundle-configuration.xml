@@ -30,10 +30,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <name>init.resources</name>
             <description>Initiate the following resources during the first launch</description>
             <value>locale.navigation.portal.meeds</value>
+            <value>locale.navigation.portal.public</value>
           </values-param>
           <values-param>
             <name>portal.resource.names</name>
             <value>locale.navigation.portal.meeds</value>
+            <value>locale.navigation.portal.public</value>
           </values-param>
         </init-params>
         </component-plugin>
