@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<configuration
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.container.definition.PortalContainerConfig</target-component>
+    <component-plugin>
+      <name>Change PortalContainer Definitions</name>
+      <set-method>registerChangePlugin</set-method>
+      <type>org.exoplatform.container.definition.PortalContainerDefinitionChangePlugin</type>
+      <priority>200</priority>
+      <init-params>
+        <value-param>
+          <name>apply.default</name>
+          <value>true</value>
+        </value-param>
+        <values-param>
+          <name>add.profiles</name>
+          <value>sites</value>
+        </values-param>
+        <object-param>
+          <name>change</name>
+          <object type="org.exoplatform.container.definition.PortalContainerDefinitionChange$AddDependencies">
+            <field name="dependencies">
+              <collection type="java.util.ArrayList">
+                <value>
+                  <string>sites</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>     
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+</configuration>
