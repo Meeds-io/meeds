@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    Copyright (C) 2003-2007 eXo Platform SAS.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Affero General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+-->
+<page 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2 http://www.gatein.org/xml/ns/gatein_objects_1_2"
+    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
+  <owner-type></owner-type>
+  <owner-id></owner-id>
+  <name></name>
+  <container id="SpacePage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    <container id="Menu" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <portlet-application>
+        <portlet>
+          <application-ref>social-portlet</application-ref>
+          <portlet-ref>SpaceMenuPortlet</portlet-ref>
+        </portlet>
+        <access-permissions>*:/platform/users</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+    <container id="Application" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    </container>
+  </container>
+</page>

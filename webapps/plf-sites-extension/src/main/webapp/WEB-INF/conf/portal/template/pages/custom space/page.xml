@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2 http://www.gatein.org/xml/ns/gatein_objects_1_2"
+    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
+	<owner-type/>
+	<owner-id/>
+	<name/>
+	<container id="SpaceMenu" template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">  
+		<portlet-application>
+			<portlet>
+			  <application-ref>social-portlet</application-ref>
+			  <portlet-ref>SpaceMenuPortlet</portlet-ref>
+			</portlet>
+			<show-info-bar>false</show-info-bar>
+		</portlet-application>
+	</container>
+	<container id="SpaceApplications" template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
+   <container id="ActivityStreamPortlet" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+			<portlet-application>
+				<portlet>
+				  <application-ref>social-portlet</application-ref>
+				  <portlet-ref>SpaceActivityStreamPortlet</portlet-ref>
+				</portlet>
+				<show-info-bar>false</show-info-bar>
+			</portlet-application>      
+		</container> 
+	</container>
+</page>
