@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+This file is part of the Meeds project (https://meeds.io/).
+Copyright (C) 2020 Meeds Association
+contact@meeds.io
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 3 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<page-set
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_6 http://www.gatein.org/xml/ns/gatein_objects_1_6"
+        xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_6">
+  <page>
+    <name>walletAdministration</name>
+    <title>Wallet adminsitration</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container id="singlePageApplicationContainer"
+      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+      cssClass="singlePageApplication">
+      <access-permissions>*:/platform/users</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>wallet</application-ref>
+          <portlet-ref>WalletAdmin</portlet-ref>
+        </portlet>
+        <title>Wallet adminsitration</title>
+        <access-permissions>*:/platform/rewarding</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+  </page>
+  <page>
+    <name>rewardAdministration</name>
+    <title>Reward administration</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container id="singlePageApplicationContainer"
+      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+      cssClass="singlePageApplication">
+      <access-permissions>*:/platform/users</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>wallet</application-ref>
+          <portlet-ref>RewardAdmin</portlet-ref>
+        </portlet>
+        <title>Reward administration</title>
+        <access-permissions>*:/platform/rewarding</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+  </page>
+  <page>
+    <name>gamificationConnectorsAdministration</name>
+    <title>Gamification Connectors Administration</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+               cssClass="singlePageApplication">
+      <access-permissions>*:/platform/rewarding</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>gamification-portlets</application-ref>
+          <portlet-ref>ConnectorAdminSettings</portlet-ref>
+        </portlet>
+        <title>Gamification Connectors Administration</title>
+        <access-permissions>*:/platform/rewarding</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+  </page>
+  <page>
+    <name>gamificationBadgesAdministration</name>
+    <title>Gamification Badges Administration</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+               cssClass="singlePageApplication">
+      <access-permissions>*:/platform/rewarding</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>gamification-portlets</application-ref>
+          <portlet-ref>GamificationManageBadges</portlet-ref>
+        </portlet>
+        <title>Gamification Manage Badges</title>
+        <access-permissions>*:/platform/rewarding</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+  </page>
+  <page>
+    <name>perkStoreAdministration</name>
+    <title>perk store administration</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container id="singlePageApplicationContainer"
+      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+      cssClass="singlePageApplication">
+      <access-permissions>*:/platform/users</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>perk-store</application-ref>
+          <portlet-ref>PerkStoreAdmin</portlet-ref>
+        </portlet>
+        <title>perk store administration</title>
+        <access-permissions>*:/platform/rewarding</access-permissions>
+        <show-info-bar>false</show-info-bar>
+      </portlet-application>
+    </container>
+  </page>
+</page-set>
