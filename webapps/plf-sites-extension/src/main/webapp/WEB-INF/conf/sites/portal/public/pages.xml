@@ -19,7 +19,8 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<page-set
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_10 http://www.exoplatform.org/xml/ns/gatein_objects_1_10"
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_10">
 
@@ -101,7 +102,7 @@
             <show-application-state>false</show-application-state>
           </portlet-application>
         </container>
-        <container template="system:/groovy/portal/webui/container/UIOpenRegistrationContainer.gtmpl">
+        <container template="system:/groovy/webui/container/UIOpenRegistrationContainer.gtmpl">
           <access-permissions>Everyone</access-permissions>
           <container
             id="gamificationWidgets"
@@ -109,6 +110,25 @@
             cssClass="mb-5"
             profiles="gamification">
             <access-permissions>Everyone</access-permissions>
+            <container template="system:/groovy/webui/container/UINoPublicProgramContainer.gtmpl">
+              <access-permissions>Everyone</access-permissions>
+              <container
+                id="CreateProgramButtonContainer"
+                template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
+                cssClass="col-12"
+                profiles="gamification">
+                <access-permissions>*:/platform/rewarding</access-permissions>
+                <portlet-application>
+                  <portlet>
+                    <application-ref>gamification-portlets</application-ref>
+                    <portlet-ref>CreateProgramButton</portlet-ref>
+                  </portlet>
+                  <title>Create Program Button</title>
+                  <access-permissions>Everyone</access-permissions>
+                  <show-info-bar>false</show-info-bar>
+                </portlet-application>
+              </container>
+            </container>
             <container
               id="TopChallengersContainer"
               template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
@@ -169,7 +189,7 @@
     <access-permissions>Everyone</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIOpenRegistrationContainer.gtmpl">
+    <container template="system:/groovy/webui/container/UIOpenRegistrationContainer.gtmpl">
       <access-permissions>Everyone</access-permissions>
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>Everyone</access-permissions>
