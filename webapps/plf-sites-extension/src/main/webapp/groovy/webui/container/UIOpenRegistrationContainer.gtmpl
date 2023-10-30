@@ -1,0 +1,9 @@
+<%
+  import io.meeds.portal.security.service.SecuritySettingService;
+  import io.meeds.portal.security.constant.UserRegistrationType;
+
+  if(_ctx.getRequestContext().getUIApplication().isEditing()
+     || UserRegistrationType.OPEN == uicomponent.getApplicationComponent(SecuritySettingService.class).getRegistrationType()) {
+    uicomponent.renderChildren();
+  }
+%>
