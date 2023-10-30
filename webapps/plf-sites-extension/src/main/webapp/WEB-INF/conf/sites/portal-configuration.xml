@@ -19,47 +19,44 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
+<configuration
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
+
   <external-component-plugins>
     <target-component>org.exoplatform.portal.config.UserPortalConfigService</target-component>
     <component-plugin>
-      <name>new.portal.config.user.listener</name>
+      <name>public.config</name>
       <set-method>initListener</set-method>
       <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
-      <description>This listener creates a page for Meeds site</description>
       <init-params>
-        <value-param>
-          <name>default.portal</name>
-          <description>The default portal</description>
-          <value>meeds</value>
-        </value-param>
         <object-param>
           <name>portal.configuration</name>
-          <description>description</description>
           <object type="org.exoplatform.portal.config.NewPortalConfig">
-            <field name="ownerType">
-              <string>portal</string>
-            </field>
             <field name="predefinedOwner">
               <collection type="java.util.HashSet">
                 <value>
-                  <string>meeds</string>
+                  <string>public</string>
                 </value>
               </collection>
             </field>
-            <field name="override">
-              <boolean>${meeds.portalConfig.metadata.override:true}</boolean>
-            </field>
-            <field name="importMode">
-              <string>${meeds.portalConfig.metadata.importmode:overwrite}</string>
+            <field name="ownerType">
+              <string>portal</string>
             </field>
             <field name="location">
-              <string>war:/conf/meeds/</string>
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="override">
+              <boolean>${io.meeds.public.portalConfig.metadata.override:true}</boolean>
+            </field>
+            <field name="importMode">
+              <string>${io.meeds.public.portalConfig.metadata.importmode:insert}</string>
             </field>
           </object>
         </object-param>
       </init-params>
     </component-plugin>
   </external-component-plugins>
+
 </configuration>
