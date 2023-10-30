@@ -133,4 +133,19 @@
     </component-plugin>
   </external-component-plugins>
 
+  <external-component-plugins>
+    <target-component>org.exoplatform.services.listener.ListenerService</target-component>
+    <component-plugin>
+      <name>meeds.settings.access.type.modified</name>
+      <set-method>addListener</set-method>
+      <type>io.meeds.portal.security.listener.PortalRegistrationUpdateListener</type>
+      <init-params>
+        <values-param>
+          <name>managed-pages</name>
+          <value>overview/actions</value>
+        </values-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
 </configuration>
