@@ -24,6 +24,33 @@
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd http://www.exoplatform.org/xml/ns/kernel_1_3.xsd"
   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
 
+  <component>
+    <key>SitesConfigProperties</key>
+    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
+    <init-params>
+      <properties-param>
+        <name>SitesConfigProperties</name>
+        <property name="io.meeds.engagementSite.name" value="${io.meeds.engagementSite.name:meeds}" />
+        <property name="io.meeds.myCraftSite.name" value="${io.meeds.myCraftSite.name:meeds}" />
+      </properties-param>
+    </init-params>
+  </component>
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.groovyscript.text.TemplateService</target-component>
+    <component-plugin>
+      <name>UIPortalApplication-head</name>
+      <set-method>addTemplateExtension</set-method>
+      <type>org.exoplatform.groovyscript.text.TemplateExtensionPlugin</type>
+      <init-params>
+        <values-param>
+          <name>templates</name>
+          <value>war:/groovy/webui/UISitesPortalApplicationHead.gtmpl</value>
+        </values-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
   <external-component-plugins>
     <target-component>org.exoplatform.portal.config.UserPortalConfigService</target-component>
     <component-plugin>
