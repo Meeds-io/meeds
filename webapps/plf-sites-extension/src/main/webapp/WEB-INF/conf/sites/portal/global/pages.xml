@@ -190,6 +190,23 @@
   </page>
 
   <page>
+    <name>page-not-found</name>
+    <title>Page Not Found</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <portlet-application>
+      <portlet>
+        <application-ref>social-portlet</application-ref>
+        <portlet-ref>PageNotFound</portlet-ref>
+      </portlet>
+      <title>Page Not Found</title>
+      <access-permissions>Everyone</access-permissions>
+      <show-info-bar>false</show-info-bar>
+      <show-application-state>true</show-application-state>
+    </portlet-application>
+  </page>
+
+  <page>
     <name>settings</name>
     <title>Settings</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
