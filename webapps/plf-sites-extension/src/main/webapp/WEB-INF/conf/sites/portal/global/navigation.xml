@@ -282,5 +282,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::appCenterUserSetup</page-reference>
     </node>
+    <node>
+      <name>page-not-found</name>
+      <label>#{portal.global.pageNotFound}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::pageNotFound</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
