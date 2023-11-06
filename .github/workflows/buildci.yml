@@ -1,0 +1,12 @@
+name: CI PR Build
+on:
+  pull_request:
+jobs:
+  build-ci:
+    name: CI Build
+    uses: exoplatform/swf-scripts/.github/workflows/cibuild.yml@master
+    with:
+      maven_profiles: 'exo-release,coverage'
+    secrets:
+      NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
