@@ -1,0 +1,8 @@
+<%
+  import io.meeds.gamification.service.ProgramService;
+
+  if(_ctx.getRequestContext().getUIApplication().isEditing()
+      || uicomponent.getApplicationComponent(ProgramService.class).countPublicPrograms() == 0) {
+    uicomponent.renderChildren();
+  }
+%>
