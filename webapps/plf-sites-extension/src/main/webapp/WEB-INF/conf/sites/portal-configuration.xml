@@ -89,7 +89,7 @@
               <boolean>${io.meeds.groups.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${io.meeds.groups.portalConfig.metadata.importmode:overwrite}</string>
+              <string>${io.meeds.groups.portalConfig.metadata.importmode:merge}</string>
             </field>
           </object>
         </object-param>
