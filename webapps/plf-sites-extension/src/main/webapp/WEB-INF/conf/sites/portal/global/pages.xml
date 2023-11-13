@@ -645,6 +645,48 @@
             </portlet-application>
           </container>
           <container
+            id="TopChallengersContainer"
+            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>topChallengers</portlet-ref>
+              </portlet>
+              <title>Top Challengers</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container
+            id="ChallengesOverviewContainer"
+            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>challengesOverview</portlet-ref>
+              </portlet>
+              <title>Challenges Overview</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container
+            id="ProgramsOverviewContainer"
+            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
+            <portlet-application>
+              <portlet>
+                <application-ref>gamification-portlets</application-ref>
+                <portlet-ref>programsOverview</portlet-ref>
+              </portlet>
+              <title>Programs Overview</title>
+              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+              <show-info-bar>false</show-info-bar>
+            </portlet-application>
+          </container>
+          <container
             id="contributionsContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
             cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
@@ -682,48 +724,6 @@
                 <portlet-ref>myRewards</portlet-ref>
               </portlet>
               <title>My Rewards</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="TopChallengersContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>topChallengers</portlet-ref>
-              </portlet>
-              <title>Top Challengers</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="ChanllengesOverviewContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>challengesOverview</portlet-ref>
-              </portlet>
-              <title>Challenges Overview</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="ProgramsOverviewContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>programsOverview</portlet-ref>
-              </portlet>
-              <title>Programs Overview</title>
               <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
               <show-info-bar>false</show-info-bar>
             </portlet-application>
