@@ -179,5 +179,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+},{
+    "id": "meeds-gamification-twitter",
+    "version": "${addon.meeds.gamification-twitter.version}",
+    "unstable": false,
+    "name": "Gamification Twitter connector add-on",
+    "description": "Gamification Twitter connector add-on",
+    "sourceUrl": "https://github.com/meeds-io/gamification-twitter",
+    "documentationUrl": "https://github.com/meeds-io/gamification-twitter",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/gamification-twitter/gamification-twitter-packaging/${addon.meeds.gamification-twitter.version}/gamification-twitter-packaging-${addon.meeds.gamification-twitter.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
