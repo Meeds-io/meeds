@@ -76,6 +76,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.poll.version>1.2.x-exo-SNAPSHOT</addon.exo.poll.version>
     <addon.meeds.gamification-github.id>meeds-gamification-github</addon.meeds.gamification-github.id>
     <addon.meeds.gamification-github.version>1.2.x-exo-SNAPSHOT</addon.meeds.gamification-github.version>
+    <addon.meeds.gamification-twitter.id>meeds-gamification-twitter</addon.meeds.gamification-twitter.id>
+    <addon.meeds.gamification-twitter.version>1.0.x-SNAPSHOT</addon.meeds.gamification-twitter.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
     
@@ -173,6 +175,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>org.exoplatform.addons.gamification-github</groupId>
         <artifactId>gamification-github-packaging</artifactId>
         <version>${addon.meeds.gamification-github.version}</version>
+        <scope>provided</scope>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.gamification-twitter</groupId>
+        <artifactId>gamification-twitter-packaging</artifactId>
+        <version>${addon.meeds.gamification-twitter.version}</version>
         <scope>provided</scope>
         <type>zip</type>
       </dependency>
