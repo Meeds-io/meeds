@@ -39,8 +39,7 @@
         cssClass="v-application v-application--is-ltr v-application--wrap singlePageApplication">
         <access-permissions>Everyone</access-permissions>
         <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="mb-5">
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           <access-permissions>Everyone</access-permissions>
           <portlet-application>
             <portlet>
@@ -60,8 +59,7 @@
           </portlet-application>
         </container>
         <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="mb-5">
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           <access-permissions>Everyone</access-permissions>
           <portlet-application>
             <portlet>
@@ -82,7 +80,6 @@
         </container>
         <container
           template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="mb-5"
           profiles="notes">
           <access-permissions>Everyone</access-permissions>
           <portlet-application>
@@ -107,7 +104,6 @@
           <container
             id="gamificationWidgets"
             template="system:/groovy/portal/webui/container/UIVRowContainer.gtmpl"
-            cssClass="mb-5"
             profiles="gamification">
             <access-permissions>Everyone</access-permissions>
             <container template="system:/groovy/webui/container/UINoPublicProgramContainer.gtmpl">
@@ -115,7 +111,7 @@
               <container
                 id="CreateProgramButtonContainer"
                 template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-                cssClass="col-12"
+                cssClass="col-12 pt-3 pb-0"
                 profiles="gamification">
                 <access-permissions>*:/platform/rewarding</access-permissions>
                 <portlet-application>
@@ -132,7 +128,7 @@
             <container
               id="TopChallengersContainer"
               template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-              cssClass="col col-sm-12 col-md-6 col-lg-4"
+              cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
               profiles="gamification">
               <access-permissions>Everyone</access-permissions>
               <portlet-application>
@@ -148,7 +144,7 @@
             <container
               id="ChanllengesOverviewContainer"
               template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-              cssClass="col col-sm-12 col-md-6 col-lg-4"
+              cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
               profiles="gamification">
               <access-permissions>Everyone</access-permissions>
               <portlet-application>
@@ -164,7 +160,7 @@
             <container
               id="ProgramsOverviewContainer"
               template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-              cssClass="col col-sm-12 col-md-6 col-lg-4"
+              cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
               profiles="gamification">
               <access-permissions>Everyone</access-permissions>
               <portlet-application>
