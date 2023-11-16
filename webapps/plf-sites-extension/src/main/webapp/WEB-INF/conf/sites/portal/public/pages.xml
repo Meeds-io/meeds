@@ -111,7 +111,7 @@
               <container
                 id="CreateProgramButtonContainer"
                 template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-                cssClass="col-12 pt-3 pb-0"
+                cssClass="col-12 py-0"
                 profiles="gamification">
                 <access-permissions>*:/platform/rewarding</access-permissions>
                 <portlet-application>
