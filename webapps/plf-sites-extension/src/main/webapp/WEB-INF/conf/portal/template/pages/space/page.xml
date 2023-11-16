@@ -29,7 +29,7 @@
       <portlet-application>
         <portlet>
           <application-ref>social-portlet</application-ref>
-          <portlet-ref>SpaceMenuPortlet</portlet-ref>
+          <portlet-ref>SpaceBannerPortlet</portlet-ref>
         </portlet>
         <access-permissions>*:/platform/users</access-permissions>
         <show-info-bar>false</show-info-bar>

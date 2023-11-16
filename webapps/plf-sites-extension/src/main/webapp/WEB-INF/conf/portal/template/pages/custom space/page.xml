@@ -10,7 +10,7 @@
 		<portlet-application>
 			<portlet>
 			  <application-ref>social-portlet</application-ref>
-			  <portlet-ref>SpaceMenuPortlet</portlet-ref>
+			  <portlet-ref>SpaceBannerPortlet</portlet-ref>
 			</portlet>
 			<show-info-bar>false</show-info-bar>
 		</portlet-application>
