@@ -99,20 +99,21 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </container>
   </page>
   <page>
-    <name>perkStoreAdministration</name>
-    <title>perk store administration</title>
+    <name>recognitionSetup</name>
+    <title>Recognition Setup</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer"
+    <container
+      id="singlePageApplicationContainer"
       template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
       cssClass="singlePageApplication">
       <access-permissions>*:/platform/users</access-permissions>
       <portlet-application>
         <portlet>
-          <application-ref>perk-store</application-ref>
-          <portlet-ref>PerkStoreAdmin</portlet-ref>
+          <application-ref>kudos</application-ref>
+          <portlet-ref>RecognitionSetup</portlet-ref>
         </portlet>
-        <title>perk store administration</title>
+        <title>Recognition Setup</title>
         <access-permissions>*:/platform/rewarding</access-permissions>
         <show-info-bar>false</show-info-bar>
       </portlet-application>

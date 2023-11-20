@@ -26,39 +26,30 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <name>rewardAdministration</name>
       <label>#{wallet.navigation.Reward}</label>
       <node>
+        <name>recognitionSetup</name>
+        <label>#{kudos.navigation.recognitionSetup}</label>
+        <page-reference>group::/platform/rewarding::recognitionSetup</page-reference>
+      </node>
+      <node>
+        <name>gamificationConnectorsAdministration</name>
+        <label>#{gamification.navigation.connectors}</label>
+        <page-reference>group::/platform/rewarding::gamificationConnectorsAdministration</page-reference>
+      </node>
+      <node>
         <name>walletAdministration</name>
         <label>#{wallet.navigation.Wallet}</label>
-        <page-reference>group::/platform/rewarding::walletAdministration
-        </page-reference>
+        <page-reference>group::/platform/rewarding::walletAdministration</page-reference>
       </node>
       <node>
         <name>rewardAdministration</name>
         <label>#{wallet.navigation.Reward}</label>
-        <page-reference>group::/platform/rewarding::rewardAdministration
-        </page-reference>
+        <page-reference>group::/platform/rewarding::rewardAdministration</page-reference>
       </node>
       <node>
-        <name>kudosAdministration</name>
-        <label>#{kudos.navigation.Kudos}</label>
-        <page-reference>group::/platform/rewarding::kudosAdministration</page-reference>
+        <name>gamificationBadgesAdministration</name>
+        <label>#{gamification.navigation.badges}</label>
+        <page-reference>group::/platform/rewarding::gamificationBadgesAdministration</page-reference>
       </node>
-      <node>
-        <name>perkStoreAdministration</name>
-        <label>#{perkStore.navigation}</label>
-        <page-reference>group::/platform/rewarding::perkStoreAdministration</page-reference>
-      </node>
-    </node>
-    <node>
-      <name>gamificationConnectorsAdministration</name>
-      <label>#{gamification.navigation.connectors}</label>
-      <page-reference>group::/platform/rewarding::gamificationConnectorsAdministration
-      </page-reference>
-    </node>
-    <node>
-      <name>gamificationBadgesAdministration</name>
-      <label>#{gamification.navigation.badges}</label>
-      <page-reference>group::/platform/rewarding::gamificationBadgesAdministration
-      </page-reference>
     </node>
   </page-nodes>
 </node-navigation>
