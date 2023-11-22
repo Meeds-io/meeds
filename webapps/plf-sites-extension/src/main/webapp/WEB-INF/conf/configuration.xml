@@ -26,5 +26,6 @@
 
   <import>war:/conf/sites/portal-configuration.xml</import>
   <import>war:/conf/sites/resources-bundle-configuration.xml</import>
+  <import>war:/conf/sites/portal-upgrade-configuration.xml</import>
 
 </configuration>
