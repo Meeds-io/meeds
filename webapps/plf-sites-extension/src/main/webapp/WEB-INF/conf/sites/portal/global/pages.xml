@@ -620,7 +620,7 @@
           <container
             id="overviewBannerContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col-12">
+            cssClass="col-12 py-0">
             <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <portlet-application>
               <portlet>
@@ -647,7 +647,7 @@
           <container
             id="contributionsContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
@@ -661,7 +661,7 @@
           <container
             id="ReputationContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
@@ -675,7 +675,7 @@
           <container
             id="RewardsContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
@@ -689,7 +689,7 @@
           <container
             id="TopChallengersContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
@@ -703,7 +703,7 @@
           <container
             id="ChanllengesOverviewContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
@@ -717,7 +717,7 @@
           <container
             id="ProgramsOverviewContainer"
             template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4">
+            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0">
             <portlet-application>
               <portlet>
                 <application-ref>gamification-portlets</application-ref>
