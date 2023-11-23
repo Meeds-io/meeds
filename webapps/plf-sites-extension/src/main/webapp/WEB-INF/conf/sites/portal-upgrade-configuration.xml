@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.commons.upgrade.UpgradeProductService</target-component>
+    <component-plugin>
+      <name>OverviewPageLayoutUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>120</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>overview.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>global</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>overview</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>PublicPagesLayoutUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>130</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>overview.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>overview</string>
+                </value>
+                <value>
+                  <string>actions</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+</configuration>
