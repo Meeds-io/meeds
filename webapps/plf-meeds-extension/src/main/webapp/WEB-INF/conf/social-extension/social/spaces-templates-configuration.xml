@@ -69,6 +69,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 <field name="appTitle">
                   <string>Home</string>
                 </field>
+                <field name="icon">
+                  <string>fas fa-stream</string>
+                </field>
               </object>
             </field>
             <field name="applications">
@@ -93,6 +96,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <field name="uri">
                       <string>members</string>
                     </field>
+                    <field name="icon">
+                      <string>fas fa-users</string>
+                    </field>
                   </object>
                 </value>
                 <value>
@@ -114,6 +120,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     </field>
                     <field name="uri">
                         <string>tasks</string>
+                    </field>
+                    <field name="icon">
+                      <string>fas fa-tasks</string>
                     </field>
                   </object>
                 </value>
@@ -137,6 +146,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <field name="uri">
                       <string>notes</string>
                     </field>
+                    <field name="icon">
+                      <string>fas fa-clipboard</string>
+                    </field>
                   </object>
                 </value>
                 <value>
@@ -158,6 +170,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     </field>
                     <field name="uri">
                       <string>settings</string>
+                    </field>
+                    <field name="icon">
+                      <string>fas fa-cog</string>
                     </field>
                   </object>
                 </value>
