@@ -116,6 +116,38 @@
         </object-param>
       </init-params>
     </component-plugin>
+    <component-plugin>
+      <name>public.portal.configuration</name>
+      <set-method>initListener</set-method>
+      <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
+      <priority>800</priority>
+      <init-params>
+        <object-param>
+          <name>portal.configuration</name>
+          <object type="org.exoplatform.portal.config.NewPortalConfig">
+            <field name="predefinedOwner">
+              <collection type="java.util.HashSet">
+                <value>
+                  <string>administration</string>
+                </value>
+              </collection>
+            </field>
+            <field name="ownerType">
+              <string>portal</string>
+            </field>
+            <field name="location">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="override">
+              <boolean>${io.meeds.administration.portalConfig.metadata.override:true}</boolean>
+            </field>
+            <field name="importMode">
+              <string>${io.meeds.administration.portalConfig.metadata.importmode:insert}</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
   </external-component-plugins>
 
   <external-component-plugins>
