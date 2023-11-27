@@ -34,10 +34,12 @@
         <values-param>
           <name>init.resources</name>
           <value>locale.navigation.portal.public</value>
+          <value>locale.navigation.portal.administration</value>
         </values-param>
         <values-param>
           <name>portal.resource.names</name>
           <value>locale.navigation.portal.public</value>
+          <value>locale.navigation.portal.administration</value>
         </values-param>
       </init-params>
     </component-plugin>
