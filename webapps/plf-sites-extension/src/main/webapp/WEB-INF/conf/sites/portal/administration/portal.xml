@@ -34,7 +34,7 @@
     <entry key="showPortletInfo">0</entry>
   </properties>
   <portal-layout>
-    <container template="system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl" cssClass="ma-0">
       <access-permissions>*:/platform/users</access-permissions>
       <container template="system:/groovy/portal/webui/container/UIResponsiveColumnGroupContainer.gtmpl">
         <container template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" cssClass="administrationSiteVerticalMenuContainerClass">
