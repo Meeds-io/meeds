@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_10 http://www.gatein.org/xml/ns/gatein_objects_1_10"
     xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_10">
     <portal-name>meeds</portal-name>
-    <display-order>1</display-order>
+    <display-order>30</display-order>
     <locale>en</locale>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
