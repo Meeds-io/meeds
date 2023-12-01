@@ -250,24 +250,18 @@
         <visibility>DISPLAYED</visibility>
         <page-reference>portal::global::analytics-security</page-reference>
       </node>
-    </node>
-    <node>
-      <name>notes-editor</name>
-      <label>#{portal.global.notes-editor}</label>
-      <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::notes-editor</page-reference>
-    </node>
-    <node>
-      <name>analytics</name>
-      <label>#{analytics.navigation.Analytics}</label>
-      <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::analytics</page-reference>
       <node>
         <name>analyticsWallet</name>
         <label>#{wallet.navigation.analyticsWallet}</label>
         <visibility>DISPLAYED</visibility>
         <page-reference>portal::global::analytics-wallet</page-reference>
       </node>
+    </node>
+    <node>
+      <name>notes-editor</name>
+      <label>#{portal.global.notes-editor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::notes-editor</page-reference>
     </node>
     <node>
       <name>perkstore</name>

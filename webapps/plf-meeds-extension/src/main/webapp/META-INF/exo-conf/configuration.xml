@@ -31,6 +31,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <property name="io.meeds.groups.portalConfig.metadata.importmode" value="OVERWRITE" />
         <!-- administration site -->
         <property name="io.meeds.administration.portalConfig.metadata.importmode" value="MERGE" />
+        <!-- My Craft site -->
+        <property name="io.meeds.mycraft.portalConfig.metadata.importmode" value="OVERWRITE" />
+        <!-- administration site -->
+        <property name="io.meeds.contribute.portalConfig.metadata.importmode" value="OVERWRITE" />
         <!-- Disable WebUI for Meeds -->
         <property name="io.meeds.useWebuiResources" value="false" />
         <!-- Enable Posting to network -->

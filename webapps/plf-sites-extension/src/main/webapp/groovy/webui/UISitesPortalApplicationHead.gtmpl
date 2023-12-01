@@ -8,6 +8,7 @@
 <script type="text/javascript" id="socialHeadScripts">
   eXo.env.portal.portalName = "<%=rcontext.getPortalOwner()%>";
   eXo.env.portal.defaultPortal = "<%=rcontext.getDefaultPortal()%>";
+  eXo.env.portal.metaPortalName = "<%=rcontext.getMetaPortal()%>";
   eXo.env.portal.engagementSiteName = "<%=engagementSite%>" ;
   eXo.env.portal.myCraftSiteName = "<%=myCraftSite%>" ;
 </script>
