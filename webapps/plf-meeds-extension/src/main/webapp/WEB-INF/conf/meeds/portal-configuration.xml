@@ -30,7 +30,7 @@
       <description>This listener creates a page for Meeds site</description>
       <init-params>
         <value-param>
-          <name>default.portal</name>
+          <name>meta.portal</name>
           <description>The default portal</description>
           <value>meeds</value>
         </value-param>

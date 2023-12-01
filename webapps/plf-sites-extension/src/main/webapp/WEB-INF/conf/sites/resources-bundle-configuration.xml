@@ -35,11 +35,15 @@
           <name>init.resources</name>
           <value>locale.navigation.portal.public</value>
           <value>locale.navigation.portal.administration</value>
+          <value>locale.navigation.portal.mycraft</value>
+          <value>locale.navigation.portal.contribute</value>
         </values-param>
         <values-param>
           <name>portal.resource.names</name>
           <value>locale.navigation.portal.public</value>
           <value>locale.navigation.portal.administration</value>
+          <value>locale.navigation.portal.mycraft</value>
+          <value>locale.navigation.portal.contribute</value>
         </values-param>
       </init-params>
     </component-plugin>
