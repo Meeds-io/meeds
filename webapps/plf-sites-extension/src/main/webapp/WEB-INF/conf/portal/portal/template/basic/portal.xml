@@ -19,25 +19,22 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<page 
+<portal-config
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2 http://www.gatein.org/xml/ns/gatein_objects_1_2"
-    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
-  <owner-type></owner-type>
-  <owner-id></owner-id>
-  <name></name>
-  <container id="SpacePage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-    <container id="Menu" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>SpaceMenuPortlet</portlet-ref>
-        </portlet>
-        <access-permissions>*:/platform/users</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
-    <container id="Application" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-    </container>
-  </container>
-</page>
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_6 http://www.gatein.org/xml/ns/gatein_objects_1_6"
+    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_6">
+  <portal-name>@owner@</portal-name>
+  <label>Basic Portal</label>
+  <description>This is basic portal template</description>
+  <locale>en</locale>
+  <access-permissions>Everyone</access-permissions>
+  <edit-permission>*:/platform/administrators</edit-permission>
+  <properties>
+    <entry key="sessionAlive">onDemand</entry>
+  </properties>
+
+  <portal-layout>
+    <page-body></page-body>
+  </portal-layout>
+  
+</portal-config>
