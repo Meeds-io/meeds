@@ -86,6 +86,12 @@
         <label>#{portal.administration.recognition}</label>
         <icon>fas fa-trophy</icon>
         <node>
+          <name>setup</name>
+          <label>#{portal.administration.recognitionSetup}</label>
+          <icon>fa fa-shopping-cart</icon>
+          <page-reference>portal::administration::recognitionSetup</page-reference>
+        </node>
+        <node>
           <name>connectors</name>
           <label>#{portal.administration.connectors}</label>
           <icon>fas fa-plug</icon>
@@ -102,18 +108,6 @@
           <label>#{portal.administration.reward}</label>
           <icon>fas fa-coins</icon>
           <page-reference>portal::administration::rewardAdministration</page-reference>
-        </node>
-        <node>
-          <name>perks</name>
-          <label>#{portal.administration.perks}</label>
-          <icon>fas fa-shopping-cart</icon>
-          <page-reference>portal::administration::perkStoreAdministration</page-reference>
-        </node>
-        <node>
-          <name>kudos</name>
-          <label>#{portal.administration.kudos}</label>
-          <icon>fas fa-award</icon>
-          <page-reference>portal::administration::kudosAdministration</page-reference>
         </node>
         <node>
           <name>badges</name>
