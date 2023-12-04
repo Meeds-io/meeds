@@ -52,7 +52,7 @@
               <boolean>${meeds.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${meeds.portalConfig.metadata.importmode:overwrite}</string>
+              <string>${meeds.portalConfig.metadata.importmode:insert}</string>
             </field>
             <field name="location">
               <string>war:/conf/meeds/</string>
