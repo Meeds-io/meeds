@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2023 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<node-navigation
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_11 http://www.exoplatform.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_11">
+
+  <priority>1</priority>
+  <page-nodes>
+    <node>
+      <name>actions</name>
+      <label>#{portal.contribute.actions}</label>
+      <icon>fa fa-rocket</icon>
+      <page-reference>portal::contribute::actions</page-reference>
+      <node>
+        <name>programs</name>
+        <label>#{portal.contribute.programs}</label>
+        <icon>fa fa-puzzle-piece</icon>
+        <page-reference>portal::contribute::programs</page-reference>
+      </node>
+      <node>
+        <name>perks</name>
+        <label>#{portal.contribute.perks}</label>
+        <icon>fa fa-shopping-cart</icon>
+        <page-reference>portal::contribute::perks</page-reference>
+      </node>
+    </node>
+  </page-nodes>
+</node-navigation>
