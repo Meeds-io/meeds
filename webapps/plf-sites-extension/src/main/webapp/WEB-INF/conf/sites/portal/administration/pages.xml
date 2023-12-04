@@ -199,41 +199,62 @@
     </container>
   </page>
 
-  <page profiles="perk-store">
-    <name>perkStoreAdministration</name>
-    <title>perk store administration</title>
+  <page profiles="kudos,wallet,perk-store">
+    <name>recognitionSetup</name>
+    <title>Recognistion setup</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
+    <container
+      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+      cssClass="singlePageApplication">
       <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>perk-store</application-ref>
-          <portlet-ref>PerkStoreAdmin</portlet-ref>
-        </portlet>
-        <title>perk store administration</title>
+      <container
+        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+        cssClass="no-applications-spacing application-border-radius application-background application-background application-min-height">
         <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="kudos">
-    <name>kudosAdministration</name>
-    <title>Kudo administration</title>
-    <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>kudos</application-ref>
-          <portlet-ref>KudosAdmin</portlet-ref>
-        </portlet>
-        <title>Kudos administration</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+        <container
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+          profiles="kudos">
+          <access-permissions>Everyone</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosAdmin</portlet-ref>
+            </portlet>
+            <title>Kudos setup administration</title>
+            <access-permissions>Everyone</access-permissions>
+            <show-info-bar>false</show-info-bar>
+          </portlet-application>
+        </container>
+        <container
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+          profiles="wallet">
+          <access-permissions>Everyone</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>WalletSetupAdmin</portlet-ref>
+            </portlet>
+            <title>Wallet setup administration</title>
+            <access-permissions>Everyone</access-permissions>
+            <show-info-bar>false</show-info-bar>
+          </portlet-application>
+        </container>
+        <container
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+          profiles="perk-store">
+          <access-permissions>Everyone</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>perk-store</application-ref>
+              <portlet-ref>PerkStoreAdmin</portlet-ref>
+            </portlet>
+            <title>Perk store setup administration</title>
+            <access-permissions>Everyone</access-permissions>
+            <show-info-bar>false</show-info-bar>
+          </portlet-application>
+        </container>
+      </container>
     </container>
   </page>
 
