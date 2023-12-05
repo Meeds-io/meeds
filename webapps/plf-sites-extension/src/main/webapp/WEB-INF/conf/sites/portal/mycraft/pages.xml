@@ -58,7 +58,7 @@
                   </preference>
                   <preference>
                     <name>image-path</name>
-                    <value>war:/../images/banner/overviewBanner.webp</value>
+                    <value>war:/../images/pages/banner/dashboard-banner.png</value>
                     <read-only>false</read-only>
                   </preference>
                 </preferences>
