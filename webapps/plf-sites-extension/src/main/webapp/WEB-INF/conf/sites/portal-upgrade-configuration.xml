@@ -121,7 +121,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>RecognitionSetupNavigationUpgrade</name>
+      <name>RecognitionSetupPageUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <description>An upgrade plugin to delete some recognition administration navigations</description>
