@@ -88,7 +88,7 @@
         <node>
           <name>setup</name>
           <label>#{portal.administration.recognitionSetup}</label>
-          <icon>fa fa-cogs</icon>
+          <icon>fa fa-tools</icon>
           <page-reference>portal::administration::recognitionSetup</page-reference>
         </node>
         <node>
