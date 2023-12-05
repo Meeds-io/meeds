@@ -59,6 +59,12 @@
               <portlet>
                 <application-ref>social-portlet</application-ref>
                 <portlet-ref>Breadcrumb</portlet-ref>
+                <preferences>
+                  <preference>
+                    <name>noThreeDots</name>
+                    <value>true</value>
+                  </preference>
+                </preferences>
               </portlet>
               <title>Site Breadcrumb application</title>
               <access-permissions>*:/platform/users</access-permissions>
