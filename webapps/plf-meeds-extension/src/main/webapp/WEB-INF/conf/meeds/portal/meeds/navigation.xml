@@ -37,16 +37,16 @@
       <page-reference>portal::global::externalStream</page-reference>
     </node>
     <node>
-      <name>spaces</name>
-      <label>#{portal.meeds.spaces}</label>
-      <icon>fas fa-people-arrows</icon>
-      <page-reference>portal::global::all-spaces</page-reference>
-    </node>
-    <node>
       <name>people</name>
       <label>#{portal.meeds.people}</label>
       <icon>fas fa-users</icon>
       <page-reference>portal::global::all-people</page-reference>
+    </node>
+    <node>
+      <name>spaces</name>
+      <label>#{portal.meeds.spaces}</label>
+      <icon>fas fa-people-arrows</icon>
+      <page-reference>portal::global::all-spaces</page-reference>
     </node>
   </page-nodes>
 </node-navigation>
