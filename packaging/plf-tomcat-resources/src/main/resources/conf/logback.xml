@@ -21,8 +21,6 @@ Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
 <configuration scan="${EXO_DEV}" scanPeriod="30 seconds" debug="false">
-  <!-- Enable JMX to configure logs -->
-  <jmxConfigurator />
   <!-- Default pattern used for printing logs in files and on the console for systems that doesn't support a colorized output -->
   <property name="exo.logs.default.pattern" value="%date{ISO8601} | %-5level | %msg [%logger{40}&lt;%thread&gt;] %n%xEx" />
   <!-- Pattern used for console supporting ANSI colors -->
@@ -77,7 +75,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   </appender>
   <logger name="org.exoplatform" level="INFO" />
   <logger name="org.gatein" level="INFO" />
-  <logger name="org.chromattic" level="INFO" />
+  <logger name="org.springframework" level="INFO" />
   <logger name="jcr" level="INFO" />
   <logger name="exo.jcr" level="INFO" />
   <logger name="ws" level="INFO" />

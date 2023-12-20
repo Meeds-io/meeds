@@ -37,6 +37,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>commons-logging:*</exclude>
         <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
         <exclude>log4j:*</exclude>
+        <!-- commons-chain is replaced by another compatible version with Jakarta EE -->
+        <exclude>commons-chain:*</exclude>
         <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
         <exclude>org.slf4j:slf4j-jcl:*</exclude>
         <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
@@ -50,11 +52,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <!-- These old versions of eXo portal are in conflict with new ones under org.exoplatform.gatein.portal -->
         <exclude>org.exoplatform.portal:*:*</exclude>
         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
+        <exclude>jakarta.servlet:*</exclude>
+        <exclude>jakarta.servlet.jsp:*</exclude>
+        <!-- Incompatible Servlet API -->
         <exclude>javax.servlet:*</exclude>
+        <!-- Incompatible JSP API -->
+        <exclude>javax.servlet.jsp:*</exclude>
         <!-- Avoid javax.websocket-api.jar should be provided by container -->
         <exclude>*:javax.websocket-api</exclude>
+        <!-- Incompatible Portlet API -->
+        <exclude>javax.portlet:*</exclude>
         <exclude>com.google.gwt:gwt-user:*</exclude>
-        <exclude>javax.servlet.jsp:*</exclude>
         <!-- Testing stuffs should never come here -->
         <exclude>junit:*</exclude>
         <exclude>org.testng:*</exclude>
