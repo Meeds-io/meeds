@@ -354,13 +354,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                       <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
                       <searchTransitive>true</searchTransitive>
                       <excludes>
-                        <!-- No Apache Tomcat artifacts have to be added in the packaging -->
-                        <exclude>org.apache.tomcat:*</exclude>
                         <!-- Ant and related aren't really useful for us at runtime -->
                         <exclude>org.apache.ant:*</exclude>
                         <exclude>org.apache.axis:axis-ant:*</exclude>
-                        <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
-                        <exclude>commons-logging:*</exclude>
                         <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
                         <exclude>log4j:*</exclude>
                         <exclude>org.apache.logging.log4j:*</exclude>
@@ -413,12 +409,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <exclude>*:xmlParserAPIs:*</exclude>
                         <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
                         <exclude>org.icepdf:icepdf-core:*</exclude>
-                        <!-- DEP-101: Elasticsearch depends on lucene version incompatible with the JCR -->
-                        <exclude>org.apache.lucene:*:4</exclude>
                       </excludes>
                       <includes>
-                        <!-- This artifact isn't by default in tomcat -->
-                        <include>org.apache.tomcat:tomcat-catalina-jmx-remote</include>
                         <!-- We can use the tomcat distro -->
                         <include>org.apache.tomcat:tomcat:zip</include>
                         <!--only 1.0 of badArtifact is allowed-->
