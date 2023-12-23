@@ -254,6 +254,11 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.files.storage.dir=\"${EXO_DATA_DIR}/files\""
 
 # Logback configuration file
 CATALINA_OPTS="$CATALINA_OPTS -Dlogback.configurationFile=\"${EXO_LOGS_LOGBACK_CONFIG_FILE}\""
+CATALINA_OPTS="$CATALINA_OPTS -Dlogback.statusListenerClass=ch.qos.logback.core.status.NopStatusListener"
+CATALINA_OPTS="$CATALINA_OPTS -Dliquibase.showBanner=false"
+CATALINA_OPTS="$CATALINA_OPTS -Dliquibase.command.showSummary=OFF"
+CATALINA_OPTS="$CATALINA_OPTS -Dliquibase.hub.mode=OFF"
+CATALINA_OPTS="$CATALINA_OPTS -Dliquibase.logLevel=WARNING"
 
 # Define the XML Parser depending on the JVM vendor
 if [ "${EXO_JVM_VENDOR}" = "IBM" ]; then

@@ -45,7 +45,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         </exclusion>
         <exclusion>
           <groupId>io.swagger.core.v3</groupId>
-          <artifactId>swagger-annotations</artifactId>
+          <artifactId>swagger-annotations-jakarta</artifactId>
         </exclusion>
         <exclusion>
           <groupId>org.projectlombok</groupId>
