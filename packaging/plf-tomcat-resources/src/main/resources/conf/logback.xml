@@ -89,6 +89,8 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="org.apache.catalina.realm.JAASRealm" level="ERROR"/>
   <logger name="org.cometd.server.websocket" level="WARN" />
   <logger name="org.cometd.oort.Oort" level="ERROR" />
+  <logger name="org.picketlink" level="WARN" />
+  <logger name="liquibase" level="WARN" />
   <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
     <then>
       <!-- This is activated by default on unix like systems -->
