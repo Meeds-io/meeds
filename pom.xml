@@ -359,11 +359,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <!-- Ant and related aren't really useful for us at runtime -->
                         <exclude>org.apache.ant:*</exclude>
                         <exclude>org.apache.axis:axis-ant:*</exclude>
-                        <!-- commons-logging is forbidden and must be replaced by org.slf4j:jcl-over-slf4j -->
-                        <exclude>commons-logging:*</exclude>
-                        <!-- log4j is forbidden and must be replaced by org.slf4j:log4j-over-slf4j -->
+                        <!-- log4j is forbidden and must be replaced by org.apache.logging.log4j:log4j-to-slf4j -->
                         <exclude>log4j:*</exclude>
-                        <exclude>org.apache.logging.log4j:*</exclude>
+                        <exclude>org.apache.logging.log4j:log4j-core</exclude>
                         <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
                         <exclude>org.slf4j:slf4j-jcl:*</exclude>
                         <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
