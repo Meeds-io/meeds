@@ -179,7 +179,7 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
-},{
+  },{
     "id": "meeds-gamification-twitter",
     "version": "${addon.meeds.gamification-twitter.version}",
     "unstable": false,
@@ -188,6 +188,23 @@
     "sourceUrl": "https://github.com/meeds-io/gamification-twitter",
     "documentationUrl": "https://github.com/meeds-io/gamification-twitter",
     "downloadUrl": "file://${settings.localRepository}/io/meeds/gamification-twitter/gamification-twitter-packaging/${addon.meeds.gamification-twitter.version}/gamification-twitter-packaging-${addon.meeds.gamification-twitter.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-deeds-tenant",
+    "version": "${addon.meeds.deeds-tenant.version}",
+    "unstable": false,
+    "name": "Deeds Tenant add-on",
+    "description": "Add-on for WoM Connection and Metamask Login extension",
+    "sourceUrl": "https://github.com/meeds-io/deeds-tenant",
+    "documentationUrl": "https://github.com/meeds-io/deeds-tenant",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/deeds-tenant/deeds-tenant-packaging/${addon.meeds.deeds-tenant.version}/deeds-tenant-packaging-${addon.meeds.deeds-tenant.version}.zip",
     "vendor": "Meeds.io",
     "author": "Meeds.io",
     "license": "LGPLv3",
