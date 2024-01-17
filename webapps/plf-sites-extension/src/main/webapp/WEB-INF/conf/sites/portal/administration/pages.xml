@@ -254,6 +254,20 @@
             <show-info-bar>false</show-info-bar>
           </portlet-application>
         </container>
+        <container
+          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+          profiles="deeds-tenant">
+          <access-permissions>Everyone</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>deeds-tenant</application-ref>
+              <portlet-ref>WoMSetupAdmin</portlet-ref>
+            </portlet>
+            <title>WoM setup administration</title>
+            <access-permissions>Everyone</access-permissions>
+            <show-info-bar>false</show-info-bar>
+          </portlet-application>
+        </container>
       </container>
     </container>
   </page>
