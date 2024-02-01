@@ -142,6 +142,12 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>io.meeds.gamification-evm</groupId>
+      <artifactId>gamification-evm-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>io.meeds.deeds-tenant</groupId>
       <artifactId>deeds-tenant-packaging</artifactId>
       <type>zip</type>
@@ -381,6 +387,9 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.gamification-twitter.id}:${addon.meeds.gamification-twitter.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.gamification-evm.id}:${addon.meeds.gamification-evm.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.deeds-tenant.id}:${addon.meeds.deeds-tenant.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
