@@ -192,6 +192,7 @@
       <name>public.portal.configuration</name>
       <set-method>initListener</set-method>
       <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
+      <priority>800</priority>
       <init-params>
         <object-param>
           <name>portal.configuration</name>
