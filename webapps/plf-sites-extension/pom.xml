@@ -24,7 +24,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-webapps</artifactId>
-    <version>1.5.1-exo</version>
+    <version>1.5.1-exo-patched</version>
   </parent>
   <artifactId>plf-sites-extension</artifactId>
   <packaging>war</packaging>
