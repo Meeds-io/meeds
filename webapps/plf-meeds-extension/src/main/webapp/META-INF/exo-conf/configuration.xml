@@ -25,8 +25,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <init-params>
       <properties-param>
         <name>MeedsPortalConfigProperties</name>
-        <!-- Disable WebUI for Meeds -->
-        <property name="io.meeds.useWebuiResources" value="false" />
         <!-- Enable Posting to network -->
         <property name="exo.feature.PostToNetwork.enabled" value="${exo.feature.PostToNetwork.enabled:true}" />
       </properties-param>
