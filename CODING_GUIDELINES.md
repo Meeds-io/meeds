@@ -170,9 +170,8 @@ Exceptions: in some cases we need to avoid adding @RolesAllowed to allow access 
 ## Javascript
   
 ### DEVSTD-29	
-  No use of npm import directive to define external third party libraries. All JS third party libraries has to be defined using GateIN AMD modules definition in gatein-resources.xml. When adding a new module, make sure to communicate about this new dependency and to add it in gatein-portal to let other addons reuse it, if the library is defined in a supported addon.
+  No use of npm import directive to define external third party libraries. All JS third party libraries has to be defined using GateIN AMD modules definition in gatein-resources.xml. When adding a new module, make sure to communicate about this new dependency and to add it in social to let other addons reuse it, if the library is defined in a supported addon. In fact, it's not allowed to add third party libraries in `dependencies` section in `package.json` (only `devDependencies` is permitted) or to import third party libraries in Vue files. This rule aims to enhance security of built package and to exactly know what is bundled in transpiled files. In addition, this will avoid to increase considerably the size of a JS module or to repeat the same imported third party library in different module, thus import the same third party library multiple times in the same page. Besides, any third party library has to be validated in term of license and security before including it in the bundled Meeds Package.
 
-  
 ## Style
   
 ### DEVSTD-30	
