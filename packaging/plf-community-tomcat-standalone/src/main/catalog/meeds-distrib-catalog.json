@@ -230,5 +230,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-layout",
+    "version": "${addon.meeds.layout.version}",
+    "unstable": false,
+    "name": "Layout add-on",
+    "description": "Add-on for Portal and Page Layout editor",
+    "sourceUrl": "https://github.com/meeds-io/layout",
+    "documentationUrl": "https://github.com/meeds-io/layout",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/layout/layout-packaging/${addon.meeds.layout.version}/layout-packaging-${addon.meeds.layout.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
