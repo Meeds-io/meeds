@@ -264,6 +264,12 @@
       <page-reference>portal::global::notes-editor</page-reference>
     </node>
     <node>
+      <name>layout-editor</name>
+      <label>#{portal.global.layout-editor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::layout-editor</page-reference>
+    </node>
+    <node>
       <name>perkstore</name>
       <label>#{addon.perkstore.navigation.node.label}</label>
       <visibility>SYSTEM</visibility>
