@@ -1630,7 +1630,23 @@
       <factory-id>addonContainer</factory-id>
     </container>
   </page>
-
+  <page profiles="layout">
+    <name>layout-editor</name>
+    <title>Layout Editor</title>
+    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <show-max-window>true</show-max-window>
+    <hide-shared-layout>true</hide-shared-layout>
+    <portlet-application>
+      <portlet>
+        <application-ref>layout</application-ref>
+        <portlet-ref>LayoutEditor</portlet-ref>
+      </portlet>
+      <title>Layout Editor</title>
+      <access-permissions>Everyone</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
+  </page>
   <page>
     <name>analytics-wallet</name>
     <title>Analytics Wallet</title>
