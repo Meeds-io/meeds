@@ -56,6 +56,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
+    <addon.meeds.layout.id>meeds-layout</addon.meeds.layout.id>
+    <addon.meeds.layout.version>1.0.x-meed-SNAPSHOT</addon.meeds.layout.version>
     <addon.exo.kudos.id>meeds-kudos</addon.exo.kudos.id>
     <addon.exo.kudos.version>2.6.x-meed-SNAPSHOT</addon.exo.kudos.version>
     <addon.exo.perk-store.id>meeds-perk-store</addon.exo.perk-store.id>
@@ -200,6 +202,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>io.meeds.deeds-tenant</groupId>
         <artifactId>deeds-tenant-parent</artifactId>
         <version>${addon.meeds.deeds-tenant.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.layout</groupId>
+        <artifactId>layout</artifactId>
+        <version>${addon.meeds.layout.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
