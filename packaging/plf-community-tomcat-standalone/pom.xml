@@ -147,6 +147,12 @@
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>io.meeds.layout</groupId>
+      <artifactId>layout-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -349,6 +355,9 @@
             <configuration>
               <target name="install-add-ons">
                 <echo message="Installing add-ons..." />
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.layout.id}:${addon.meeds.layout.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.kudos.id}:${addon.exo.kudos.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
