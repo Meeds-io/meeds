@@ -80,6 +80,12 @@
           <icon>fas fa-people-arrows</icon>
           <page-reference>portal::administration::spacesAdministration</page-reference>
         </node>
+        <node>
+          <name>sites</name>
+          <label>#{portal.administration.sites}</label>
+          <icon>fas fa-sitemap</icon>
+          <page-reference>portal::administration::siteManagement</page-reference>
+        </node>
       </node>
       <node>
         <name>recognition</name>
