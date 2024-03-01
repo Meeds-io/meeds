@@ -1646,6 +1646,15 @@
       <access-permissions>Everyone</access-permissions>
       <show-info-bar>false</show-info-bar>
     </portlet-application>
+    <portlet-application>
+      <portlet>
+        <application-ref>social-portlet</application-ref>
+        <portlet-ref>DrawersOverlay</portlet-ref>
+      </portlet>
+      <title>Drawers Overlay</title>
+      <access-permissions>Everyone</access-permissions>
+      <show-info-bar>false</show-info-bar>
+    </portlet-application>
   </page>
   <page>
     <name>analytics-wallet</name>
