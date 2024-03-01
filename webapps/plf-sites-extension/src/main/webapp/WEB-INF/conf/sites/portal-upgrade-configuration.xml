@@ -24,7 +24,12 @@
   <external-component-plugins>
     <target-component>org.exoplatform.commons.upgrade.UpgradeProductService</target-component>
     <component-plugin>
-      <name>LayoutEditorPageUpgrade</name>
+      <!--
+        ********************************************************
+        TO DELETE, not needed, only on ACC for data upgrade
+        ********************************************************
+       -->
+      <name>TODELETELayoutEditorPageUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
