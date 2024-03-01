@@ -192,6 +192,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>io.meeds.gamification-evm</groupId>
+        <artifactId>gamification-evm-parent</artifactId>
+        <version>${addon.meeds.gamification-evm.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>io.meeds.deeds-tenant</groupId>
         <artifactId>deeds-tenant-parent</artifactId>
         <version>${addon.meeds.deeds-tenant.version}</version>
