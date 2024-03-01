@@ -78,6 +78,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.gamification-github.version>1.3.x-meed-SNAPSHOT</addon.meeds.gamification-github.version>
     <addon.meeds.gamification-twitter.id>meeds-gamification-twitter</addon.meeds.gamification-twitter.id>
     <addon.meeds.gamification-twitter.version>1.1.x-meed-SNAPSHOT</addon.meeds.gamification-twitter.version>
+    <addon.meeds.gamification-evm.id>meeds-gamification-evm</addon.meeds.gamification-evm.id>
+    <addon.meeds.gamification-evm.version>1.0.x-meed-SNAPSHOT</addon.meeds.gamification-evm.version>
     <addon.meeds.deeds-tenant.id>meeds-deeds-tenant</addon.meeds.deeds-tenant.id>
     <addon.meeds.deeds-tenant.version>1.2.x-meed-SNAPSHOT</addon.meeds.deeds-tenant.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
@@ -184,6 +186,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>io.meeds.gamification-twitter</groupId>
         <artifactId>gamification-twitter-parent</artifactId>
         <version>${addon.meeds.gamification-twitter.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.gamification-evm</groupId>
+        <artifactId>gamification-evm-parent</artifactId>
+        <version>${addon.meeds.gamification-evm.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
