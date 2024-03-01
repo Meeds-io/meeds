@@ -197,6 +197,23 @@
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
   },{
+    "id": "meeds-gamification-evm",
+    "version": "${addon.meeds.gamification-evm.version}",
+    "unstable": false,
+    "name": "Gamification Evm connector add-on",
+    "description": "Gamification Evm connector add-on",
+    "sourceUrl": "https://github.com/meeds-io/gamification-evm",
+    "documentationUrl": "https://github.com/meeds-io/gamification-evm",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/gamification-evm/gamification-evm-packaging/${addon.meeds.gamification-evm.version}/gamification-evm-packaging-${addon.meeds.gamification-evm.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
+  },{
     "id": "meeds-deeds-tenant",
     "version": "${addon.meeds.deeds-tenant.version}",
     "unstable": false,
