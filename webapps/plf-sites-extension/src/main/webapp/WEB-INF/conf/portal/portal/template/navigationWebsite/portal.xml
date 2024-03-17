@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<portal-config
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
+  <portal-name>@owner@</portal-name>
+  <label>navigation website portal</label>
+  <description>This is navigation website portal template</description>
+  <locale>en</locale>
+  <properties>
+    <entry key="sessionAlive">onDemand</entry>
+  </properties>
+  <portal-layout>
+    <container id="navigationWebsiteTemplate" template="system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl" cssClass="ma-0">
+      <access-permissions>Everyone</access-permissions>
+      <container template="system:/groovy/portal/webui/container/UIResponsiveColumnGroupContainer.gtmpl">
+        <container id="navigationWebsiteSiteVerticalMenuContainer" template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" cssClass="navigationWebsiteSiteVerticalMenuContainerClass">
+          <access-permissions>Everyone</access-permissions>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>VerticalMenu</portlet-ref>
+            </portlet>
+            <title>Site Vertical Menu</title>
+            <access-permissions>Everyone</access-permissions>
+            <show-info-bar>false</show-info-bar>
+            <show-application-state>false</show-application-state>
+            <show-application-mode>false</show-application-mode>
+          </portlet-application>
+        </container>
+        <container id="navigationWebsiteSitePageBodyContainer" template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" cssClass="navigationWebsiteSitePageBodyContainerClass">
+          <access-permissions>Everyone</access-permissions>
+          <container id="navigationWebsiteBreadcrumbContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
+            <access-permissions>Everyone</access-permissions>
+            <portlet-application>
+              <portlet>
+                <application-ref>social-portlet</application-ref>
+                <portlet-ref>Breadcrumb</portlet-ref>
+              </portlet>
+              <title>Site Breadcrumb application</title>
+              <access-permissions>Everyone</access-permissions>
+              <show-info-bar>false</show-info-bar>
+              <show-application-state>false</show-application-state>
+              <show-application-mode>false</show-application-mode>
+            </portlet-application>
+          </container>
+          <page-body />
+        </container>
+      </container>
+    </container>
+  </portal-layout>
+</portal-config>

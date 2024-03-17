@@ -5,7 +5,7 @@
   String engagementSite = PropertyManager.getProperty('io.meeds.engagementSite.name');
   String myCraftSite = PropertyManager.getProperty('io.meeds.myCraftSite.name');
 %>
-<script type="text/javascript" id="socialHeadScripts">
+<script type="text/javascript" id="sitesHeadScripts">
   eXo.env.portal.portalName = "<%=rcontext.getPortalOwner()%>";
   eXo.env.portal.defaultPortal = "<%=rcontext.getDefaultPortal()%>";
   eXo.env.portal.metaPortalName = "<%=rcontext.getMetaPortal()%>";

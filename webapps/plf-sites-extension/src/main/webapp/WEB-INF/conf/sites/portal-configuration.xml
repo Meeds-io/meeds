@@ -25,6 +25,18 @@
   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
 
   <component>
+    <key>SitesConfigProperties</key>
+    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
+    <init-params>
+      <properties-param>
+        <name>SitesConfigProperties</name>
+        <property name="io.meeds.engagementSite.name" value="${io.meeds.engagementSite.name:contribute}" />
+        <property name="io.meeds.myCraftSite.name" value="${io.meeds.myCraftSite.name:mycraft}" />
+      </properties-param>
+    </init-params>
+  </component>
+
+  <component>
     <key>org.exoplatform.portal.config.UserPortalConfigService</key>
     <type>org.exoplatform.portal.config.UserPortalConfigService</type>
     <component-plugins>
@@ -64,21 +76,7 @@
               <field name="portalTemplates">
                 <collection type="java.util.HashSet">
                   <value>
-                    <string>basic</string>
-                  </value>
-                </collection>
-              </field>
-              <field name="groupTemplates">
-                <collection type="java.util.HashSet">
-                  <value>
-                    <string>${exo.portal.default.groupSite.template:group}</string>
-                  </value>
-                </collection>
-              </field>
-              <field name="userTemplates">
-                <collection type="java.util.HashSet">
-                  <value>
-                    <string>${exo.portal.default.userSite.template:user}</string>
+                    <string>navigationWebsite</string>
                   </value>
                 </collection>
               </field>
@@ -110,7 +108,7 @@
       </value-param>
       <value-param>
         <name>destroy.user.portal</name>
-        <value>${gatein.portal.idm.destroyserportal}</value>
+        <value>${gatein.portal.idm.destroyuserportal:true}</value>
       </value-param>
       <value-param>
         <name>default.import.mode</name>
@@ -124,18 +122,6 @@
         <name>default.userSite.template</name>
         <value>${exo.portal.default.userSite.template:}</value>
       </value-param>
-    </init-params>
-  </component>
-
-  <component>
-    <key>SitesConfigProperties</key>
-    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
-    <init-params>
-      <properties-param>
-        <name>SitesConfigProperties</name>
-        <property name="io.meeds.engagementSite.name" value="${io.meeds.engagementSite.name:contribute}" />
-        <property name="io.meeds.myCraftSite.name" value="${io.meeds.myCraftSite.name:mycraft}" />
-      </properties-param>
     </init-params>
   </component>
 
