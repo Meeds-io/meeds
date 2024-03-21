@@ -47,6 +47,12 @@
         <icon>fa fa-credit-card</icon>
         <page-reference>portal::mycraft::wallet</page-reference>
       </node>
+      <node>
+        <name>myteam</name>
+        <label>#{portal.mycraft.myteam}</label>
+        <icon>fas fa-sitemap</icon>
+        <page-reference>portal::mycraft::myteam</page-reference>
+      </node>
     </node>
   </page-nodes>
 </node-navigation>
