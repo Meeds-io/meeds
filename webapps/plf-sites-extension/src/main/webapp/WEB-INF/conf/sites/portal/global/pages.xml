@@ -2006,4 +2006,37 @@
     </container>
   </page>
 
+  <page>
+    <name>organizationalchart</name>
+    <title>Organizational Chart</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container id="organizationalChartParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
+      <access-permissions>Everyone</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>social-portlet</application-ref>
+          <portlet-ref>OrganizationalChart</portlet-ref>
+          <preferences>
+            <!-- Indicates that the chart setting center user can be modified by admins or not -->
+            <preference>
+              <name>canUpdateCenterUser</name>
+              <value>false</value>
+              <read-only>true</read-only>
+            </preference>
+            <!-- default header title i18n key -->
+            <preference>
+              <name>headerTitle</name>
+              <value>organizationalChart.header.label</value>
+              <read-only>true</read-only>
+            </preference>
+          </preferences>
+        </portlet>
+        <title>Organizational Chart</title>
+        <access-permissions>Everyone</access-permissions>
+        <show-info-bar>false</show-info-bar>
+        <show-application-state>false</show-application-state>
+      </portlet-application>
+    </container>
+  </page>
 </page-set>

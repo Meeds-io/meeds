@@ -222,6 +222,13 @@
     </node>
 
     <node>
+      <name>organizationalchart</name>
+      <label>#{portal.global.organizationalChart}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::organizationalchart</page-reference>
+    </node>
+
+    <node>
       <name>analytics</name>
       <label>#{analytics.navigation.Analytics}</label>
       <visibility>SYSTEM</visibility>
