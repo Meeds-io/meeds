@@ -19,7 +19,7 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<page-template
+<container
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
@@ -68,4 +68,4 @@
       </column>
     </section-columns>
   </container>
-</page-template>
+</container>
