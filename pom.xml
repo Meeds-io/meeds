@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <groupId>io.meeds.distribution</groupId>
   <artifactId>meeds</artifactId>
-  <version>7.0.x-exo-SNAPSHOT</version>
+  <version>7.0.x-experience-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Meeds:: Meeds:: Meeds Public Distribution</name>
   <modules>
@@ -49,7 +49,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <io.meeds.social.version>7.0.x-exo-SNAPSHOT</io.meeds.social.version>
+    <io.meeds.social.version>7.0.x-experience-SNAPSHOT</io.meeds.social.version>
     <io.meeds.platform-ui.version>7.0.x-exo-SNAPSHOT</io.meeds.platform-ui.version>
     <!-- The version of the add-ons manager -->
     <io.meeds.platform.addons-manager.version>7.0.x-exo-SNAPSHOT</io.meeds.platform.addons-manager.version>
@@ -69,7 +69,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.app-center.id>meeds-app-center</addon.meeds.app-center.id>
     <addon.meeds.app-center.version>7.0.x-exo-SNAPSHOT</addon.meeds.app-center.version>
     <addon.meeds.notes.id>meeds-notes</addon.meeds.notes.id>
-    <addon.meeds.notes.version>7.0.x-exo-SNAPSHOT</addon.meeds.notes.version>
+    <addon.meeds.notes.version>7.0.x-experience-SNAPSHOT</addon.meeds.notes.version>
     <addon.meeds.tasks.id>meeds-tasks</addon.meeds.tasks.id>
     <addon.meeds.tasks.version>7.0.x-exo-SNAPSHOT</addon.meeds.tasks.version>
     <addon.meeds.analytics.id>meeds-analytics</addon.meeds.analytics.id>
@@ -77,7 +77,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.poll.id>meeds-poll</addon.meeds.poll.id>
     <addon.meeds.poll.version>7.0.x-exo-SNAPSHOT</addon.meeds.poll.version>
     <addon.meeds.content.id>meeds-content</addon.meeds.content.id>
-    <addon.meeds.content.version>7.0.x-exo-SNAPSHOT</addon.meeds.content.version>
+    <addon.meeds.content.version>7.0.x-experience-SNAPSHOT</addon.meeds.content.version>
     <addon.meeds.gamification-github.id>meeds-gamification-github</addon.meeds.gamification-github.id>
     <addon.meeds.gamification-github.version>7.0.x-exo-SNAPSHOT</addon.meeds.gamification-github.version>
     <addon.meeds.gamification-twitter.id>meeds-gamification-twitter</addon.meeds.gamification-twitter.id>
@@ -87,7 +87,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.gamification-crowdin.id>meeds-gamification-crowdin</addon.meeds.gamification-crowdin.id>
     <addon.meeds.gamification-crowdin.version>7.0.x-exo-SNAPSHOT</addon.meeds.gamification-crowdin.version>
     <addon.meeds.pwa.id>meeds-pwa</addon.meeds.pwa.id>
-    <addon.meeds.pwa.version>7.0.x-exo-SNAPSHOT</addon.meeds.pwa.version>
+    <addon.meeds.pwa.version>7.0.x-experience-SNAPSHOT</addon.meeds.pwa.version>
     <addon.meeds.ide.id>meeds-ide</addon.meeds.ide.id>
     <addon.meeds.ide.version>7.0.x-exo-SNAPSHOT</addon.meeds.ide.version>
 
