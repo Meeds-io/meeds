@@ -1914,7 +1914,7 @@
   <page profiles="gamification">
     <name>overview</name>
     <title>Overview</title>
-    <access-permissions>Everyone</access-permissions>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/rewarding</edit-permission>
     <container
       id="meedsOverviewPage"
