@@ -3,7 +3,7 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2023 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -19,62 +19,53 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_8 http://www.exoplatform.org/xml/ns/gatein_objects_1_8" xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
-  <name></name>
-  <container
-    id="topAnalyticsPage"
-    template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-    cssClass="singlePageApplication border-box-sizing">
-    <access-permissions>Everyone</access-permissions>
-    <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>analytics</application-ref>
-          <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-        </portlet>
-        <title>Breadcrumb Analytics</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
-    <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>analytics</application-ref>
-          <portlet-ref>AnalyticsPortlet</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-      <portlet-application>
-        <portlet>
-          <application-ref>analytics</application-ref>
-          <portlet-ref>AnalyticsPortlet</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
-    <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>analytics</application-ref>
-          <portlet-ref>AnalyticsPortlet</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-      <portlet-application>
-        <portlet>
-          <application-ref>analytics</application-ref>
-          <portlet-ref>AnalyticsPortlet</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
+<container
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
+  <container id="topAnalyticsPage" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+    <section-columns>
+      <column
+        id="breadcrumbAnalytics"
+        col-span="12">
+        <portlet-application>
+          <portlet>
+            <application-ref>analytics</application-ref>
+            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+          </portlet>
+          <title>Breadcrumb Analytics</title>
+        </portlet-application>
+      </column>
+    </section-columns>
+    <section-columns>
+      <column col-span="6">
+        <portlet-application>
+          <portlet>
+            <application-ref>analytics</application-ref>
+            <portlet-ref>AnalyticsPortlet</portlet-ref>
+          </portlet>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>analytics</application-ref>
+            <portlet-ref>AnalyticsPortlet</portlet-ref>
+          </portlet>
+        </portlet-application>
+      </column>
+      <column col-span="6">
+        <portlet-application>
+          <portlet>
+            <application-ref>analytics</application-ref>
+            <portlet-ref>AnalyticsPortlet</portlet-ref>
+          </portlet>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>analytics</application-ref>
+            <portlet-ref>AnalyticsPortlet</portlet-ref>
+          </portlet>
+        </portlet-application>
+      </column>
+    </section-columns>
   </container>
-</page>
+</container>

@@ -1,0 +1,38 @@
+{
+   "descriptors":[
+      {
+         "id":"columns",
+         "order":20,
+         "names":{
+            "en":"layout.pageTemplate.columns.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.columns.description"
+         },
+         "illustrationPath":"war:/../images/pages/template/columns.png",
+         "layoutPath":"war:/conf/portal/template/pages/columns/page.xml"
+      }, {
+         "id":"grid",
+         "order":30,
+         "names":{
+            "en":"layout.pageTemplate.grid.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.grid.description"
+         },
+         "illustrationPath":"war:/../images/pages/template/grid.png",
+         "layoutPath":"war:/conf/portal/template/pages/grid/page.xml"
+      }, {
+         "id":"analytics",
+         "order":40,
+         "names":{
+            "en":"layout.pageTemplate.analytics.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.analytics.description"
+         },
+         "illustrationPath":"war:/../images/pages/template/analytics.png",
+         "layoutPath":"war:/conf/portal/template/pages/analytics/page.xml"
+      }
+   ]
+}

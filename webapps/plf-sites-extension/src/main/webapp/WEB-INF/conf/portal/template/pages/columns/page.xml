@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<container
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_12 http://www.gatein.org/xml/ns/gatein_objects_1_12"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_12">
+  <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
+    <!-- Empty attributes kept as example -->
+    <section-columns
+      id=""
+      cssClass=""
+      profiles="">
+      <access-permissions>Everyone</access-permissions>
+      <column
+        id=""
+        col-span="6"
+        cssClass=""
+        profiles="">
+        <access-permissions>Everyone</access-permissions>
+        <!-- Here goes applications for this first column -->
+      </column>
+      <!-- Minimum declaration of a column -->
+      <column col-span="6" />
+    </section-columns>
+  </container>
+</container>
