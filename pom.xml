@@ -49,41 +49,41 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.social.version>7.0.x-meed-SNAPSHOT</org.exoplatform.social.version>
-    <org.exoplatform.platform-ui.version>7.0.x-meed-SNAPSHOT</org.exoplatform.platform-ui.version>
+    <org.exoplatform.social.version>7.0.0-meed-20240428</org.exoplatform.social.version>
+    <org.exoplatform.platform-ui.version>7.0.0-meed-20240428</org.exoplatform.platform-ui.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>7.0.x-meed-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
+    <org.exoplatform.platform.addons-manager.version>7.0.0-meed-20240428</org.exoplatform.platform.addons-manager.version>
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.meeds.layout.id>meeds-layout</addon.meeds.layout.id>
-    <addon.meeds.layout.version>7.0.x-meed-SNAPSHOT</addon.meeds.layout.version>
+    <addon.meeds.layout.version>7.0.0-meed-20240428</addon.meeds.layout.version>
     <addon.exo.kudos.id>meeds-kudos</addon.exo.kudos.id>
-    <addon.exo.kudos.version>7.0.x-meed-SNAPSHOT</addon.exo.kudos.version>
+    <addon.exo.kudos.version>7.0.0-meed-20240428</addon.exo.kudos.version>
     <addon.exo.perk-store.id>meeds-perk-store</addon.exo.perk-store.id>
-    <addon.exo.perk-store.version>7.0.x-meed-SNAPSHOT</addon.exo.perk-store.version>
+    <addon.exo.perk-store.version>7.0.0-meed-20240428</addon.exo.perk-store.version>
     <addon.exo.wallet.id>meeds-wallet</addon.exo.wallet.id>
-    <addon.exo.wallet.version>7.0.x-meed-SNAPSHOT</addon.exo.wallet.version>
+    <addon.exo.wallet.version>7.0.0-meed-20240428</addon.exo.wallet.version>
     <addon.exo.gamification.id>meeds-gamification</addon.exo.gamification.id>
-    <addon.exo.gamification.version>7.0.x-meed-SNAPSHOT</addon.exo.gamification.version>
+    <addon.exo.gamification.version>7.0.0-meed-20240428</addon.exo.gamification.version>
     <addon.exo.app-center.id>meeds-app-center</addon.exo.app-center.id>
-    <addon.exo.app-center.version>7.0.x-meed-SNAPSHOT</addon.exo.app-center.version>
+    <addon.exo.app-center.version>7.0.0-meed-20240428</addon.exo.app-center.version>
     <addon.exo.notes.id>meeds-notes</addon.exo.notes.id>
-    <addon.exo.notes.version>7.0.x-meed-SNAPSHOT</addon.exo.notes.version>
+    <addon.exo.notes.version>7.0.0-meed-20240428</addon.exo.notes.version>
     <addon.exo.tasks.id>meeds-tasks</addon.exo.tasks.id>
-    <addon.exo.tasks.version>7.0.x-meed-SNAPSHOT</addon.exo.tasks.version>
+    <addon.exo.tasks.version>7.0.0-meed-20240428</addon.exo.tasks.version>
     <addon.exo.analytics.id>meeds-analytics</addon.exo.analytics.id>
-    <addon.exo.analytics.version>7.0.x-meed-SNAPSHOT</addon.exo.analytics.version>
+    <addon.exo.analytics.version>7.0.0-meed-20240428</addon.exo.analytics.version>
     <addon.exo.poll.id>meeds-poll</addon.exo.poll.id>
-    <addon.exo.poll.version>7.0.x-meed-SNAPSHOT</addon.exo.poll.version>
+    <addon.exo.poll.version>7.0.0-meed-20240428</addon.exo.poll.version>
     <addon.meeds.gamification-github.id>meeds-gamification-github</addon.meeds.gamification-github.id>
-    <addon.meeds.gamification-github.version>7.0.x-meed-SNAPSHOT</addon.meeds.gamification-github.version>
+    <addon.meeds.gamification-github.version>7.0.0-meed-20240428</addon.meeds.gamification-github.version>
     <addon.meeds.gamification-twitter.id>meeds-gamification-twitter</addon.meeds.gamification-twitter.id>
-    <addon.meeds.gamification-twitter.version>7.0.x-meed-SNAPSHOT</addon.meeds.gamification-twitter.version>
+    <addon.meeds.gamification-twitter.version>7.0.0-meed-20240428</addon.meeds.gamification-twitter.version>
     <addon.meeds.gamification-evm.id>meeds-gamification-evm</addon.meeds.gamification-evm.id>
-    <addon.meeds.gamification-evm.version>7.0.x-meed-SNAPSHOT</addon.meeds.gamification-evm.version>
+    <addon.meeds.gamification-evm.version>7.0.0-meed-20240428</addon.meeds.gamification-evm.version>
     <addon.meeds.deeds-tenant.id>meeds-deeds-tenant</addon.meeds.deeds-tenant.id>
-    <addon.meeds.deeds-tenant.version>7.0.x-meed-SNAPSHOT</addon.meeds.deeds-tenant.version>
+    <addon.meeds.deeds-tenant.version>7.0.0-meed-20240428</addon.meeds.deeds-tenant.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
