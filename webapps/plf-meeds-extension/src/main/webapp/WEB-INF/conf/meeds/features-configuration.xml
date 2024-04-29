@@ -30,6 +30,7 @@
         <name>MeedsFeatureProperties</name>
         <property name="exo.feature.SpaceHomeLayoutReset.enabled" value="${exo.feature.SpaceHomeLayoutReset.enabled:true}" />
         <property name="exo.feature.EditorAttachImage.enabled" value="${exo.feature.EditorAttachImage.enabled:true}" />
+        <property name="exo.feature.LayoutAllAppsDrawer.enabled" value="${exo.feature.LayoutAllAppsDrawer.enabled:true}" />
       </properties-param>
     </init-params>
   </component>
