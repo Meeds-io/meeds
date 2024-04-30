@@ -327,4 +327,25 @@
       </portlet-application>
     </container>
   </page>
+  
+  <page profiles="content">
+    <name>newsTargets</name>
+    <title>News targets</title>
+    <access-permissions>manager:/platform/web-contributors</access-permissions>
+    <edit-permission>manager:/platform/web-contributors</edit-permission>
+    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
+      <access-permissions>Everyone</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>content</application-ref>
+          <portlet-ref>newsPublishTargetsManagement</portlet-ref>
+        </portlet>
+        <title>News targets</title>
+        <access-permissions>Everyone</access-permissions>
+        <show-info-bar>false</show-info-bar>
+        <show-application-state>false</show-application-state>
+        <show-application-mode>false</show-application-mode>
+      </portlet-application>
+    </container>
+  </page>
 </page-set>

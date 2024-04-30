@@ -2056,5 +2056,25 @@
       </container>
     </container>
   </page>
-
+  
+  <page profiles="content">
+    <name>newsDetail</name>
+    <title>News detail</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container id="NewsDetailContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <access-permissions>Everyone</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>content</application-ref>
+          <portlet-ref>NewsDetail</portlet-ref>
+        </portlet>
+        <title>News Detail</title>
+        <access-permissions>Everyone</access-permissions>
+        <show-info-bar>false</show-info-bar>
+        <show-application-state>false</show-application-state>
+        <show-application-mode>false</show-application-mode>
+      </portlet-application>
+    </container>
+  </page>
 </page-set>
