@@ -295,5 +295,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::pageNotFound</page-reference>
     </node>
+    <node>
+      <name>news-detail</name>
+      <label>#{portal.public.newsDetail}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::newsDetail</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>

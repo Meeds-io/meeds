@@ -122,6 +122,22 @@
           <page-reference>portal::administration::gamificationBadgesAdministration</page-reference>
         </node>
       </node>
+      <node>
+        <name>applications</name>
+        <label>#{portal.administration.applications}</label>
+        <icon>fas fa-boxes</icon>
+        <node>
+          <name>news-settings</name>
+          <label>#{portal.administration.news-settings}</label>
+          <icon>fas fa-newspaper</icon>
+          <node>
+            <name>newsTargets</name>
+            <label>#{portal.administration.newsTargets}</label>
+            <icon>fas fa-bullseye</icon>
+            <page-reference>portal::administration::newsTargets</page-reference>
+          </node>
+        </node>
+      </node>
     </node>
   </page-nodes>
 </node-navigation>
