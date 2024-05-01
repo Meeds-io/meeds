@@ -28,59 +28,35 @@
     <title>Home</title>
     <access-permissions>member:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="sectionPageSimpleTableContainer" template='system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl' cssClass="VuetifyApp">
-      <access-permissions>Everyone</access-permissions>
-      <container id="sectionPageSimpleRowContainer" template='system:/groovy/portal/webui/container/UISimpleRowContainer.gtmpl' cssClass="v-application v-application--is-ltr v-application--wrap">
-        <access-permissions>Everyone</access-permissions>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="mb-n5">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
               <portlet-ref>Image</portlet-ref>
             </portlet>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-      </container>
-      <container id="sectionPageSimpleRowContainer" template='system:/groovy/portal/webui/container/UISimpleRowContainer.gtmpl'>
-        <access-permissions>Everyone</access-permissions>
-        <container template="system:/groovy/portal/webui/container/UIResponsiveColumnGroupContainer.gtmpl">
-          <access-permissions>Everyone</access-permissions>
-          <container template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" width="70%">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>notes</application-ref>
-                <portlet-ref>NotePageView</portlet-ref>
-              </portlet>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" width="30%">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>notes</application-ref>
-                <portlet-ref>NotePageView</portlet-ref>
-              </portlet>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>Links</portlet-ref>
-              </portlet>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-        </container>
-      </container>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>NotePageView</portlet-ref>
+            </portlet>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>Links</portlet-ref>
+            </portlet>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 </page-set>
