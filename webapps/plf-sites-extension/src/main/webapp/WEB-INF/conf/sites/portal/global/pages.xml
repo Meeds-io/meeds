@@ -41,8 +41,6 @@
               <portlet-ref>PeopleList</portlet-ref>
             </portlet>
             <title>All People</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
         </column>
         <column col-span="4">
@@ -52,8 +50,6 @@
               <portlet-ref>PeopleOverview</portlet-ref>
             </portlet>
             <title>People Overview Portlet</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
           <portlet-application>
             <portlet>
@@ -67,9 +63,6 @@
               </preferences>
             </portlet>
             <title>Suggestions peoples</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
           </portlet-application>
           <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>rightbottom-people-container</name>
@@ -142,9 +135,6 @@
               <portlet-ref>UserActivityStreamPortlet</portlet-ref>
             </portlet>
             <title>User Activity Stream</title>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
         </column>
       </section-columns>
@@ -172,8 +162,6 @@
               <portlet-ref>SpaceAccessPortlet</portlet-ref>
             </portlet>
             <title>space-access</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
         </column>
       </section-columns>
@@ -194,8 +182,6 @@
               <portlet-ref>PageNotFound</portlet-ref>
             </portlet>
             <title>Page Not Found</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
         </column>
       </section-columns>
@@ -480,8 +466,6 @@
               <portlet-ref>myContributions</portlet-ref>
             </portlet>
             <title>User Contributions</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
         </column>
         <column col-span="4">
@@ -1412,8 +1396,6 @@
               <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
             </portlet>
             <title>Breadcrumb Analytics</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
         </column>
       </section-columns>
@@ -1869,8 +1851,6 @@
             <portlet-ref>DrawersOverlay</portlet-ref>
           </portlet>
           <title>Drawers Overlay</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
         </portlet-application>
       </container>
       <container
@@ -1888,8 +1868,6 @@
           <portlet-ref>LayoutEditor</portlet-ref>
         </portlet>
         <title>Layout Editor</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
       </portlet-application>
     </container>
   </page>
