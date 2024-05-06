@@ -235,7 +235,7 @@
       <section-columns
         sticky-beahvior="true"
         mobile-columns-style="true">
-        <column col-span="9">
+        <column col-span="8">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
@@ -244,7 +244,7 @@
             <title>User Activity Stream</title>
           </portlet-application>
         </column>
-        <column col-span="3">
+        <column col-span="4">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
@@ -288,7 +288,7 @@
       <section-columns
         sticky-beahvior="true"
         mobile-columns-style="true">
-        <column col-span="9">
+        <column col-span="8">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
@@ -297,7 +297,7 @@
             <title>User Activity Stream</title>
           </portlet-application>
         </column>
-        <column col-span="3">
+        <column col-span="4">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
