@@ -20,11 +20,10 @@
 
 -->
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
-
   <external-component-plugins>
     <target-component>org.exoplatform.commons.upgrade.UpgradeProductService</target-component>
     <component-plugin>
-      <name>SpacePeopleNavigationUpgrade</name>
+      <name>OverallPagesLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -45,22 +44,266 @@
           <value>true</value>
         </value-param>
         <object-param>
-          <name>overview.upgrade</name>
+          <name>administration.upgrade</name>
           <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updateNavigation">
+            <field name="updatePageLayout">
               <boolean>true</boolean>
             </field>
             <field name="configPath">
-              <string>war:/conf/meeds/</string>
+              <string>war:/conf/sites/</string>
             </field>
             <field name="portalType">
               <string>portal</string>
             </field>
             <field name="portalName">
-              <string>meeds</string>
+              <string>administration</string>
             </field>
             <field name="importMode">
-              <string>overwrite</string>
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>generalSettings</string>
+                </value>
+                <value>
+                  <string>notification</string>
+                </value>
+                <value>
+                  <string>appCenterAdminSetup</string>
+                </value>
+                <value>
+                  <string>usersManagement</string>
+                </value>
+                <value>
+                  <string>groupsManagement</string>
+                </value>
+                <value>
+                  <string>profileManagement</string>
+                </value>
+                <value>
+                  <string>spacesAdministration</string>
+                </value>
+                <value>
+                  <string>siteManagement</string>
+                </value>
+                <value>
+                  <string>gamificationConnectorsAdministration</string>
+                </value>
+                <value>
+                  <string>gamificationBadgesAdministration</string>
+                </value>
+                <value>
+                  <string>recognitionSetup</string>
+                </value>
+                <value>
+                  <string>walletAdministration</string>
+                </value>
+                <value>
+                  <string>rewardAdministration</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>contribute.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>contribute</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>actions</string>
+                </value>
+                <value>
+                  <string>programs</string>
+                </value>
+                <value>
+                  <string>perks</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>global.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>global</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>all-people</string>
+                </value>
+                <value>
+                  <string>all-spaces</string>
+                </value>
+                <value>
+                  <string>activity</string>
+                </value>
+                <value>
+                  <string>search</string>
+                </value>
+                <value>
+                  <string>space-access</string>
+                </value>
+                <value>
+                  <string>page-not-found</string>
+                </value>
+                <value>
+                  <string>settings</string>
+                </value>
+                <value>
+                  <string>stream</string>
+                </value>
+                <value>
+                  <string>externalStream</string>
+                </value>
+                <value>
+                  <string>profile</string>
+                </value>
+                <value>
+                  <string>overview</string>
+                </value>
+                <value>
+                  <string>programs</string>
+                </value>
+                <value>
+                  <string>actions</string>
+                </value>
+                <value>
+                  <string>achievements</string>
+                </value>
+                <value>
+                  <string>wallet</string>
+                </value>
+                <value>
+                  <string>tasks</string>
+                </value>
+                <value>
+                  <string>perkstore</string>
+                </value>
+                <value>
+                  <string>appCenterUserSetup</string>
+                </value>
+                <value>
+                  <string>analytics</string>
+                </value>
+                <value>
+                  <string>analytics-users</string>
+                </value>
+                <value>
+                  <string>analytics-spaces</string>
+                </value>
+                <value>
+                  <string>analytics-mobile</string>
+                </value>
+                <value>
+                  <string>analytics-security</string>
+                </value>
+                <value>
+                  <string>analytics-wallet</string>
+                </value>
+                <value>
+                  <string>notes-editor</string>
+                </value>
+                <value>
+                  <string>layout-editor</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>mycraft.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>mycraft</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>dashboard</string>
+                </value>
+                <value>
+                  <string>tasks</string>
+                </value>
+                <value>
+                  <string>achievements</string>
+                </value>
+                <value>
+                  <string>wallet</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>public.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>overview</string>
+                </value>
+                <value>
+                  <string>actions</string>
+                </value>
+              </collection>
             </field>
           </object>
         </object-param>
