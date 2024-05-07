@@ -230,5 +230,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-content",
+    "version": "${addon.meeds.content.version}",
+    "unstable": false,
+    "name": "Content add-on",
+    "description": "Add-on for Contents",
+    "sourceUrl": "https://github.com/meeds-io/content",
+    "documentationUrl": "https://github.com/meeds-io/content",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/content/content-packaging/${addon.meeds.content.version}/content-packaging-${addon.meeds.content.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
