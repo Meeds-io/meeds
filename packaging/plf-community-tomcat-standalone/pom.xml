@@ -130,6 +130,12 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>io.meeds.content</groupId>
+      <artifactId>content-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.exoplatform.addons.gamification-github</groupId>
       <artifactId>gamification-github-packaging</artifactId>
       <type>zip</type>
@@ -384,6 +390,9 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.poll.id}:${addon.exo.poll.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.content.id}:${addon.meeds.content.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.gamification-github.id}:${addon.meeds.gamification-github.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
