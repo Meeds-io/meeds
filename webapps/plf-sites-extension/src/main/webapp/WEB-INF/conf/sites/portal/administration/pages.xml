@@ -3,197 +3,211 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2023 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 3 of the License, or (at your option) any later version.
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
   Lesser General Public License for more details.
+
   You should have received a copy of the GNU Lesser General Public License
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
 <page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_11 http://www.exoplatform.org/xml/ns/gatein_objects_1_11"
-          xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_11">
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
   <page>
     <name>generalSettings</name>
     <title>General Settings</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-            <portlet-ref>GeneralSettings</portlet-ref>
-        </portlet>
-        <title>General Settings Portlet</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+                <portlet-ref>GeneralSettings</portlet-ref>
+            </portlet>
+            <title>General Settings Portlet</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page>
     <name>notification</name>
     <title>Notifications Administration</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>NotificationAdministration</portlet-ref>
-          </portlet>
-          <title>Notifications Administration</title>
-          <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
-        </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>NotificationAdministration</portlet-ref>
+            </portlet>
+            <title>Notifications Administration</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page profiles="app-center">
     <name>appCenterAdminSetup</name>
     <title>App center admin setup</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>app-center</application-ref>
-          <portlet-ref>AppCenterAdminSetupPortlet</portlet-ref>
-          <preferences>
-            <preference>
-              <name>pageSize</name>
-              <value>10</value>
-              <read-only>false</read-only>
-            </preference>
-          </preferences>
-        </portlet>
-        <title>App Center Admin Setup</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>app-center</application-ref>
+              <portlet-ref>AppCenterAdminSetupPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>pageSize</name>
+                  <value>10</value>
+                  <read-only>false</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>App Center Admin Setup</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page>
     <name>usersManagement</name>
     <title>Users Management</title>
     <access-permissions>*:/platform/administrators;*:/platform/delegated</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>IDMUsersManagement</portlet-ref>
-        </portlet>
-        <title>Users Management</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>IDMUsersManagement</portlet-ref>
+            </portlet>
+            <title>Users Management</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page>
     <name>groupsManagement</name>
     <title>Groups Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>IDMGroupsManagement</portlet-ref>
-        </portlet>
-        <title>Groups Management</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>IDMGroupsManagement</portlet-ref>
+            </portlet>
+            <title>Groups Management</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page>
     <name>profileManagement</name>
     <title>Profile Settings Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>ProfileSettingsPortlet</portlet-ref>
-        </portlet>
-        <title>Profile Settings Management</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ProfileSettingsPortlet</portlet-ref>
+            </portlet>
+            <title>Profile Settings Management</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page>
     <name>spacesAdministration</name>
     <title>Spaces Administration</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>false</show-max-window>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>SpacesAdministration</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>SpacesAdministration</portlet-ref>
+            </portlet>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page profiles="layout">
     <name>siteManagement</name>
     <title>Sites Layout Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>false</show-max-window>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>SiteManagement</portlet-ref>
-        </portlet>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>layout</application-ref>
+              <portlet-ref>SiteManagement</portlet-ref>
+            </portlet>
+            <access-permissions>Everyone</access-permissions>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
+
   <page profiles="gamification">
     <name>gamificationConnectorsAdministration</name>
     <title>Gamification Connectors Administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-               cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>gamification-portlets</application-ref>
-          <portlet-ref>ConnectorAdminSettings</portlet-ref>
-        </portlet>
-        <title>Gamification Connectors Administration</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>ConnectorAdminSettings</portlet-ref>
+            </portlet>
+            <title>Gamification Connectors Administration</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -202,91 +216,59 @@
     <title>Gamification Badges Administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-               cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>gamification-portlets</application-ref>
-          <portlet-ref>GamificationManageBadges</portlet-ref>
-        </portlet>
-        <title>Gamification Manage Badges</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>GamificationManageBadges</portlet-ref>
+            </portlet>
+            <title>Gamification Manage Badges</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page profiles="kudos,wallet,perk-store">
+  <page profiles="kudos,wallet,perk-store,deeds-tenant">
     <name>recognitionSetup</name>
     <title>Recognistion setup</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="no-applications-spacing application-border-radius application-background application-background application-min-height">
-        <access-permissions>Everyone</access-permissions>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          profiles="kudos">
-          <access-permissions>Everyone</access-permissions>
-          <portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12" cssClass="white application-border-radius pt-5">
+          <portlet-application profiles="kudos">
             <portlet>
               <application-ref>kudos</application-ref>
               <portlet-ref>KudosAdmin</portlet-ref>
             </portlet>
             <title>Kudos setup administration</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          profiles="wallet">
-          <access-permissions>Everyone</access-permissions>
-          <portlet-application>
+          <portlet-application profiles="wallet">
             <portlet>
               <application-ref>wallet</application-ref>
               <portlet-ref>WalletSetupAdmin</portlet-ref>
             </portlet>
             <title>Wallet setup administration</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          profiles="perk-store">
-          <access-permissions>Everyone</access-permissions>
-          <portlet-application>
+          <portlet-application profiles="perk-store">
             <portlet>
               <application-ref>perk-store</application-ref>
               <portlet-ref>PerkStoreAdmin</portlet-ref>
             </portlet>
             <title>Perk store setup administration</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          profiles="deeds-tenant">
-          <access-permissions>Everyone</access-permissions>
-          <portlet-application>
+          <portlet-application profiles="deeds-tenant">
             <portlet>
               <application-ref>deeds-tenant</application-ref>
               <portlet-ref>WoMSetupAdmin</portlet-ref>
             </portlet>
             <title>WoM setup administration</title>
-            <access-permissions>Everyone</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -295,17 +277,18 @@
     <title>Wallet adminsitration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>wallet</application-ref>
-          <portlet-ref>WalletAdmin</portlet-ref>
-        </portlet>
-        <title>Wallet adminsitration</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>WalletAdmin</portlet-ref>
+            </portlet>
+            <title>Wallet adminsitration</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -314,17 +297,18 @@
     <title>Reward administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>wallet</application-ref>
-          <portlet-ref>RewardAdmin</portlet-ref>
-        </portlet>
-        <title>Reward administration</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>RewardAdmin</portlet-ref>
+            </portlet>
+            <title>Reward administration</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
   
@@ -348,4 +332,5 @@
       </portlet-application>
     </container>
   </page>
+
 </page-set>

@@ -3,58 +3,54 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2022 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 3 of the License, or (at your option) any later version.
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
   Lesser General Public License for more details.
+
   You should have received a copy of the GNU Lesser General Public License
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<page-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_8 http://www.exoplatform.org/xml/ns/gatein_objects_1_8"
-  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_8">
+<page-set
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
 
   <page>
     <name>all-people</name>
     <title>People Directory</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="parentSocialPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
-      <access-permissions>*:/platform/users</access-permissions>
-      <container id="leftSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>PeopleList</portlet-ref>
-          </portlet>
-          <title>All People</title>
-          <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="rightSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>PeopleOverview</portlet-ref>
-          </portlet>
-          <title>People Overview Portlet</title>
-          <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-        <container id="stickyBlockDesktop" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>PeopleList</portlet-ref>
+            </portlet>
+            <title>All People</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>PeopleOverview</portlet-ref>
+            </portlet>
+            <title>People Overview Portlet</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
@@ -67,18 +63,13 @@
               </preferences>
             </portlet>
             <title>Suggestions peoples</title>
-            <access-permissions>*:/platform/users</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
           </portlet-application>
-          <container id="rightbottom-people-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>rightbottom-people-container</name>
-            <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -87,34 +78,27 @@
     <title>All Spaces</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="parentSocialPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
-      <access-permissions>*:/platform/users</access-permissions>
-      <container id="leftSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>SpacesList</portlet-ref>
-          </portlet>
-          <title>All Spaces</title>
-          <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="rightSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>SpacesOverview</portlet-ref>
-          </portlet>
-          <title>Spaces Overview Portlet</title>
-          <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-        <container id="stickyBlockDesktop" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>SpacesList</portlet-ref>
+            </portlet>
+            <title>All Spaces</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>SpacesOverview</portlet-ref>
+            </portlet>
+            <title>Spaces Overview Portlet</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
@@ -127,18 +111,13 @@
               </preferences>
             </portlet>
             <title>Suggestions spaces</title>
-            <access-permissions>*:/platform/users</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
           </portlet-application>
-          <container id="rightbottom-spaces-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>rightbottom-spaces-container</name>
-            <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -147,21 +126,18 @@
     <title>Activity</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container id="singlePageApplication" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>UserActivityStreamPortlet</portlet-ref>
-          </portlet>
-          <title>User Activity Stream</title>
-          <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>User Activity Stream</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -177,16 +153,19 @@
     <title>space-access</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <portlet-application>
-      <portlet>
-        <application-ref>social-portlet</application-ref>
-        <portlet-ref>SpaceAccessPortlet</portlet-ref>
-      </portlet>
-      <title>space-access</title>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <show-info-bar>false</show-info-bar>
-      <show-application-state>true</show-application-state>
-    </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>SpaceAccessPortlet</portlet-ref>
+            </portlet>
+            <title>space-access</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
   </page>
 
   <page>
@@ -194,16 +173,19 @@
     <title>Page Not Found</title>
     <access-permissions>Everyone</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <portlet-application>
-      <portlet>
-        <application-ref>social-portlet</application-ref>
-        <portlet-ref>PageNotFound</portlet-ref>
-      </portlet>
-      <title>Page Not Found</title>
-      <access-permissions>Everyone</access-permissions>
-      <show-info-bar>false</show-info-bar>
-      <show-application-state>true</show-application-state>
-    </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>PageNotFound</portlet-ref>
+            </portlet>
+            <title>Page Not Found</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
   </page>
 
   <page>
@@ -211,43 +193,36 @@
     <title>Settings</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>UserSettingLanguage</portlet-ref>
-        </portlet>
-        <title>User Setting Language</title>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>UserSettingNotifications</portlet-ref>
-        </portlet>
-        <title>User Setting Notifications</title>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>UserSettingSecurity</portlet-ref>
-        </portlet>
-        <title>User Setting Security</title>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
-      <container id="settings-bottom-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-        <name>settings-bottom-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserSettingLanguage</portlet-ref>
+            </portlet>
+            <title>User Setting Language</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserSettingNotifications</portlet-ref>
+            </portlet>
+            <title>User Setting Notifications</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserSettingSecurity</portlet-ref>
+            </portlet>
+            <title>User Setting Security</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>settings-bottom-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -256,79 +231,51 @@
     <title>Stream</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="StreamPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
-      <access-permissions>*:/platform/users</access-permissions>
-      <container id="StreamMainContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>UserActivityStreamPortlet</portlet-ref>
-          </portlet>
-          <title>User Activity Stream</title>
-          <access-permissions>*:/platform/users</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="StreamRightContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users</access-permissions>
-        <container id="GettingStartedContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/users</access-permissions>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>User Activity Stream</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
               <portlet-ref>GettingStarted</portlet-ref>
             </portlet>
             <title>Getting Started</title>
-            <access-permissions>*:/platform/users</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
-        </container>
-        <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/users</access-permissions>
-          <container id="stream-top-widgets-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
             <name>stream-top-widgets-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-        <container id="stickyBlockDesktop" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/users</access-permissions>
-          <container id="WhoIsOnLineContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>*:/platform/users</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
-              </portlet>
-              <title>Who is on line</title>
-              <access-permissions>*:/platform/users</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>false</show-application-state>
-              <show-application-mode>false</show-application-mode>
-            </portlet-application>
-          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on line</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
               <portlet-ref>SuggestionsPeopleAndSpace</portlet-ref>
             </portlet>
             <title>Suggestions peoples and spaces</title>
-            <access-permissions>*:/platform/users</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>*:/platform/users</access-permissions>
-            <container id="stream-bottom-widgets-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-              <name>stream-bottom-widgets-container</name>
-              <factory-id>addonContainer</factory-id>
-            </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>stream-bottom-widgets-container</name>
+            <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -337,61 +284,43 @@
     <title>externalStream</title>
     <access-permissions>*:/platform/externals</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="StreamPage" template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
-      <access-permissions>*:/platform/externals</access-permissions>
-      <container id="StreamMainContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/externals</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>UserActivityStreamPortlet</portlet-ref>
-          </portlet>
-          <title>User Activity Stream</title>
-          <access-permissions>*:/platform/externals</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="StreamRightContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/externals</access-permissions>
-        <container id="GettingStartedContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/externals</access-permissions>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>User Activity Stream</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
               <portlet-ref>GettingStarted</portlet-ref>
             </portlet>
             <title>Getting Started</title>
-            <access-permissions>*:/platform/externals</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>true</show-application-state>
           </portlet-application>
-        </container>
-        <container id="ExternalSpacesListContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/externals</access-permissions>
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
               <portlet-ref>ExternalSpacesList</portlet-ref>
             </portlet>
             <title>External spaces list</title>
-            <access-permissions>*:/platform/externals</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-        <container id="MyTasksContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="task">
-          <access-permissions>*:/platform/externals</access-permissions>
           <portlet-application>
             <portlet>
               <application-ref>task-management</application-ref>
               <portlet-ref>tasks</portlet-ref>
             </portlet>
             <title>Tasks</title>
-            <access-permissions>*:/platform/externals</access-permissions>
-            <show-info-bar>false</show-info-bar>
           </portlet-application>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -400,1214 +329,1466 @@
     <title>Profile</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="parentSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <container id="UIProfileHeaderContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>ProfileHeader</portlet-ref>
-          </portlet>
-          <title>Profile Header Portlet</title>
-          <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>true</show-application-state>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIMobileSwipeContainer.gtmpl">
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <container id="leftSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-          <container id="profile-before-about-me-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ProfileHeader</portlet-ref>
+            </portlet>
+            <title>Profile Header Portlet</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-before-about-me-container</name>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="profile-about-me-container" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>ProfileAboutMe</portlet-ref>
-              </portlet>
-              <title>Profile AboutMe Portlet</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>true</show-application-state>
-            </portlet-application>
-          </container>
-          <container id="profile-after-about-me-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ProfileAboutMe</portlet-ref>
+            </portlet>
+            <title>Profile AboutMe Portlet</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-after-about-me-container</name>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="profile-before-work-experience-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-before-work-experience-container</name>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <container id="profile-before-contact-information-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-before-contact-information-container</name>
-            <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="profile-contact-information-container" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>ProfileContactInformation</portlet-ref>
-              </portlet>
-              <title>Profile contact information Portlet</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>true</show-application-state>
-            </portlet-application>
-          </container>
-          <container id="profile-after-contact-information-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ProfileContactInformation</portlet-ref>
+            </portlet>
+            <title>Profile contact information Portlet</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-after-contact-information-container</name>
-            <access-permissions>*:/platform/users</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="profile-work-experience-container" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>ProfileWorkExperience</portlet-ref>
-              </portlet>
-              <title>Profile Work Experience Portlet</title>
-              <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>true</show-application-state>
-            </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>profile-before-work-experience-container</name>
+            <factory-id>addonContainer</factory-id>
           </container>
-          <container id="profile-after-work-experience-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ProfileWorkExperience</portlet-ref>
+            </portlet>
+            <title>Profile Work Experience Portlet</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-after-work-experience-container</name>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-        <container id="rightSocialPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-          <container id="profile-right-container" template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+        </column>
+        <column col-span="4">
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>profile-right-container</name>
-            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
-        </container>
-      </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="gamification">
+    <name>overview</name>
+    <title>Overview</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>*:/platform/rewarding</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>Image</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>name</name>
+                  <value>overivewPageBanner</value>
+                </preference>
+                <preference>
+                  <name>image-path</name>
+                  <value>war:/../images/pages/banner/dashboard-banner.png</value>
+                  <read-only>false</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Banner</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>topChallengers</portlet-ref>
+            </portlet>
+            <title>Leaderboard</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>challengesOverview</portlet-ref>
+            </portlet>
+            <title>Actions overview</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>programsOverview</portlet-ref>
+            </portlet>
+            <title>Programs Overview</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myContributions</portlet-ref>
+            </portlet>
+            <title>User Contributions</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myReputation</portlet-ref>
+            </portlet>
+            <title>User reputation</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="gamification">
     <name>programs</name>
     <title>Contribution Center - Programs</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container
-      id="programsParentContainer"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container
-        id="top-programs-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-programs-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="programs-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>programs-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="bottom-programs-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-programs-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-programs-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>programs-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-programs-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="gamification">
     <name>actions</name>
     <title>Contribution Center - Actions</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container
-      id="actionsParentContainer"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container
-        id="top-actions-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-actions-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="actions-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>actions-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="bottom-actions-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-actions-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-actions-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>actions-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-actions-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="gamification">
     <name>achievements</name>
     <title>Contribution Center - Achievements</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container
-      id="achievementsParentContainer"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container
-        id="top-achievements-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-achievements-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="achievements-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>achievements-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container
-        id="bottom-achievements-container"
-        template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-achievements-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-achievements-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>achievements-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-achievements-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="wallet">
     <name>wallet</name>
     <title>Wallet</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication" profiles="wallet">
-      <container id="top-wallet-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-wallet-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="wallet-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>wallet-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="bottom-wallet-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-wallet-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-wallet-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>wallet-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-wallet-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
-  <page>
+
+  <page profiles="task">
     <name>tasks</name>
     <title>Tasks</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container id="TasksParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container id="top-tasks-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-task-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="tasks-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>tasks-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="bottom-tasks-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-tasks-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-task-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>tasks-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-tasks-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
-  <page>
+
+  <page profiles="perk-store">
+    <name>perkstore</name>
+    <title>Perk Store</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container
+            template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-perk-store-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container
+            template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>perk-store-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container
+            template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-perk-store-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="app-center">
+    <name>appCenterUserSetup</name>
+    <title>App Center User Setup</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>app-center</application-ref>
+              <portlet-ref>AppCenterUserSetupPortlet</portlet-ref>
+            </portlet>
+            <title>App Center User Setup</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="analytics">
     <name>analytics</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container
-      id="topAnalyticsPage"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "offset": 0,
-                  "filters": [
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "offset": 0,
+                    "filters": [
                     {
-                      "field": "operation",
-                      "type": "EQUAL",
-                      "valueString": "login"
+                    "field": "operation",
+                    "type": "EQUAL",
+                    "valueString": "login"
                     }
-                  ],
-                  "title": "analytics.distinctLogins",
-                  "aggregations": [
+                    ],
+                    "title":
+                    "analytics.distinctLogins",
+                    "aggregations": [
                     {
-                      "field": "timestamp",
-                      "type": "DATE",
-                      "interval": "day",
-                      "sortDirection": "asc"
+                    "field": "timestamp",
+                    "type":
+                    "DATE",
+                    "interval":
+                    "day",
+                    "sortDirection": "asc"
                     },
                     {
-                      "field": "userId",
-                      "type": "CARDINALITY"
-                    }
-                  ],
-                  "xAxisAggregations": [
-                    {
-                      "field": "timestamp",
-                      "type": "DATE",
-                      "interval": "day",
-                      "sortDirection": "asc"
-                    }
-                  ],
-                  "multipleCharts": false,
-                  "yAxisAggregation": {
                     "field": "userId",
                     "type": "CARDINALITY"
-                  },
-                  "chartType": "bar",
-                  "limit": 0
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Distinct logins</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                 "title":"analytics.usersCount",
-                 "chartType":"line",
-                 "multipleChartsField":"countType.keyword",
-                 "filters":[
+                    }
+                    ],
+                    "xAxisAggregations": [
                     {
-                       "field":"operation",
-                       "type":"EQUAL",
-                       "valueString":"usersCount"
+                    "field": "timestamp",
+                    "type": "DATE",
+                    "interval":
+                    "day",
+                    "sortDirection": "asc"
+                    }
+                    ],
+                    "multipleCharts":
+                    false,
+                    "yAxisAggregation": {
+                    "field": "userId",
+                    "type": "CARDINALITY"
+                    },
+                    "chartType": "bar",
+                    "limit": 0
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Distinct logins</title>
+          </portlet-application>
+        </column>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "title":"analytics.usersCount",
+                    "chartType":"line",
+                    "multipleChartsField":"countType.keyword",
+                    "filters":[
+                    {
+                    "field":"operation",
+                    "type":"EQUAL",
+                    "valueString":"usersCount"
                     },
                     {
-                       "valueString":"enabledInternalUsers,enabledExternalUsers",
-                       "field":"countType",
-                       "type":"IN_SET"
+                    "valueString":"enabledInternalUsers,enabledExternalUsers",
+                    "field":"countType",
+                    "type":"IN_SET"
                     }
-                 ],
-                 "aggregations":[
+                    ],
+                    "aggregations":[
                     {
-                       "field":"countType.keyword",
-                       "type":"COUNT"
-                    },
-                    {
-                       "field":"timestamp",
-                       "type":"DATE",
-                       "interval":"day",
-                       "sortDirection":"asc"
-                    },
-                    {
-                       "field":"count",
-                       "type":"MAX"
-                    }
-                 ],
-                 "xAxisAggregations":[
-                    {
-                       "field":"timestamp",
-                       "type":"DATE",
-                       "interval":"day",
-                       "sortDirection":"asc"
-                    }
-                 ],
-                 "multipleCharts":true,
-                 "multipleChartsAggregation":{
                     "field":"countType.keyword",
                     "type":"COUNT"
-                 },
-                 "yAxisAggregation":{
+                    },
+                    {
+                    "field":"timestamp",
+                    "type":"DATE",
+                    "interval":"day",
+                    "sortDirection":"asc"
+                    },
+                    {
                     "field":"count",
                     "type":"MAX"
-                 }
-              }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Users count Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container cssClass="analyticsPageRow analyticsPageActiveUsersRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsRatePortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "title": "analytics.activeUsers",
-                  "chartType": "percentageBar",
-                  "colors": ["#4273C8"],
-                  "threshold": {
-                    "filters": [
-                      {
-                        "range": null,
-                        "valueString": "usersCount",
-                        "field": "operation",
-                        "type": "EQUAL"
-                      },
-                      {
-                        "range": null,
-                        "valueString": "enabledUsers",
-                        "field": "countType",
-                        "type": "EQUAL"
-                      }
-                    ],
-                    "yAxisAggregation": {
-                      "interval": null,
-                      "sortDirection": null,
-                      "field": "count",
-                      "type": "MAX"
                     }
-                  },
-                  "value": {
-                    "filters": [
-                      {
-                        "range": null,
-                        "valueString": "login",
-                        "field": "operation",
-                        "type": "EQUAL"
-                      }
                     ],
-                    "yAxisAggregation": {
-                      "interval": null,
-                      "sortDirection": null,
-                      "field": "userId",
-                      "type": "CARDINALITY"
-                    }
-                  }
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Connected Users</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsRatePortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "title": "",
-                  "chartType": "percentage",
-                  "colors": ["#4d5466"],
-                  "value": {
-                    "filters": [
-                      {
-                        "field": "userId",
-                        "type": "GREATER",
-                        "valueString": "1"
-                      }
-                    ],
-                    "yAxisAggregation": {
-                      "type": "COUNT"
-                    }
-                  },
-                  "percentageLimit": {
-                    "aggregation": {
-                      "filters": [
-                        {
-                          "valueString": "enabledUsers",
-                          "field": "countType",
-                          "type": "EQUAL"
-                        }
-                      ],
-                      "yAxisAggregation": {
-                        "field": "count",
-                        "type": "MAX"
-                      }
-                    },
-                    "percentage": 10,
-                    "field": "userId"
-                  },
-                  "threshold": {
-                    "filters": [
-                      {
-                        "field": "userId",
-                        "type": "GREATER",
-                        "valueString": "1"
-                      }
-                    ],
-                    "yAxisAggregation": {
-                      "type": "COUNT"
-                    }
-                  }
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Active Users</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "offset": 0,
-                  "title": "analytics.spacesCount",
-                  "aggregations": [
+                    "xAxisAggregations":[
                     {
-                      "field": "timestamp",
-                      "type": "DATE",
-                      "interval": "day",
-                      "sortDirection": "asc"
+                    "field":"timestamp",
+                    "type":"DATE",
+                    "interval":"day",
+                    "sortDirection":"asc"
+                    }
+                    ],
+                    "multipleCharts":true,
+                    "multipleChartsAggregation":{
+                    "field":"countType.keyword",
+                    "type":"COUNT"
+                    },
+                    "yAxisAggregation":{
+                    "field":"count",
+                    "type":"MAX"
+                    }
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Users count Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsRatePortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "title": "analytics.activeUsers",
+                    "chartType":
+                    "percentageBar",
+                    "colors": ["#4273C8"],
+                    "threshold": {
+                    "filters": [
+                    {
+                    "range": null,
+                    "valueString":
+                    "usersCount",
+                    "field": "operation",
+                    "type": "EQUAL"
                     },
                     {
-                      "field": "count",
-                      "type": "MAX"
+                    "range": null,
+                    "valueString": "enabledUsers",
+                    "field": "countType",
+                    "type": "EQUAL"
                     }
-                  ],
-                  "filters": [
-                    {
-                      "field": "operation",
-                      "type": "EQUAL",
-                      "valueString": "spacesCount"
-                    },
-                    {
-                      "field": "countType",
-                      "type": "EQUAL",
-                      "valueString": "allSpaces"
-                    }
-                  ],
-                  "xAxisAggregations": [
-                    {
-                      "field": "timestamp",
-                      "type": "DATE",
-                      "interval": "day",
-                      "sortDirection": "asc"
-                    }
-                  ],
-                  "multipleCharts": false,
-                  "yAxisAggregation": {
+                    ],
+                    "yAxisAggregation": {
+                    "interval": null,
+                    "sortDirection": null,
                     "field": "count",
                     "type": "MAX"
-                  },
-                  "chartType": "line",
-                  "limit": 0
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Users count Portlet</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "offset": 0,
-                  "title": "analytics.activitiesCount",
-                  "lang": null,
-                  "aggregations": [
-                    {
-                      "field": "module",
-                      "type": "COUNT",
-                      "interval": null,
-                      "sortDirection": "asc"
                     }
-                  ],
-                  "filters": [
+                    },
+                    "value": {
+                    "filters": [
                     {
-                      "field": "operation",
-                      "type": "IN_SET",
-                      "valueString": "noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                      "range": null
+                    "range": null,
+                    "valueString": "login",
+                    "field": "operation",
+                    "type":
+                    "EQUAL"
                     }
-                  ],
-                  "xAxisAggregations": [
+                    ],
+                    "yAxisAggregation": {
+                    "interval": null,
+                    "sortDirection": null,
+                    "field": "userId",
+                    "type":
+                    "CARDINALITY"
+                    }
+                    }
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Connected Users</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsRatePortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "title": "",
+                    "chartType": "percentage",
+                    "colors": ["#4d5466"],
+                    "value": {
+                    "filters": [
                     {
-                      "field": "module",
-                      "type": "COUNT",
-                      "interval": null,
-                      "sortDirection": "asc"
+                    "field": "userId",
+                    "type": "GREATER",
+                    "valueString":
+                    "1"
                     }
-                  ],
-                  "multipleCharts": false,
-                  "multipleChartsAggregation": null,
-                  "yAxisAggregation": {
+                    ],
+                    "yAxisAggregation": {
+                    "type":
+                    "COUNT"
+                    }
+                    },
+                    "percentageLimit": {
+                    "aggregation": {
+                    "filters": [
+                    {
+                    "valueString": "enabledUsers",
+                    "field": "countType",
+                    "type": "EQUAL"
+                    }
+                    ],
+                    "yAxisAggregation": {
+                    "field":
+                    "count",
+                    "type": "MAX"
+                    }
+                    },
+                    "percentage": 10,
+                    "field":
+                    "userId"
+                    },
+                    "threshold": {
+                    "filters": [
+                    {
+                    "field":
+                    "userId",
+                    "type": "GREATER",
+                    "valueString": "1"
+                    }
+                    ],
+                    "yAxisAggregation": {
+                    "type": "COUNT"
+                    }
+                    }
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Active Users</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "offset": 0,
+                    "title": "analytics.spacesCount",
+                    "aggregations": [
+                    {
+                    "field": "timestamp",
+                    "type":
+                    "DATE",
+                    "interval": "day",
+                    "sortDirection": "asc"
+                    },
+                    {
+                    "field": "count",
+                    "type": "MAX"
+                    }
+                    ],
+                    "filters": [
+                    {
+                    "field": "operation",
+                    "type": "EQUAL",
+                    "valueString":
+                    "spacesCount"
+                    },
+                    {
+                    "field": "countType",
+                    "type":
+                    "EQUAL",
+                    "valueString": "allSpaces"
+                    }
+                    ],
+                    "xAxisAggregations": [
+                    {
+                    "field":
+                    "timestamp",
+                    "type":
+                    "DATE",
+                    "interval": "day",
+                    "sortDirection": "asc"
+                    }
+                    ],
+                    "multipleCharts": false,
+                    "yAxisAggregation": {
+                    "field": "count",
+                    "type": "MAX"
+                    },
+                    "chartType": "line",
+                    "limit": 0
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Users count Portlet</title>
+          </portlet-application>
+        </column>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "offset": 0,
+                    "title":
+                    "analytics.activitiesCount",
+                    "lang": null,
+                    "aggregations": [
+                    {
+                    "field": "module",
+                    "type": "COUNT",
+                    "interval": null,
+                    "sortDirection": "asc"
+                    }
+                    ],
+                    "filters": [
+                    {
+                    "field": "operation",
+                    "type": "IN_SET",
+                    "valueString":
+                    "noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "range": null
+                    }
+                    ],
+                    "xAxisAggregations": [
+                    {
+                    "field":
+                    "module",
+                    "type": "COUNT",
+                    "interval": null,
+                    "sortDirection": "asc"
+                    }
+                    ],
+                    "multipleCharts": false,
+                    "multipleChartsAggregation": null,
+                    "yAxisAggregation": {
                     "field": null,
                     "type": "COUNT",
                     "interval": null,
                     "sortDirection": null
-                  },
-                  "multipleChartsField": null,
-                  "chartType": "pie",
-                  "colors": null,
-                  "limit": 0
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Platform Activities</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
+                    },
+                    "multipleChartsField": null,
+                    "chartType": "pie",
+                    "colors": null,
+                    "limit": 0
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Platform Activities</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="analytics">
     <name>analytics-users</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container
-            id="topAnalyticsPage"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-            cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                   "pageSize":20,
-                   "mainColumn":{
-                      "title":"analytics.users",
-                      "valueAggregation":{
-                         "aggregation":{
-                            "field":"userId",
-                            "type":"TERMS",
-                            "dataType":"text"
-                         },
-                         "filters":[
-                            {
-                               "valueString":"1",
-                               "field":"userId",
-                               "type":"GREATER"
-                            }
-                         ]
-                      }
-                   },
-                   "columns":[
-                      {
-                         "title":"analytics.creationDate",
-                         "previousPeriod":false,
-                         "valueAggregation":{
-                            "periodIndependent":true,
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"userCreatedDate",
-                               "type":"MAX"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"date"
-                      },
-                      {
-                         "title":"analytics.lastConnection",
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"login",
-                                  "field":"operation",
-                                  "type":"EQUAL"
-                               }
-                            ],
-                            "periodIndependent":true,
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"timestamp",
-                               "type":"MAX"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"date"
-                      },
-                      {
-                         "title":"analytics.connectionsCount",
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"login",
-                                  "field":"operation",
-                                  "type":"EQUAL"
-                               }
-                            ],
-                            "periodIndependent":false,
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"doc['timestamp'].value.dayOfYear",
-                               "type":"CARDINALITY"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"long"
-                      },
-                      {
-                         "title":"analytics.activitiesCount",
-                         "previousPeriod":false,
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                                  "field":"operation",
-                                  "type":"IN_SET"
-                               }
-                            ],
-                            "periodIndependent":false,
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "type":"COUNT"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"long"
-                      },
-                      {
-                         "title":"analytics.favoriteModule",
-                         "previousPeriod":false,
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                                  "field":"operation",
-                                  "type":"IN_SET"
-                               }
-                            ],
-                            "periodIndependent":false,
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "limit":1,
-                               "field":"module",
-                               "type":"TERMS"
-                            }
-                         },
-                         "dataType":"keyword"
-                      }
-                   ]
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>User Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "pageSize":20,
+                    "mainColumn":{
+                    "title":"analytics.users",
+                    "valueAggregation":{
+                    "aggregation":{
+                    "field":"userId",
+                    "type":"TERMS",
+                    "dataType":"text"
+                    },
+                    "filters":[
+                    {
+                    "valueString":"1",
+                    "field":"userId",
+                    "type":"GREATER"
+                    }
+                    ]
+                    }
+                    },
+                    "columns":[
+                    {
+                    "title":"analytics.creationDate",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "periodIndependent":true,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"userCreatedDate",
+                    "type":"MAX"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"date"
+                    },
+                    {
+                    "title":"analytics.lastConnection",
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"login",
+                    "field":"operation",
+                    "type":"EQUAL"
+                    }
+                    ],
+                    "periodIndependent":true,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"timestamp",
+                    "type":"MAX"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"date"
+                    },
+                    {
+                    "title":"analytics.connectionsCount",
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"login",
+                    "field":"operation",
+                    "type":"EQUAL"
+                    }
+                    ],
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"doc['timestamp'].value.dayOfYear",
+                    "type":"CARDINALITY"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.activitiesCount",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    }
+                    ],
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "type":"COUNT"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.favoriteModule",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    }
+                    ],
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "limit":1,
+                    "field":"module",
+                    "type":"TERMS"
+                    }
+                    },
+                    "dataType":"keyword"
+                    }
+                    ]
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>User Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="analytics">
     <name>analytics-spaces</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container
-            id="topAnalyticsPage"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-            cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                   "pageSize": 20,
-                   "mainColumn":{
-                      "title":"analytics.spaces",
-                      "valueAggregation":{
-                         "aggregation":{
-                            "field":"spaceId",
-                            "type":"TERMS",
-                            "dataType":"text"
-                         },
-                         "filters":[
-                            {
-                               "range":null,
-                               "valueString":"1",
-                               "field":"spaceId",
-                               "type":"GREATER"
-                            }
-                         ]
-                      }
-                   },
-                   "columns":[
-                      {
-                         "title":"analytics.creationDate",
-                         "previousPeriod":false,
-                         "valueAggregation":{
-                               "aggregation":{
-                                 "sortDirection":"desc",
-                                 "field":"spaceCreatedTime",
-                                 "type":"MAX",
-                               },
-                               "periodIndependent":true
-                         },
-                         "sortable":true,
-                         "dataType":"date"
-                      },
-                      {
-                         "title":"analytics.membersCount",
-                         "previousPeriod":true,
-                         "valueAggregation":{
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"spaceMembersCount",
-                               "type":"MAX"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"long"
-                      },
-                      {
-                         "title":"analytics.activeUsersPercent",
-                         "previousPeriod":true,
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"1",
-                                  "field":"spaceId",
-                                  "type":"GREATER"
-                               },
-                               {
-                                  "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                                  "field":"operation",
-                                  "type":"IN_SET"
-                               }
-                            ],
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"userId",
-                               "type":"CARDINALITY"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"long",
-                         "thresholdAggregation":{
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "field":"spaceMembersCount",
-                               "type":"MAX"
-                            }
-                         }
-                      },
-                      {
-                         "title":"analytics.activitiesCount",
-                         "previousPeriod":true,
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                                  "field":"operation",
-                                  "type":"IN_SET"
-                               },
-                               {
-                                  "valueString":"1",
-                                  "field":"spaceId",
-                                  "type":"GREATER"
-                               }
-                            ],
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "type":"COUNT"
-                            }
-                         },
-                         "sortable":true,
-                         "dataType":"long"
-                      },
-                      {
-                         "title":"analytics.mainModule",
-                         "valueAggregation":{
-                            "filters":[
-                               {
-                                  "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
-                                  "field":"operation",
-                                  "type":"IN_SET"
-                               }
-                            ],
-                            "aggregation":{
-                               "sortDirection":"desc",
-                               "limit":1,
-                               "field":"module",
-                               "type":"TERMS"
-                            }
-                         },
-                         "dataType":"keyword"
-                      }
-                   ]
-                }</value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Space Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "pageSize": 20,
+                    "mainColumn":{
+                    "title":"analytics.spaces",
+                    "valueAggregation":{
+                    "aggregation":{
+                    "field":"spaceId",
+                    "type":"TERMS",
+                    "dataType":"text"
+                    },
+                    "filters":[
+                    {
+                    "range":null,
+                    "valueString":"1",
+                    "field":"spaceId",
+                    "type":"GREATER"
+                    }
+                    ]
+                    }
+                    },
+                    "columns":[
+                    {
+                    "title":"analytics.creationDate",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"spaceCreatedTime",
+                    "type":"MAX",
+                    },
+                    "periodIndependent":true
+                    },
+                    "sortable":true,
+                    "dataType":"date"
+                    },
+                    {
+                    "title":"analytics.membersCount",
+                    "previousPeriod":true,
+                    "valueAggregation":{
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"spaceMembersCount",
+                    "type":"MAX"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.activeUsersPercent",
+                    "previousPeriod":true,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"1",
+                    "field":"spaceId",
+                    "type":"GREATER"
+                    },
+                    {
+                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    }
+                    ],
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"userId",
+                    "type":"CARDINALITY"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long",
+                    "thresholdAggregation":{
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"spaceMembersCount",
+                    "type":"MAX"
+                    }
+                    }
+                    },
+                    {
+                    "title":"analytics.activitiesCount",
+                    "previousPeriod":true,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    },
+                    {
+                    "valueString":"1",
+                    "field":"spaceId",
+                    "type":"GREATER"
+                    }
+                    ],
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "type":"COUNT"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.mainModule",
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    }
+                    ],
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "limit":1,
+                    "field":"module",
+                    "type":"TERMS"
+                    }
+                    },
+                    "dataType":"keyword"
+                    }
+                    ]
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Space Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page>
+  <page profiles="analytics">
     <name>analytics-mobile</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container
-            id="topAnalyticsPage"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-            cssClass="singlePageApplication border-box-sizing">
-        <access-permissions>Everyone</access-permissions>
-        <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-                <portlet>
-                    <application-ref>analytics</application-ref>
-                    <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-                </portlet>
-                <title>Breadcrumb Analytics</title>
-                <access-permissions>Everyone</access-permissions>
-                <show-info-bar>false</show-info-bar>
-            </portlet-application>
-        </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
-</page>
-<page>
+  </page>
+
+  <page profiles="analytics">
     <name>analytics-security</name>
     <title>Analytics Security</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container
-      id="topAnalyticsPage"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>
-                  {
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>
+                    {
                     "offset": 0,
                     "filters": [
-                      {
-                        "field": "operation",
-                        "type": "EQUAL",
-                        "valueString": "login",
-                        "range": null
-                      },
-                      {
-                        "field": "status",
-                        "type": "EQUAL",
-                        "valueString": "1",
-                        "range": null
-                      },
-                      {
-                        "field": "reason",
-                        "type": "EQUAL",
-                        "valueString": "wrongCredentials",
-                        "range": null
-                      }
+                    {
+                    "field": "operation",
+                    "type": "EQUAL",
+                    "valueString": "login",
+                    "range": null
+                    },
+                    {
+                    "field": "status",
+                    "type": "EQUAL",
+                    "valueString":
+                    "1",
+                    "range": null
+                    },
+                    {
+                    "field": "reason",
+                    "type": "EQUAL",
+                    "valueString": "wrongCredentials",
+                    "range": null
+                    }
                     ],
                     "limit": 0,
                     "multipleCharts": false,
                     "chartType": "bar",
                     "colors": null,
-                    "multipleChartsField": null,
-                    "lang": null,
+                    "multipleChartsField":
+                    null,
+                    "lang":
+                    null,
                     "aggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "offset": null,
-                        "interval": "day",
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "asc"
-                      },
-                      {
-                        "field": "timestamp",
-                        "type": "COUNT",
-                        "offset": null,
-                        "interval": null,
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "desc"
-                      }
+                    {
+                    "field": "timestamp",
+                    "type":
+                    "DATE",
+                    "offset": null,
+                    "interval": "day",
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection":
+                    "asc"
+                    },
+                    {
+                    "field": "timestamp",
+                    "type":
+                    "COUNT",
+                    "offset": null,
+                    "interval": null,
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "desc"
+                    }
                     ],
-                    "yAxisAggregation": {
-                      "field": "timestamp",
-                      "type": "COUNT",
-                      "offset": null,
-                      "interval": null,
-                      "limit": 0,
-                      "useBounds": false,
-                      "minBound": 0,
-                      "maxBound": 0,
-                      "sortDirection": "desc"
+                    "yAxisAggregation":
+                    {
+                    "field": "timestamp",
+                    "type": "COUNT",
+                    "offset": null,
+                    "interval": null,
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "desc"
                     },
                     "multipleChartsAggregation": null,
                     "xAxisAggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "offset": null,
-                        "interval": "day",
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "asc"
-                      }
+                    {
+                    "field": "timestamp",
+                    "type":
+                    "DATE",
+                    "offset": null,
+                    "interval": "day",
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "asc"
+                    }
                     ],
                     "timeZone": null,
-                    "title": "analytics.failedLogin"
-                  }
-                </value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Failed logins</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>
-                  {
+                    "title":
+                    "analytics.failedLogin"
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Failed logins</title>
+          </portlet-application>
+        </column>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>
+                    {
                     "offset": 0,
                     "filters": [
-                      {
-                        "field": "operation",
-                        "type": "EQUAL",
-                        "valueString": "login",
-                        "range": null
-                      },
-                      {
-                        "field": "status",
-                        "type": "EQUAL",
-                        "valueString": "1",
-                        "range": null
-                      },
-                      {
-                        "field": "reason",
-                        "type": "EQUAL",
-                        "valueString": "accountLocked",
-                        "range": null
-                      }
+                    {
+                    "field": "operation",
+                    "type": "EQUAL",
+                    "valueString": "login",
+                    "range": null
+                    },
+                    {
+                    "field": "status",
+                    "type": "EQUAL",
+                    "valueString":
+                    "1",
+                    "range": null
+                    },
+                    {
+                    "field": "reason",
+                    "type": "EQUAL",
+                    "valueString": "accountLocked",
+                    "range": null
+                    }
                     ],
                     "limit": 0,
                     "multipleCharts": false,
                     "chartType": "bar",
                     "colors": [
-                      "#F97575",
-                      "#f97575",
-                      "#98cc81",
-                      "#4273c8",
-                      "#cea6ac",
-                      "#bc99e7",
-                      "#9ee4f5",
-                      "#774ea9",
-                      "#ffa500",
-                      "#bed67e",
-                      "#0E100F",
-                      "#ffaacc"
+                    "#F97575",
+                    "#f97575",
+                    "#98cc81",
+                    "#4273c8",
+                    "#cea6ac",
+                    "#bc99e7",
+                    "#9ee4f5",
+                    "#774ea9",
+                    "#ffa500",
+                    "#bed67e",
+                    "#0E100F",
+                    "#ffaacc"
                     ],
-                    "multipleChartsField": null,
+                    "multipleChartsField":
+                    null,
                     "lang": null,
                     "aggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "offset": null,
-                        "interval": "day",
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "asc"
-                      },
-                      {
-                        "field": "timestamp",
-                        "type": "COUNT",
-                        "offset": null,
-                        "interval": null,
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "desc"
-                      }
+                    {
+                    "field":
+                    "timestamp",
+                    "type":
+                    "DATE",
+                    "offset": null,
+                    "interval":
+                    "day",
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "asc"
+                    },
+                    {
+                    "field":
+                    "timestamp",
+                    "type": "COUNT",
+                    "offset": null,
+                    "interval": null,
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "desc"
+                    }
                     ],
                     "yAxisAggregation": {
-                      "field": "timestamp",
-                      "type": "COUNT",
-                      "offset": null,
-                      "interval": null,
-                      "limit": 0,
-                      "useBounds": false,
-                      "minBound": 0,
-                      "maxBound": 0,
-                      "sortDirection": "desc"
+                    "field": "timestamp",
+                    "type":
+                    "COUNT",
+                    "offset": null,
+                    "interval": null,
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "desc"
                     },
-                    "multipleChartsAggregation": null,
+                    "multipleChartsAggregation":
+                    null,
                     "xAxisAggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "offset": null,
-                        "interval": "day",
-                        "limit": 0,
-                        "useBounds": false,
-                        "minBound": 0,
-                        "maxBound": 0,
-                        "sortDirection": "asc"
-                      }
+                    {
+                    "field": "timestamp",
+                    "type": "DATE",
+                    "offset": null,
+                    "interval": "day",
+                    "limit": 0,
+                    "useBounds": false,
+                    "minBound": 0,
+                    "maxBound": 0,
+                    "sortDirection": "asc"
+                    }
                     ],
-                    "timeZone": null,
-                    "title": "analytics.accountLocked"
-                  }
-                </value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Locked Accounts</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
+                    "timeZone":
+                    null,
+                    "title":
+                    "analytics.accountLocked"
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Locked Accounts</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
-  <page>
+
+  <page profiles="analytics">
+    <name>analytics-wallet</name>
+    <title>Analytics Wallet</title>
+    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/analytics</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>
+                    {
+                    "filters": [
+                    {
+                    "field": "module",
+                    "type": "EQUAL",
+                    "valueString": "wallet"
+                    },
+                    {
+                    "field": "subModule",
+                    "type": "EQUAL",
+                    "valueString": "blockchain"
+                    }
+                    ],
+                    "aggregations": [
+                    {
+                    "field":
+                    "timestamp",
+                    "type": "DATE",
+                    "interval": "day",
+                    "useBounds": false,
+                    "sortDirection":
+                    "asc"
+                    },
+                    {
+                    "field": "timestamp",
+                    "type": "COUNT",
+                    "useBounds": false,
+                    "sortDirection": "desc"
+                    }
+                    ],
+                    "yAxisAggregation": {
+                    "field": "timestamp",
+                    "type":
+                    "COUNT",
+                    "useBounds": false,
+                    "sortDirection": "desc"
+                    },
+                    "xAxisAggregations": [
+                    {
+                    "field": "timestamp",
+                    "type":
+                    "DATE",
+                    "interval": "day",
+                    "useBounds": false,
+                    "sortDirection": "asc"
+                    }
+                    ],
+                    "multipleCharts": false,
+                    "chartType": "bar",
+                    "title": "Blockchain Calls"
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Blockchain Calls</title>
+          </portlet-application>
+        </column>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsPortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>
+                    {
+                    "filters": [
+                    {
+                    "field": "module",
+                    "type": "EQUAL",
+                    "valueString": "wallet"
+                    },
+                    {
+                    "field": "subModule",
+                    "type": "EQUAL",
+                    "valueString": "blockchain"
+                    }
+                    ],
+                    "aggregations": [
+                    {
+                    "field":
+                    "operation",
+                    "type":
+                    "TERMS",
+                    "useBounds": false,
+                    "sortDirection": "desc"
+                    },
+                    {
+                    "field": "operation",
+                    "type": "COUNT",
+                    "useBounds":
+                    false,
+                    "sortDirection": "desc"
+                    }
+                    ],
+                    "yAxisAggregation": {
+                    "field": "operation",
+                    "type": "COUNT",
+                    "useBounds":
+                    false,
+                    "sortDirection": "desc"
+                    },
+                    "xAxisAggregations": [
+                    {
+                    "field": "operation",
+                    "type": "TERMS",
+                    "useBounds":
+                    false,
+                    "sortDirection":
+                    "desc"
+                    }
+                    ],
+                    "multipleCharts":
+                    false,
+                    "chartType": "pie",
+                    "colors": [
+                    "#F97575",
+                    "#9EE4F5",
+                    "#98cc81",
+                    "#4273c8",
+                    "#cea6ac",
+                    "#bc99e7",
+                    "#9ee4f5",
+                    "#774ea9",
+                    "#ffa500",
+                    "#bed67e",
+                    "#0E100F",
+                    "#ffaacc"
+                    ],
+                    "title": "Blockchain Calls By Operation"
+                    }</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Blockchain Calls By Operation</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="notes">
     <name>notes-editor</name>
     <title>Notes Editor</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
@@ -1630,6 +1811,7 @@
       <factory-id>addonContainer</factory-id>
     </container>
   </page>
+
   <page profiles="layout">
     <name>layout-editor</name>
     <title>Layout Editor</title>
@@ -1637,7 +1819,9 @@
     <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
+    <container
+      id="UITopBarContainer"
+      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
       <access-permissions>Everyone</access-permissions>
       <container
         template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
@@ -1654,7 +1838,9 @@
           </container>
         </container>
       </container>
-      <container id="MiddleToolBar" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <container
+        id="MiddleToolBar"
+        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>Everyone</access-permissions>
         <portlet-application>
           <portlet>
@@ -1662,401 +1848,27 @@
             <portlet-ref>DrawersOverlay</portlet-ref>
           </portlet>
           <title>Drawers Overlay</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
         </portlet-application>
       </container>
-      <container id="TopbarLoadingContainer" template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
+      <container
+        id="TopbarLoadingContainer"
+        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
         <access-permissions>Everyone</access-permissions>
       </container>
     </container>
-    <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="page-scroll-content">
+    <container
+      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
+      cssClass="page-scroll-content">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
           <portlet-ref>LayoutEditor</portlet-ref>
         </portlet>
         <title>Layout Editor</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-      </portlet-application>
-    </container>
-  </page>
-  <page>
-    <name>analytics-wallet</name>
-    <title>Analytics Wallet</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container id="topAnalyticsPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container cssClass="analyticsPageRow" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>
-                  {
-                    "filters": [
-                      {
-                        "field": "module",
-                        "type": "EQUAL",
-                        "valueString": "wallet"
-                      },
-                      {
-                        "field": "subModule",
-                        "type": "EQUAL",
-                        "valueString": "blockchain"
-                      }
-                    ],
-                    "aggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "interval": "day",
-                        "useBounds": false,
-                        "sortDirection": "asc"
-                      },
-                      {
-                        "field": "timestamp",
-                        "type": "COUNT",
-                        "useBounds": false,
-                        "sortDirection": "desc"
-                      }
-                    ],
-                    "yAxisAggregation": {
-                      "field": "timestamp",
-                      "type": "COUNT",
-                      "useBounds": false,
-                      "sortDirection": "desc"
-                    },
-                    "xAxisAggregations": [
-                      {
-                        "field": "timestamp",
-                        "type": "DATE",
-                        "interval": "day",
-                        "useBounds": false,
-                        "sortDirection": "asc"
-                      }
-                    ],
-                    "multipleCharts": false,
-                    "chartType": "bar",
-                    "title": "Blockchain Calls"
-                  }
-                </value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Blockchain Calls</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsPortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>
-                  {
-                    "filters": [
-                      {
-                        "field": "module",
-                        "type": "EQUAL",
-                        "valueString": "wallet"
-                      },
-                      {
-                        "field": "subModule",
-                        "type": "EQUAL",
-                        "valueString": "blockchain"
-                      }
-                    ],
-                    "aggregations": [
-                      {
-                        "field": "operation",
-                        "type": "TERMS",
-                        "useBounds": false,
-                        "sortDirection": "desc"
-                      },
-                      {
-                        "field": "operation",
-                        "type": "COUNT",
-                        "useBounds": false,
-                        "sortDirection": "desc"
-                      }
-                    ],
-                    "yAxisAggregation": {
-                      "field": "operation",
-                      "type": "COUNT",
-                      "useBounds": false,
-                      "sortDirection": "desc"
-                    },
-                    "xAxisAggregations": [
-                      {
-                        "field": "operation",
-                        "type": "TERMS",
-                        "useBounds": false,
-                        "sortDirection": "desc"
-                      }
-                    ],
-                    "multipleCharts": false,
-                    "chartType": "pie",
-                    "colors": [
-                      "#F97575",
-                      "#9EE4F5",
-                      "#98cc81",
-                      "#4273c8",
-                      "#cea6ac",
-                      "#bc99e7",
-                      "#9ee4f5",
-                      "#774ea9",
-                      "#ffa500",
-                      "#bed67e",
-                      "#0E100F",
-                      "#ffaacc"
-                    ],
-                    "title": "Blockchain Calls By Operation"
-                  }
-                </value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Blockchain Calls By Operation</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-    </container>
-  </page>
-
-  <page>
-    <name>perkstore</name>
-    <title>Perk Store</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <container id="PerkStoreParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <container id="top-perk-store-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-perk-store-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="perk-store-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>perk-store-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="bottom-perk-store-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-perk-store-container</name>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-    </container>
-  </page>
-
-  <page>
-    <name>kudosAdministration</name>
-    <title>Kudo administration</title>
-    <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container id="singlePageApplicationContainer"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="singlePageApplication">
-      <access-permissions>*:/platform/rewarding</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>kudos</application-ref>
-          <portlet-ref>KudosAdmin</portlet-ref>
-        </portlet>
-        <title>Kudos administration</title>
-        <access-permissions>*:/platform/rewarding</access-permissions>
-        <show-info-bar>false</show-info-bar>
       </portlet-application>
     </container>
   </page>
 
-  <page>
-    <name>appCenterUserSetup</name>
-    <title>App Center User Setup</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container id="AppCenterUserSetup" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>app-center</application-ref>
-          <portlet-ref>AppCenterUserSetupPortlet</portlet-ref>
-        </portlet>
-        <title>App Center User Setup</title>
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>true</show-application-state>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="gamification">
-    <name>overview</name>
-    <title>Overview</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>*:/platform/rewarding</edit-permission>
-    <container
-      id="meedsOverviewPage"
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="VuetifyApp">
-      <access-permissions>Everyone</access-permissions>
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="v-application v-application--is-ltr v-application--wrap singlePageApplication">
-        <access-permissions>Everyone</access-permissions>
-        <container
-          id="overviewPage"
-          template="system:/groovy/portal/webui/container/UIVRowContainer.gtmpl">
-          <access-permissions>Everyone</access-permissions>
-          <container
-            id="overviewBannerContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col-12 py-0">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social-portlet</application-ref>
-                <portlet-ref>Image</portlet-ref>
-                <preferences>
-                  <preference>
-                    <name>name</name>
-                    <value>overivewPageBanner</value>
-                  </preference>
-                  <preference>
-                    <name>image-path</name>
-                    <value>war:/../images/pages/banner/dashboard-banner.png</value>
-                    <read-only>false</read-only>
-                  </preference>
-                </preferences>
-              </portlet>
-              <title>Banner</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>false</show-application-state>
-            </portlet-application>
-          </container>
-          <container
-            id="LeaderboardContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="gamification">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>topChallengers</portlet-ref>
-              </portlet>
-              <title>Leaderboard</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="ActionsOverviewContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="gamification">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>challengesOverview</portlet-ref>
-              </portlet>
-              <title>Actions overview</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="ProgramsOverviewContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="gamification">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>programsOverview</portlet-ref>
-              </portlet>
-              <title>Programs Overview</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="contributionsContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="gamification">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>myContributions</portlet-ref>
-              </portlet>
-              <title>User Contributions</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="ReputationContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="gamification">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>myReputation</portlet-ref>
-              </portlet>
-              <title>User reputation</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-          <container
-            id="RewardsContainer"
-            template="system:/groovy/portal/webui/container/UIVColContainer.gtmpl"
-            cssClass="col col-sm-12 col-md-6 col-lg-4 py-0"
-            profiles="wallet">
-            <access-permissions>Everyone</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>gamification-portlets</application-ref>
-                <portlet-ref>myRewards</portlet-ref>
-              </portlet>
-              <title>User rewards</title>
-              <access-permissions>Everyone</access-permissions>
-              <show-info-bar>false</show-info-bar>
-            </portlet-application>
-          </container>
-        </container>
-      </container>
-    </container>
-  </page>
-  
   <page profiles="content">
     <name>newsDetail</name>
     <title>News detail</title>
