@@ -159,6 +159,12 @@
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>io.meeds.gamification-crowdin</groupId>
+      <artifactId>gamification-crowdin-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
@@ -402,6 +408,9 @@
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.deeds-tenant.id}:${addon.meeds.deeds-tenant.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.gamification-crowdin.id}:${addon.meeds.gamification-crowdin.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
               </target>
             </configuration>
