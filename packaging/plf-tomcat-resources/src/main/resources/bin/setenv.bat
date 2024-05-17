@@ -215,6 +215,21 @@ SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.lang.module=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/jdk.internal.module=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.time=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/sun.security.util=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/sun.net.www.protocol.http=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/sun.net.www.protocol.https=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/sun.net.www.protocol.jar=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/javax.net.ssl=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.util.zip=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.util.jar=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.util.regex=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.security=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.nio.channels=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.nio.channels.spi=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/jdk.internal.reflect=ALL-UNNAMED 
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.xml/jdk.xml.internal=ALL-UNNAMED 
+
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% -noverify
 
 REM # Set the window name
