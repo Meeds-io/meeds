@@ -10,6 +10,7 @@
             "en":"layout.pageTemplate.columns.description"
          },
          "category": "blank",
+         "system": true,
          "illustrationPath":"war:/../images/pages/template/columns.png",
          "layoutPath":"war:/conf/portal/template/pages/columns/page.xml"
       }, {
@@ -22,6 +23,7 @@
             "en":"layout.pageTemplate.grid.description"
          },
          "category": "blank",
+         "system": true,
          "illustrationPath":"war:/../images/pages/template/grid.png",
          "layoutPath":"war:/conf/portal/template/pages/grid/page.xml"
       }, {
@@ -34,6 +36,7 @@
             "en":"layout.pageTemplate.analytics.description"
          },
          "category": "default",
+         "system": true,
          "illustrationPath":"war:/../images/pages/template/analytics.png",
          "layoutPath":"war:/conf/portal/template/pages/analytics/page.xml"
       }
