@@ -19,10 +19,7 @@ package org.exoplatform.platform.server.tomcat;
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleEvent;
 import org.apache.catalina.LifecycleListener;
-import org.exoplatform.commons.utils.SecurityHelper;
 import org.exoplatform.container.RootContainer;
-
-import java.security.PrivilegedAction;
 
 /**
  *
@@ -45,12 +42,7 @@ public class PortalContainersCreator implements LifecycleListener {
    */
   public void createPortalContainers() {
     final RootContainer rootContainer = RootContainer.getInstance();
-    SecurityHelper.doPrivilegedAction(new PrivilegedAction<Void>() {
-      public Void run() {
-        rootContainer.createPortalContainers();
-        return null;
-      }
-    });
+    rootContainer.createPortalContainers();
   }
 
   /**
@@ -58,12 +50,7 @@ public class PortalContainersCreator implements LifecycleListener {
    * doesn't work in some cases for example with tomcat when we call the stop command
    */
   public void releasePortalContainers() {
-    SecurityHelper.doPrivilegedAction(new PrivilegedAction<Void>() {
-      public Void run() {
-        RootContainer.getInstance().stop();
-        return null;
-      }
-    });
+    RootContainer.getInstance().stop();
   }
 
 }
