@@ -1,0 +1,14 @@
+name: Crowdin Upload main
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+jobs:
+  upload-crowdin-main:
+    name: CI Build
+    uses: exoplatform/swf-scripts/.github/workflows/upload-crowdin-main.yml@master
+    secrets:
+      CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}

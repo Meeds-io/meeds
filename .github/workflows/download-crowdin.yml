@@ -1,0 +1,19 @@
+name: Crowdin  download Action
+
+on:
+  schedule:
+    - cron: "25 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  download-crowdin:
+    name: CI Build
+    uses: exoplatform/swf-scripts/.github/workflows/download-crowdin-meedsio.yml@master
+    with:
+      CROWDIN_MAINTENANCE_EXO_VERSION: ${{ vars.CROWDIN_MAINTENANCE_EXO_VERSION }}
+    secrets:
+      CROWDIN_GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_TOKEN }}
+      CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+      SWF_GPG_PRIVATE_KEY: ${{ secrets.SWF_GPG_PRIVATE_KEY }}
+      SWF_GPG_PASSPHRASE: ${{ secrets.SWF_GPG_PASSPHRASE }}
