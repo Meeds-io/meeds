@@ -8,7 +8,7 @@ on:
       - develop-meed
       - stable/*
 jobs:
-  download-crowdin-exo:
+  upload-crowdin-branch:
     name: CI Build
     uses: exoplatform/swf-scripts/.github/workflows/upload-crowdin-branches.yml@master
     secrets:

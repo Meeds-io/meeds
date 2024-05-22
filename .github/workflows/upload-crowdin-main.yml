@@ -6,7 +6,7 @@ on:
     branches:
       - develop
 jobs:
-  download-crowdin-exo:
+  upload-crowdin-main:
     name: CI Build
     uses: exoplatform/swf-scripts/.github/workflows/upload-crowdin-main.yml@master
     secrets:

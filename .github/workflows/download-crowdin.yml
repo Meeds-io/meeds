@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  download-crowdin-exo:
+  download-crowdin:
     name: CI Build
     uses: exoplatform/swf-scripts/.github/workflows/download-crowdin-meedsio.yml@master
     with:
