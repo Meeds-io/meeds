@@ -6,7 +6,8 @@ jobs:
     name: CI Build
     uses: exoplatform/swf-scripts/.github/workflows/cibuild.yml@master
     with:
-      maven_profiles: 'exo-release,coverage'
+      maven_profiles: 'exo-release,coverage'
+      jdk_major_version: 21
     secrets:
       NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
