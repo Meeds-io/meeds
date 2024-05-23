@@ -143,6 +143,12 @@
           <page-reference>portal::administration::siteManagement</page-reference>
         </node>
         <node>
+          <name>portlets</name>
+          <label>#{portal.administration.portlets}</label>
+          <icon>fas fa-grip-horizontal</icon>
+          <page-reference>portal::administration::portlets</page-reference>
+        </node>
+        <node>
           <name>template</name>
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
