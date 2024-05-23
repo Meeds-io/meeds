@@ -353,4 +353,24 @@
     </container>
   </page>
 
+  <page profiles="layout">
+    <name>portlets</name>
+    <title>Portlets</title>
+    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>layout</application-ref>
+              <portlet-ref>Portlets</portlet-ref>
+            </portlet>
+            <title>Portlets</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>
