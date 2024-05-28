@@ -149,7 +149,7 @@
               <boolean>true</boolean>
             </field>
             <field name="importMode">
-              <string>OVERWRITE</string>
+              <string>MERGE</string>
             </field>
             <field name="configPath">
               <string>war:/conf/sites/</string>
@@ -244,7 +244,7 @@
               <boolean>true</boolean>
             </field>
             <field name="importMode">
-              <string>OVERWRITE</string>
+              <string>MERGE</string>
             </field>
             <field name="configPath">
               <string>war:/conf/sites/</string>
@@ -288,7 +288,7 @@
               <boolean>true</boolean>
             </field>
             <field name="importMode">
-              <string>OVERWRITE</string>
+              <string>MERGE</string>
             </field>
             <field name="configPath">
               <string>war:/conf/sites/</string>
@@ -298,6 +298,60 @@
             </field>
             <field name="portalName">
               <string>global</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>AdministrationPageTemplatesNavigation</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <description>An upgrade plugin to import newly introduced page templates administration page</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>120</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>administration.pages.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updateNavigation">
+              <boolean>true</boolean>
+            </field>
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="importMode">
+              <string>MERGE</string>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>administration</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>pageTemplates</string>
+                </value>
+              </collection>
             </field>
           </object>
         </object-param>
