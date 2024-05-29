@@ -297,9 +297,33 @@
     </node>
     <node>
       <name>news-detail</name>
-      <label>#{portal.public.newsDetail}</label>
+      <label>#{portal.global.newsDetail}</label>
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::newsDetail</page-reference>
+    </node>
+    <node>
+      <name>news</name>
+      <label>#{news.navigation.node.label}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::news</page-reference>
+      <node>
+        <name>editor</name>
+        <label>#{portal.global.newsEditor}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::newsComposer</page-reference>
+      </node>
+    </node>
+    <node>
+      <name>analytics</name>
+      <label>#{analytics.navigation.Analytics}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::analytics</page-reference>
+      <node>
+        <name>analyticsContents</name>
+        <label>#{analytics.navigation.AnalyticsContents}</label>
+        <visibility>DISPLAYED</visibility>
+        <page-reference>portal::global::analytics-contents</page-reference>
+      </node>
     </node>
   </page-nodes>
 </node-navigation>
