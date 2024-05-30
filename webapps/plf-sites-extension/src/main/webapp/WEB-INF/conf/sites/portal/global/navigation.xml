@@ -277,6 +277,12 @@
       <page-reference>portal::global::layout-editor</page-reference>
     </node>
     <node>
+      <name>portlet-editor</name>
+      <label>#{portal.global.portlet-editor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::portlet-editor</page-reference>
+    </node>
+    <node>
       <name>perkstore</name>
       <label>#{addon.perkstore.navigation.node.label}</label>
       <visibility>SYSTEM</visibility>
