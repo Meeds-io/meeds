@@ -247,5 +247,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-gamification-crowdin",
+    "version": "${addon.meeds.gamification-crowdin.version}",
+    "unstable": false,
+    "name": "Gamification crowdin add-on",
+    "description": "Add-on for Crowdin integration with Gamification",
+    "sourceUrl": "https://github.com/meeds-io/gamification-crowdin",
+    "documentationUrl": "https://github.com/meeds-io/gamification-crowdin",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/gamification-crowdin/gamification-crowdin-packaging/${addon.meeds.gamification-crowdin.version}/gamification-crowdin-packaging-${addon.meeds.gamification-crowdin.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
