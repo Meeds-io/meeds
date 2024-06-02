@@ -1815,7 +1815,7 @@
   <page profiles="layout">
     <name>layout-editor</name>
     <title>Layout Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
+    <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
