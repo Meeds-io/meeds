@@ -236,9 +236,9 @@
     <title>Recognistion setup</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" cssClass="no-applications-spacing">
       <section-columns>
-        <column col-span="12" cssClass="white application-border-radius pt-5">
+        <column col-span="12" cssClass="app-background-color application-border-radius py-5">
           <portlet-application profiles="kudos">
             <portlet>
               <application-ref>kudos</application-ref>
