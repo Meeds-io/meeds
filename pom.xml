@@ -72,8 +72,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.exo.notes.version>7.0.x-SNAPSHOT</addon.exo.notes.version>
     <addon.exo.tasks.id>meeds-tasks</addon.exo.tasks.id>
     <addon.exo.tasks.version>7.0.x-SNAPSHOT</addon.exo.tasks.version>
-    <addon.exo.analytics.id>meeds-analytics</addon.exo.analytics.id>
-    <addon.exo.analytics.version>7.0.x-SNAPSHOT</addon.exo.analytics.version>
+    <addon.meeds.analytics.id>meeds-analytics</addon.meeds.analytics.id>
+    <addon.meeds.analytics.version>7.0.x-SNAPSHOT</addon.meeds.analytics.version>
     <addon.exo.poll.id>meeds-poll</addon.exo.poll.id>
     <addon.exo.poll.version>7.0.x-SNAPSHOT</addon.exo.poll.version>
     <addon.meeds.content.id>meeds-content</addon.meeds.content.id>
@@ -159,9 +159,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.analytics</groupId>
+        <groupId>io.meeds.analytics</groupId>
         <artifactId>analytics-parent</artifactId>
-        <version>${addon.exo.analytics.version}</version>
+        <version>${addon.meeds.analytics.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
