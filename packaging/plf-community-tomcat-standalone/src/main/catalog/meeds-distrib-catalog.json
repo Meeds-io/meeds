@@ -17,13 +17,13 @@
     "compatibility": "[${project.version},)"
   },{
     "id": "meeds-analytics",
-    "version": "${addon.exo.analytics.version}",
+    "version": "${addon.meeds.analytics.version}",
     "unstable": false,
     "name": "Analytics add-on",
     "description": "An addon that provide tools to display platform usage statistics using charts.",
     "sourceUrl": "https://github.com/meeds-io/analytics",
     "documentationUrl": "https://github.com/meeds-io/analytics",
-    "downloadUrl": "file://${settings.localRepository}/org/exoplatform/addons/analytics/analytics-packaging/${addon.exo.analytics.version}/analytics-packaging-${addon.exo.analytics.version}.zip",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/analytics/analytics-packaging/${addon.meeds.analytics.version}/analytics-packaging-${addon.meeds.analytics.version}.zip",
     "vendor": "Meeds.io",
     "author": "Meeds.io",
     "license": "LGPLv3",

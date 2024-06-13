@@ -117,9 +117,8 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.addons.analytics</groupId>
+      <groupId>io.meeds.analytics</groupId>
       <artifactId>analytics-packaging</artifactId>
-      <version>${addon.exo.analytics.version}</version>
       <scope>provided</scope>
       <type>zip</type>
     </dependency>
@@ -392,7 +391,7 @@
                   <arg line="install ${addon.exo.tasks.id}:${addon.exo.tasks.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.exo.analytics.id}:${addon.exo.analytics.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.analytics.id}:${addon.meeds.analytics.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.exo.poll.id}:${addon.exo.poll.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
