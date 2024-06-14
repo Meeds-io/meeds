@@ -121,101 +121,6 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>RecognitionSetupPageUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <description>An upgrade plugin to delete some recognition administration navigations</description>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>120</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>overview.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updateNavigation">
-              <boolean>true</boolean>
-            </field>
-            <field name="importMode">
-              <string>MERGE</string>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>administration</string>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin>
-      <name>SetupAdministrationPageLayoutUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <description>An upgrade plugin to delete some recognition administration navigations</description>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>120</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>overview.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePageLayout">
-              <boolean>true</boolean>
-            </field>
-            <field name="importMode">
-              <string>MERGE</string>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>administration</string>
-            </field>
-            <field name="pageNames">
-              <collection type="java.util.ArrayList" item-type="java.lang.String">
-                <value>
-                  <string>recognitionSetup</string>
-                </value>
-              </collection>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin>
       <name>BreadcrumbAdministrationSiteLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
@@ -408,7 +313,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>RecognitionSetupPageUpgrade</name>
+      <name>RecognitionSetupPageLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
