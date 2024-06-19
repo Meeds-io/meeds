@@ -28,7 +28,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <artifactId>meeds</artifactId>
   <version>7.0.x-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution</name>
   <modules>
     <module>services</module>
     <module>webapps</module>
@@ -49,33 +49,33 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <org.exoplatform.social.version>7.0.x-SNAPSHOT</org.exoplatform.social.version>
-    <org.exoplatform.platform-ui.version>7.0.x-SNAPSHOT</org.exoplatform.platform-ui.version>
+    <io.meeds.social.version>7.0.x-SNAPSHOT</io.meeds.social.version>
+    <io.meeds.platform-ui.version>7.0.x-SNAPSHOT</io.meeds.platform-ui.version>
     <!-- The version of the add-ons manager -->
-    <org.exoplatform.platform.addons-manager.version>7.0.x-SNAPSHOT</org.exoplatform.platform.addons-manager.version>
+    <io.meeds.platform.addons-manager.version>7.0.x-SNAPSHOT</io.meeds.platform.addons-manager.version>
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.meeds.layout.id>meeds-layout</addon.meeds.layout.id>
     <addon.meeds.layout.version>7.0.x-SNAPSHOT</addon.meeds.layout.version>
-    <addon.exo.kudos.id>meeds-kudos</addon.exo.kudos.id>
-    <addon.exo.kudos.version>7.0.x-SNAPSHOT</addon.exo.kudos.version>
-    <addon.exo.perk-store.id>meeds-perk-store</addon.exo.perk-store.id>
-    <addon.exo.perk-store.version>7.0.x-SNAPSHOT</addon.exo.perk-store.version>
-    <addon.exo.wallet.id>meeds-wallet</addon.exo.wallet.id>
-    <addon.exo.wallet.version>7.0.x-SNAPSHOT</addon.exo.wallet.version>
-    <addon.exo.gamification.id>meeds-gamification</addon.exo.gamification.id>
-    <addon.exo.gamification.version>7.0.x-SNAPSHOT</addon.exo.gamification.version>
-    <addon.exo.app-center.id>meeds-app-center</addon.exo.app-center.id>
-    <addon.exo.app-center.version>7.0.x-SNAPSHOT</addon.exo.app-center.version>
-    <addon.exo.notes.id>meeds-notes</addon.exo.notes.id>
-    <addon.exo.notes.version>7.0.x-SNAPSHOT</addon.exo.notes.version>
-    <addon.exo.tasks.id>meeds-tasks</addon.exo.tasks.id>
-    <addon.exo.tasks.version>7.0.x-SNAPSHOT</addon.exo.tasks.version>
+    <addon.meeds.kudos.id>meeds-kudos</addon.meeds.kudos.id>
+    <addon.meeds.kudos.version>7.0.x-SNAPSHOT</addon.meeds.kudos.version>
+    <addon.meeds.perk-store.id>meeds-perk-store</addon.meeds.perk-store.id>
+    <addon.meeds.perk-store.version>7.0.x-SNAPSHOT</addon.meeds.perk-store.version>
+    <addon.meeds.wallet.id>meeds-wallet</addon.meeds.wallet.id>
+    <addon.meeds.wallet.version>7.0.x-SNAPSHOT</addon.meeds.wallet.version>
+    <addon.meeds.gamification.id>meeds-gamification</addon.meeds.gamification.id>
+    <addon.meeds.gamification.version>7.0.x-SNAPSHOT</addon.meeds.gamification.version>
+    <addon.meeds.app-center.id>meeds-app-center</addon.meeds.app-center.id>
+    <addon.meeds.app-center.version>7.0.x-SNAPSHOT</addon.meeds.app-center.version>
+    <addon.meeds.notes.id>meeds-notes</addon.meeds.notes.id>
+    <addon.meeds.notes.version>7.0.x-SNAPSHOT</addon.meeds.notes.version>
+    <addon.meeds.tasks.id>meeds-tasks</addon.meeds.tasks.id>
+    <addon.meeds.tasks.version>7.0.x-SNAPSHOT</addon.meeds.tasks.version>
     <addon.meeds.analytics.id>meeds-analytics</addon.meeds.analytics.id>
     <addon.meeds.analytics.version>7.0.x-SNAPSHOT</addon.meeds.analytics.version>
-    <addon.exo.poll.id>meeds-poll</addon.exo.poll.id>
-    <addon.exo.poll.version>7.0.x-SNAPSHOT</addon.exo.poll.version>
+    <addon.meeds.poll.id>meeds-poll</addon.meeds.poll.id>
+    <addon.meeds.poll.version>7.0.x-SNAPSHOT</addon.meeds.poll.version>
     <addon.meeds.content.id>meeds-content</addon.meeds.content.id>
     <addon.meeds.content.version>7.0.x-SNAPSHOT</addon.meeds.content.version>
     <addon.meeds.gamification-github.id>meeds-gamification-github</addon.meeds.gamification-github.id>
@@ -96,65 +96,65 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependencies>
       <!-- Dependencies -->
       <dependency>
-        <groupId>org.exoplatform.social</groupId>
+        <groupId>io.meeds.social</groupId>
         <artifactId>social</artifactId>
-        <version>${org.exoplatform.social.version}</version>
+        <version>${io.meeds.social.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform-ui</groupId>
+        <groupId>io.meeds.platform-ui</groupId>
         <artifactId>platform-ui</artifactId>
-        <version>${org.exoplatform.platform-ui.version}</version>
+        <version>${io.meeds.platform-ui.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.platform</groupId>
+        <groupId>io.meeds.platform</groupId>
         <artifactId>addons-manager</artifactId>
-        <version>${org.exoplatform.platform.addons-manager.version}</version>
+        <version>${io.meeds.platform.addons-manager.version}</version>
         <type>zip</type>
       </dependency>
       <!-- Pre-bundled addons -->
       <dependency>
-        <groupId>org.exoplatform.addons.wallet</groupId>
+        <groupId>io.meeds.addons.wallet</groupId>
         <artifactId>wallet</artifactId>
-        <version>${addon.exo.wallet.version}</version>
+        <version>${addon.meeds.wallet.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.kudos</groupId>
+        <groupId>io.meeds.addons.kudos</groupId>
         <artifactId>kudos</artifactId>
-        <version>${addon.exo.kudos.version}</version>
+        <version>${addon.meeds.kudos.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.perk-store</groupId>
+        <groupId>io.meeds.addons.perk-store</groupId>
         <artifactId>perk-store</artifactId>
-        <version>${addon.exo.perk-store.version}</version>
+        <version>${addon.meeds.perk-store.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.gamification</groupId>
+        <groupId>io.meeds.addons.gamification</groupId>
         <artifactId>gamification</artifactId>
-        <version>${addon.exo.gamification.version}</version>
+        <version>${addon.meeds.gamification.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.app-center</groupId>
+        <groupId>io.meeds.addons.app-center</groupId>
         <artifactId>app-center</artifactId>
-        <version>${addon.exo.app-center.version}</version>
+        <version>${addon.meeds.app-center.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.notes</groupId>
+        <groupId>io.meeds.addons.notes</groupId>
         <artifactId>notes</artifactId>
-        <version>${addon.exo.notes.version}</version>
+        <version>${addon.meeds.notes.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -166,16 +166,16 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.task</groupId>
+        <groupId>io.meeds.addons.task</groupId>
         <artifactId>task-management-parent</artifactId>
-        <version>${addon.exo.tasks.version}</version>
+        <version>${addon.meeds.tasks.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.poll</groupId>
+        <groupId>io.meeds.addons.poll</groupId>
         <artifactId>poll-parent</artifactId>
-        <version>${addon.exo.poll.version}</version>
+        <version>${addon.meeds.poll.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -187,7 +187,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.exoplatform.addons.gamification-github</groupId>
+        <groupId>io.meeds.addons.gamification-github</groupId>
         <artifactId>gamification-github</artifactId>
         <version>${addon.meeds.gamification-github.version}</version>
         <type>pom</type>
@@ -407,7 +407,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                         <exclude>xstream:xstream:*</exclude>
                         <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
                         <exclude>jdom:*:*</exclude>
-                        <!-- These old versions of eXo portal are in conflict with new ones under org.exoplatform.gatein.portal -->
+                        <!-- These old versions of eXo portal are in conflict with new ones under io.meeds.gatein.portal -->
                         <exclude>org.exoplatform.portal:*:*</exclude>
                         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
                         <exclude>javax.servlet:*</exclude>

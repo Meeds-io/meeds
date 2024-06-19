@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-root-webapp</artifactId>
   <packaging>war</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps - ROOT WebApp</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Webapps - ROOT WebApp</name>
   <build>
     <finalName>ROOT</finalName>
   </build>

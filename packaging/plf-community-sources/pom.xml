@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-community-sources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Packaging - Sources</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Packaging - Sources</name>
   <profiles>
     <profile>
       <!-- Additional tasks done while performing a release -->
@@ -57,25 +57,25 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </build>
       <dependencies>
         <dependency>
-          <groupId>org.exoplatform.commons</groupId>
+          <groupId>io.meeds.commons</groupId>
           <artifactId>commons</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.core</groupId>
+          <groupId>io.meeds.core</groupId>
           <artifactId>core-parent</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.kernel</groupId>
+          <groupId>io.meeds.kernel</groupId>
           <artifactId>kernel-parent</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.platform-ui</groupId>
+          <groupId>io.meeds.platform-ui</groupId>
           <artifactId>platform-ui</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
@@ -87,19 +87,19 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.social</groupId>
+          <groupId>io.meeds.social</groupId>
           <artifactId>social</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.ws</groupId>
+          <groupId>io.meeds.ws</groupId>
           <artifactId>ws-parent</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>org.exoplatform.gatein.portal</groupId>
+          <groupId>io.meeds.gatein.portal</groupId>
           <artifactId>exo.portal.parent</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>

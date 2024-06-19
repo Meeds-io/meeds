@@ -25,10 +25,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-tomcat-integration-webapp</artifactId>
   <packaging>war</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps - Tomcat Integration WebApp</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Webapps - Tomcat Integration WebApp</name>
   <dependencies>
     <dependency>
-      <groupId>org.exoplatform.gatein.wci</groupId>
+      <groupId>io.meeds.gatein.wci</groupId>
       <artifactId>wci-tomcat</artifactId>
       <!-- Don't include apache tomcat artifacts to avoid conflicts in a tomcat appserver -->
       <exclusions>

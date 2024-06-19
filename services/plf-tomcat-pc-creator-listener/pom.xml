@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-tomcat-pc-creator-listener</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Services - Tomcat Portal Containers Creator</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Services - Tomcat Portal Containers Creator</name>
   <description>This module defines a LifecycleListener to attach to a Tomcat host to create all portal containers.</description>
   <dependencies>
     <dependency>
@@ -35,7 +35,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
+      <groupId>io.meeds.gatein.portal</groupId>
       <artifactId>exo.portal.component.api</artifactId>
       <scope>provided</scope>
       <exclusions>
@@ -54,7 +54,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.gatein.wci</groupId>
+      <groupId>io.meeds.gatein.wci</groupId>
       <artifactId>wci-tomcat</artifactId>
     </dependency>
   </dependencies>

@@ -25,37 +25,37 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-dependencies</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Packaging - Dependencies</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Packaging - Dependencies</name>
   <dependencies>
     <!-- Portal  -->
     <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
+      <groupId>io.meeds.gatein.portal</groupId>
       <artifactId>exo.portal.web.portal</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.gatein.portal</groupId>
+      <groupId>io.meeds.gatein.portal</groupId>
       <artifactId>exo.portal.web.rest</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <!-- Commons -->
     <dependency>
-      <groupId>org.exoplatform.commons</groupId>
+      <groupId>io.meeds.commons</groupId>
       <artifactId>commons-comet-webapp</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.commons</groupId>
+      <groupId>io.meeds.commons</groupId>
       <artifactId>commons-extension-webapp</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <!-- Platform UI -->
     <dependency>
-      <groupId>org.exoplatform.platform-ui</groupId>
+      <groupId>io.meeds.platform-ui</groupId>
       <artifactId>platform-ui-skin</artifactId>
       <type>war</type>
       <scope>runtime</scope>
@@ -93,33 +93,33 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependency>
     <!-- Social -->
     <dependency>
-      <groupId>org.exoplatform.social</groupId>
+      <groupId>io.meeds.social</groupId>
       <artifactId>social-webapp-portlet</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.social</groupId>
+      <groupId>io.meeds.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.exoplatform.social</groupId>
+      <groupId>io.meeds.social</groupId>
       <artifactId>social-extension-war</artifactId>
       <type>pom</type>
       <scope>import</scope>
       <exclusions>
         <exclusion>
-          <groupId>org.exoplatform.gatein.portal</groupId>
+          <groupId>io.meeds.gatein.portal</groupId>
           <artifactId>exo.portal.component.test.core</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.exoplatform.gatein.portal</groupId>
+          <groupId>io.meeds.gatein.portal</groupId>
           <artifactId>exo.portal.component.test.web</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.exoplatform.commons</groupId>
+          <groupId>io.meeds.commons</groupId>
           <artifactId>commons-testing</artifactId>
         </exclusion>
         <exclusion>

@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-community-edition-service</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Services - Community Edition Information</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Services - Community Edition Information</name>
 
   <properties>
      <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
@@ -34,7 +34,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
   <dependencies>
     <dependency>
-      <groupId>org.exoplatform.kernel</groupId>
+      <groupId>io.meeds.kernel</groupId>
       <artifactId>exo.kernel.container</artifactId>
       <scope>provided</scope>
       <exclusions>

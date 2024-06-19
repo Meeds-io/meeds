@@ -28,7 +28,7 @@
   </parent>
   <artifactId>plf-sites-extension</artifactId>
   <packaging>war</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps - common sites definition WebApp</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Webapps - common sites definition WebApp</name>
   <build>
     <finalName>sites</finalName>
   </build>
