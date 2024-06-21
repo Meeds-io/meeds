@@ -85,7 +85,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.deeds-tenant.id>meeds-deeds-tenant</addon.meeds.deeds-tenant.id>
     <addon.meeds.deeds-tenant.version>7.0.x-SNAPSHOT</addon.meeds.deeds-tenant.version>
     <addon.meeds.gamification-crowdin.id>meeds-gamification-crowdin</addon.meeds.gamification-crowdin.id>
-    <addon.meeds.gamification-crowdin.version>7.0.x-SNAPSHOT</addon.meeds.gamification-crowdin.version>
+    <addon.meeds.gamification-crowdin.version>7.0.x-mips-SNAPSHOT</addon.meeds.gamification-crowdin.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
@@ -117,42 +117,42 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </dependency>
       <!-- Pre-bundled addons -->
       <dependency>
-        <groupId>io.meeds.addons.wallet</groupId>
+        <groupId>io.meeds.wallet</groupId>
         <artifactId>wallet</artifactId>
         <version>${addon.meeds.wallet.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.kudos</groupId>
+        <groupId>io.meeds.kudos</groupId>
         <artifactId>kudos</artifactId>
         <version>${addon.meeds.kudos.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.perk-store</groupId>
+        <groupId>io.meeds.perk-store</groupId>
         <artifactId>perk-store</artifactId>
         <version>${addon.meeds.perk-store.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.gamification</groupId>
+        <groupId>io.meeds.gamification</groupId>
         <artifactId>gamification</artifactId>
         <version>${addon.meeds.gamification.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.app-center</groupId>
+        <groupId>io.meeds.app-center</groupId>
         <artifactId>app-center</artifactId>
         <version>${addon.meeds.app-center.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.notes</groupId>
+        <groupId>io.meeds.notes</groupId>
         <artifactId>notes</artifactId>
         <version>${addon.meeds.notes.version}</version>
         <type>pom</type>
@@ -166,14 +166,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.task</groupId>
+        <groupId>io.meeds.task</groupId>
         <artifactId>task-management-parent</artifactId>
         <version>${addon.meeds.tasks.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.poll</groupId>
+        <groupId>io.meeds.poll</groupId>
         <artifactId>poll-parent</artifactId>
         <version>${addon.meeds.poll.version}</version>
         <type>pom</type>
@@ -187,7 +187,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>io.meeds.addons.gamification-github</groupId>
+        <groupId>io.meeds.gamification-github</groupId>
         <artifactId>gamification-github</artifactId>
         <version>${addon.meeds.gamification-github.version}</version>
         <type>pom</type>
