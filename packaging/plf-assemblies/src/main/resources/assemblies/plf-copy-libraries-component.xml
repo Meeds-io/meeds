@@ -50,7 +50,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>xstream:xstream:*</exclude>
         <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
         <exclude>jdom:*:*</exclude>
-        <!-- These old versions of eXo portal are in conflict with new ones under org.exoplatform.gatein.portal -->
+        <!-- These old versions of eXo portal are in conflict with new ones under io.meeds.gatein.portal -->
         <exclude>org.exoplatform.portal:*:*</exclude>
         <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
         <exclude>jakarta.servlet:*</exclude>
@@ -109,7 +109,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <!-- Avoid test scoped jars -->
         <exclude>*:*:test-jar</exclude>
         <exclude>*:*:*:test-jar</exclude>
-        <exclude>org.exoplatform.commons:commons-testing:*</exclude>
+        <exclude>io.meeds.commons:commons-testing:*</exclude>
         <exclude>*:*.test.*:*</exclude>
         <!-- Avoid swagger -->
         <exclude>io.swagger.core.*:*:*</exclude>
