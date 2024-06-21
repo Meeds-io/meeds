@@ -35,8 +35,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.meeds.gatein.portal</groupId>
-      <artifactId>exo.portal.component.api</artifactId>
+      <groupId>io.meeds.portal</groupId>
+      <artifactId>portal.component.api</artifactId>
       <scope>provided</scope>
       <exclusions>
         <exclusion>

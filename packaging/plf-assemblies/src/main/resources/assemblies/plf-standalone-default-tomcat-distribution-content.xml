@@ -236,7 +236,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependencySet>
       <outputDirectory>${file.separator}webapps</outputDirectory>
       <includes>
-        <include>io.meeds.gatein.portal:*:war</include>
+        <include>io.meeds.portal:*:war</include>
         <include>io.meeds.commons:*:war</include>
         <include>io.meeds.social:*:war</include>
         <include>io.meeds.distribution:*:war</include>

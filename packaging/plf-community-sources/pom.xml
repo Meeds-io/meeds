@@ -99,8 +99,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <classifier>source-release</classifier>
         </dependency>
         <dependency>
-          <groupId>io.meeds.gatein.portal</groupId>
-          <artifactId>exo.portal.parent</artifactId>
+          <groupId>io.meeds.portal</groupId>
+          <artifactId>portal.parent</artifactId>
           <type>zip</type>
           <classifier>source-release</classifier>
         </dependency>

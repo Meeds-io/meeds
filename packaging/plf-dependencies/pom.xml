@@ -29,14 +29,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <dependencies>
     <!-- Portal  -->
     <dependency>
-      <groupId>io.meeds.gatein.portal</groupId>
-      <artifactId>exo.portal.web.portal</artifactId>
+      <groupId>io.meeds.portal</groupId>
+      <artifactId>portal.web.portal</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>io.meeds.gatein.portal</groupId>
-      <artifactId>exo.portal.web.rest</artifactId>
+      <groupId>io.meeds.portal</groupId>
+      <artifactId>portal.web.rest</artifactId>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
@@ -111,12 +111,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>import</scope>
       <exclusions>
         <exclusion>
-          <groupId>io.meeds.gatein.portal</groupId>
-          <artifactId>exo.portal.component.test.core</artifactId>
+          <groupId>io.meeds.portal</groupId>
+          <artifactId>portal.component.test.core</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>io.meeds.gatein.portal</groupId>
-          <artifactId>exo.portal.component.test.web</artifactId>
+          <groupId>io.meeds.portal</groupId>
+          <artifactId>portal.component.test.web</artifactId>
         </exclusion>
         <exclusion>
           <groupId>io.meeds.commons</groupId>
