@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <version>7.0.x-exo-SNAPSHOT</version>
   </parent>
 
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Webapps</name>
   <artifactId>plf-webapps</artifactId>
   <packaging>pom</packaging>
 

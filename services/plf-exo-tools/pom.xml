@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-exo-tools</artifactId>
   <packaging>jar</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Services - eXo Tools</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Services - eXo Tools</name>
   <properties>
     <exo.test.coverage.ratio>0.47</exo.test.coverage.ratio>
   </properties>

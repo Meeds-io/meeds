@@ -25,11 +25,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-packaging-resources</artifactId>
   <packaging>pom</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Packaging - Shared Resources</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Packaging - Shared Resources</name>
   <dependencies>
     <!-- Add-ons Manager -->
     <dependency>
-      <groupId>org.exoplatform.platform</groupId>
+      <groupId>io.meeds.platform</groupId>
       <artifactId>addons-manager</artifactId>
       <type>zip</type>
     </dependency>
