@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   </parent>
   <artifactId>plf-meeds-extension</artifactId>
   <packaging>war</packaging>
-  <name>eXo Meeds:: Meeds Public Distribution - Webapps - meeds extension WebApp</name>
+  <name>Meeds:: Meeds:: Meeds Public Distribution - Webapps - meeds extension WebApp</name>
   <build>
     <finalName>meeds</finalName>
   </build>
