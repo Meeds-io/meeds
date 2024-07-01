@@ -313,7 +313,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>RecognitionSetupAppLayoutUpgrade</name>
+      <name>RecognitionSetupApplicationsLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
