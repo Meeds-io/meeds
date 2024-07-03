@@ -22,7 +22,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
-    <version>7.0.x-exo-SNAPSHOT</version>
+    <version>7.0.0-exo-20240703</version>
   </parent>
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
@@ -367,49 +367,49 @@
               <target name="install-add-ons">
                 <echo message="Installing add-ons..." />
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.layout.id}:${addon.meeds.layout.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.layout.id}:${addon.meeds.layout.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.kudos.id}:${addon.meeds.kudos.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.kudos.id}:${addon.meeds.kudos.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.perk-store.id}:${addon.meeds.perk-store.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.perk-store.id}:${addon.meeds.perk-store.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.wallet.id}:${addon.meeds.wallet.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.wallet.id}:${addon.meeds.wallet.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.gamification.id}:${addon.meeds.gamification.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.gamification.id}:${addon.meeds.gamification.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.app-center.id}:${addon.meeds.app-center.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.app-center.id}:${addon.meeds.app-center.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.notes.id}:${addon.meeds.notes.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.notes.id}:${addon.meeds.notes.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.tasks.id}:${addon.meeds.tasks.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.tasks.id}:${addon.meeds.tasks.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.analytics.id}:${addon.meeds.analytics.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.analytics.id}:${addon.meeds.analytics.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.poll.id}:${addon.meeds.poll.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.poll.id}:${addon.meeds.poll.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.content.id}:${addon.meeds.content.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.content.id}:${addon.meeds.content.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.gamification-github.id}:${addon.meeds.gamification-github.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.gamification-github.id}:${addon.meeds.gamification-github.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.gamification-twitter.id}:${addon.meeds.gamification-twitter.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.gamification-twitter.id}:${addon.meeds.gamification-twitter.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.deeds-tenant.id}:${addon.meeds.deeds-tenant.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.deeds-tenant.id}:${addon.meeds.deeds-tenant.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
-                  <arg line="install ${addon.meeds.gamification-crowdin.id}:${addon.meeds.gamification-crowdin.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                  <arg line="install ${addon.meeds.gamification-crowdin.id}:${addon.meeds.gamification-crowdin.version} --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
               </target>
             </configuration>
