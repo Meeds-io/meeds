@@ -1862,1030 +1862,6 @@
       </portlet-application>
     </container>
   </page>
-  
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-editor</name>
-    <title>Portlet Editor</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social-portlet</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
-      <portlet-application>
-        <portlet>
-          <application-ref>layout</application-ref>
-          <portlet-ref>PortletEditor</portlet-ref>
-        </portlet>
-        <title>Portlet Editor</title>
-      </portlet-application>
-    </container>
-  </page>
-
-  <page profiles="layout">
-    <name>portlet-viewer</name>
-    <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <show-max-window>true</show-max-window>
-    <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
 
   <page profiles="layout">
     <name>portlet-editor</name>
@@ -2956,53 +1932,52 @@
     <title>News detail</title>
     <access-permissions>Everyone</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container id="NewsDetailContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>content</application-ref>
-          <portlet-ref>NewsDetail</portlet-ref>
-        </portlet>
-        <title>News Detail</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-        <show-application-mode>false</show-application-mode>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>NewsDetail</portlet-ref>
+            </portlet>
+            <title>News Detail</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
   <page>
     <name>organizationalchart</name>
     <title>Organizational Chart</title>
-    <access-permissions>*:/platform/users</access-permissions>
+    <access-permissions>Everyone</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container id="organizationalChartParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>*:/platform/users</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>social-portlet</application-ref>
-          <portlet-ref>OrganizationalChart</portlet-ref>
-          <preferences>
-            <!-- Indicates that the chart setting center user can be modified by admins or not -->
-            <preference>
-              <name>canUpdateCenterUser</name>
-              <value>false</value>
-              <read-only>true</read-only>
-            </preference>
-            <!-- default header title i18n key -->
-            <preference>
-              <name>headerTitle</name>
-              <value>organizationalChart.header.label</value>
-              <read-only>true</read-only>
-            </preference>
-          </preferences>
-        </portlet>
-        <title>Organizational Chart</title>
-        <access-permissions>*:/platform/users</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>OrganizationalChart</portlet-ref>
+              <preferences>
+                <!-- Indicates that the chart setting center user can be modified by admins or not -->
+                <preference>
+                  <name>canUpdateCenterUser</name>
+                  <value>false</value>
+                  <read-only>true</read-only>
+                </preference>
+                <!-- default header title i18n key -->
+                <preference>
+                  <name>headerTitle</name>
+                  <value>organizationalChart.header.label</value>
+                  <read-only>true</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Organizational Chart</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -3011,25 +1986,25 @@
     <title>News</title>
     <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
-    <container id="NewsParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users</access-permissions>
-      <container id="top-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>top-news-container</name>
-        <access-permissions>*:/platform/users</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="news-container"
-                 template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl"
-                 cssClass="singlePageApplication">
-        <name>news-container</name>
-        <access-permissions>*:/platform/users</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container id="bottom-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>bottom-news-container</name>
-        <access-permissions>*:/platform/users</access-permissions>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-news-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container id="news-container"
+                     template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl"
+                     cssClass="singlePageApplication">
+            <name>news-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container id="bottom-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-news-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -3040,186 +2015,178 @@
     <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container id="NewsDetailContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>content</application-ref>
-          <portlet-ref>NewsComposer</portlet-ref>
-        </portlet>
-        <title>News Composer</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-        <show-application-mode>false</show-application-mode>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>NewsComposer</portlet-ref>
+            </portlet>
+            <title>News Composer</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
-  <page profiles="analytics">
+  <page profiles="content">
     <name>analytics-contents</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/analytics</edit-permission>
-    <container id="topAnalyticsPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication border-box-sizing">
-      <access-permissions>Everyone</access-permissions>
-      <container id="breadcrumbAnalytics" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-          </portlet>
-          <title>Breadcrumb Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>analytics</application-ref>
-            <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-            <preferences>
-              <preference>
-                <name>settings</name>
-                <value>{
-                  "pageSize":20,
-                  "title":"",
-                  "mainColumn":{
-                  "title":"analytics.title",
-                  "valueAggregation":{
-                  "aggregation":{
-                  "field":"contentId.keyword",
-                  "type":"TERMS",
-                  "dataType":"text"
-                  },
-                  "filters":[
-                  {
-                  "valueString":"1",
-                  "field":"contentId",
-                  "type":"GREATER"
-                  }
-                  ]
-                  }
-                  },
-                  "columns":[
-                  {
-                  "title":"analytics.applications",
-                  "previousPeriod":false,
-                  "valueAggregation":{
-                  "periodIndependent":false,
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "field":"contentType.keyword",
-                  "type":"TERMS",
-                  }
-                  },
-                  "sortable":false,
-                  "dataType":"text"
-                  },
-                  {
-                  "title":"analytics.lastUpdated",
-                  "previousPeriod":false,
-                  "valueAggregation":{
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "field":"contentUpdatedDate",
-                  "type":"MAX",
-                  },
-                  "periodIndependent":false
-                  },
-                  "sortable":true,
-                  "dataType":"date"
-                  },
-                  {
-                  "title":"analytics.viewsPeriod",
-                  "previousPeriod":true,
-                  "valueAggregation":{
-                  "filters":[
-                  {
-                  "valueString":"viewContent",
-                  "field":"operation",
-                  "type":"EQUAL"
-                  }
-                  ],
-                  "periodIndependent":false,
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "field": "userId",
-                  "type": "CARDINALITY"
-                  }
-                  },
-                  "sortable":true,
-                  "dataType":"long"
-                  },
-                  {
-                  "title":"analytics.reactionsPeriod",
-                  "previousPeriod":true,
-                  "valueAggregation":{
-                  "filters":[
-                  {
-                  "valueString":"shareContent,likeContent,commentContent",
-                  "field":"operation",
-                  "type":"IN_SET"
-                  }
-                  ],
-                  "periodIndependent":false,
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "type":"COUNT",
-                  }
-                  },
-                  "sortable":true,
-                  "dataType":"long"
-                  },
-                  {
-                  "title":"analytics.allViews",
-                  "previousPeriod":false,
-                  "valueAggregation":{
-                  "filters":[
-                  {
-                  "valueString":"viewContent",
-                  "field":"operation",
-                  "type":"EQUAL"
-                  }
-                  ],
-                  "periodIndependent":true,
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "field": "userId",
-                  "type": "CARDINALITY"
-                  }
-                  },
-                  "sortable":true,
-                  "dataType":"long"
-                  },
-                  {
-                  "title":"analytics.spaces",
-                  "previousPeriod":false,
-                  "valueAggregation":{
-                  "periodIndependent":false,
-                  "aggregation":{
-                  "sortDirection":"desc",
-                  "field":"spaceId",
-                  "type":"TERMS",
-                  }
-                  },
-                  "sortable":false,
-                  "dataType":"long"
-                  }
-                  ]
-                  }
-                </value>
-              </preference>
-            </preferences>
-          </portlet>
-          <title>Content Analytics</title>
-          <access-permissions>Everyone</access-permissions>
-          <show-info-bar>false</show-info-bar>
-        </portlet-application>
-      </container>
+    <container profiles="analytics" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
+            </portlet>
+            <title>Breadcrumb Analytics</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>settings</name>
+                  <value>{
+                    "pageSize":20,
+                    "title":"",
+                    "mainColumn":{
+                    "title":"analytics.title",
+                    "valueAggregation":{
+                    "aggregation":{
+                    "field":"contentId.keyword",
+                    "type":"TERMS",
+                    "dataType":"text"
+                    },
+                    "filters":[
+                    {
+                    "valueString":"1",
+                    "field":"contentId",
+                    "type":"GREATER"
+                    }
+                    ]
+                    }
+                    },
+                    "columns":[
+                    {
+                    "title":"analytics.applications",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"contentType.keyword",
+                    "type":"TERMS",
+                    }
+                    },
+                    "sortable":false,
+                    "dataType":"text"
+                    },
+                    {
+                    "title":"analytics.lastUpdated",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"contentUpdatedDate",
+                    "type":"MAX",
+                    },
+                    "periodIndependent":false
+                    },
+                    "sortable":true,
+                    "dataType":"date"
+                    },
+                    {
+                    "title":"analytics.viewsPeriod",
+                    "previousPeriod":true,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"viewContent",
+                    "field":"operation",
+                    "type":"EQUAL"
+                    }
+                    ],
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field": "userId",
+                    "type": "CARDINALITY"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.reactionsPeriod",
+                    "previousPeriod":true,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"shareContent,likeContent,commentContent",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    }
+                    ],
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "type":"COUNT",
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.allViews",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "filters":[
+                    {
+                    "valueString":"viewContent",
+                    "field":"operation",
+                    "type":"EQUAL"
+                    }
+                    ],
+                    "periodIndependent":true,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field": "userId",
+                    "type": "CARDINALITY"
+                    }
+                    },
+                    "sortable":true,
+                    "dataType":"long"
+                    },
+                    {
+                    "title":"analytics.spaces",
+                    "previousPeriod":false,
+                    "valueAggregation":{
+                    "periodIndependent":false,
+                    "aggregation":{
+                    "sortDirection":"desc",
+                    "field":"spaceId",
+                    "type":"TERMS",
+                    }
+                    },
+                    "sortable":false,
+                    "dataType":"long"
+                    }
+                    ]
+                    }
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Content Analytics</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 </page-set>
