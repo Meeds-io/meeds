@@ -3038,6 +3038,8 @@
     <title>News Composer</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
+    <show-max-window>true</show-max-window>
+    <hide-shared-layout>true</hide-shared-layout>
     <container id="NewsDetailContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       <portlet-application>
