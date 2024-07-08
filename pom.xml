@@ -467,6 +467,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <!-- This rule checks the dependencies transitively and fails if any class of any dependency is having its bytecode version higher than the one specified. -->
                     <enforceBytecodeVersion>
                       <maxJdkVersion>${maven.compiler.target}</maxJdkVersion>
+                      <!--
+                        Excluded some Apache Tomcat artifacts since it "advertises Java 22" while the compatibility on 10.1 is Java 17+ 
+                        FIXME: TO DELETE Once Java 22 is support by Meeds (Next upgrade for next JDK LTS version)
+                      -->
+                      <excludes>
+                        <exclude>org.apache.tomcat.embed:tomcat-embed-core</exclude>
+                        <exclude>org.apache.tomcat:tomcat-coyote</exclude>
+                      </excludes>
                     </enforceBytecodeVersion>
                   </rules>
                   <fail>true</fail>
