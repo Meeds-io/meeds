@@ -2015,7 +2015,7 @@
     <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+    <container cssClass="contentEditorContainer" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
           <portlet-application>
