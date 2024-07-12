@@ -20,6 +20,34 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
 
   <component>
+    <key>MeedsFeatureProperties</key>
+    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
+    <init-params>
+      <properties-param>
+        <name>MeedsFeatureProperties</name>
+        <property name="exo.feature.pwa.enabled" value="${exo.feature.pwa.enabled:true}" />
+        <property name="exo.feature.SpaceHomeLayoutReset.enabled" value="${exo.feature.SpaceHomeLayoutReset.enabled:true}" />
+        <property name="exo.feature.EditorAttachImage.enabled" value="${exo.feature.EditorAttachImage.enabled:true}" />
+        <property name="exo.feature.customStylesheet.enabled" value="${exo.feature.customStylesheet.enabled:false}" />
+      </properties-param>
+    </init-params>
+  </component>
+
+  <component>
+    <key>PWA-Properties</key>
+    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
+    <init-params>
+      <properties-param>
+        <name>PWA-Properties</name>
+        <property name="pwa.manifest.packageName" value="${pwa.manifest.packageName:Meeds}" />
+        <property name="pwa.manifest.description" value="${pwa.manifest.description:meeds.pwa.manifest.description}" />
+        <property name="pwa.manifest.homeUrl" value="${pwa.manifest.homeUrl:/portal/meeds}" />
+        <property name="pwa.manifest.version" value="${pwa.manifest.version:1}" />
+      </properties-param>
+    </init-params>
+  </component>
+
+  <component>
     <key>MeedsPortalConfigProperties</key>
     <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
     <init-params>
