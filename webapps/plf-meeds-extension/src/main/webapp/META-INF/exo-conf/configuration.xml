@@ -39,9 +39,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <init-params>
       <properties-param>
         <name>PWA-Properties</name>
-        <property name="pwa.manifest.packageName" value="${pwa.manifest.packageName:Meeds}" />
         <property name="pwa.manifest.description" value="${pwa.manifest.description:meeds.pwa.manifest.description}" />
-        <property name="pwa.manifest.homeUrl" value="${pwa.manifest.homeUrl:/portal/meeds}" />
         <property name="pwa.manifest.version" value="${pwa.manifest.version:1}" />
       </properties-param>
     </init-params>
