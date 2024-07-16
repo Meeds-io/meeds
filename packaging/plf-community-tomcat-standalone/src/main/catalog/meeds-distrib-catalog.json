@@ -281,5 +281,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-pwa",
+    "version": "${addon.meeds.pwa.version}",
+    "unstable": false,
+    "name": "PWA add-on",
+    "description": "Add-on for Progressive Web Application",
+    "sourceUrl": "https://github.com/meeds-io/pwa",
+    "documentationUrl": "https://github.com/meeds-io/pwa",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/pwa/pwa-packaging/${addon.meeds.pwa.version}/pwa-packaging-${addon.meeds.pwa.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
