@@ -86,6 +86,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.deeds-tenant.version>7.0.x-SNAPSHOT</addon.meeds.deeds-tenant.version>
     <addon.meeds.gamification-crowdin.id>meeds-gamification-crowdin</addon.meeds.gamification-crowdin.id>
     <addon.meeds.gamification-crowdin.version>7.0.x-SNAPSHOT</addon.meeds.gamification-crowdin.version>
+    <addon.meeds.pwa.id>meeds-pwa</addon.meeds.pwa.id>
+    <addon.meeds.pwa.version>7.0.x-SNAPSHOT</addon.meeds.pwa.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
@@ -218,6 +220,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>io.meeds.gamification-crowdin</groupId>
         <artifactId>gamification-crowdin-parent</artifactId>
         <version>${addon.meeds.gamification-crowdin.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.pwa</groupId>
+        <artifactId>pwa</artifactId>
+        <version>${addon.meeds.pwa.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
