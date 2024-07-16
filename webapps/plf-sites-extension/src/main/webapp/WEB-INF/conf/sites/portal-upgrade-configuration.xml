@@ -465,7 +465,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>ContentEditorPageLayoutUpgrade</name>
+      <name>ContentEditorUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
