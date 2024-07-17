@@ -422,7 +422,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>UserSettingsPageLayoutUpgrade</name>
+      <name>PwaAdministrationPageLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -445,7 +445,7 @@
         <object-param>
           <name>global.upgrade</name>
           <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePageLayout">
+            <field name="updateNavigation">
               <boolean>true</boolean>
             </field>
             <field name="configPath">
@@ -455,17 +455,10 @@
               <string>portal</string>
             </field>
             <field name="portalName">
-              <string>global</string>
+              <string>administration</string>
             </field>
             <field name="importMode">
               <string>merge</string>
-            </field>
-            <field name="pageNames">
-              <collection type="java.util.ArrayList" item-type="java.lang.String">
-                <value>
-                  <string>settings</string>
-                </value>
-              </collection>
             </field>
           </object>
         </object-param>
