@@ -45,12 +45,6 @@
           <icon>fas fa-bell</icon>
           <page-reference>portal::administration::notification</page-reference>
         </node>
-        <node>
-          <name>applicationsCenter</name>
-          <label>#{portal.administration.appCenterAdminSetup}</label>
-          <icon>fas fa-list-alt</icon>
-          <page-reference>portal::administration::appCenterAdminSetup</page-reference>
-        </node>
       </node>
       <node>
         <name>organisation</name>
@@ -120,6 +114,18 @@
         <name>applications</name>
         <label>#{portal.administration.applications}</label>
         <icon>fas fa-boxes</icon>
+        <node>
+          <name>applicationsCenter</name>
+          <label>#{portal.administration.appCenterAdminSetup}</label>
+          <icon>fas fa-list-alt</icon>
+          <page-reference>portal::administration::appCenterAdminSetup</page-reference>
+        </node>
+        <node>
+          <name>pwaSettings</name>
+          <label>#{portal.administration.pwaSettings}</label>
+          <icon>fas fa-mobile-alt</icon>
+          <page-reference>portal::administration::pwaSettings</page-reference>
+        </node>
         <node>
           <name>news-settings</name>
           <label>#{portal.administration.news-settings}</label>
