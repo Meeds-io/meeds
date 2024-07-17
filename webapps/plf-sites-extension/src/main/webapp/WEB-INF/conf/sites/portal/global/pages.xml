@@ -221,13 +221,6 @@
             <name>settings-bottom-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-          <portlet-application profiles="pwa">
-            <portlet>
-              <application-ref>pwa</application-ref>
-              <portlet-ref>UserSettingPwa</portlet-ref>
-            </portlet>
-            <title>User Setting PWA</title>
-          </portlet-application>
         </column>
       </section-columns>
     </container>
