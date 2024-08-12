@@ -8,7 +8,7 @@ on:
 jobs:
   download-crowdin:
     name: CI Build
-    uses: exoplatform/swf-scripts/.github/workflows/download-crowdin-meedsio.yml@master
+    uses: exoplatform/swf-scripts/.github/workflows/download-crowdin-exoplatform.yml@master
     with:
       CROWDIN_MAINTENANCE_EXO_VERSION: ${{ vars.CROWDIN_MAINTENANCE_EXO_VERSION }}
     secrets:
