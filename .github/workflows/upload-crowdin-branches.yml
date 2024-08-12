@@ -4,8 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - develop-exo
-      - develop-meed
       - stable/*
 jobs:
   upload-crowdin-branch:
