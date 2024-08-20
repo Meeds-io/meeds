@@ -281,5 +281,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-ide",
+    "version": "${addon.meeds.ide.version}",
+    "unstable": false,
+    "name": "Widget IDE add-on",
+    "description": "Add-on for Widget IDE",
+    "sourceUrl": "https://github.com/meeds-io/ide",
+    "documentationUrl": "https://github.com/meeds-io/ide",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/ide/ide-packaging/${addon.meeds.ide.version}/ide-packaging-${addon.meeds.ide.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]
