@@ -39,6 +39,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <url-pattern>*.css</url-pattern>
     <url-pattern>*.js</url-pattern>
     <url-pattern>*.html</url-pattern>
+    <url-pattern>/i18n/*</url-pattern>
     <url-pattern>/images/*</url-pattern>
   </filter-mapping>
 
