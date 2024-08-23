@@ -27,10 +27,10 @@
   <priority>1</priority>
   <page-nodes>
     <node>
-      <name>actions</name>
-      <label>#{portal.contribute.actions}</label>
-      <icon>fa fa-rocket</icon>
-      <page-reference>portal::contribute::actions</page-reference>
+      <name>home</name>
+      <label>#{portal.contribute.overview}</label>
+      <icon>fa fa-briefcase</icon>
+      <page-reference>portal::contribute::overview</page-reference>
       <node>
         <name>programs</name>
         <label>#{portal.contribute.programs}</label>
@@ -38,10 +38,16 @@
         <page-reference>portal::contribute::programs</page-reference>
       </node>
       <node>
-        <name>perks</name>
-        <label>#{portal.contribute.perks}</label>
-        <icon>fa fa-shopping-cart</icon>
-        <page-reference>portal::contribute::perks</page-reference>
+        <name>actions</name>
+        <label>#{portal.contribute.actions}</label>
+        <icon>fa fa-rocket</icon>
+        <page-reference>portal::contribute::actions</page-reference>
+      </node>
+      <node>
+        <name>wallet</name>
+        <label>#{portal.contribute.wallet}</label>
+        <icon>fa fa-credit-card</icon>
+        <page-reference>portal::contribute::wallet</page-reference>
       </node>
     </node>
   </page-nodes>
