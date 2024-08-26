@@ -29,7 +29,7 @@
     <node>
       <name>home</name>
       <label>#{portal.contribute.overview}</label>
-      <icon>fa fa-briefcase</icon>
+      <icon>fa fa-rocket</icon>
       <page-reference>portal::contribute::overview</page-reference>
       <node>
         <name>programs</name>
@@ -40,7 +40,7 @@
       <node>
         <name>actions</name>
         <label>#{portal.contribute.actions}</label>
-        <icon>fa fa-rocket</icon>
+        <icon>fa fa-trophy</icon>
         <page-reference>portal::contribute::actions</page-reference>
       </node>
       <node>
