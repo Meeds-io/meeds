@@ -49,47 +49,47 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <!-- Dependencies Versions                    -->
     <!-- **************************************** -->
     <!-- The version of Platform To bundle -->
-    <io.meeds.social.version>7.0.x-SNAPSHOT</io.meeds.social.version>
-    <io.meeds.platform-ui.version>7.0.x-SNAPSHOT</io.meeds.platform-ui.version>
+    <io.meeds.social.version>7.0.0-M10</io.meeds.social.version>
+    <io.meeds.platform-ui.version>7.0.0-M10</io.meeds.platform-ui.version>
     <!-- The version of the add-ons manager -->
-    <io.meeds.platform.addons-manager.version>7.0.x-SNAPSHOT</io.meeds.platform.addons-manager.version>
+    <io.meeds.platform.addons-manager.version>7.0.0-M10</io.meeds.platform.addons-manager.version>
     <!-- ************** -->
     <!-- Add-ons for Community packaging   -->
     <!-- ************** -->
     <addon.meeds.layout.id>meeds-layout</addon.meeds.layout.id>
-    <addon.meeds.layout.version>7.0.x-SNAPSHOT</addon.meeds.layout.version>
+    <addon.meeds.layout.version>7.0.0-M10</addon.meeds.layout.version>
     <addon.meeds.kudos.id>meeds-kudos</addon.meeds.kudos.id>
-    <addon.meeds.kudos.version>7.0.x-SNAPSHOT</addon.meeds.kudos.version>
+    <addon.meeds.kudos.version>7.0.0-M10</addon.meeds.kudos.version>
     <addon.meeds.perk-store.id>meeds-perk-store</addon.meeds.perk-store.id>
-    <addon.meeds.perk-store.version>7.0.x-SNAPSHOT</addon.meeds.perk-store.version>
+    <addon.meeds.perk-store.version>7.0.0-M10</addon.meeds.perk-store.version>
     <addon.meeds.wallet.id>meeds-wallet</addon.meeds.wallet.id>
-    <addon.meeds.wallet.version>7.0.x-SNAPSHOT</addon.meeds.wallet.version>
+    <addon.meeds.wallet.version>7.0.0-M10</addon.meeds.wallet.version>
     <addon.meeds.gamification.id>meeds-gamification</addon.meeds.gamification.id>
-    <addon.meeds.gamification.version>7.0.x-SNAPSHOT</addon.meeds.gamification.version>
+    <addon.meeds.gamification.version>7.0.0-M10</addon.meeds.gamification.version>
     <addon.meeds.app-center.id>meeds-app-center</addon.meeds.app-center.id>
-    <addon.meeds.app-center.version>7.0.x-SNAPSHOT</addon.meeds.app-center.version>
+    <addon.meeds.app-center.version>7.0.0-M10</addon.meeds.app-center.version>
     <addon.meeds.notes.id>meeds-notes</addon.meeds.notes.id>
-    <addon.meeds.notes.version>7.0.x-SNAPSHOT</addon.meeds.notes.version>
+    <addon.meeds.notes.version>7.0.0-M10</addon.meeds.notes.version>
     <addon.meeds.tasks.id>meeds-tasks</addon.meeds.tasks.id>
-    <addon.meeds.tasks.version>7.0.x-SNAPSHOT</addon.meeds.tasks.version>
+    <addon.meeds.tasks.version>7.0.0-M10</addon.meeds.tasks.version>
     <addon.meeds.analytics.id>meeds-analytics</addon.meeds.analytics.id>
-    <addon.meeds.analytics.version>7.0.x-SNAPSHOT</addon.meeds.analytics.version>
+    <addon.meeds.analytics.version>7.0.0-M10</addon.meeds.analytics.version>
     <addon.meeds.poll.id>meeds-poll</addon.meeds.poll.id>
-    <addon.meeds.poll.version>7.0.x-SNAPSHOT</addon.meeds.poll.version>
+    <addon.meeds.poll.version>7.0.0-M10</addon.meeds.poll.version>
     <addon.meeds.content.id>meeds-content</addon.meeds.content.id>
-    <addon.meeds.content.version>7.0.x-SNAPSHOT</addon.meeds.content.version>
+    <addon.meeds.content.version>7.0.0-M10</addon.meeds.content.version>
     <addon.meeds.gamification-github.id>meeds-gamification-github</addon.meeds.gamification-github.id>
-    <addon.meeds.gamification-github.version>7.0.x-SNAPSHOT</addon.meeds.gamification-github.version>
+    <addon.meeds.gamification-github.version>7.0.0-M10</addon.meeds.gamification-github.version>
     <addon.meeds.gamification-twitter.id>meeds-gamification-twitter</addon.meeds.gamification-twitter.id>
-    <addon.meeds.gamification-twitter.version>7.0.x-SNAPSHOT</addon.meeds.gamification-twitter.version>
+    <addon.meeds.gamification-twitter.version>7.0.0-M10</addon.meeds.gamification-twitter.version>
     <addon.meeds.deeds-tenant.id>meeds-deeds-tenant</addon.meeds.deeds-tenant.id>
-    <addon.meeds.deeds-tenant.version>7.0.x-SNAPSHOT</addon.meeds.deeds-tenant.version>
+    <addon.meeds.deeds-tenant.version>7.0.0-M10</addon.meeds.deeds-tenant.version>
     <addon.meeds.gamification-crowdin.id>meeds-gamification-crowdin</addon.meeds.gamification-crowdin.id>
-    <addon.meeds.gamification-crowdin.version>7.0.x-SNAPSHOT</addon.meeds.gamification-crowdin.version>
+    <addon.meeds.gamification-crowdin.version>7.0.0-M10</addon.meeds.gamification-crowdin.version>
     <addon.meeds.pwa.id>meeds-pwa</addon.meeds.pwa.id>
-    <addon.meeds.pwa.version>7.0.x-SNAPSHOT</addon.meeds.pwa.version>
+    <addon.meeds.pwa.version>7.0.0-M10</addon.meeds.pwa.version>
     <addon.meeds.ide.id>meeds-ide</addon.meeds.ide.id>
-    <addon.meeds.ide.version>7.0.x-SNAPSHOT</addon.meeds.ide.version>
+    <addon.meeds.ide.version>7.0.0-M10</addon.meeds.ide.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
