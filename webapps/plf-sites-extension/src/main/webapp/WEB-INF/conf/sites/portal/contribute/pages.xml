@@ -58,17 +58,19 @@
             <portlet>
               <application-ref>gamification-portlets</application-ref>
               <portlet-ref>topChallengers</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>topChallengersPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>topChallengersCurrentPosition</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
             </portlet>
             <title>Leaderboard</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>challengesOverview</portlet-ref>
-            </portlet>
-            <title>Actions overview</title>
+            <height>350</height>
           </portlet-application>
         </column>
         <column col-span="4">
@@ -76,37 +78,114 @@
             <portlet>
               <application-ref>gamification-portlets</application-ref>
               <portlet-ref>programsOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>limit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>programsSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
             </portlet>
             <title>Programs Overview</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>challengesOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>endingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>lockedRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>availableRulesLimit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>upcomingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>rulesSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Actions overview</title>
+            <height>350</height>
           </portlet-application>
         </column>
       </section-columns>
-      <section-columns>
-        <column col-span="4">
+      <section-grid cols="12" rows="4">
+        <cell col-span="4" row-span="4">
           <portlet-application>
             <portlet>
               <application-ref>gamification-portlets</application-ref>
               <portlet-ref>myContributions</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>myContributionsPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>myContributionsDisplayLegend</name>
+                  <value>true</value>
+                </preference>
+                <preference>
+                  <name>myContributionsProgramLimit</name>
+                  <value>4</value>
+                </preference>
+              </preferences>
             </portlet>
             <title>User Contributions</title>
           </portlet-application>
-        </column>
-        <column col-span="4">
+        </cell>
+        <cell col-span="8" row-span="2">
           <portlet-application>
             <portlet>
               <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>myReputation</portlet-ref>
+              <portlet-ref>BadgesOverview</portlet-ref>
             </portlet>
-            <title>User reputation</title>
+            <title>Badges Overview</title>
           </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="kudos">
+            <portlet>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosOverview</portlet-ref>
+            </portlet>
+            <title>Kudos Overview</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="wallet">
             <portlet>
               <application-ref>gamification-portlets</application-ref>
               <portlet-ref>myRewards</portlet-ref>
             </portlet>
-            <title>User rewards</title>
+            <title>User Rewards</title>
+          </portlet-application>
+        </cell>
+      </section-grid>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>EngagementCenterAchievements</portlet-ref>
+            </portlet>
+            <title>Achievements</title>
           </portlet-application>
         </column>
       </section-columns>
