@@ -49,10 +49,13 @@
               </preferences>
             </portlet>
             <title>Banner</title>
+            <css-style>
+              <mobile-hidden>true</mobile-hidden>
+            </css-style>
           </portlet-application>
         </column>
       </section-columns>
-      <section-columns>
+      <section-columns mobile-columns-style="true">
         <column col-span="4">
           <portlet-application>
             <portlet>
