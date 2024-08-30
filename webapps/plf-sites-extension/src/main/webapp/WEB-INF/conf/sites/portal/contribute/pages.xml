@@ -187,6 +187,12 @@
             <portlet>
               <application-ref>gamification-portlets</application-ref>
               <portlet-ref>EngagementCenterAchievements</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>hideOwnedTab</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
             </portlet>
             <title>Achievements</title>
           </portlet-application>
