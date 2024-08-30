@@ -93,12 +93,12 @@
           </portlet-application>
         </column>
         <column col-span="4">
-          <portlet-application>
+          <portlet-application profiles="kudos">
             <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>myReputation</portlet-ref>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosOverview</portlet-ref>
             </portlet>
-            <title>User reputation</title>
+            <title>Kudos Overview</title>
           </portlet-application>
         </column>
         <column col-span="4">
