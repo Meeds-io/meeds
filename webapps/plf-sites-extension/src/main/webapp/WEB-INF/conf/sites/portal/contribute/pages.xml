@@ -174,7 +174,7 @@
         <cell col-span="4" row-span="2">
           <portlet-application profiles="wallet">
             <portlet>
-              <application-ref>gamification-portlets</application-ref>
+              <application-ref>wallet</application-ref>
               <portlet-ref>myRewards</portlet-ref>
             </portlet>
             <title>User Rewards</title>
