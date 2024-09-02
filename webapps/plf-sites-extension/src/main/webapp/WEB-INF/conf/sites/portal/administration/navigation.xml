@@ -76,20 +76,37 @@
         </node>
       </node>
       <node>
-        <name>recognition</name>
-        <label>#{portal.administration.recognition}</label>
+        <name>gamification</name>
+        <label>#{portal.administration.gamification}</label>
         <icon>fas fa-trophy</icon>
         <node>
-          <name>setup</name>
-          <label>#{portal.administration.recognitionSetup}</label>
+          <name>kudos</name>
+          <label>#{portal.administration.kudos}</label>
           <icon>fa fa-tools</icon>
-          <page-reference>portal::administration::recognitionSetup</page-reference>
+          <page-reference>portal::administration::kudosConfiguration</page-reference>
         </node>
         <node>
           <name>connectors</name>
           <label>#{portal.administration.connectors}</label>
           <icon>fas fa-plug</icon>
           <page-reference>portal::administration::gamificationConnectorsAdministration</page-reference>
+        </node>
+        <node>
+          <name>badges</name>
+          <label>#{portal.administration.badges}</label>
+          <icon>fas fa-graduation-cap</icon>
+          <page-reference>portal::administration::gamificationBadgesAdministration</page-reference>
+        </node>
+      </node>
+      <node>
+        <name>rewards</name>
+        <label>#{portal.administration.rewards}</label>
+        <icon>fas fa-coins</icon>
+        <node>
+          <name>setup</name>
+          <label>#{portal.administration.rewardAndBlockchainSetup}</label>
+          <icon>fa fa-tools</icon>
+          <page-reference>portal::administration::rewardAndBlockchainSetup</page-reference>
         </node>
         <node>
           <name>wallet</name>
@@ -102,12 +119,6 @@
           <label>#{portal.administration.reward}</label>
           <icon>fas fa-coins</icon>
           <page-reference>portal::administration::rewardAdministration</page-reference>
-        </node>
-        <node>
-          <name>badges</name>
-          <label>#{portal.administration.badges}</label>
-          <icon>fas fa-graduation-cap</icon>
-          <page-reference>portal::administration::gamificationBadgesAdministration</page-reference>
         </node>
       </node>
       <node>
