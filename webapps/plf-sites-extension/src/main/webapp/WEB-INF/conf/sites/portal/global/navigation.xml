@@ -27,12 +27,6 @@
   <page-nodes>
 
     <node>
-      <name>stream</name>
-      <label>#{portal.global.stream}</label>
-      <page-reference>portal::global::stream</page-reference>
-    </node>
-
-    <node>
       <name>spaces</name>
       <label>#{portal.global.spaces}</label>
       <page-reference>portal::global::all-spaces</page-reference>

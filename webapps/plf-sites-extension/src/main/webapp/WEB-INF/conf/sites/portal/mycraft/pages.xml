@@ -25,6 +25,45 @@
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
 
+  <page>
+    <name>stream</name>
+    <title>Stream</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>User Activity Stream</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on line</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>stream-top-widgets-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>stream-bottom-widgets-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page profiles="content">
     <name>contents</name>
     <title>Contents</title>

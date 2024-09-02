@@ -28,7 +28,7 @@
   <displayed>false</displayed>
   <locale>en</locale>
   <access-permissions>*:/platform/users</access-permissions>
-  <edit-permission>manager:/platform/administrators</edit-permission>
+  <edit-permission>*:/platform/administrators</edit-permission>
   <properties>
     <entry key="sessionAlive">onDemand</entry>
     <entry key="showPortletInfo">0</entry>
