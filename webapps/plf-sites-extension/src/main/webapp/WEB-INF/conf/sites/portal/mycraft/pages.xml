@@ -25,6 +25,26 @@
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
 
+  <page profiles="content">
+    <name>contents</name>
+    <title>Contents</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>News</portlet-ref>
+            </portlet>
+            <title>News</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page profiles="task">
     <name>tasks</name>
     <title>Tasks</title>
@@ -39,46 +59,6 @@
               <portlet-ref>TasksManagement</portlet-ref>
             </portlet>
             <title>Tasks</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="gamification">
-    <name>achievements</name>
-    <title>Achievements</title>
-    <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>EngagementCenterAchievements</portlet-ref>
-            </portlet>
-            <title>Achievements</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="wallet">
-    <name>wallet</name>
-    <title>Wallet</title>
-    <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>wallet</application-ref>
-              <portlet-ref>Wallet</portlet-ref>
-            </portlet>
-            <title>Wallet</title>
           </portlet-application>
         </column>
       </section-columns>
