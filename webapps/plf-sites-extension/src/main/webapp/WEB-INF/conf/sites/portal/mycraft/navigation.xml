@@ -28,7 +28,7 @@
       <name>dashboard</name>
       <label>#{portal.mycraft.dashboard}</label>
       <icon>fa fa-briefcase</icon>
-      <page-reference>portal::mycraft::dashboard</page-reference>
+      <page-reference>portal::global::stream</page-reference>
       <node>
         <name>tasks</name>
         <label>#{portal.mycraft.tasks}</label>
