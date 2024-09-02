@@ -27,7 +27,7 @@
     <name>generalSettings</name>
     <title>General Settings</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -47,7 +47,7 @@
     <name>notification</name>
     <title>Notifications Administration</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -67,7 +67,7 @@
     <name>appCenterAdminSetup</name>
     <title>App center admin setup</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -94,7 +94,7 @@
     <name>usersManagement</name>
     <title>Users Management</title>
     <access-permissions>*:/platform/administrators;*:/platform/delegated</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -114,7 +114,7 @@
     <name>groupsManagement</name>
     <title>Groups Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -134,7 +134,7 @@
     <name>profileManagement</name>
     <title>Profile Settings Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -154,7 +154,7 @@
     <name>spacesAdministration</name>
     <title>Spaces Administration</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>false</show-max-window>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -174,7 +174,7 @@
     <name>siteManagement</name>
     <title>Sites Layout Management</title>
     <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <show-max-window>false</show-max-window>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -195,7 +195,7 @@
     <name>gamificationConnectorsAdministration</name>
     <title>Gamification Connectors Administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <edit-permission>*:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -215,7 +215,7 @@
     <name>gamificationBadgesAdministration</name>
     <title>Gamification Badges Administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <edit-permission>*:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -235,7 +235,7 @@
     <name>recognitionSetup</name>
     <title>Recognistion setup</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <edit-permission>*:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" cssClass="no-applications-spacing">
       <section-columns>
         <column col-span="12" cssClass="application-layout-style">
@@ -276,7 +276,7 @@
     <name>walletAdministration</name>
     <title>Wallet adminsitration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <edit-permission>*:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -296,7 +296,7 @@
     <name>rewardAdministration</name>
     <title>Reward administration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
-    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <edit-permission>*:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -316,7 +316,7 @@
     <name>newsTargets</name>
     <title>News targets</title>
     <access-permissions>manager:/platform/web-contributors</access-permissions>
-    <edit-permission>manager:/platform/web-contributors</edit-permission>
+    <edit-permission>*:/platform/web-contributors</edit-permission>
     <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
       <access-permissions>Everyone</access-permissions>
       <portlet-application>

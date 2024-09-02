@@ -29,7 +29,7 @@
     <name>overview</name>
     <title>Public Overview Page</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <hide-shared-layout>true</hide-shared-layout>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <css-style>

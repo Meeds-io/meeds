@@ -29,7 +29,7 @@
     <name>all-people</name>
     <title>People Directory</title>
     <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns
         sticky-beahvior="true"
@@ -77,7 +77,7 @@
     <name>all-spaces</name>
     <title>All Spaces</title>
     <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns
         sticky-beahvior="true"
@@ -125,7 +125,7 @@
     <name>activity</name>
     <title>Activity</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -145,14 +145,14 @@
     <name>search</name>
     <title>Search</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
   </page>
 
   <page>
     <name>space-access</name>
     <title>space-access</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -172,7 +172,7 @@
     <name>page-not-found</name>
     <title>Page Not Found</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -192,7 +192,7 @@
     <name>settings</name>
     <title>Settings</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -227,108 +227,10 @@
   </page>
 
   <page>
-    <name>stream</name>
-    <title>Stream</title>
-    <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns
-        sticky-beahvior="true"
-        mobile-columns-style="true">
-        <column col-span="8">
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
-            </portlet>
-            <title>User Activity Stream</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>GettingStarted</portlet-ref>
-            </portlet>
-            <title>Getting Started</title>
-          </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>stream-top-widgets-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
-            </portlet>
-            <title>Who is on line</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>SuggestionsPeopleAndSpace</portlet-ref>
-            </portlet>
-            <title>Suggestions peoples and spaces</title>
-          </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>stream-bottom-widgets-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page>
-    <name>externalStream</name>
-    <title>externalStream</title>
-    <access-permissions>*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns
-        sticky-beahvior="true"
-        mobile-columns-style="true">
-        <column col-span="8">
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>UserActivityStreamPortlet</portlet-ref>
-            </portlet>
-            <title>User Activity Stream</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>GettingStarted</portlet-ref>
-            </portlet>
-            <title>Getting Started</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>ExternalSpacesList</portlet-ref>
-            </portlet>
-            <title>External spaces list</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>task-management</application-ref>
-              <portlet-ref>tasks</portlet-ref>
-            </portlet>
-            <title>Tasks</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page>
     <name>profile</name>
     <title>Profile</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -396,88 +298,6 @@
             <name>profile-right-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="gamification">
-    <name>overview</name>
-    <title>Overview</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>*:/platform/rewarding</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>social-portlet</application-ref>
-              <portlet-ref>Image</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>name</name>
-                  <value>overivewPageBanner</value>
-                </preference>
-                <preference>
-                  <name>image-path</name>
-                  <value>war:/../images/pages/banner/dashboard-banner.png</value>
-                  <read-only>false</read-only>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Banner</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>topChallengers</portlet-ref>
-            </portlet>
-            <title>Leaderboard</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>challengesOverview</portlet-ref>
-            </portlet>
-            <title>Actions overview</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>programsOverview</portlet-ref>
-            </portlet>
-            <title>Programs Overview</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>myContributions</portlet-ref>
-            </portlet>
-            <title>User Contributions</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application profiles="kudos">
-            <portlet>
-              <application-ref>kudos</application-ref>
-              <portlet-ref>KudosOverview</portlet-ref>
-            </portlet>
-            <title>Kudos Overview</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
         </column>
       </section-columns>
     </container>
@@ -640,7 +460,7 @@
     <name>appCenterUserSetup</name>
     <title>App Center User Setup</title>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
+    <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -660,7 +480,7 @@
     <name>analytics</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -1053,7 +873,7 @@
     <name>analytics-users</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -1202,7 +1022,7 @@
     <name>analytics-spaces</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -1359,7 +1179,7 @@
     <name>analytics-mobile</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -1379,7 +1199,7 @@
     <name>analytics-security</name>
     <title>Analytics Security</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -1623,7 +1443,7 @@
     <name>analytics-wallet</name>
     <title>Analytics Wallet</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -2032,7 +1852,7 @@
     <name>analytics-contents</name>
     <title>Analytics</title>
     <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
+    <edit-permission>*:/platform/analytics</edit-permission>
     <container profiles="analytics" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
