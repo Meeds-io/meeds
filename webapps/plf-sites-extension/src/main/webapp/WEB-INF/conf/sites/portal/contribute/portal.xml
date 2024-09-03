@@ -30,7 +30,7 @@
   <display-order>10</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-  <edit-permission>*:/platform/administrators</edit-permission>
+  <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
     <entry key="showPortletInfo">0</entry>
   </properties>

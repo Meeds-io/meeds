@@ -22,7 +22,7 @@
     <portal-name>global</portal-name>
     <locale>en</locale>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <properties>
         <entry key="sessionAlive">onDemand</entry>
         <entry key="showPortletInfo">0</entry>
