@@ -59,6 +59,13 @@
             <name>stream-bottom-widgets-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>ExternalSpacesList</portlet-ref>
+            </portlet>
+            <title>Spaces list widget</title>
+          </portlet-application>
         </column>
       </section-columns>
     </container>
@@ -88,7 +95,7 @@
     <name>tasks</name>
     <title>Tasks</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -108,7 +115,7 @@
     <name>myteam</name>
     <title>My Team</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container id="MyTeamParentContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
       <access-permissions>Everyone</access-permissions>
       <portlet-application>
