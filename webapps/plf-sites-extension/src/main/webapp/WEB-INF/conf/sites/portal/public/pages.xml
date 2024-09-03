@@ -306,7 +306,7 @@
     <name>actions</name>
     <title>Contribution Center - Actions</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <hide-shared-layout>true</hide-shared-layout>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
