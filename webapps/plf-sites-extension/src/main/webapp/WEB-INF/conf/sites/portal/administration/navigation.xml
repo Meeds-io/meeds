@@ -80,8 +80,8 @@
         <label>#{portal.administration.gamification}</label>
         <icon>fas fa-trophy</icon>
         <node>
-          <name>kudosConfiguration</name>
-          <label>#{portal.administration.kudosConfiguration}</label>
+          <name>kudos</name>
+          <label>#{portal.administration.kudos}</label>
           <icon>fa fa-tools</icon>
           <page-reference>portal::administration::kudosConfiguration</page-reference>
         </node>
@@ -99,8 +99,8 @@
         </node>
       </node>
       <node>
-        <name>rewardsAndBlockchain</name>
-        <label>#{portal.administration.rewardsAndBlockchain}</label>
+        <name>rewards</name>
+        <label>#{portal.administration.rewards}</label>
         <icon>fas fa-coins</icon>
         <node>
           <name>setup</name>
