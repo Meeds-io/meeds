@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-packaging</artifactId>
-    <version>1.5.x-exo-SNAPSHOT</version>
+    <version>1.5.4-exo-RC01</version>
   </parent>
   <artifactId>plf-packaging-resources</artifactId>
   <packaging>pom</packaging>
