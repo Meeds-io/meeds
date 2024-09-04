@@ -231,9 +231,9 @@
     </container>
   </page>
 
-  <page profiles="kudos,wallet,perk-store,deeds-tenant">
-    <name>recognitionSetup</name>
-    <title>Recognistion setup</title>
+  <page profiles="kudos">
+    <name>kudosConfiguration</name>
+    <title>kudos Configuration</title>
     <access-permissions>*:/platform/rewarding</access-permissions>
     <edit-permission>manager:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" cssClass="no-applications-spacing">
@@ -246,6 +246,19 @@
             </portlet>
             <title>Kudos setup administration</title>
           </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="wallet,perk-store,deeds-tenant">
+    <name>rewardAndBlockchainSetup</name>
+    <title>reward and blockchainSetup setup</title>
+    <access-permissions>*:/platform/rewarding</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" cssClass="no-applications-spacing">
+      <section-columns>
+        <column col-span="12" cssClass="application-layout-style">
           <portlet-application profiles="wallet">
             <portlet>
               <application-ref>wallet</application-ref>
