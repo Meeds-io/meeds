@@ -22,8 +22,8 @@
 -->
 <page-set
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
-  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_13 http://www.exoplatform.org/xml/ns/gatein_objects_1_13"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_13">
 
   <page>
     <name>all-people</name>
@@ -111,6 +111,31 @@
               </preferences>
             </portlet>
             <title>Suggestions spaces</title>
+          </portlet-application>
+          <portlet-application profiles="analytics">
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>SpacesListWidget</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>spacesMemberOf</name>
+                  <value>false</value>
+                </preference>
+                <preference>
+                  <name>userSpacesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>spacesRecentlyVisitedLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>spacesMostActiveLimit</name>
+                  <value>10</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Spaces List Widget</title>
           </portlet-application>
           <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
             <name>rightbottom-spaces-container</name>
