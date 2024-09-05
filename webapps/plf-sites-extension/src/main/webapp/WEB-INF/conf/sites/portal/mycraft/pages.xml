@@ -29,7 +29,7 @@
     <name>stream</name>
     <title>Stream</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns
         sticky-beahvior="true"
@@ -89,7 +89,7 @@
     <name>contents</name>
     <title>Contents</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
