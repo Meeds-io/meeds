@@ -28,7 +28,7 @@
     <name>overview</name>
     <title>Overview</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/rewarding</edit-permission>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -205,7 +205,7 @@
     <name>actions</name>
     <title>Actions</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -225,7 +225,7 @@
     <name>programs</name>
     <title>Programs</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -245,7 +245,7 @@
     <name>perks</name>
     <title>Perks</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
@@ -265,7 +265,7 @@
     <name>wallet</name>
     <title>Wallet</title>
     <access-permissions>Everyone</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">

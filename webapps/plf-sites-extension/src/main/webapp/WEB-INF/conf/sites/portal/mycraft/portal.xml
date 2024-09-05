@@ -25,12 +25,12 @@
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_11">
 
   <portal-name>mycraft</portal-name>
-  <label>My Craft</label>
+  <label>My Workspace</label>
   <description>Access your workspace directly, organized by topic</description>
   <display-order>20</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-  <edit-permission>*:/platform/administrators</edit-permission>
+  <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
     <entry key="showPortletInfo">0</entry>
   </properties>
