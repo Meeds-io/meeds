@@ -24,7 +24,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <display-order>30</display-order>
     <locale>en</locale>
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <properties>
         <entry key="sessionAlive">onDemand</entry>
         <entry key="showPortletInfo">0</entry>
