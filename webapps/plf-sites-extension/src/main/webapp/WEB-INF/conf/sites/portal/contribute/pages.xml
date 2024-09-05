@@ -25,6 +25,183 @@
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
 
   <page profiles="gamification">
+    <name>overview</name>
+    <title>Overview</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/rewarding</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social-portlet</application-ref>
+              <portlet-ref>Image</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>name</name>
+                  <value>contributeOverivewPageBanner</value>
+                </preference>
+                <preference>
+                  <name>image-path</name>
+                  <value>war:/../images/pages/banner/dashboard-banner.png</value>
+                  <read-only>false</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Banner</title>
+            <css-style>
+              <mobile-hidden>true</mobile-hidden>
+            </css-style>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns mobile-columns-style="true">
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>topChallengers</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>topChallengersPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>topChallengersCurrentPosition</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Leaderboard</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>programsOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>limit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>programsSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Programs Overview</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>challengesOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>endingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>lockedRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>availableRulesLimit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>upcomingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>rulesSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Actions overview</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-grid cols="12" rows="4">
+        <cell col-span="4" row-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myContributions</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>myContributionsPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>myContributionsDisplayLegend</name>
+                  <value>true</value>
+                </preference>
+                <preference>
+                  <name>myContributionsProgramLimit</name>
+                  <value>4</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>User Contributions</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="8" row-span="2">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>BadgesOverview</portlet-ref>
+            </portlet>
+            <title>Badges Overview</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="kudos">
+            <portlet>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosOverview</portlet-ref>
+            </portlet>
+            <title>Kudos Overview</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="wallet">
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>myRewards</portlet-ref>
+            </portlet>
+            <title>User Rewards</title>
+          </portlet-application>
+        </cell>
+      </section-grid>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>EngagementCenterAchievements</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>hideOwnedTab</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Achievements</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="gamification">
     <name>actions</name>
     <title>Actions</title>
     <access-permissions>Everyone</access-permissions>
@@ -78,6 +255,26 @@
               <portlet-ref>PerkStore</portlet-ref>
             </portlet>
             <title>Perks</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="wallet">
+    <name>wallet</name>
+    <title>Wallet</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>Wallet</portlet-ref>
+            </portlet>
+            <title>Wallet</title>
           </portlet-application>
         </column>
       </section-columns>

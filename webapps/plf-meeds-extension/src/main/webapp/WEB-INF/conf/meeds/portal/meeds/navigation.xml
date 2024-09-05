@@ -25,12 +25,6 @@
   <priority>4</priority>
   <page-nodes>
     <node>
-      <name>stream</name>
-      <label>#{portal.meeds.stream}</label>
-      <icon>fas fa-stream</icon>
-      <page-reference>portal::global::stream</page-reference>
-    </node>
-    <node>
       <name>external-stream</name>
       <label>#{portal.meeds.stream}</label>
       <icon>fas fa-user-lock</icon>
