@@ -76,6 +76,34 @@
         </node>
       </node>
       <node>
+        <name>applications</name>
+        <label>#{portal.administration.applications}</label>
+        <icon>fas fa-boxes</icon>
+        <node>
+          <name>applicationsCenter</name>
+          <label>#{portal.administration.appCenterAdminSetup}</label>
+          <icon>fas fa-list-alt</icon>
+          <page-reference>portal::administration::appCenterAdminSetup</page-reference>
+        </node>
+        <node>
+          <name>pwaSettings</name>
+          <label>#{portal.administration.pwaSettings}</label>
+          <icon>fas fa-mobile-alt</icon>
+          <page-reference>portal::administration::pwaSettings</page-reference>
+        </node>
+        <node>
+          <name>news-settings</name>
+          <label>#{portal.administration.news-settings}</label>
+          <icon>fas fa-newspaper</icon>
+          <node>
+            <name>newsTargets</name>
+            <label>#{portal.administration.newsTargets}</label>
+            <icon>fas fa-bullseye</icon>
+            <page-reference>portal::administration::newsTargets</page-reference>
+          </node>
+        </node>
+      </node>
+      <node>
         <name>gamification</name>
         <label>#{portal.administration.gamification}</label>
         <icon>fas fa-trophy</icon>
@@ -119,34 +147,6 @@
           <label>#{portal.administration.reward}</label>
           <icon>fas fa-coins</icon>
           <page-reference>portal::administration::rewardAdministration</page-reference>
-        </node>
-      </node>
-      <node>
-        <name>applications</name>
-        <label>#{portal.administration.applications}</label>
-        <icon>fas fa-boxes</icon>
-        <node>
-          <name>applicationsCenter</name>
-          <label>#{portal.administration.appCenterAdminSetup}</label>
-          <icon>fas fa-list-alt</icon>
-          <page-reference>portal::administration::appCenterAdminSetup</page-reference>
-        </node>
-        <node>
-          <name>pwaSettings</name>
-          <label>#{portal.administration.pwaSettings}</label>
-          <icon>fas fa-mobile-alt</icon>
-          <page-reference>portal::administration::pwaSettings</page-reference>
-        </node>
-        <node>
-          <name>news-settings</name>
-          <label>#{portal.administration.news-settings}</label>
-          <icon>fas fa-newspaper</icon>
-          <node>
-            <name>newsTargets</name>
-            <label>#{portal.administration.newsTargets}</label>
-            <icon>fas fa-bullseye</icon>
-            <page-reference>portal::administration::newsTargets</page-reference>
-          </node>
         </node>
       </node>
       <node>
