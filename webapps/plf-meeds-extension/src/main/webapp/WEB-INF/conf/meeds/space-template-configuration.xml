@@ -67,6 +67,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <field name="icon">
                       <string>fas fa-wallet</string>
                     </field>
+                    <field name="profiles">
+                      <string>wallet</string>
+                    </field>
                   </object>
                 </value>
               </collection>
