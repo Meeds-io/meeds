@@ -124,6 +124,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <field name="icon">
                       <string>fas fa-tasks</string>
                     </field>
+                    <field name="profiles">
+                      <string>task</string>
+                    </field>
                   </object>
                 </value>
                 <value>
@@ -149,6 +152,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     <field name="icon">
                       <string>fas fa-clipboard</string>
                     </field>
+                    <field name="profiles">
+                      <string>notes</string>
+                    </field>
                   </object>
                 </value>
                 <value>
@@ -173,6 +179,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                     </field>
                     <field name="icon">
                       <string>fas fa-cog</string>
+                    </field>
+                    <field name="roles">
+                      <collection type="java.util.ArrayList">
+                        <value>
+                          <string>manager</string>
+                        </value>
+                      </collection>
                     </field>
                   </object>
                 </value>
