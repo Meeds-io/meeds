@@ -25,8 +25,8 @@
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_11">
 
   <portal-name>contribute</portal-name>
-  <label>Contribute</label>
-  <description>Easily onboard contributors, drive initiatives, and keep everyone motivated</description>
+  <label>#{portal.contribute.name}</label>
+  <description>#{portal.contribute.description}</description>
   <display-order>10</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
