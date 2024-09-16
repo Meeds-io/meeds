@@ -24,7 +24,8 @@
         xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_10 http://www.gatein.org/xml/ns/gatein_objects_1_10"
         xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_10">
   <portal-name>administration</portal-name>
-  <label>Platform settings</label>
+  <label>#{portal.administration.name}</label>
+  <description>#{portal.administration.description}</description>
   <displayed>false</displayed>
   <locale>en</locale>
   <access-permissions>*:/platform/users</access-permissions>

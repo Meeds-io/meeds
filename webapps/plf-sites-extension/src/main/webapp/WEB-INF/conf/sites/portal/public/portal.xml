@@ -24,6 +24,8 @@
   xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_10 http://www.gatein.org/xml/ns/gatein_objects_1_10"
   xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_10">
   <portal-name>public</portal-name>
+  <label>#{portal.public.name}</label>
+  <description>#{portal.public.description}</description>
   <displayed>false</displayed>
   <locale>en</locale>
   <access-permissions>*:/platform/administrators;publisher:/platform/web-contributors</access-permissions>
