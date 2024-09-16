@@ -20,6 +20,8 @@
 -->
 <portal-config>
     <portal-name>global</portal-name>
+    <label>#{portal.global.name}</label>
+    <description>#{portal.global.description}</description>
     <locale>en</locale>
     <access-permissions>Everyone</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
