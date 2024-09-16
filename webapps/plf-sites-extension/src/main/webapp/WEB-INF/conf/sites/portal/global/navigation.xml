@@ -299,7 +299,7 @@
       <name>page-not-found</name>
       <label>#{portal.global.pageNotFound}</label>
       <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::pageNotFound</page-reference>
+      <page-reference>portal::global::page-not-found</page-reference>
     </node>
     <node>
       <name>news-detail</name>
