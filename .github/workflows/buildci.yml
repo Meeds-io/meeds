@@ -4,7 +4,7 @@ on:
 jobs:
   build-ci:
     name: CI Build
-    uses: exoplatform/swf-scripts/.github/workflows/cibuild.yml@master
+    uses: exoplatform/swf-scripts/.github/workflows/cibuild.yml@hack
     with:
       maven_profiles: 'exo-release,coverage'
     secrets:
