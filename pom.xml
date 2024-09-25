@@ -21,7 +21,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <parent>
     <groupId>io.meeds</groupId>
     <artifactId>maven-parent-pom</artifactId>
-    <version>27-M04</version>
+    <version>27-whitepaper-SNAPSHOT</version>
     <relativePath />
   </parent>
   <groupId>io.meeds.distribution</groupId>
