@@ -50,6 +50,16 @@
           <show-application-state>false</show-application-state>
         </portlet-application>
       </container>
+      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="layout">
+        <access-permissions>*:/platform/administrators</access-permissions>
+        <portlet-application>
+          <portlet>
+            <application-ref>layout</application-ref>
+            <portlet-ref>SiteNavigation</portlet-ref>
+          </portlet>
+          <title>Site navigation</title>
+        </portlet-application>
+      </container>
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <access-permissions>*:/platform/administrators;publisher:/platform/web-contributors</access-permissions>
         <portlet-application>
