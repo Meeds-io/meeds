@@ -124,6 +124,15 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </path-param>
   </route>
 
+  <route path="/s/{spaceId}/{path}">
+    <route-param qname="gtn:handler">
+      <value>spaces</value>
+    </route-param>
+    <path-param qname="path" encoding="preserve-path">
+      <pattern>.*</pattern>
+    </path-param>
+  </route>
+
   <!-- SEO route -->
   <route path="/{gtn:sitename}/sitemaps.xml">
     <route-param qname="gtn:handler">
