@@ -55,9 +55,9 @@
         <portlet-application>
           <portlet>
             <application-ref>social-portlet</application-ref>
-            <portlet-ref>SpaceInfos</portlet-ref>
+            <portlet-ref>SpaceDescription</portlet-ref>
           </portlet>
-          <title>Space Infos</title>
+          <title>Space Description</title>
         </portlet-application>
         <portlet-application>
           <portlet>
