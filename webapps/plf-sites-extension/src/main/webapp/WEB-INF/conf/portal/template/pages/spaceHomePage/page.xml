@@ -62,6 +62,13 @@
         <portlet-application>
           <portlet>
             <application-ref>social-portlet</application-ref>
+            <portlet-ref>SpaceManagers</portlet-ref>
+          </portlet>
+          <title>Space Managers</title>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>social-portlet</application-ref>
             <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
           </portlet>
           <title>Who is on Line</title>
