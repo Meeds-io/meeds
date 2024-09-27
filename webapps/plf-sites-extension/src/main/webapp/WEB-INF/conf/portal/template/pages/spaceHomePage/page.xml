@@ -55,16 +55,23 @@
         <portlet-application>
           <portlet>
             <application-ref>social-portlet</application-ref>
-            <portlet-ref>SpaceDescription</portlet-ref>
+            <portlet-ref>SpaceWidgetDescription</portlet-ref>
           </portlet>
           <title>Space Description</title>
         </portlet-application>
         <portlet-application>
           <portlet>
             <application-ref>social-portlet</application-ref>
-            <portlet-ref>SpaceManagers</portlet-ref>
+            <portlet-ref>SpaceWidgetManagers</portlet-ref>
           </portlet>
           <title>Space Managers</title>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>social-portlet</application-ref>
+            <portlet-ref>SpaceWidgetMembers</portlet-ref>
+          </portlet>
+          <title>Space Members</title>
         </portlet-application>
         <portlet-application>
           <portlet>
