@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<portal-config
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
+  <portal-name>@owner@</portal-name>
+  <displayed>false</displayed>
+  <locale>en</locale>
+  <portal-layout>
+    <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
+      <access-permissions>Everyone</access-permissions>
+      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+        <access-permissions>Everyone</access-permissions>
+        <portlet-application>
+          <portlet>
+            <application-ref>social-portlet</application-ref>
+            <portlet-ref>TopBarLogo</portlet-ref>
+          </portlet>
+          <title>Space Logo</title>
+          <access-permissions>Everyone</access-permissions>
+          <show-info-bar>false</show-info-bar>
+          <show-application-state>false</show-application-state>
+        </portlet-application>
+      </container>
+      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="layout">
+        <access-permissions>*:/platform/administrators</access-permissions>
+        <portlet-application>
+          <portlet>
+            <application-ref>layout</application-ref>
+            <portlet-ref>SiteNavigation</portlet-ref>
+          </portlet>
+          <title>Site navigation</title>
+        </portlet-application>
+      </container>
+      <container id="MiddleToolBar" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+        <name>MiddleToolBar</name>
+        <access-permissions>Everyone</access-permissions>
+        <factory-id>addonContainer</factory-id>
+      </container>
+      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+        <access-permissions>Everyone</access-permissions>
+        <portlet-application>
+          <portlet>
+            <application-ref>social-portlet</application-ref>
+            <portlet-ref>TopBarLogin</portlet-ref>
+          </portlet>
+          <title>Login Button</title>
+          <access-permissions>Everyone</access-permissions>
+          <show-info-bar>false</show-info-bar>
+          <show-application-state>false</show-application-state>
+        </portlet-application>
+      </container>
+      <container id="TopbarLoadingContainer" template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
+        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+      </container>
+    </container>
+    <page-body />
+    <container id="bottom-all-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+      <name>bottom-all-container</name>
+      <factory-id>addonContainer</factory-id>
+    </container>
+  </portal-layout>
+</portal-config>
