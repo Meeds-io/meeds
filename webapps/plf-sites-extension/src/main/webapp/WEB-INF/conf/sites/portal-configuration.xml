@@ -78,6 +78,9 @@
                   <value>
                     <string>navigationWebsite</string>
                   </value>
+                  <value>
+                    <string>spacePublic</string>
+                  </value>
                 </collection>
               </field>
             </object>
