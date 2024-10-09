@@ -34,7 +34,7 @@
           <portlet-application>
             <portlet>
               <application-ref>social-portlet</application-ref>
-              <portlet-ref>Image</portlet-ref>
+              <portlet-ref>SpaceBannerPortlet</portlet-ref>
             </portlet>
           </portlet-application>
         </column>
