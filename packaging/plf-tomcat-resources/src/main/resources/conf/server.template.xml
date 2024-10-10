@@ -108,7 +108,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                connectionTimeout="20000" disableUploadTimeout="true"
                URIEncoding="UTF-8"
                compression="off" compressionMinSize="2048"
-               noCompressionUserAgents=".*MSIE 6.*" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript">
+               noCompressionUserAgents=".*MSIE 6.*" compressibleMimeType="text/html,text/xml,text/plain,text/css,text/javascript">
       <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
     </Connector>
 
