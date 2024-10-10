@@ -20,7 +20,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Logback ${ch.qas.logback.version} configuration file.
 For more details see : http://logback.qos.ch/manual/configuration.html
 -->
-<configuration scan="${EXO_DEV}" scanPeriod="30 seconds" debug="false">
+<configuration scan="${EXO_DEV}" scanPeriod="30 seconds" debug="${EXO_DEV}">
   <!-- Default pattern used for printing logs in files and on the console for systems that doesn't support a colorized output -->
   <property name="exo.logs.default.pattern" value="%date{ISO8601} | %-5level | %msg [%logger{40}&lt;%thread&gt;] %n%xEx" />
   <!-- Pattern used for console supporting ANSI colors -->
@@ -60,7 +60,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       <fileNamePattern>${catalina.base}/logs/platform-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
       <!-- Max number of archives to keep -->
       <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
-      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy">
         <!-- or whenever the file size reaches maxFileSize -->
         <maxFileSize>${exo.logs.rolling.maxFileSize}</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -141,7 +141,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
           <fileNamePattern>${catalina.base}/logs/leak-detector-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
           <!-- Max number of archives to keep -->
           <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
-          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+          <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy">
             <!-- or whenever the file size reaches maxFileSize -->
             <maxFileSize>${exo.logs.rolling.maxFileSize}</maxFileSize>
           </timeBasedFileNamingAndTriggeringPolicy>
