@@ -29,7 +29,7 @@
       <column col-span="12">
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>Image</portlet-ref>
           </portlet>
           <title>Image</title>
@@ -45,7 +45,7 @@
       <column col-span="8">
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>SpaceActivityStreamPortlet</portlet-ref>
           </portlet>
           <title>Space Activity Stream</title>
@@ -54,28 +54,28 @@
       <column col-span="4">
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>SpaceWidgetDescription</portlet-ref>
           </portlet>
           <title>Space Description</title>
         </portlet-application>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>SpaceWidgetManagers</portlet-ref>
           </portlet>
           <title>Space Managers</title>
         </portlet-application>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>SpaceWidgetMembers</portlet-ref>
           </portlet>
           <title>Space Members</title>
         </portlet-application>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
           </portlet>
           <title>Who is on Line</title>

@@ -33,7 +33,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
                 <portlet-ref>GeneralSettings</portlet-ref>
             </portlet>
             <title>General Settings Portlet</title>
@@ -53,7 +53,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>NotificationAdministration</portlet-ref>
             </portlet>
             <title>Notifications Administration</title>
@@ -100,7 +100,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>IDMUsersManagement</portlet-ref>
             </portlet>
             <title>Users Management</title>
@@ -120,7 +120,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>IDMGroupsManagement</portlet-ref>
             </portlet>
             <title>Groups Management</title>
@@ -140,7 +140,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>ProfileSettingsPortlet</portlet-ref>
             </portlet>
             <title>Profile Settings Management</title>
@@ -161,7 +161,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>SpacesAdministration</portlet-ref>
             </portlet>
           </portlet-application>

@@ -41,7 +41,7 @@
         <access-permissions>Everyone</access-permissions>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>TopBarLogo</portlet-ref>
           </portlet>
           <title>Company Logo</title>
@@ -64,7 +64,7 @@
         <access-permissions>*:/platform/administrators;publisher:/platform/web-contributors</access-permissions>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>TopBarPreview</portlet-ref>
           </portlet>
           <title>Preview Site Button</title>
@@ -77,7 +77,7 @@
         <access-permissions>*:/platform/administrators</access-permissions>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>TopBarPublishSite</portlet-ref>
           </portlet>
           <title>Publish Site Button</title>
@@ -95,7 +95,7 @@
         <access-permissions>Everyone</access-permissions>
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>TopBarLogin</portlet-ref>
           </portlet>
           <title>Login Button</title>
