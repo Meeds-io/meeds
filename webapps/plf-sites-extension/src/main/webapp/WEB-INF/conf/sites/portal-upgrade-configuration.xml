@@ -672,13 +672,24 @@
           <value>true</value>
         </value-param>
         <object-param>
-          <name>ExternalSpacesList</name>
+          <name>SocialPortletExternalSpacesList</name>
           <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
             <field name="modificationType">
               <string>remove</string>
             </field>
             <field name="oldContentId">
               <string>social-portlet/ExternalSpacesList</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SocialExternalSpacesList</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>remove</string>
+            </field>
+            <field name="oldContentId">
+              <string>social/ExternalSpacesList</string>
             </field>
           </object>
         </object-param>
@@ -745,7 +756,24 @@
           <value>true</value>
         </value-param>
         <object-param>
-          <name>SpaceInfos</name>
+          <name>SocialSpaceInfos</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>remove</string>
+            </field>
+            <field name="oldContentId">
+              <string>social/SpaceInfos</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>false</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SocialPortletSpaceInfos</name>
           <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
             <field name="modificationType">
               <string>remove</string>
@@ -784,7 +812,7 @@
           <value>true</value>
         </value-param>
         <object-param>
-          <name>SpacesOverview</name>
+          <name>SocialPortletSpacesOverview</name>
           <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
             <field name="modificationType">
               <string>remove</string>
@@ -794,6 +822,1085 @@
             </field>
             <field name="upgradePages">
               <boolean>false</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SocialSpacesOverview</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>remove</string>
+            </field>
+            <field name="oldContentId">
+              <string>social/SpacesOverview</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>false</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>SocialPortletToSocialUpgradePlugin</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.LayoutApplicationReferenceUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <description>The groupId of the product</description>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <description>The plugin execution order</description>
+          <value>500</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <description>Execute only once, not each version change</description>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>SpaceAccessPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceAccessPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>PageNotFound</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/PageNotFound</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>IDMUsersManagement</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/IDMUsersManagement</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>IDMGroupsManagement</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/IDMGroupsManagement</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>IDMMembershipTypesManagement</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/IDMMembershipTypesManagement</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>WhoIsOnLinePortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/WhoIsOnLinePortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceInfos</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceInfos</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceWidgetDescription</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceWidgetDescription</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceWidgetManagers</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceWidgetManagers</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceWidgetMembers</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceWidgetMembers</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>MembersPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/MembersPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceTopbarMenu</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceTopbarMenu</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceMenuPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceMenuPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceBannerPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceBannerPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceActivityStreamPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceActivityStreamPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>UserActivityStreamPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/UserActivityStreamPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>UserSettingLanguage</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/UserSettingLanguage</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>UserSettingNotifications</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/UserSettingNotifications</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>UserSettingSecurity</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/UserSettingSecurity</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>HamburgerMenu</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/HamburgerMenu</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpaceSettingPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpaceSettingPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpacesAdministration</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpacesAdministration</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarLogo</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarLogo</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarPreview</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarPreview</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarLogin</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarLogin</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarPublishSite</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarPublishSite</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ProfileHeader</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ProfileHeader</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ProfileContactInformation</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ProfileContactInformation</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ProfileWorkExperience</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ProfileWorkExperience</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ProfileAboutMe</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ProfileAboutMe</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarNotification</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarNotification</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarFavorites</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarFavorites</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>GettingStarted</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/GettingStarted</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ExternalSpacesList</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ExternalSpacesList</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpacesList</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpacesList</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SpacesOverview</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SpacesOverview</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>PeopleList</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/PeopleList</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>PeopleOverview</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/PeopleOverview</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>SuggestionsPeopleAndSpace</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/SuggestionsPeopleAndSpace</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Search</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/Search</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>GeneralSettings</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/GeneralSettings</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Popover</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/Popover</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>TopBarMenu</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/TopBarMenu</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ProfileSettingsPortlet</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/ProfileSettingsPortlet</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Image</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/Image</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Links</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/Links</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>DrawersOverlay</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/DrawersOverlay</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>NotificationAdministration</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/NotificationAdministration</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>VerticalMenu</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/VerticalMenu</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Breadcrumb</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/Breadcrumb</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>PlatformSettings</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/PlatformSettings</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>OrganizationalChart</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social-portlet/OrganizationalChart</string>
+            </field>
+            <field name="newContentId">
+              <string>social/SpaceAccessPortlet</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
             </field>
             <field name="upgradePortletInstance">
               <boolean>true</boolean>
