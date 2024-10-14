@@ -77,10 +77,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                   <string>cometd</string>
                </value>
                <value>
-                  <string>social-extension</string>
-               </value>
-               <value>
-                  <string>social-portlet</string>
+                  <string>social</string>
                </value>
             </collection>
           </field>
