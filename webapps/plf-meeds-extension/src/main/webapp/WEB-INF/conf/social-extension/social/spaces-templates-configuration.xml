@@ -61,7 +61,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <field name="homePageApplication">
               <object type="org.exoplatform.social.core.space.SpaceApplication">
                 <field name="portletApp">
-                  <string>social-portlet</string>
+                  <string>social</string>
                 </field>
                 <field name="portletName">
                   <string>SpaceActivityStreamPortlet</string>
@@ -79,7 +79,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 <value>
                   <object type="org.exoplatform.social.core.space.SpaceApplication">
                     <field name="portletApp">
-                      <string>social-portlet</string>
+                      <string>social</string>
                     </field>
                     <field name="portletName">
                       <string>MembersPortlet</string>
@@ -160,7 +160,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                 <value>
                   <object type="org.exoplatform.social.core.space.SpaceApplication">
                     <field name="portletApp">
-                      <string>social-portlet</string>
+                      <string>social</string>
                     </field>
                     <field name="portletName">
                       <string>SpaceSettingPortlet</string>
