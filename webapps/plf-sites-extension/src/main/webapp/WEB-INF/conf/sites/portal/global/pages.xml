@@ -1822,6 +1822,10 @@
         </column>
       </section-columns>
     </container>
+    <container id="bottom-news-composer-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+      <name>bottom-news-composer-container</name>
+      <factory-id>addonContainer</factory-id>
+    </container>
   </page>
 
   <page profiles="content">
