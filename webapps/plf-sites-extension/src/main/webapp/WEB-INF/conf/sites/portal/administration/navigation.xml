@@ -170,6 +170,12 @@
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
           <node>
+            <name>spaceTemplates</name>
+            <label>#{portal.administration.spaceTemplates}</label>
+            <icon>fas fa-users-cog</icon>
+            <page-reference>portal::administration::spaceTemplates</page-reference>
+          </node>
+          <node>
             <name>pages</name>
             <label>#{portal.administration.pages}</label>
             <icon>fas fa-pager</icon>
