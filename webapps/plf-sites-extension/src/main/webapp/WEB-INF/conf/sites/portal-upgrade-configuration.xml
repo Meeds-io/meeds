@@ -635,45 +635,6 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>SpaceBannerRemovalPortletsUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.layout.plugin.upgrade.LayoutApplicationReferenceUpgradePlugin</type>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <description>The groupId of the product</description>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <description>The plugin execution order</description>
-          <value>5</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <description>Execute only once, not each version change</description>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>SpaceBannerPortlet</name>
-          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
-            <field name="modificationType">
-              <string>remove</string>
-            </field>
-            <field name="oldContentId">
-              <string>social-portlet/SpaceBannerPortlet</string>
-            </field>
-            <field name="upgradePages">
-              <boolean>false</boolean>
-            </field>
-            <field name="upgradePortletInstance">
-              <boolean>true</boolean>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin profiles="layout">
       <name>PublicSiteLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
