@@ -373,6 +373,26 @@
     </container>
   </page>
 
+  <page>
+    <name>spaceTemplates</name>
+    <title>Space Templates</title>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceTemplateManagement</portlet-ref>
+            </portlet>
+            <title>Space Templates Management</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page profiles="pwa">
     <name>pwaSettings</name>
     <title>PWA Settings</title>
