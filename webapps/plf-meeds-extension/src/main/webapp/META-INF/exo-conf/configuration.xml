@@ -26,7 +26,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <properties-param>
         <name>MeedsFeatureProperties</name>
         <property name="exo.feature.pwa.enabled" value="${exo.feature.pwa.enabled:true}" />
-        <property name="exo.feature.SpaceHomeLayoutReset.enabled" value="${exo.feature.SpaceHomeLayoutReset.enabled:true}" />
         <property name="exo.feature.EditorAttachImage.enabled" value="${exo.feature.EditorAttachImage.enabled:true}" />
         <property name="exo.feature.customStylesheet.enabled" value="${exo.feature.customStylesheet.enabled:false}" />
       </properties-param>
