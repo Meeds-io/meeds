@@ -78,26 +78,7 @@
                   <value>
                     <string>navigationWebsite</string>
                   </value>
-                  <value>
-                    <string>spacePublic</string>
-                  </value>
                 </collection>
-              </field>
-            </object>
-          </object-param>
-          <object-param>
-            <name>user.configuration</name>
-            <description>description</description>
-            <object type="org.exoplatform.portal.config.NewPortalConfig">
-              <field name="predefinedOwner">
-                <collection type="java.util.HashSet">
-                </collection>
-              </field>
-              <field name="ownerType">
-                <string>user</string>
-              </field>
-              <field name="templateLocation">
-                <string>war:/conf/portal</string>
               </field>
             </object>
           </object-param>
