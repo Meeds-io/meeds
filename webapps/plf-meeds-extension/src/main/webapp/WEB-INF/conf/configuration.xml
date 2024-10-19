@@ -24,6 +24,5 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <import>war:/conf/meeds/portal-configuration.xml</import>
   <import>war:/conf/meeds/portal-upgrade-configuration.xml</import>
   <import>war:/conf/meeds/resources-bundle-configuration.xml</import>
-  <import>war:/conf/meeds/space-template-configuration.xml</import>
 
 </configuration>
