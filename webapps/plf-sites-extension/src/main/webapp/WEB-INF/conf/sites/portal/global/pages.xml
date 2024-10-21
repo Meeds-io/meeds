@@ -1983,4 +1983,95 @@
       </section-columns>
     </container>
   </page>
+
+  <page profiles="notes">
+    <name>notes</name>
+    <title>Notes</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>Notes</portlet-ref>
+            </portlet>
+            <title>Space Notes</title>
+          </portlet-application>
+          <container id="bottom-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>space-settings</name>
+    <title>Space Settings</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-settings-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceSettingPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-settings-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>space-members</name>
+    <title>Space Members</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>MembersPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>
