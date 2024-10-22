@@ -56,7 +56,7 @@
          "spaceFields": ["name", "properties", "invitation"],
          "permissions": ["*:/platform/users"],
          "spaceLayoutPermissions": ["*:/platform/administrators"],
-         "spaceDeletePermissions": ["*:/platform/administrators"],
+         "spaceDeletePermissions": ["spaceAdmin"],
          "spaceDefaultVisibility": "private",
          "spaceDefaultRegistration": "validation",
          "spaceAllowContentCreation": false
