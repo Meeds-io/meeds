@@ -40,14 +40,14 @@
         <name>apps</name>
         <label>#{portal.global.apps}</label>
         <node>
-          <name>notes</name>
-          <label>#{portal.global.spaceNotes}</label>
-          <page-reference>group::@owner@::notes</page-reference>
-        </node>
-        <node>
           <name>tasks</name>
           <label>#{portal.global.spaceTasks}</label>
           <page-reference>group::@owner@::tasks</page-reference>
+        </node>
+        <node>
+          <name>notes</name>
+          <label>#{portal.global.spaceNotes}</label>
+          <page-reference>group::@owner@::notes</page-reference>
         </node>
       </node>
     </node>
