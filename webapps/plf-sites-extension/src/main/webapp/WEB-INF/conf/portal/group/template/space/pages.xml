@@ -89,4 +89,145 @@
       </section-columns>
     </container>
   </page>
+
+  <page profiles="wallet">
+    <name>wallet</name>
+    <title>Wallet</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-wallet-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>SpaceWallet</portlet-ref>
+            </portlet>
+            <title>Space Wallet</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-wallet-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="task">
+    <name>tasks</name>
+    <title>Tasks</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-task-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>task-management</application-ref>
+              <portlet-ref>TasksManagement</portlet-ref>
+            </portlet>
+            <title>Space Tasks</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-tasks-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="notes">
+    <name>notes</name>
+    <title>Notes</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>Notes</portlet-ref>
+            </portlet>
+            <title>Space Notes</title>
+          </portlet-application>
+          <container id="bottom-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>members</name>
+    <title>Space Members</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>MembersPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>settings</name>
+    <title>Space Settings</title>
+    <access-permissions>manager:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-settings-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceSettingPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-settings-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>
