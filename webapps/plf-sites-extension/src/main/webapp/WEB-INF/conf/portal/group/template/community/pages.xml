@@ -29,14 +29,81 @@
     <access-permissions>member:@owner@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
-      <section-columns>
-        <column col-span="12">
+      <section-columns mobile-columns-style="true">
+        <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceBannerPortlet</portlet-ref>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>topChallengers</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>topChallengersPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>topChallengersCurrentPosition</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
             </portlet>
-            <title>Space Banner</title>
+            <title>Leaderboard</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myContributions</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>myContributionsPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>myContributionsDisplayLegend</name>
+                  <value>true</value>
+                </preference>
+                <preference>
+                  <name>myContributionsProgramLimit</name>
+                  <value>4</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>User Contributions</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>challengesOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>endingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>lockedRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>availableRulesLimit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>upcomingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>rulesSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Actions overview</title>
+            <height>350</height>
           </portlet-application>
         </column>
       </section-columns>
@@ -53,6 +120,13 @@
           </portlet-application>
         </column>
         <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on Line</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -74,15 +148,8 @@
             </portlet>
             <title>Space Members</title>
           </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
-            </portlet>
-            <title>Who is on Line</title>
-          </portlet-application>
-          <container id="space-home-widgets-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>space-home-widgets-container</name>
+          <container id="space-home-widgets-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>space-home-widgets-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -99,7 +166,7 @@
       <section-columns>
         <column col-span="12">
           <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-wallet-container</name>
+            <name>top-space-wallet-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -110,7 +177,7 @@
             <title>Space Wallet</title>
           </portlet-application>
           <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-wallet-container</name>
+            <name>bottom-space-wallet-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -126,8 +193,8 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-notes-container</name>
+          <container id="top-space-notes-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -137,8 +204,8 @@
             </portlet>
             <title>Space Notes</title>
           </portlet-application>
-          <container id="bottom-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-notes-container</name>
+          <container id="bottom-space-notes-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -154,8 +221,8 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-members-container</name>
+          <container id="top-space-members-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -165,8 +232,8 @@
             </portlet>
             <title>Space Settings</title>
           </portlet-application>
-          <container id="bottom-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-members-container</name>
+          <container id="bottom-space-members-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -182,8 +249,8 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-settings-container</name>
+          <container id="top-space-settings-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-settings-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -193,8 +260,8 @@
             </portlet>
             <title>Space Settings</title>
           </portlet-application>
-          <container id="bottom-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-settings-container</name>
+          <container id="bottom-space-settings-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-settings-community-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
