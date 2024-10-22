@@ -29,17 +29,6 @@
     <access-permissions>member:@owner@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceBannerPortlet</portlet-ref>
-            </portlet>
-            <title>Space Banner</title>
-          </portlet-application>
-        </column>
-      </section-columns>
       <section-columns
         sticky-beahvior="true"
         mobile-columns-style="true">
@@ -56,16 +45,9 @@
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
-              <portlet-ref>SpaceWidgetDescription</portlet-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
             </portlet>
-            <title>Space Description</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceWidgetManagers</portlet-ref>
-            </portlet>
-            <title>Space Managers</title>
+            <title>Who is on Line</title>
           </portlet-application>
           <portlet-application>
             <portlet>
@@ -74,15 +56,8 @@
             </portlet>
             <title>Space Members</title>
           </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
-            </portlet>
-            <title>Who is on Line</title>
-          </portlet-application>
-          <container id="space-home-widgets-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>space-home-widgets-container</name>
+          <container id="space-home-widgets-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>space-home-widgets-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -99,7 +74,7 @@
       <section-columns>
         <column col-span="12">
           <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-task-container</name>
+            <name>top-space-task-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -110,7 +85,7 @@
             <title>Space Tasks</title>
           </portlet-application>
           <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-tasks-container</name>
+            <name>bottom-space-tasks-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -126,8 +101,8 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-notes-container</name>
+          <container id="top-space-notes-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -137,8 +112,8 @@
             </portlet>
             <title>Space Notes</title>
           </portlet-application>
-          <container id="bottom-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-notes-container</name>
+          <container id="bottom-space-notes-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
@@ -154,8 +129,8 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-members-container</name>
+          <container id="top-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
           <portlet-application>
@@ -165,8 +140,8 @@
             </portlet>
             <title>Space Settings</title>
           </portlet-application>
-          <container id="bottom-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-members-container</name>
+          <container id="bottom-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-circle-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
