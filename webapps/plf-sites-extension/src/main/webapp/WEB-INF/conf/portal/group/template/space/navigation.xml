@@ -9,6 +9,7 @@
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 3 of the License, or (at your option) any later version.
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
@@ -27,9 +28,38 @@
   <page-nodes>
     <node>
       <name>home</name>
-      <label>Home</label>
+      <label>#{portal.global.spaceHome}</label>
       <icon>fas fa-home</icon>
       <page-reference>group::@owner@::home</page-reference>
+      <node>
+        <name>notes</name>
+        <label>#{portal.global.spaceNotes}</label>
+        <page-reference>group::@owner@::notes</page-reference>
+      </node>
+      <node>
+        <name>tasks</name>
+        <label>#{portal.global.spaceTasks}</label>
+        <page-reference>group::@owner@::tasks</page-reference>
+      </node>
+      <node>
+        <name>more</name>
+        <label>#{portal.global.more}</label>
+        <node>
+          <name>members</name>
+          <label>#{portal.global.spaceMembers}</label>
+          <page-reference>group::@owner@::members</page-reference>
+        </node>
+        <node>
+          <name>wallet</name>
+          <label>#{portal.global.spaceWallet}</label>
+          <page-reference>group::@owner@::wallet</page-reference>
+        </node>
+        <node>
+          <name>settings</name>
+          <label>#{portal.global.spaceSettings}</label>
+          <page-reference>group::@owner@::settings</page-reference>
+        </node>
+      </node>
     </node>
   </page-nodes>
 </node-navigation>
