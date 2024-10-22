@@ -75,7 +75,7 @@
             <title>Space Description</title>
           </portlet-application>
           <container id="space-home-widgets-announcement-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>space-home-widgets-container</name>
+            <name>space-home-widgets-announcement-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
         </column>
