@@ -29,21 +29,17 @@
     <access-permissions>member:@owner@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceBannerPortlet</portlet-ref>
-            </portlet>
-            <title>Space Banner</title>
-          </portlet-application>
-        </column>
-      </section-columns>
       <section-columns
         sticky-beahvior="true"
         mobile-columns-style="true">
         <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>NewsListView</portlet-ref>
+            </portlet>
+            <title>News List</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -53,6 +49,20 @@
           </portlet-application>
         </column>
         <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>Links</portlet-ref>
+            </portlet>
+            <title>Project Resources</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on Line</title>
+          </portlet-application>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -73,13 +83,6 @@
               <portlet-ref>SpaceWidgetMembers</portlet-ref>
             </portlet>
             <title>Space Members</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
-            </portlet>
-            <title>Who is on Line</title>
           </portlet-application>
           <container id="space-home-widgets-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
             <name>space-home-widgets-container</name>
