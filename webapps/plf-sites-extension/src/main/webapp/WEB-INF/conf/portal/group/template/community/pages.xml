@@ -54,23 +54,19 @@
           <portlet-application>
             <portlet>
               <application-ref>gamification-portlets</application-ref>
-              <portlet-ref>myContributions</portlet-ref>
+              <portlet-ref>programsOverview</portlet-ref>
               <preferences>
                 <preference>
-                  <name>myContributionsPeriod</name>
-                  <value>week</value>
-                </preference>
-                <preference>
-                  <name>myContributionsDisplayLegend</name>
-                  <value>true</value>
-                </preference>
-                <preference>
-                  <name>myContributionsProgramLimit</name>
+                  <name>limit</name>
                   <value>4</value>
+                </preference>
+                <preference>
+                  <name>programsSortBy</name>
+                  <value>modifiedDate</value>
                 </preference>
               </preferences>
             </portlet>
-            <title>User Contributions</title>
+            <title>Programs Overview</title>
             <height>360</height>
           </portlet-application>
         </column>
