@@ -34,24 +34,29 @@
       <node>
         <name>members</name>
         <label>#{portal.global.spaceMembers}</label>
+        <icon>fas fa-users</icon>
         <page-reference>group::@owner@::members</page-reference>
       </node>
       <node>
         <name>more</name>
         <label>#{portal.global.more}</label>
+        <icon>fas fa-ellipsis-h</icon>
         <node>
           <name>tasks</name>
           <label>#{portal.global.spaceTasks}</label>
+          <icon>fas fa-tasks</icon>
           <page-reference>group::@owner@::tasks</page-reference>
         </node>
         <node>
           <name>notes</name>
           <label>#{portal.global.spaceNotes}</label>
+          <icon>far fa-clipboard</icon>
           <page-reference>group::@owner@::notes</page-reference>
         </node>
         <node>
           <name>settings</name>
           <label>#{portal.global.spaceSettings}</label>
+          <icon>fas fa-cog</icon>
           <page-reference>group::@owner@::settings</page-reference>
         </node>
       </node>
