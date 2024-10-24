@@ -37,7 +37,7 @@
         <column col-span="8">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>PeopleList</portlet-ref>
             </portlet>
             <title>All People</title>
@@ -46,14 +46,14 @@
         <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>PeopleOverview</portlet-ref>
             </portlet>
             <title>People Overview Portlet</title>
           </portlet-application>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>SuggestionsPeopleAndSpace</portlet-ref>
               <preferences>
                 <preference>
@@ -85,7 +85,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>SpacesList</portlet-ref>
             </portlet>
             <title>All Spaces</title>
@@ -105,7 +105,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>UserActivityStreamPortlet</portlet-ref>
             </portlet>
             <title>User Activity Stream</title>
@@ -132,7 +132,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>SpaceAccessPortlet</portlet-ref>
             </portlet>
             <title>space-access</title>
@@ -152,7 +152,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>PageNotFound</portlet-ref>
             </portlet>
             <title>Page Not Found</title>
@@ -172,21 +172,21 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>UserSettingLanguage</portlet-ref>
             </portlet>
             <title>User Setting Language</title>
           </portlet-application>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>UserSettingNotifications</portlet-ref>
             </portlet>
             <title>User Setting Notifications</title>
           </portlet-application>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>UserSettingSecurity</portlet-ref>
             </portlet>
             <title>User Setting Security</title>
@@ -210,7 +210,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>ProfileHeader</portlet-ref>
             </portlet>
             <title>Profile Header Portlet</title>
@@ -227,7 +227,7 @@
           </container>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>ProfileAboutMe</portlet-ref>
             </portlet>
             <title>Profile AboutMe Portlet</title>
@@ -242,7 +242,7 @@
           </container>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>ProfileContactInformation</portlet-ref>
             </portlet>
             <title>Profile contact information Portlet</title>
@@ -257,7 +257,7 @@
           </container>
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>ProfileWorkExperience</portlet-ref>
             </portlet>
             <title>Profile Work Experience Portlet</title>
@@ -1633,7 +1633,7 @@
         template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>DrawersOverlay</portlet-ref>
           </portlet>
           <title>Drawers Overlay</title>
@@ -1684,7 +1684,7 @@
         template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
         <portlet-application>
           <portlet>
-            <application-ref>social-portlet</application-ref>
+            <application-ref>social</application-ref>
             <portlet-ref>DrawersOverlay</portlet-ref>
           </portlet>
           <title>Drawers Overlay</title>
@@ -1751,7 +1751,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>OrganizationalChart</portlet-ref>
               <preferences>
                 <!-- Indicates that the chart setting center user can be modified by admins or not -->
@@ -1983,4 +1983,95 @@
       </section-columns>
     </container>
   </page>
+
+  <page profiles="notes">
+    <name>notes</name>
+    <title>Notes</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>Notes</portlet-ref>
+            </portlet>
+            <title>Space Notes</title>
+          </portlet-application>
+          <container id="bottom-space-notes-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>space-settings</name>
+    <title>Space Settings</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-settings-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceSettingPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-settings-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-settings-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>space-members</name>
+    <title>Space Members</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>MembersPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-members-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-container</name>
+            <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>

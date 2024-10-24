@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<page-set
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
+  <page>
+    <name>home</name>
+    <title>Home</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>Space Activity Stream</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on Line</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceWidgetMembers</portlet-ref>
+            </portlet>
+            <title>Space Members</title>
+          </portlet-application>
+          <container id="space-home-widgets-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>space-home-widgets-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="task">
+    <name>tasks</name>
+    <title>Tasks</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-task-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>task-management</application-ref>
+              <portlet-ref>TasksManagement</portlet-ref>
+            </portlet>
+            <title>Space Tasks</title>
+          </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-tasks-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="notes">
+    <name>notes</name>
+    <title>Notes</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-notes-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-notes-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>Notes</portlet-ref>
+            </portlet>
+            <title>Space Notes</title>
+          </portlet-application>
+          <container id="bottom-space-notes-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-notes-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>members</name>
+    <title>Space Members</title>
+    <access-permissions>member:@owner@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <container id="top-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>top-space-members-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>MembersPortlet</portlet-ref>
+            </portlet>
+            <title>Space Settings</title>
+          </portlet-application>
+          <container id="bottom-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>bottom-space-members-circle-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+</page-set>

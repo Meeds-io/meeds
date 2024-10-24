@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<node-navigation
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
+  <priority>3</priority>
+  <page-nodes>
+    <node>
+      <name>home</name>
+      <label>#{portal.global.spaceHome}</label>
+      <icon>fas fa-home</icon>
+      <page-reference>group::@owner@::home</page-reference>
+      <node>
+        <name>tasks</name>
+        <label>#{portal.global.spaceTasks}</label>
+        <icon>fas fa-tasks</icon>
+        <page-reference>group::@owner@::tasks</page-reference>
+      </node>
+      <node>
+        <name>more</name>
+        <label>#{portal.global.more}</label>
+        <icon>fas fa-ellipsis-h</icon>
+        <node>
+          <name>members</name>
+          <label>#{portal.global.spaceMembers}</label>
+          <icon>fas fa-users</icon>
+          <page-reference>group::@owner@::members</page-reference>
+        </node>
+        <node>
+          <name>notes</name>
+          <label>#{portal.global.spaceNotes}</label>
+          <icon>far fa-clipboard</icon>
+          <page-reference>group::@owner@::notes</page-reference>
+        </node>
+        <node>
+          <name>settings</name>
+          <label>#{portal.global.spaceSettings}</label>
+          <icon>fas fa-cog</icon>
+          <page-reference>group::@owner@::settings</page-reference>
+        </node>
+      </node>
+    </node>
+  </page-nodes>
+</node-navigation>
