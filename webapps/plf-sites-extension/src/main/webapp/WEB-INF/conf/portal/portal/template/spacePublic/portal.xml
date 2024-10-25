@@ -28,22 +28,18 @@
   <locale>en</locale>
   <portal-layout>
     <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <access-permissions>Everyone</access-permissions>
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
         <portlet-application>
           <portlet>
             <application-ref>social</application-ref>
             <portlet-ref>TopBarLogo</portlet-ref>
           </portlet>
           <title>Space Logo</title>
-          <access-permissions>Everyone</access-permissions>
           <show-info-bar>false</show-info-bar>
           <show-application-state>false</show-application-state>
         </portlet-application>
       </container>
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="layout">
-        <access-permissions>*:/platform/administrators</access-permissions>
         <portlet-application>
           <portlet>
             <application-ref>layout</application-ref>
@@ -54,24 +50,20 @@
       </container>
       <container id="MiddleToolBar" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
         <name>MiddleToolBar</name>
-        <access-permissions>Everyone</access-permissions>
         <factory-id>addonContainer</factory-id>
       </container>
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>Everyone</access-permissions>
         <portlet-application>
           <portlet>
             <application-ref>social</application-ref>
             <portlet-ref>TopBarLogin</portlet-ref>
           </portlet>
           <title>Login Button</title>
-          <access-permissions>Everyone</access-permissions>
           <show-info-bar>false</show-info-bar>
           <show-application-state>false</show-application-state>
         </portlet-application>
       </container>
       <container id="TopbarLoadingContainer" template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-        <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       </container>
     </container>
     <page-body />
