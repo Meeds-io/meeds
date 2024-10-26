@@ -26,7 +26,7 @@
   <page>
     <name>home</name>
     <title>Home</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
       <section-columns mobile-columns-style="true">
@@ -156,7 +156,7 @@
   <page profiles="wallet">
     <name>wallet</name>
     <title>Wallet</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -184,7 +184,7 @@
   <page profiles="notes">
     <name>notes</name>
     <title>Notes</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -212,7 +212,7 @@
   <page>
     <name>members</name>
     <title>Space Members</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -240,7 +240,7 @@
   <page>
     <name>settings</name>
     <title>Space Settings</title>
-    <access-permissions>manager:@owner@</access-permissions>
+    <access-permissions>manager:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
