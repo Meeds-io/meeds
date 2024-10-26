@@ -47,11 +47,6 @@
         <description>this listener init the portal configuration</description>
         <init-params>
           <value-param>
-            <name>page.templates.location</name>
-            <description>the path to the location that contains Page templates</description>
-            <value>war:/conf/portal/template/pages</value>
-          </value-param>
-          <value-param>
             <name>override</name>
             <description>The flag parameter to decide if portal metadata is overriden on restarting server</description>
             <value>false</value>
@@ -87,24 +82,8 @@
     </component-plugins>
     <init-params>
       <value-param>
-        <name>create.user.portal</name>
-        <value>${gatein.portal.idm.createuserportal:false}</value>
-      </value-param>
-      <value-param>
-        <name>destroy.user.portal</name>
-        <value>${gatein.portal.idm.destroyuserportal:true}</value>
-      </value-param>
-      <value-param>
         <name>default.import.mode</name>
         <value>${exo.portal.default.importMode:merge}</value>
-      </value-param>
-      <value-param>
-        <name>default.groupSite.template</name>
-        <value>${exo.portal.default.groupSite.template:}</value>
-      </value-param>
-      <value-param>
-        <name>default.userSite.template</name>
-        <value>${exo.portal.default.userSite.template:}</value>
       </value-param>
     </init-params>
   </component>
@@ -279,6 +258,49 @@
             </field>
             <field name="importMode">
               <string>${io.meeds.mycraft.portalConfig.metadata.importmode:insert}</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>space_templates</name>
+      <set-method>initListener</set-method>
+      <type>org.exoplatform.portal.config.NewPortalConfigListener</type>
+      <init-params>
+        <object-param>
+          <name>portal.configuration</name>
+          <object type="org.exoplatform.portal.config.NewPortalConfig">
+            <field name="predefinedOwner">
+              <collection type="java.util.HashSet">
+                <value>
+                  <string>announcement</string>
+                </value>
+                <value>
+                  <string>circle</string>
+                </value>
+                <value>
+                  <string>community</string>
+                </value>
+                <value>
+                  <string>project</string>
+                </value>
+                <value>
+                  <string>space</string>
+                </value>
+              </collection>
+            </field>
+            <field name="ownerType">
+              <string>group_template</string>
+            </field>
+            <field name="location">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="override">
+              <boolean>${io.meeds.spaceTemplates.portalConfig.metadata.override:true}</boolean>
+            </field>
+            <field name="importMode">
+              <string>${io.meeds.spaceTemplates.portalConfig.metadata.importmode:insert}</string>
             </field>
           </object>
         </object-param>
