@@ -24,10 +24,10 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
   xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
-  <portal-name>@owner@</portal-name>
+  <portal-name>@owner_id@</portal-name>
   <displayed>false</displayed>
   <locale>en</locale>
-  <access-permissions>member:@owner@</access-permissions>
+  <access-permissions>member:@owner_id@</access-permissions>
   <edit-permission>*:/platform/administrators</edit-permission>
   <portal-layout>
     <page-body />
