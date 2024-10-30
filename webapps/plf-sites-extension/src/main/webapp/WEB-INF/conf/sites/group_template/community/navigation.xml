@@ -32,15 +32,15 @@
       <icon>fas fa-home</icon>
       <page-reference>group_template::community::home</page-reference>
       <node>
-        <name>notes</name>
-        <label>#{portal.global.spaceNotes}</label>
-        <icon>far fa-clipboard</icon>
-        <page-reference>group_template::community::notes</page-reference>
-      </node>
-      <node>
-        <name>more</name>
-        <label>#{portal.global.more}</label>
+        <name>apps</name>
+        <label>#{portal.global.apps}</label>
         <icon>fas fa-ellipsis-h</icon>
+        <node>
+          <name>notes</name>
+          <label>#{portal.global.spaceNotes}</label>
+          <icon>far fa-clipboard</icon>
+          <page-reference>group_template::community::notes</page-reference>
+        </node>
         <node>
           <name>wallet</name>
           <label>#{portal.global.spaceWallet}</label>
