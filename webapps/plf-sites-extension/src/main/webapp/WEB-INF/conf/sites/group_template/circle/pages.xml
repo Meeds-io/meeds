@@ -121,32 +121,4 @@
     </container>
   </page>
 
-  <page>
-    <name>members</name>
-    <title>Space Members</title>
-    <access-permissions>member:@owner_id@</access-permissions>
-    <edit-permission>*:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <container id="top-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-space-members-circle-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>MembersPortlet</portlet-ref>
-            </portlet>
-            <title>Space Settings</title>
-          </portlet-application>
-          <container id="bottom-space-members-circle-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-space-members-circle-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
 </page-set>

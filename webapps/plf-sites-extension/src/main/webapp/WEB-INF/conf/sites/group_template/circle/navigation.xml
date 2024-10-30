@@ -32,12 +32,6 @@
       <icon>fas fa-home</icon>
       <page-reference>group_template::circle::home</page-reference>
       <node>
-        <name>members</name>
-        <label>#{portal.global.spaceMembers}</label>
-        <icon>fas fa-users</icon>
-        <page-reference>group_template::circle::members</page-reference>
-      </node>
-      <node>
         <name>apps</name>
         <label>#{portal.global.apps}</label>
         <icon>fas fa-ellipsis-h</icon>
