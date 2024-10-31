@@ -17,6 +17,7 @@
          "permissions": ["*:/platform/administrators","*:/platform/web-contributors"],
          "spaceLayoutPermissions": ["*:/platform/administrators"],
          "spaceDeletePermissions": ["*:/platform/administrators"],
+         "spacePublicSitePermissions": ["spaceAdmin"],
          "spaceDefaultVisibility": "private",
          "spaceDefaultRegistration": "open",
          "spaceAllowContentCreation": true
@@ -37,6 +38,7 @@
          "permissions": ["*:/platform/users"],
          "spaceLayoutPermissions": ["*:/platform/administrators"],
          "spaceDeletePermissions": ["spaceAdmin"],
+         "spacePublicSitePermissions": ["*:/platform/administrators"],
          "spaceDefaultVisibility": "hidden",
          "spaceDefaultRegistration": "closed",
          "spaceAllowContentCreation": false
@@ -57,6 +59,7 @@
          "permissions": ["*:/platform/users"],
          "spaceLayoutPermissions": ["*:/platform/administrators"],
          "spaceDeletePermissions": ["spaceAdmin"],
+         "spacePublicSitePermissions": ["spaceAdmin"],
          "spaceDefaultVisibility": "private",
          "spaceDefaultRegistration": "validation",
          "spaceAllowContentCreation": false
@@ -77,6 +80,7 @@
          "permissions": ["*:/platform/users"],
          "spaceLayoutPermissions": ["*:/platform/administrators"],
          "spaceDeletePermissions": ["spaceAdmin"],
+         "spacePublicSitePermissions": ["spaceAdmin"],
          "spaceDefaultVisibility": "private",
          "spaceDefaultRegistration": "closed",
          "spaceAllowContentCreation": false
