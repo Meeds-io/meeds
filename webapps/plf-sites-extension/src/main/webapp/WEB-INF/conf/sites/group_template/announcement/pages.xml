@@ -29,17 +29,6 @@
     <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceBannerPortlet</portlet-ref>
-            </portlet>
-            <title>Space Banner</title>
-          </portlet-application>
-        </column>
-      </section-columns>
       <section-columns
         sticky-beahvior="true"
         mobile-columns-style="true">
@@ -62,17 +51,17 @@
         <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>content</application-ref>
-              <portlet-ref>NewsListView</portlet-ref>
-            </portlet>
-            <title>News List</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
               <application-ref>social</application-ref>
               <portlet-ref>SpaceWidgetDescription</portlet-ref>
             </portlet>
             <title>Space Description</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>Links</portlet-ref>
+            </portlet>
+            <title>Links</title>
           </portlet-application>
           <container id="space-home-widgets-announcement-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
             <name>space-home-widgets-announcement-container</name>
