@@ -32,6 +32,12 @@
       <icon>fas fa-home</icon>
       <page-reference>group_template::community::home</page-reference>
       <node>
+        <name>contribute</name>
+        <label>#{portal.global.spaceContribute}</label>
+        <icon>fas fa-rocket</icon>
+        <page-reference>group_template::community::contribute</page-reference>
+      </node>
+      <node>
         <name>apps</name>
         <label>#{portal.global.apps}</label>
         <icon>fas fa-ellipsis-h</icon>
