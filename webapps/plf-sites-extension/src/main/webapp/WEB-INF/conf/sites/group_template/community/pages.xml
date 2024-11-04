@@ -26,7 +26,74 @@
   <page>
     <name>home</name>
     <title>Home</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
+    <edit-permission>*:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceBannerPortlet</portlet-ref>
+            </portlet>
+            <title>Space Banner</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns
+        sticky-beahvior="true"
+        mobile-columns-style="true">
+        <column col-span="8">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceActivityStreamPortlet</portlet-ref>
+            </portlet>
+            <title>Space Activity Stream</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceWidgetDescription</portlet-ref>
+            </portlet>
+            <title>Space Description</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceWidgetManagers</portlet-ref>
+            </portlet>
+            <title>Space Managers</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SpaceWidgetMembers</portlet-ref>
+            </portlet>
+            <title>Space Members</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+            </portlet>
+            <title>Who is on Line</title>
+          </portlet-application>
+          <container id="space-home-widgets-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+            <name>space-home-widgets-community-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>contribute</name>
+    <title>Contribute</title>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
       <section-columns mobile-columns-style="true">
@@ -47,7 +114,29 @@
               </preferences>
             </portlet>
             <title>Leaderboard</title>
-            <height>360</height>
+            <height>300</height>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myContributions</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>myContributionsPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>myContributionsDisplayLegend</name>
+                  <value>true</value>
+                </preference>
+                <preference>
+                  <name>myContributionsProgramLimit</name>
+                  <value>4</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Contributions</title>
+            <height>400</height>
           </portlet-application>
         </column>
         <column col-span="4">
@@ -58,7 +147,7 @@
               <preferences>
                 <preference>
                   <name>limit</name>
-                  <value>4</value>
+                  <value>3</value>
                 </preference>
                 <preference>
                   <name>programsSortBy</name>
@@ -67,10 +156,8 @@
               </preferences>
             </portlet>
             <title>Programs Overview</title>
-            <height>360</height>
+            <height>300</height>
           </portlet-application>
-        </column>
-        <column col-span="4">
           <portlet-application>
             <portlet>
               <application-ref>gamification-portlets</application-ref>
@@ -99,55 +186,18 @@
               </preferences>
             </portlet>
             <title>Actions overview</title>
-            <height>360</height>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns
-        sticky-beahvior="true"
-        mobile-columns-style="true">
-        <column col-span="8">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceActivityStreamPortlet</portlet-ref>
-            </portlet>
-            <title>Space Activity Stream</title>
+            <height>400</height>
           </portlet-application>
         </column>
         <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>WhoIsOnLinePortlet</portlet-ref>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>UsersLeaderboard</portlet-ref>
             </portlet>
-            <title>Who is on Line</title>
+            <title>Actions overview</title>
+            <height>720</height>
           </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceWidgetDescription</portlet-ref>
-            </portlet>
-            <title>Space Description</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceWidgetManagers</portlet-ref>
-            </portlet>
-            <title>Space Managers</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>SpaceWidgetMembers</portlet-ref>
-            </portlet>
-            <title>Space Members</title>
-          </portlet-application>
-          <container id="space-home-widgets-community-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>space-home-widgets-community-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
         </column>
       </section-columns>
     </container>
@@ -156,7 +206,7 @@
   <page profiles="wallet">
     <name>wallet</name>
     <title>Wallet</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -184,7 +234,7 @@
   <page profiles="notes">
     <name>notes</name>
     <title>Notes</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -212,7 +262,7 @@
   <page>
     <name>members</name>
     <title>Space Members</title>
-    <access-permissions>member:@owner@</access-permissions>
+    <access-permissions>member:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -240,7 +290,7 @@
   <page>
     <name>settings</name>
     <title>Space Settings</title>
-    <access-permissions>manager:@owner@</access-permissions>
+    <access-permissions>manager:@owner_id@</access-permissions>
     <edit-permission>*:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>

@@ -20,16 +20,34 @@
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
-<portal-config
+<node-navigation
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_11 http://www.gatein.org/xml/ns/gatein_objects_1_11"
   xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_11">
-  <portal-name>@owner@</portal-name>
-  <displayed>false</displayed>
-  <locale>en</locale>
-  <access-permissions>member:@owner@</access-permissions>
-  <edit-permission>*:/platform/administrators</edit-permission>
-  <portal-layout>
-    <page-body />
-  </portal-layout>
-</portal-config>
+  <priority>3</priority>
+  <page-nodes>
+    <node>
+      <name>home</name>
+      <label>#{portal.global.spaceHome}</label>
+      <icon>fas fa-home</icon>
+      <page-reference>group_template::circle::home</page-reference>
+      <node>
+        <name>apps</name>
+        <label>#{portal.global.apps}</label>
+        <icon>fas fa-ellipsis-h</icon>
+        <node>
+          <name>tasks</name>
+          <label>#{portal.global.spaceTasks}</label>
+          <icon>fas fa-tasks</icon>
+          <page-reference>group_template::circle::tasks</page-reference>
+        </node>
+        <node>
+          <name>notes</name>
+          <label>#{portal.global.spaceNotes}</label>
+          <icon>far fa-clipboard</icon>
+          <page-reference>group_template::circle::notes</page-reference>
+        </node>
+      </node>
+    </node>
+  </page-nodes>
+</node-navigation>
