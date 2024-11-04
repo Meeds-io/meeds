@@ -331,5 +331,34 @@
         <page-reference>portal::global::analytics-contents</page-reference>
       </node>
     </node>
+    <node>
+      <name>home</name>
+      <label>#{portal.global.spaceHome}</label>
+      <visibility>SYSTEM</visibility>
+      <node>
+        <name>tasks</name>
+        <label>#{portal.global.spaceTasks}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::tasks</page-reference>
+      </node>
+      <node>
+        <name>notes</name>
+        <label>#{portal.global.spaceNotes}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::notes</page-reference>
+      </node>
+      <node>
+        <name>members</name>
+        <label>#{portal.global.spaceMembers}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::space-members</page-reference>
+      </node>
+      <node>
+        <name>settings</name>
+        <label>#{portal.global.spaceSettings}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::space-settings</page-reference>
+      </node>
+    </node>
   </page-nodes>
 </node-navigation>

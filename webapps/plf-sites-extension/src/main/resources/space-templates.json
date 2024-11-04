@@ -1,0 +1,85 @@
+{
+   "descriptors":[
+      {
+         "id":"announcement",
+         "names":{
+            "en":"space.template.announcement.title"
+         },
+         "descriptions":{
+            "en":"space.template.announcement.description"
+         },
+         "bannerPath":"war:/../images/defaultSpaceBanner.webp",
+         "icon": "fa-bullhorn",
+         "enabled": true,
+         "system": true,
+         "layout": "announcement",
+         "spaceFields": ["name", "properties"],
+         "permissions": ["*:/platform/administrators","*:/platform/web-contributors"],
+         "spaceLayoutPermissions": ["*:/platform/administrators"],
+         "spaceDeletePermissions": ["*:/platform/administrators"],
+         "spaceDefaultVisibility": "private",
+         "spaceDefaultRegistration": "open",
+         "spaceAllowContentCreation": true
+      }, {
+         "id":"circle",
+         "names":{
+            "en":"space.template.circle.title"
+         },
+         "descriptions":{
+            "en":"space.template.circle.description"
+         },
+         "bannerPath":"war:/../images/defaultSpaceBanner.webp",
+         "icon": "fa-circle-notch",
+         "enabled": true,
+         "system": true,
+         "layout": "circle",
+         "spaceFields": ["invitation"],
+         "permissions": ["*:/platform/users"],
+         "spaceLayoutPermissions": ["*:/platform/administrators"],
+         "spaceDeletePermissions": ["spaceAdmin"],
+         "spaceDefaultVisibility": "hidden",
+         "spaceDefaultRegistration": "closed",
+         "spaceAllowContentCreation": false
+      }, {
+         "id":"community",
+         "names":{
+            "en":"space.template.community.title"
+         },
+         "descriptions":{
+            "en":"space.template.community.description"
+         },
+         "bannerPath":"war:/../images/defaultSpaceBanner.webp",
+         "icon": "fa-users",
+         "enabled": true,
+         "system": true,
+         "layout": "community",
+         "spaceFields": ["name", "properties", "invitation"],
+         "permissions": ["*:/platform/users"],
+         "spaceLayoutPermissions": ["*:/platform/administrators"],
+         "spaceDeletePermissions": ["spaceAdmin"],
+         "spaceDefaultVisibility": "private",
+         "spaceDefaultRegistration": "validation",
+         "spaceAllowContentCreation": false
+      }, {
+         "id":"project",
+         "names":{
+            "en":"space.template.project.title"
+         },
+         "descriptions":{
+            "en":"space.template.project.description"
+         },
+         "bannerPath":"war:/../images/defaultSpaceBanner.webp",
+         "icon": "fa-tasks",
+         "enabled": true,
+         "system": true,
+         "layout": "project",
+         "spaceFields": ["name", "properties", "access", "invitation"],
+         "permissions": ["*:/platform/users"],
+         "spaceLayoutPermissions": ["*:/platform/administrators"],
+         "spaceDeletePermissions": ["spaceAdmin"],
+         "spaceDefaultVisibility": "private",
+         "spaceDefaultRegistration": "closed",
+         "spaceAllowContentCreation": false
+      }
+   ]
+}

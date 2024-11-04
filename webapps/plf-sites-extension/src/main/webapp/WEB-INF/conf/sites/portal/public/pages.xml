@@ -55,7 +55,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>Image</portlet-ref>
               <preferences>
                 <preference>
@@ -100,7 +100,7 @@
         <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>social-portlet</application-ref>
+              <application-ref>social</application-ref>
               <portlet-ref>Links</portlet-ref>
               <preferences>
                 <preference>
