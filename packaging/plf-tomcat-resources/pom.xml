@@ -36,29 +36,34 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat</artifactId>
+      <scope>runtime</scope>
       <type>zip</type>
     </dependency>
     <!-- Required by conditional processing in logback -->
     <dependency>
       <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <!-- Shared resources -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-packaging-resources</artifactId>
+      <scope>runtime</scope>
       <type>zip</type>
     </dependency>
     <!-- Kernel Container Integration Servlet -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-integration-webapp</artifactId>
+      <scope>runtime</scope>
       <type>war</type>
     </dependency>
     <!-- Tomcat listener to create portlet containers -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>plf-tomcat-pc-creator-listener</artifactId>
+      <scope>runtime</scope>
       <exclusions>
         <exclusion>
           <groupId>jakarta.servlet</groupId>

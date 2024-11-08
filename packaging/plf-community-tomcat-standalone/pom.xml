@@ -53,12 +53,6 @@
       <type>zip</type>
       <scope>runtime</scope>
     </dependency>
-    <!-- PLF-6510: Get exo-tools.jar used by PLF startup scripts -->
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>plf-exo-tools</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <!-- Build resource used to import license related files -->
     <dependency>
       <groupId>org.exoplatform.resources</groupId>
@@ -67,126 +61,15 @@
       <version>${version.exo-lgpl-license-resource-bundle}</version>
       <scope>runtime</scope>
     </dependency>
-    <!-- Pre-bundled addons -->
-    <dependency>
-      <groupId>io.meeds.wallet</groupId>
-      <artifactId>wallet-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.kudos</groupId>
-      <artifactId>kudos-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.perk-store</groupId>
-      <artifactId>perk-store-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.gamification</groupId>
-      <artifactId>gamification-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.app-center</groupId>
-      <artifactId>app-center-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.notes</groupId>
-      <artifactId>notes-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.task</groupId>
-      <artifactId>task-management-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.analytics</groupId>
-      <artifactId>analytics-packaging</artifactId>
-      <scope>provided</scope>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.poll</groupId>
-      <artifactId>poll-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.content</groupId>
-      <artifactId>content-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.gamification-github</groupId>
-      <artifactId>gamification-github-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.gamification-twitter</groupId>
-      <artifactId>gamification-twitter-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.gamification-evm</groupId>
-      <artifactId>gamification-evm-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.deeds-tenant</groupId>
-      <artifactId>deeds-tenant-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.layout</groupId>
-      <artifactId>layout-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.gamification-crowdin</groupId>
-      <artifactId>gamification-crowdin-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.pwa</groupId>
-      <artifactId>pwa-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.meeds.ide</groupId>
-      <artifactId>ide-packaging</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
   </dependencies>
   <build>
     <!-- The name that we'll use for our distribution directory -->
     <finalName>meeds-community-${project.version}</finalName>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
