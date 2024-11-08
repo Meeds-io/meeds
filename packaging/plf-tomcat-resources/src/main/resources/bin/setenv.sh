@@ -284,18 +284,13 @@ if [ ! -z "$JAVA_HOME" ]; then
   javaExec=$JAVA_HOME/bin/java
 fi
 
-# Used JDK_JAVA_OPTIONS for JDK 9+ options since this variable is only recognized by JDK 9+
-cmd=$($javaExec -jar "$CATALINA_HOME"/bin/exo-tools.jar isJava11OrSuperior)
-if [ $? != 0 ]; then
-  JDK_JAVA_OPTIONS="--add-modules java.activation --add-modules java.xml.bind"
-fi
 # Open all required modules for reflective access operations
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.io=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang.invoke=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang.reflect=ALL-UNNAMED"
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/java.lang.module=ALL-UNNAMED"
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/jdk.internal.module=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.lang.module=ALL-UNNAMED"
+JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/jdk.internal.module=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.math=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.net=ALL-UNNAMED"
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens java.base/java.nio=ALL-UNNAMED"

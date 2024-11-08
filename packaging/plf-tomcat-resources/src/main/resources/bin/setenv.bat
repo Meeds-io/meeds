@@ -190,11 +190,6 @@ IF DEFINED JAVA_HOME (
   SET javaExec="%JAVA_HOME%\bin\java.exe"
 )
 
-REM # Used JDK_JAVA_OPTIONS for JDK 9 options since this variable is only recognized by JDK 9+
-%javaExec% -jar "%CATALINA_HOME%"\bin\exo-tools.jar isJava11OrSuperior
-IF ERRORLEVEL 1 (
-  SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-modules java.activation --add-modules java.xml.bind
-)
 REM # Open all required modules for reflective access operations
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.io=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.lang=ALL-UNNAMED
