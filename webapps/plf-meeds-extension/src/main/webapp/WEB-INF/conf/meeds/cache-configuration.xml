@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<configuration
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+  xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.services.cache.CacheService</target-component>
+    <component-plugin>
+      <name>addExoCacheConfig</name>
+      <set-method>addExoCacheConfig</set-method>
+      <type>org.exoplatform.services.cache.ExoCacheConfigPlugin</type>
+      <description>Configures the cache for analytics queue which must remain a local cache</description>
+      <init-params>
+        <object-param>
+          <name>analytics.queue</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>analytics.queue</string>
+            </field>
+            <field name="maxSize">
+              <int>${analytics.queue.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${analytics.queue.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- WebNotificationCache -->
+        <object-param>
+          <name>commons.WebNotificationCache</name>
+          <description>The Cache configuration for the Web Notification Cache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.WebNotificationCache</string>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.WebNotificationCache.TimeToLive:86400}</long>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.WebNotificationCache.MaxNodes:10000}</int>
+            </field>
+          </object>
+        </object-param>
+        <!-- WebNotificationsCache -->
+        <object-param>
+          <name>commons.WebNotificationsCache</name>
+          <description>The Cache configuration for the Web Notification List Cache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.WebNotificationsCache</string>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.WebNotificationsCache.TimeToLive:86400}</long>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.WebNotificationsCache.MaxNodes:1000}</int>
+            </field>
+          </object>
+        </object-param>
+        <!-- WebNotificationCountCache -->
+        <object-param>
+          <name>commons.WebNotificationCountCache</name>
+          <description>The Cache configuration for the Web Notification Count Cache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.WebNotificationCountCache</string>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.WebNotificationCountCache.TimeToLive:86400}</long>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.WebNotificationCountCache.MaxNodes:1000}</int>
+            </field>
+          </object>
+        </object-param>
+        <!-- UserSettingService -->
+        <object-param>
+          <name>commons.UserSettingService</name>
+          <description>The Cache configuration for the UserSettingService</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.UserSettingService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.UserSettingService.MaxNodes:500}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.UserSettingService.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- UserStateService -->
+        <object-param>
+          <name>commons.UserStateService</name>
+          <description>The Cache configuration for the UserStateService</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.UserStateService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.UserStateService.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.UserStateService.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>gamification.domain</name>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>gamification.domain</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.gamification.domain.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.gamification.domain.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>gamification.rule</name>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>gamification.rule</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.gamification.rule.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.gamification.rule.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>gamification.realization</name>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>gamification.realization</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.gamification.realization.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.gamification.realization.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>wiki.PageRenderingCache</name>
+          <description>The wiki markup cache configuration</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wiki.PageRenderingCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wiki.PageRenderingCache.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wiki.PageRenderingCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>wiki.PageAttachmentCache</name>
+          <description>The Cache configuration for wiki page attachment count</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wiki.PageAttachmentCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wiki.PageAttachmentCache.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wiki.PageAttachmentCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>perkstore.product</name>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>perkstore.product</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.perkstore.product.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.perkstore.product.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>perkstore.order</name>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>perkstore.order</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.perkstore.order.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.perkstore.order.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.User</name>
+          <description>Exo Cache cluster configuration for IDM User entity</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.User</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.user.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.user.TimeToLive:3600}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.Profile</name>
+          <description>Exo Cache cluster configuration for IDM User Profile entity</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.Profile</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.profile.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.profile.TimeToLive:3600}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.Membership</name>
+          <description>Exo Cache cluster configuration for IDM Membership entity</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.Membership</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.membership.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.membership.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+
+        <object-param>
+          <name>portal.Role</name>
+          <description>Exo Cache cluster configuration for IDM Membership Type entity</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.Role</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.role.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.role.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+
+        <object-param>
+          <name>portal.Group</name>
+          <description>Exo Cache cluster configuration for IDM Group entity</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.Group</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.group.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.group.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- SettingService -->
+        <object-param>
+          <name>commons.SettingService</name>
+          <description>The Cache configuration for the setting service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>commons.SettingService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.commons.SettingService.MaxNodes:100000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.commons.SettingService.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- Portal API -->
+        <object-param>
+          <name>portal.PortletPreferences</name>
+          <description>The cache configuration for Portlet Preferences</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.PortletPreferences</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.preferences.MaxNodes:10000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.preferences.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.NavigationNode</name>
+          <description>The Cache configuration for the MOP session Manager</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.NavigationNode</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.mop.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.mop.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.NavigationService</name>
+          <description>The cache configuration for the navigation Trees service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.NavigationService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.navigation.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.navigation.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.SiteService</name>
+          <description>The cache configuration for Site layout service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.SiteService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.site.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.site.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.SiteKeysByFilterService</name>
+          <description>The cache configuration for Site layout service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.SiteKeysByFilterService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.site.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.site.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.DescriptionService</name>
+          <description>The Cache configuration for the description service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.DescriptionService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.description.MaxNodes:10000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.description.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.PageService</name>
+          <description>The Cache configuration for the page service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.PageService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.page.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.page.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- TemplateService configuration -->
+        <object-param>
+          <name>portal.TemplateService</name>
+          <description>The Cache configuration for the template service</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.TemplateService</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.template.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.template.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.ResourceBundleData</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.ResourceBundleData</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.ResourceBundleData.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.ResourceBundleData.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- Identities -->
+        <object-param>
+          <name>social.IdentityCache</name>
+          <description>The Cache configuration for the IdentityCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.IdentityCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.IdentityCache.MaxNodes:1100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.IdentityCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.IdentityIndexCache</name>
+          <description>The Cache configuration for the IdentityIndexCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.IdentityIndexCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.IdentityIndexCache.MaxNodes:1100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.IdentityIndexCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.ProfileCache</name>
+          <description>The Cache configuration for the ProfileCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.ProfileCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.ProfileCache.MaxNodes:1100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.ProfileCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.IdentitiesCountCache</name>
+          <description>The Cache configuration for the IdentitiesCountCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.IdentitiesCountCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.IdentitiesCountCache.MaxNodes:1100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.IdentitiesCountCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.IdentitiesCache</name>
+          <description>The Cache configuration for the IdentitiesCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.IdentitiesCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.IdentitiesCache.MaxNodes:1100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.IdentitiesCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+
+        <!-- Relationships -->
+        <object-param>
+          <name>social.RelationshipCache</name>
+          <description>The Cache configuration for the RelationshipCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.RelationshipCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.RelationshipCache.MaxNodes:100000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.RelationshipCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.RelationshipFromIdentityCache</name>
+          <description>The Cache configuration for the RelationshipFromIdentityCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.RelationshipFromIdentityCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.RelationshipFromIdentityCache.MaxNodes:100000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.RelationshipFromIdentityCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.RelationshipsCountCache</name>
+          <description>The Cache configuration for the RelationshipsCountCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.RelationshipsCountCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.RelationshipsCountCache.MaxNodes:10000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.RelationshipsCountCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.RelationshipsCache</name>
+          <description>The Cache configuration for the RelationshipsCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.RelationshipsCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.RelationshipsCache.MaxNodes:10000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.RelationshipsCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.SuggestionsCache</name>
+          <description>The Cache configuration for the SuggestionsCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SuggestionsCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SuggestionsCache.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SuggestionsCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+
+        <!-- Activities -->
+        <object-param>
+          <name>social.ActivityCache</name>
+          <description>The Cache configuration for the ActivityCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.ActivityCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.ActivityCache.MaxNodes:20000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.ActivityCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.ActivitiesCountCache</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.ActivitiesCountCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.ActivitiesCountCache.MaxNodes:20000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.ActivitiesCountCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.ActivitiesCache</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.ActivitiesCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.ActivitiesCache.MaxNodes:20000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.ActivitiesCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+
+        <!-- Spaces -->
+        <object-param>
+          <name>social.SpaceCache</name>
+          <description>The Cache configuration for the SpaceCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SpaceCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SpaceCache.MaxNodes:100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SpaceCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.SpaceSimpleCache</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SpaceSimpleCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SpaceSimpleCache.MaxNodes:500}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SpaceSimpleCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.SpaceRefCache</name>
+          <description>The Cache configuration for the SpaceRefCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SpaceRefCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SpaceRefCache.MaxNodes:100}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SpaceRefCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.SpacesCountCache</name>
+          <description>The Cache configuration for the SpacesCountCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SpacesCountCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SpacesCountCache.MaxNodes:4000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SpacesCountCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.SpacesCache</name>
+          <description>The Cache configuration for the SpacesCache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.SpacesCache</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.SpacesCache.MaxNodes:4000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.SpacesCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.translation</name>
+          <description>The Cache configuration for the TranslationStorage</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.translation</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.TranslationCache.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.TranslationCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.linkSettings</name>
+          <description>The Cache configuration for the LinkStorage</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.linkSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.LinkSettingsCache.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.LinkSettingsCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.cmsSetting</name>
+          <description>The Cache configuration for the CMSStorage</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.cmsSetting</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.cmsSettingCache.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.cmsSettingCache.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- Avatar -->
+        <object-param>
+          <name>social.ProfileAvatar</name>
+          <description>The Cache configuration for the ProfileAvatar</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.ProfileAvatar</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.ProfileAvatar.MaxNodes:300}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.ProfileAvatar.TimeToLive:600}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>wallet.transactions</name>
+          <description>Wallet application transactions cache</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.transactions</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.transactions.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.transactions.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>wallet.account</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.account</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.account.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.account.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+</configuration>
