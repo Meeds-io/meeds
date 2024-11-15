@@ -249,6 +249,5 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
   <componentDescriptors>
     <componentDescriptor>assemblies/plf-copy-libraries-component.xml</componentDescriptor>
     <componentDescriptor>assemblies/plf-addons-component.xml</componentDescriptor>
-    <componentDescriptor>assemblies/plf-exo-tools-component.xml</componentDescriptor>
   </componentDescriptors>
 </assembly>

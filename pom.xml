@@ -294,12 +294,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>plf-exo-tools</artifactId>
-        <version>${project.version}</version>
-        <type>jar</type>
-      </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
         <artifactId>plf-packaging-resources</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -382,6 +376,100 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <providerSelection>2.0</providerSelection>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>banned-dependencies</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <!-- We must take care to never grab these artifacts in our distribution -->
+                  <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
+                  <bannedDependencies>
+                    <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
+                    <searchTransitive>true</searchTransitive>
+                    <excludes>
+                      <!-- Ant and related aren't really useful for us at runtime -->
+                      <exclude>org.apache.ant:*</exclude>
+                      <exclude>org.apache.axis:axis-ant:*</exclude>
+                      <!-- log4j is forbidden and must be replaced by org.apache.logging.log4j:log4j-to-slf4j -->
+                      <exclude>log4j:*</exclude>
+                      <exclude>org.apache.logging.log4j:log4j-core</exclude>
+                      <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                      <exclude>org.slf4j:slf4j-jcl:*</exclude>
+                      <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
+                      <exclude>org.slf4j:slf4j-log4j12:*</exclude>
+                      <exclude>org.slf4j:slf4j-simple:*</exclude>
+                      <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
+                      <exclude>org.slf4j:slf4j-jdk14:*</exclude>
+                      <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
+                      <exclude>xstream:xstream:*</exclude>
+                      <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
+                      <exclude>jdom:*:*</exclude>
+                      <!-- These old versions of eXo portal are in conflict with new ones under io.meeds.portal -->
+                      <exclude>org.exoplatform.portal:*:*</exclude>
+                      <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
+                      <exclude>javax.servlet:*</exclude>
+                      <exclude>com.google.gwt:gwt-user:*</exclude>
+                      <exclude>javax.servlet.jsp:*</exclude>
+                      <!-- Testing stuffs should never come here -->
+                      <exclude>junit:*</exclude>
+                      <exclude>org.testng:*</exclude>
+                      <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
+                      <exclude>org.jmock:*</exclude>
+                      <exclude>jmock:*</exclude>
+                      <exclude>org.mockito:*</exclude>
+                      <!-- These old versions of jdom are in conflict with new ones under org.jdom:* -->
+                      <exclude>jdom:*</exclude>
+                      <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
+                      <exclude>xpp3:xpp3_min</exclude>
+                      <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
+                      <exclude>commons-beanutils:commons-beanutils-core</exclude>
+                      <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
+                      <exclude>org.jboss.logging:jboss-logging-spi</exclude>
+                      <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
+                      <exclude>org.codehaus.woodstox:wstx-asl</exclude>
+                      <!-- These are provided APIs by Java itself or the app server -->
+                      <exclude>xml-apis:*</exclude>
+                      <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
+                      <exclude>stax:*</exclude>
+                      <exclude>javax.xml.stream:*</exclude>
+                      <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
+                      <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
+                      <exclude>org.jboss.spec.javax.transaction:*</exclude>
+                      <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
+                      <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
+                      <exclude>rome:modules:*</exclude>
+                      <!-- Don't package any XML APIs dep to avoid conflicts the JVM -->
+                      <exclude>*:xmlParserAPIs:*</exclude>
+                      <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
+                      <exclude>org.icepdf:icepdf-core:*</exclude>
+                      <!-- ISPN 8 dropped from Meeds package -->
+                      <exclude>org.infinispan:*:*</exclude>
+                      <!-- Test scoped dependencies -->
+                      <exclude>commons-dbcp:*:*</exclude>
+                      <exclude>net.sourceforge.jregex:*:*</exclude>
+                      <exclude>com.sun.japex:*:*</exclude>
+                      <exclude>org.web3j:web3j-unit:*</exclude>
+                      <exclude>org.codehaus.cargo:*:*</exclude>
+                    </excludes>
+                    <includes>
+                      <!-- We can use the tomcat distro -->
+                      <include>org.apache.tomcat:tomcat:zip</include>
+                      <!--only 1.0 of badArtifact is allowed-->
+                      <include>org.apache.logging.log4j:log4j-api:[2.18.0,)</include>
+                    </includes>
+                  </bannedDependencies>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -395,86 +483,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
             <executions>
-              <execution>
-                <id>banned-dependencies</id>
-                <goals>
-                  <goal>enforce</goal>
-                </goals>
-                <configuration>
-                  <rules>
-                    <!-- We must take care to never grab these artifacts in our distribution -->
-                    <!-- Never exclude them here but ask to exclude them at the furthest dependency level in the dependency tree -->
-                    <bannedDependencies>
-                      <message>There are some unwanted dependencies in the dependency tree. Find them with "mvn dependency:tree -Dverbose -Dincludes=groupId:artifactId:version" and remove them at the furthest dependency level in the dependency tree</message>
-                      <searchTransitive>true</searchTransitive>
-                      <excludes>
-                        <!-- Ant and related aren't really useful for us at runtime -->
-                        <exclude>org.apache.ant:*</exclude>
-                        <exclude>org.apache.axis:axis-ant:*</exclude>
-                        <!-- log4j is forbidden and must be replaced by org.apache.logging.log4j:log4j-to-slf4j -->
-                        <exclude>log4j:*</exclude>
-                        <exclude>org.apache.logging.log4j:log4j-core</exclude>
-                        <!-- We use jcl-over-slf4j, thus this one is forbidden to avoid infinite loops -->
-                        <exclude>org.slf4j:slf4j-jcl:*</exclude>
-                        <!-- We use log4j-over-slf4j, thus this one is forbidden to avoid infinite loops -->
-                        <exclude>org.slf4j:slf4j-log4j12:*</exclude>
-                        <exclude>org.slf4j:slf4j-simple:*</exclude>
-                        <!-- We use jul-to-slf4j, thus this one is forbidden to avoid infinite loops -->
-                        <exclude>org.slf4j:slf4j-jdk14:*</exclude>
-                        <!-- These old versions of xstream are in conflict with new ones under com.thoughtworks.xstream:xstream -->
-                        <exclude>xstream:xstream:*</exclude>
-                        <!-- These old versions of jdom are in conflict with new ones under org.jdom -->
-                        <exclude>jdom:*:*</exclude>
-                        <!-- These old versions of eXo portal are in conflict with new ones under io.meeds.portal -->
-                        <exclude>org.exoplatform.portal:*:*</exclude>
-                        <!-- Servlet API are provided by the app server. It shouldn't come from a project -->
-                        <exclude>javax.servlet:*</exclude>
-                        <exclude>com.google.gwt:gwt-user:*</exclude>
-                        <exclude>javax.servlet.jsp:*</exclude>
-                        <!-- Testing stuffs should never come here -->
-                        <exclude>junit:*</exclude>
-                        <exclude>org.testng:*</exclude>
-                        <exclude>org.exoplatform.tool:exo.tool.framework.junit</exclude>
-                        <exclude>org.jmock:*</exclude>
-                        <exclude>jmock:*</exclude>
-                        <exclude>org.mockito:*</exclude>
-                        <!-- These old versions of jdom are in conflict with new ones under org.jdom:* -->
-                        <exclude>jdom:*</exclude>
-                        <!-- These artifacts are in conflict with others ones under xpp3:xpp3 -->
-                        <exclude>xpp3:xpp3_min</exclude>
-                        <!-- These artifact is in conflict with ones under commons-beanutils:commons-beanutils -->
-                        <exclude>commons-beanutils:commons-beanutils-core</exclude>
-                        <!-- This artifact is in conflict with the one under org.jboss.logging:jboss-logging -->
-                        <exclude>org.jboss.logging:jboss-logging-spi</exclude>
-                        <!-- This artifact is in conflict with the one under org.codehaus.woodstox:woodstox-core-asl -->
-                        <exclude>org.codehaus.woodstox:wstx-asl</exclude>
-                        <!-- These are provided APIs by Java itself or the app server -->
-                        <exclude>xml-apis:*</exclude>
-                        <exclude>org.apache.geronimo.specs:geronimo-stax-api_1.0_spec</exclude>
-                        <exclude>stax:*</exclude>
-                        <exclude>javax.xml.stream:*</exclude>
-                        <exclude>org.apache.geronimo.specs:geronimo-activation_1.0.2_spec</exclude>
-                        <exclude>org.jboss.javaee:jboss-transaction-api</exclude>
-                        <exclude>org.jboss.spec.javax.transaction:*</exclude>
-                        <exclude>org.ow2.spec.ee:ow2-jta-1.1-spec</exclude>
-                        <!-- PLF-4528 / CAL-148 : Conflict with com.totsp.feedpod:itunes-com-podcast -->
-                        <exclude>rome:modules:*</exclude>
-                        <!-- Don't package any XML APIs dep to avoid conflicts the JVM -->
-                        <exclude>*:xmlParserAPIs:*</exclude>
-                        <!-- PLF-6122: Exclude icepdf older than 5.1.0. The groupId for Open Source bundles is now org.icepdf.os -->
-                        <exclude>org.icepdf:icepdf-core:*</exclude>
-                      </excludes>
-                      <includes>
-                        <!-- We can use the tomcat distro -->
-                        <include>org.apache.tomcat:tomcat:zip</include>
-                        <!--only 1.0 of badArtifact is allowed-->
-                        <include>org.apache.logging.log4j:log4j-api:[2.18.0,)</include>
-                      </includes>
-                    </bannedDependencies>
-                  </rules>
-                  <fail>true</fail>
-                </configuration>
-              </execution>
               <execution>
                 <id>enforce-bytecode-version</id>
                 <goals>
