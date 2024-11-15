@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  This file is part of the Meeds project (https://meeds.io/).
+
+  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this program; if not, write to the Free Software Foundation,
+  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-->
+<container
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_12 http://www.gatein.org/xml/ns/gatein_objects_1_12"
+  xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_12">
+  <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl"><!-- To be deleted once WebUI is cleaned from Meeds package -->
+    <section-columns mobile-columns-style="true">
+      <column col-span="4">
+        <portlet-application>
+          <portlet>
+            <application-ref>gamification-portlets</application-ref>
+            <portlet-ref>topChallengers</portlet-ref>
+            <preferences>
+              <preference>
+                <name>topChallengersPeriod</name>
+                <value>week</value>
+              </preference>
+              <preference>
+                <name>topChallengersCurrentPosition</name>
+                <value>true</value>
+              </preference>
+            </preferences>
+          </portlet>
+          <title>Leaderboard</title>
+          <height>300</height>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>gamification-portlets</application-ref>
+            <portlet-ref>myContributions</portlet-ref>
+            <preferences>
+              <preference>
+                <name>myContributionsPeriod</name>
+                <value>week</value>
+              </preference>
+              <preference>
+                <name>myContributionsDisplayLegend</name>
+                <value>true</value>
+              </preference>
+              <preference>
+                <name>myContributionsProgramLimit</name>
+                <value>4</value>
+              </preference>
+            </preferences>
+          </portlet>
+          <title>Contributions</title>
+          <height>400</height>
+        </portlet-application>
+      </column>
+      <column col-span="4">
+        <portlet-application>
+          <portlet>
+            <application-ref>gamification-portlets</application-ref>
+            <portlet-ref>programsOverview</portlet-ref>
+            <preferences>
+              <preference>
+                <name>limit</name>
+                <value>3</value>
+              </preference>
+              <preference>
+                <name>programsSortBy</name>
+                <value>modifiedDate</value>
+              </preference>
+            </preferences>
+          </portlet>
+          <title>Programs Overview</title>
+          <height>300</height>
+        </portlet-application>
+        <portlet-application>
+          <portlet>
+            <application-ref>gamification-portlets</application-ref>
+            <portlet-ref>challengesOverview</portlet-ref>
+            <preferences>
+              <preference>
+                <name>endingRulesLimit</name>
+                <value>0</value>
+              </preference>
+              <preference>
+                <name>lockedRulesLimit</name>
+                <value>0</value>
+              </preference>
+              <preference>
+                <name>availableRulesLimit</name>
+                <value>4</value>
+              </preference>
+              <preference>
+                <name>upcomingRulesLimit</name>
+                <value>0</value>
+              </preference>
+              <preference>
+                <name>rulesSortBy</name>
+                <value>modifiedDate</value>
+              </preference>
+            </preferences>
+          </portlet>
+          <title>Actions overview</title>
+          <height>400</height>
+        </portlet-application>
+      </column>
+      <column col-span="4">
+        <portlet-application>
+          <portlet>
+            <application-ref>gamification-portlets</application-ref>
+            <portlet-ref>UsersLeaderboard</portlet-ref>
+          </portlet>
+          <title>Actions overview</title>
+          <height>720</height>
+        </portlet-application>
+      </column>
+    </section-columns>
+  </container>
+</container>

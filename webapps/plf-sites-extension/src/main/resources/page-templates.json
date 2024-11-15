@@ -39,6 +39,71 @@
          "system": true,
          "illustrationPath":"war:/../images/pages/template/analytics.png",
          "layoutPath":"war:/conf/portal/template/pages/analytics/page.xml"
+      }, {
+         "id":"spaceMembers",
+         "order":50,
+         "names":{
+            "en":"layout.pageTemplate.spaceMembers.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.spaceMembers.description"
+         },
+         "category": "default",
+         "system": true,
+         "illustrationPath":"war:/../images/pages/template/SpaceMembers.webp",
+         "layoutPath":"war:/conf/portal/template/pages/spaceMembers/page.xml"
+      }, {
+         "id":"spaceContribute",
+         "order":60,
+         "names":{
+            "en":"layout.pageTemplate.spaceContribute.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.spaceContribute.description"
+         },
+         "category": "default",
+         "system": true,
+         "illustrationPath":"war:/../images/pages/template/SpaceContribute.webp",
+         "layoutPath":"war:/conf/portal/template/pages/spaceContribute/page.xml"
+      }, {
+         "id":"spaceNotes",
+         "order":70,
+         "names":{
+            "en":"layout.pageTemplate.spaceNotes.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.spaceNotes.description"
+         },
+         "category": "default",
+         "system": true,
+         "illustrationPath":"war:/../images/pages/template/SpaceNotes.webp",
+         "layoutPath":"war:/conf/portal/template/pages/spaceNotes/page.xml"
+      }, {
+         "id":"spaceTasks",
+         "order":80,
+         "names":{
+            "en":"layout.pageTemplate.spaceTasks.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.spaceTasks.description"
+         },
+         "category": "default",
+         "system": true,
+         "illustrationPath":"war:/../images/pages/template/SpaceTasks.webp",
+         "layoutPath":"war:/conf/portal/template/pages/spaceTasks/page.xml"
+      }, {
+         "id":"spaceSettings",
+         "order":90,
+         "names":{
+            "en":"layout.pageTemplate.spaceSettings.title"
+         },
+         "descriptions":{
+            "en":"layout.pageTemplate.spaceSettings.description"
+         },
+         "category": "default",
+         "system": true,
+         "illustrationPath":"war:/../images/pages/template/SpaceSettings.webp",
+         "layoutPath":"war:/conf/portal/template/pages/spaceSettings/page.xml"
       }
    ]
 }
