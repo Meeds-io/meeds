@@ -53,11 +53,6 @@
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="SearchPortlet" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>SearchPortlet</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
-    </container>
     <container id="middle-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
       <name>middle-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
