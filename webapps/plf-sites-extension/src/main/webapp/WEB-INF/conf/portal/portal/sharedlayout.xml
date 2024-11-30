@@ -53,7 +53,7 @@
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="middle-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+    <container id="middle-topNavigation-container" template="groovy/social/webui/UITopbarApplicationsContainer.gtmpl">
       <name>middle-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
