@@ -32,8 +32,8 @@
       <name>left-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="hamburger-menu-items-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>hamburger-menu-items-container</name>
+    <container id="sidebar-items-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+      <name>sidebar-items-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
     <container id="top-bar-logo-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
