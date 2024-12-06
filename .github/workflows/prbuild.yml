@@ -1,0 +1,18 @@
+name: PR Build
+on:
+  pull_request:
+jobs:
+  pr-build:
+    name: PR Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      pull-requests: write
+    steps:
+      - name: PR Build
+        uses: exo-actions/pr-action@v1
+        with:
+          maven_profiles: 'exo-release,coverage'
+          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          M2_SETTINGS_FILE_URL: ${{ vars.GHACI_SETTINGS_XML_URL }}
