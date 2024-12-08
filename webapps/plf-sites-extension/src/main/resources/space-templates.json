@@ -51,7 +51,7 @@
             "en":"space.template.community.description"
          },
          "bannerPath":"war:/../images/defaultSpaceBanner.webp",
-         "icon": "fa-users",
+         "icon": "fa-people-carry",
          "enabled": true,
          "system": true,
          "layout": "community",
