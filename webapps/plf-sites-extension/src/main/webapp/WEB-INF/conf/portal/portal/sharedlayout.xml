@@ -32,16 +32,12 @@
       <name>left-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="hamburger-menu-items-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>hamburger-menu-items-container</name>
+    <container id="sidebar-items-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+      <name>sidebar-items-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
     <container id="top-bar-logo-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
       <name>top-bar-logo-container</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
-    <container id="right-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>right-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
     <container id="right-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
@@ -53,12 +49,7 @@
       <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="SearchPortlet" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>SearchPortlet</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
-    </container>
-    <container id="middle-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+    <container id="middle-topNavigation-container" template="groovy/social/webui/UITopbarApplicationsContainer.gtmpl">
       <name>middle-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
