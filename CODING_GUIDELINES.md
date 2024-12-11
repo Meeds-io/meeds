@@ -112,6 +112,12 @@ To propose a change in the coding guidelines, simply submit a pull request on th
 ### DEVSTD-33	
   Data content upgrades has to be made using Commons-Upgrade API (See link for more details)
 
+### DEVSTD-53	
+  For Liquibae naming, Use 
+  - Author = API NAME (metadata, links, social, poll...)
+  - Version = 1.0.0-mip-XYZ-INC
+    - XYZ = MIP number, even very old when added in the context of maintenance issue
+    - INC : incremental number starting from 01
 
 ## REST APIs
   
