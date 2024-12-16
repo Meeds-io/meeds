@@ -1,0 +1,15 @@
+name: Sonar Analysis
+on:
+  push:
+    branches: [ develop, develop-exo, develop-meed ]
+  pull_request:
+jobs:
+  sonar-analysis:
+    name: Analyse Project with SonarCloud 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Analyse Project
+        uses: exo-actions/sonarcloud-action@v1
+        with:
+          jdk_major_version: 21
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
