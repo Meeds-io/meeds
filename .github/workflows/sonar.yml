@@ -1,0 +1,15 @@
+name: Sonar Analysis
+on:
+  push:
+    branches: [ stable/1.5.x-exo ]
+  pull_request:
+jobs:
+  sonar-analysis:
+    name: Analyse Project with SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Analyse Project
+        uses: exo-actions/sonarcloud-action@v1
+        with:
+          extra_maven_opts: "-Dsonar.moduleKey=meeds" # Backwards compatibility with Meeds-io groupID change
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
