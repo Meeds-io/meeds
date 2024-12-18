@@ -160,6 +160,12 @@
           <page-reference>portal::administration::siteManagement</page-reference>
         </node>
         <node>
+          <name>categories</name>
+          <label>#{portal.administration.categoryManagement}</label>
+          <icon>fas fa-th-large</icon>
+          <page-reference>portal::administration::categoryManagement</page-reference>
+        </node>
+        <node>
           <name>portlets</name>
           <label>#{portal.administration.portlets}</label>
           <icon>fas fa-grip-horizontal</icon>
