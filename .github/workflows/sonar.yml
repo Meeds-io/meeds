@@ -11,5 +11,4 @@ jobs:
       - name: Analyse Project
         uses: exo-actions/sonarcloud-action@v1
         with:
-          extra_maven_opts: "-Dsonar.moduleKey=meeds" # Backwards compatibility with Meeds-io groupID change
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
