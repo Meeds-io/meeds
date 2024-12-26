@@ -826,6 +826,36 @@
             </field>
           </object>
         </object-param>
+        <object-param>
+          <name>social.profileSettings</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.profileSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.profileSettings.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.profileSettings.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>social.profileSettingIdsByName</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.profileSettingIdsByName</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.profileSettingIdsByName.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.profileSettingIdsByName.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
       </init-params>
     </component-plugin>
   </external-component-plugins>
