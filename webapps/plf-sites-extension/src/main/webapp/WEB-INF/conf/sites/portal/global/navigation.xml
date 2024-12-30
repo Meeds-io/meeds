@@ -367,5 +367,11 @@
         <page-reference>portal::global::space-settings</page-reference>
       </node>
     </node>
+    <node>
+      <name>terms-and-conditions</name>
+      <label>#{portal.global.termsAndConditions}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::terms-and-conditions</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
