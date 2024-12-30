@@ -363,7 +363,7 @@
     </node>
     <node>
       <name>terms-and-conditions</name>
-      <label>Terms And Conditions</label>
+      <label>#{portal.global.termsAndConditions}</label>
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::terms-and-conditions</page-reference>
     </node>
