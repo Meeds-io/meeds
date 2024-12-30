@@ -2018,6 +2018,27 @@
     </container>
   </page>
 
+  <page profiles="notes">
+    <name>terms-and-conditions</name>
+    <title>Terms And Conditions</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <hide-shared-layout>true</hide-shared-layout>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>TermsAndConditionsView</portlet-ref>
+            </portlet>
+            <title>Terms And Conditions</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page>
     <name>space-settings</name>
     <title>Space Settings</title>
