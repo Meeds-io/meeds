@@ -187,6 +187,12 @@
             <icon>fas fa-pager</icon>
             <page-reference>portal::administration::pageTemplates</page-reference>
           </node>
+          <node>
+            <name>sections</name>
+            <label>#{portal.administration.sections}</label>
+            <icon>fas fa-grip-horizontal</icon>
+            <page-reference>portal::administration::sectionTemplates</page-reference>
+          </node>
         </node>
       </node>
     </node>
