@@ -386,6 +386,26 @@
     </container>
   </page>
 
+  <page profiles="layout">
+    <name>sectionTemplates</name>
+    <title>Section Templates</title>
+    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>layout</application-ref>
+              <portlet-ref>SectionTemplates</portlet-ref>
+            </portlet>
+            <title>Section Templates</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page>
     <name>spaceTemplates</name>
     <title>Space Templates</title>
