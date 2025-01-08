@@ -279,6 +279,12 @@
       <page-reference>portal::global::portlet-editor</page-reference>
     </node>
     <node>
+      <name>section-editor</name>
+      <label>#{portal.global.section-editor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::section-editor</page-reference>
+    </node>
+    <node>
       <name>portlet-viewer</name>
       <label>#{portal.global.portlet-viewer}</label>
       <visibility>SYSTEM</visibility>
