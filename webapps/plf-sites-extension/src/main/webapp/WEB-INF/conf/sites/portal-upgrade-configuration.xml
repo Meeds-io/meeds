@@ -2213,7 +2213,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>TermsAnsConditionsPageUpgrade</name>
+      <name>TermsAnsConditionsSettingPageUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2254,7 +2254,7 @@
             <field name="pageNames">
               <collection type="java.util.ArrayList" item-type="java.lang.String">
                 <value>
-                  <string>terms-and-conditions</string>
+                  <string>settings</string>
                 </value>
               </collection>
             </field>
