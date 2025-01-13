@@ -182,6 +182,12 @@
             <page-reference>portal::administration::spaceTemplates</page-reference>
           </node>
           <node>
+            <name>sites</name>
+            <label>#{portal.administration.sites}</label>
+            <icon>fas fa-window-restore</icon>
+            <page-reference>portal::administration::siteTemplates</page-reference>
+          </node>
+          <node>
             <name>pages</name>
             <label>#{portal.administration.pages}</label>
             <icon>fas fa-pager</icon>
