@@ -71,7 +71,13 @@
               <field name="portalTemplates">
                 <collection type="java.util.HashSet">
                   <value>
-                    <string>navigationWebsite</string>
+                    <string>basic</string>
+                  </value>
+                  <value>
+                    <string>public</string>
+                  </value>
+                  <value>
+                    <string>spacePublic</string>
                   </value>
                 </collection>
               </field>
