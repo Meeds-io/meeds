@@ -17,19 +17,21 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 -->
 <portal-config
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_10 http://www.gatein.org/xml/ns/gatein_objects_1_10"
-    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_10">
-    <portal-name>meeds</portal-name>
-    <display-order>30</display-order>
-    <locale>en</locale>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <properties>
-      <entry key="removable">false</entry>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_11 http://www.exoplatform.org/xml/ns/gatein_objects_1_11"
+  xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_11">
+  <portal-name>meeds</portal-name>
+  <label>#{portal.meeds.name}</label>
+  <description>#{portal.meeds.description}</description>
+  <display-order>30</display-order>
+  <locale>en</locale>
+  <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+  <edit-permission>manager:/platform/administrators</edit-permission>
+  <properties>
+    <entry key="removable">false</entry>
     <entry key="icon">fa-dot-circle</entry>
-    </properties>
-    <portal-layout>
-       <page-body> </page-body>
-    </portal-layout>
+  </properties>
+  <portal-layout>
+    <page-body></page-body>
+  </portal-layout>
 </portal-config>
