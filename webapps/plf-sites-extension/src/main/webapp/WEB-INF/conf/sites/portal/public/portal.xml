@@ -32,6 +32,7 @@
   <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
     <entry key="removable">false</entry>
+    <entry key="icon">fa-info-circle</entry>
   </properties>
   <portal-layout>
     <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
