@@ -31,8 +31,7 @@
   <access-permissions>*:/platform/users</access-permissions>
   <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
-    <entry key="sessionAlive">onDemand</entry>
-    <entry key="showPortletInfo">0</entry>
+    <entry key="removable">false</entry>
   </properties>
   <portal-layout>
     <container template="system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl" cssClass="ma-0">
