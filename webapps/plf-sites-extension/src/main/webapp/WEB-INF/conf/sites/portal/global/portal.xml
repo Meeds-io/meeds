@@ -27,6 +27,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <properties>
       <entry key="removable">false</entry>
+    <entry key="icon">fa-globe</entry>
     </properties>
     <portal-layout>
        <page-body> </page-body>

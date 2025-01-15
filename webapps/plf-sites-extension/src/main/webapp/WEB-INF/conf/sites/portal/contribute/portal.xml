@@ -33,6 +33,7 @@
   <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
     <entry key="removable">false</entry>
+    <entry key="icon">fa-rocket</entry>
   </properties>
   <portal-layout>
     <page-body />
