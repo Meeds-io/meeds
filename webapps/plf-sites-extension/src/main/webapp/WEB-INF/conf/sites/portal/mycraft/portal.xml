@@ -32,7 +32,7 @@
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
   <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
-    <entry key="showPortletInfo">0</entry>
+    <entry key="removable">false</entry>
   </properties>
   <portal-layout>
     <page-body />
