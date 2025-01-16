@@ -27,6 +27,10 @@
   <portal-name>@owner@</portal-name>
   <displayed>false</displayed>
   <locale>en</locale>
+  <properties>
+    <entry key="removable">false</entry>
+    <entry key="icon">fa-bullhorn</entry>
+  </properties>
   <portal-layout>
     <page-body />
   </portal-layout>
