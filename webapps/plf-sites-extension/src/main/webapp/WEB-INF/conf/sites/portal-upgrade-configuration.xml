@@ -512,7 +512,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>PwaAdministrationPageLayoutUpgrade</name>
+      <name>BottomAllContainerAdministrationSiteLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -535,7 +535,7 @@
         <object-param>
           <name>global.upgrade</name>
           <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updateNavigation">
+            <field name="updatePortalConfig">
               <boolean>true</boolean>
             </field>
             <field name="configPath">
