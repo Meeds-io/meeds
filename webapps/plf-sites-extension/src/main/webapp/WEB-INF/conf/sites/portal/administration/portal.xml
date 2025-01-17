@@ -78,5 +78,9 @@
         </container>
       </container>
     </container>
+    <container id="bottom-all-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
+      <name>bottom-all-container</name>
+      <factory-id>addonContainer</factory-id>
+    </container>
   </portal-layout>
 </portal-config>
