@@ -26,6 +26,10 @@
   <portal-name>@owner@</portal-name>
   <displayed>false</displayed>
   <locale>en</locale>
+  <properties>
+    <entry key="removable">false</entry>
+    <entry key="icon">fa-layer-group</entry>
+  </properties>
   <portal-layout>
     <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
       <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
