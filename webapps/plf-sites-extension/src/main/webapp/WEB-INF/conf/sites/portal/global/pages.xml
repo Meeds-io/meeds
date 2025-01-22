@@ -179,6 +179,13 @@
           </portlet-application>
           <portlet-application>
             <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>TermsAndConditionsUserSettings</portlet-ref>
+            </portlet>
+            <title>User Setting Terms And Conditions</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
               <application-ref>social</application-ref>
               <portlet-ref>UserSettingNotifications</portlet-ref>
             </portlet>
@@ -2013,6 +2020,27 @@
             <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
             <factory-id>addonContainer</factory-id>
           </container>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="notes">
+    <name>terms-and-conditions</name>
+    <title>Terms And Conditions</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <hide-shared-layout>true</hide-shared-layout>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>TermsAndConditionsView</portlet-ref>
+            </portlet>
+            <title>Terms And Conditions</title>
+          </portlet-application>
         </column>
       </section-columns>
     </container>
