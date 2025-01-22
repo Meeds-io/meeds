@@ -267,6 +267,12 @@
       <page-reference>portal::global::notes-editor</page-reference>
     </node>
     <node>
+      <name>site-layout-editor</name>
+      <label>#{portal.global.site-layout-editor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::site-layout-editor</page-reference>
+    </node>
+    <node>
       <name>layout-editor</name>
       <label>#{portal.global.layout-editor}</label>
       <visibility>SYSTEM</visibility>
