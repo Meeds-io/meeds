@@ -696,7 +696,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSiteLayoutUpgrade</name>
+      <name>GlobalSitePermissionUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -717,9 +717,9 @@
           <value>true</value>
         </value-param>
         <object-param>
-          <name>PublicSite.upgrade</name>
+          <name>GlobalSite.upgrade</name>
           <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePortalConfig">
+            <field name="updateNavigation">
               <boolean>true</boolean>
             </field>
             <field name="configPath">
@@ -729,7 +729,7 @@
               <string>portal</string>
             </field>
             <field name="portalName">
-              <string>public</string>
+              <string>global</string>
             </field>
           </object>
         </object-param>
@@ -2082,56 +2082,6 @@
               <collection type="java.util.ArrayList" item-type="java.lang.String">
                 <value>
                   <string>home</string>
-                </value>
-              </collection>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin>
-      <name>TermsAnsConditionsSettingPageUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>130</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>global.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePageLayout">
-              <boolean>true</boolean>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>global</string>
-            </field>
-            <field name="importMode">
-              <string>merge</string>
-            </field>
-            <field name="pageNames">
-              <collection type="java.util.ArrayList" item-type="java.lang.String">
-                <value>
-                  <string>settings</string>
                 </value>
               </collection>
             </field>
