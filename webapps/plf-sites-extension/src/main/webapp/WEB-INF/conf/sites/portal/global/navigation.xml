@@ -31,12 +31,14 @@
     <node>
       <name>spaces</name>
       <label>#{portal.global.spaces}</label>
+      <visibility>SYSTEM</visibility>
       <page-reference>portal::global::all-spaces</page-reference>
     </node>
 
     <node>
       <name>people</name>
       <label>#{portal.global.people}</label>
+      <visibility>SYSTEM</visibility>
       <page-reference>portal::global::all-people</page-reference>
     </node>
 
@@ -88,24 +90,28 @@
       <node>
         <name>people</name>
         <label>#{portal.global.people}</label>
+        <visibility>SYSTEM</visibility>
         <page-reference>portal::global::all-people</page-reference>
       </node>
 
       <node>
         <name>network</name>
         <label>#{portal.global.people}</label>
+        <visibility>SYSTEM</visibility>
         <page-reference>portal::global::all-people</page-reference>
       </node>
 
       <node>
         <name>receivedInvitations</name>
         <label>#{portal.global.people}</label>
+        <visibility>SYSTEM</visibility>
         <page-reference>portal::global::all-people</page-reference>
       </node>
 
       <node>
         <name>pendingRequests</name>
         <label>#{portal.global.people}</label>
+        <visibility>SYSTEM</visibility>
         <page-reference>portal::global::all-people</page-reference>
       </node>
     </node>
