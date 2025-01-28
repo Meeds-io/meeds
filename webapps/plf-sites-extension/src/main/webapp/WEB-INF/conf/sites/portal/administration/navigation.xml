@@ -172,6 +172,12 @@
           <page-reference>portal::administration::portlets</page-reference>
         </node>
         <node>
+          <name>simplestorage</name>
+          <label>#{portal.administration.simplestorage}</label>
+          <icon>fas fa-image</icon>
+          <page-reference>portal::administration::simpleStorage</page-reference>
+        </node>
+        <node>
           <name>template</name>
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
