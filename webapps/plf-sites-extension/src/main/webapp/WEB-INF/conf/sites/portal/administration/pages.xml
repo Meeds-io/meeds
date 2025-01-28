@@ -485,4 +485,24 @@
     </container>
   </page>
 
+  <page>
+    <name>simpleStorage</name>
+    <title>Simple Storage</title>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SimpleStorage</portlet-ref>
+            </portlet>
+            <title>Simple storage</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>
