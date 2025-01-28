@@ -48,8 +48,6 @@
               <portlet-ref>TopBarLogo</portlet-ref>
             </portlet>
             <title>Company Logo</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
           </portlet-application>
         </banner-cell>
         <banner-cell width="fit-content">
@@ -62,34 +60,36 @@
           </portlet-application>
         </banner-cell>
         <banner-cell width="fit-content">
-          <access-permissions>*:/platform/administrators;publisher:/platform/web-contributors</access-permissions>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
               <portlet-ref>TopBarPreview</portlet-ref>
             </portlet>
             <title>Preview Site Button</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
           </portlet-application>
         </banner-cell>
         <banner-cell width="fit-content">
-          <access-permissions>*:/platform/administrators</access-permissions>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
               <portlet-ref>TopBarPublishSite</portlet-ref>
             </portlet>
             <title>Publish Site Button</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
           </portlet-application>
         </banner-cell>
         <!-- End: Left -->
 
-        <!-- Begin: Spacer -->
-        <banner-cell /><!-- Banner Cell for spacing between left and right -->
-        <!-- End: Spacer -->
+        <!-- Begin: Middle -->
+        <banner-cell>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarMenu</portlet-ref>
+            </portlet>
+            <title>Top Bar Menu</title>
+          </portlet-application>
+        </banner-cell>
+        <!-- End: Middle -->
 
         <!-- Begin: Right -->
         <banner-cell width="fit-content">
@@ -99,8 +99,6 @@
               <portlet-ref>TopBarLogin</portlet-ref>
             </portlet>
             <title>Login Button</title>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
           </portlet-application>
         </banner-cell>
         <!-- End: Right -->

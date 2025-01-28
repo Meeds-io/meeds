@@ -34,53 +34,47 @@
     <entry key="removable">false</entry>
     <entry key="icon">fa-cogs</entry>
   </properties>
-  <portal-layout>
-    <container template="system:/groovy/portal/webui/container/UISimpleTableContainer.gtmpl" cssClass="ma-0">
-      <access-permissions>*:/platform/users</access-permissions>
-      <container template="system:/groovy/portal/webui/container/UIResponsiveColumnGroupContainer.gtmpl">
-        <container template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" cssClass="administrationSiteVerticalMenuContainerClass">
-          <access-permissions>*:/platform/users</access-permissions>
+  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+    <section-sidebar>
+      <sidebar-cell>
+        <portlet-application>
+          <portlet>
+            <application-ref>social</application-ref>
+            <portlet-ref>VerticalMenu</portlet-ref>
+          </portlet>
+          <title>Site Vertical Menu</title>
+        </portlet-application>
+      </sidebar-cell>
+    </section-sidebar>
+    <site-middle-section>
+      <section-banner
+        height="57">
+        <css-style>
+          <margin-top>20</margin-top>
+          <margin-bottom>20</margin-bottom>
+          <margin-right>20</margin-right>
+          <margin-left>20</margin-left>
+        </css-style>
+        <!-- Begin: Left -->
+        <banner-cell width="fit-content">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
-              <portlet-ref>VerticalMenu</portlet-ref>
+              <portlet-ref>Breadcrumb</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>noThreeDots</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
             </portlet>
-            <title>Site Vertical Menu</title>
-            <access-permissions>*:/platform/users</access-permissions>
-            <show-info-bar>false</show-info-bar>
-            <show-application-state>false</show-application-state>
-            <show-application-mode>false</show-application-mode>
+            <title>Site Breadcrumb application</title>
           </portlet-application>
-          </container>
-        <container template="system:/groovy/portal/webui/container/UISimpleColumnContainer.gtmpl" cssClass="administrationSitePageBodyContainerClass">
-          <access-permissions>*:/platform/users</access-permissions>
-          <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-            <access-permissions>*:/platform/users</access-permissions>
-            <portlet-application>
-              <portlet>
-                <application-ref>social</application-ref>
-                <portlet-ref>Breadcrumb</portlet-ref>
-                <preferences>
-                  <preference>
-                    <name>noThreeDots</name>
-                    <value>true</value>
-                  </preference>
-                </preferences>
-              </portlet>
-              <title>Site Breadcrumb application</title>
-              <access-permissions>*:/platform/users</access-permissions>
-              <show-info-bar>false</show-info-bar>
-              <show-application-state>false</show-application-state>
-              <show-application-mode>false</show-application-mode>
-            </portlet-application>
-          </container>
-          <page-body> </page-body>
-        </container>
-      </container>
-    </container>
-    <container id="bottom-all-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>bottom-all-container</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
+        </banner-cell>
+      </section-banner>
+      <site-middle-center-section>
+        <page-body />
+      </site-middle-center-section>
+    </site-middle-section>
   </portal-layout>
 </portal-config>
