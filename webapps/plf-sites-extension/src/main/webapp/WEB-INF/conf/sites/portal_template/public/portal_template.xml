@@ -33,74 +33,77 @@
     <entry key="removable">false</entry>
     <entry key="icon">fa-globe</entry>
   </properties>
-  <portal-layout>
-    <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>TopBarLogo</portlet-ref>
-          </portlet>
-          <title>Company Logo</title>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>false</show-application-state>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl" profiles="layout">
-        <portlet-application>
-          <portlet>
-            <application-ref>layout</application-ref>
-            <portlet-ref>SiteNavigation</portlet-ref>
-          </portlet>
-          <title>Site navigation</title>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/administrators;publisher:/platform/web-contributors</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>TopBarPreview</portlet-ref>
-          </portlet>
-          <title>Preview Site Button</title>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>false</show-application-state>
-        </portlet-application>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <access-permissions>*:/platform/administrators</access-permissions>
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>TopBarPublishSite</portlet-ref>
-          </portlet>
-          <title>Publish Site Button</title>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>false</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="MiddleToolBar" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-        <name>MiddleToolBar</name>
-        <factory-id>addonContainer</factory-id>
-      </container>
-      <container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>TopBarLogin</portlet-ref>
-          </portlet>
-          <title>Login Button</title>
-          <show-info-bar>false</show-info-bar>
-          <show-application-state>false</show-application-state>
-        </portlet-application>
-      </container>
-      <container id="TopbarLoadingContainer" template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <page-body />
-    <container id="bottom-all-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>bottom-all-container</name>
-      <factory-id>addonContainer</factory-id>
-    </container>
+  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+    <site-middle-section>
+      <section-banner
+        height="57"
+        sticky-beahvior="true">
+        <!-- Begin: Left -->
+        <banner-cell width="fit-content">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarLogo</portlet-ref>
+            </portlet>
+            <title>Company Logo</title>
+          </portlet-application>
+        </banner-cell>
+        <banner-cell width="fit-content">
+          <portlet-application>
+            <portlet>
+              <application-ref>layout</application-ref>
+              <portlet-ref>SiteNavigation</portlet-ref>
+            </portlet>
+            <title>Site navigation</title>
+          </portlet-application>
+        </banner-cell>
+        <banner-cell width="fit-content">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarPreview</portlet-ref>
+            </portlet>
+            <title>Preview Site Button</title>
+          </portlet-application>
+        </banner-cell>
+        <banner-cell width="fit-content">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarPublishSite</portlet-ref>
+            </portlet>
+            <title>Publish Site Button</title>
+          </portlet-application>
+        </banner-cell>
+        <!-- End: Left -->
+
+        <!-- Begin: Middle -->
+        <banner-cell>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarMenu</portlet-ref>
+            </portlet>
+            <title>Top Bar Menu</title>
+          </portlet-application>
+        </banner-cell>
+        <!-- End: Middle -->
+
+        <!-- Begin: Right -->
+        <banner-cell width="fit-content">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>TopBarLogin</portlet-ref>
+            </portlet>
+            <title>Login Button</title>
+          </portlet-application>
+        </banner-cell>
+        <!-- End: Right -->
+      </section-banner>
+      <site-middle-center-section>
+        <page-body />
+      </site-middle-center-section>
+    </site-middle-section>
   </portal-layout>
 </portal-config>

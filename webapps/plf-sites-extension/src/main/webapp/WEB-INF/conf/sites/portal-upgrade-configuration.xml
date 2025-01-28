@@ -121,50 +121,6 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>BreadcrumbAdministrationSiteLayoutUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <description>An upgrade plugin to delete some recognition administration navigations</description>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>120</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>overview.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePortalConfig">
-              <boolean>true</boolean>
-            </field>
-            <field name="importMode">
-              <string>MERGE</string>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>administration</string>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin>
       <name>GlobalSitePermissionsUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
@@ -255,56 +211,6 @@
               <collection type="java.util.ArrayList" item-type="java.lang.String">
                 <value>
                   <string>pageTemplates</string>
-                </value>
-              </collection>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin>
-      <name>LayoutEditorPagePermissionUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>120</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>global.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePageLayout">
-              <boolean>true</boolean>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>global</string>
-            </field>
-            <field name="importMode">
-              <string>merge</string>
-            </field>
-            <field name="pageNames">
-              <collection type="java.util.ArrayList" item-type="java.lang.String">
-                <value>
-                  <string>layout-editor</string>
                 </value>
               </collection>
             </field>
@@ -737,46 +643,6 @@
                   <string>newsComposer</string>
                 </value>
               </collection>
-            </field>
-          </object>
-        </object-param>
-      </init-params>
-    </component-plugin>
-    <component-plugin profiles="layout">
-      <name>PublicSitePortalConfigUpgrade</name>
-      <set-method>addUpgradePlugin</set-method>
-      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
-      <init-params>
-        <value-param>
-          <name>product.group.id</name>
-          <value>org.exoplatform.social</value>
-        </value-param>
-        <value-param>
-          <name>plugin.execution.order</name>
-          <value>130</value>
-        </value-param>
-        <value-param>
-          <name>plugin.upgrade.execute.once</name>
-          <value>true</value>
-        </value-param>
-        <value-param>
-          <name>enabled</name>
-          <value>true</value>
-        </value-param>
-        <object-param>
-          <name>PublicSite.upgrade</name>
-          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
-            <field name="updatePortalConfig">
-              <boolean>true</boolean>
-            </field>
-            <field name="configPath">
-              <string>war:/conf/sites/</string>
-            </field>
-            <field name="portalType">
-              <string>portal</string>
-            </field>
-            <field name="portalName">
-              <string>public</string>
             </field>
           </object>
         </object-param>
@@ -1838,26 +1704,6 @@
           </object>
         </object-param>
         <object-param>
-          <name>DrawersOverlay</name>
-          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
-            <field name="modificationType">
-              <string>update</string>
-            </field>
-            <field name="oldContentId">
-              <string>social-portlet/DrawersOverlay</string>
-            </field>
-            <field name="newContentId">
-              <string>social/DrawersOverlay</string>
-            </field>
-            <field name="upgradePages">
-              <boolean>true</boolean>
-            </field>
-            <field name="upgradePortletInstance">
-              <boolean>true</boolean>
-            </field>
-          </object>
-        </object-param>
-        <object-param>
           <name>NotificationAdministration</name>
           <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
             <field name="modificationType">
@@ -2344,6 +2190,229 @@
             </field>
             <field name="portalName">
               <string>global</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>AdministrationSitePortalConfigUpgrade.1</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <description>An upgrade plugin to delete some recognition administration navigations</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>120</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>overview.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePortalConfig">
+              <boolean>true</boolean>
+            </field>
+            <field name="importMode">
+              <string>MERGE</string>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>administration</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicSitePortalConfigUpgrade.1</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>130</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>PublicSite.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePortalConfig">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicSiteTemplatePortalConfigUpgrade.1</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>130</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>PublicSite.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePortalConfig">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal_template</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>SpacePublicSiteTemplatePortalConfigUpgrade.1</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>130</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>SpacePublicSite.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePortalConfig">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal_template</string>
+            </field>
+            <field name="portalName">
+              <string>spacePublic</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>LayoutEditorsPagesUpgrade.1</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>120</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>global.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>global</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>site-layout-editor</string>
+                </value>
+                <value>
+                  <string>layout-editor</string>
+                </value>
+                <value>
+                  <string>section-editor</string>
+                </value>
+                <value>
+                  <string>portlet-editor</string>
+                </value>
+              </collection>
             </field>
           </object>
         </object-param>
