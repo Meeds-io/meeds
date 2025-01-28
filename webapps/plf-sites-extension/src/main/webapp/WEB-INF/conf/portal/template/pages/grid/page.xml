@@ -43,7 +43,7 @@
           Kept as an example: can be used on one of the following elements only:
           - 'cell'
           - 'portlet-application' when its parent is of type 'column'
-          <style>
+          <css-style>
             <margin-top>20</margin-top>
             <margin-bottom>20</margin-bottom>
             <margin-right>20</margin-right>
@@ -54,7 +54,7 @@
             <radius-bottom-left>8</radius-bottom-left>
             <mobile-hidden>false</mobile-hidden>
             <border-color>#FFFFFF</border-color>
-          </style>
+          </css-style>
        -->
       </cell>
       <!--

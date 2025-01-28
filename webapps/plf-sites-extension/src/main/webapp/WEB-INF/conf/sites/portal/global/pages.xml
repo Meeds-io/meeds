@@ -1635,21 +1635,6 @@
           </container>
         </container>
       </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
     </container>
     <container
       template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
@@ -1686,21 +1671,6 @@
           </container>
         </container>
       </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
     </container>
     <container
       template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
@@ -1736,21 +1706,6 @@
             template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           </container>
         </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
       </container>
     </container>
     <container
@@ -2178,21 +2133,6 @@
             template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
           </container>
         </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
       </container>
     </container>
     <container
