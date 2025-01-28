@@ -24,6 +24,26 @@
   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/gatein_objects_1_12 http://www.exoplatform.org/xml/ns/gatein_objects_1_12"
   xmlns="http://www.exoplatform.org/xml/ns/gatein_objects_1_12">
   <page>
+    <name>home</name>
+    <title>Home</title>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>AdministrationHomePortlet</portlet-ref>
+            </portlet>
+            <title>Administration Home Portlet</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
     <name>generalSettings</name>
     <title>General Settings</title>
     <access-permissions>*:/platform/administrators</access-permissions>
