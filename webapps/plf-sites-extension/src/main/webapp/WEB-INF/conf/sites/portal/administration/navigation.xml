@@ -29,6 +29,7 @@
       <name>home</name>
       <label>#{portal.administration.home}</label>
       <icon>fas fa-cog</icon>
+      <page-reference>portal::administration::home</page-reference>
       <node>
         <name>general</name>
         <label>#{portal.administration.general}</label>
