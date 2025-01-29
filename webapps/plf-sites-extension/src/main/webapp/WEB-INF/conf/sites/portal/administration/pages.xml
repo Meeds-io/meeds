@@ -29,17 +29,324 @@
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
+      <section-grid cols="9" rows="4">
+        <cell col-span="6" row-span="2">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
-              <portlet-ref>AdministrationHomePortlet</portlet-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "ROW",
+                        "header": {
+                          "en": "links.label.administration.dashboard.UXCustomization"
+                        },
+                        "showName": true,
+                        "iconSize": 46,
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "imageContent": "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",
+                          "name": {
+                            "en": "links.label.administration.dashboard.theme"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "./home/general/mainsettings#display",
+                          "sameTab": true
+                        },
+                        {
+                          "imageContent": "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",
+                          "name": {
+                            "en": "links.label.administration.dashboard.sidebar"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "./home/general/mainsettings#navigation",
+                          "sameTab": true
+                        },
+                        {
+                          "imageContent": "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",
+                          "name": {
+                            "en": "links.label.administration.dashboard.appCenter"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "./home/applications/applicationsCenter",
+                          "sameTab": true
+                        },
+                        {
+                          "imageContent": "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",
+                          "name": {
+                            "en": "links.label.administration.dashboard.mobileApp"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "./home/applications/pwaSettings",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
             </portlet>
-            <title>Administration Home Portlet</title>
+            <title>User Experience customization</title>
           </portlet-application>
-        </column>
-      </section-columns>
+        </cell>
+        <cell col-span="3">
+
+        </cell>
+        <cell col-span="3" row-span="3">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.platformManagement"
+                        },
+                        "showName": true,
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fa-users",
+                          "name": {
+                            "en": "links.label.administration.dashboard.addUsers"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "./home/organisation/users",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-layer-group",
+                          "name": {
+                            "en": "links.label.administration.dashboard.spacesManagement"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "./home/organisation/spaces",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-sitemap",
+                          "name": {
+                            "en": "links.label.administration.dashboard.sitesManagement"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "./home/development/sites",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-th-large",
+                          "name": {
+                            "en": "links.label.administration.dashboard.categoryManagement"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "./home/development/categories",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-user-cog",
+                          "name": {
+                            "en": "links.label.administration.dashboard.spaceTemplates"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 4,
+                          "url": "./home/development/template/spaceTemplates",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-pager",
+                          "name": {
+                            "en": "links.label.administration.dashboard.pageTemplates"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 5,
+                          "url": "./home/development/template/pages",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Platform Management</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="3" row-span="2">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.mainSettings"
+                        },
+                        "showName": true,
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fa-globe",
+                          "name": {
+                            "en": "links.label.administration.dashboard.publicSiteAndLanguage"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "./home/general/mainsettings",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-door-open",
+                          "name": {
+                            "en": "links.label.administration.dashboard.platformAccessRules"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "./home/general/mainsettings#platformaccess",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-bell",
+                          "name": {
+                            "en": "links.label.administration.dashboard.notificationsManagement"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "./home/general/notification",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Main Settings</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="3" row-span="2">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.recognition"
+                        },
+                        "showName": true,
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fa-plug",
+                          "name": {
+                            "en": "links.label.administration.dashboard.connectors"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "./home/gamification/connectors",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-graduation-cap",
+                          "name": {
+                            "en": "links.label.administration.dashboard.badges"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "./home/gamification/badges",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fa-coins",
+                          "name": {
+                            "en": "links.label.administration.dashboard.meedsRewards"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "./home/rewards/reward",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Recognition</title>
+          </portlet-application>
+        </cell>
+      </section-grid>
     </container>
   </page>
 
@@ -344,7 +651,7 @@
       </section-columns>
     </container>
   </page>
-  
+
   <page profiles="content">
     <name>newsTargets</name>
     <title>News targets</title>
