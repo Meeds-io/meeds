@@ -1620,25 +1620,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
@@ -1656,25 +1638,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
@@ -1692,25 +1656,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
@@ -1728,9 +1674,11 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-      <name>portlet-viewer</name>
-      <factory-id>addonContainer</factory-id>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+        <name>portlet-viewer</name>
+        <factory-id>addonContainer</factory-id>
+      </container>
     </container>
   </page>
 
@@ -1800,9 +1748,7 @@
             <name>top-news-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="news-container"
-                     template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl"
-                     cssClass="singlePageApplication">
+          <container id="news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
             <name>news-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
@@ -2038,17 +1984,13 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <hide-shared-layout>true</hide-shared-layout>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>notes</application-ref>
-              <portlet-ref>TermsAndConditionsView</portlet-ref>
-            </portlet>
-            <title>Terms And Conditions</title>
-          </portlet-application>
-        </column>
-      </section-columns>
+      <portlet-application>
+        <portlet>
+          <application-ref>notes</application-ref>
+          <portlet-ref>TermsAndConditionsView</portlet-ref>
+        </portlet>
+        <title>Terms And Conditions</title>
+      </portlet-application>
     </container>
   </page>
 
@@ -2119,25 +2061,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
