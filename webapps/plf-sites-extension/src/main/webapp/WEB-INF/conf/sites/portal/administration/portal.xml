@@ -48,15 +48,16 @@
     </section-sidebar>
     <site-middle-section>
       <section-banner
-        height="57">
+        height="57"
+        top-bar="true">
         <css-style>
           <margin-top>20</margin-top>
-          <margin-bottom>20</margin-bottom>
+          <margin-bottom>0</margin-bottom>
           <margin-right>20</margin-right>
           <margin-left>20</margin-left>
         </css-style>
         <!-- Begin: Left -->
-        <banner-cell width="fit-content">
+        <banner-cell>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
