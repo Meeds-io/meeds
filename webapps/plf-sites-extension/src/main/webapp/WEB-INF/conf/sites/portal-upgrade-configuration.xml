@@ -2149,7 +2149,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>AdministrationSitePortalConfigUpgrade.2</name>
+      <name>AdministrationSitePortalConfigUpgrade.3</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <description>An upgrade plugin to delete some recognition administration navigations</description>
@@ -2193,7 +2193,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSitePortalConfigUpgrade.2</name>
+      <name>PublicSitePortalConfigUpgrade.3</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2233,7 +2233,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSiteTemplatePortalConfigUpgrade.2</name>
+      <name>PublicSiteTemplatePortalConfigUpgrade.3</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2273,7 +2273,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>SpacePublicSiteTemplatePortalConfigUpgrade.2</name>
+      <name>SpacePublicSiteTemplatePortalConfigUpgrade.3</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2313,7 +2313,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>LayoutEditorsPagesUpgrade.2</name>
+      <name>LayoutEditorsPagesUpgrade.3</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
