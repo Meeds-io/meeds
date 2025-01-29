@@ -37,7 +37,8 @@
     <site-middle-section>
       <section-banner
         height="57"
-        sticky-beahvior="true">
+        sticky-beahvior="true"
+        top-bar="true">
         <!-- Begin: Left -->
         <banner-cell width="fit-content">
           <portlet-application>
