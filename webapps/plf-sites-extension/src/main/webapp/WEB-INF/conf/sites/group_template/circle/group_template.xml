@@ -29,7 +29,11 @@
   <locale>en</locale>
   <access-permissions>member:@owner_id@</access-permissions>
   <edit-permission>*:/platform/administrators</edit-permission>
-  <portal-layout>
-    <page-body />
+  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+    <site-middle-section>
+      <site-middle-center-section>
+        <page-body />
+      </site-middle-center-section>
+    </site-middle-section>
   </portal-layout>
 </portal-config>
