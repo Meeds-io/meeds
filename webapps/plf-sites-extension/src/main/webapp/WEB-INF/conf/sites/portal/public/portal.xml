@@ -3,7 +3,7 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2023 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2025 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -98,8 +98,12 @@
         <!-- Begin: Middle -->
         <banner-cell />
         <banner-cell
-          h-align="left"
-          v-align="bottom">
+          h-align="center"
+          v-align="center">
+          <css-style>
+            <margin-right>40</margin-right>
+            <margin-left>40</margin-left>
+          </css-style>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>

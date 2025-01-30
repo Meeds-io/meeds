@@ -37,8 +37,14 @@
         height="57"
         sticky-beahvior="true"
         top-bar="true">
+        <css-style>
+          <background-color>#FFFFFFFF</background-color>
+        </css-style>
         <!-- Begin: Left -->
-        <banner-cell width="fit-content">
+        <banner-cell
+          width="fit-content"
+          h-align="center"
+          v-align="center">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -47,7 +53,10 @@
             <title>Space Logo</title>
           </portlet-application>
         </banner-cell>
-        <banner-cell width="fit-content">
+        <banner-cell
+          width="fit-content"
+          h-align="center"
+          v-align="center">
           <portlet-application>
             <portlet>
               <application-ref>layout</application-ref>
@@ -59,7 +68,14 @@
         <!-- End: Left -->
 
         <!-- Begin: Middle -->
-        <banner-cell>
+        <banner-cell />
+        <banner-cell
+          h-align="center"
+          v-align="center">
+          <css-style>
+            <margin-right>40</margin-right>
+            <margin-left>40</margin-left>
+          </css-style>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -68,10 +84,18 @@
             <title>Top Bar Menu</title>
           </portlet-application>
         </banner-cell>
+        <banner-cell />
         <!-- End: Middle -->
 
         <!-- Begin: Right -->
-        <banner-cell width="fit-content">
+        <banner-cell
+          width="fit-content"
+          h-align="center"
+          v-align="center">
+          <css-style>
+            <margin-right>20</margin-right>
+            <margin-left>20</margin-left>
+          </css-style>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
