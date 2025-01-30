@@ -1674,11 +1674,9 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-        <name>portlet-viewer</name>
-        <factory-id>addonContainer</factory-id>
-      </container>
+    <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+      <name>portlet-viewer</name>
+      <factory-id>addonContainer</factory-id>
     </container>
   </page>
 
@@ -1984,13 +1982,17 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <hide-shared-layout>true</hide-shared-layout>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <portlet-application>
-        <portlet>
-          <application-ref>notes</application-ref>
-          <portlet-ref>TermsAndConditionsView</portlet-ref>
-        </portlet>
-        <title>Terms And Conditions</title>
-      </portlet-application>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>TermsAndConditionsView</portlet-ref>
+            </portlet>
+            <title>Terms And Conditions</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
