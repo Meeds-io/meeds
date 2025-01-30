@@ -2149,7 +2149,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>AdministrationSitePortalConfigUpgrade.3</name>
+      <name>AdministrationSitePortalConfigUpgrade.11</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <description>An upgrade plugin to delete some recognition administration navigations</description>
@@ -2193,7 +2193,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSitePortalConfigUpgrade.3</name>
+      <name>PublicSitePortalConfigUpgrade.11</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2233,7 +2233,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSiteTemplatePortalConfigUpgrade.3</name>
+      <name>PublicSiteTemplatePortalConfigUpgrade.11</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2273,7 +2273,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>SpacePublicSiteTemplatePortalConfigUpgrade.3</name>
+      <name>SpacePublicSiteTemplatePortalConfigUpgrade.11</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2313,7 +2313,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>LayoutEditorsPagesUpgrade.3</name>
+      <name>LayoutEditorsPagesUpgrade.11</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2364,6 +2364,65 @@
                 </value>
                 <value>
                   <string>portlet-editor</string>
+                </value>
+                <value>
+                  <string>portlet-viewer</string>
+                </value>
+                <value>
+                  <string>news</string>
+                </value>
+                <value>
+                  <string>terms-and-conditions</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>MycraftMyteamPageUpgrade.11</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>120</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>mycraft.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>mycraft</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>myteam</string>
                 </value>
               </collection>
             </field>

@@ -96,8 +96,12 @@
         <!-- Begin: Middle -->
         <banner-cell />
         <banner-cell
-          h-align="left"
-          v-align="bottom">
+          h-align="center"
+          v-align="center">
+          <css-style>
+            <margin-right>40</margin-right>
+            <margin-left>40</margin-left>
+          </css-style>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -114,6 +118,10 @@
           width="fit-content"
           h-align="center"
           v-align="center">
+          <css-style>
+            <margin-right>20</margin-right>
+            <margin-left>20</margin-left>
+          </css-style>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
