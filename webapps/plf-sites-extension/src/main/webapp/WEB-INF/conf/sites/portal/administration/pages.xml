@@ -60,7 +60,7 @@
                             "en": ""
                           },
                           "order": 0,
-                          "url": "./home/general/mainsettings#display",
+                          "url": "/portal/administration/home/general/mainsettings#display",
                           "sameTab": true
                         },
                         {
@@ -72,7 +72,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "./home/general/mainsettings#navigation",
+                          "url": "/portal/administration/home/general/mainsettings#navigation",
                           "sameTab": true
                         },
                         {
@@ -84,7 +84,7 @@
                             "en": ""
                           },
                           "order": 2,
-                          "url": "./home/applications/applicationsCenter",
+                          "url": "/portal/administration/home/applications/applicationsCenter",
                           "sameTab": true
                         },
                         {
@@ -96,7 +96,7 @@
                             "en": ""
                           },
                           "order": 3,
-                          "url": "./home/applications/pwaSettings",
+                          "url": "/portal/administration/home/applications/pwaSettings",
                           "sameTab": true
                         }
                       ]
@@ -141,7 +141,7 @@
                             "en": ""
                           },
                           "order": 0,
-                          "url": "./home/organisation/users",
+                          "url": "/portal/administration/home/organisation/users",
                           "sameTab": true
                         },
                         {
@@ -153,7 +153,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "./home/organisation/spaces",
+                          "url": "/portal/administration/home/organisation/spaces",
                           "sameTab": true
                         },
                         {
@@ -165,7 +165,7 @@
                             "en": ""
                           },
                           "order": 2,
-                          "url": "./home/development/sites",
+                          "url": "/portal/administration/home/development/sites",
                           "sameTab": true
                         },
                         {
@@ -177,7 +177,7 @@
                             "en": ""
                           },
                           "order": 3,
-                          "url": "./home/development/categories",
+                          "url": "/portal/administration/home/development/categories",
                           "sameTab": true
                         },
                         {
@@ -189,7 +189,7 @@
                             "en": ""
                           },
                           "order": 4,
-                          "url": "./home/development/template/spaceTemplates",
+                          "url": "/portal/administration/home/development/template/spaceTemplates",
                           "sameTab": true
                         },
                         {
@@ -201,7 +201,7 @@
                             "en": ""
                           },
                           "order": 5,
-                          "url": "./home/development/template/pages",
+                          "url": "/portal/administration/home/development/template/pages",
                           "sameTab": true
                         }
                       ]
@@ -243,7 +243,7 @@
                             "en": ""
                           },
                           "order": 0,
-                          "url": "./home/general/mainsettings",
+                          "url": "/portal/administration/home/general/mainsettings",
                           "sameTab": true
                         },
                         {
@@ -255,7 +255,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "./home/general/mainsettings#platformaccess",
+                          "url": "/portal/administration/home/general/mainsettings#platformaccess",
                           "sameTab": true
                         },
                         {
@@ -267,7 +267,7 @@
                             "en": ""
                           },
                           "order": 2,
-                          "url": "./home/general/notification",
+                          "url": "/portal/administration/home/general/notification",
                           "sameTab": true
                         }
                       ]
@@ -309,7 +309,7 @@
                             "en": ""
                           },
                           "order": 0,
-                          "url": "./home/gamification/connectors",
+                          "url": "/portal/administration/home/gamification/connectors",
                           "sameTab": true
                         },
                         {
@@ -321,7 +321,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "./home/gamification/badges",
+                          "url": "/portal/administration/home/gamification/badges",
                           "sameTab": true
                         },
                         {
@@ -333,7 +333,7 @@
                             "en": ""
                           },
                           "order": 2,
-                          "url": "./home/rewards/reward",
+                          "url": "/portal/administration/home/rewards/reward",
                           "sameTab": true
                         }
                       ]
