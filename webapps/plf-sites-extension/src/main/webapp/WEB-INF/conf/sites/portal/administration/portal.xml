@@ -37,6 +37,9 @@
   <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
     <section-sidebar>
       <sidebar-cell>
+        <css-style>
+          <mobile-hidden>true</mobile-hidden>
+        </css-style>
         <portlet-application>
           <portlet>
             <application-ref>social</application-ref>
