@@ -35,9 +35,14 @@
     <entry key="icon">fa-cogs</entry>
   </properties>
   <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
-    <section-sidebar>
+    <section-sidebar
+      sticky-beahvior="true">
       <sidebar-cell>
         <css-style>
+          <radius-top-right>0</radius-top-right>
+          <radius-top-left>0</radius-top-left>
+          <radius-bottom-right>0</radius-bottom-right>
+          <radius-bottom-left>0</radius-bottom-left>
           <mobile-hidden>true</mobile-hidden>
         </css-style>
         <portlet-application>
