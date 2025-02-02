@@ -27,6 +27,7 @@
   <portal-name>contribute</portal-name>
   <label>#{portal.contribute.name}</label>
   <description>#{portal.contribute.description}</description>
+  <displayed>true</displayed>
   <display-order>10</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
