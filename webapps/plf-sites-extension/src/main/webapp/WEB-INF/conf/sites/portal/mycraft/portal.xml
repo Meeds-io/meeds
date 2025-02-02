@@ -27,6 +27,7 @@
   <portal-name>mycraft</portal-name>
   <label>#{portal.mycraft.name}</label>
   <description>#{portal.mycraft.description}</description>
+  <displayed>true</displayed>
   <display-order>20</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
