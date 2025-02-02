@@ -2196,7 +2196,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>AdministrationSitePortalConfigUpgrade.12</name>
+      <name>AdministrationSitePortalConfigUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <description>An upgrade plugin to delete some recognition administration navigations</description>
@@ -2240,7 +2240,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSitePortalConfigUpgrade.12</name>
+      <name>PublicSitePortalConfigUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2280,7 +2280,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>PublicSiteTemplatePortalConfigUpgrade.12</name>
+      <name>PublicSiteTemplatePortalConfigUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2320,7 +2320,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>SpacePublicSiteTemplatePortalConfigUpgrade.12</name>
+      <name>SpacePublicSiteTemplatePortalConfigUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2360,7 +2360,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>LayoutEditorsPagesUpgrade.12</name>
+      <name>LayoutEditorsPagesUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
@@ -2428,7 +2428,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>MycraftMyteamPageUpgrade.12</name>
+      <name>MycraftMyteamPageUpgrade.13</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
