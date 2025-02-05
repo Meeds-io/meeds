@@ -2196,7 +2196,7 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
-      <name>AdministrationHomePageSettingsUpgrade</name>
+      <name>NewPageAdministrationHomeSettingsUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
