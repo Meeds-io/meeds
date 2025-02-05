@@ -305,6 +305,22 @@
             </field>
           </object>
         </object-param>
+
+        <object-param>
+          <name>portal.tokens</name>
+          <description>The Cache configuration for Portal Token Objects</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.tokens</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.tokens.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.tokens.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
         <!-- SettingService -->
         <object-param>
           <name>commons.SettingService</name>
