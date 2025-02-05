@@ -48,6 +48,8 @@
                         },
                         "showName": true,
                         "iconSize": 50,
+                        "hAlign": "START",
+                        "vAlign": "CENTER",
                         "showDescription": false
                       },
                       "links": [
@@ -135,6 +137,8 @@
                           "en": "links.label.administration.dashboard.platformManagement"
                         },
                         "showName": true,
+                        "hAlign": "START",
+                        "vAlign": "CENTER",
                         "showDescription": false
                       },
                       "links": [
@@ -237,6 +241,8 @@
                           "en": "links.label.administration.dashboard.mainSettings"
                         },
                         "showName": true,
+                        "hAlign": "START",
+                        "vAlign": "CENTER",
                         "iconSize": 28,
                         "showDescription": false
                       },
@@ -304,6 +310,8 @@
                           "en": "links.label.administration.dashboard.recognition"
                         },
                         "showName": true,
+                        "hAlign": "START",
+                        "vAlign": "CENTER",
                         "iconSize": 28,
                         "showDescription": false
                       },
