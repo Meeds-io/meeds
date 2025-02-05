@@ -37,7 +37,7 @@
         <node>
           <name>mainsettings</name>
           <label>#{portal.administration.mainsettings}</label>
-          <icon>fas fa-cogs</icon>
+          <icon>fas fa-palette</icon>
           <page-reference>portal::administration::generalSettings</page-reference>
         </node>
         <node>
