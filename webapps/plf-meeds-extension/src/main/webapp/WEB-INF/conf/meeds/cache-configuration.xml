@@ -444,6 +444,21 @@
           </object>
         </object-param>
         <object-param>
+          <name>portal.DescriptionLocales</name>
+          <description>The Cache configuration for the description locales by site</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.DescriptionLocales</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.DescriptionLocales.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.DescriptionLocales.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
           <name>portal.PageService</name>
           <description>The Cache configuration for the page service</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
