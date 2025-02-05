@@ -29,8 +29,8 @@
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-grid cols="9" rows="4">
-        <cell col-span="6" row-span="2">
+      <section-grid cols="11" rows="5">
+        <cell col-span="8" row-span="3">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -47,7 +47,7 @@
                           "en": "links.label.administration.dashboard.UXCustomization"
                         },
                         "showName": true,
-                        "iconSize": 46,
+                        "iconSize": 50,
                         "showDescription": false
                       },
                       "links": [
@@ -118,7 +118,7 @@
             <title>Platform Admins Widget</title>
           </portlet-application>
         </cell>
-        <cell col-span="3" row-span="3">
+        <cell col-span="3" row-span="4">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -220,7 +220,7 @@
             <title>Platform Management</title>
           </portlet-application>
         </cell>
-        <cell col-span="3" row-span="2">
+        <cell col-span="4" row-span="2">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -237,6 +237,7 @@
                           "en": "links.label.administration.dashboard.mainSettings"
                         },
                         "showName": true,
+                        "iconSize": 28,
                         "showDescription": false
                       },
                       "links": [
@@ -286,7 +287,7 @@
             <title>Main Settings</title>
           </portlet-application>
         </cell>
-        <cell col-span="3" row-span="2">
+        <cell col-span="4" row-span="2">
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -303,6 +304,7 @@
                           "en": "links.label.administration.dashboard.recognition"
                         },
                         "showName": true,
+                        "iconSize": 28,
                         "showDescription": false
                       },
                       "links": [
