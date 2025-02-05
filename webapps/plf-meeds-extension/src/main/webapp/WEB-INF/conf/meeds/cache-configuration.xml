@@ -399,6 +399,21 @@
           </object>
         </object-param>
         <object-param>
+          <name>portal.SiteKeyById</name>
+          <description>The Cache configuration for Portal Token Objects</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.tokens</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.SiteKeyById.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.SiteKeyById.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
           <name>portal.SiteKeysByFilterService</name>
           <description>The cache configuration for Site layout service</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
