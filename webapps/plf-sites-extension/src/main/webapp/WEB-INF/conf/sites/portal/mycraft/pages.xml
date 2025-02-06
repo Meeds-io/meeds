@@ -128,7 +128,7 @@
   <page>
     <name>myteam</name>
     <title>My Team</title>
-    <access-permissions>Everyone</access-permissions>
+    <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>

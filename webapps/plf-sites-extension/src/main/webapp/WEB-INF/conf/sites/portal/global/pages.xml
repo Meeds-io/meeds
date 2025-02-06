@@ -1703,7 +1703,7 @@
   <page>
     <name>organizationalchart</name>
     <title>Organizational Chart</title>
-    <access-permissions>Everyone</access-permissions>
+    <access-permissions>*:/platform/users</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
