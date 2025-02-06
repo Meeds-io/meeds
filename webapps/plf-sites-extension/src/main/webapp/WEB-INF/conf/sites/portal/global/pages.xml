@@ -1614,46 +1614,31 @@
   </page>
 
   <page profiles="layout">
+    <name>site-layout-editor</name>
+    <title>Site Layout Editor</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <show-max-window>true</show-max-window>
+    <hide-shared-layout>true</hide-shared-layout>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <portlet-application>
+        <portlet>
+          <application-ref>layout</application-ref>
+          <portlet-ref>SiteLayoutEditor</portlet-ref>
+        </portlet>
+        <title>Site Layout Editor</title>
+      </portlet-application>
+    </container>
+  </page>
+
+  <page profiles="layout">
     <name>layout-editor</name>
     <title>Layout Editor</title>
     <access-permissions>Everyone</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
@@ -1671,40 +1656,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content no-applications-spacing">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>
@@ -1794,9 +1746,7 @@
             <name>top-news-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-          <container id="news-container"
-                     template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl"
-                     cssClass="singlePageApplication">
+          <container id="news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
             <name>news-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
@@ -2113,40 +2063,7 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container
-      id="UITopBarContainer"
-      template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
-      <container
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-        cssClass="VuetifyApp">
-        <container
-          template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-          cssClass="v-application v-application--is-ltr v-application--wrap">
-          <container
-            id="layoutTopBarContent"
-            template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-          </container>
-        </container>
-      </container>
-      <container
-        id="MiddleToolBar"
-        template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-        <portlet-application>
-          <portlet>
-            <application-ref>social</application-ref>
-            <portlet-ref>DrawersOverlay</portlet-ref>
-          </portlet>
-          <title>Drawers Overlay</title>
-        </portlet-application>
-      </container>
-      <container
-        id="TopbarLoadingContainer"
-        template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      </container>
-    </container>
-    <container
-      template="system:/groovy/portal/webui/container/UIContainer.gtmpl"
-      cssClass="page-scroll-content">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <portlet-application>
         <portlet>
           <application-ref>layout</application-ref>

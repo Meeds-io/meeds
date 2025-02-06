@@ -25,9 +25,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <init-params>
       <properties-param>
         <name>MeedsFeatureProperties</name>
-        <property name="exo.feature.pwa.enabled" value="${exo.feature.pwa.enabled:true}" />
-        <property name="exo.feature.EditorAttachImage.enabled" value="${exo.feature.EditorAttachImage.enabled:true}" />
-        <property name="exo.feature.customStylesheet.enabled" value="${exo.feature.customStylesheet.enabled:false}" />
+        <property name="exo.feature.pwa.enabled" value="true" />
+        <property name="exo.feature.EditorAttachImage.enabled" value="true" />
+        <property name="exo.feature.customStylesheet.enabled" value="false" />
+        <property name="exo.feature.portal.staticWebUIComponents.enabled" value="true" />
       </properties-param>
     </init-params>
   </component>

@@ -19,17 +19,22 @@
 
 -->
 <portal-config>
-    <portal-name>global</portal-name>
-    <label>#{portal.global.name}</label>
-    <description>#{portal.global.description}</description>
-    <locale>en</locale>
-    <access-permissions>Everyone</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <properties>
-      <entry key="removable">false</entry>
+  <portal-name>global</portal-name>
+  <label>#{portal.global.name}</label>
+  <description>#{portal.global.description}</description>
+  <displayed>false</displayed>
+  <locale>en</locale>
+  <access-permissions>Everyone</access-permissions>
+  <edit-permission>manager:/platform/administrators</edit-permission>
+  <properties>
+    <entry key="removable">false</entry>
     <entry key="icon">fa-globe</entry>
-    </properties>
-    <portal-layout>
-       <page-body> </page-body>
-    </portal-layout>
+  </properties>
+  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+    <site-middle-section>
+      <site-middle-center-section>
+        <page-body />
+      </site-middle-center-section>
+    </site-middle-section>
+  </portal-layout>
 </portal-config>

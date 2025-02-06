@@ -330,19 +330,18 @@
     <title>News targets</title>
     <access-permissions>manager:/platform/web-contributors</access-permissions>
     <edit-permission>manager:/platform/web-contributors</edit-permission>
-    <container id="singlePageApplicationContainer" template="system:/groovy/portal/webui/container/UIContainer.gtmpl" cssClass="singlePageApplication">
-      <access-permissions>Everyone</access-permissions>
-      <portlet-application>
-        <portlet>
-          <application-ref>content</application-ref>
-          <portlet-ref>newsPublishTargetsManagement</portlet-ref>
-        </portlet>
-        <title>News targets</title>
-        <access-permissions>Everyone</access-permissions>
-        <show-info-bar>false</show-info-bar>
-        <show-application-state>false</show-application-state>
-        <show-application-mode>false</show-application-mode>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>newsPublishTargetsManagement</portlet-ref>
+            </portlet>
+            <title>News targets</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 

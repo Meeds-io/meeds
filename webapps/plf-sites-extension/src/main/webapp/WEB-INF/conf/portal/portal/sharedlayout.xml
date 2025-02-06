@@ -9,6 +9,7 @@
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 3 of the License, or (at your option) any later version.
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
@@ -26,7 +27,10 @@
     id="ParentSiteContainer"
     template="system:/groovy/portal/webui/workspace/UIParentSiteContainer.gtmpl">
 
-  <container id="UITopBarContainer" template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl">
+  <container
+    id="UITopBarContainer"
+    template="system:/groovy/portal/webui/container/UITopBarContainer.gtmpl"
+    cssClass="layout-banner-top-section layout-sticky-section">
     <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
     <container id="left-topNavigation-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl" attribute="">
       <name>left-topNavigation-container</name>
@@ -44,22 +48,19 @@
       <name>right-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="MiddleToolBar" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>MiddleToolBar</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
+    <container id="menu-topNavigation-container" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <portlet-application>
+        <portlet>
+          <application-ref>social</application-ref>
+          <portlet-ref>TopBarMenu</portlet-ref>
+        </portlet>
+        <title>Top Bar Menu</title>
+      </portlet-application>
     </container>
     <container id="middle-topNavigation-container" template="groovy/social/webui/UITopbarApplicationsContainer.gtmpl">
       <name>middle-topNavigation-container</name>
       <factory-id>addonContainer</factory-id>
     </container>
-    <container id="TopbarLoadingContainer" template="system:/groovy/portal/webui/container/UITopbarLoadingContainer.gtmpl">
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    </container>
   </container>
   <site-body />
-  <container id="bottom-all-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-    <name>bottom-all-container</name>
-    <factory-id>addonContainer</factory-id>
-  </container>
 </container>

@@ -27,6 +27,7 @@
   <portal-name>mycraft</portal-name>
   <label>#{portal.mycraft.name}</label>
   <description>#{portal.mycraft.description}</description>
+  <displayed>true</displayed>
   <display-order>20</display-order>
   <locale>en</locale>
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
@@ -35,8 +36,12 @@
     <entry key="removable">false</entry>
     <entry key="icon">fa-briefcase</entry>
   </properties>
-  <portal-layout>
-    <page-body />
+  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+    <site-middle-section>
+      <site-middle-center-section>
+        <page-body />
+      </site-middle-center-section>
+    </site-middle-section>
   </portal-layout>
 
 </portal-config>
