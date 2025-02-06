@@ -268,7 +268,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "/portal/administration/home/general/mainsettings#platformaccess",
+                          "url": "/portal/administration/home/general/platformaccess",
                           "sameTab": true
                         },
                         {
@@ -380,6 +380,26 @@
                 <portlet-ref>GeneralSettings</portlet-ref>
             </portlet>
             <title>General Settings Portlet</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page>
+    <name>platformAccess</name>
+    <title>Platform Access</title>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>PlatformAccess</portlet-ref>
+            </portlet>
+            <title>Platform Access</title>
           </portlet-application>
         </column>
       </section-columns>
