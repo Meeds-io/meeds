@@ -34,7 +34,9 @@
     <entry key="removable">false</entry>
     <entry key="icon">fa-cogs</entry>
   </properties>
-  <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
+  <portal-layout
+    template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl"
+    width="100%">
     <section-sidebar
       sticky-beahvior="true">
       <sidebar-cell>
