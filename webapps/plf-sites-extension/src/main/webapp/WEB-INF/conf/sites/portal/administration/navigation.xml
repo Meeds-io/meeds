@@ -41,6 +41,12 @@
           <page-reference>portal::administration::generalSettings</page-reference>
         </node>
         <node>
+          <name>platformaccess</name>
+          <label>#{portal.administration.platformaccess}</label>
+          <icon>fas fa-door-open</icon>
+          <page-reference>portal::administration::platformAccess</page-reference>
+        </node>
+        <node>
           <name>notification</name>
           <label>#{portal.administration.notification}</label>
           <icon>fas fa-bell</icon>
