@@ -1,6 +1,11 @@
 name: PR Build
 on:
   pull_request:
+
+concurrency:
+  group: pr-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   pr-build:
     name: PR Build
