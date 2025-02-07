@@ -48,7 +48,7 @@
                         },
                         "showName": true,
                         "iconSize": 50,
-                        "hAlign": "START",
+                        "hAlign": "CENTER",
                         "vAlign": "CENTER",
                         "showDescription": false
                       },
