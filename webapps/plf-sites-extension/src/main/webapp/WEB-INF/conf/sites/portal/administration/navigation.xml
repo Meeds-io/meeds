@@ -28,7 +28,8 @@
     <node>
       <name>home</name>
       <label>#{portal.administration.home}</label>
-      <icon>fas fa-cog</icon>
+      <icon>fas fa-rocket</icon>
+      <page-reference>portal::administration::home</page-reference>
       <node>
         <name>general</name>
         <label>#{portal.administration.general}</label>
@@ -36,8 +37,14 @@
         <node>
           <name>mainsettings</name>
           <label>#{portal.administration.mainsettings}</label>
-          <icon>fas fa-cogs</icon>
+          <icon>fas fa-palette</icon>
           <page-reference>portal::administration::generalSettings</page-reference>
+        </node>
+        <node>
+          <name>platformaccess</name>
+          <label>#{portal.administration.platformaccess}</label>
+          <icon>fas fa-door-open</icon>
+          <page-reference>portal::administration::platformAccess</page-reference>
         </node>
         <node>
           <name>notification</name>
