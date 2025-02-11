@@ -1,0 +1,34 @@
+name: Pull Request Task Notifications
+
+on:
+  pull_request:
+    types: [opened, reopened, closed, review_requested]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  notify_tribe_tasks:
+    name: Notify Tribe Tasks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Tribe Tasks
+        uses: Green-Hub-Tools/notifs-task@v1
+        with:
+          TASKS_REGEX_FILTER: ${{ vars.TRIBE_TASKS_REGEX_FILTER }}
+          SERVER_URL: ${{ vars.TRIBE_TASKS_SERVER_URL }}
+          SERVER_DEFAULT_SITENAME: ${{ vars.TRIBE_TASKS_DEFAULT_SITENAME }}
+          SERVER_USERNAME: ${{ secrets.TRIBE_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.TRIBE_PASSWORD }}
+
+  notify_builders_tasks:
+    name: Notify Builders Tasks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Builders Tasks
+        uses: Green-Hub-Tools/notifs-task@v1
+        with:
+          TASKS_REGEX_FILTER: ${{ vars.BUILDERS_TASKS_REGEX_FILTER }}
+          SERVER_URL: ${{ vars.BUILDERS_TASKS_SERVER_URL }}
+          SERVER_DEFAULT_SITENAME: ${{ vars.BUILDERS_TASKS_DEFAULT_SITENAME }}
+          SERVER_USERNAME: ${{ secrets.BUILDERS_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.BUILDERS_PASSWORD }}
