@@ -331,13 +331,13 @@
       <label>#{news.navigation.node.label}</label>
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::news</page-reference>
-      <node>
-        <name>editor</name>
+    </node>
+	<node>
+        <name>news-editor</name>
         <label>#{portal.global.newsEditor}</label>
         <visibility>SYSTEM</visibility>
         <page-reference>portal::global::newsComposer</page-reference>
       </node>
-    </node>
     <node>
       <name>analytics</name>
       <label>#{analytics.navigation.Analytics}</label>
