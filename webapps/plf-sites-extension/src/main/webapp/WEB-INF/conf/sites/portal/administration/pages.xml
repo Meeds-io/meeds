@@ -547,7 +547,6 @@
               <application-ref>layout</application-ref>
               <portlet-ref>SiteManagement</portlet-ref>
             </portlet>
-            <access-permissions>Everyone</access-permissions>
           </portlet-application>
         </column>
       </section-columns>
@@ -711,7 +710,7 @@
   <page profiles="layout">
     <name>pageTemplates</name>
     <title>Page Templates Management</title>
-    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <access-permissions>*:/platform/administrators;manager:/platform/web-contributors</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -731,7 +730,7 @@
   <page profiles="layout">
     <name>portlets</name>
     <title>Portlets</title>
-    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <access-permissions>*:/platform/administrators;manager:/platform/web-contributors</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -751,7 +750,7 @@
   <page profiles="layout">
     <name>siteTemplates</name>
     <title>Site Templates</title>
-    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <access-permissions>*:/platform/administrators;manager:/platform/web-contributors</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
@@ -771,7 +770,7 @@
   <page profiles="layout">
     <name>sectionTemplates</name>
     <title>Section Templates</title>
-    <access-permissions>*:/platform/administrators,manager:/platform/web-contributors</access-permissions>
+    <access-permissions>*:/platform/administrators;manager:/platform/web-contributors</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
