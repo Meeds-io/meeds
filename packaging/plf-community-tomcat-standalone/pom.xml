@@ -327,6 +327,9 @@
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.ide.id}:${addon.meeds.ide.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.matrix.id}:${addon.meeds.matrix.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
               </target>
             </configuration>
           </execution>

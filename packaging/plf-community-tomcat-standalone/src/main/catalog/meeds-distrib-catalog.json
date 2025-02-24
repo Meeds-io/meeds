@@ -349,5 +349,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
+  },{
+    "id": "meeds-matrix",
+    "version": "${addon.meeds.matrix.version}",
+    "unstable": false,
+    "name": "Matrix chat add-on",
+    "description": "Add-on for Matrix Chat",
+    "sourceUrl": "https://github.com/meeds-io/matrix",
+    "documentationUrl": "https://github.com/meeds-io/matrix",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/matrix/matrix-packaging/${addon.meeds.matrix.version}/matrix-packaging-${addon.meeds.matrix.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
   }
 ]

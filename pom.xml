@@ -96,6 +96,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.auth-server.version>7.3.x-SNAPSHOT</addon.meeds.auth-server.version>
     <addon.meeds.mcp-server.id>meeds-mcp-server</addon.meeds.mcp-server.id>
     <addon.meeds.mcp-server.version>7.3.x-SNAPSHOT</addon.meeds.mcp-server.version>
+    <addon.meeds.matrix.id>meeds-matrix</addon.meeds.matrix.id>
+    <addon.meeds.matrix.version>7.3.x-SNAPSHOT</addon.meeds.matrix.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
@@ -263,6 +265,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>io.meeds.ide</groupId>
         <artifactId>ide</artifactId>
         <version>${addon.meeds.ide.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.matrix</groupId>
+        <artifactId>matrix</artifactId>
+        <version>${addon.meeds.matrix.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
