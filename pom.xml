@@ -91,6 +91,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.pwa.version>7.0.x-exo-SNAPSHOT</addon.meeds.pwa.version>
     <addon.meeds.ide.id>meeds-ide</addon.meeds.ide.id>
     <addon.meeds.ide.version>7.0.x-exo-SNAPSHOT</addon.meeds.ide.version>
+    <addon.meeds.matrix.id>meeds-matrix</addon.meeds.matrix.id>
+    <addon.meeds.matrix.version>7.0.x-devx-SNAPSHOT</addon.meeds.matrix.version>
 
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
