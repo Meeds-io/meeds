@@ -265,12 +265,6 @@
         <visibility>DISPLAYED</visibility>
         <page-reference>portal::global::analytics-wallet</page-reference>
       </node>
-      <node>
-        <name>analyticsContents</name>
-        <label>#{analytics.navigation.AnalyticsContents}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-contents</page-reference>
-      </node>
     </node>
     <node>
       <name>notes-editor</name>
