@@ -678,6 +678,16 @@
                     "type": "GREATER",
                     "valueString":
                     "1"
+                    },
+                    {
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "yAxisAggregation": {
@@ -711,6 +721,16 @@
                     "userId",
                     "type": "GREATER",
                     "valueString": "1"
+                    },
+                    {
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "yAxisAggregation": {
@@ -814,8 +834,13 @@
                     "field": "operation",
                     "type": "IN_SET",
                     "valueString":
-                    "noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "range": null
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "xAxisAggregations": [
@@ -952,9 +977,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "periodIndependent":false,
@@ -972,9 +1002,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "periodIndependent":false,
@@ -1049,7 +1084,7 @@
                     "aggregation":{
                     "sortDirection":"desc",
                     "field":"spaceCreatedTime",
-                    "type":"MAX",
+                    "type":"MAX"
                     },
                     "periodIndependent":true
                     },
@@ -1080,9 +1115,14 @@
                     "type":"GREATER"
                     },
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "aggregation":{
@@ -1107,10 +1147,15 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
                     },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
+                    }
                     {
                     "valueString":"1",
                     "field":"spaceId",
@@ -1130,9 +1175,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "aggregation":{
@@ -1849,7 +1899,7 @@
                     "aggregation":{
                     "sortDirection":"desc",
                     "field":"contentUpdatedDate",
-                    "type":"MAX",
+                    "type":"MAX"
                     },
                     "periodIndependent":false
                     },
@@ -1926,7 +1976,7 @@
                     "aggregation":{
                     "sortDirection":"desc",
                     "field":"spaceId",
-                    "type":"TERMS",
+                    "type":"TERMS"
                     }
                     },
                     "sortable":false,
