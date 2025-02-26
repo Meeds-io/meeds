@@ -814,8 +814,13 @@
                     "field": "operation",
                     "type": "IN_SET",
                     "valueString":
-                    "noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "range": null
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "xAxisAggregations": [
@@ -952,9 +957,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "periodIndependent":false,
@@ -1107,10 +1117,15 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
                     },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
+                    }
                     {
                     "valueString":"1",
                     "field":"spaceId",
