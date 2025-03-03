@@ -7,33 +7,34 @@ assignees: ''
 
 ---
 
+## Steps to Reproduce  
+<!-- Provide a step-by-step guide to replicate the issue. Be as precise as possible. Example: -->  
+1. Go to **[Page/Feature Name]**  
+2. Click on **[Specific Button/Action]**  
+3. Scroll down to **[Relevant Section]**  
+4. Observe the issue  
 
-**Steps to reproduce**
+💡 **Tip:** If applicable, add screenshots or a screen recording to illustrate the problem.  
 
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## Current Behavior  
+<!-- Describe what is happening. What is the incorrect or unexpected outcome? -->  
 
-If applicable, add screenshots to help explain your problem.
+## Expected Behavior  
+<!-- Describe what should happen instead. How should the feature work correctly? -->  
 
-**(optional) Affected version**
+## (Optional) Affected Version  
+<!-- Specify the version where the issue was observed. Example: v1.2.3 -->  
 
-Indicate the version where the bug is observed.
+## (Optional) Affected Environments  
+<!-- Provide details about the environment in which the issue occurs: -->  
+- **OS:** [e.g., Windows, macOS, Linux]  
+- **Browser:** [e.g., Chrome, Safari, Firefox]  
+- **Version:** [e.g., 120.0.1]  
+- **Device:** [e.g., Desktop, iPhone 12, Samsung Galaxy S22]  
 
-**Current behaviour**
+## (Optional) Additional Context  
+<!-- Add any other useful information, such as logs, error messages, or related issues. -->  
 
-Describe the bug with a clear and concise description of what the problem is.
-
-**Expected behavior**
-
-A clear and concise description of what you expected to happen.
-
-**(optional) Affected environments**  
-Please complete the following information: 
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
- - Device: [e.g. iPhone6]
+**Meeds Task (if applicable):**  
+<!-- If this issue is linked to a task on [builders.meeds.io](https://builders.meeds.io/), indicate the task ID here (e.g., MEED-00000). -->  
 
