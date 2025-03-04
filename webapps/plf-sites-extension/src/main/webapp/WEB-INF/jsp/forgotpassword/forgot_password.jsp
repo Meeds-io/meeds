@@ -75,7 +75,7 @@
   <meta name="theme-color" content="<%=pwaManifestService.getThemeColor()%>"/>
 <%
   if (pwaManifestService.isPwaEnabled()) {
-%><link rel="manifest" href="<%="/pwa/rest/manifest?v=" + pwaManifestService.getManifestHash()%>"><%
+%><link rel="manifest" href="<%="/pwa/rest/manifest"%>"><%
   }
 %><!-- Preload Styles & Fonts & Scripts for HTTP/2 optimizations -->
   <link rel="preload" href="/platform-ui/skin/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin />
