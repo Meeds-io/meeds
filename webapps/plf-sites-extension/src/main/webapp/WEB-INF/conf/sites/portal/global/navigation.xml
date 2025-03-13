@@ -332,12 +332,18 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::news</page-reference>
     </node>
-	<node>
-        <name>news-editor</name>
-        <label>#{portal.global.newsEditor}</label>
-        <visibility>SYSTEM</visibility>
-        <page-reference>portal::global::newsComposer</page-reference>
-      </node>
+    <node>
+      <name>news-editor</name>
+      <label>#{portal.global.newsEditor}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::newsComposer</page-reference>
+    </node>
+    <node>
+      <name>myteam</name>
+      <label>#{portal.global.myteam}</label>
+      <icon>fa fa-sitemap</icon>
+      <page-reference>portal::global::myteam</page-reference>
+    </node>
     <node>
       <name>home</name>
       <label>#{portal.global.spaceHome}</label>
