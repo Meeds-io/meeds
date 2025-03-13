@@ -678,6 +678,16 @@
                     "type": "GREATER",
                     "valueString":
                     "1"
+                    },
+                    {
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "yAxisAggregation": {
@@ -711,6 +721,16 @@
                     "userId",
                     "type": "GREATER",
                     "valueString": "1"
+                    },
+                    {
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
+                    "field":"operation",
+                    "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "yAxisAggregation": {
@@ -814,8 +834,13 @@
                     "field": "operation",
                     "type": "IN_SET",
                     "valueString":
-                    "noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "range": null
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "xAxisAggregations": [
@@ -952,9 +977,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "periodIndependent":false,
@@ -972,9 +1002,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "periodIndependent":false,
@@ -1049,7 +1084,7 @@
                     "aggregation":{
                     "sortDirection":"desc",
                     "field":"spaceCreatedTime",
-                    "type":"MAX",
+                    "type":"MAX"
                     },
                     "periodIndependent":true
                     },
@@ -1080,9 +1115,14 @@
                     "type":"GREATER"
                     },
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "aggregation":{
@@ -1107,9 +1147,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     },
                     {
                     "valueString":"1",
@@ -1130,9 +1175,14 @@
                     "valueAggregation":{
                     "filters":[
                     {
-                    "valueString":"noteCreated,noteUpdated,taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar",
+                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
                     "field":"operation",
                     "type":"IN_SET"
+                    },
+                    {
+                    "field": "activityType",
+                    "type": "NOT_IN_SET",
+                    "valueString": "news"
                     }
                     ],
                     "aggregation":{
@@ -1782,166 +1832,6 @@
     <container id="bottom-news-composer-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
       <name>bottom-news-composer-container</name>
       <factory-id>addonContainer</factory-id>
-    </container>
-  </page>
-
-  <page profiles="content">
-    <name>analytics-contents</name>
-    <title>Analytics</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container profiles="analytics" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "pageSize":20,
-                    "title":"",
-                    "mainColumn":{
-                    "title":"analytics.title",
-                    "valueAggregation":{
-                    "aggregation":{
-                    "field":"contentId.keyword",
-                    "type":"TERMS",
-                    "dataType":"text"
-                    },
-                    "filters":[
-                    {
-                    "valueString":"1",
-                    "field":"contentId",
-                    "type":"GREATER"
-                    }
-                    ]
-                    }
-                    },
-                    "columns":[
-                    {
-                    "title":"analytics.applications",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"contentType.keyword",
-                    "type":"TERMS",
-                    }
-                    },
-                    "sortable":false,
-                    "dataType":"text"
-                    },
-                    {
-                    "title":"analytics.lastUpdated",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"contentUpdatedDate",
-                    "type":"MAX",
-                    },
-                    "periodIndependent":false
-                    },
-                    "sortable":true,
-                    "dataType":"date"
-                    },
-                    {
-                    "title":"analytics.viewsPeriod",
-                    "previousPeriod":true,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"viewContent",
-                    "field":"operation",
-                    "type":"EQUAL"
-                    }
-                    ],
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field": "userId",
-                    "type": "CARDINALITY"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.reactionsPeriod",
-                    "previousPeriod":true,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"shareContent,likeContent,commentContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    }
-                    ],
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "type":"COUNT",
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.allViews",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"viewContent",
-                    "field":"operation",
-                    "type":"EQUAL"
-                    }
-                    ],
-                    "periodIndependent":true,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field": "userId",
-                    "type": "CARDINALITY"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.spaces",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"spaceId",
-                    "type":"TERMS",
-                    }
-                    },
-                    "sortable":false,
-                    "dataType":"long"
-                    }
-                    ]
-                    }
-                  </value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Content Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
     </container>
   </page>
 

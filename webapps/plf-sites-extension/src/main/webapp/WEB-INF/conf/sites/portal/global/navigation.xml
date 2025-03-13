@@ -339,18 +339,6 @@
         <page-reference>portal::global::newsComposer</page-reference>
       </node>
     <node>
-      <name>analytics</name>
-      <label>#{analytics.navigation.Analytics}</label>
-      <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::analytics</page-reference>
-      <node>
-        <name>analyticsContents</name>
-        <label>#{analytics.navigation.AnalyticsContents}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-contents</page-reference>
-      </node>
-    </node>
-    <node>
       <name>home</name>
       <label>#{portal.global.spaceHome}</label>
       <visibility>SYSTEM</visibility>
