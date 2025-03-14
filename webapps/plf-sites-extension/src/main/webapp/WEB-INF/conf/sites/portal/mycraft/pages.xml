@@ -125,39 +125,4 @@
     </container>
   </page>
 
-  <page>
-    <name>myteam</name>
-    <title>My Team</title>
-    <access-permissions>*:/platform/users</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>OrganizationalChart</portlet-ref>
-              <preferences>
-                <!-- chart center user value can take '@connected@' which refers to the connected user
-                or a user identity id of specific user -->
-                <preference>
-                  <name>centerUser</name>
-                  <value>@connected@</value>
-                  <read-only>true</read-only>
-                </preference>
-                <!-- default header title i18n key -->
-                <preference>
-                  <name>headerTitle</name>
-                  <value>organizationalChart.header.myTeam</value>
-                  <read-only>true</read-only>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Organizational Chart</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
 </page-set>

@@ -41,12 +41,6 @@
         <icon>far fa-newspaper</icon>
         <page-reference>portal::mycraft::contents</page-reference>
       </node>
-      <node>
-        <name>myteam</name>
-        <label>#{portal.mycraft.myteam}</label>
-        <icon>fa fa-sitemap</icon>
-        <page-reference>portal::mycraft::myteam</page-reference>
-      </node>
     </node>
   </page-nodes>
 </node-navigation>
