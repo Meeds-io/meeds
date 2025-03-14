@@ -26,6 +26,16 @@ files: [
     "escape_quotes" : 0,
   },
   {
+    "source" : "/webapps/plf-meeds-extension/src/main/resources/locale/navigation/portal/mycraft_en.properties",
+
+    "translation" : "%original_path%/%file_name%!_%locale_with_underscore%.%file_extension%",
+    "translation_replace" : {YML_CROWDIN_LANGUAGES_ARG},
+    "dest" : "hub/meeds/mycraft.properties",
+    "update_option" : "update_as_unapproved",
+    "escape_special_characters": 0,
+    "escape_quotes" : 0,
+  },
+  {
     "source" : "/webapps/plf-meeds-extension/src/main/resources/locale/portal/webui_en.properties",
 
     "translation" : "%original_path%/%file_name%!_%locale_with_underscore%.%file_extension%",
@@ -61,16 +71,6 @@ files: [
     "translation" : "%original_path%/%file_name%!_%locale_with_underscore%.%file_extension%",
     "translation_replace" : {YML_CROWDIN_LANGUAGES_ARG},
     "dest" : "hub/meeds/global.properties",
-    "update_option" : "update_as_unapproved",
-    "escape_special_characters": 0,
-    "escape_quotes" : 0,
-  },
-  {
-    "source" : "/webapps/plf-sites-extension/src/main/resources/locale/navigation/portal/mycraft_en.properties",
-
-    "translation" : "%original_path%/%file_name%!_%locale_with_underscore%.%file_extension%",
-    "translation_replace" : {YML_CROWDIN_LANGUAGES_ARG},
-    "dest" : "hub/meeds/mycraft.properties",
     "update_option" : "update_as_unapproved",
     "escape_special_characters": 0,
     "escape_quotes" : 0,
