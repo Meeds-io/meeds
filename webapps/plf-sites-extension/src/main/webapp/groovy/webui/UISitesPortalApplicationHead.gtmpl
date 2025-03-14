@@ -10,5 +10,4 @@
   eXo.env.portal.defaultPortal = "<%=rcontext.getMetaPortal()%>";
   eXo.env.portal.metaPortalName = "<%=rcontext.getMetaPortal()%>";
   eXo.env.portal.engagementSiteName = "<%=engagementSite%>" ;
-  eXo.env.portal.myCraftSiteName = "<%=myCraftSite%>" ;
 </script>
