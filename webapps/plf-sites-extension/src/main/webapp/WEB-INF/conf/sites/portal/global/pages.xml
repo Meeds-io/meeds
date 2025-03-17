@@ -219,6 +219,24 @@
             <portlet>
               <application-ref>social</application-ref>
               <portlet-ref>ProfileHeader</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>bannerMaxHeight</name>
+                  <value>175</value>
+                </preference>
+                <preference>
+                  <name>avatarMaxSize</name>
+                  <value>165</value>
+                </preference>
+                <preference>
+                  <name>avatarMinSize</name>
+                  <value>40</value>
+                </preference>
+                <preference>
+                  <name>useActions</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
             </portlet>
             <title>Profile Header Portlet</title>
           </portlet-application>
