@@ -690,8 +690,8 @@
   <page profiles="content">
     <name>newsTargets</name>
     <title>News targets</title>
-    <access-permissions>manager:/platform/web-contributors</access-permissions>
-    <edit-permission>manager:/platform/web-contributors</edit-permission>
+    <access-permissions>*:/platform/administrators</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
