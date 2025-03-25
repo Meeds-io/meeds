@@ -24,7 +24,7 @@ Example: "Unable to save changes on my profile page."
 - [ ] Other — None of the above applies.
 
 
-<!-- (Optional: Skip if not applicable.) -->
+<!-- Optional: Skip if not applicable. -->
 ## 🔍 Problem / Context
 
 <!-- 
@@ -34,7 +34,7 @@ For example, explain what you encountered or what isn’t working as expected.
 -->
 
 
-<!-- (Optional: Skip if not applicable.) -->
+<!-- Optional: Skip if not applicable. -->
 ## 🐞 Steps to Reproduce
 
 <!-- 
@@ -46,7 +46,7 @@ If reporting a bug, list the steps needed to reproduce the issue:
 -->
 
 
-<!-- (Optional: Skip if not applicable.) -->
+<!-- Optional: Skip if not applicable. -->
 ## ⚙️ Current Behavior
 
 
@@ -56,22 +56,22 @@ Explain what is happening now (e.g., error messages, unexpected results).
 
 
 
-<!-- (Optional: Skip if not applicable.) -->
+<!-- Optional: Skip if not applicable. -->
 ## 🎯 Expected Behavior
+
 <!--
 Describe what you expected to happen under normal conditions.  
 -->
 
-<!-- (Optional: Skip if you don’t have a proposal.) -->
+<!-- Optional: Skip if you don’t have a proposal. -->
 ## 💡 Proposed Solution
 
 <!-- 
 Detail your idea or suggestion for resolving the issue.  
-
 Example: "Add a confirmation dialog before saving changes."
 -->
 
-<!-- (Optional: Skip if not sure.) -->
+<!-- Optional: Skip if not sure. -->
 ## 🎉 Expected Benefits
 
 <!-- 
@@ -81,7 +81,7 @@ Example: "This change will streamline the saving process and reduce user errors.
 -->
 
 
-<!-- (Optional: Skip if you cannot define them.) -->
+<!-- Optional: Skip if you cannot define them. -->
 ## ✅ Acceptance Criteria
 
 <!-- 
@@ -92,12 +92,10 @@ Examples:
 
 -->
 
-<!-- (Optional: Skip if not applicable.) -->
+<!-- Optional: Skip if not applicable. -->
 ## 🔗 Additional Context
 
 <!--
 Provide any extra information (logs, screenshots, error messages, links, etc.).  
-
-
-**Related Task ID:** e.g., MEED-00000
 -->
+**Related Task ID:** e.g., MEED-00000
