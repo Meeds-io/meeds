@@ -309,12 +309,6 @@
       <page-reference>portal::global::perkstore</page-reference>
     </node>
     <node>
-      <name>appCenterUserSetup</name>
-      <label>#{portal.global.appCenterUserSetup}</label>
-      <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::appCenterUserSetup</page-reference>
-    </node>
-    <node>
       <name>page-not-found</name>
       <label>#{portal.global.pageNotFound}</label>
       <visibility>SYSTEM</visibility>
