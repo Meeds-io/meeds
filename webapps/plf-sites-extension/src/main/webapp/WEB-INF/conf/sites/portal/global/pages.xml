@@ -177,12 +177,19 @@
             </portlet>
             <title>User Setting Language</title>
           </portlet-application>
-          <portlet-application>
+          <portlet-application profiles="notes">
             <portlet>
               <application-ref>notes</application-ref>
               <portlet-ref>TermsAndConditionsUserSettings</portlet-ref>
             </portlet>
             <title>User Setting Terms And Conditions</title>
+          </portlet-application>
+          <portlet-application profiles="app-center">
+            <portlet>
+              <application-ref>app-center</application-ref>
+              <portlet-ref>AppCenterUserSettings</portlet-ref>
+            </portlet>
+            <title>User Setting App Center</title>
           </portlet-application>
           <portlet-application>
             <portlet>
