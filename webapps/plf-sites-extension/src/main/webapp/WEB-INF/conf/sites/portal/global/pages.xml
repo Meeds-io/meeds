@@ -177,12 +177,19 @@
             </portlet>
             <title>User Setting Language</title>
           </portlet-application>
-          <portlet-application>
+          <portlet-application profiles="notes">
             <portlet>
               <application-ref>notes</application-ref>
               <portlet-ref>TermsAndConditionsUserSettings</portlet-ref>
             </portlet>
             <title>User Setting Terms And Conditions</title>
+          </portlet-application>
+          <portlet-application profiles="app-center">
+            <portlet>
+              <application-ref>app-center</application-ref>
+              <portlet-ref>AppCenterUserSettings</portlet-ref>
+            </portlet>
+            <title>User Setting App Center</title>
           </portlet-application>
           <portlet-application>
             <portlet>
@@ -489,26 +496,6 @@
             <name>bottom-perk-store-container</name>
             <factory-id>addonContainer</factory-id>
           </container>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="app-center">
-    <name>appCenterUserSetup</name>
-    <title>App Center User Setup</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>app-center</application-ref>
-              <portlet-ref>AppCenterUserSetupPortlet</portlet-ref>
-            </portlet>
-            <title>App Center User Setup</title>
-          </portlet-application>
         </column>
       </section-columns>
     </container>

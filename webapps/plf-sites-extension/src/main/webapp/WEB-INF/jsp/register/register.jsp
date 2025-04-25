@@ -70,7 +70,7 @@
   <meta name="theme-color" content="<%=pwaManifestService.getThemeColor()%>"/>
 <%
   if (pwaManifestService.isPwaEnabled()) {
-%><link rel="manifest" href="<%="/pwa/rest/manifest?v=" + pwaManifestService.getManifestHash()%>"><%
+%><link rel="manifest" href="<%="/pwa/rest/manifest"%>"><%
   }
 %>
   <!-- Preload Styles & Fonts & Scripts for HTTP/2 optimizations -->
