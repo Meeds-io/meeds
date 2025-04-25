@@ -867,24 +867,4 @@
     </container>
   </page>
 
-  <page profiles="app-center">
-    <name>quickActions</name>
-    <title>Quick Actions</title>
-    <access-permissions>*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>app-center</application-ref>
-              <portlet-ref>QuickActions</portlet-ref>
-            </portlet>
-            <title>Quick Actions</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
 </page-set>
