@@ -185,12 +185,6 @@
           <page-reference>portal::administration::simpleStorage</page-reference>
         </node>
         <node>
-          <name>quickActions</name>
-          <label>#{portal.administration.quickActions}</label>
-          <icon>far fa-keyboard</icon>
-          <page-reference>portal::administration::quickActions</page-reference>
-        </node>
-        <node>
           <name>template</name>
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
