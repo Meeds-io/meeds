@@ -3,7 +3,7 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2022 Meeds Association contact@meeds.io
+  Copyright (C) 2025 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -229,43 +229,7 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::organizationalchart</page-reference>
     </node>
-
-    <node>
-      <name>analytics</name>
-      <label>#{analytics.navigation.Analytics}</label>
-      <visibility>SYSTEM</visibility>
-      <page-reference>portal::global::analytics</page-reference>
-      <node>
-        <name>analyticsUsers</name>
-        <label>#{analytics.navigation.AnalyticsUsers}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-users</page-reference>
-      </node>
-      <node>
-        <name>analyticsSpaces</name>
-        <label>#{analytics.navigation.AnalyticsSpaces}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-spaces</page-reference>
-      </node>
-      <node>
-        <name>analyticsMobile</name>
-        <label>#{analytics.navigation.analyticsMobile}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-mobile</page-reference>
-      </node>
-      <node>
-        <name>analyticsSecurity</name>
-        <label>#{analytics.navigation.analyticsSecurity}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-security</page-reference>
-      </node>
-      <node>
-        <name>analyticsWallet</name>
-        <label>#{wallet.navigation.analyticsWallet}</label>
-        <visibility>DISPLAYED</visibility>
-        <page-reference>portal::global::analytics-wallet</page-reference>
-      </node>
-    </node>
+	
     <node>
       <name>notes-editor</name>
       <label>#{portal.global.notes-editor}</label>
