@@ -200,6 +200,23 @@
           </portlet-application>
         </column>
       </section-columns>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>EngagementCenterAchievements</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>hideOwnedTab</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Achievements</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
