@@ -503,6 +503,68 @@
         </object-param>
       </init-params>
     </component-plugin>
+    <component-plugin profiles="layout">
+      <name>CMSPortletToContentUpgradePlugin</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.LayoutApplicationReferenceUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <description>The groupId of the product</description>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <description>The plugin execution order</description>
+          <value>500</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <description>Execute only once, not each version change</description>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>Image</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social/Image</string>
+            </field>
+            <field name="newContentId">
+              <string>content/Image</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>Links</name>
+          <object type="io.meeds.layout.model.ApplicationReferenceUpgrade">
+            <field name="modificationType">
+              <string>update</string>
+            </field>
+            <field name="oldContentId">
+              <string>social/Links</string>
+            </field>
+            <field name="newContentId">
+              <string>content/Links</string>
+            </field>
+            <field name="upgradePages">
+              <boolean>true</boolean>
+            </field>
+            <field name="upgradePortletInstance">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
     <component-plugin>
       <name>RecognitionAdministrationSiteLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
@@ -1669,7 +1731,7 @@
               <string>social-portlet/Image</string>
             </field>
             <field name="newContentId">
-              <string>social/Image</string>
+              <string>content/Image</string>
             </field>
             <field name="upgradePages">
               <boolean>true</boolean>
@@ -1689,7 +1751,7 @@
               <string>social-portlet/Links</string>
             </field>
             <field name="newContentId">
-              <string>social/Links</string>
+              <string>content/Links</string>
             </field>
             <field name="upgradePages">
               <boolean>true</boolean>
