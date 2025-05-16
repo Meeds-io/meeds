@@ -33,7 +33,7 @@
         <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social</application-ref>
+              <application-ref>content</application-ref>
               <portlet-ref>Image</portlet-ref>
             </portlet>
           </portlet-application>
