@@ -582,7 +582,7 @@
   <page profiles="layout">
     <name>portlet-viewer</name>
     <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
+    <access-permissions>Everyone</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
