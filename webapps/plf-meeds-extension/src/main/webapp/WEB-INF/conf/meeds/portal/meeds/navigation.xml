@@ -28,7 +28,7 @@
       <name>contribute</name>
       <label>#{portal.meeds.contribute}</label>
       <icon>fa fa-rocket</icon>
-      <page-reference>portal::contribute::overview</page-reference>
+      <page-reference>portal::global::overview</page-reference>
     </node>
     <node>
       <name>people</name>
