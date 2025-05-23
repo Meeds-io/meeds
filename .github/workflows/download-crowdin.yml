@@ -1,21 +1,48 @@
 name: Crowdin  download Action
-
 on:
   schedule:
     - cron: "15 5 * * *"
   workflow_dispatch:
-
 jobs:
-  download-crowdin:
-    name: CI Build
-    uses: exoplatform/swf-scripts/.github/workflows/download-crowdin-exoplatform.yml@master
-    with:
-      CROWDIN_MAINTENANCE_EXO_VERSION: ${{ vars.CROWDIN_MAINTENANCE_EXO_VERSION }}
-      YML_CROWDIN_LANGUAGES_ARG: ${{vars.YML_CROWDIN_LANGUAGES_ARG}}
-      CROWDIN_LANGUAGES_ARG: ${{vars.CROWDIN_LANGUAGES_ARG}}
-    secrets:
-      CROWDIN_GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_TOKEN }}
-      CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
-      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-      SWF_GPG_PRIVATE_KEY: ${{ secrets.SWF_GPG_PRIVATE_KEY }}
-      SWF_GPG_PASSPHRASE: ${{ secrets.SWF_GPG_PASSPHRASE }}
+  crowdin-download-develop:
+    name: Crowdin Download Develop
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Crowdin Download
+        uses: exo-actions/crowdin-download-action@v1
+        with:
+          PROJECT_VERSION: ${{ vars.CROWDIN_DEVELOP_VERSION }}
+          PROJECT_BRANCH: develop
+          CROWDIN_LANGUAGES_ARG: ${{ vars.CROWDIN_LANGUAGES_ARG }}
+          YML_CROWDIN_LANGUAGES_ARG: ${{ vars.YML_CROWDIN_LANGUAGES_ARG }}
+          CROWDIN_COMMITTER_NAME: ${{ vars.CROWDIN_COMMITTER_NAME }}
+          CROWDIN_COMMITTER_EMAIL: ${{ vars.CROWDIN_COMMITTER_EMAIL }}
+          CROWDIN_GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          CROWDIN_COMMIT_GPG_PRIVATE_KEY: ${{ secrets.SWF_GPG_PRIVATE_KEY }}
+          CROWDIN_COMMIT_GPG_PASSPHRASE: ${{ secrets.SWF_GPG_PASSPHRASE }}
+  # stable/x.x.x
+  crowdin-download-stable:
+    if: always()
+    name: Crowdin Download Stable
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    needs: [crowdin-download-develop]
+    steps:
+      - name: Crowdin Download
+        uses: exo-actions/crowdin-download-action@v1
+        with:
+          PROJECT_VERSION: ${{ vars.CROWDIN_MAINTENANCE_EXO_VERSION }}
+          PROJECT_BRANCH: stable/${{ vars.CROWDIN_MAINTENANCE_EXO_VERSION }}
+          CROWDIN_BRANCH: maintenance
+          CROWDIN_LANGUAGES_ARG: ${{ vars.CROWDIN_LANGUAGES_ARG }}
+          YML_CROWDIN_LANGUAGES_ARG: ${{ vars.YML_CROWDIN_LANGUAGES_ARG }}
+          CROWDIN_COMMITTER_NAME: ${{ vars.CROWDIN_COMMITTER_NAME }}
+          CROWDIN_COMMITTER_EMAIL: ${{ vars.CROWDIN_COMMITTER_EMAIL }}
+          CROWDIN_GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          CROWDIN_COMMIT_GPG_PRIVATE_KEY: ${{ secrets.SWF_GPG_PRIVATE_KEY }}
+          CROWDIN_COMMIT_GPG_PASSPHRASE: ${{ secrets.SWF_GPG_PASSPHRASE }}
