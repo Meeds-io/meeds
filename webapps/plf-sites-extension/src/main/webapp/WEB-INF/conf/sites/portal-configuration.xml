@@ -25,17 +25,6 @@
   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_3.xsd">
 
   <component>
-    <key>SitesConfigProperties</key>
-    <type>org.exoplatform.container.ExtendedPropertyConfigurator</type>
-    <init-params>
-      <properties-param>
-        <name>SitesConfigProperties</name>
-        <property name="io.meeds.engagementSite.name" value="${io.meeds.engagementSite.name:contribute}" />
-      </properties-param>
-    </init-params>
-  </component>
-
-  <component>
     <key>org.exoplatform.portal.config.UserPortalConfigService</key>
     <type>org.exoplatform.portal.config.UserPortalConfigService</type>
     <init-params>
