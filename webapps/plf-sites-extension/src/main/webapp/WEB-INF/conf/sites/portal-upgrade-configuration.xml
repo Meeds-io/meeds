@@ -1994,7 +1994,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>SitesPropsUpdgrade</name>
+      <name>SitesPortalPropertiesUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
