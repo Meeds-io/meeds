@@ -190,6 +190,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </path-param>
   </route>
 
+  <!-- The space handler -->
+  <route path="/">
+    <route-param qname="gtn:handler">
+      <value>space-creation-instantiation</value>
+    </route-param>
+  </route>
+
   <route path="/">
 
     <!-- The portal redirect handler -->
