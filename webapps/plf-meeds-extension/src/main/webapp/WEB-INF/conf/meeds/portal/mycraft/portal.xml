@@ -33,7 +33,7 @@
   <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
   <edit-permission>manager:/platform/administrators</edit-permission>
   <properties>
-    <entry key="removable">false</entry>
+    <entry key="removable">true</entry>
     <entry key="icon">fa-briefcase</entry>
   </properties>
   <portal-layout template="system:/groovy/portal/webui/container/UISiteLayout.gtmpl">
