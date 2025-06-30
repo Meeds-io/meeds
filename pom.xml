@@ -92,6 +92,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.pwa.version>7.1.x-meedsv2-SNAPSHOT</addon.meeds.pwa.version>
     <addon.meeds.ide.id>meeds-ide</addon.meeds.ide.id>
     <addon.meeds.ide.version>7.1.x-meedsv2-SNAPSHOT</addon.meeds.ide.version>
+    <addon.meeds.billing.id>meeds-billing</addon.meeds.billing.id>
+    <addon.meeds.billing.version>1.0.x-meedsv2-SNAPSHOT</addon.meeds.billing.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
@@ -245,6 +247,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <groupId>io.meeds.ide</groupId>
         <artifactId>ide</artifactId>
         <version>${addon.meeds.ide.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.meeds.billing</groupId>
+        <artifactId>billing</artifactId>
+        <version>${addon.meeds.billing.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

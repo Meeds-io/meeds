@@ -315,5 +315,22 @@
     "supportedDistributions": "community,enterprise",
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
-  }
+  },{
+  "id": "meeds-billing",
+  "version": "${addon.meeds.billing.version}",
+  "unstable": false,
+  "name": "Billing add-on",
+  "description": "Add-on for Billing",
+  "sourceUrl": "https://github.com/meeds-io/billing",
+  "documentationUrl": "https://github.com/meeds-io/billing",
+  "downloadUrl": "file://${settings.localRepository}/io/meeds/billing/billing-packaging/${addon.meeds.billing.version}/billing-packaging-${addon.meeds.billing.version}.zip",
+  "vendor": "Meeds.io",
+  "author": "Meeds.io",
+  "license": "LGPLv3",
+  "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+  "mustAcceptLicense": false,
+  "supportedDistributions": "community,enterprise",
+  "supportedApplicationServers": "tomcat",
+  "compatibility": "[${project.version},)"
+}
 ]
