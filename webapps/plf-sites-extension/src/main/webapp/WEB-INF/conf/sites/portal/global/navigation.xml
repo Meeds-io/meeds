@@ -337,5 +337,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::terms-and-conditions</page-reference>
     </node>
+    <node>
+      <name>login</name>
+      <label>#{portal.global.login}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::login</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
