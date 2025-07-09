@@ -71,6 +71,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                   <string>rest</string>
                </value>
                <value>
+                  <string>digest</string>
+               </value>
+               <value>
                   <string>commons-extension</string>
                </value>
                <value>
