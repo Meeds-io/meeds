@@ -1,89 +1,111 @@
-Meeds Public Distribution
-=========================
+# Meeds Public Distribution
 
-How to build ?
---------------
+## How to Build
 
-**Pre-requisite** : Apache Maven >= 3.5.0
+**Prerequisite:** Apache Maven ≥ 3.5.0
 
-To build the Meeds Community package, from the root directory just launch :
+To build the Meeds Community package, run the following command from the project root directory:
 
-    mvn install
+```bash
+mvn install
+```
 
-Take a coffee, a tea, whatever you like the time that Maven downloads the earth and then you'll have the result in `plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>`
+Grab a coffee or tea while Maven downloads its dependencies. Once completed, the build will be available in:
 
-If you are using a Maven Repository Manager you need to proxify our repository <https://repository.exoplatform.org/public/> (snapshots and releases).
+```
+plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>
+```
 
-If you are using a mirror in your maven settings you need to exclude our repository identifier `repository.exoplatform.org` if your mirror doesn't proxify it.
+> **Note:**
+>
+> * If you are using a Maven Repository Manager, proxy our repository: [https://repository.exoplatform.org/public/](https://repository.exoplatform.org/public/) (for snapshots and releases).
+> * If you are using a mirror in your Maven settings, exclude the repository identifier `repository.exoplatform.org` if your mirror doesn’t proxy it.
 
-Build options
--------------
+### Build Options
 
-Add `-Dskip-archive` in your build command line to not generate the final zip archive (and thus gain few seconds of build).
+Add the `-Dskip-archive` option to your build command to skip generating the final ZIP archive, saving a few seconds:
 
-How to launch ?
----------------
+```bash
+mvn install -Dskip-archive
+```
 
-From the top level directory of the project you can launch the server you just generated with :
+## How to Launch
 
-    plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>/start_eXo.(sh|bat)
+From the project root, start the generated server with:
 
-Use `-h` or `--help` to list all options.
+```bash
+plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>/start_eXo.(sh|bat)
+```
 
-Known issues
-============
+Use `-h` or `--help` to list all available options.
 
-Windows users
--------------
+## Known Issues
 
-Scripts have to be launched from the directory where they are otherwise you have to explicitly set the environment variable `CATALINA_HOME` to the server home directory path.
+### Windows Users
 
-You can force to activate the colorized console with the option 
+* Scripts must be launched from their directory.
+* Alternatively, set the `CATALINA_HOME` environment variable to the server home directory path.
+* To enable the colorized console, use:
 
-    plf-community-tomcat-standalone/target/meeds-community-<<CURRENT_VERSION>>/meeds-community-<<CURRENT_VERSION>>/start_eXo.bat --color
-    
-:octocat: ghcr.io Docker image signature
-========================================
+```bash
+start_eXo.bat --color
+```
 
-Starting with Meeds `1.4.0-M04` from the github container registry, Meeds docker images will be signed with [cosign] (https://github.com/sigstore/cosign) tool.
+## \:octocat: Docker Image Signatures
 
-In order to verify the signature of the Meeds docker image, please install the "cosign" command line tool. Then please follow these instructions:
+Starting with **Meeds `1.4.0-M04`**, Docker images from GitHub Container Registry (GHCR) are signed using [Cosign](https://github.com/sigstore/cosign).
 
-- Save the following public key to `cosign.pub` file:
-```gpg
+### Verify GHCR Images
+
+1. Save the following public key to a file named `cosign.pub`:
+
+```text
 -----BEGIN PUBLIC KEY-----
 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2XMvg1dA7ZgfLB3c2nc8E/D+IsS+
 DjvPlcu00HT94eL4R8QpcQO7YoBiiqFkxBnuHYl7nEclZ/fyQ1srG+UMjw==
 -----END PUBLIC KEY-----
 ```
-- Execute the following command:
+
+2. Verify the image:
+
 ```bash
 cosign verify --key cosign.pub ghcr.io/meeds-io/meeds/meeds-io:<tag>
 ```
+
 *Example:*
+
 ```bash
 cosign verify --key cosign.pub ghcr.io/meeds-io/meeds/meeds-io:develop
 ```
-  Output:
+
+Expected output:
+
 ```json
 [{"critical":{"identity":{"docker-reference":"ghcr.io/meeds-io/meeds/meeds-io"},"image":{"docker-manifest-digest":"sha256:da29f98a3000ae5232ceb2502ce2ae10903969c762b1d3d4e43a8b7104b87888"},"type":"cosign container image signature"},"optional":null}]
 ```
-Also starting with Meeds `1.5.0-M11` from DockerHub, Meeds docker [meedsio/meeds](https://hub.docker.com/r/meedsio/meeds) image will be signed with `cosign` tool. In order to verify its signature:
 
-Execute the following command:
+### Verify DockerHub Images
+
+Starting with **Meeds `1.5.0-M11`**, DockerHub images (`meedsio/meeds`) are also signed with Cosign. To verify:
+
 ```bash
 cosign verify --key cosign.pub meedsio/meeds:<tag>
 ```
+
 *Example:*
+
 ```bash
 cosign verify --key cosign.pub meedsio/meeds:1.5.0-M11_0
 ```
-Our Meeds image is also signed with Dockerhub [DCT](https://docs.docker.com/engine/security/trust/).
+
+Our DockerHub images are additionally signed with Docker Content Trust (DCT):
+
 ```bash
 docker trust inspect --pretty meedsio/meeds
 ```
 
-## Thanks to all the contributors ❤️
-<a href = "https://github.com/Meeds-io/meeds/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Meeds-io/meeds"/>
+## Thanks to All Contributors ❤️
+
+<a href="https://github.com/Meeds-io/meeds/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Meeds-io/meeds"/>
 </a>
