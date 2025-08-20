@@ -198,6 +198,10 @@
             </portlet>
             <title>User Setting Notifications</title>
           </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>settings-bottom-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -205,10 +209,6 @@
             </portlet>
             <title>User Setting Security</title>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>settings-bottom-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
         </column>
       </section-columns>
     </container>
