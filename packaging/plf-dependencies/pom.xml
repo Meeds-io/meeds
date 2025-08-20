@@ -52,18 +52,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         </exclusion>
       </exclusions>
     </dependency>
-    <dependency>
-      <groupId>io.meeds.portal</groupId>
-      <artifactId>portal.web.digest</artifactId>
-      <type>war</type>
-      <scope>runtime</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <!-- Commons -->
     <dependency>
       <groupId>io.meeds.commons</groupId>
