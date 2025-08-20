@@ -2144,7 +2144,7 @@
       </init-params>
     </component-plugin>
     <component-plugin>
-      <name>TermsAnsConditionsSettingPageUpgrade</name>
+      <name>UserSettingsPageSecuritySectionUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
