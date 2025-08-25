@@ -230,7 +230,7 @@
         </object-param>
         <object-param>
           <name>portal.User</name>
-          <description>Exo Cache cluster configuration for IDM User entity</description>
+          <description>Cache configuration for IDM User entity</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
               <string>portal.User</string>
@@ -245,7 +245,7 @@
         </object-param>
         <object-param>
           <name>portal.Profile</name>
-          <description>Exo Cache cluster configuration for IDM User Profile entity</description>
+          <description>Cache configuration for IDM User Profile entity</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
               <string>portal.Profile</string>
@@ -260,7 +260,7 @@
         </object-param>
         <object-param>
           <name>portal.Membership</name>
-          <description>Exo Cache cluster configuration for IDM Membership entity</description>
+          <description>Cache configuration for IDM Membership entity</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
               <string>portal.Membership</string>
@@ -276,7 +276,7 @@
 
         <object-param>
           <name>portal.Role</name>
-          <description>Exo Cache cluster configuration for IDM Membership Type entity</description>
+          <description>Cache configuration for IDM Membership Type entity</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
               <string>portal.Role</string>
@@ -292,7 +292,7 @@
 
         <object-param>
           <name>portal.Group</name>
-          <description>Exo Cache cluster configuration for IDM Group entity</description>
+          <description>Cache configuration for IDM Group entity</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
               <string>portal.Group</string>
@@ -318,6 +318,52 @@
             </field>
             <field name="liveTime">
               <long>${meeds.cache.portal.tokens.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <!-- Identity Registry and Conversation State Registry -->
+        <object-param>
+          <name>portal.IdentityRegistry</name>
+          <description>Cache configuration for Identity ACL Registry</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.IdentityRegistry</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.IdentityRegistry.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.IdentityRegistry.TimeToLive:3600}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.ConversationRegistry</name>
+          <description>Cache configuration for Conversation Registry</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.ConversationRegistry</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.ConversationRegistry.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.ConversationRegistry.TimeToLive:3600}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.ConversationRegistryStates</name>
+          <description>Cache configuration for Conversation Registry Session States</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.ConversationRegistryStates</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.ConversationRegistryStates.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.ConversationRegistryStates.TimeToLive:3600}</long>
             </field>
           </object>
         </object-param>
