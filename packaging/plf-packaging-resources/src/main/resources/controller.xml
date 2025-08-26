@@ -180,16 +180,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </route-param>
   </route>
 
-  <!-- Static resource handler needs to be before the portal handler -->
-  <route path="/{gtn:path}">
-    <route-param qname="gtn:handler">
-      <value>staticResource</value>
-    </route-param>
-    <path-param qname="gtn:path" encoding="preserve-path">
-      <pattern>.*\.(jpg|png|gif|ico|css)</pattern>
-    </path-param>
-  </route>
-
   <!-- The space handler -->
   <route path="/">
     <route-param qname="gtn:handler">
