@@ -33,7 +33,7 @@
       <type>org.exoplatform.services.cache.ExoCacheConfigPlugin</type>
       <description>Configures the cache for analytics queue which must remain a local cache</description>
       <init-params>
-        <object-param>
+        <object-param profiles="analytics">
           <name>analytics.queue</name>
           <description></description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
@@ -128,7 +128,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="gamification">
           <name>gamification.domain</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -142,7 +142,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="gamification">
           <name>gamification.rule</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -156,7 +156,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="gamification">
           <name>gamification.realization</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -170,7 +170,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="notes">
           <name>wiki.PageRenderingCache</name>
           <description>The wiki markup cache configuration</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
@@ -185,7 +185,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="notes">
           <name>wiki.PageAttachmentCache</name>
           <description>The Cache configuration for wiki page attachment count</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
@@ -200,7 +200,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="perkstore">
           <name>perkstore.product</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -214,7 +214,7 @@
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="perkstore">
           <name>perkstore.order</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -888,22 +888,22 @@
             </field>
           </object>
         </object-param>
-        <object-param>
-          <name>wallet.transactions</name>
+        <object-param profiles="wallet">
+          <name>wallet.transaction</name>
           <description>Wallet application transactions cache</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
-              <string>wallet.transactions</string>
+              <string>wallet.transaction</string>
             </field>
             <field name="maxSize">
-              <int>${meeds.cache.wallet.transactions.MaxNodes:2000}</int>
+              <int>${meeds.cache.wallet.transaction.MaxNodes:2000}</int>
             </field>
             <field name="liveTime">
-              <long>${meeds.cache.wallet.transactions.TimeToLive:-1}</long>
+              <long>${meeds.cache.wallet.transaction.TimeToLive:-1}</long>
             </field>
           </object>
         </object-param>
-        <object-param>
+        <object-param profiles="wallet">
           <name>wallet.account</name>
           <description></description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
