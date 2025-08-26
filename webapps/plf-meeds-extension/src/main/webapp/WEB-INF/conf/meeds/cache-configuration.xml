@@ -948,6 +948,21 @@
             </field>
           </object>
         </object-param>
+        <object-param profiles="ide">
+          <name>ide.widget</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>ide.widget</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.ide.widget.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.ide.widget.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
       </init-params>
     </component-plugin>
   </external-component-plugins>
