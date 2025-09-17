@@ -1,4 +1,4 @@
-name: Sync issue type from form
+name: Sync issue type & tidy headings
 on:
   issues:
     types: [opened, edited]
@@ -7,38 +7,81 @@ permissions:
   issues: write
 
 jobs:
-  apply-type:
-    # Ignore pull requests (they sont des "issues" côté payload)
+  sync:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - name: Map Issue Form "Type" -> GitHub issue type
+      - name: Map Issue Form "Type" -> GitHub issue type and tidy headings
         uses: actions/github-script@v7
         with:
           script: |
-            const {issue, repository} = context.payload;
-            const body = issue.body || "";
+            const issue = context.payload.issue;
+            let body = issue.body || "";
 
-            // Cherche la section rendue par l'Issue Form :
-            // Ligne "Type" suivie de la valeur ("Bug" | "Feature" | "Task")
-            const match = body.match(/(?:^|\n)\s*(?:\*\*|#+\s*)?Type(?:\*\*)?\s*\n+\s*(Bug|Feature|Task)\b/i);
-            if (!match) {
-              core.info("No Type found in Issue Form body; skipping.");
+            // 1) Detect the selected Type in the Issue Form body
+            // We look for a heading "### Type" followed by the chosen value.
+            const m = body.match(/(^|\n)#{2,}\s*Type\s*\n+\s*(Bug|Feature|Task)\b/i);
+            if (!m) {
+              core.info("No 'Type' heading/value found in body; skipping.");
               return;
             }
+            const selected = m[2].toLowerCase(); // "bug" | "feature" | "task"
+            core.info(`Detected form type: ${selected}`);
 
-            const selected = match[1].toLowerCase(); // "bug" | "feature" | "task"
-            const map = { bug: "bug", feature: "feature", task: "task" };
-            const ghType = map[selected];
-            if (!ghType) {
-              core.info(`Unmapped type "${selected}", skipping.`);
-              return;
+            // 2) Apply the official GitHub issue type
+            const ghType = ({ bug: "bug", feature: "feature", task: "task" })[selected];
+            if (ghType) {
+              await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                type: ghType,
+              });
+              core.info(`Set GitHub issue type to: ${ghType}`);
             }
 
-            core.info(`Setting GitHub issue type to: ${ghType}`);
-            await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
-              owner: repository.owner.login,
-              repo: repository.name,
-              issue_number: issue.number,
-              type: ghType
-            });
+            // 3) Tidy section headings based on selected type
+            let newBody = body;
+
+            // Helper to do a safe, single-line heading replace
+            function replaceHeading(ifType, fromPattern, toHeading) {
+              if (selected !== ifType) return;
+
+              // Accept both hyphen and em dash between "Bug"/"Feature" and the section title
+              const re = new RegExp(
+                "^#{2,}\\s*" + fromPattern + "\\s*$",
+                "mi"
+              );
+              newBody = newBody.replace(re, "### " + toHeading);
+            }
+
+            // Replace:
+            // "### Bug — Steps to Reproduce & Expected Result (only if Type = Bug)"
+            // -> "### Steps to Reproduce & Expected Result"
+            replaceHeading(
+              "bug",
+              String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s+if\s+Type\s*=\s*Bug\)`,
+              "Steps to Reproduce & Expected Result"
+            );
+
+            // Replace:
+            // "### Feature — Solution & Expected Benefits (only if Type = Feature)"
+            // -> "### Solution & Expected Benefits"
+            replaceHeading(
+              "feature",
+              String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s+if\s+Type\s*=\s*Feature\)`,
+              "Solution & Expected Benefits"
+            );
+
+            // Patch the issue body only if it changed
+            if (newBody !== body) {
+              await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: newBody,
+              });
+              core.info("Issue body headings tidied.");
+            } else {
+              core.info("No heading changes needed.");
+            }
