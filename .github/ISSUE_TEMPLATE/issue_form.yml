@@ -4,19 +4,17 @@ title: "[Issue]: "
 labels: []
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Please select the **Type** first.  
-        **Problem** is required for all issues.  
-        If **Bug**, use **Bug Details** to include Repro steps, Expected behavior, and Acceptance criteria.  
-        If **Feature Request**, use **Solution & Benefits**.
 
   - type: dropdown
     id: type
     attributes:
       label: Type
-      description: Select the issue type.
+      description: |
+        **Definitions**
+        - **Bug** — Something isn’t working as expected.
+        - **Feature** — New capability or an enhancement to existing behavior.
+        - **Feedback** — Observation, idea, or UX concern.
+        - **Other** — None of the above.
       options:
         - Bug
         - Feature
@@ -30,62 +28,36 @@ body:
     id: problem
     attributes:
       label: Problem
-      description: Describe the problem or observation in simple terms. Be specific if it's a bug.
-      placeholder: "What did you encounter? Where? Environment?"
+      description: What happened or what do you need? Be specific if it's a bug.
+      placeholder: "What? Where? Who is impacted? Environment?"
     validations:
       required: true
 
   - type: textarea
-    id: bug_details
+    id: details
     attributes:
-      label: Bug Details (Only if **Bug**)
-      description: Include **Steps to Reproduce**, **Expected Behavior**, and **Acceptance Criteria** in one place.
+      label: Details (fill depending on Type)
+      description: Complete only the relevant section below.
       placeholder: |
+        ## Bug
         ### Steps to Reproduce
         1.
         2.
         3.
-
         ### Expected Behavior
-        - …
-
+        -
         ### Acceptance Criteria
-        - [ ] …
-        - [ ] …
-    validations:
-      required: false
+        - [ ] ...
+        - [ ] ...
 
-  - type: textarea
-    id: solution_benefits
-    attributes:
-      label: Solution & Benefits (Only if **Feature Request**)
-      description: Describe the **Proposed Solution** and the **Expected Benefits** (impact, outcomes, metrics).
-      placeholder: |
+        ## Feature
         ### Proposed Solution
-        - …
-
+        -
         ### Expected Benefits
-        - …
+        -
+
+        ## Feedback
+        ### Notes
+        -
     validations:
       required: false
-
-  # -------- SHARED / OPTIONAL --------
-  - type: textarea
-    id: additional_context
-    attributes:
-      label: Additional Context (Optional)
-      description: Logs, screenshots, error messages, links, etc.
-      placeholder: "Anything else we should know."
-    validations:
-      required: false
-
-  - type: input
-    id: related_task_id
-    attributes:
-      label: Related Task ID (Optional)
-      description: e.g., MEED-00000
-      placeholder: "MEED-00000"
-    validations:
-      required: false
-
-
