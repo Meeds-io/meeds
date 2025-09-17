@@ -19,6 +19,7 @@ jobs:
             let body = issue.body || "";
 
             // ---------- 1) Extract selected Type from the "### Type" section ----------
+            // Capture the whole Type block (from "### Type" until next heading or EOF)
             const typeBlockMatch = body.match(/(^|\n)#{2,}\s*Type\s*\n+([\s\S]*?)(?=\n#{2,}\s|\n*$)/i);
             let selected = null;
             if (typeBlockMatch) {
@@ -28,17 +29,23 @@ jobs:
             }
 
             // ---------- 2) Map to official GitHub issue type ----------
+            let typeMapped = false;
             if (selected) {
               const map = { bug: "bug", feature: "feature", task: "task" };
               const ghType = map[selected];
               if (ghType) {
-                await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.number,
-                  type: ghType,
-                });
-                core.info(`Set GitHub issue type to: ${ghType}`);
+                try {
+                  await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    type: ghType,
+                  });
+                  typeMapped = true;
+                  core.info(`Set GitHub issue type to: ${ghType}`);
+                } catch (e) {
+                  core.warning(`Failed to set GitHub issue type: ${e.message}`);
+                }
               }
             } else {
               core.info("No Type detected; skipping type mapping.");
@@ -61,4 +68,97 @@ jobs:
               const heading = m[2];
               const content = m[3];
               const end = start + full.length;
-              return
+              return { re, start, end, heading, content };
+            }
+
+            // Remove entire section if content is exactly "_No response_"
+            function removeIfNoResponse(headingPattern) {
+              const sec = findSection(headingPattern);
+              if (!sec) return false;
+              if (/^\s*_No response_\s*$/i.test(sec.content.trim())) {
+                newBody = newBody.slice(0, sec.start) + "\n" + newBody.slice(sec.end);
+                core.info(`Removed empty section: ${headingPattern}`);
+                return true;
+              }
+              return false;
+            }
+
+            // Rename a heading only if section exists and we didn't remove it
+            function renameHeading(onlyForType, fromPattern, toHeading) {
+              if (selected !== onlyForType) return false;
+              const sec = findSection(fromPattern);
+              if (!sec) return false;
+              const before = newBody.slice(0, sec.start);
+              const after = newBody.slice(sec.end);
+              const newSection =
+                (newBody[sec.start - 1] === "\n" ? "\n" : "") +
+                `### ${toHeading}\n` +
+                sec.content;
+              newBody = before + newSection + after;
+              core.info(`Renamed heading to: ${toHeading}`);
+              return true;
+            }
+
+            // Generic rename (no type condition), e.g., to strip "(optional)"
+            function renameHeadingAny(fromPattern, toHeading) {
+              const sec = findSection(fromPattern);
+              if (!sec) return false;
+              const before = newBody.slice(0, sec.start);
+              const after = newBody.slice(sec.end);
+              const newSection =
+                (newBody[sec.start - 1] === "\n" ? "\n" : "") +
+                `### ${toHeading}\n` +
+                sec.content;
+              newBody = before + newSection + after;
+              core.info(`Renamed heading to: ${toHeading}`);
+              return true;
+            }
+
+            // Remove a section by exact heading (no content check)
+            function removeSection(headingPattern) {
+              const sec = findSection(headingPattern);
+              if (!sec) return false;
+              newBody = newBody.slice(0, sec.start) + "\n" + newBody.slice(sec.end);
+              core.info(`Removed section: ${headingPattern}`);
+              return true;
+            }
+
+            // ---------- 3) FIRST: remove empty sections ----------
+            const bugPattern = String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s*if\s*Type\s*=\s*Bug\)`;
+            const featurePattern = String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s*if\s*Type\s*=\s*Feature\)`;
+            const bugRemoved = removeIfNoResponse(bugPattern);
+            const featureRemoved = removeIfNoResponse(featurePattern);
+
+            // ---------- 4) THEN: tidy headings ----------
+            if (!bugRemoved) {
+              renameHeading("bug", bugPattern, "Steps to Reproduce & Expected Result");
+            }
+            if (!featureRemoved) {
+              renameHeading("feature", featurePattern, "Solution & Expected Benefits");
+            }
+            // Strip "(optional)" from "Additional Context (optional)"
+            renameHeadingAny(String.raw`Additional Context\s*\(optional\)`, "Additional Context");
+
+            // ---------- 5) FINALLY: remove the "Type" section if mapping succeeded ----------
+            if (typeMapped && selected) {
+              // Remove "### Type" section entirely (whatever its inner content)
+              removeSection(String.raw`Type`);
+            } else {
+              core.info("Keeping 'Type' section (type not mapped or not detected).");
+            }
+
+            // Normalize: collapse >2 blank lines into 1 for cleanliness
+            newBody = newBody.replace(/\n{3,}/g, "\n\n");
+
+            // ---------- 6) Patch body if changed ----------
+            if (newBody !== body) {
+              await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: newBody.trim() + "\n",
+              });
+              core.info("Issue body updated.");
+            } else {
+              core.info("No body changes needed.");
+            }
