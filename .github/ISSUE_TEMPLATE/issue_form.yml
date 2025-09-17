@@ -1,6 +1,6 @@
 name: Issue Form
 description: Report a bug, request a feature, or share feedback
-title: ""
+title: "[Issue]: "
 labels: []
 type: Issue
 body:
