@@ -16,12 +16,10 @@ Example: "Unable to save changes on my profile page."
 
 <!-- Help us qualify your issue -->
 **Select one or more categories that apply:**
-- [ ] Bug — Something isn’t working as expected.
-- [ ] Feedback — An observation or need regarding product performance.
-- [ ] Feature Request — A proposal for new or improved functionality.
-- [ ] Improvement — An enhancement to an existing feature.
-- [ ] Idea — A creative or innovative suggestion.
-- [ ] Other — None of the above applies.
+- [ ] Bug — Something isn’t working as expected.  
+- [ ] Feature Request — A proposal for new or improved functionality.  
+- [ ] Feedback — An observation, idea, or need regarding the product.  
+- [ ] Other — None of the above applies.  
 
 
 <!-- Optional: Skip if not applicable. -->
@@ -44,16 +42,6 @@ If reporting a bug, list the steps needed to reproduce the issue:
 3. Observe the issue  
 
 -->
-
-
-<!-- Optional: Skip if not applicable. -->
-## ⚙️ Current Behavior
-
-
-<!-- 
-Explain what is happening now (e.g., error messages, unexpected results).  
--->
-
 
 
 <!-- Optional: Skip if not applicable. -->
