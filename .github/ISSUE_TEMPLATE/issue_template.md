@@ -1,10 +1,11 @@
 ---
 name: Issue Report
-about: Report a bug, provide feedback, request a feature, suggest improvements, or share an idea
+about: Report a bug, provide feedback, request a feature, suggest improvements, or
+  share an idea
 title: ''
 labels: ''
 assignees: ''
-type: 'Issue'
+
 ---
 
 ## 📝 Overview
