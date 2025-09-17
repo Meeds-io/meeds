@@ -1,0 +1,44 @@
+name: Sync issue type from form
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  apply-type:
+    # Ignore pull requests (they sont des "issues" côté payload)
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Map Issue Form "Type" -> GitHub issue type
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {issue, repository} = context.payload;
+            const body = issue.body || "";
+
+            // Cherche la section rendue par l'Issue Form :
+            // Ligne "Type" suivie de la valeur ("Bug" | "Feature" | "Task")
+            const match = body.match(/(?:^|\n)\s*(?:\*\*|#+\s*)?Type(?:\*\*)?\s*\n+\s*(Bug|Feature|Task)\b/i);
+            if (!match) {
+              core.info("No Type found in Issue Form body; skipping.");
+              return;
+            }
+
+            const selected = match[1].toLowerCase(); // "bug" | "feature" | "task"
+            const map = { bug: "bug", feature: "feature", task: "task" };
+            const ghType = map[selected];
+            if (!ghType) {
+              core.info(`Unmapped type "${selected}", skipping.`);
+              return;
+            }
+
+            core.info(`Setting GitHub issue type to: ${ghType}`);
+            await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
+              owner: repository.owner.login,
+              repo: repository.name,
+              issue_number: issue.number,
+              type: ghType
+            });
