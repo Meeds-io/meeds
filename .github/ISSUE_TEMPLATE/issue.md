@@ -1,0 +1,116 @@
+---
+name: Issue
+about: generic form to fill Bugs, Feature requests and  all kinds of issues
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+name: Issue
+description: Report a bug, request a feature, or share feedback
+title: ""
+labels: []
+type: Issue
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: Select the type of issue.
+      options:
+        - Bug
+        - Feature Request
+        - Feedback
+        - Other
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 📝 Overview
+      description: Short description in 1–2 sentences.
+      placeholder: "Example: Unable to save changes on my profile page."
+    validations:
+      required: true
+
+  # ---------------- BUG ONLY ----------------
+  - type: textarea
+    id: bug_context
+    attributes:
+      label: 🔍 Problem / Context (Only if **Bug**)
+      description: Describe what you observed and where.
+      placeholder: "Page/Feature, environment, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 🐞 Steps to Reproduce (Only if **Bug**)
+      description: "1) Go to…, 2) Click…, 3) Observe…"
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 🎯 Expected Behavior (Only if **Bug**)
+      description: What did you expect to happen?
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: ✅ Acceptance Criteria (Only if **Bug**)
+      description: Checkable criteria to confirm the bug is fixed.
+      placeholder: |
+        - [ ] Action completes within 2s
+        - [ ] Confirmation message is displayed
+    validations:
+      required: false
+
+  # --------------- FEATURE REQUEST ONLY ---------------
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Proposed Solution (Only if **Feature Request**)
+      description: Describe the new or improved functionality.
+      placeholder: "Example: Add a confirmation dialog before saving."
+    validations:
+      required: false
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: 🎉 Expected Benefits (Only if **Feature Request**)
+      description: Why is this valuable? Impact, outcomes, metrics.
+      placeholder: "Example: Streamlines saving and reduces errors."
+    validations:
+      required: false
+
+  # ---------------- SHARED / OPTIONAL ----------------
+  - type: textarea
+    id: extra
+    attributes:
+      label: 🔗 Additional Context (Optional)
+      description: Logs, screenshots, links, etc.
+      placeholder: "Related Task ID: e.g., MEED-00000"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow the project's Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
