@@ -19,7 +19,6 @@ jobs:
             let body = issue.body || "";
 
             // ---------- 1) Extract selected Type from the "### Type" section ----------
-            // Capture the whole Type block (from "### Type" until next heading or EOF)
             const typeBlockMatch = body.match(/(^|\n)#{2,}\s*Type\s*\n+([\s\S]*?)(?=\n#{2,}\s|\n*$)/i);
             let selected = null;
             if (typeBlockMatch) {
@@ -51,10 +50,8 @@ jobs:
             // Find a section by heading pattern; return {start, end, heading, content}
             function findSection(headingPattern) {
               const re = new RegExp(
-                // Heading line (### ...\n)
-                String.raw`(^|\n)(#{2,}\s*${headingPattern}[^\n]*\n)` +
-                // Content (until next heading or EOF)
-                String.raw`([\s\S]*?)(?=\n#{2,}\s|\n*$)`,
+                String.raw`(^|\n)(#{2,}\s*${headingPattern}[^\n]*\n)` + // heading line
+                String.raw`([\s\S]*?)(?=\n#{2,}\s|\n*$)`,                 // content until next heading/EOF
                 "i"
               );
               const m = newBody.match(re);
@@ -64,64 +61,4 @@ jobs:
               const heading = m[2];
               const content = m[3];
               const end = start + full.length;
-              return { re, start, end, heading, content };
-            }
-
-            // Remove entire section if content is exactly "_No response_"
-            function removeIfNoResponse(headingPattern) {
-              const sec = findSection(headingPattern);
-              if (!sec) return false;
-              if (/^\s*_No response_\s*$/i.test(sec.content.trim())) {
-                newBody = newBody.slice(0, sec.start) + "\n" + newBody.slice(sec.end);
-                core.info(`Removed empty section: ${headingPattern}`);
-                return true;
-              }
-              return false;
-            }
-
-            // Rename a heading only if section exists and we didn't remove it
-            function renameHeading(onlyForType, fromPattern, toHeading) {
-              if (selected !== onlyForType) return false;
-              const sec = findSection(fromPattern);
-              if (!sec) return false; // section not present
-              // Replace only the heading line; keep content
-              const before = newBody.slice(0, sec.start);
-              const after = newBody.slice(sec.end);
-              const newSection =
-                // preserve leading newline if any, then new heading
-                (newBody[sec.start - 1] === "\n" ? "\n" : "") +
-                `### ${toHeading}\n` +
-                sec.content;
-              newBody = before + newSection + after;
-              core.info(`Renamed heading to: ${toHeading}`);
-              return true;
-            }
-
-            // ---------- 3) FIRST: remove empty sections ----------
-            // Accept both "-" and "—" dash between "Bug/Feature" and the title
-            const bugPattern = String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s*if\s*Type\s*=\s*Bug\)`;
-            const featurePattern = String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s*if\s*Type\s*=\s*Feature\)`;
-
-            const bugRemoved = removeIfNoResponse(bugPattern);
-            const featureRemoved = removeIfNoResponse(featurePattern);
-
-            // ---------- 4) THEN: rename headings for the selected type (if not removed) ----------
-            if (!bugRemoved) {
-              renameHeading("bug", bugPattern, "Steps to Reproduce & Expected Result");
-            }
-            if (!featureRemoved) {
-              renameHeading("feature", featurePattern, "Solution & Expected Benefits");
-            }
-
-            // ---------- 5) Patch body if changed ----------
-            if (newBody !== body) {
-              await github.request("PATCH /repos/{owner}/{repo}/issues/{issue_number}", {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                body: newBody.trim() + "\n",
-              });
-              core.info("Issue body updated.");
-            } else {
-              core.info("No body changes needed.");
-            }
+              return
