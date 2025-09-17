@@ -17,7 +17,7 @@ Example: "Unable to save changes on my profile page."
 <!-- Help us qualify your issue -->
 **Select one or more categories that apply:**
 - [ ] Bug — Something isn’t working as expected.  
-- [ ] Feature Request — A proposal for new or improved functionality.  
+- [ ] Feature — A proposal for new or improved functionality.  
 - [ ] Feedback — An observation, idea, or need regarding the product.  
 - [ ] Other — None of the above applies.  
 
@@ -60,7 +60,7 @@ Example: "Add a confirmation dialog before saving changes."
 -->
 
 <!-- Optional: Skip if not sure. -->
-## 🎉 Expected Benefits
+## 🎉 Expected Benefits (for Features)
 
 <!-- 
 Explain the benefits or improvements your suggestion would bring.  
@@ -70,7 +70,7 @@ Example: "This change will streamline the saving process and reduce user errors.
 
 
 <!-- Optional: Skip if you cannot define them. -->
-## ✅ Acceptance Criteria
+## ✅ Acceptance Criteria (for Bugs)
 
 <!-- 
 List measurable criteria that confirm the issue is resolved.  
