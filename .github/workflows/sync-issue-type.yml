@@ -19,6 +19,7 @@ jobs:
             let body = issue.body || "";
 
             // ---------- 1) Extract selected Type from the "### Type" section ----------
+            // Capture the Type block (from "### Type" until next heading or EOF)
             const typeBlockMatch = body.match(/(^|\n)#{2,}\s*Type\s*\n+([\s\S]*?)(?=\n#{2,}\s|\n*$)/i);
             let selected = null;
             if (typeBlockMatch) {
@@ -52,39 +53,39 @@ jobs:
 
             let newBody = body;
 
-            // ---------- Helpers ----------
-            // Find a section by heading pattern; return {start, end, heading, content}
-            function findSection(headingPattern) {
+            // ---------- Helpers (prefix-based, robust to dashes/spaces) ----------
+            // Find a section by heading prefix; return {start, end, heading, content}
+            function findSectionByPrefix(prefix) {
               const re = new RegExp(
-                String.raw`(^|\n)(#{2,}\s*${headingPattern}[^\n]*\n)` + // heading line
-                String.raw`([\s\S]*?)(?=\n#{2,}\s|\n*$)`,                 // content until next heading/EOF
+                String.raw`(^|\n)(#{2,}\s*${prefix}\b[^\n]*\n)` + // heading line starts with "## <prefix>"
+                String.raw`([\s\S]*?)(?=\n#{2,}\s|\n*$)`,            // content until next heading/EOF
                 "i"
               );
               const m = newBody.match(re);
               if (!m) return null;
               const full = m[0];
               const start = m.index;
-              const heading = m[2];
-              const content = m[3];
+              const heading = m[2];   // the actual heading line matched
+              const content = m[3];   // section content (no heading)
               const end = start + full.length;
               return { re, start, end, heading, content };
             }
 
             // Remove entire section if content is exactly "_No response_"
-            function removeIfNoResponse(headingPattern) {
-              const sec = findSection(headingPattern);
+            function removeIfNoResponseByPrefix(prefix) {
+              const sec = findSectionByPrefix(prefix);
               if (!sec) return false;
               if (/^\s*_No response_\s*$/i.test(sec.content.trim())) {
                 newBody = newBody.slice(0, sec.start) + "\n" + newBody.slice(sec.end);
-                core.info(`Removed empty section: ${headingPattern}`);
+                core.info(`Removed empty section: ${prefix}`);
                 return true;
               }
               return false;
             }
 
-            // Rename a section heading to a clean simple H3 (keeps content)
-            function renameHeadingSimple(fromPattern, toHeading) {
-              const sec = findSection(fromPattern);
+            // Rename the section heading to a clean simple H3 (keeps content)
+            function renameHeadingSimpleByPrefix(prefix, toHeading) {
+              const sec = findSectionByPrefix(prefix);
               if (!sec) return false;
               const before = newBody.slice(0, sec.start);
               const after = newBody.slice(sec.end);
@@ -93,51 +94,31 @@ jobs:
                 `### ${toHeading}\n` +
                 sec.content;
               newBody = before + newSection + after;
-              core.info(`Renamed heading to: ${toHeading}`);
+              core.info(`Renamed heading '${prefix}...' to: ${toHeading}`);
               return true;
             }
 
-            // Convenience: try multiple patterns for the same logical section
-            function removeIfNoResponseAny(patterns) {
-              for (const p of patterns) {
-                if (removeIfNoResponse(p)) return true;
-              }
-              return false;
-            }
-            function renameHeadingSimpleAny(patterns, toHeading) {
-              for (const p of patterns) {
-                if (renameHeadingSimple(p, toHeading)) return true;
-              }
-              return false;
-            }
-
             // ---------- 3) FIRST: remove empty sections ----------
-            // Accept both "-" and "—" and also support already-simplified headings
-            const bugLong = String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s*if\s*Type\s*=\s*Bug\)`;
-            const featureLong = String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s*if\s*Type\s*=\s*Feature\)`;
-            const bugShort = String.raw`Bug\b`;
-            const featureShort = String.raw`Feature\b`;
-
-            const bugRemoved = removeIfNoResponseAny([bugLong, bugShort]);
-            const featureRemoved = removeIfNoResponseAny([featureLong, featureShort]);
+            const bugRemoved = removeIfNoResponseByPrefix("Bug");
+            const featureRemoved = removeIfNoResponseByPrefix("Feature");
+            // Optionnel : supprimer "Additional Context" vide aussi
+            // const ctxRemoved = removeIfNoResponseByPrefix("Additional Context");
 
             // ---------- 4) THEN: tidy headings ----------
-            // a) Strip "(optional)" from "Additional Context (optional)"
-            renameHeadingSimple(String.raw`Additional Context\s*\(optional\)`, "Additional Context");
+            // a) Normalize "Additional Context" (strip "(optional)" etc.)
+            renameHeadingSimpleByPrefix("Additional Context", "Additional Context");
 
-            // b) Replace verbose per-type headings with a clean simple one
+            // b) Replace any verbose per-type headings with a clean simple one
             if (selected === "bug" && !bugRemoved) {
-              // Long -> "Bug", or already simple -> no-op
-              renameHeadingSimpleAny([bugLong], "Bug");
+              renameHeadingSimpleByPrefix("Bug", "Bug");
             }
             if (selected === "feature" && !featureRemoved) {
-              // Long -> "Feature", or already simple -> no-op
-              renameHeadingSimpleAny([featureLong], "Feature");
+              renameHeadingSimpleByPrefix("Feature", "Feature");
             }
 
             // ---------- 5) FINALLY: remove the "Type" section if mapping succeeded ----------
             if (typeMapped && selected) {
-              const typeSec = findSection(String.raw`Type`);
+              const typeSec = findSectionByPrefix("Type");
               if (typeSec) {
                 newBody = newBody.slice(0, typeSec.start) + "\n" + newBody.slice(typeSec.end);
                 core.info("Removed 'Type' section after successful mapping.");
