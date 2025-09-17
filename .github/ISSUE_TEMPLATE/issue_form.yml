@@ -42,12 +42,12 @@ body:
     attributes:
       label: Bug — Steps to Reproduce & Expected Result (only if Type = Bug)
       value: |
-        ### Steps to Reproduce
+        #### Steps to Reproduce
         1.
         2.
         3.
 
-        ### Expected Result
+        #### Expected Result
         -
 
         <!-- Optional: Acceptance Criteria (for complex bugs)
@@ -63,10 +63,10 @@ body:
     attributes:
       label: Feature — Solution & Expected Benefits (only if Type = Feature)
       value: |
-        ### Proposed Solution
+        #### Proposed Solution
         -
 
-        ### Expected Benefits
+        #### Expected Benefits
         <!--
         - Improves ...
         - Reduces ...
