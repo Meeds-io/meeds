@@ -1,29 +1,13 @@
 name: Issue Form
 description: Report a bug, request a feature, or plan a task
-title: "[Issue]: "
 labels: []
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        **Instructions**
-        1) Select the **Type**.
-        2) Fill **Problem Statement** (required).
-        3) Complete ONLY the section that matches your type:
-           - **Bug** → *Steps to Reproduce & Expected Result*
-           - **Feature** → *Solution & Expected Benefits*
-           - **Task** → (Problem Statement is usually enough; add details in *Additional Context* if needed)
 
   - type: dropdown
     id: type
     attributes:
       label: Type
-      description: |
-        **Definitions**
-        - **Bug** — Something isn’t working as expected.
-        - **Feature** — A new capability or an enhancement to existing behavior.
-        - **Task** — A scoped piece of work that doesn’t change product behavior (e.g., refactor, docs, CI).
       options:
         - Bug
         - Feature
@@ -32,15 +16,23 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        **Definitions**
+        - **Bug** — Something isn’t working as expected.
+        - **Feature** — A new capability or an enhancement to existing behavior.
+        - **Task** — A scoped piece of work that doesn’t change product behavior (e.g., refactor, docs, CI).
+
   - type: textarea
     id: problem
     attributes:
       label: Problem Statement
       description: Works for all types. Be concrete and concise.
-      placeholder: |
-        For **Bug**: What happened? Where? Who is impacted? Environment?
-        For **Feature**: What user need or goal are we addressing?
-        For **Task**: What is the objective, scope, and success signal?
+      value: |
+        <!-- For Bug: What happened? Where? Who is impacted? Environment (browser, OS, device)? -->
+        <!-- For Feature: What user need or goal are we addressing? Why now? -->
+        <!-- For Task: What is the objective, scope, and success signal? -->
     validations:
       required: true
 
@@ -48,9 +40,8 @@ body:
   - type: textarea
     id: bug_repro_expected
     attributes:
-      label: Bug — Steps to Reproduce & Expected Result
-      description: Fill this only if Type = **Bug**.
-      placeholder: |
+      label: Bug — Steps to Reproduce & Expected Result (only if Type = Bug)
+      value: |
         ### Steps to Reproduce
         1.
         2.
@@ -58,6 +49,11 @@ body:
 
         ### Expected Result
         -
+
+        <!-- Optional: Acceptance Criteria (for complex bugs)
+        - [ ] ...
+        - [ ] ...
+        -->
     validations:
       required: false
 
@@ -65,16 +61,17 @@ body:
   - type: textarea
     id: feature_solution_benefits
     attributes:
-      label: Feature — Solution & Expected Benefits
-      description: Fill this only if Type = **Feature**.
-      placeholder: |
+      label: Feature — Solution & Expected Benefits (only if Type = Feature)
+      value: |
         ### Proposed Solution
         -
 
         ### Expected Benefits
-        - Improves...
-        - Reduces...
+        <!--
+        - Improves ...
+        - Reduces ...
         - Measurable outcome: ...
+        -->
     validations:
       required: false
 
@@ -82,10 +79,9 @@ body:
   - type: textarea
     id: additional_context
     attributes:
-      label: Additional Context (Optional)
-      description: Logs, screenshots, error messages, links, environment, etc.
-      placeholder: |
-        Include any extra information that helps us reproduce or scope the work.
-        Related Task ID (if any): e.g., MEED-00000
+      label: Additional Context (optional)
+      value: |
+        <!-- Logs, screenshots, error messages, links, environment, etc. -->
+        <!-- Related Task ID (if any): e.g., MEED-00000 -->
     validations:
       required: false
