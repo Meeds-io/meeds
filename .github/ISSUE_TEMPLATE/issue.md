@@ -1,116 +1,98 @@
 ---
 name: Issue
-about: generic form to fill Bugs, Feature requests and  all kinds of issues
+about: Report any feature request, idea or bug
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-name: Issue
-description: Report a bug, request a feature, or share feedback
-title: ""
-labels: []
-type: Issue
-body:
-  - type: dropdown
-    id: type
-    attributes:
-      label: Type
-      description: Select the type of issue.
-      options:
-        - Bug
-        - Feature Request
-        - Feedback
-        - Other
-      default: 0
-    validations:
-      required: true
+---
+name: Issue Report
+about: Report a bug, provide feedback, request a feature, suggest improvements, or share an idea
+title: ''
+labels: ''
+assignees: ''
+type: 'Issue'
+---
 
-  - type: textarea
-    id: overview
-    attributes:
-      label: 📝 Overview
-      description: Short description in 1–2 sentences.
-      placeholder: "Example: Unable to save changes on my profile page."
-    validations:
-      required: true
+## 📝 Overview
 
-  # ---------------- BUG ONLY ----------------
-  - type: textarea
-    id: bug_context
-    attributes:
-      label: 🔍 Problem / Context (Only if **Bug**)
-      description: Describe what you observed and where.
-      placeholder: "Page/Feature, environment, etc."
-    validations:
-      required: false
+<!-- 
+Provide a short description of your issue in 1–2 sentences.  
+Example: "Unable to save changes on my profile page." 
+-->
 
-  - type: textarea
-    id: repro
-    attributes:
-      label: 🐞 Steps to Reproduce (Only if **Bug**)
-      description: "1) Go to…, 2) Click…, 3) Observe…"
-      placeholder: |
-        1.
-        2.
-        3.
-    validations:
-      required: false
+<!-- Help us qualify your issue -->
+**Select one or more categories that apply:**
+- [ ] Bug — Something isn’t working as expected.  
+- [ ] Feature — A proposal for new or improved functionality.  
+- [ ] Feedback — An observation, idea, or need regarding the product.  
+- [ ] Other — None of the above applies.  
 
-  - type: textarea
-    id: expected
-    attributes:
-      label: 🎯 Expected Behavior (Only if **Bug**)
-      description: What did you expect to happen?
-    validations:
-      required: false
 
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: ✅ Acceptance Criteria (Only if **Bug**)
-      description: Checkable criteria to confirm the bug is fixed.
-      placeholder: |
-        - [ ] Action completes within 2s
-        - [ ] Confirmation message is displayed
-    validations:
-      required: false
+<!-- Optional: Skip if not applicable. -->
+## 🔍 Problem / Context
 
-  # --------------- FEATURE REQUEST ONLY ---------------
-  - type: textarea
-    id: solution
-    attributes:
-      label: 💡 Proposed Solution (Only if **Feature Request**)
-      description: Describe the new or improved functionality.
-      placeholder: "Example: Add a confirmation dialog before saving."
-    validations:
-      required: false
+<!-- 
+Describe the problem or observation in simple terms.  
+For example, explain what you encountered or what isn’t working as expected.
 
-  - type: textarea
-    id: benefits
-    attributes:
-      label: 🎉 Expected Benefits (Only if **Feature Request**)
-      description: Why is this valuable? Impact, outcomes, metrics.
-      placeholder: "Example: Streamlines saving and reduces errors."
-    validations:
-      required: false
+-->
 
-  # ---------------- SHARED / OPTIONAL ----------------
-  - type: textarea
-    id: extra
-    attributes:
-      label: 🔗 Additional Context (Optional)
-      description: Logs, screenshots, links, etc.
-      placeholder: "Related Task ID: e.g., MEED-00000"
-    validations:
-      required: false
 
-  - type: checkboxes
-    id: coc
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow the project's Code of Conduct.
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+<!-- Optional: Skip if not applicable. -->
+## 🐞 Steps to Reproduce
+
+<!-- 
+If reporting a bug, list the steps needed to reproduce the issue:
+1. Navigate to **[Page/Feature]**
+2. Click on **[Action]**
+3. Observe the issue  
+
+-->
+
+
+<!-- Optional: Skip if not applicable. -->
+## 🎯 Expected Behavior
+
+<!--
+Describe what you expected to happen under normal conditions.  
+-->
+
+<!-- Optional: Skip if you don’t have a proposal. -->
+## 💡 Proposed Solution
+
+<!-- 
+Detail your idea or suggestion for resolving the issue.  
+Example: "Add a confirmation dialog before saving changes."
+-->
+
+<!-- Optional: Skip if not sure. -->
+## 🎉 Expected Benefits (for Features)
+
+<!-- 
+Explain the benefits or improvements your suggestion would bring.  
+
+Example: "This change will streamline the saving process and reduce user errors."
+-->
+
+
+<!-- Optional: Skip if you cannot define them. -->
+## ✅ Acceptance Criteria (for Bugs)
+
+<!-- 
+List measurable criteria that confirm the issue is resolved.  
+Examples:
+- [ ] The action completes within 2 seconds.
+- [ ] A confirmation message is displayed.
+
+-->
+
+<!-- Optional: Skip if not applicable. -->
+## 🔗 Additional Context
+
+<!--
+Provide any extra information (logs, screenshots, error messages, links, etc.).  
+-->
+**Related Task ID:** e.g., MEED-00000
