@@ -7,13 +7,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please select the **Type** first. Fill sections marked “Only if Bug” or “Only if Feature Request” accordingly.
+        Please select the **Type** first.  
+        **Problem** is required for all issues.  
+        If **Bug**, use **Bug Details** to include Repro steps, Expected behavior, and Acceptance criteria.  
+        If **Feature Request**, use **Solution & Benefits**.
 
   - type: dropdown
     id: type
     attributes:
-      label: "Type"
-      description: "Select the issue type."
+      label: Type
+      description: Select the issue type.
       options:
         - Bug
         - Feature
@@ -24,77 +27,54 @@ body:
       required: true
 
   - type: textarea
-    id: overview
+    id: problem
     attributes:
-      label: "📝 Overview"
-      description: "Short description in 1–2 sentences."
-      placeholder: "Example: Unable to save changes on my profile page."
+      label: Problem
+      description: Describe the problem or observation in simple terms. Be specific if it's a bug.
+      placeholder: "What did you encounter? Where? Environment?"
     validations:
       required: true
 
   - type: textarea
-    id: problem_context
+    id: bug_details
     attributes:
-      label: "🔍 Problem / Context"
-      description: "Describe the problem or observation. (General; if **Bug**, be specific.)"
-      placeholder: "What did you encounter? Where? Environment?"
-    validations:
-      required: false
-
-  - type: textarea
-    id: repro
-    attributes:
-      label: "🐞 Steps to Reproduce (Only if **Bug**)"
-      description: "If reporting a bug, list the steps to reproduce."
+      label: Bug Details (Only if **Bug**)
+      description: Include **Steps to Reproduce**, **Expected Behavior**, and **Acceptance Criteria** in one place.
       placeholder: |
-        1. Go to [...]
-        2. Click [...]
-        3. Observe [...]
+        ### Steps to Reproduce
+        1.
+        2.
+        3.
+
+        ### Expected Behavior
+        - …
+
+        ### Acceptance Criteria
+        - [ ] …
+        - [ ] …
     validations:
       required: false
 
   - type: textarea
-    id: expected_behavior
+    id: solution_benefits
     attributes:
-      label: "🎯 Expected Behavior (Only if **Bug**)"
-      description: "What did you expect to happen?"
-    validations:
-      required: false
-
-  - type: textarea
-    id: acceptance_criteria
-    attributes:
-      label: "✅ Acceptance Criteria (Only if **Bug**)"
-      description: "Checkable criteria to confirm the fix."
+      label: Solution & Benefits (Only if **Feature Request**)
+      description: Describe the **Proposed Solution** and the **Expected Benefits** (impact, outcomes, metrics).
       placeholder: |
-        - [ ] Action completes within 2 seconds
-        - [ ] Confirmation message is displayed
+        ### Proposed Solution
+        - …
+
+        ### Expected Benefits
+        - …
     validations:
       required: false
 
-  - type: textarea
-    id: proposed_solution
-    attributes:
-      label: "💡 Proposed Solution (Only if **Feature**)"
-      description: "Describe the new or improved functionality."
-      placeholder: "Example: Add a confirmation dialog before saving."
-    validations:
-      required: false
-
-  - type: textarea
-    id: expected_benefits
-    attributes:
-      label: "🎉 Expected Benefits (Only if **Feature**)"
-      description: "Why is this valuable? Impact, outcomes, metrics."
-      placeholder: "Example: Streamlines saving and reduces user errors."
-    validations:
-      required: false
-
+  # -------- SHARED / OPTIONAL --------
   - type: textarea
     id: additional_context
     attributes:
-      label: "🔗 Additional Context (Optional)"
-      description: "Logs, screenshots, error messages, links, etc."
+      label: Additional Context (Optional)
+      description: Logs, screenshots, error messages, links, etc.
       placeholder: "Anything else we should know."
     validations:
       required: false
@@ -102,9 +82,10 @@ body:
   - type: input
     id: related_task_id
     attributes:
-      label: "Related Task ID (Optional)"
-      description: "e.g., MEED-00000"
+      label: Related Task ID (Optional)
+      description: e.g., MEED-00000
       placeholder: "MEED-00000"
     validations:
       required: false
+
 
