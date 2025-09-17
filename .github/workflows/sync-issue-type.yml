@@ -19,7 +19,6 @@ jobs:
             let body = issue.body || "";
 
             // ---------- 1) Extract selected Type from the "### Type" section ----------
-            // Capture the whole Type block (from "### Type" until next heading or EOF)
             const typeBlockMatch = body.match(/(^|\n)#{2,}\s*Type\s*\n+([\s\S]*?)(?=\n#{2,}\s|\n*$)/i);
             let selected = null;
             if (typeBlockMatch) {
@@ -83,9 +82,8 @@ jobs:
               return false;
             }
 
-            // Rename a heading only if section exists and we didn't remove it
-            function renameHeading(onlyForType, fromPattern, toHeading) {
-              if (selected !== onlyForType) return false;
+            // Rename a section heading to a clean simple H3 (keeps content)
+            function renameHeadingSimple(fromPattern, toHeading) {
               const sec = findSection(fromPattern);
               if (!sec) return false;
               const before = newBody.slice(0, sec.start);
@@ -99,50 +97,51 @@ jobs:
               return true;
             }
 
-            // Generic rename (no type condition), e.g., to strip "(optional)"
-            function renameHeadingAny(fromPattern, toHeading) {
-              const sec = findSection(fromPattern);
-              if (!sec) return false;
-              const before = newBody.slice(0, sec.start);
-              const after = newBody.slice(sec.end);
-              const newSection =
-                (newBody[sec.start - 1] === "\n" ? "\n" : "") +
-                `### ${toHeading}\n` +
-                sec.content;
-              newBody = before + newSection + after;
-              core.info(`Renamed heading to: ${toHeading}`);
-              return true;
+            // Convenience: try multiple patterns for the same logical section
+            function removeIfNoResponseAny(patterns) {
+              for (const p of patterns) {
+                if (removeIfNoResponse(p)) return true;
+              }
+              return false;
             }
-
-            // Remove a section by exact heading (no content check)
-            function removeSection(headingPattern) {
-              const sec = findSection(headingPattern);
-              if (!sec) return false;
-              newBody = newBody.slice(0, sec.start) + "\n" + newBody.slice(sec.end);
-              core.info(`Removed section: ${headingPattern}`);
-              return true;
+            function renameHeadingSimpleAny(patterns, toHeading) {
+              for (const p of patterns) {
+                if (renameHeadingSimple(p, toHeading)) return true;
+              }
+              return false;
             }
 
             // ---------- 3) FIRST: remove empty sections ----------
-            const bugPattern = String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s*if\s*Type\s*=\s*Bug\)`;
-            const featurePattern = String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s*if\s*Type\s*=\s*Feature\)`;
-            const bugRemoved = removeIfNoResponse(bugPattern);
-            const featureRemoved = removeIfNoResponse(featurePattern);
+            // Accept both "-" and "—" and also support already-simplified headings
+            const bugLong = String.raw`Bug\s+[-—]\s*Steps to Reproduce\s*&\s*Expected Result\s*\(only\s*if\s*Type\s*=\s*Bug\)`;
+            const featureLong = String.raw`Feature\s+[-—]\s*Solution\s*&\s*Expected Benefits\s*\(only\s*if\s*Type\s*=\s*Feature\)`;
+            const bugShort = String.raw`Bug\b`;
+            const featureShort = String.raw`Feature\b`;
+
+            const bugRemoved = removeIfNoResponseAny([bugLong, bugShort]);
+            const featureRemoved = removeIfNoResponseAny([featureLong, featureShort]);
 
             // ---------- 4) THEN: tidy headings ----------
-            if (!bugRemoved) {
-              renameHeading("bug", bugPattern, "Steps to Reproduce & Expected Result");
+            // a) Strip "(optional)" from "Additional Context (optional)"
+            renameHeadingSimple(String.raw`Additional Context\s*\(optional\)`, "Additional Context");
+
+            // b) Replace verbose per-type headings with a clean simple one
+            if (selected === "bug" && !bugRemoved) {
+              // Long -> "Bug", or already simple -> no-op
+              renameHeadingSimpleAny([bugLong], "Bug");
             }
-            if (!featureRemoved) {
-              renameHeading("feature", featurePattern, "Solution & Expected Benefits");
+            if (selected === "feature" && !featureRemoved) {
+              // Long -> "Feature", or already simple -> no-op
+              renameHeadingSimpleAny([featureLong], "Feature");
             }
-            // Strip "(optional)" from "Additional Context (optional)"
-            renameHeadingAny(String.raw`Additional Context\s*\(optional\)`, "Additional Context");
 
             // ---------- 5) FINALLY: remove the "Type" section if mapping succeeded ----------
             if (typeMapped && selected) {
-              // Remove "### Type" section entirely (whatever its inner content)
-              removeSection(String.raw`Type`);
+              const typeSec = findSection(String.raw`Type`);
+              if (typeSec) {
+                newBody = newBody.slice(0, typeSec.start) + "\n" + newBody.slice(typeSec.end);
+                core.info("Removed 'Type' section after successful mapping.");
+              }
             } else {
               core.info("Keeping 'Type' section (type not mapped or not detected).");
             }
