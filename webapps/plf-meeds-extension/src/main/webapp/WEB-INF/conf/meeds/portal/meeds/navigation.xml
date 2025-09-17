@@ -25,6 +25,12 @@
   <priority>4</priority>
   <page-nodes>
     <node>
+      <name>contribute</name>
+      <label>#{portal.meeds.contribute}</label>
+      <icon>fa fa-rocket</icon>
+      <page-reference>portal::global::overview</page-reference>
+    </node>
+    <node>
       <name>people</name>
       <label>#{portal.meeds.people}</label>
       <icon>fas fa-users</icon>

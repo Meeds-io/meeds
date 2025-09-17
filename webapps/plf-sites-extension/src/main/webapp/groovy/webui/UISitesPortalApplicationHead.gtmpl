@@ -2,11 +2,10 @@
   import org.exoplatform.commons.utils.PropertyManager;
 
   def rcontext = _ctx.getRequestContext() ;
-  String engagementSite = PropertyManager.getProperty('io.meeds.engagementSite.name');
 %>
 <script type="text/javascript" id="sitesHeadScripts">
   eXo.env.portal.portalName = "<%=rcontext.getPortalOwner()%>";
   eXo.env.portal.defaultPortal = "<%=rcontext.getMetaPortal()%>";
   eXo.env.portal.metaPortalName = "<%=rcontext.getMetaPortal()%>";
-  eXo.env.portal.engagementSiteName = "<%=engagementSite%>" ;
+  eXo.env.portal.engagementSiteName = "<%=rcontext.getMetaPortal()%>" ;
 </script>

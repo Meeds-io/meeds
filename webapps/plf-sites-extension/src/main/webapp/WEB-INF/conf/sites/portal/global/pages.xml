@@ -3,7 +3,7 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2020 - 2024 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2025 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -177,12 +177,19 @@
             </portlet>
             <title>User Setting Language</title>
           </portlet-application>
-          <portlet-application>
+          <portlet-application profiles="notes">
             <portlet>
               <application-ref>notes</application-ref>
               <portlet-ref>TermsAndConditionsUserSettings</portlet-ref>
             </portlet>
             <title>User Setting Terms And Conditions</title>
+          </portlet-application>
+          <portlet-application profiles="app-center">
+            <portlet>
+              <application-ref>app-center</application-ref>
+              <portlet-ref>AppCenterUserSettings</portlet-ref>
+            </portlet>
+            <title>User Setting App Center</title>
           </portlet-application>
           <portlet-application>
             <portlet>
@@ -191,6 +198,10 @@
             </portlet>
             <title>User Setting Notifications</title>
           </portlet-application>
+          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
+            <name>settings-bottom-container</name>
+            <factory-id>addonContainer</factory-id>
+          </container>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -198,10 +209,6 @@
             </portlet>
             <title>User Setting Security</title>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>settings-bottom-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
         </column>
       </section-columns>
     </container>
@@ -335,6 +342,183 @@
               </preferences>
             </portlet>
             <title>Organizational Chart</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
+  <page profiles="gamification">
+    <name>overview</name>
+    <title>Overview</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/rewarding</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Image</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>name</name>
+                  <value>contributeOverivewPageBanner</value>
+                </preference>
+                <preference>
+                  <name>image-path</name>
+                  <value>war:/../images/pages/banner/dashboard-banner.png</value>
+                  <read-only>false</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Banner</title>
+            <css-style>
+              <mobile-hidden>true</mobile-hidden>
+            </css-style>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns mobile-columns-style="true">
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>topChallengers</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>topChallengersPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>topChallengersCurrentPosition</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Leaderboard</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>programsOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>limit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>programsSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Programs Overview</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>challengesOverview</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>endingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>lockedRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>availableRulesLimit</name>
+                  <value>4</value>
+                </preference>
+                <preference>
+                  <name>upcomingRulesLimit</name>
+                  <value>0</value>
+                </preference>
+                <preference>
+                  <name>rulesSortBy</name>
+                  <value>modifiedDate</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Actions overview</title>
+            <height>350</height>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-grid cols="12" rows="4">
+        <cell col-span="4" row-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>myContributions</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>myContributionsPeriod</name>
+                  <value>week</value>
+                </preference>
+                <preference>
+                  <name>myContributionsDisplayLegend</name>
+                  <value>true</value>
+                </preference>
+                <preference>
+                  <name>myContributionsProgramLimit</name>
+                  <value>4</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>User Contributions</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="8" row-span="2">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>BadgesOverview</portlet-ref>
+            </portlet>
+            <title>Badges Overview</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="kudos">
+            <portlet>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosOverview</portlet-ref>
+            </portlet>
+            <title>Kudos Overview</title>
+          </portlet-application>
+        </cell>
+        <cell col-span="4" row-span="2">
+          <portlet-application profiles="wallet">
+            <portlet>
+              <application-ref>wallet</application-ref>
+              <portlet-ref>myRewards</portlet-ref>
+            </portlet>
+            <title>User Rewards</title>
+          </portlet-application>
+        </cell>
+      </section-grid>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>EngagementCenterAchievements</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>hideOwnedTab</name>
+                  <value>true</value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Achievements</title>
           </portlet-application>
         </column>
       </section-columns>
@@ -494,1208 +678,6 @@
     </container>
   </page>
 
-  <page profiles="app-center">
-    <name>appCenterUserSetup</name>
-    <title>App Center User Setup</title>
-    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-    <edit-permission>manager:/platform/administrators</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>app-center</application-ref>
-              <portlet-ref>AppCenterUserSetupPortlet</portlet-ref>
-            </portlet>
-            <title>App Center User Setup</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics</name>
-    <title>Analytics</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "offset": 0,
-                    "filters": [
-                    {
-                    "field": "operation",
-                    "type": "EQUAL",
-                    "valueString": "login"
-                    }
-                    ],
-                    "title":
-                    "analytics.distinctLogins",
-                    "aggregations": [
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "DATE",
-                    "interval":
-                    "day",
-                    "sortDirection": "asc"
-                    },
-                    {
-                    "field": "userId",
-                    "type": "CARDINALITY"
-                    }
-                    ],
-                    "xAxisAggregations": [
-                    {
-                    "field": "timestamp",
-                    "type": "DATE",
-                    "interval":
-                    "day",
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "multipleCharts":
-                    false,
-                    "yAxisAggregation": {
-                    "field": "userId",
-                    "type": "CARDINALITY"
-                    },
-                    "chartType": "bar",
-                    "limit": 0
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Distinct logins</title>
-          </portlet-application>
-        </column>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "title":"analytics.usersCount",
-                    "chartType":"line",
-                    "multipleChartsField":"countType.keyword",
-                    "filters":[
-                    {
-                    "field":"operation",
-                    "type":"EQUAL",
-                    "valueString":"usersCount"
-                    },
-                    {
-                    "valueString":"enabledInternalUsers,enabledExternalUsers",
-                    "field":"countType",
-                    "type":"IN_SET"
-                    }
-                    ],
-                    "aggregations":[
-                    {
-                    "field":"countType.keyword",
-                    "type":"COUNT"
-                    },
-                    {
-                    "field":"timestamp",
-                    "type":"DATE",
-                    "interval":"day",
-                    "sortDirection":"asc"
-                    },
-                    {
-                    "field":"count",
-                    "type":"MAX"
-                    }
-                    ],
-                    "xAxisAggregations":[
-                    {
-                    "field":"timestamp",
-                    "type":"DATE",
-                    "interval":"day",
-                    "sortDirection":"asc"
-                    }
-                    ],
-                    "multipleCharts":true,
-                    "multipleChartsAggregation":{
-                    "field":"countType.keyword",
-                    "type":"COUNT"
-                    },
-                    "yAxisAggregation":{
-                    "field":"count",
-                    "type":"MAX"
-                    }
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Users count Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="8">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsRatePortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "title": "analytics.activeUsers",
-                    "chartType":
-                    "percentageBar",
-                    "colors": ["#4273C8"],
-                    "threshold": {
-                    "filters": [
-                    {
-                    "range": null,
-                    "valueString":
-                    "usersCount",
-                    "field": "operation",
-                    "type": "EQUAL"
-                    },
-                    {
-                    "range": null,
-                    "valueString": "enabledUsers",
-                    "field": "countType",
-                    "type": "EQUAL"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "interval": null,
-                    "sortDirection": null,
-                    "field": "count",
-                    "type": "MAX"
-                    }
-                    },
-                    "value": {
-                    "filters": [
-                    {
-                    "range": null,
-                    "valueString": "login",
-                    "field": "operation",
-                    "type":
-                    "EQUAL"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "interval": null,
-                    "sortDirection": null,
-                    "field": "userId",
-                    "type":
-                    "CARDINALITY"
-                    }
-                    }
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Connected Users</title>
-          </portlet-application>
-        </column>
-        <column col-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsRatePortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "title": "",
-                    "chartType": "percentage",
-                    "colors": ["#4d5466"],
-                    "value": {
-                    "filters": [
-                    {
-                    "field": "userId",
-                    "type": "GREATER",
-                    "valueString":
-                    "1"
-                    },
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "type":
-                    "COUNT"
-                    }
-                    },
-                    "percentageLimit": {
-                    "aggregation": {
-                    "filters": [
-                    {
-                    "valueString": "enabledUsers",
-                    "field": "countType",
-                    "type": "EQUAL"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "field":
-                    "count",
-                    "type": "MAX"
-                    }
-                    },
-                    "percentage": 10,
-                    "field":
-                    "userId"
-                    },
-                    "threshold": {
-                    "filters": [
-                    {
-                    "field":
-                    "userId",
-                    "type": "GREATER",
-                    "valueString": "1"
-                    },
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "type": "COUNT"
-                    }
-                    }
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Active Users</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "offset": 0,
-                    "title": "analytics.spacesCount",
-                    "aggregations": [
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "DATE",
-                    "interval": "day",
-                    "sortDirection": "asc"
-                    },
-                    {
-                    "field": "count",
-                    "type": "MAX"
-                    }
-                    ],
-                    "filters": [
-                    {
-                    "field": "operation",
-                    "type": "EQUAL",
-                    "valueString":
-                    "spacesCount"
-                    },
-                    {
-                    "field": "countType",
-                    "type":
-                    "EQUAL",
-                    "valueString": "allSpaces"
-                    }
-                    ],
-                    "xAxisAggregations": [
-                    {
-                    "field":
-                    "timestamp",
-                    "type":
-                    "DATE",
-                    "interval": "day",
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "multipleCharts": false,
-                    "yAxisAggregation": {
-                    "field": "count",
-                    "type": "MAX"
-                    },
-                    "chartType": "line",
-                    "limit": 0
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Users count Portlet</title>
-          </portlet-application>
-        </column>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "offset": 0,
-                    "title":
-                    "analytics.activitiesCount",
-                    "lang": null,
-                    "aggregations": [
-                    {
-                    "field": "module",
-                    "type": "COUNT",
-                    "interval": null,
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "filters": [
-                    {
-                    "field": "operation",
-                    "type": "IN_SET",
-                    "valueString":
-                    "taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "range": null
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "xAxisAggregations": [
-                    {
-                    "field":
-                    "module",
-                    "type": "COUNT",
-                    "interval": null,
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "multipleCharts": false,
-                    "multipleChartsAggregation": null,
-                    "yAxisAggregation": {
-                    "field": null,
-                    "type": "COUNT",
-                    "interval": null,
-                    "sortDirection": null
-                    },
-                    "multipleChartsField": null,
-                    "chartType": "pie",
-                    "colors": null,
-                    "limit": 0
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Platform Activities</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics-users</name>
-    <title>Analytics</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "pageSize":20,
-                    "mainColumn":{
-                    "title":"analytics.users",
-                    "valueAggregation":{
-                    "aggregation":{
-                    "field":"userId",
-                    "type":"TERMS",
-                    "dataType":"text"
-                    },
-                    "filters":[
-                    {
-                    "valueString":"1",
-                    "field":"userId",
-                    "type":"GREATER"
-                    }
-                    ]
-                    }
-                    },
-                    "columns":[
-                    {
-                    "title":"analytics.creationDate",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "periodIndependent":true,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"userCreatedDate",
-                    "type":"MAX"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"date"
-                    },
-                    {
-                    "title":"analytics.lastConnection",
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"login",
-                    "field":"operation",
-                    "type":"EQUAL"
-                    }
-                    ],
-                    "periodIndependent":true,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"timestamp",
-                    "type":"MAX"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"date"
-                    },
-                    {
-                    "title":"analytics.connectionsCount",
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"login",
-                    "field":"operation",
-                    "type":"EQUAL"
-                    }
-                    ],
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"doc['timestamp'].value.dayOfYear",
-                    "type":"CARDINALITY"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.activitiesCount",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "type":"COUNT"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.favoriteModule",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "periodIndependent":false,
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "limit":1,
-                    "field":"module",
-                    "type":"TERMS"
-                    }
-                    },
-                    "dataType":"keyword"
-                    }
-                    ]
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>User Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics-spaces</name>
-    <title>Analytics</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsTablePortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>{
-                    "pageSize": 20,
-                    "mainColumn":{
-                    "title":"analytics.spaces",
-                    "valueAggregation":{
-                    "aggregation":{
-                    "field":"spaceId",
-                    "type":"TERMS",
-                    "dataType":"text"
-                    },
-                    "filters":[
-                    {
-                    "range":null,
-                    "valueString":"1",
-                    "field":"spaceId",
-                    "type":"GREATER"
-                    }
-                    ]
-                    }
-                    },
-                    "columns":[
-                    {
-                    "title":"analytics.creationDate",
-                    "previousPeriod":false,
-                    "valueAggregation":{
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"spaceCreatedTime",
-                    "type":"MAX"
-                    },
-                    "periodIndependent":true
-                    },
-                    "sortable":true,
-                    "dataType":"date"
-                    },
-                    {
-                    "title":"analytics.membersCount",
-                    "previousPeriod":true,
-                    "valueAggregation":{
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"spaceMembersCount",
-                    "type":"MAX"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.activeUsersPercent",
-                    "previousPeriod":true,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"1",
-                    "field":"spaceId",
-                    "type":"GREATER"
-                    },
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"userId",
-                    "type":"CARDINALITY"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long",
-                    "thresholdAggregation":{
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "field":"spaceMembersCount",
-                    "type":"MAX"
-                    }
-                    }
-                    },
-                    {
-                    "title":"analytics.activitiesCount",
-                    "previousPeriod":true,
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    },
-                    {
-                    "valueString":"1",
-                    "field":"spaceId",
-                    "type":"GREATER"
-                    }
-                    ],
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "type":"COUNT"
-                    }
-                    },
-                    "sortable":true,
-                    "dataType":"long"
-                    },
-                    {
-                    "title":"analytics.mainModule",
-                    "valueAggregation":{
-                    "filters":[
-                    {
-                    "valueString":"taskCreated,taskUpdated,taskCommented,taskCompleted,taskStatusChanged,createActivity,createComment,likeActivity,likeComment,sendKudos,contactSection,experienceSection,avatar,createContent,updateContent,publishContent,commentContent,likeContent,shareContent",
-                    "field":"operation",
-                    "type":"IN_SET"
-                    },
-                    {
-                    "field": "activityType",
-                    "type": "NOT_IN_SET",
-                    "valueString": "news"
-                    }
-                    ],
-                    "aggregation":{
-                    "sortDirection":"desc",
-                    "limit":1,
-                    "field":"module",
-                    "type":"TERMS"
-                    }
-                    },
-                    "dataType":"keyword"
-                    }
-                    ]
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Space Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics-mobile</name>
-    <title>Analytics</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics-security</name>
-    <title>Analytics Security</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>
-                    {
-                    "offset": 0,
-                    "filters": [
-                    {
-                    "field": "operation",
-                    "type": "EQUAL",
-                    "valueString": "login",
-                    "range": null
-                    },
-                    {
-                    "field": "status",
-                    "type": "EQUAL",
-                    "valueString":
-                    "1",
-                    "range": null
-                    },
-                    {
-                    "field": "reason",
-                    "type": "EQUAL",
-                    "valueString": "wrongCredentials",
-                    "range": null
-                    }
-                    ],
-                    "limit": 0,
-                    "multipleCharts": false,
-                    "chartType": "bar",
-                    "colors": null,
-                    "multipleChartsField":
-                    null,
-                    "lang":
-                    null,
-                    "aggregations": [
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "DATE",
-                    "offset": null,
-                    "interval": "day",
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection":
-                    "asc"
-                    },
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "COUNT",
-                    "offset": null,
-                    "interval": null,
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "desc"
-                    }
-                    ],
-                    "yAxisAggregation":
-                    {
-                    "field": "timestamp",
-                    "type": "COUNT",
-                    "offset": null,
-                    "interval": null,
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "desc"
-                    },
-                    "multipleChartsAggregation": null,
-                    "xAxisAggregations": [
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "DATE",
-                    "offset": null,
-                    "interval": "day",
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "timeZone": null,
-                    "title":
-                    "analytics.failedLogin"
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Failed logins</title>
-          </portlet-application>
-        </column>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>
-                    {
-                    "offset": 0,
-                    "filters": [
-                    {
-                    "field": "operation",
-                    "type": "EQUAL",
-                    "valueString": "login",
-                    "range": null
-                    },
-                    {
-                    "field": "status",
-                    "type": "EQUAL",
-                    "valueString":
-                    "1",
-                    "range": null
-                    },
-                    {
-                    "field": "reason",
-                    "type": "EQUAL",
-                    "valueString": "accountLocked",
-                    "range": null
-                    }
-                    ],
-                    "limit": 0,
-                    "multipleCharts": false,
-                    "chartType": "bar",
-                    "colors": [
-                    "#F97575",
-                    "#f97575",
-                    "#98cc81",
-                    "#4273c8",
-                    "#cea6ac",
-                    "#bc99e7",
-                    "#9ee4f5",
-                    "#774ea9",
-                    "#ffa500",
-                    "#bed67e",
-                    "#0E100F",
-                    "#ffaacc"
-                    ],
-                    "multipleChartsField":
-                    null,
-                    "lang": null,
-                    "aggregations": [
-                    {
-                    "field":
-                    "timestamp",
-                    "type":
-                    "DATE",
-                    "offset": null,
-                    "interval":
-                    "day",
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "asc"
-                    },
-                    {
-                    "field":
-                    "timestamp",
-                    "type": "COUNT",
-                    "offset": null,
-                    "interval": null,
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "desc"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "field": "timestamp",
-                    "type":
-                    "COUNT",
-                    "offset": null,
-                    "interval": null,
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "desc"
-                    },
-                    "multipleChartsAggregation":
-                    null,
-                    "xAxisAggregations": [
-                    {
-                    "field": "timestamp",
-                    "type": "DATE",
-                    "offset": null,
-                    "interval": "day",
-                    "limit": 0,
-                    "useBounds": false,
-                    "minBound": 0,
-                    "maxBound": 0,
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "timeZone":
-                    null,
-                    "title":
-                    "analytics.accountLocked"
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Locked Accounts</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
-  <page profiles="analytics">
-    <name>analytics-wallet</name>
-    <title>Analytics Wallet</title>
-    <access-permissions>*:/platform/analytics;*:/platform/administrators</access-permissions>
-    <edit-permission>manager:/platform/analytics</edit-permission>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-columns>
-        <column col-span="12">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsDashboardBreadcrumb</portlet-ref>
-            </portlet>
-            <title>Breadcrumb Analytics</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-      <section-columns>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>
-                    {
-                    "filters": [
-                    {
-                    "field": "module",
-                    "type": "EQUAL",
-                    "valueString": "wallet"
-                    },
-                    {
-                    "field": "subModule",
-                    "type": "EQUAL",
-                    "valueString": "blockchain"
-                    }
-                    ],
-                    "aggregations": [
-                    {
-                    "field":
-                    "timestamp",
-                    "type": "DATE",
-                    "interval": "day",
-                    "useBounds": false,
-                    "sortDirection":
-                    "asc"
-                    },
-                    {
-                    "field": "timestamp",
-                    "type": "COUNT",
-                    "useBounds": false,
-                    "sortDirection": "desc"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "field": "timestamp",
-                    "type":
-                    "COUNT",
-                    "useBounds": false,
-                    "sortDirection": "desc"
-                    },
-                    "xAxisAggregations": [
-                    {
-                    "field": "timestamp",
-                    "type":
-                    "DATE",
-                    "interval": "day",
-                    "useBounds": false,
-                    "sortDirection": "asc"
-                    }
-                    ],
-                    "multipleCharts": false,
-                    "chartType": "bar",
-                    "title": "Blockchain Calls"
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Blockchain Calls</title>
-          </portlet-application>
-        </column>
-        <column col-span="6">
-          <portlet-application>
-            <portlet>
-              <application-ref>analytics</application-ref>
-              <portlet-ref>AnalyticsPortlet</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>settings</name>
-                  <value>
-                    {
-                    "filters": [
-                    {
-                    "field": "module",
-                    "type": "EQUAL",
-                    "valueString": "wallet"
-                    },
-                    {
-                    "field": "subModule",
-                    "type": "EQUAL",
-                    "valueString": "blockchain"
-                    }
-                    ],
-                    "aggregations": [
-                    {
-                    "field":
-                    "operation",
-                    "type":
-                    "TERMS",
-                    "useBounds": false,
-                    "sortDirection": "desc"
-                    },
-                    {
-                    "field": "operation",
-                    "type": "COUNT",
-                    "useBounds":
-                    false,
-                    "sortDirection": "desc"
-                    }
-                    ],
-                    "yAxisAggregation": {
-                    "field": "operation",
-                    "type": "COUNT",
-                    "useBounds":
-                    false,
-                    "sortDirection": "desc"
-                    },
-                    "xAxisAggregations": [
-                    {
-                    "field": "operation",
-                    "type": "TERMS",
-                    "useBounds":
-                    false,
-                    "sortDirection":
-                    "desc"
-                    }
-                    ],
-                    "multipleCharts":
-                    false,
-                    "chartType": "pie",
-                    "colors": [
-                    "#F97575",
-                    "#9EE4F5",
-                    "#98cc81",
-                    "#4273c8",
-                    "#cea6ac",
-                    "#bc99e7",
-                    "#9ee4f5",
-                    "#774ea9",
-                    "#ffa500",
-                    "#bed67e",
-                    "#0E100F",
-                    "#ffaacc"
-                    ],
-                    "title": "Blockchain Calls By Operation"
-                    }</value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Blockchain Calls By Operation</title>
-          </portlet-application>
-        </column>
-      </section-columns>
-    </container>
-  </page>
-
   <page profiles="notes">
     <name>notes-editor</name>
     <title>Notes Editor</title>
@@ -1703,20 +685,14 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container id="top-notes-editor-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>top-notes-editor-container</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
-    </container>
-    <container id="notes-editor-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>notes-editor-container</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
-    </container>
-    <container id="bottom-notes-editor-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>bottom-notes-editor-container</name>
-      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
-      <factory-id>addonContainer</factory-id>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <portlet-application>
+        <portlet>
+          <application-ref>notes</application-ref>
+          <portlet-ref>NotesEditor</portlet-ref>
+        </portlet>
+        <title>Notes Editor Application</title>
+      </portlet-application>
     </container>
   </page>
 
@@ -1777,7 +753,7 @@
   <page profiles="layout">
     <name>portlet-viewer</name>
     <title>Portlet Viewer</title>
-    <access-permissions>*:/platform/administrators;*:/platform/web-contributors</access-permissions>
+    <access-permissions>Everyone</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
@@ -1885,10 +861,6 @@
           </portlet-application>
         </column>
       </section-columns>
-    </container>
-    <container id="bottom-news-composer-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-      <name>bottom-news-composer-container</name>
-      <factory-id>addonContainer</factory-id>
     </container>
   </page>
 

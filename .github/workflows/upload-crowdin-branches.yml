@@ -6,11 +6,14 @@ on:
     branches:
       - stable/*
 jobs:
-  upload-crowdin-branch:
-    name: CI Build
-    uses: exoplatform/swf-scripts/.github/workflows/upload-crowdin-branches.yml@master
-    with:
-      YML_CROWDIN_LANGUAGES_ARG: ${{vars.YML_CROWDIN_LANGUAGES_ARG}}
-    secrets:
-      CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
-      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+  crowdin-upload-stable:
+    name: Crowdin Upload stable
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Crowdin Upload
+        uses: exo-actions/crowdin-upload-action@v1
+        with:
+          YML_CROWDIN_LANGUAGES_ARG: ${{ vars.YML_CROWDIN_LANGUAGES_ARG }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
