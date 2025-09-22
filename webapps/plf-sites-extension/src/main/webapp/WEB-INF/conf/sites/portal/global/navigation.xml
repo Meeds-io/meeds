@@ -343,5 +343,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::login</page-reference>
     </node>
+    <node>
+      <name>external-registration</name>
+      <label>#{portal.global.external-registration}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::external-registration</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
