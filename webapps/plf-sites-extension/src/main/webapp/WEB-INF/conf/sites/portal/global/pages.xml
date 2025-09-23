@@ -1227,5 +1227,121 @@
       </section-columns>
     </container>
   </page>
+<page>
+    <name>forgot-password</name>
+    <title>Forgot Password</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <show-max-window>true</show-max-window>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" width="100%">
+      <css-style>
+        <margin-top>0</margin-top>
+        <margin-bottom>0</margin-bottom>
+        <margin-right>0</margin-right>
+        <margin-left>0</margin-left>
+        <background-color>#FFFFFF</background-color>
+      </css-style>
+      <section-columns cssClass="layout-sticky-application">
+        <column col-span="5">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>SidebarLogin</portlet-ref>
+            </portlet>
+            <title>Sidebar Login</title>
+            <css-style>
+              <radius-top-right>0</radius-top-right>
+              <radius-top-left>0</radius-top-left>
+              <radius-bottom-right>0</radius-bottom-right>
+              <radius-bottom-left>0</radius-bottom-left>
+              <mobile-hidden>true</mobile-hidden>
+              <text-title-color>#FFFFFF</text-title-color>
+              <text-title-font-size>36px</text-title-font-size>
+              <text-title-font-weight>bold</text-title-font-weight>
+              <text-title-font-style>normal</text-title-font-style>
+              <text-header-color>#707070</text-header-color>
+              <text-header-font-size>18px</text-header-font-size>
+              <text-header-font-weight>normal</text-header-font-weight>
+              <text-header-font-style>normal</text-header-font-style>
+              <text-color>#FFFFFF</text-color>
+              <text-font-size>20px</text-font-size>
+              <text-font-weight>normal</text-font-weight>
+              <text-font-style>normal</text-font-style>
+              <text-subtitle-color>#707070</text-subtitle-color>
+              <text-subtitle-font-size>12px</text-subtitle-font-size>
+              <text-subtitle-font-weight>normal</text-subtitle-font-weight>
+              <text-subtitle-font-style>normal</text-subtitle-font-style>
+            </css-style>
+          </portlet-application>
+        </column>
+        <column col-span="7" cssClass="justify-space-between">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>PlatformName</portlet-ref>
+            </portlet>
+            <title>Platform Name</title>
+            <height>150</height>
+            <css-style>
+              <margin-top>60</margin-top>
+              <margin-bottom>0</margin-bottom>
+              <margin-right>20</margin-right>
+              <margin-left>20</margin-left>
+              <text-title-color>#20282C</text-title-color>
+              <text-title-font-size>34px</text-title-font-size>
+              <text-title-font-weight>bold</text-title-font-weight>
+              <text-title-font-style>normal</text-title-font-style>
+              <text-header-color>#707070</text-header-color>
+              <text-header-font-size>18px</text-header-font-size>
+              <text-header-font-weight>normal</text-header-font-weight>
+              <text-header-font-style>normal</text-header-font-style>
+              <text-color>#20282C</text-color>
+              <text-font-size>16px</text-font-size>
+              <text-font-weight>normal</text-font-weight>
+              <text-font-style>normal</text-font-style>
+              <text-subtitle-color>#707070</text-subtitle-color>
+              <text-subtitle-font-size>12px</text-subtitle-font-size>
+              <text-subtitle-font-weight>normal</text-subtitle-font-weight>
+              <text-subtitle-font-style>normal</text-subtitle-font-style>
 
+            </css-style>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>ForgotPassword</portlet-ref>
+            </portlet>
+            <title>Forgot Password</title>
+            <css-style>
+              <margin-top>0</margin-top>
+              <margin-bottom>20</margin-bottom>
+              <margin-right>20</margin-right>
+              <margin-left>20</margin-left>
+            </css-style>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>PlatformLogo</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>hAlign</name>
+                  <value>END</value>
+                  <read-only>false</read-only>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Platform Logo</title>
+            <height>100</height>
+            <css-style>
+              <margin-top>20</margin-top>
+              <margin-bottom>40</margin-bottom>
+              <margin-right>20</margin-right>
+              <margin-left>0</margin-left>
+            </css-style>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
 </page-set>
