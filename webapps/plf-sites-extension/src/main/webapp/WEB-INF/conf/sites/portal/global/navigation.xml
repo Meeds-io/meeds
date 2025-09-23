@@ -349,5 +349,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::external-registration</page-reference>
     </node>
+    <node>
+      <name>forgot-password</name>
+      <label>#{portal.global.forgot-password}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::forgot-password</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
