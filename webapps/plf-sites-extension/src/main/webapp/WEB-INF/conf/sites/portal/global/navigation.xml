@@ -355,5 +355,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::forgot-password</page-reference>
     </node>
+    <node>
+      <name>on-boarding</name>
+      <label>#{portal.global.on-boarding}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::on-boarding</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
