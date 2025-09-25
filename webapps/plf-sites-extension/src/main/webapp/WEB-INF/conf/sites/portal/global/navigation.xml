@@ -361,5 +361,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::on-boarding</page-reference>
     </node>
+    <node>
+      <name>register</name>
+      <label>#{portal.global.register}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::register</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
