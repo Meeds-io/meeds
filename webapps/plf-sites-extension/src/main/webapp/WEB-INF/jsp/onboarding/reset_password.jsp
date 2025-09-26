@@ -27,6 +27,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="org.gatein.portal.controller.resource.ResourceRequestHandler"%>
 <%@ page import="org.exoplatform.container.PortalContainer"%>
+<%@ page import="org.exoplatform.services.resources.LocaleConfigService"%>
 <%@ page import="org.exoplatform.services.resources.LocaleConfig"%>
 <%@ page import="org.exoplatform.services.resources.Orientation"%>
 <%
@@ -49,20 +50,20 @@
   String brandingThemeUrl = (String) request.getAttribute("brandingThemeUrl");
 
   // Locale
-  LocaleConfig localeConfig = (LocaleConfig) request.getAttribute("localeConfig");
-  String browserLanguage = localeConfig.getLocale().getLanguage();
-  Orientation orientation = localeConfig.getOrientation();
-  String direction = orientation.isLT() ? "ltr" : "rtl";
+  PortalContainer portalContainer = PortalContainer.getCurrentInstance(session.getServletContext());
+  LocaleConfigService localeConfigService = portalContainer.getComponentInstanceOfType(LocaleConfigService.class);
+  LocaleConfig localeConfig = localeConfigService.getDefaultLocaleConfig();
+  String defaultLanguage = localeConfig.getLocale().toLanguageTag();
+  String direction = localeConfig.getOrientation() != Orientation.RT ? "ltr" : "rtl";
 
-  PortalContainer portalContainer = PortalContainer.getInstance();
   ResourceBundleService resourceBundleService = portalContainer.getComponentInstanceOfType(ResourceBundleService.class);
   ResourceBundle res = resourceBundleService.getResourceBundle(resourceBundleService.getSharedResourceBundleNames(), localeConfig.getLocale());
   PwaManifestService pwaManifestService = portalContainer.getComponentInstanceOfType(PwaManifestService.class);
 %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xml:lang="<%=browserLanguage%>"
-  lang="<%=browserLanguage%>"
+  xml:lang="<%=defaultLanguage%>"
+  lang="<%=defaultLanguage%>"
   dir="<%=direction%>">
 <head>
   <%-- Embedded Title that will change once page loaded --%>
@@ -107,7 +108,7 @@
    require(['SHARED/bootstrap'], function() {
      eXo.env.portal.context = "<%=contextPath%>";
      eXo.env.portal.containerName = "<%=PortalContainer.getInstance().getName()%>";
-     eXo.env.portal.language='<%= browserLanguage %>';
+     eXo.env.portal.language='<%= defaultLanguage %>';
      eXo.env.portal.orientation='<%= direction %>';
      eXo.env.portal.rest = '<%= PortalContainer.getCurrentRestContextName() %>';
      eXo.env.server.context = "<%=contextPath%>";
