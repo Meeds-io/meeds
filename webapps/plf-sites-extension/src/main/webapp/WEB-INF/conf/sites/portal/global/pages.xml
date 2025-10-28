@@ -1049,7 +1049,7 @@
             <title>Platform Name</title>
             <height>150</height>
             <css-style>
-              <margin-top>60</margin-top>
+              <margin-top>20</margin-top>
               <margin-bottom>0</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1079,7 +1079,7 @@
             </portlet>
             <title>Login Form</title>
              <css-style>
-                <margin-top>0</margin-top>
+                <margin-top>-40</margin-top>
                 <margin-bottom>20</margin-bottom>
                 <margin-right>20</margin-right>
                 <margin-left>20</margin-left>
@@ -1098,7 +1098,7 @@
               </preferences>
             </portlet>
             <title>Platform Logo</title>
-            <height>100</height>
+            <height>50</height>
             <css-style>
               <margin-top>20</margin-top>
               <margin-bottom>40</margin-bottom>
@@ -1166,7 +1166,7 @@
             <title>Platform Name</title>
             <height>150</height>
             <css-style>
-              <margin-top>60</margin-top>
+              <margin-top>20</margin-top>
               <margin-bottom>0</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1196,7 +1196,7 @@
             </portlet>
             <title>External Registration</title>
             <css-style>
-              <margin-top>0</margin-top>
+              <margin-top>-40</margin-top>
               <margin-bottom>20</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1215,7 +1215,7 @@
               </preferences>
             </portlet>
             <title>Platform Logo</title>
-            <height>100</height>
+            <height>50</height>
             <css-style>
               <margin-top>20</margin-top>
               <margin-bottom>40</margin-bottom>
@@ -1283,7 +1283,7 @@
             <title>Platform Name</title>
             <height>150</height>
             <css-style>
-              <margin-top>60</margin-top>
+              <margin-top>20</margin-top>
               <margin-bottom>0</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1313,7 +1313,7 @@
             </portlet>
             <title>Forgot Password</title>
             <css-style>
-              <margin-top>0</margin-top>
+              <margin-top>-40</margin-top>
               <margin-bottom>20</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1332,7 +1332,7 @@
               </preferences>
             </portlet>
             <title>Platform Logo</title>
-            <height>100</height>
+            <height>50</height>
             <css-style>
               <margin-top>20</margin-top>
               <margin-bottom>40</margin-bottom>
@@ -1400,7 +1400,7 @@
             <title>Platform Name</title>
             <height>150</height>
             <css-style>
-              <margin-top>60</margin-top>
+              <margin-top>20</margin-top>
               <margin-bottom>0</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1430,7 +1430,7 @@
             </portlet>
             <title>Internal Registration</title>
             <css-style>
-              <margin-top>0</margin-top>
+              <margin-top>-40</margin-top>
               <margin-bottom>20</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1449,7 +1449,7 @@
               </preferences>
             </portlet>
             <title>Platform Logo</title>
-            <height>100</height>
+            <height>50</height>
             <css-style>
               <margin-top>20</margin-top>
               <margin-bottom>40</margin-bottom>
@@ -1517,7 +1517,7 @@
             <title>Platform Name</title>
             <height>150</height>
             <css-style>
-              <margin-top>60</margin-top>
+              <margin-top>20</margin-top>
               <margin-bottom>0</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1547,7 +1547,7 @@
             </portlet>
             <title>Register Form</title>
             <css-style>
-              <margin-top>0</margin-top>
+              <margin-top>-40</margin-top>
               <margin-bottom>20</margin-bottom>
               <margin-right>20</margin-right>
               <margin-left>20</margin-left>
@@ -1566,7 +1566,7 @@
               </preferences>
             </portlet>
             <title>Platform Logo</title>
-            <height>100</height>
+            <height>50</height>
             <css-style>
               <margin-top>20</margin-top>
               <margin-bottom>40</margin-bottom>
