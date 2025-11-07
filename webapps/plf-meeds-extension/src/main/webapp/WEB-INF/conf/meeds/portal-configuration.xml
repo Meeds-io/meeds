@@ -53,7 +53,7 @@
               <boolean>${io.meeds.meeds.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${io.meeds.meeds.portalConfig.metadata.importmode:insert}</string>
+              <string>${io.meeds.meeds.portalConfig.metadata.importmode:conserve}</string>
             </field>
             <field name="location">
               <string>war:/conf/meeds/</string>
@@ -84,7 +84,7 @@
               <boolean>${io.meeds.mycraft.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${io.meeds.mycraft.portalConfig.metadata.importmode:insert}</string>
+              <string>${io.meeds.mycraft.portalConfig.metadata.importmode:conserve}</string>
             </field>
             <field name="location">
               <string>war:/conf/meeds/</string>
