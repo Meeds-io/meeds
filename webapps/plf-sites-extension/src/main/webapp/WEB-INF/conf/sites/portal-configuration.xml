@@ -222,7 +222,7 @@
               <boolean>${io.meeds.spaceTemplates.portalConfig.metadata.override:true}</boolean>
             </field>
             <field name="importMode">
-              <string>${io.meeds.spaceTemplates.portalConfig.metadata.importmode:insert}</string>
+              <string>${io.meeds.spaceTemplates.portalConfig.metadata.importmode:conserve}</string>
             </field>
           </object>
         </object-param>
