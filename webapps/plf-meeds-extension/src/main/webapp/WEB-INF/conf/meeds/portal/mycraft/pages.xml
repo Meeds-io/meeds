@@ -125,4 +125,24 @@
     </container>
   </page>
 
+  <page profiles="notes">
+    <name>notes</name>
+    <title>notes</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>Notes</portlet-ref>
+            </portlet>
+            <title>Personal notes</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
 </page-set>
