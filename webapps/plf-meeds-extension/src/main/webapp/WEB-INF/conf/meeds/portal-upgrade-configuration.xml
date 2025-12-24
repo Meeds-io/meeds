@@ -395,8 +395,8 @@
         </object-param>
       </init-params>
     </component-plugin>
-    <component-plugin>
-      <name>MycraftNavigationUpgrade</name>
+    <component-plugin profiles="layout">
+      <name>MycraftNavigationUpgrade-7.2</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
       <init-params>
