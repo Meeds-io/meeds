@@ -3,7 +3,7 @@
 
   This file is part of the Meeds project (https://meeds.io/).
 
-  Copyright (C) 2023 Meeds Association contact@meeds.io
+  Copyright (C) 2020 - 2025 Meeds Association contact@meeds.io
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -24,29 +24,12 @@
   xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_7">
   <priority>1</priority>
   <page-nodes>
+    <parent-uri>dashboard</parent-uri>
     <node>
-      <name>dashboard</name>
-      <label>#{portal.mycraft.dashboard}</label>
-      <icon>fa fa-briefcase</icon>
-      <page-reference>portal::mycraft::stream</page-reference>
-      <node>
-        <name>tasks</name>
-        <label>#{portal.mycraft.tasks}</label>
-        <icon>fa fa-tasks</icon>
-        <page-reference>portal::mycraft::tasks</page-reference>
-      </node>
-      <node>
-        <name>contents</name>
-        <label>#{portal.mycraft.contents}</label>
-        <icon>far fa-newspaper</icon>
-        <page-reference>portal::mycraft::contents</page-reference>
-      </node>
-      <node>
-        <name>notes</name>
-        <label>#{portal.mycraft.notes}</label>
-        <icon>far fa-clipboard</icon>
-        <page-reference>portal::mycraft::notes</page-reference>
-      </node>
+      <name>notes</name>
+      <label>#{portal.mycraft.notes}</label>
+      <icon>far fa-clipboard</icon>
+      <page-reference>portal::mycraft::notes</page-reference>
     </node>
   </page-nodes>
 </node-navigation>
