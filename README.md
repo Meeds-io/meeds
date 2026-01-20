@@ -98,12 +98,6 @@ cosign verify --key cosign.pub meedsio/meeds:<tag>
 cosign verify --key cosign.pub meedsio/meeds:1.5.0-M11_0
 ```
 
-Our DockerHub images are additionally signed with Docker Content Trust (DCT):
-
-```bash
-docker trust inspect --pretty meedsio/meeds
-```
-
 ## Thanks to All Contributors ❤️
 
 <a href="https://github.com/Meeds-io/meeds/graphs/contributors">
