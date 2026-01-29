@@ -54,6 +54,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </route-param>
   </route>
 
+
+  <route path="/logout">
+    <route-param qname="gtn:handler">
+      <value>logout</value>
+    </route-param>
+  </route>
+
   <route path="/download">
     <route-param qname="gtn:handler">
       <value>download</value>
