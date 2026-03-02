@@ -80,6 +80,13 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::tasks</page-reference>
     </node>
+    
+    <node>
+        <name>restricted-project</name>
+        <label>#{portal.global.restricted-project}</label>
+        <visibility>SYSTEM</visibility>
+        <page-reference>portal::global::restricted-project</page-reference>
+    </node>
 
     <node>
       <name>connexions</name>
