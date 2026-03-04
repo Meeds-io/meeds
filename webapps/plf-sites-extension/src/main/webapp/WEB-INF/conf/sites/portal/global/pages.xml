@@ -161,6 +161,26 @@
       </section-columns>
     </container>
   </page>
+  
+  <page>
+      <name>restricted-project</name>
+      <title>restricted-project</title>
+      <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+      <edit-permission>manager:/platform/administrators</edit-permission>
+      <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+          <section-columns>
+              <column col-span="12">
+                  <portlet-application>
+                      <portlet>
+                          <application-ref>task-management</application-ref>
+                          <portlet-ref>RestrictedProject</portlet-ref>
+                      </portlet>
+                      <title>Restricted Project</title>
+                  </portlet-application>
+              </column>
+          </section-columns>
+      </container>
+  </page>
 
   <page>
     <name>settings</name>
