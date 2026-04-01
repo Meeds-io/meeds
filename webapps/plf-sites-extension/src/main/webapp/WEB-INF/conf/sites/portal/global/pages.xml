@@ -803,6 +803,26 @@
     </container>
   </page>
 
+  <page profiles="oauth2">
+    <name>consent</name>
+    <title>Consent</title>
+    <access-permissions>*:/platform/users;*:/platform/externals</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>auth</application-ref>
+              <portlet-ref>OAuthConsent</portlet-ref>
+            </portlet>
+            <title>OAuth Consent</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+    </container>
+  </page>
+
   <page>
     <name>organizationalchart</name>
     <title>Organizational Chart</title>
