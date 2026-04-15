@@ -92,6 +92,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.pwa.version>7.2.x-SNAPSHOT</addon.meeds.pwa.version>
     <addon.meeds.ide.id>meeds-ide</addon.meeds.ide.id>
     <addon.meeds.ide.version>7.2.x-SNAPSHOT</addon.meeds.ide.version>
+    <addon.meeds.auth-server.id>meeds-auth-server</addon.meeds.auth-server.id>
+    <addon.meeds.auth-server.version>7.2.x-SNAPSHOT</addon.meeds.auth-server.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
     <addon.manager.extension />
 
@@ -122,6 +124,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <type>zip</type>
       </dependency>
       <!-- Pre-bundled addons -->
+      <dependency>
+        <groupId>io.meeds.auth-server</groupId>
+        <artifactId>auth-server</artifactId>
+        <version>${addon.meeds.auth-server.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>io.meeds.wallet</groupId>
         <artifactId>wallet</artifactId>

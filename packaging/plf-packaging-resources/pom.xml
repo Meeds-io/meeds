@@ -41,6 +41,18 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     </dependency>
     <!-- Pre-bundled addons -->
     <dependency>
+      <groupId>io.meeds.auth-server</groupId>
+      <artifactId>auth-server-packaging</artifactId>
+      <type>zip</type>
+      <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
       <groupId>io.meeds.wallet</groupId>
       <artifactId>wallet-packaging</artifactId>
       <type>zip</type>
