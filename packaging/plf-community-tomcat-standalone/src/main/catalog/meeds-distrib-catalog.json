@@ -16,6 +16,23 @@
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
   },{
+    "id": "meeds-auth-server",
+    "version": "${addon.meeds.auth-server.version}",
+    "unstable": false,
+    "name": "Auth Server add-on",
+    "description": "Add-on for Auth Server",
+    "sourceUrl": "https://github.com/meeds-io/auth-server",
+    "documentationUrl": "https://github.com/meeds-io/auth-server",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/auth-server/auth-server-packaging/${addon.meeds.auth-server.version}/auth-server-packaging-${addon.meeds.auth-server.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
+  },{
     "id": "meeds-analytics",
     "version": "${addon.meeds.analytics.version}",
     "unstable": false,
