@@ -161,6 +161,12 @@
         <label>#{portal.administration.development}</label>
         <icon>fas fa-code</icon>
         <node>
+          <name>oauth</name>
+          <label>#{portal.administration.oauth}</label>
+          <icon>fas fa-key</icon>
+          <page-reference>portal::administration::oauth</page-reference>
+        </node>
+        <node>
           <name>sites</name>
           <label>#{portal.administration.sites}</label>
           <icon>fas fa-sitemap</icon>
