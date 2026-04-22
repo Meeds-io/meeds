@@ -374,5 +374,11 @@
       <visibility>SYSTEM</visibility>
       <page-reference>portal::global::register</page-reference>
     </node>
+    <node>
+      <name>consent</name>
+      <label>#{portal.global.consent}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::consent</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>
