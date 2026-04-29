@@ -109,6 +109,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>*:*:*:test-jar</exclude>
         <exclude>io.meeds.commons:commons-testing:*</exclude>
         <exclude>*:*.test.*:*</exclude>
+        <exclude>*:spring-boot-starter-*:*</exclude>
         <!-- Avoid swagger -->
         <exclude>io.swagger.core.*:*:*</exclude>
         <!-- Avoid lombok.jar used in compilation time -->
