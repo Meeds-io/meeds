@@ -271,6 +271,9 @@
                   <arg line="install ${addon.meeds.auth-server.id}:${addon.meeds.auth-server.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
+                  <arg line="install ${addon.meeds.mcp-server.id}:${addon.meeds.mcp-server.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
+                </exec>
+                <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">
                   <arg line="install ${addon.meeds.layout.id}:${addon.meeds.layout.version}  --catalog=file://${project.build.directory}/local-catalog/meeds-distrib-catalog.json" />
                 </exec>
                 <exec dir="${project.basedir}" executable="${project.build.directory}/${project.build.finalName}/${project.build.finalName}/addon${addon.manager.extension}" failonerror="true">

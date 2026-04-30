@@ -33,6 +33,23 @@
     "supportedApplicationServers": "tomcat",
     "compatibility": "[${project.version},)"
   },{
+    "id": "meeds-mcp-server",
+    "version": "${addon.meeds.mcp-server.version}",
+    "unstable": false,
+    "name": "MCP Server add-on",
+    "description": "Add-on for MCP Server",
+    "sourceUrl": "https://github.com/meeds-io/mcp-server",
+    "documentationUrl": "https://github.com/meeds-io/mcp-server",
+    "downloadUrl": "file://${settings.localRepository}/io/meeds/mcp-server/mcp-server-packaging/${addon.meeds.mcp-server.version}/mcp-server-packaging-${addon.meeds.mcp-server.version}.zip",
+    "vendor": "Meeds.io",
+    "author": "Meeds.io",
+    "license": "LGPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/lgpl-3.0.txt",
+    "mustAcceptLicense": false,
+    "supportedDistributions": "community,enterprise",
+    "supportedApplicationServers": "tomcat",
+    "compatibility": "[${project.version},)"
+  },{
     "id": "meeds-analytics",
     "version": "${addon.meeds.analytics.version}",
     "unstable": false,
