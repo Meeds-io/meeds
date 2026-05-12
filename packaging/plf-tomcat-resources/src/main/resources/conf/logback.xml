@@ -76,6 +76,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="org.exoplatform" level="INFO" />
   <logger name="org.gatein" level="INFO" />
   <logger name="org.springframework" level="INFO" />
+  <logger name="org.springframework.security" level="${meeds.logging.org.springframework.security:-INFO}" />
   <logger name="jcr" level="INFO" />
   <logger name="exo.jcr" level="INFO" />
   <logger name="ws" level="INFO" />
