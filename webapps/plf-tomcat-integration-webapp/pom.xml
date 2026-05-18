@@ -51,7 +51,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <!-- Don't include libraries into Web Archives -->
-          <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+          <packagingExcludes>WEB-INF/lib/**</packagingExcludes>
         </configuration>
       </plugin>
     </plugins>
