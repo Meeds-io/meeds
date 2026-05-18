@@ -116,8 +116,20 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>org.projectlombok.*:*</exclude>
         <!-- Avoid joda-time.jar is depreccated and not used anymore -->
         <exclude>*:joda-time</exclude>
+        <!-- Include them with different names => conflicted with : com.fasterxml.jackson.core:* -->
+        <exclude>tools.jackson.core:*</exclude>
       </excludes>
       <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+      <useProjectArtifact>false</useProjectArtifact>
+      <scope>runtime</scope>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>${file.separator}lib</outputDirectory>
+      <includes>
+        <!-- conflicted with : com.fasterxml.jackson.core:* -->
+        <include>tools.jackson.core:*:jar</include>
+      </includes>
+      <outputFileNameMapping>${artifact.artifactId}_${artifact.groupId}.${artifact.extension}</outputFileNameMapping>
       <useProjectArtifact>false</useProjectArtifact>
       <scope>runtime</scope>
     </dependencySet>

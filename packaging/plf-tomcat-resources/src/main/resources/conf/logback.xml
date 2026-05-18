@@ -33,7 +33,11 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <define name="EXO_PROPERTIES_FILE_EXISTS" class="ch.qos.logback.core.property.FileExistsPropertyDefiner">
     <path>${exo.conf.dir}/exo.properties</path>
   </define>
-  <if condition='property("EXO_PROPERTIES_FILE_EXISTS").equals("true")'>
+  <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+    <key>EXO_PROPERTIES_FILE_EXISTS</key>
+    <value>true</value>
+  </condition>
+  <if>
     <then>
       <property file="${exo.conf.dir}/exo.properties" />
     </then>
@@ -91,10 +95,17 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <logger name="org.cometd.oort.Oort" level="ERROR" />
   <logger name="org.picketlink" level="WARN" />
   <logger name="liquibase" level="WARN" />
-  <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
+  <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+    <key>EXO_LOGS_DISPLAY_CONSOLE</key>
+    <value>true</value>
+  </condition>
+  <if>
     <then>
       <!-- This is activated by default on unix like systems -->
-      <if condition='property("os.name").contains("Windows")'>
+      <condition class="ch.qos.logback.core.boolex.ExpressionPropertyCondition">
+        <expression>propertyContains("os.name", "Windows")</expression>
+      </condition>
+      <if>
         <then>
           <!-- Colorization of logs isn't activated by default on Windows -->
           <!-- There are various issues with it like http://jira.qos.ch/browse/LOGBACK-762 -->
@@ -107,7 +118,11 @@ For more details see : http://logback.qos.ch/manual/configuration.html
           <property name="exo.logs.jansi.console" value="false" />
         </else>
       </if>
-      <if condition='"true".equals(property("exo.logs.colorized.console"))'>
+      <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+        <key>exo.logs.colorized.console</key>
+        <value>true</value>
+      </condition>
+      <if>
         <then>
           <!-- Colorized logs -->
           <property name="exo.logs.console.appender.pattern" value="${exo.logs.colorized.pattern}" />
@@ -127,7 +142,11 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       </root>
     </then>
   </if>
-  <if condition='"true".equals(property("exo.jcr.session.tracking.active"))'>
+  <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+    <key>exo.jcr.session.tracking.active</key>
+    <value>true</value>
+  </condition>
+  <if>
     <then>
       <appender name="FILE_LEAK_DETECTOR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${catalina.base}/logs/leak-detector.log</file>
@@ -157,7 +176,11 @@ For more details see : http://logback.qos.ch/manual/configuration.html
       <logger name="exo.jcr.component.core.SessionReference" level="ERROR" additivity="false">
         <appender-ref ref="ASYNC_LEAK_DETECTOR_LOG" />
       </logger>
-      <if condition='"true".equals(property("EXO_LOGS_DISPLAY_CONSOLE"))'>
+      <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+        <key>EXO_LOGS_DISPLAY_CONSOLE</key>
+        <value>true</value>
+      </condition>
+      <if>
         <then>
           <logger name="exo.jcr.component.core.SessionReference">
             <appender-ref ref="CONSOLE" />

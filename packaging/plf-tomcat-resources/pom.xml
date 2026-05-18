@@ -39,12 +39,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <scope>runtime</scope>
       <type>zip</type>
     </dependency>
-    <!-- Required by conditional processing in logback -->
-    <dependency>
-      <groupId>org.codehaus.janino</groupId>
-      <artifactId>janino</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <!-- Shared resources -->
     <dependency>
       <groupId>${project.groupId}</groupId>
