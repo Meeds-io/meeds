@@ -705,14 +705,24 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <portlet-application>
-        <portlet>
-          <application-ref>notes</application-ref>
-          <portlet-ref>NotesEditor</portlet-ref>
-        </portlet>
-        <title>Notes Editor Application</title>
-      </portlet-application>
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" width="100%">
+	   <css-style>
+        <margin-top>0</margin-top>
+        <margin-bottom>0</margin-bottom>
+        <margin-right>0</margin-right>
+        <margin-left>0</margin-left>
+      </css-style>
+	  <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>notes</application-ref>
+              <portlet-ref>NotesEditor</portlet-ref>
+            </portlet>
+            <title>Notes Editor Application</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 
@@ -869,7 +879,13 @@
     <edit-permission>manager:/platform/administrators</edit-permission>
     <show-max-window>true</show-max-window>
     <hide-shared-layout>true</hide-shared-layout>
-    <container cssClass="contentEditorContainer" template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
+    <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl" width="100%">
+      <css-style>
+        <margin-top>0</margin-top>
+        <margin-bottom>0</margin-bottom>
+        <margin-right>0</margin-right>
+        <margin-left>0</margin-left>
+      </css-style>
       <section-columns>
         <column col-span="12">
           <portlet-application>
