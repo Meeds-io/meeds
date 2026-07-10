@@ -95,7 +95,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <addon.meeds.auth-server.id>meeds-auth-server</addon.meeds.auth-server.id>
     <addon.meeds.auth-server.version>7.3.x-SNAPSHOT</addon.meeds.auth-server.version>
     <addon.meeds.mcp-server.id>meeds-mcp-server</addon.meeds.mcp-server.id>
-    <addon.meeds.mcp-server.version>7.3.x-SNAPSHOT</addon.meeds.mcp-server.version>
+    <addon.meeds.mcp-server.version>7.3.x-ai-contribution-SNAPSHOT</addon.meeds.mcp-server.version>
     <addon.meeds.matrix.id>meeds-matrix</addon.meeds.matrix.id>
     <addon.meeds.matrix.version>7.3.x-ai-contribution-SNAPSHOT</addon.meeds.matrix.version>
     <!-- Add-on manager extension to use (empty for Unix, .bat for Windows) -->
