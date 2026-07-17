@@ -75,12 +75,6 @@
           <icon>fas fa-user-cog</icon>
           <page-reference>portal::administration::profileManagement</page-reference>
         </node>
-        <node>
-          <name>spaces</name>
-          <label>#{portal.administration.spaces}</label>
-          <icon>fas fa-people-arrows</icon>
-          <page-reference>portal::administration::spacesAdministration</page-reference>
-        </node>
       </node>
       <node>
         <name>applications</name>
@@ -194,12 +188,6 @@
           <name>template</name>
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
-          <node>
-            <name>spaceTemplates</name>
-            <label>#{portal.administration.spaceTemplates}</label>
-            <icon>fas fa-users-cog</icon>
-            <page-reference>portal::administration::spaceTemplates</page-reference>
-          </node>
           <node>
             <name>sites</name>
             <label>#{portal.administration.sites}</label>
