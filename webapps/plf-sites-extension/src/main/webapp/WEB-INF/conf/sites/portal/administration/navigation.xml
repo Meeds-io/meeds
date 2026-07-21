@@ -77,6 +77,23 @@
         </node>
       </node>
       <node>
+        <name>spaces</name>
+        <label>#{portal.administration.spaces}</label>
+        <icon>fas fa-layer-group</icon>
+        <node>
+          <name>manage</name>
+          <label>#{portal.administration.spacesManage}</label>
+          <icon>fas fa-people-arrows</icon>
+          <page-reference>portal::administration::spacesAdministration</page-reference>
+        </node>
+        <node>
+          <name>configureTemplates</name>
+          <label>#{portal.administration.spacesConfigureTemplates}</label>
+          <icon>fas fa-users-cog</icon>
+          <page-reference>portal::administration::spaceTemplates</page-reference>
+        </node>
+      </node>
+      <node>
         <name>applications</name>
         <label>#{portal.administration.applications}</label>
         <icon>fas fa-boxes</icon>
