@@ -96,9 +96,9 @@
           <portlet-application>
             <portlet>
               <application-ref>content</application-ref>
-              <portlet-ref>News</portlet-ref>
+              <portlet-ref>ContentListView</portlet-ref>
             </portlet>
-            <title>News</title>
+            <title>Content</title>
           </portlet-application>
         </column>
       </section-columns>
