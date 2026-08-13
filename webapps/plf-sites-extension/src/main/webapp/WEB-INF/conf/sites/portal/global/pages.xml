@@ -344,6 +344,17 @@
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
+              <portlet-ref>MyOrganizationalUnits</portlet-ref>
+            </portlet>
+            <title>My Organizational Units</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
               <portlet-ref>OrganizationalChart</portlet-ref>
               <preferences>
                 <!-- chart center user value can take '@connected@' which refers to the connected user
