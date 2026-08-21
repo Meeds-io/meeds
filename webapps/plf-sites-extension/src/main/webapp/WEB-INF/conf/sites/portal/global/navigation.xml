@@ -363,6 +363,12 @@
       <page-reference>portal::global::forgot-password</page-reference>
     </node>
     <node>
+      <name>account-deactivated</name>
+      <label>#{portal.global.account-deactivated}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::account-deactivated</page-reference>
+    </node>
+    <node>
       <name>on-boarding</name>
       <label>#{portal.global.on-boarding}</label>
       <visibility>SYSTEM</visibility>
