@@ -277,10 +277,6 @@
         sticky-beahvior="true"
         mobile-columns-style="true">
         <column col-span="8">
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-before-about-me-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -288,14 +284,6 @@
             </portlet>
             <title>Profile AboutMe Portlet</title>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-after-about-me-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-before-contact-information-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -303,14 +291,6 @@
             </portlet>
             <title>Profile contact information Portlet</title>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-after-contact-information-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-before-work-experience-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
@@ -318,16 +298,36 @@
             </portlet>
             <title>Profile Work Experience Portlet</title>
           </portlet-application>
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-after-work-experience-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
         </column>
         <column col-span="4">
-          <container template="system:/groovy/portal/webui/container/UIAddOnColumnContainer.gtmpl">
-            <name>profile-right-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
+          <portlet-application profiles="analytics">
+            <portlet>
+              <application-ref>analytics</application-ref>
+              <portlet-ref>SpacesListWidget</portlet-ref>
+            </portlet>
+            <title>User Spaces List</title>
+          </portlet-application>
+          <portlet-application profiles="kudos">
+            <portlet>
+              <application-ref>kudos</application-ref>
+              <portlet-ref>KudosOverview</portlet-ref>
+            </portlet>
+            <title>Kudos Overview</title>
+          </portlet-application>
+          <portlet-application profiles="gamification">
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>BadgesOverview</portlet-ref>
+            </portlet>
+            <title>Badges Overview</title>
+          </portlet-application>
+          <portlet-application profiles="gamification">
+            <portlet>
+              <application-ref>gamification-portlets</application-ref>
+              <portlet-ref>ConnectorUserProfile</portlet-ref>
+            </portlet>
+            <title>Connector User Profile</title>
+          </portlet-application>
         </column>
       </section-columns>
     </container>
