@@ -24,6 +24,68 @@
   <external-component-plugins>
     <target-component>org.exoplatform.commons.upgrade.UpgradeProductService</target-component>
     <component-plugin>
+      <name>ProfilePageLayoutUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <object-param>
+          <name>profile.upgrade</name>
+          <!-- eXIP "User spaces list on the profile page" (Tribe note 50524,
+               EXO-89538): re-imports the profile page so the user spaces listing
+               replaces the removed activity card and the dynamic containers are
+               gone. A page re-import REPLACES the whole stored definition with
+               the shipped one: every administrator customization of the profile
+               page is lost, there is no page version history, and this is the
+               accepted, documented behaviour of this upgrade — see the release
+               note and the migration procedure.
+               The profiles="..." cells of the page are filtered when the page is
+               imported (Container.buildChildren() drops a portlet-application
+               whose profile is inactive before the page is stored), not when it
+               is rendered. This plugin runs once, so an addon among analytics,
+               kudos and gamification installed AFTER this upgrade does not
+               appear on the profile page until the page is restored from the
+               layout editor, which re-applies the shipped layout. -->
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updatePageLayout">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal</string>
+            </field>
+            <field name="portalName">
+              <string>global</string>
+            </field>
+            <field name="pageNames">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>profile</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
       <name>OverviewPageLayoutUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
