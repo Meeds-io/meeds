@@ -197,9 +197,6 @@ CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-core.jar"
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/logback-classic.jar"
 # Servlet API deps (used by logback)
 CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/servlet-api.jar"
-# Janino deps (used by logback for conditional processing in the config file)
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/janino.jar"
-CLASSPATH="$CLASSPATH":"$CATALINA_HOME/lib/commons-compiler.jar"
 
 # -----------------------------------------------------------------------------
 # Compute the CATALINA_OPTS
