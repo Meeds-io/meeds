@@ -1761,4 +1761,26 @@
       </section-columns>
     </container>
   </page>
+  <page profiles="app-center">
+    <name>app-viewer</name>
+    <title>Application Viewer</title>
+    <access-permissions>Everyone</access-permissions>
+    <edit-permission>manager:/platform/administrators</edit-permission>
+    <show-max-window>true</show-max-window>
+    <hide-shared-layout>true</hide-shared-layout>
+    <container id="AppCenterStandaloneViewerPage" template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+      <access-permissions>Everyone</access-permissions>
+      <portlet-application>
+        <portlet>
+          <application-ref>app-center</application-ref>
+          <portlet-ref>AppCenterStandaloneViewer</portlet-ref>
+        </portlet>
+        <title>Application Standalone Viewer</title>
+        <access-permissions>Everyone</access-permissions>
+        <show-info-bar>false</show-info-bar>
+        <show-application-state>false</show-application-state>
+        <show-application-mode>false</show-application-mode>
+      </portlet-application>
+    </container>
+  </page>
 </page-set>
