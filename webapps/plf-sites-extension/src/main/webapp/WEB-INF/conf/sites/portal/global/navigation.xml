@@ -369,6 +369,12 @@
       <page-reference>portal::global::account-deactivated</page-reference>
     </node>
     <node>
+      <name>app-viewer</name>
+      <label>#{portal.global.app-viewer}</label>
+      <visibility>SYSTEM</visibility>
+      <page-reference>portal::global::app-viewer</page-reference>
+    </node>
+    <node>
       <name>on-boarding</name>
       <label>#{portal.global.on-boarding}</label>
       <visibility>SYSTEM</visibility>
