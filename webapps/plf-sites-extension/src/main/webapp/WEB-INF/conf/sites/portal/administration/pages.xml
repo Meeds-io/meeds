@@ -163,7 +163,7 @@
                             "en": ""
                           },
                           "order": 1,
-                          "url": "/portal/administration/home/organisation/spaces",
+                          "url": "/portal/administration/home/spaces/manage",
                           "sameTab": true
                         },
                         {
@@ -199,7 +199,7 @@
                             "en": ""
                           },
                           "order": 4,
-                          "url": "/portal/administration/home/development/template/spaceTemplates",
+                          "url": "/portal/administration/home/spaces/configureTemplates",
                           "sameTab": true
                         },
                         {
