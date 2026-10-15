@@ -866,18 +866,13 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <section-columns>
         <column col-span="12">
-          <container id="top-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>top-news-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <container id="news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>news-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
-          <container id="bottom-news-container" template="system:/groovy/portal/webui/container/UIAddOnContainer.gtmpl">
-            <name>bottom-news-container</name>
-            <factory-id>addonContainer</factory-id>
-          </container>
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>ContentListView</portlet-ref>
+            </portlet>
+            <title>Content</title>
+          </portlet-application>
         </column>
       </section-columns>
     </container>
