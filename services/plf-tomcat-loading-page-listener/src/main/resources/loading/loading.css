@@ -1,0 +1,81 @@
+/*
+ * This file is part of the Meeds project (https://meeds.io/).
+ * Copyright (C) 2020 - 2026 Meeds Association
+ * contact@meeds.io
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+/* Startup page: light and dark follow the browser. Colors are overridden by theme.css */
+:root{--bg:#eef1f3;--fg:#20282c;--muted:#5f6b70;--line:#cfd6da;--card:#ffffff;--soft:#e4ecec;--primary:#3f8487;--secondary:#e25d5d;--danger:#e25d5d;--glass:58%;--blur:18px;--edge:color-mix(in srgb,#fff 60%,transparent);--pants:#2f3b45;--shadow:rgba(32,40,44,.14);--floor:#dfe6e8;--post:#b9c4c8;--win:#ffffff;--winbar:#f6f8f9;--side0:#f1f4f5;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Arabic","Noto Sans",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#12181b;--fg:#e8eeef;--muted:#99a5a8;--line:#34414a;--card:#1b2326;--soft:#243033;--pants:#8da0ad;--shadow:rgba(0,0,0,.4);--danger:#ef7f7f;--glass:55%;--edge:color-mix(in srgb,#fff 16%,transparent);--floor:#1a2327;--post:#3a4851;--win:#1e282c;--winbar:#232f34;--side0:#1a2327;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(55% 45% at 12% 8%,color-mix(in srgb,var(--primary) 38%,transparent),transparent 70%),radial-gradient(50% 45% at 92% 18%,color-mix(in srgb,var(--secondary) 34%,transparent),transparent 70%),radial-gradient(60% 50% at 75% 100%,color-mix(in srgb,var(--primary) 30%,transparent),transparent 72%),radial-gradient(45% 40% at 5% 95%,color-mix(in srgb,var(--secondary) 24%,transparent),transparent 70%),var(--bg);background-attachment:fixed;color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;min-height:100vh;display:grid;place-items:center;padding:24px 16px}
+main{width:100%;max-width:840px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scene{position:relative;width:100%;direction:ltr}
+svg{display:block;width:100%;height:auto}
+.logo,.side,.c1,.c2,.w1,.w2,.carrier{opacity:0}
+.logo-d{display:none}
+.no-js .logo,.no-js .side,.no-js .c1,.no-js .c2,.no-js .w1,.no-js .w2{opacity:1}
+.no-js .bubble span:first-child{opacity:1}
+@media (prefers-color-scheme:dark){.logo-l{display:none}.logo-d{display:inline}}
+.bubble{position:absolute;right:1%;bottom:43%;margin:0;max-width:34%;display:grid;padding:6px 10px;border-radius:10px;background:color-mix(in srgb,var(--card) calc(var(--glass) + 4%),transparent);-webkit-backdrop-filter:blur(calc(var(--blur) * .55)) saturate(150%);backdrop-filter:blur(calc(var(--blur) * .55)) saturate(150%);border:1px solid var(--edge);font-size:clamp(10px,1.7vw,13px);line-height:1.3;text-align:center}
+.bubble::after{content:"";position:absolute;bottom:-7px;right:36px;width:10px;height:10px;background:color-mix(in srgb,var(--card) 80%,transparent);border-right:1px solid var(--edge);border-bottom:1px solid var(--edge);transform:rotate(45deg)}
+.bubble span{grid-area:1/1;opacity:0}
+.status{width:min(480px,100%);background:color-mix(in srgb,var(--card) var(--glass),transparent);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);backdrop-filter:blur(var(--blur)) saturate(160%);border:1px solid var(--edge);border-radius:8px;box-shadow:0 10px 34px color-mix(in srgb,var(--primary) 22%,transparent),inset 0 1px 0 color-mix(in srgb,#fff 70%,transparent);padding:18px 22px 16px;display:flex;flex-direction:column;gap:10px;text-align:center}
+.status h1{margin:0;font-size:22px;line-height:1.3}
+.status p{margin:0;color:var(--muted);font-size:14px}
+.status .elapsed{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+.progress.determinate::before{animation:none;left:0;right:calc(100% - var(--p,0%));transition:right .6s ease}
+.progress.determinate::after{display:none}
+.status.failed .progress::before{background:var(--danger)}
+.status .error{color:var(--danger);font-weight:700}
+.steps{list-style:none;margin:2px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 18px;text-align:start}
+.steps li{position:relative;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);transition:color .3s}
+.steps li::before{content:"";flex:none;width:18px;height:18px;box-sizing:border-box;border-radius:50%;border:2px solid var(--line);background:var(--card);transition:background .3s,border-color .3s}
+.steps li.done{color:var(--fg)}
+.steps li.done::before{background:var(--secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat;border-color:var(--secondary)}
+.steps li.current{color:var(--fg);font-weight:700}
+.steps li.current::before{border-color:var(--secondary);background:radial-gradient(circle,var(--secondary) 0 3px,transparent 4px);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(.8);opacity:.6}}
+.status.lost .progress::before{animation:none;left:0;right:0;background:var(--danger)}
+.status.lost .progress::after{display:none}
+.status .count{font-variant-numeric:tabular-nums}
+.progress{position:relative;height:4px;background:var(--soft);overflow:hidden;border-radius:2px}
+.progress::before,.progress::after{content:"";position:absolute;top:0;bottom:0;background:var(--primary)}
+.progress::before{animation:i1 2.1s cubic-bezier(.65,.815,.735,.395) infinite}
+.progress::after{animation:i2 2.1s cubic-bezier(.165,.84,.44,1) 1.15s infinite}
+@keyframes i1{0%{left:-35%;right:100%}60%{left:100%;right:-90%}100%{left:100%;right:-90%}}
+@keyframes i2{0%{left:-200%;right:100%}60%{left:107%;right:-8%}100%{left:107%;right:-8%}}
+
+/* scene colors */
+.floor{fill:color-mix(in srgb,var(--floor) 55%,transparent)} .post{fill:var(--post)} .win{fill:color-mix(in srgb,var(--win) 82%,transparent);stroke:color-mix(in srgb,var(--line) 85%,transparent);stroke-width:1.5}
+.winbar{fill:color-mix(in srgb,var(--winbar) 72%,transparent)} .side0{fill:color-mix(in srgb,var(--side0) 72%,transparent)}
+.slot rect{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5}
+.pcard{fill:color-mix(in srgb,var(--card) 78%,transparent);stroke:var(--line);stroke-width:2.5;paint-order:stroke}
+.ln{fill:var(--line)} .ln2{fill:var(--soft)}
+.ladder line{stroke:var(--post);stroke-width:5;stroke-linecap:round}
+.rack rect:first-child{fill:var(--post)} .unit{fill:var(--floor)}
+.led{fill:var(--primary)} .led.l0{animation:bl 1s steps(1) infinite}.led.l1{animation:bl 1.4s steps(1) infinite .3s}.led.l2{animation:bl .8s steps(1) infinite .1s}
+@keyframes bl{50%{fill:var(--secondary)}}
+.cable{stroke:var(--primary);stroke-width:3;stroke-dasharray:3 9;stroke-linecap:round;animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-12}}
+.box{fill:var(--primary)} .desk rect{fill:var(--post)} .desk .lap{fill:var(--secondary)}
+
+/* people */
+.wk3,.wk1,.wk4{animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{50%{translate:0 -1.5px}}
+@media (prefers-color-scheme:dark){.status{box-shadow:0 10px 34px rgba(0,0,0,.45),inset 0 1px 0 color-mix(in srgb,#fff 14%,transparent)}.win{stroke:color-mix(in srgb,#fff 14%,transparent)}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.status,.bubble{background:var(--card)}}
+@media (prefers-reduced-transparency:reduce){.status,.bubble{background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.progress::before{left:0;right:60%}.progress::after{display:none}}

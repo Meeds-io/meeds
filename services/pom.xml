@@ -1,6 +1,6 @@
 <!--
 This file is part of the Meeds project (https://meeds.io/).
-Copyright (C) 2020 Meeds Association
+Copyright (C) 2020 - 2026 Meeds Association
 contact@meeds.io
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -33,6 +33,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <module>plf-configuration</module>
     <module>plf-community-edition-service</module>
     <module>plf-tomcat-pc-creator-listener</module>
+    <module>plf-tomcat-loading-page-listener</module>
   </modules>
 
 </project>
