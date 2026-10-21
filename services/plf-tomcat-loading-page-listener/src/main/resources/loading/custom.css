@@ -1,0 +1,50 @@
+/*
+ * This file is part of the Meeds project (https://meeds.io/).
+ * Copyright (C) 2020 - 2026 Meeds Association
+ * contact@meeds.io
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * Default custom style of the loading page: nothing is changed.
+ * A distribution replaces this file with its own custom.css in ${exo.conf.dir}/loading.
+ * It is loaded after loading.css and theme.css, so it can change any of these variables
+ * (the dark values go in a prefers-color-scheme: dark block):
+ *
+ *   :root {
+ *     --bg: #eef1f3;          page background
+ *     --fg: #20282c;          text
+ *     --muted: #5f6b70;       secondary text
+ *     --line: #cfd6da;        borders and empty steps
+ *     --card: #ffffff;        status card and speech bubble
+ *     --soft: #e4ecec;        progress bar track
+ *     --primary: #3f8487;     progress bar
+ *     --secondary: #e25d5d;   ticks and current step
+ *     --danger: #e25d5d;      errors
+ *     --floor: #dfe6e8;       floor of the scene
+ *     --post: #b9c4c8;        ladder, desk and rack
+ *     --win: #ffffff;         workplace screen
+ *     --winbar: #f6f8f9;      top bar of the workplace screen
+ *     --side0: #f1f4f5;       left menu of the workplace screen
+ *     --pants: #2f3b45;       clothes of the people
+ *     --shadow: rgba(32, 40, 44, .14);
+ *     --glass: 58%;           opacity of the glass of the status card (100% for a solid card)
+ *     --blur: 18px;           blur behind the glass (0px for none)
+ *     --edge: rgba(255, 255, 255, .6);   border of the glass
+ *   }
+ *   @media (prefers-color-scheme: dark) {
+ *     :root { --bg: #12181b; --fg: #e8eeef; ... }
+ *   }
+ *
+ * Any other rule of the page can be overridden too. Only files of the same origin are loaded.
+ */

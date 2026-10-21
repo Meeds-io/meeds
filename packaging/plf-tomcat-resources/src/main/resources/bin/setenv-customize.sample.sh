@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # This file is part of the Meeds project (https://meeds.io/).
-# Copyright (C) 2020 Meeds Association
+# Copyright (C) 2020 - 2026 Meeds Association
 # contact@meeds.io
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -103,6 +103,11 @@
 # Warning : setting this value to false could lead to slower startup and performance issues as
 # explained in Tomcat documentation : https://tomcat.apache.org/migration-8.html#Tomcat_8.0.x_noteable_changes
 #EXO_TOMCAT_UNPACK_WARS=false
+
+# Serve a loading page on the HTTP port while the platform is starting (Default: true)
+# The page is shown in the language of the browser. A distribution can replace the logo (logo.png, logo-dark.png for the dark mode),
+# the colors (branding.properties) and any style (custom.css, loaded after the default style) with files put in ${EXO_CONF_DIR}/loading
+#EXO_LOADING_PAGE=false
 
 # -----------------------------------------------------------------------------
 # Advanced settings (We directly append some settings in CATALINA_OPTS)
