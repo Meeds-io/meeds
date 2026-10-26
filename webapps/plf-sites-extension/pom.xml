@@ -24,7 +24,7 @@
   <parent>
     <groupId>io.meeds.distribution</groupId>
     <artifactId>plf-webapps</artifactId>
-    <version>7.3.x-ai-contribution-SNAPSHOT</version>
+    <version>7.3.x-rtd-SNAPSHOT</version>
   </parent>
   <artifactId>plf-sites-extension</artifactId>
   <packaging>war</packaging>
