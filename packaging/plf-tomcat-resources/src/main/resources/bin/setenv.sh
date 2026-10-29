@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # This file is part of the Meeds project (https://meeds.io/).
-# Copyright (C) 2020 Meeds Association
+# Copyright (C) 2020 - 2026 Meeds Association
 # contact@meeds.io
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -69,6 +69,7 @@ fi
 [ -z $EXO_JCR_SESSION_TRACKING ] && EXO_JCR_SESSION_TRACKING=$EXO_DEV
 [ -z $EXO_CONF_DIR ] && EXO_CONF_DIR="$CATALINA_BASE/gatein/conf"
 [ -z $EXO_DATA_DIR ] && EXO_DATA_DIR="$CATALINA_BASE/gatein/data"
+[ -z $EXO_LOADING_PAGE ] && EXO_LOADING_PAGE=true
 
 # -----------------------------------------------------------------------------
 # EXO PLATFORM Blob storage configuration
@@ -240,6 +241,7 @@ CATALINA_OPTS="$CATALINA_OPTS -Dexo.conf.dir=\"${EXO_CONF_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=\"${EXO_CONF_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=\"$CATALINA_BASE/conf/jaas.conf\""
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.data.dir=\"${EXO_DATA_DIR}\""
+CATALINA_OPTS="$CATALINA_OPTS -Dexo.loading.page=${EXO_LOADING_PAGE}"
 # JCR Data directory
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
 # JCR values
