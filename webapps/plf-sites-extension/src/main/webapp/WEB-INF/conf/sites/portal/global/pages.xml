@@ -1047,7 +1047,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
@@ -1164,7 +1163,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
@@ -1281,7 +1279,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
@@ -1398,7 +1395,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
@@ -1515,7 +1511,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
@@ -1632,7 +1627,6 @@
         <margin-bottom>0</margin-bottom>
         <margin-right>0</margin-right>
         <margin-left>0</margin-left>
-        <background-color>#FFFFFF</background-color>
       </css-style>
       <section-columns cssClass="layout-sticky-application">
         <column col-span="5">
