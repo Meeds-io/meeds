@@ -26,8 +26,8 @@
   <priority>1</priority>
   <page-nodes>
     <node>
-      <name>overview</name>
-      <label>#{portal.public.overview}</label>
+      <name>home</name>
+      <label>#{portal.public.home}</label>
       <page-reference>@owner_type@::@owner@::overview</page-reference>
       <node>
         <name>actions</name>
