@@ -17,15 +17,19 @@
 package io.meeds.platform.server.tomcat.loading;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleEvent;
+import org.apache.catalina.LifecycleState;
+import org.apache.catalina.util.LifecycleBase;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
@@ -146,6 +150,52 @@ class DeploymentTrackerTest {
   }
 
   @Test
+  void aContextLeftFailedWithoutAStopIsCountedWhenTheHostIsStarted() throws Exception {
+    tracker.attach((StandardEngine) host.getParent());
+    StandardContext broken = context("/portal");
+    // StandardContext#startInternal threw: Tomcat sets FAILED and fires no stop
+    StandardContext social = context("/social");
+    started(social);
+    setState(broken, LifecycleState.FAILED);
+    assertFalse(progress.toJson(0).contains("\"failed\":1"), progress.toJson(0));
+
+    fireOnHost(Lifecycle.BEFORE_START_EVENT, host);
+    assertFalse(progress.toJson(0).contains("\"failed\":1"), "only the end of the host start settles");
+    fireOnHost(Lifecycle.AFTER_START_EVENT, new StandardContext());
+    assertFalse(progress.toJson(0).contains("\"failed\":1"), "the event of something that is not a host");
+    fireOnHost(Lifecycle.AFTER_START_EVENT, host);
+    String json = progress.toJson(0);
+    assertTrue(json.contains("\"failed\":1"), json);
+    assertTrue(json.contains("\"deployed\":1"), json);
+
+    // Counted once, even when the host event comes again
+    fireOnHost(Lifecycle.AFTER_START_EVENT, host);
+    assertTrue(progress.toJson(0).contains("\"failed\":1"), progress.toJson(0));
+  }
+
+  @Test
+  void aStartedContextWhoseEventWasMissedIsCountedWhenTheHostIsStarted() throws Exception {
+    tracker.attach((StandardEngine) host.getParent());
+    StandardContext portal = context("/portal");
+    setState(portal, LifecycleState.STARTED);
+    fireOnHost(Lifecycle.AFTER_START_EVENT, host);
+    assertTrue(progress.toJson(0).contains("\"deployed\":1"), progress.toJson(0));
+    // A context still starting is left to its own events
+    StandardContext slow = context("/social");
+    setState(slow, LifecycleState.STARTING);
+    fireOnHost(Lifecycle.AFTER_START_EVENT, host);
+    assertTrue(progress.toJson(0).contains("\"deployed\":1"), progress.toJson(0));
+  }
+
+  @Test
+  void detachRemovesTheListenerOfTheHost() {
+    tracker.attach((StandardEngine) host.getParent());
+    int before = host.findLifecycleListeners().length;
+    tracker.detach();
+    assertEquals(before - 1, host.findLifecycleListeners().length);
+  }
+
+  @Test
   void detachStopsFollowingTheHost() {
     tracker.attach((StandardEngine) host.getParent());
     tracker.detach();
@@ -166,6 +216,34 @@ class DeploymentTrackerTest {
     context.setPath(path);
     host.addChild(context);
     return context;
+  }
+
+  /** Moves a context to a state through the legal transitions, without any listener hearing the events on the way. */
+  private void setState(StandardContext context, LifecycleState state) throws Exception {
+    // No listener hears the steps: neither the tracker, nor the ones of Tomcat that need a started context
+    for (var listener : context.findLifecycleListeners()) {
+      context.removeLifecycleListener(listener);
+    }
+    // The state machine only lets Tomcat itself take the legal steps of a start, so it is stepped without its check
+    Method method = LifecycleBase.class.getDeclaredMethod("setStateInternal", LifecycleState.class, Object.class, boolean.class);
+    method.setAccessible(true); // NOSONAR the state of a context that was not really started
+    if (!LifecycleState.FAILED.equals(state)) {
+      method.invoke(context, LifecycleState.INITIALIZING, null, false);
+      method.invoke(context, LifecycleState.INITIALIZED, null, false);
+      method.invoke(context, LifecycleState.STARTING_PREP, null, false);
+      method.invoke(context, LifecycleState.STARTING, null, false);
+    }
+    if (!LifecycleState.STARTING.equals(state)) {
+      method.invoke(context, state, null, false);
+    }
+  }
+
+  private void fireOnHost(String type, Lifecycle source) {
+    for (var listener : host.findLifecycleListeners()) {
+      if (listener.getClass().getName().startsWith(DeploymentTracker.class.getName())) {
+        listener.lifecycleEvent(new LifecycleEvent(source, type, null));
+      }
+    }
   }
 
   private void started(StandardContext context) {

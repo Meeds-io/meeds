@@ -31,6 +31,7 @@ import org.apache.catalina.Host;
 import org.apache.catalina.Lifecycle;
 import org.apache.catalina.LifecycleEvent;
 import org.apache.catalina.LifecycleListener;
+import org.apache.catalina.LifecycleState;
 
 /**
  * Feeds a {@link StartupProgress} with the web applications deployed by the
@@ -54,6 +55,9 @@ public final class DeploymentTracker {
   /** Receives the start and stop of the contexts. */
   private final LifecycleListener                       contextListener = this::contextEvent;
 
+  /** Receives the end of the start of the hosts. */
+  private final LifecycleListener                       hostLifecycleListener = this::hostLifecycleEvent;
+
   public DeploymentTracker(StartupProgress startupProgress) {
     this.progress = startupProgress;
   }
@@ -72,6 +76,7 @@ public final class DeploymentTracker {
       if (child instanceof Host host) {
         total += countExpected(host);
         host.addContainerListener(hostListener);
+        host.addLifecycleListener(hostLifecycleListener);
         hosts.add(host);
       }
     }
@@ -82,7 +87,10 @@ public final class DeploymentTracker {
    * Stops following the hosts and contexts.
    */
   public void detach() {
-    hosts.forEach(host -> host.removeContainerListener(hostListener));
+    hosts.forEach(host -> {
+      host.removeContainerListener(hostListener);
+      host.removeLifecycleListener(hostLifecycleListener);
+    });
     hosts.clear();
     contexts.keySet().forEach(context -> context.removeLifecycleListener(contextListener));
     contexts.clear();
@@ -138,6 +146,33 @@ public final class DeploymentTracker {
         && contexts.putIfAbsent(context, Boolean.FALSE) == null) {
       context.addLifecycleListener(contextListener);
       progress.applicationSeen();
+    }
+  }
+
+  /**
+   * A host deploys its applications synchronously when it starts. A context
+   * whose start throws is left FAILED without being stopped, so no event
+   * settles it: once the host is started, the ones still unsettled are counted
+   * from their state.
+   *
+   * @param event the lifecycle event of a host
+   */
+  private void hostLifecycleEvent(LifecycleEvent event) {
+    if (Lifecycle.AFTER_START_EVENT.equals(event.getType()) && event.getLifecycle() instanceof Host host) {
+      contexts.forEach((context, settled) -> {
+        if (Boolean.FALSE.equals(settled) && context.getParent() == host) {
+          settle(context);
+        }
+      });
+    }
+  }
+
+  private void settle(Context context) {
+    LifecycleState state = context.getState();
+    if (LifecycleState.FAILED.equals(state) && contexts.replace(context, Boolean.FALSE, Boolean.TRUE)) {
+      progress.applicationFailed();
+    } else if (LifecycleState.STARTED.equals(state) && contexts.replace(context, Boolean.FALSE, Boolean.TRUE)) {
+      progress.applicationStarted();
     }
   }
 
