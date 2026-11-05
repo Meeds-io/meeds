@@ -2580,6 +2580,76 @@
       </init-params>
     </component-plugin>
     <component-plugin profiles="layout">
+      <name>PublicSiteTemplateHomeNavigationUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>130</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <!-- The public site template's navigation root is 'home' instead of 'overview' (EXO-93283).
+             Applies to the stored template only: sites already created from it keep their navigation.
+             Deleting 'overview' and importing 'home' are independent, so the two entries may run in any order. -->
+        <object-param>
+          <name>PublicSiteTemplate.overviewNode.delete</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updateNavigation">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal_template</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+            <field name="deleteNavigations">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>overview</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>PublicSiteTemplate.navigation.upgrade</name>
+          <object type="io.meeds.social.upgrade.model.LayoutUpgrade">
+            <field name="updateNavigation">
+              <boolean>true</boolean>
+            </field>
+            <field name="configPath">
+              <string>war:/conf/sites/</string>
+            </field>
+            <field name="portalType">
+              <string>portal_template</string>
+            </field>
+            <field name="portalName">
+              <string>public</string>
+            </field>
+            <field name="importMode">
+              <string>merge</string>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
       <name>SpacePublicSiteTemplatePortalConfigUpgrade</name>
       <set-method>addUpgradePlugin</set-method>
       <type>io.meeds.social.upgrade.LayoutUpgradePlugin</type>
