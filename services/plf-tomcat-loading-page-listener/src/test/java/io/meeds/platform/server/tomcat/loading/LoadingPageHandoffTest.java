@@ -43,12 +43,12 @@ import org.junit.jupiter.api.io.TempDir;
 
 /**
  * Runs the listener in a real Tomcat. The feature relies on the order in
- * which Tomcat starts its components: the listener of a connector is attached
- * by the configuration, the connector is started after the hosts deployed
- * their applications, a context is added to its host before it is started, and
- * the port is free for the connector once the page stopped. A Tomcat that
- * changes any of these makes this test fail, where the other tests, that fire
- * the events by hand, would not.
+ * which Tomcat starts its components: the connector is started after the hosts
+ * deployed their applications, a context is added to its host before it is
+ * started, and the port is free for the connector once the page stopped. A
+ * Tomcat that changes any of these makes this test fail, where the other tests,
+ * that fire the events by hand, would not. The attachment of the listener by
+ * server.xml and the deployment by HostConfig are simulated, not tested.
  */
 class LoadingPageHandoffTest {
 
