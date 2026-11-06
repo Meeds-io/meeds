@@ -65,6 +65,12 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         </exclusion>
       </exclusions>
     </dependency>
+    <!-- Tomcat listener to serve a loading page while starting -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>plf-tomcat-loading-page-listener</artifactId>
+      <scope>runtime</scope>
+    </dependency>
     <!-- Required by logback for colorized console on windows -->
     <dependency>
       <groupId>org.fusesource.jansi</groupId>

@@ -110,6 +110,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
                compression="off" compressionMinSize="2048"
                noCompressionUserAgents=".*MSIE 6.*" compressibleMimeType="text/html,text/xml,text/plain,text/css,text/javascript">
       <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+      <!-- Serves a loading page on this port until the connector is started (needs bindOnInit="false").
+           Disabled with EXO_LOADING_PAGE=false -->
+      <Listener className="io.meeds.platform.server.tomcat.loading.LoadingPageListener" />
     </Connector>
 
     <!-- A "Connector" using the shared thread pool-->
