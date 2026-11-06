@@ -27,8 +27,8 @@ For more details see : http://logback.qos.ch/manual/configuration.html
   <property name="exo.logs.colorized.pattern" value="%date{ISO8601} | %highlight(%-5level) | %msg %green([%logger{40}){}%cyan(&lt;%thread&gt;){}%green(]){} %n%xEx" />
   <!-- Logs are daily archived or whenever the file size reaches maxFileSize -->
   <property name="exo.logs.rolling.maxFileSize" value="100Mb" />
-  <!-- Number of archives to keep -->
-  <property name="exo.logs.rolling.maxHistory" value="60" />
+  <!-- Number of days of logs to keep (logs are rolled over daily) -->
+  <property name="exo.logs.rolling.maxHistory" value="190" />
   <!-- Allow to customize previous settings by defining these properties in ${exo.conf.dir}/exo.properties -->
   <define name="EXO_PROPERTIES_FILE_EXISTS" class="ch.qos.logback.core.property.FileExistsPropertyDefiner">
     <path>${exo.conf.dir}/exo.properties</path>
@@ -62,7 +62,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- daily rollover -->
       <fileNamePattern>${catalina.base}/logs/platform-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
-      <!-- Max number of archives to keep -->
+      <!-- Max number of days of archives to keep -->
       <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy">
         <!-- or whenever the file size reaches maxFileSize -->
@@ -158,7 +158,7 @@ For more details see : http://logback.qos.ch/manual/configuration.html
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
           <!-- daily rollover -->
           <fileNamePattern>${catalina.base}/logs/leak-detector-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
-          <!-- Max number of archives to keep -->
+          <!-- Max number of days of archives to keep -->
           <maxHistory>${exo.logs.rolling.maxHistory}</maxHistory>
           <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy">
             <!-- or whenever the file size reaches maxFileSize -->
