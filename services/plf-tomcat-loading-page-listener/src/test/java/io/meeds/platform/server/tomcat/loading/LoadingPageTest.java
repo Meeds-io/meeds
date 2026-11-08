@@ -113,8 +113,8 @@ class LoadingPageTest {
   @Test
   void resolveLocaleUsesQualityAndFallsBackToTheDefaultLanguage() {
     assertEquals("ar", LoadingPageContent.resolveLocale("fr;q=0.4, ar;q=0.8", null).getLanguage());
-    assertEquals("fr", LoadingPageContent.resolveLocale("ja,zh;q=0.9,fr;q=0.5", null).getLanguage());
-    assertEquals("en", LoadingPageContent.resolveLocale("ja,zh;q=0.9", null).getLanguage());
+    assertEquals("fr", LoadingPageContent.resolveLocale("xx,yy;q=0.9,fr;q=0.5", null).getLanguage());
+    assertEquals("en", LoadingPageContent.resolveLocale("xx,yy;q=0.9", null).getLanguage());
     assertEquals("en", LoadingPageContent.resolveLocale("not a header;;;", null).getLanguage());
     assertEquals("en", LoadingPageContent.resolveLocale(null, null).getLanguage());
   }
