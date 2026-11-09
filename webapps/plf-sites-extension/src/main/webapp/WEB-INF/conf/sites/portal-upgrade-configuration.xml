@@ -3510,5 +3510,50 @@
         </object-param>
       </init-params>
     </component-plugin>
+    <component-plugin profiles="layout">
+      <name>GlobalLoginPagesContainerBackgroundUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.PageContainerBackgroundUpgradePlugin</type>
+      <description>Removes the white page container background shipped on the login related pages, so that they show the page background set in Branding and Theme</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>150</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>global</value>
+        </value-param>
+        <value-param>
+          <name>background.color</name>
+          <value>#FFFFFF</value>
+        </value-param>
+        <values-param>
+          <name>page.names</name>
+          <value>login</value>
+          <value>external-registration</value>
+          <value>forgot-password</value>
+          <value>account-deactivated</value>
+          <value>on-boarding</value>
+          <value>register</value>
+        </values-param>
+      </init-params>
+    </component-plugin>
   </external-component-plugins>
 </configuration>
