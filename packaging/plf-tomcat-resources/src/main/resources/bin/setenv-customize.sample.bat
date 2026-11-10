@@ -105,6 +105,24 @@ REM # The page is shown in the language of the browser. A distribution can repla
 REM # the colors (branding.properties) and any style (custom.css, loaded after the default style) with files put in %EXO_CONF_DIR%\loading
 REM SET EXO_LOADING_PAGE=false
 
+REM # Health check endpoint GET /healthcheck (no authentication, no session): 200 when every web application and the portal
+REM # container are started and what the platform depends on answers, 503 otherwise. Enabled by default (EXO_HEALTHCHECK=false
+REM # to disable).
+REM SET EXO_HEALTHCHECK=false
+REM # Only these callers are answered, comma separated IPs or CIDR networks (Default: 127.0.0.1,::1)
+REM # Requests carrying a reverse proxy header (X-Forwarded-For, Forwarded, X-Real-IP, X-Forwarded-Proto, X-Forwarded-Host,
+REM # X-Forwarded-By, Via) are refused. A reverse proxy on the same machine that forwards /healthcheck without any of them
+REM # makes the caller look local: block that path in the proxy (or set EXO_HEALTHCHECK=false).
+REM # Use the address of the probing node instead of the Docker bridge network, for example 10.0.0.5
+REM SET EXO_HEALTHCHECK_ALLOW=127.0.0.1,::1,10.0.0.5
+REM # Portal container that must be started, "none" to skip the portal container check (Default: portal)
+REM SET EXO_HEALTHCHECK_CONTAINER=portal
+REM # What the platform depends on, asked once started: database (every JDBC pool of server.xml), search (the Elasticsearch
+REM # server of exo.es.search.server.url, whose user needs the cluster monitor privilege). true (Default) checks both, false
+REM # checks none, several names are separated by commas. The search check reads the status of the whole cluster: on a
+REM # cluster shared with other applications, an unrelated red index reports the platform down, use database there.
+REM SET EXO_HEALTHCHECK_DEEP=database,search
+
 REM # -----------------------------------------------------------------------------
 REM # Advanced settings (We directly append some settings in CATALINA_OPTS)
 REM # -----------------------------------------------------------------------------
