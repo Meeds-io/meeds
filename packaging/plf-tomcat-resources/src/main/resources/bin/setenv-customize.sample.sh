@@ -109,6 +109,30 @@
 # the colors (branding.properties) and any style (custom.css, loaded after the default style) with files put in ${EXO_CONF_DIR}/loading
 #EXO_LOADING_PAGE=false
 
+# Health check endpoint GET /healthcheck (no authentication, no session), for example for a Docker HEALTHCHECK:
+#   curl -fsS http://localhost:8080/healthcheck
+# 200 when every web application and the portal container are started and what the platform depends on answers, 503 otherwise
+# (also while the loading page is served). Enabled by default (EXO_HEALTHCHECK=false to disable).
+#EXO_HEALTHCHECK=false
+# Only these callers are answered, comma separated IPs or CIDR networks (Default: 127.0.0.1,::1)
+# Requests carrying a reverse proxy header (X-Forwarded-For, Forwarded, X-Real-IP, X-Forwarded-Proto, X-Forwarded-Host, X-Forwarded-By, Via) are refused.
+# A reverse proxy on the same machine that forwards /healthcheck without any of them makes the caller look local:
+# block that path in the proxy (or set EXO_HEALTHCHECK=false). A Docker HEALTHCHECK runs inside the container and needs no entry.
+# Do not allow the Docker bridge network (172.17.0.0/16): Docker forwards the callers of a published port from its gateway.
+# Use the address of the probing node instead, for example 10.0.0.5
+#EXO_HEALTHCHECK_ALLOW=127.0.0.1,::1,10.0.0.5
+# Portal container that must be started, "none" to skip the portal container check (Default: portal)
+#EXO_HEALTHCHECK_CONTAINER=portal
+# What the platform depends on, asked once started, with 3 seconds each and the answer kept 10 seconds (Default: true):
+#   database  every JDBC pool declared in server.xml gives a valid connection
+#   search    the Elasticsearch server of exo.es.search.server.url (and its user and password) answers and is not red;
+#             the user needs the cluster "monitor" privilege
+# true checks both, false (or none) checks none: only the startup is reported. Several names are separated by commas.
+# Set it to false when the orchestrator restarts a container whose probe fails: a database or search server that blips
+# would then restart a healthy platform. The search check reads the status of the whole cluster: on a cluster shared with
+# other applications, an unrelated red index reports the platform down, use EXO_HEALTHCHECK_DEEP=database there.
+#EXO_HEALTHCHECK_DEEP=database,search
+
 # -----------------------------------------------------------------------------
 # Advanced settings (We directly append some settings in CATALINA_OPTS)
 # -----------------------------------------------------------------------------
