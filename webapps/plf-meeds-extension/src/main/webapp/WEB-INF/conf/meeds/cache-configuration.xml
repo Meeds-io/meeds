@@ -948,6 +948,21 @@
             </field>
           </object>
         </object-param>
+        <object-param>
+          <name>social.profileSettingIds</name>
+          <description></description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>social.profileSettingIds</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.social.profileSettingIds.MaxNodes:2000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.social.profileSettingIds.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
         <object-param profiles="ide">
           <name>ide.widget</name>
           <description></description>
