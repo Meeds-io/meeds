@@ -228,6 +228,21 @@
             </field>
           </object>
         </object-param>
+        <object-param profiles="perkstore">
+          <name>perkstore.globalSettings</name>
+          <description>The perk store settings</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>perkstore.globalSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.perkstore.globalSettings.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.perkstore.globalSettings.TimeToLive:30}</long>
+            </field>
+          </object>
+        </object-param>
         <object-param>
           <name>portal.User</name>
           <description>Cache configuration for IDM User entity</description>
@@ -930,6 +945,36 @@
             </field>
             <field name="liveTime">
               <long>${meeds.cache.wallet.account.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="wallet">
+          <name>wallet.rewardSettings</name>
+          <description>The reward settings</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.rewardSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.rewardSettings.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.rewardSettings.TimeToLive:30}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="wallet">
+          <name>wallet.addressLabels</name>
+          <description>The wallet address labels</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.addressLabels</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.addressLabels.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.addressLabels.TimeToLive:30}</long>
             </field>
           </object>
         </object-param>
