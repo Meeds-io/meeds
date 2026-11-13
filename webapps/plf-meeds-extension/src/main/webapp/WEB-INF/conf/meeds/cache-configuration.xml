@@ -200,7 +200,7 @@
             </field>
           </object>
         </object-param>
-        <object-param profiles="perkstore">
+        <object-param profiles="perk-store">
           <name>perkstore.product</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -214,7 +214,7 @@
             </field>
           </object>
         </object-param>
-        <object-param profiles="perkstore">
+        <object-param profiles="perk-store">
           <name>perkstore.order</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -228,7 +228,7 @@
             </field>
           </object>
         </object-param>
-        <object-param profiles="perkstore">
+        <object-param profiles="perk-store">
           <name>perkstore.globalSettings</name>
           <description>The perk store settings</description>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
