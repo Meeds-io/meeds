@@ -143,6 +143,21 @@
           </object>
         </object-param>
         <object-param profiles="gamification">
+          <name>gamification.administrators</name>
+          <description>The rewarding administrators</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>gamification.administrators</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.gamification.administrators.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.gamification.administrators.TimeToLive:30}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="gamification">
           <name>gamification.rule</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
