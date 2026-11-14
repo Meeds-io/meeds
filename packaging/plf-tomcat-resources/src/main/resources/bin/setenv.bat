@@ -224,8 +224,6 @@ SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/java.nio.channels.
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.base/jdk.internal.reflect=ALL-UNNAMED 
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens=java.xml/jdk.xml.internal=ALL-UNNAMED 
 
-SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% -noverify
-
 REM # Set the window name
 SET TITLE=eXo Platform ${project.version}
 

@@ -317,6 +317,5 @@ JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/java.nio.channels=ALL-
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/java.nio.channels.spi=ALL-UNNAMED" 
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.base/jdk.internal.reflect=ALL-UNNAMED" 
 JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS --add-opens=java.xml/jdk.xml.internal=ALL-UNNAMED" 
-JDK_JAVA_OPTIONS="$JDK_JAVA_OPTIONS  -noverify"
 
 export JDK_JAVA_OPTIONS
