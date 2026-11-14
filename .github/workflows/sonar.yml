@@ -16,5 +16,5 @@ jobs:
       - name: Analyse Project
         uses: exo-actions/sonarcloud-action@v1
         with:
-          jdk_major_version: 21
+          jdk_major_version: 25
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
