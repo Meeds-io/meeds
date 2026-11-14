@@ -143,6 +143,21 @@
           </object>
         </object-param>
         <object-param profiles="gamification">
+          <name>gamification.administrators</name>
+          <description>The rewarding administrators</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>gamification.administrators</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.gamification.administrators.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.gamification.administrators.TimeToLive:30}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="gamification">
           <name>gamification.rule</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -200,7 +215,7 @@
             </field>
           </object>
         </object-param>
-        <object-param profiles="perkstore">
+        <object-param profiles="perk-store">
           <name>perkstore.product</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -214,7 +229,7 @@
             </field>
           </object>
         </object-param>
-        <object-param profiles="perkstore">
+        <object-param profiles="perk-store">
           <name>perkstore.order</name>
           <object type="org.exoplatform.services.cache.ExoCacheConfig">
             <field name="name">
@@ -225,6 +240,21 @@
             </field>
             <field name="liveTime">
               <long>${meeds.cache.perkstore.order.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="perk-store">
+          <name>perkstore.globalSettings</name>
+          <description>The perk store settings</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>perkstore.globalSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.perkstore.globalSettings.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.perkstore.globalSettings.TimeToLive:30}</long>
             </field>
           </object>
         </object-param>
@@ -501,6 +531,21 @@
             </field>
             <field name="liveTime">
               <long>${meeds.cache.portal.DescriptionLocales.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>portal.UIPortal</name>
+          <description>The Cache configuration for the sites each node built</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.UIPortal</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.UIPortal.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.UIPortal.TimeToLive:86400}</long>
             </field>
           </object>
         </object-param>
@@ -915,6 +960,36 @@
             </field>
             <field name="liveTime">
               <long>${meeds.cache.wallet.account.TimeToLive:-1}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="wallet">
+          <name>wallet.rewardSettings</name>
+          <description>The reward settings</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.rewardSettings</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.rewardSettings.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.rewardSettings.TimeToLive:30}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param profiles="wallet">
+          <name>wallet.addressLabels</name>
+          <description>The wallet address labels</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>wallet.addressLabels</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.wallet.addressLabels.MaxNodes:10}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.wallet.addressLabels.TimeToLive:30}</long>
             </field>
           </object>
         </object-param>
