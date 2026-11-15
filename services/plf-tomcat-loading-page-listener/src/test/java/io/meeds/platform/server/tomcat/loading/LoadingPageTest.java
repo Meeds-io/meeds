@@ -230,7 +230,7 @@ class LoadingPageTest {
 
   @Test
   void aLanguageWithoutBundleUsesTheDefaultTexts() {
-    assertTrue(new LoadingPageContent(confDir).page(Locale.forLanguageTag("ja")).contains("We are preparing your workplace"));
+    assertTrue(new LoadingPageContent(confDir).page(Locale.forLanguageTag("xx")).contains("We are preparing your workplace"));
   }
 
   @Test
