@@ -202,6 +202,7 @@ SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.text=ALL-UNNA
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util.concurrent=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED
+SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/java.util.concurrent.locks=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.base/sun.nio.ch=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.management/java.lang.management=ALL-UNNAMED
 SET JDK_JAVA_OPTIONS=%JDK_JAVA_OPTIONS% --add-opens java.desktop/java.awt.font=ALL-UNNAMED
