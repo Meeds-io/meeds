@@ -34,6 +34,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
     <module>plf-community-edition-service</module>
     <module>plf-tomcat-pc-creator-listener</module>
     <module>plf-tomcat-loading-page-listener</module>
+    <module>plf-tomcat-healthcheck-valve</module>
   </modules>
 
 </project>

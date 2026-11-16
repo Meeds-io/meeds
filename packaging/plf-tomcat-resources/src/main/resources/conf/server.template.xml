@@ -58,7 +58,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption}
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
-              removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
+              removeAbandoned="true" removeAbandonedTimeout="300" abandonWhenPercentageFull="100" logAbandoned="false"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${urlIdm}${jpaConnectionParameters}" />
 
     <!-- eXo JCR Datasource for portal -->
@@ -68,7 +68,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption} 
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
-              removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
+              removeAbandoned="true" removeAbandonedTimeout="300" abandonWhenPercentageFull="100" logAbandoned="false"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${urlJcr}${connectionParameters}" />
 
     <!-- eXo JPA Datasource for portal -->
@@ -78,7 +78,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
               validationQuery="${validationQuery}" ${validationQueryTimeoutOption}
               testWhileIdle="true" testOnBorrow="true" testOnReturn="false"
               timeBetweenEvictionRunsMillis="30000" minEvictableIdleTimeMillis="60000"
-              removeAbandonedOnBorrow="true" removeAbandonedOnMaintenance="true" removeAbandonedTimeout="300" logAbandoned="false"
+              removeAbandoned="true" removeAbandonedTimeout="300" abandonWhenPercentageFull="100" logAbandoned="false"
               username="${username}" password="${password}" driverClassName="${driverClassName}" url="${urlJpa}${jpaConnectionParameters}" />
 
   </GlobalNamingResources>
@@ -168,6 +168,17 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
       <Host name="localhost" appBase="webapps" startStopThreads="-1"
             unpackWARs="${EXO_TOMCAT_UNPACK_WARS}" autoDeploy="true">
+
+        <!-- Health check endpoint (GET /healthcheck) for Docker or orchestrators: no authentication, no session.
+             200 when every web application and the portal container are started and the databases and the search
+             server answer (EXO_HEALTHCHECK_DEEP=false to only report the startup), 503 otherwise.
+             Only answers local callers (EXO_HEALTHCHECK_ALLOW, default 127.0.0.1,::1; IPs or CIDR networks;
+             EXO_HEALTHCHECK_CONTAINER=none to skip the portal container check)
+             and refuses requests carrying a reverse proxy header (a proxy that forwards /healthcheck without one
+             makes the caller look local: block that path there). Keep it before the RemoteIpValve to see the
+             address of the TCP peer.
+             Disabled with EXO_HEALTHCHECK=false -->
+        <Valve className="io.meeds.platform.server.tomcat.healthcheck.HealthCheckValve" />
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->

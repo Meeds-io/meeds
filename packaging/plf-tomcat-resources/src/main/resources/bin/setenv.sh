@@ -242,6 +242,11 @@ CATALINA_OPTS="$CATALINA_OPTS -Dgatein.conf.dir=\"${EXO_CONF_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Djava.security.auth.login.config=\"$CATALINA_BASE/conf/jaas.conf\""
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.data.dir=\"${EXO_DATA_DIR}\""
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.loading.page=${EXO_LOADING_PAGE}"
+# Health check endpoint, the defaults apply when not set
+[ -n "$EXO_HEALTHCHECK" ] && CATALINA_OPTS="$CATALINA_OPTS -Dexo.healthcheck=${EXO_HEALTHCHECK}"
+[ -n "$EXO_HEALTHCHECK_ALLOW" ] && CATALINA_OPTS="$CATALINA_OPTS -Dexo.healthcheck.allow=\"${EXO_HEALTHCHECK_ALLOW}\""
+[ -n "$EXO_HEALTHCHECK_DEEP" ] && CATALINA_OPTS="$CATALINA_OPTS -Dexo.healthcheck.deep=\"${EXO_HEALTHCHECK_DEEP}\""
+[ -n "$EXO_HEALTHCHECK_CONTAINER" ] && CATALINA_OPTS="$CATALINA_OPTS -Dexo.healthcheck.container=\"${EXO_HEALTHCHECK_CONTAINER}\""
 # JCR Data directory
 CATALINA_OPTS="$CATALINA_OPTS -Dexo.jcr.data.dir=\"${EXO_DATA_DIR}/jcr\""
 # JCR values
