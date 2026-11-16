@@ -430,6 +430,53 @@
             </field>
           </object>
         </object-param>
+        <!-- One-time codes, their resend delay and their attempts: the lifetime here, in seconds, only bounds how long
+             an entry stays; each service enforces the expiry it reads from its own properties -->
+        <object-param>
+          <name>otp.email</name>
+          <description>The Cache configuration for otp.email</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>otp.email</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.otp.email.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.otp.email.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>otp.email.sendLock</name>
+          <description>The Cache configuration for otp.email.sendLock</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>otp.email.sendLock</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.otp.email.sendLock.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.apiKey.otp.email.sendInterval:60}</long>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>otp.tentatives</name>
+          <description>The Cache configuration for otp.tentatives</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>otp.tentatives</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.otp.tentatives.MaxNodes:1000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.otp.tentatives.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
         <!-- Portal API -->
         <object-param>
           <name>portal.PortletPreferences</name>
