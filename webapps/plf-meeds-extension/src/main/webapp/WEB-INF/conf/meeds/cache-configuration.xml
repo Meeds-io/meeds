@@ -430,8 +430,8 @@
             </field>
           </object>
         </object-param>
-        <!-- One-time codes, their resend delay and their attempts: each entry carries the expiry its service reads from
-             its own properties, the lifetime here, in seconds, only bounds how long an entry stays -->
+        <!-- One-time codes, their resend delay and their attempts: the lifetime here, in seconds, only bounds how long
+             an entry stays; each service enforces the expiry it reads from its own properties -->
         <object-param>
           <name>otp.email</name>
           <description>The Cache configuration for otp.email</description>
