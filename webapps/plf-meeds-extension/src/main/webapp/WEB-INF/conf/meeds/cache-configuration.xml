@@ -397,6 +397,23 @@
             </field>
           </object>
         </object-param>
+        <!-- The users whose conversations this node holds: an entry evicted makes the node build the user's
+             conversations again, so it is at least as large and as long-lived as portal.ConversationRegistryStates -->
+        <object-param>
+          <name>portal.ConversationRegistryUsers</name>
+          <description>Cache configuration for Conversation Registry Users</description>
+          <object type="org.exoplatform.services.cache.ExoCacheConfig">
+            <field name="name">
+              <string>portal.ConversationRegistryUsers</string>
+            </field>
+            <field name="maxSize">
+              <int>${meeds.cache.portal.ConversationRegistryUsers.MaxNodes:5000}</int>
+            </field>
+            <field name="liveTime">
+              <long>${meeds.cache.portal.ConversationRegistryUsers.TimeToLive:86400}</long>
+            </field>
+          </object>
+        </object-param>
         <!-- SettingService -->
         <object-param>
           <name>commons.SettingService</name>
