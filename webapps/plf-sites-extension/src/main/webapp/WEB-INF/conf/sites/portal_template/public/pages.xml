@@ -34,19 +34,15 @@
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
       <css-style>
         <background-color>#FFFFFFFF</background-color>
-        <text-title-color>#20282C</text-title-color>
         <text-title-font-size>20px</text-title-font-size>
         <text-title-font-weight>bold</text-title-font-weight>
         <text-title-font-style>normal</text-title-font-style>
-        <text-header-color>#707070</text-header-color>
         <text-header-font-size>20px</text-header-font-size>
         <text-header-font-weight>bold</text-header-font-weight>
         <text-header-font-style>normal</text-header-font-style>
-        <text-color>#20282C</text-color>
         <text-font-size>18px</text-font-size>
         <text-font-weight>normal</text-font-weight>
         <text-font-style>normal</text-font-style>
-        <text-subtitle-color>#707070</text-subtitle-color>
         <text-subtitle-font-size>12px</text-subtitle-font-size>
         <text-subtitle-font-weight>normal</text-subtitle-font-weight>
         <text-subtitle-font-style>normal</text-subtitle-font-style>
