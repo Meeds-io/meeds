@@ -39,9 +39,6 @@
         height="57"
         sticky-beahvior="true"
         top-bar="true">
-        <css-style>
-          <background-color>#FFFFFFFF</background-color>
-        </css-style>
         <!-- Begin: Left -->
         <banner-cell
           width="fit-content"
