@@ -21,6 +21,7 @@
 --%>
 <%@page import="org.exoplatform.container.ExoContainerContext"%>
 <%@page import="io.meeds.pwa.service.PwaManifestService"%>
+<%@ page import="org.exoplatform.portal.branding.BrandingUtils"%>
 <%@ page language="java"%>
 <%@ page import="java.util.Set"%>
 <%@ page import="java.util.List"%>
@@ -53,17 +54,24 @@
   Orientation orientation = localeConfig.getOrientation();
   String direction = orientation.isLT() ? "ltr" : "rtl";
   PwaManifestService pwaManifestService = ExoContainerContext.getService(PwaManifestService.class);
+  // The display mode of the page, written on its <html> like the portal pages do
+  String displayMode = (String) request.getAttribute(BrandingUtils.DISPLAY_MODE_ATTRIBUTE);
+  if (displayMode == null) {
+    displayMode = BrandingUtils.getDisplayMode(request);
+  }
 %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
   xml:lang="<%=browserLanguage%>"
   lang="<%=browserLanguage%>"
-  dir="<%=direction%>">
+  dir="<%=direction%>"
+  data-display-mode="<%=displayMode%>">
 <head>
   <%-- Embedded Title that will change once page loaded --%>
   <title>Login</title>
   <!-- Metadatas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta charset="UTF-8">
   <meta name="theme-color" content="<%=brandingPrimaryColor%>" />
@@ -86,7 +94,7 @@
   <link rel="preload" href= "<%=url%>" as="script" type="text/javascript" />
   <% } %>
   <!-- Styles -->
-  <link rel="shortcut icon" type="image/x-icon" href="<%= request.getAttribute("brandingFavicon") %>" />
+  <%= BrandingUtils.getFaviconLinks(displayMode, (String) request.getAttribute("brandingFavicon"), (String) request.getAttribute("brandingDarkFavicon")) %>
   <link id="brandingSkin" rel="stylesheet" type="text/css" href="<%=brandingThemeUrl%>" />
   <% for(String skinUrl : skinUrls) { %>
   <link rel="stylesheet" type="text/css" href="<%=skinUrl%>" />

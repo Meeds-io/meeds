@@ -26,7 +26,7 @@
 <%@ page import="org.exoplatform.portal.resource.SkinService"%>
 <%@ page import="org.gatein.portal.controller.resource.ResourceRequestHandler" %>
 <%@ page import="org.exoplatform.portal.resource.SkinConfig" %>
-<%@ page import="org.exoplatform.portal.branding.Utils"%>
+<%@ page import="org.exoplatform.portal.branding.BrandingUtils"%>
 <%@ page language="java" %>
 <%
     String usernameRegExp = System.getProperty("gatein.validators.username.regexp");
@@ -61,13 +61,19 @@
   } else {
     cssPath = skinService.getSkin("portal/AccountSetup", "Enterprise").getCSSPath()+"?v="+ResourceRequestHandler.VERSION;
   }
+  // The display mode of the page, written on its <html> like the portal pages do
+  String displayMode = (String) request.getAttribute(BrandingUtils.DISPLAY_MODE_ATTRIBUTE);
+  if (displayMode == null) {
+    displayMode = BrandingUtils.getDisplayMode(request);
+  }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%=lang%>" lang="<%=lang%>">
+<html xmlns="http://www.w3.org/1999/xhtml" data-display-mode="<%=displayMode%>" xml:lang="<%=lang%>" lang="<%=lang%>">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="shortcut icon" type="image/x-icon"  href="<%= Utils.getFaviconPath() %>" />
+    <%= BrandingUtils.getFaviconLinks(displayMode) %>
     <link id="brandingSkin" rel="stylesheet" type="text/css" href="/rest/v1/platform/branding/css">
     <link href="/social/skin/css/welcome-screens/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
     <link href="<%=cssPath%>" rel="stylesheet" type="text/css" />
