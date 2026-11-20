@@ -168,7 +168,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <groupId>io.meeds.social</groupId>
       <artifactId>social-webapp</artifactId>
       <type>pom</type>
-      <scope>import</scope>
+      <scope>runtime</scope>
       <exclusions>
         <exclusion>
           <groupId>io.meeds.portal</groupId>
