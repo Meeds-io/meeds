@@ -53,7 +53,8 @@
       <type>zip</type>
       <scope>runtime</scope>
     </dependency>
-    <!-- Pre-bundled addons, installed by the Add-ons Manager -->
+    <!-- Pre-bundled addons, installed by the Add-ons Manager: keep this list the same as the one of
+         plf-packaging-resources/pom.xml, so that the SBOM identifies the files these zips deliver -->
     <dependency>
       <groupId>io.meeds.auth-server</groupId>
       <artifactId>auth-server-packaging</artifactId>
