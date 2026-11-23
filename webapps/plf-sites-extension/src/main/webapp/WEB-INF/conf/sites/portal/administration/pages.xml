@@ -29,11 +29,11 @@
     <access-permissions>*:/platform/administrators</access-permissions>
     <edit-permission>manager:/platform/administrators</edit-permission>
     <container template="system:/groovy/portal/webui/container/UIPageLayout.gtmpl">
-      <section-grid cols="11" rows="5">
-        <cell col-span="8" row-span="3">
+      <section-columns mobile-columns-style="true">
+        <column col-span="12">
           <portlet-application>
             <portlet>
-              <application-ref>social</application-ref>
+              <application-ref>content</application-ref>
               <portlet-ref>Links</portlet-ref>
               <preferences>
                 <preference>
@@ -44,19 +44,23 @@
                       "linkSetting": {
                         "type": "ROW",
                         "header": {
-                          "en": "links.label.administration.dashboard.UXCustomization"
+                          "en": "links.label.administration.dashboard.gettingStarted",
+                          "fr": "Premiers pas"
                         },
                         "showName": true,
+                        "showIcon": true,
                         "iconSize": 50,
                         "hAlign": "CENTER",
                         "vAlign": "CENTER",
-                        "showDescription": false
+                        "showDescription": false,
+                        "allowHide": true
                       },
                       "links": [
                         {
-                          "imageContent": "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",
+                          "imageContent": "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",
                           "name": {
-                            "en": "links.label.administration.dashboard.theme"
+                            "en": "links.label.administration.dashboard.customizeTheme",
+                            "fr": "Personnaliser le thème"
                           },
                           "description": {
                             "en": ""
@@ -66,9 +70,10 @@
                           "sameTab": true
                         },
                         {
-                          "imageContent": "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",
+                          "imageContent": "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",
                           "name": {
-                            "en": "links.label.administration.dashboard.sidebar"
+                            "en": "links.label.administration.dashboard.organizeSidebar",
+                            "fr": "Organiser la barre latérale"
                           },
                           "description": {
                             "en": ""
@@ -78,208 +83,41 @@
                           "sameTab": true
                         },
                         {
-                          "imageContent": "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",
+                          "imageContent": "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",
                           "name": {
-                            "en": "links.label.administration.dashboard.appCenter"
+                            "en": "links.label.administration.dashboard.configureMobileApp",
+                            "fr": "Configurer l'application mobile"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 2,
-                          "url": "/portal/administration/home/applications/applicationsCenter",
-                          "sameTab": true
-                        },
-                        {
-                          "imageContent": "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",
-                          "name": {
-                            "en": "links.label.administration.dashboard.mobileApp"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 3,
                           "url": "/portal/administration/home/applications/pwaSettings",
                           "sameTab": true
-                        }
-                      ]
-                    }
-                  ]]>
-                  </value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>User Experience customization</title>
-          </portlet-application>
-        </cell>
-        <cell col-span="3">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>PlatformAdminsWidget</portlet-ref>
-            </portlet>
-            <title>Platform Admins Widget</title>
-          </portlet-application>
-        </cell>
-        <cell col-span="3" row-span="4">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>Links</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>data.init</name>
-                  <value>
-                    <![CDATA[
-                    {
-                      "linkSetting": {
-                        "type": "COLUMN",
-                        "header": {
-                          "en": "links.label.administration.dashboard.platformManagement"
-                        },
-                        "showName": true,
-                        "hAlign": "START",
-                        "vAlign": "CENTER",
-                        "showDescription": false
-                      },
-                      "links": [
-                        {
-                          "icon": "fa-users",
-                          "name": {
-                            "en": "links.label.administration.dashboard.addUsers"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 0,
-                          "url": "/portal/administration/home/organisation/users",
-                          "sameTab": true
                         },
                         {
-                          "icon": "fa-layer-group",
+                          "imageContent": "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",
                           "name": {
-                            "en": "links.label.administration.dashboard.spacesManagement"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 1,
-                          "url": "/portal/administration/home/spaces/manage",
-                          "sameTab": true
-                        },
-                        {
-                          "icon": "fa-sitemap",
-                          "name": {
-                            "en": "links.label.administration.dashboard.sitesManagement"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 2,
-                          "url": "/portal/administration/home/development/sites",
-                          "sameTab": true
-                        },
-                        {
-                          "icon": "fa-th-large",
-                          "name": {
-                            "en": "links.label.administration.dashboard.categoryManagement"
+                            "en": "links.label.administration.dashboard.setAccess",
+                            "fr": "Définir les accès"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 3,
-                          "url": "/portal/administration/home/development/categories",
+                          "url": "/portal/administration/home/general/platformaccess",
                           "sameTab": true
                         },
                         {
-                          "icon": "fa-user-cog",
+                          "imageContent": "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",
                           "name": {
-                            "en": "links.label.administration.dashboard.spaceTemplates"
+                            "en": "links.label.administration.dashboard.customizeNotifications",
+                            "fr": "Personnaliser les notifications"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 4,
-                          "url": "/portal/administration/home/spaces/configureTemplates",
-                          "sameTab": true
-                        },
-                        {
-                          "icon": "fa-pager",
-                          "name": {
-                            "en": "links.label.administration.dashboard.pageTemplates"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 5,
-                          "url": "/portal/administration/home/development/template/pages",
-                          "sameTab": true
-                        }
-                      ]
-                    }
-                  ]]>
-                  </value>
-                </preference>
-              </preferences>
-            </portlet>
-            <title>Platform Management</title>
-          </portlet-application>
-        </cell>
-        <cell col-span="4" row-span="2">
-          <portlet-application>
-            <portlet>
-              <application-ref>social</application-ref>
-              <portlet-ref>Links</portlet-ref>
-              <preferences>
-                <preference>
-                  <name>data.init</name>
-                  <value>
-                    <![CDATA[
-                    {
-                      "linkSetting": {
-                        "type": "COLUMN",
-                        "header": {
-                          "en": "links.label.administration.dashboard.mainSettings"
-                        },
-                        "showName": true,
-                        "hAlign": "START",
-                        "vAlign": "CENTER",
-                        "iconSize": 28,
-                        "showDescription": false
-                      },
-                      "links": [
-                        {
-                          "icon": "fa-globe",
-                          "name": {
-                            "en": "links.label.administration.dashboard.publicSiteAndLanguage"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 0,
-                          "url": "/portal/administration/home/general/mainsettings",
-                          "sameTab": true
-                        },
-                        {
-                          "icon": "fa-door-open",
-                          "name": {
-                            "en": "links.label.administration.dashboard.platformAccessRules"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 1,
-                          "url": "/portal/administration/home/general/platformaccess",
-                          "sameTab": true
-                        },
-                        {
-                          "icon": "fa-bell",
-                          "name": {
-                            "en": "links.label.administration.dashboard.notificationsManagement"
-                          },
-                          "description": {
-                            "en": ""
-                          },
-                          "order": 2,
                           "url": "/portal/administration/home/general/notification",
                           "sameTab": true
                         }
@@ -290,13 +128,15 @@
                 </preference>
               </preferences>
             </portlet>
-            <title>Main Settings</title>
+            <title>Getting Started</title>
           </portlet-application>
-        </cell>
-        <cell col-span="4" row-span="2">
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="4">
           <portlet-application>
             <portlet>
-              <application-ref>social</application-ref>
+              <application-ref>content</application-ref>
               <portlet-ref>Links</portlet-ref>
               <preferences>
                 <preference>
@@ -307,49 +147,67 @@
                       "linkSetting": {
                         "type": "COLUMN",
                         "header": {
-                          "en": "links.label.administration.dashboard.recognition"
+                          "en": "links.label.administration.dashboard.currentManagement",
+                          "fr": "Gestion courante"
                         },
                         "showName": true,
-                        "hAlign": "START",
-                        "vAlign": "CENTER",
+                        "showIcon": true,
                         "iconSize": 28,
+                        "hAlign": "START",
+                        "vAlign": "START",
                         "showDescription": false
                       },
                       "links": [
                         {
-                          "icon": "fa-plug",
+                          "icon": "fas fa-users",
                           "name": {
-                            "en": "links.label.administration.dashboard.connectors"
+                            "en": "links.label.administration.dashboard.users",
+                            "fr": "Utilisateurs"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 0,
-                          "url": "/portal/administration/home/gamification/connectors",
+                          "url": "/portal/administration/home/organisation/users",
                           "sameTab": true
                         },
                         {
-                          "icon": "fa-graduation-cap",
+                          "icon": "fas fa-user-friends",
                           "name": {
-                            "en": "links.label.administration.dashboard.badges"
+                            "en": "links.label.administration.dashboard.groups",
+                            "fr": "Groupes"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 1,
-                          "url": "/portal/administration/home/gamification/badges",
+                          "url": "/portal/administration/home/organisation/groups",
                           "sameTab": true
                         },
                         {
-                          "icon": "fa-coins",
+                          "icon": "fas fa-layer-group",
                           "name": {
-                            "en": "links.label.administration.dashboard.meedsRewards"
+                            "en": "links.label.administration.dashboard.spaces",
+                            "fr": "Espaces"
                           },
                           "description": {
                             "en": ""
                           },
                           "order": 2,
-                          "url": "/portal/administration/home/rewards/reward",
+                          "url": "/portal/administration/home/spaces/manage",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-th-list",
+                          "name": {
+                            "en": "links.label.administration.dashboard.appCenter",
+                            "fr": "Centre d'applications"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/applications/applicationsCenter",
                           "sameTab": true
                         }
                       ]
@@ -359,10 +217,495 @@
                 </preference>
               </preferences>
             </portlet>
-            <title>Recognition</title>
+            <title>Everyday Management</title>
           </portlet-application>
-        </cell>
-      </section-grid>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.advancedManagement",
+                          "fr": "Gestion avancée"
+                        },
+                        "showName": true,
+                        "showIcon": true,
+                        "iconSize": 28,
+                        "hAlign": "START",
+                        "vAlign": "START",
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fas fa-sitemap",
+                          "name": {
+                            "en": "links.label.administration.dashboard.sites",
+                            "fr": "Sites"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "/portal/administration/home/development/sites",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-id-card",
+                          "name": {
+                            "en": "links.label.administration.dashboard.profile",
+                            "fr": "Profil"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "/portal/administration/home/organisation/profile",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-clone",
+                          "name": {
+                            "en": "links.label.administration.dashboard.spaceTemplates",
+                            "fr": "Modèles d'espace"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "/portal/administration/home/spaces/configureTemplates",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-th-large",
+                          "name": {
+                            "en": "links.label.administration.dashboard.categories",
+                            "fr": "Catégories"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/development/categories",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Advanced Management</title>
+          </portlet-application>
+        </column>
+        <column col-span="4">
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>PlatformAdminsWidget</portlet-ref>
+            </portlet>
+            <title>Platform Admins Widget</title>
+            <height>120</height>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
+              <portlet-ref>PlatformUsersWidget</portlet-ref>
+            </portlet>
+            <title>Platform Users Widget</title>
+            <height>120</height>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.advancedConfiguration",
+                          "fr": "Configuration avancée"
+                        },
+                        "showName": true,
+                        "showIcon": true,
+                        "iconSize": 28,
+                        "hAlign": "START",
+                        "vAlign": "START",
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fas fa-door-open",
+                          "name": {
+                            "en": "links.label.administration.dashboard.access",
+                            "fr": "Accès"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "/portal/administration/home/general/platformaccess",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-bell",
+                          "name": {
+                            "en": "links.label.administration.dashboard.notifications",
+                            "fr": "Notifications"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "/portal/administration/home/general/notification",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-key",
+                          "name": {
+                            "en": "links.label.administration.dashboard.multifactorAuthentication",
+                            "fr": "Authentification multifacteur"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "/portal/administration/home/security/multifactor-authentication",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-sign-in-alt",
+                          "name": {
+                            "en": "links.label.administration.dashboard.loginPage",
+                            "fr": "Page de connexion"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/general/mainsettings#logincustomization",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-globe",
+                          "name": {
+                            "en": "links.label.administration.dashboard.advancedCustomization",
+                            "fr": "Personnalisation avancée"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 4,
+                          "url": "/portal/administration/home/general/mainsettings",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Advanced Configuration</title>
+          </portlet-application>
+        </column>
+        <column col-span="6">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "COLUMN",
+                        "header": {
+                          "en": "links.label.administration.dashboard.applications",
+                          "fr": "Applications"
+                        },
+                        "showName": true,
+                        "showIcon": true,
+                        "iconSize": 28,
+                        "hAlign": "START",
+                        "vAlign": "START",
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fas fa-calendar-alt",
+                          "name": {
+                            "en": "links.label.administration.dashboard.agenda",
+                            "fr": "Agenda"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "/portal/administration/home/applications/agendaAdminSettings",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-video",
+                          "name": {
+                            "en": "links.label.administration.dashboard.videoConferencing",
+                            "fr": "Visioconférence"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "/portal/administration/home/applications/visio",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-envelope",
+                          "name": {
+                            "en": "links.label.administration.dashboard.email",
+                            "fr": "E-mail"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "/portal/administration/home/applications/email-connector",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-comments",
+                          "name": {
+                            "en": "links.label.administration.dashboard.chat",
+                            "fr": "Chat"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/applications/chat",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-language",
+                          "name": {
+                            "en": "links.label.administration.dashboard.automaticTranslation",
+                            "fr": "Traduction automatique"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 4,
+                          "url": "/portal/administration/home/applications/translation",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Applications</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns mobile-columns-style="true">
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "ROW",
+                        "header": {
+                          "en": "links.label.administration.dashboard.ai",
+                          "fr": "IA"
+                        },
+                        "showName": true,
+                        "showIcon": true,
+                        "iconSize": 40,
+                        "hAlign": "CENTER",
+                        "vAlign": "CENTER",
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fas fa-brain",
+                          "name": {
+                            "en": "links.label.administration.dashboard.aiModels",
+                            "fr": "Modèles"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "/portal/administration/home/ai/models",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-concierge-bell",
+                          "name": {
+                            "en": "links.label.administration.dashboard.aiAssistants",
+                            "fr": "Assistants"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "/portal/administration/home/ai/agents",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-link",
+                          "name": {
+                            "en": "links.label.administration.dashboard.uxBindings",
+                            "fr": "Liaisons UX"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "/portal/administration/home/ai/uxbinding",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-id-badge",
+                          "name": {
+                            "en": "links.label.administration.dashboard.oauthClients",
+                            "fr": "Clients OAuth"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/development/oauth",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>AI</title>
+          </portlet-application>
+        </column>
+      </section-columns>
+      <section-columns mobile-columns-style="true">
+        <column col-span="12">
+          <portlet-application>
+            <portlet>
+              <application-ref>content</application-ref>
+              <portlet-ref>Links</portlet-ref>
+              <preferences>
+                <preference>
+                  <name>data.init</name>
+                  <value>
+                    <![CDATA[
+                    {
+                      "linkSetting": {
+                        "type": "ROW",
+                        "header": {
+                          "en": "links.label.administration.dashboard.recognition",
+                          "fr": "Engagement"
+                        },
+                        "showName": true,
+                        "showIcon": true,
+                        "iconSize": 40,
+                        "hAlign": "CENTER",
+                        "vAlign": "CENTER",
+                        "showDescription": false
+                      },
+                      "links": [
+                        {
+                          "icon": "fas fa-trophy",
+                          "name": {
+                            "en": "links.label.administration.dashboard.gamification",
+                            "fr": "Gamification"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 0,
+                          "url": "/portal/administration/home/gamification/kudos",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-plug",
+                          "name": {
+                            "en": "links.label.administration.dashboard.connectors",
+                            "fr": "Connecteurs"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 1,
+                          "url": "/portal/administration/home/gamification/connectors",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-graduation-cap",
+                          "name": {
+                            "en": "links.label.administration.dashboard.badges",
+                            "fr": "Badges"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 2,
+                          "url": "/portal/administration/home/gamification/badges",
+                          "sameTab": true
+                        },
+                        {
+                          "icon": "fas fa-coins",
+                          "name": {
+                            "en": "links.label.administration.dashboard.meedsRewards",
+                            "fr": "Récompenses"
+                          },
+                          "description": {
+                            "en": ""
+                          },
+                          "order": 3,
+                          "url": "/portal/administration/home/rewards/setup",
+                          "sameTab": true
+                        }
+                      ]
+                    }
+                  ]]>
+                  </value>
+                </preference>
+              </preferences>
+            </portlet>
+            <title>Engagement</title>
+          </portlet-application>
+        </column>
+      </section-columns>
     </container>
   </page>
 

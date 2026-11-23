@@ -37,7 +37,7 @@
         <node>
           <name>mainsettings</name>
           <label>#{portal.administration.mainsettings}</label>
-          <icon>fas fa-palette</icon>
+          <icon>fas fa-globe</icon>
           <page-reference>portal::administration::generalSettings</page-reference>
         </node>
         <node>
@@ -60,19 +60,19 @@
         <node>
           <name>users</name>
           <label>#{portal.administration.users}</label>
-          <icon>fas fa-users-cog</icon>
+          <icon>fas fa-users</icon>
           <page-reference>portal::administration::usersManagement</page-reference>
         </node>
         <node>
           <name>groups</name>
           <label>#{portal.administration.groups}</label>
-          <icon>fab fa-simplybuilt</icon>
+          <icon>fas fa-user-friends</icon>
           <page-reference>portal::administration::groupsManagement</page-reference>
         </node>
         <node>
           <name>profile</name>
           <label>#{portal.administration.profile}</label>
-          <icon>fas fa-user-cog</icon>
+          <icon>fas fa-id-card</icon>
           <page-reference>portal::administration::profileManagement</page-reference>
         </node>
       </node>
@@ -83,13 +83,13 @@
         <node>
           <name>manage</name>
           <label>#{portal.administration.spacesManage}</label>
-          <icon>fas fa-people-arrows</icon>
+          <icon>fas fa-layer-group</icon>
           <page-reference>portal::administration::spacesAdministration</page-reference>
         </node>
         <node>
           <name>configureTemplates</name>
           <label>#{portal.administration.spacesConfigureTemplates}</label>
-          <icon>fas fa-users-cog</icon>
+          <icon>fas fa-clone</icon>
           <page-reference>portal::administration::spaceTemplates</page-reference>
         </node>
       </node>
@@ -100,7 +100,7 @@
         <node>
           <name>applicationsCenter</name>
           <label>#{portal.administration.appCenterAdminSetup}</label>
-          <icon>fas fa-list-alt</icon>
+          <icon>fas fa-th-list</icon>
           <page-reference>portal::administration::appCenterAdminSetup</page-reference>
         </node>
         <node>
@@ -128,7 +128,7 @@
         <node>
           <name>kudos</name>
           <label>#{portal.administration.kudos}</label>
-          <icon>fa fa-tools</icon>
+          <icon>fas fa-trophy</icon>
           <page-reference>portal::administration::kudosConfiguration</page-reference>
         </node>
         <node>
@@ -151,7 +151,7 @@
         <node>
           <name>setup</name>
           <label>#{portal.administration.rewardAndBlockchainSetup}</label>
-          <icon>fa fa-tools</icon>
+          <icon>fas fa-coins</icon>
           <page-reference>portal::administration::rewardAndBlockchainSetup</page-reference>
         </node>
         <node>
@@ -174,7 +174,7 @@
         <node>
           <name>oauth</name>
           <label>#{portal.administration.oauth}</label>
-          <icon>fas fa-key</icon>
+          <icon>fas fa-id-badge</icon>
           <page-reference>portal::administration::oauth</page-reference>
         </node>
         <node>
