@@ -39,7 +39,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <artifactId>addons-manager</artifactId>
       <type>zip</type>
     </dependency>
-    <!-- Pre-bundled addons -->
+    <!-- Pre-bundled addons: keep this list the same as the one of plf-community-tomcat-standalone/pom.xml,
+         whose SBOM identifies the files these zips deliver -->
     <dependency>
       <groupId>io.meeds.auth-server</groupId>
       <artifactId>auth-server-packaging</artifactId>
