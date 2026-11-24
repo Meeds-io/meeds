@@ -82,6 +82,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </includes>
       <excludes>
         <exclude>**/META-INF*</exclude>
+        <exclude>**/META-INF/**</exclude>
         <exclude>**/*.template.xml</exclude>
         <exclude>**/*.filters.properties</exclude>
       </excludes>
@@ -100,6 +101,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         <exclude>**/*.bat</exclude>
         <exclude>**/*.cmd</exclude>
         <exclude>**/META-INF*</exclude>
+        <exclude>**/META-INF/**</exclude>
         <exclude>**/*.template.xml</exclude>
         <exclude>**/*.filters.properties</exclude>
       </excludes>
@@ -206,6 +208,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
           <exclude>CHANGE_LOG.txt</exclude>
           <exclude>README.txt</exclude>
           <exclude>RELEASE_NOTES.txt</exclude>
+          <exclude>META-INF/**</exclude>
         </excludes>
       </unpackOptions>
       <useProjectArtifact>false</useProjectArtifact>

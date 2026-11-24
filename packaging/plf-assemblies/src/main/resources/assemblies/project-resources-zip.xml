@@ -30,4 +30,13 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       <lineEnding>keep</lineEnding>
     </fileSet>
   </fileSets>
+  <files>
+    <file>
+      <source>${project.basedir}/src/main/version/pom.properties</source>
+      <outputDirectory>META-INF/maven/${project.groupId}/${project.artifactId}</outputDirectory>
+      <destName>pom.properties</destName>
+      <filtered>true</filtered>
+      <lineEnding>unix</lineEnding>
+    </file>
+  </files>
 </assembly>
