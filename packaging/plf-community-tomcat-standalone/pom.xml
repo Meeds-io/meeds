@@ -27,6 +27,10 @@
   <artifactId>plf-community-tomcat-standalone</artifactId>
   <packaging>pom</packaging>
   <name>Meeds:: Meeds:: Meeds Public Distribution - Packaging - Community Tomcat Standalone</name>
+  <properties>
+    <!-- Generate and publish the CycloneDX SBOM of the deliverable zip -->
+    <sbom.skip>false</sbom.skip>
+  </properties>
   <dependencies>
     <!-- This artifact is needed to configure Platform in community mode -->
     <dependency>
