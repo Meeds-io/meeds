@@ -211,10 +211,10 @@
             </portlet>
             <title>User Setting App Center</title>
           </portlet-application>
-          <portlet-application profiles="content">
+          <portlet-application>
             <portlet>
-              <application-ref>content</application-ref>
-              <portlet-ref>LinksHiddenSettings</portlet-ref>
+              <application-ref>social</application-ref>
+              <portlet-ref>UserSettingHiddenApplications</portlet-ref>
             </portlet>
             <title>User Setting Hidden Content</title>
           </portlet-application>
