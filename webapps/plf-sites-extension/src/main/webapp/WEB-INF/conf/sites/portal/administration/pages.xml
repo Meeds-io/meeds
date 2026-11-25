@@ -78,7 +78,7 @@
                           },
                           "description": {
                             "en": "links.label.administration.dashboard.sidebarDescription",
-                            "fr": "Les entrées que vos utilisateurs voient en premier"
+                            "fr": "Les entrées que vos utilisateurs voient d'abord"
                           },
                           "order": 1,
                           "url": "/portal/administration/home/general/mainsettings#navigation",
@@ -214,7 +214,7 @@
                           },
                           "description": {
                             "en": "links.label.administration.dashboard.appCenterDescription",
-                            "fr": "Ce que vos utilisateurs trouvent dans le centre d'applications"
+                            "fr": "Les applications proposées à vos utilisateurs"
                           },
                           "order": 3,
                           "url": "/portal/administration/home/applications/applicationsCenter",
