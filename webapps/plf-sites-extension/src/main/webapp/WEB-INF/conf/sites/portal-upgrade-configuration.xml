@@ -3555,5 +3555,183 @@
         </values-param>
       </init-params>
     </component-plugin>
+    <component-plugin profiles="layout">
+      <name>GlobalLoginPagesPlatformNameShippedColorsUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the text colours shipped on the Platform Name application of the login related pages, so that it follows the text colours of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>global</value>
+        </value-param>
+        <value-param>
+          <name>application.content</name>
+          <value>social/PlatformName</value>
+        </value-param>
+        <values-param>
+          <name>page.names</name>
+          <value>login</value>
+          <value>external-registration</value>
+          <value>forgot-password</value>
+          <value>account-deactivated</value>
+          <value>on-boarding</value>
+          <value>register</value>
+        </values-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="textTitleColor" value="#20282C" />
+          <property name="textHeaderColor" value="#707070" />
+          <property name="textColor" value="#20282C" />
+          <property name="textSubtitleColor" value="#707070" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicOverviewShippedColorsUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the text colours shipped on the page container of the public site overview, so that it follows the text colours of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>public</value>
+        </value-param>
+        <values-param>
+          <name>page.names</name>
+          <value>overview</value>
+        </values-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="textTitleColor" value="#20282C" />
+          <property name="textHeaderColor" value="#707070" />
+          <property name="textColor" value="#20282C" />
+          <property name="textSubtitleColor" value="#707070" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicTemplateOverviewShippedColorsUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the text colours shipped on the page container of the public site template overview, so that it follows the text colours of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal_template</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>public</value>
+        </value-param>
+        <values-param>
+          <name>page.names</name>
+          <value>overview</value>
+        </values-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="textTitleColor" value="#20282C" />
+          <property name="textHeaderColor" value="#707070" />
+          <property name="textColor" value="#20282C" />
+          <property name="textSubtitleColor" value="#707070" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicSiteBannerShippedBackgroundUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the white background shipped on the banner of the public site, so that it follows the top bar background of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>public</value>
+        </value-param>
+        <value-param>
+          <name>site.layout</name>
+          <value>true</value>
+        </value-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="backgroundColor" value="#FFFFFFFF" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
   </external-component-plugins>
 </configuration>
