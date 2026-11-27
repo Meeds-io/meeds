@@ -3733,5 +3733,85 @@
         </properties-param>
       </init-params>
     </component-plugin>
+    <component-plugin profiles="layout">
+      <name>PublicTemplateSiteBannerShippedBackgroundUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the white background shipped on the banner of the public site template, which a new public site copies, so that it follows the top bar background of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal_template</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>public</value>
+        </value-param>
+        <value-param>
+          <name>site.layout</name>
+          <value>true</value>
+        </value-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="backgroundColor" value="#FFFFFFFF" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin profiles="layout">
+      <name>SpacePublicTemplateSiteBannerShippedBackgroundUpgrade</name>
+      <set-method>addUpgradePlugin</set-method>
+      <type>io.meeds.layout.plugin.upgrade.ShippedStyleUpgradePlugin</type>
+      <description>Removes the white background shipped on the banner of the space public site template, which a new space public site copies, so that it follows the top bar background of the theme in use</description>
+      <init-params>
+        <value-param>
+          <name>product.group.id</name>
+          <value>org.exoplatform.social</value>
+        </value-param>
+        <value-param>
+          <name>plugin.execution.order</name>
+          <value>160</value>
+        </value-param>
+        <value-param>
+          <name>plugin.upgrade.execute.once</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>enabled</name>
+          <value>true</value>
+        </value-param>
+        <value-param>
+          <name>site.type</name>
+          <value>portal_template</value>
+        </value-param>
+        <value-param>
+          <name>site.name</name>
+          <value>spacePublic</value>
+        </value-param>
+        <value-param>
+          <name>site.layout</name>
+          <value>true</value>
+        </value-param>
+        <properties-param>
+          <name>style.values</name>
+          <property name="backgroundColor" value="#FFFFFFFF" />
+        </properties-param>
+      </init-params>
+    </component-plugin>
   </external-component-plugins>
 </configuration>
