@@ -214,6 +214,13 @@
           <portlet-application>
             <portlet>
               <application-ref>social</application-ref>
+              <portlet-ref>UserSettingHiddenApplications</portlet-ref>
+            </portlet>
+            <title>User Setting Hidden Content</title>
+          </portlet-application>
+          <portlet-application>
+            <portlet>
+              <application-ref>social</application-ref>
               <portlet-ref>UserSettingNotifications</portlet-ref>
             </portlet>
             <title>User Setting Notifications</title>
