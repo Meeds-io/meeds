@@ -202,6 +202,12 @@
           <page-reference>portal::administration::simpleStorage</page-reference>
         </node>
         <node>
+          <name>loggingLevels</name>
+          <label>#{portal.administration.loggingLevels}</label>
+          <icon>fas fa-file-alt</icon>
+          <page-reference>portal::administration::loggingLevels</page-reference>
+        </node>
+        <node>
           <name>template</name>
           <label>#{portal.administration.template}</label>
           <icon>fas fa-columns</icon>
